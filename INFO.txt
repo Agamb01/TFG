@@ -1,8 +1,8 @@
-TFG
+TFG: Procesador de 32bits tolerante a fallos compatible con ARM
 ===
 Primer repositorio para trabajo fin de grado
 
-Titulo: Procesador de 32bits tolerante a fallos compatible con ARM
-
 Primera semana:
 1) Obtener informacion, elección de arquitectura a desarrollar y juego de instrucciones.
+
+Segunda semana:
