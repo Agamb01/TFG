@@ -1,0 +1,1 @@
+xst -intstyle ise -ifn "C:/TFG/VHDL/Processor/InstructionFetch.xst" -ofn "C:/TFG/VHDL/Processor/InstructionFetch.syr" 

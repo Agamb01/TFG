@@ -1,0 +1,2 @@
+vhdl work "MemInstruction.vhd"
+vhdl work "InstructionFetch.vhd"
