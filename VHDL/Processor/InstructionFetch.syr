@@ -4,13 +4,13 @@ Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.27 secs
+Total CPU time to Xst completion: 0.17 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.27 secs
+Total CPU time to Xst completion: 0.17 secs
  
 --> Reading design: InstructionFetch.prj
 
@@ -105,15 +105,15 @@ Slice Utilization Ratio Delta      : 5
 =========================================================================
 *                          HDL Parsing                                  *
 =========================================================================
+Parsing VHDL file "C:\TFG\VHDL\Processor\PCAdder.vhd" into library work
+Parsing entity <PCAdder>.
+Parsing architecture <Behavioral> of entity <pcadder>.
 Parsing VHDL file "C:\TFG\VHDL\Processor\MemInstruction.vhd" into library work
 Parsing entity <MemInstruction>.
 Parsing architecture <Behavioral> of entity <meminstruction>.
 Parsing VHDL file "C:\TFG\VHDL\Processor\InstructionFetch.vhd" into library work
 Parsing entity <InstructionFetch>.
 Parsing architecture <Behavioral> of entity <instructionfetch>.
-WARNING:HDLCompiler:1369 - "C:\TFG\VHDL\Processor\InstructionFetch.vhd" Line 64: Possible infinite loop; process does not have a wait statement
-WARNING:HDLCompiler:1369 - "C:\TFG\VHDL\Processor\InstructionFetch.vhd" Line 76: Possible infinite loop; process does not have a wait statement
-WARNING:HDLCompiler:1369 - "C:\TFG\VHDL\Processor\InstructionFetch.vhd" Line 86: Possible infinite loop; process does not have a wait statement
 
 =========================================================================
 *                            HDL Elaboration                            *
@@ -122,6 +122,8 @@ WARNING:HDLCompiler:1369 - "C:\TFG\VHDL\Processor\InstructionFetch.vhd" Line 86:
 Elaborating entity <InstructionFetch> (architecture <Behavioral>) from library <work>.
 
 Elaborating entity <MemInstruction> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <PCAdder> (architecture <Behavioral>) from library <work>.
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -134,7 +136,20 @@ Synthesizing Unit <InstructionFetch>.
     Found 32-bit register for signal <PC_out>.
     Summary:
 	inferred  96 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
 Unit <InstructionFetch> synthesized.
+
+Synthesizing Unit <MemInstruction>.
+    Related source file is "C:\TFG\VHDL\Processor\MemInstruction.vhd".
+WARNING:Xst:647 - Input <PC<30:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Summary:
+	no macro.
+Unit <MemInstruction> synthesized.
+
+Synthesizing Unit <PCAdder>.
+    Related source file is "C:\TFG\VHDL\Processor\PCAdder.vhd".
+    Summary:
+Unit <PCAdder> synthesized.
 
 =========================================================================
 HDL Synthesis Report
@@ -142,6 +157,10 @@ HDL Synthesis Report
 Macro Statistics
 # Registers                                            : 3
  32-bit register                                       : 3
+# Multiplexers                                         : 1
+ 32-bit 2-to-1 multiplexer                             : 1
+# Xors                                                 : 2
+ 32-bit xor2                                           : 2
 
 =========================================================================
 
@@ -156,14 +175,21 @@ Advanced HDL Synthesis Report
 Macro Statistics
 # Registers                                            : 96
  Flip-Flops                                            : 96
+# Multiplexers                                         : 1
+ 32-bit 2-to-1 multiplexer                             : 1
+# Xors                                                 : 2
+ 32-bit xor2                                           : 2
 
 =========================================================================
 
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
+INFO:Xst:2261 - The FF/Latch <Instruction_out_0> in Unit <InstructionFetch> is equivalent to the following 31 FFs/Latches, which will be removed : <Instruction_out_1> <Instruction_out_2> <Instruction_out_3> <Instruction_out_4> <Instruction_out_5> <Instruction_out_6> <Instruction_out_7> <Instruction_out_8> <Instruction_out_9> <Instruction_out_10> <Instruction_out_11> <Instruction_out_12> <Instruction_out_13> <Instruction_out_14> <Instruction_out_15> <Instruction_out_16> <Instruction_out_17> <Instruction_out_18> <Instruction_out_19> <Instruction_out_20> <Instruction_out_21> <Instruction_out_22> <Instruction_out_23> <Instruction_out_24> <Instruction_out_25> <Instruction_out_26> <Instruction_out_27> <Instruction_out_28> <Instruction_out_29> <Instruction_out_30> <Instruction_out_31> 
 
 Optimizing unit <InstructionFetch> ...
+
+Optimizing unit <PCAdder> ...
 
 Mapping all equations...
 Building and optimizing final netlist ...
@@ -175,8 +201,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 96
- Flip-Flops                                            : 96
+# Registers                                            : 65
+ Flip-Flops                                            : 65
 
 =========================================================================
 
@@ -199,18 +225,21 @@ Top Level Output File Name         : InstructionFetch.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 1
-#      INV                         : 1
-# FlipFlops/Latches                : 96
-#      FDC                         : 64
-#      FDCE                        : 32
+# BELS                             : 127
+#      INV                         : 2
+#      LUT2                        : 9
+#      LUT3                        : 22
+#      LUT4                        : 10
+#      LUT5                        : 12
+#      LUT6                        : 67
+#      MUXF7                       : 5
+# FlipFlops/Latches                : 65
+#      FDC                         : 65
 # Clock Buffers                    : 1
 #      BUFGP                       : 1
 # IO Buffers                       : 98
 #      IBUF                        : 34
 #      OBUF                        : 64
-# Others                           : 1
-#      MemInstruction              : 1
 
 Device utilization summary:
 ---------------------------
@@ -219,21 +248,20 @@ Selected Device : 7a100tcsg324-1
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:              64  out of  126800     0%  
- Number of Slice LUTs:                    1  out of  63400     0%  
-    Number used as Logic:                 1  out of  63400     0%  
+ Number of Slice Registers:              65  out of  126800     0%  
+ Number of Slice LUTs:                  122  out of  63400     0%  
+    Number used as Logic:               122  out of  63400     0%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:     65
-   Number with an unused Flip Flop:       1  out of     65     1%  
-   Number with an unused LUT:            64  out of     65    98%  
-   Number of fully used LUT-FF pairs:     0  out of     65     0%  
-   Number of unique control sets:         2
+ Number of LUT Flip Flop pairs used:    124
+   Number with an unused Flip Flop:      59  out of    124    47%  
+   Number with an unused LUT:             2  out of    124     1%  
+   Number of fully used LUT-FF pairs:    63  out of    124    50%  
+   Number of unique control sets:         1
 
 IO Utilization: 
  Number of IOs:                          99
  Number of bonded IOBs:                  99  out of    210    47%  
-    IOB Flip Flops/Latches:              32
 
 Specific Feature Utilization:
  Number of BUFG/BUFGCTRLs:                1  out of     32     3%  
@@ -259,7 +287,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clk                                | BUFGP                  | 96    |
+clk                                | BUFGP                  | 65    |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -270,9 +298,9 @@ Timing Summary:
 ---------------
 Speed Grade: -1
 
-   Minimum period: 0.907ns (Maximum Frequency: 1102.536MHz)
-   Minimum input arrival time before clock: 1.606ns
-   Maximum output required time after clock: 0.877ns
+   Minimum period: 2.944ns (Maximum Frequency: 339.674MHz)
+   Minimum input arrival time before clock: 2.142ns
+   Maximum output required time after clock: 1.030ns
    Maximum combinational path delay: No path found
 
 Timing Details:
@@ -281,63 +309,68 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 0.907ns (frequency: 1102.536MHz)
-  Total number of paths / destination ports: 32 / 32
+  Clock period: 2.944ns (frequency: 339.674MHz)
+  Total number of paths / destination ports: 961 / 65
 -------------------------------------------------------------------------
-Delay:               0.907ns (Levels of Logic = 0)
-  Source:            PC_0 (FF)
-  Destination:       PC_out_0 (FF)
+Delay:               2.944ns (Levels of Logic = 3)
+  Source:            PC_11 (FF)
+  Destination:       PC_30 (FF)
   Source Clock:      clk rising
   Destination Clock: clk rising
 
-  Data Path: PC_0 to PC_out_0
+  Data Path: PC_11 to PC_30
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDCE:C->Q             1   0.478   0.399  PC_0 (PC_0)
-     FDC:D                     0.030          PC_out_0
+     FDC:C->Q             11   0.478   0.782  PC_11 (PC_11)
+     LUT3:I0->O           20   0.124   0.841  PCAdd/Pro[9]_Carry[9]_AND_42_o1_SW0 (N20)
+     LUT6:I3->O            4   0.124   0.441  PCAdd/Pro[19]_Carry[19]_AND_52_o1 (PCAdd/Carry<20>)
+     LUT6:I5->O            1   0.124   0.000  PCAdd/Mxor_PC_out_31_xo<0>1 (PC4<31>)
+     FDC:D                     0.030          PC_out_31
     ----------------------------------------
-    Total                      0.907ns (0.508ns logic, 0.399ns route)
-                                       (56.0% logic, 44.0% route)
+    Total                      2.944ns (0.880ns logic, 2.064ns route)
+                                       (29.9% logic, 70.1% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
-  Total number of paths / destination ports: 192 / 192
+  Total number of paths / destination ports: 151 / 97
 -------------------------------------------------------------------------
-Offset:              1.606ns (Levels of Logic = 2)
-  Source:            reset (PAD)
-  Destination:       PC_0 (FF)
+Offset:              2.142ns (Levels of Logic = 4)
+  Source:            PC_mux_ctr (PAD)
+  Destination:       PC_18 (FF)
   Destination Clock: clk rising
 
-  Data Path: reset to PC_0
+  Data Path: PC_mux_ctr to PC_18
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             1   0.001   0.399  reset_IBUF (reset_IBUF)
-     INV:I->O             96   0.146   0.566  reset_inv1_INV_0 (reset_inv)
-     FDCE:CLR                  0.494          PC_0
+     IBUF:I->O            43   0.001   1.074  PC_mux_ctr_IBUF (PC_mux_ctr_IBUF)
+     LUT6:I1->O            1   0.124   0.000  PCAdd/Pro[14]_Carry[14]_AND_47_o1_SW10_G (N104)
+     MUXF7:I1->O           1   0.368   0.421  PCAdd/Pro[14]_Carry[14]_AND_47_o1_SW10 (N73)
+     LUT6:I5->O            1   0.124   0.000  Mmux_PC_next111 (PC_next<19>)
+     FDC:D                     0.030          PC_19
     ----------------------------------------
-    Total                      1.606ns (0.641ns logic, 0.965ns route)
-                                       (39.9% logic, 60.1% route)
+    Total                      2.142ns (0.647ns logic, 1.495ns route)
+                                       (30.2% logic, 69.8% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
-  Total number of paths / destination ports: 96 / 96
+  Total number of paths / destination ports: 64 / 64
 -------------------------------------------------------------------------
-Offset:              0.877ns (Levels of Logic = 1)
-  Source:            PC_out_31 (FF)
-  Destination:       PC_out<31> (PAD)
+Offset:              1.030ns (Levels of Logic = 1)
+  Source:            Instruction_out_0 (FF)
+  Destination:       Instruction_out<31> (PAD)
   Source Clock:      clk rising
 
-  Data Path: PC_out_31 to PC_out<31>
+  Data Path: Instruction_out_0 to Instruction_out<31>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDC:C->Q              1   0.478   0.399  PC_out_31 (PC_out_31)
-     OBUF:I->O                 0.000          PC_out_31_OBUF (PC_out<31>)
+     FDC:C->Q             32   0.478   0.552  Instruction_out_0 (Instruction_out_0)
+     OBUF:I->O                 0.000          Instruction_out_31_OBUF (Instruction_out<31>)
     ----------------------------------------
-    Total                      0.877ns (0.478ns logic, 0.399ns route)
-                                       (54.5% logic, 45.5% route)
+    Total                      1.030ns (0.478ns logic, 0.552ns route)
+                                       (46.4% logic, 53.6% route)
 
 =========================================================================
 
@@ -349,20 +382,20 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |    0.907|         |         |         |
+clk            |    2.944|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 13.00 secs
-Total CPU time to Xst completion: 13.09 secs
+Total REAL time to Xst completion: 11.00 secs
+Total CPU time to Xst completion: 11.60 secs
  
 --> 
 
-Total memory usage is 444056 kilobytes
+Total memory usage is 426392 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :    3 (   0 filtered)
-Number of infos    :    0 (   0 filtered)
+Number of warnings :    1 (   0 filtered)
+Number of infos    :    1 (   0 filtered)
 

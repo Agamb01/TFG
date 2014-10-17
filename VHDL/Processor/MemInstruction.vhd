@@ -38,6 +38,16 @@ architecture Behavioral of MemInstruction is
 
 begin
 
+  Instruction <= (others => PC(31));
 
+--  process(PC)
+--  begin
+--    if PC(31) = '0' then
+--	   Instruction <= (others => '0');
+--	 else
+--	   Instruction <= (others => '1');
+--	 end if;
+--  end process;
+  
 end Behavioral;
 

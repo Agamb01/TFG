@@ -39,60 +39,63 @@ end InstructionFetch;
 
 architecture Behavioral of InstructionFetch is
 
---Modulo de memoria de Instrucciones
-component MemInstruction
+  --Modulo de memoria de Instrucciones
+  component MemInstruction
     Port ( PC : in  STD_LOGIC_VECTOR (31 downto 0);
            Instruction : out  STD_LOGIC_VECTOR (31 downto 0));
-end component; 
+  end component; 
 
+  --Modulo sumador PC
+  component PCAdder
+    Port ( PC_in : in  STD_LOGIC_VECTOR (31 downto 0);
+           PC_out : out  STD_LOGIC_VECTOR (31 downto 0));
+  end component;
 
-signal PC, PC4, PC_next : STD_LOGIC_VECTOR (31 downto 0); 
--- PC=Biestable de contador de programa, PC4=Salida sumador PC+4, PC_next=Salida mux PC+4/PC_salto
-signal Instruction : STD_LOGIC_VECTOR (31 downto 0);
---signal  : STD_LOGIC_VECTOR (31 downto 0);
---signal  : STD_LOGIC_VECTOR (31 downto 0);
+  signal PC, PC4, PC_next : STD_LOGIC_VECTOR (31 downto 0); 
+  -- PC=Biestable de contador de programa, PC4=Salida sumador PC+4, PC_next=Salida mux PC+4/PC_salto
+  signal Instruction : STD_LOGIC_VECTOR (31 downto 0);
 
-begin
+  begin
 
---Modulo de memoria de Instrucciones
-MemInstr: MemInstruction port map( PC => PC,
+  --Modulo de memoria de Instrucciones
+  MemInstr: MemInstruction port map( PC => PC,
 						Instruction => Instruction );
 
+  --Modulo sumador PC
+  PCAdd: PCAdder port map ( PC_in => PC,
+                          PC_out => PC4 );
 
+  -- Proceso para guardar valores de salida
+  Bi_salida: process(reset, clk)
+  begin
+    if reset='0' then
+      PC_out <= (others=>'0'); 
+      Instruction_out <= (others=>'0');
+    elsif clk'event and clk='1' then
+      PC_out <= PC4;
+  	   Instruction_out <= Instruction;
+    end if;
+  end process;
 
--- Proceso para guardar valores de salida
-Bi_salida: process 
-begin
-  if reset='0' then
-    PC_out <= (others=>'0');
-	 Instruction_out <= (others=>'0');
-  elsif clk'event and clk='1' then
-    PC_out <= PC4;
-	 Instruction_out <= Instruction;
-  end if;
-end process;
+  -- Proceso para guardar valor de contador de programa
+  Bi_PC: process(reset, clk)
+  begin
+    if reset='0' then
+      PC <= (others=>'0');
+    elsif clk'event and clk='1' then
+      PC <= PC_next;
+    end if;
+  end process;
 
--- Proceso para guardar valor de contador de programa
-Bi_PC: process 
-begin
-  if reset='0' then
-    PC <= (others=>'0');
-  elsif clk'event and clk='1' then
-    PC <= PC_next;
-  end if;
-end process;
-
--- Proceso multiplexor contador de programa
-Mux_PC: process
-begin
-  if PC_mux_ctr='0' then
-    PC_next <= PC4;
-  else
-    PC_next <= PC_mux_val_1;   
-  end if;
-end process;
-
-PC4 <= PC;
+  -- Proceso multiplexor contador de programa
+  Mux_PC: process(PC_mux_ctr, PC4,PC_mux_val_1)
+  begin
+    if PC_mux_ctr='0' then
+      PC_next <= PC4;
+    else
+      PC_next <= PC_mux_val_1;   
+    end if;
+  end process;
 
 end Behavioral;
 
