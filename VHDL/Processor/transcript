@@ -1,0 +1,62 @@
+# Reading C:/Modeltech_pe_edu_10.3d/tcl/vsim/pref.tcl
+# do {TB2_PCAdder.fdo}
+# ** Warning: (vlib-34) Library already exists at "work".
+# 
+# Model Technology ModelSim PE Student Edition vcom 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 12:34:26 on Oct 22,2014
+# vcom -reportprogress 300 -explicit -93 PCAdder.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity PCAdder
+# -- Compiling architecture Behavioral of PCAdder
+# End time: 12:34:27 on Oct 22,2014, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim PE Student Edition vcom 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 12:34:35 on Oct 22,2014
+# vcom -reportprogress 300 -explicit -93 TB2_PCAdder.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity TB2_PCAdder
+# -- Compiling architecture behavior of TB2_PCAdder
+# End time: 12:34:36 on Oct 22,2014, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# //  ModelSim PE Student Edition 10.3d Oct  7 2014 
+# //
+# //  Copyright 1991-2014 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //
+# // NOT FOR CORPORATE OR PRODUCTION USE.
+# // THE ModelSim PE Student Edition IS NOT A SUPPORTED PRODUCT.
+# // FOR HIGHER EDUCATION PURPOSES ONLY
+# //
+# vsim -gui -do "do {TB2_PCAdder.fdo}" 
+# Start time: 12:34:36 on Oct 22,2014
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.tb2_pcadder(behavior)
+# Loading work.pcadder(behavioral)
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+add wave -position end  sim:/tb2_pcadder/uut/Gen
+add wave -position end  sim:/tb2_pcadder/uut/Pro
+add wave -position end  sim:/tb2_pcadder/uut/Carry
+add wave -position end  sim:/tb2_pcadder/uut/four
+restart
+run
+run
+run
+run
+run
+run
+run 10 ns
+run 1000 ns
+# End time: 12:38:27 on Oct 22,2014, Elapsed time: 0:03:51
+# Errors: 0, Warnings: 0

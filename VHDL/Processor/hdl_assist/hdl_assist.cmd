@@ -1,0 +1,1 @@
+ -w -cvi -2002  -s "C:/TFG/VHDL/Processor/hdl_assist/library.cfg"  -work work  -e 100  "C:/TFG/VHDL/Processor/TB_PCAdder.vhd"

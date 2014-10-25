@@ -1,0 +1,5 @@
+10
+~E 1 "./../PCAdder.vhd" 34 PCAdder
+~A 1 "./../PCAdder.vhd" 39 Behavioral
+~E 1 "./../TB_PCAdder.vhd" 35 TB_PCAdder
+~A 1 "./../TB_PCAdder.vhd" 38 behavior

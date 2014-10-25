@@ -1,0 +1,1 @@
+-w -s "C:\TFG\VHDL\Processor\library.cfg"  -j "C:\TFG\VHDL\Processor\projlib.cfg"  -d "C:\TFG\VHDL\Processor\compile"   -work work  -O3 -e 100 -93 "TB_PCAdder.vhd"

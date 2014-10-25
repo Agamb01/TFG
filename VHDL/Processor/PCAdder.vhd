@@ -2,20 +2,19 @@
 -- Company: 
 -- Engineer: 
 -- 
--- Create Date:    11:13:31 10/17/2014 
--- Design Name: 
--- Module Name:    PCAdder - Behavioral 
--- Project Name: 
--- Target Devices: 
--- Tool versions: 
--- Description: 
+-- Create Date: 11:13:31 10/17/2014 
+-- Design Name: 1
+-- Module Name: PCAdder - Behavioral 
+-- Project Name: ARM compatible micro-processor
+-- Target Devices: Nexys4
+-- Tool versions: Xilinx ISE Webpack 14.4
+-- Description: Sumador de 32 bit
 --
 -- Dependencies: 
 --
 -- Revision: 
 -- Revision 0.01 - File Created
 -- Additional Comments: 
---
 ----------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
@@ -47,17 +46,20 @@ begin
 
   Gen <= PC_in and four;
   Pro <= PC_in xor four;
-  Carry(0) <= '0';
   
   Add: process(Gen, Pro, Carry)
   begin
+    Carry(0) <= '0';
     For i in 1 to 32 loop
       Carry(i) <= Gen(i-1) or (Pro(i-1) 
                            and Carry(i-1));
     End loop;  
   end process;
 
+process(Pro, Carry)
+begin
   PC_out <= Pro xor Carry(31 downto 0);
+end process;
 --Cout <= Carry(32);
 end Behavioral;
 

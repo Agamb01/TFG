@@ -1,0 +1,58 @@
+# This message was printed from macro file xilinxaddfile.do
+# Adding file C:\TFG\VHDL\Processor\PCAdder.vhd ... Done
+# Adding file C:\TFG\VHDL\Processor\TB_PCAdder.vhd ... Done
+# Adding file C:\TFG\VHDL\Processor\TB_PCAdder.fdo ... Done
+# #
+# #
+# #
+# #
+vlib work
+# Warning: Library work already exists
+vcom -explicit -93 PCAdder.vhd
+# Compile...
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints and assertion debug will not be available.
+# File: PCAdder.vhd
+# Compile Entity "PCAdder"
+# Compile Architecture "Behavioral" of Entity "PCAdder"
+# Compile success 0 Errors 0 Warnings  Analysis time :  0.1 [s]
+vcom -explicit -93 TB_PCAdder.vhd
+# Compile...
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints and assertion debug will not be available.
+# File: TB_PCAdder.vhd
+# Compile Entity "TB_PCAdder"
+# Compile Architecture "behavior" of Entity "TB_PCAdder"
+# Compile success 0 Errors 0 Warnings  Analysis time :  78.0 [ms]
+vsim -voptargs="+acc" -t 1ps +access+r -lib work work.TB_PCAdder
+# Warning: Unknown or duplicated switch: -voptargs="+acc"
+# Design: Design work already active.
+# 
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+# vsim: Stack memory: 32MB
+# vsim: Retval memory: 32MB
+# 
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Elaboration phase ... skipped, nothing to simulate in SLP mode : 0.0 [s]
+# SLP: Finished : 0.0 [s]
+# ELAB2: Elaboration final pass complete - time: 0.1 [s].
+# KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
+# KERNEL: Warning: For upgrade options please visit our University Program page at www.aldec.com.
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 6960 kB (elbread=1023 elab2=5787 kernel=149 sdf=0)
+# KERNEL: ASDB file was created in location C:\TFG\VHDL\Processor\src\wave.asdb
+#  12:39, martes, 21 de octubre de 2014
+#  Simulation has been initialized
+#  Selected Top-Level: TB_PCAdder (behavior)
+do TB_PCAdder_wave.fdo
+do TB_PCAdder.udo
+run 1000ns
+# KERNEL: stopped at time: 1 us
+# KERNEL: Simulation has finished. There are no more test vectors to simulate.
+#  Simulation has been stopped
