@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2014-10-25T19:52:47</DateModified>
+  <DateModified>2014-11-14T10:10:55</DateModified>
   <ModuleName>PCAdder</ModuleName>
   <SummaryTimeStamp>Unknown</SummaryTimeStamp>
-  <SavedFilePath>C:/Users/Andy/git/TFG/VHDL/Processor/iseconfig/PCAdder.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>C:/Users/Andy/git/TFG/VHDL/Processor\</ImplementationReportsDirectory>
+  <SavedFilePath>D:/TFG/TFG/VHDL/Processor/iseconfig/PCAdder.xreport</SavedFilePath>
+  <ImplementationReportsDirectory>D:/TFG/TFG/VHDL/Processor\</ImplementationReportsDirectory>
   <DateInitialized>2014-10-22T12:46:50</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>
