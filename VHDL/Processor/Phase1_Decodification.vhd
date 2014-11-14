@@ -29,7 +29,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity Decodification is
+entity Phase1_Decodification is
    Port ( clk, rst         : in STD_LOGIC;                        -- clock y reset
           pc_in            : in STD_LOGIC_VECTOR(31 downto 0);    -- Entrada de contador de programa
           instruction_in   : in STD_LOGIC_VECTOR(31 downto 0);    -- Instruccion actual
@@ -41,9 +41,9 @@ entity Decodification is
           reg_destB_out_reg : out STD_LOGIC_VECTOR(4 downto 0);   -- Registro destino B (bits 15-11)
           integer_out_reg  : out STD_LOGIC_VECTOR(31 downto 0)   -- entero con extension de signo
         );
-end Decodification;
+end Phase1_Decodification;
 
-architecture Behavioral of Decodification is
+architecture Behavioral of Phase1_Decodification is
 
 component RegisterBank
    port ( RA : in STD_LOGIC_VECTOR(3 downto 0);
@@ -66,17 +66,21 @@ end component;
    
 begin
 
-reg_A <= instruction_i(19 downto 16);
-reg_B <= instruction_i(11 downto 8);
+   reg_A <= instruction_i(19 downto 16);
+   reg_B <= instruction_i(11 downto 8);
 
-i_RegisterBank: RegisterBank port map (
-          RA => reg_A,
-          RB => reg_B,
-          RW => reg_W,   -- Arreglar
-          BusW => bus_W, -- Arreglar
-          busA => bus_A,
-          busB => bus_B,
+   i_RegisterBank: RegisterBank port map (
+          RA => reg_A,  -- Entrada
+          RB => reg_B,  -- Entrada
+          RW => reg_W,  -- Entrada -- Arreglar
+          BusW => bus_W, -- Entrada -- Arreglar
+          busA => bus_A, -- Salida
+          busB => bus_B -- Salida
          );
+         
+-- TODO:
+-- i_ControlPrincipal: ControlPrincipal port map (
+--       );
 
    -- Guardar contador de programa en registro de salida
    process(clk, rst)

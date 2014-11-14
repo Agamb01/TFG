@@ -1,12 +1,12 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2014-11-14T12:33:07</DateModified>
+  <DateModified>2014-11-14T12:52:59</DateModified>
   <ModuleName>Phase2_Execution</ModuleName>
   <SummaryTimeStamp>Unknown</SummaryTimeStamp>
-  <SavedFilePath>D:/TFG/TFG/VHDL/Processor/iseconfig/PCAdder.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>D:/TFG/TFG/VHDL/Processor\</ImplementationReportsDirectory>
-  <DateInitialized>2014-11-14T12:33:06</DateInitialized>
+  <SavedFilePath>D:/TFG/TFG/VHDL/Processor/iseconfig/Phase2_Execution.xreport</SavedFilePath>
+  <ImplementationReportsDirectory>D:/TFG/TFG/VHDL/Processor</ImplementationReportsDirectory>
+  <DateInitialized>2014-11-14T12:52:58</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>
  <body>

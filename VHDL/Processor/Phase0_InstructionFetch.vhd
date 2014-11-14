@@ -30,16 +30,16 @@ use IEEE.STD_LOGIC_1164.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity InstructionFetch is
+entity Phase0_InstructionFetch is
    Port ( clk, rst : in STD_LOGIC;
-      PC_mux_val_1 	: in STD_LOGIC_VECTOR (31 downto 0);    -- Direccion de salto
-      PC_mux_ctr   	: in STD_LOGIC;								 -- Señal de control de salto
+      PC_mux_val_1 	: in STD_LOGIC_VECTOR (31 downto 0);       -- Direccion de salto
+      PC_mux_ctr   	: in STD_LOGIC;								    -- Señal de control de salto
       PC_out_reg 			: out  STD_LOGIC_VECTOR (31 downto 0);  -- Valor de PC siguiente
-      Instruction_out_reg : out  STD_LOGIC_VECTOR (31 downto 0)
-   ); -- Valor de Instruccion
-end InstructionFetch;
+      Instruction_out_reg : out  STD_LOGIC_VECTOR (31 downto 0) -- Valor de Instruccion
+   ); 
+end Phase0_InstructionFetch;
 
-architecture Behavioral of InstructionFetch is
+architecture Behavioral of Phase0_InstructionFetch is
 
    --Modulo de memoria de Instrucciones
    component MemInstruction
