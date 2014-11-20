@@ -30,12 +30,16 @@ use IEEE.STD_LOGIC_1164.ALL;
 --use UNISIM.VComponents.all;
 
 entity ALU is
-    Port ( in_BusA   : in  STD_LOGIC_VECTOR (31 downto 0);
-           in_BusB   : in  STD_LOGIC_VECTOR (31 downto 0);
-           in_op     : in  STD_LOGIC_VECTOR (0 downto 0);
-           out_flags : out  STD_LOGIC_VECTOR (0 downto 0);
-           out_busO  : out  STD_LOGIC_VECTOR (31 downto 0)
-           );
+   Port ( 
+      -- Entradas
+      in_BusA   : in  STD_LOGIC_VECTOR (31 downto 0);
+      in_BusB   : in  STD_LOGIC_VECTOR (31 downto 0);
+      in_op     : in  STD_LOGIC_VECTOR (0 downto 0);
+      
+      --Salidas
+      out_flags : out  STD_LOGIC_VECTOR (0 downto 0);
+      out_busO  : out  STD_LOGIC_VECTOR (31 downto 0)
+   );
 end ALU;
 
 architecture Behavioral of ALU is
