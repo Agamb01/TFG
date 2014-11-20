@@ -31,8 +31,13 @@ use IEEE.STD_LOGIC_1164.ALL;
 --http://www.academia.edu/253031/Design_and_Implementation_of_a_Fast_Unsigned_32-bit_Multiplier_Using_VHDL
 
 entity PCAdder is
-    Port ( in_pc : in  STD_LOGIC_VECTOR (31 downto 0);
-           out_pc : out  STD_LOGIC_VECTOR (31 downto 0));
+    Port ( 
+         --Entradas
+         in_pc : in  STD_LOGIC_VECTOR (31 downto 0);
+         
+         --Salidas
+         out_pc : out  STD_LOGIC_VECTOR (31 downto 0)
+    );
 end PCAdder;
 
 architecture Behavioral of PCAdder is

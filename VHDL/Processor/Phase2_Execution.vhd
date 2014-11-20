@@ -30,11 +30,13 @@ use IEEE.STD_LOGIC_1164.ALL;
 --use UNISIM.VComponents.all;
 
 entity Phase2_Execution is
-   port ( --in_Señales de control
+   port ( clk, rst : in STD_LOGIC;  
+         
+          --in_Señales de control
           in_PC : in STD_LOGIC_VECTOR(31 downto 0);
           in_entero : in STD_LOGIC_VECTOR(31 downto 0);
           in_busA : in STD_LOGIC_VECTOR(31 downto 0);
-          in_busB in STD_LOGIC_VECTOR(31 downto 0);
+          in_busB : in STD_LOGIC_VECTOR(31 downto 0);
           in_RW : in STD_LOGIC_VECTOR(3 downto 0);
           
           --out_Señales de control
@@ -42,7 +44,7 @@ entity Phase2_Execution is
           out_flagsALU_reg : out STD_LOGIC_VECTOR(3 downto 0);
           out_busALU_reg : out STD_LOGIC_VECTOR(31 downto 0);
           out_busB_reg : out STD_LOGIC_VECTOR(31 downto 0);
-          out_RW_reg : out STD_LOGIC_VECTOR(3 downto 0);
+          out_RW_reg : out STD_LOGIC_VECTOR(3 downto 0)
          );
 end Phase2_Execution;
 

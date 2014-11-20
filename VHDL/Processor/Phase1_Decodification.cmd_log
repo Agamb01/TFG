@@ -1,0 +1,4 @@
+xst -intstyle ise -ifn "D:/TFG/TFG/VHDL/Processor/Phase1_Decodification.xst" -ofn "D:/TFG/TFG/VHDL/Processor/Phase1_Decodification.syr" 
+xst -intstyle ise -ifn "D:/TFG/TFG/VHDL/Processor/Phase1_Decodification.xst" -ofn "D:/TFG/TFG/VHDL/Processor/Phase1_Decodification.syr" 
+xst -intstyle ise -ifn "D:/TFG/TFG/VHDL/Processor/Phase1_Decodification.xst" -ofn "D:/TFG/TFG/VHDL/Processor/Phase1_Decodification.syr" 
+xst -intstyle ise -ifn "D:/TFG/TFG/VHDL/Processor/Phase1_Decodification.xst" -ofn "D:/TFG/TFG/VHDL/Processor/Phase1_Decodification.syr" 

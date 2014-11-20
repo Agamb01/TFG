@@ -30,13 +30,14 @@ use IEEE.STD_LOGIC_1164.ALL;
 --use UNISIM.VComponents.all;
 
 entity RegisterBank is
-   port ( RA : in STD_LOGIC_VECTOR(4 downto 0);
-          RB : in STD_LOGIC_VECTOR(4 downto 0);
-          RW : in STD_LOGIC_VECTOR(4 downto 0);  
-          BusW : in STD_LOGIC_VECTOR(31 downto 0);
-          busA : out STD_LOGIC_VECTOR(31 downto 0);
-          busB : out STD_LOGIC_VECTOR(31 downto 0)
-         );
+      port ( in_regA : in STD_LOGIC_VECTOR(3 downto 0);
+             in_regB : in STD_LOGIC_VECTOR(3 downto 0);
+             in_regW : in STD_LOGIC_VECTOR(3 downto 0);  
+             in_busW : in STD_LOGIC_VECTOR(31 downto 0);
+             in_ctr_WREnable : in STD_LOGIC;
+             out_busA : out STD_LOGIC_VECTOR(31 downto 0);
+             out_busB : out STD_LOGIC_VECTOR(31 downto 0)
+            );
 end RegisterBank;
 
 architecture Behavioral of RegisterBank is

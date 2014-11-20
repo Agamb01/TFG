@@ -1,12 +1,12 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2014-11-20T11:56:46</DateModified>
-  <ModuleName>Phase0_InstructionFetch</ModuleName>
-  <SummaryTimeStamp>2014-11-20T11:47:29</SummaryTimeStamp>
+  <DateModified>2014-11-20T13:28:16</DateModified>
+  <ModuleName>Phase1_Decodification</ModuleName>
+  <SummaryTimeStamp>2014-11-20T13:27:13</SummaryTimeStamp>
   <SavedFilePath>D:/TFG/TFG/VHDL/Processor/iseconfig/Phase2_Execution.xreport</SavedFilePath>
   <ImplementationReportsDirectory>D:/TFG/TFG/VHDL/Processor\</ImplementationReportsDirectory>
-  <DateInitialized>2014-11-20T11:41:15</DateInitialized>
+  <DateInitialized>2014-11-20T12:00:38</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>
  <body>

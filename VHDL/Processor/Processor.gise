@@ -21,8 +21,64 @@
 
   <sourceproject xmlns="http://www.xilinx.com/XMLSchema" xil_pn:fileType="FILE_XISE" xil_pn:name="Processor.xise"/>
 
-  <files xmlns="http://www.xilinx.com/XMLSchema"/>
+  <files xmlns="http://www.xilinx.com/XMLSchema">
+    <file xil_pn:fileType="FILE_CMD_LOG" xil_pn:name="Phase1_Decodification.cmd_log"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_LSO" xil_pn:name="Phase1_Decodification.lso"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGC" xil_pn:name="Phase1_Decodification.ngc"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGR" xil_pn:name="Phase1_Decodification.ngr"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="Phase1_Decodification.prj"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_STX" xil_pn:name="Phase1_Decodification.stx"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_REPORT" xil_pn:name="Phase1_Decodification.syr"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST" xil_pn:name="Phase1_Decodification.xst"/>
+    <file xil_pn:fileType="FILE_HTML" xil_pn:name="Phase1_Decodification_envsettings.html"/>
+    <file xil_pn:fileType="FILE_HTML" xil_pn:name="Phase1_Decodification_summary.html"/>
+    <file xil_pn:fileType="FILE_XRPT" xil_pn:name="Phase1_Decodification_xst.xrpt"/>
+    <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/xst.xmsgs"/>
+    <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="webtalk_pn.xml"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="xst"/>
+  </files>
 
-  <transforms xmlns="http://www.xilinx.com/XMLSchema"/>
+  <transforms xmlns="http://www.xilinx.com/XMLSchema">
+    <transform xil_pn:end_ts="1416485999" xil_pn:name="TRAN_schematicsToHdl" xil_pn:prop_ck="-5578959784543738889" xil_pn:start_ts="1416485999">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1416485999" xil_pn:name="TRAN_regenerateCores" xil_pn:prop_ck="-3395244600376129027" xil_pn:start_ts="1416485999">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1416485999" xil_pn:name="TRAN_SubProjectAbstractToPreProxy" xil_pn:start_ts="1416485999">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1416485999" xil_pn:name="TRAN_xawsTohdl" xil_pn:prop_ck="345604856115633369" xil_pn:start_ts="1416485999">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1416485999" xil_pn:name="TRAN_SubProjectPreToStructuralProxy" xil_pn:prop_ck="3206529612922900429" xil_pn:start_ts="1416485999">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1416485999" xil_pn:name="TRAN_platgen" xil_pn:prop_ck="888352762686621255" xil_pn:start_ts="1416485999">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1416486433" xil_pn:in_ck="-4002950234167195683" xil_pn:name="TRANEXT_xstsynthesize_virtex6" xil_pn:prop_ck="9023703959861822340" xil_pn:start_ts="1416486416">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="WarningsGenerated"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="Phase1_Decodification.lso"/>
+      <outfile xil_pn:name="Phase1_Decodification.ngc"/>
+      <outfile xil_pn:name="Phase1_Decodification.ngr"/>
+      <outfile xil_pn:name="Phase1_Decodification.prj"/>
+      <outfile xil_pn:name="Phase1_Decodification.stx"/>
+      <outfile xil_pn:name="Phase1_Decodification.syr"/>
+      <outfile xil_pn:name="Phase1_Decodification.xst"/>
+      <outfile xil_pn:name="Phase1_Decodification_xst.xrpt"/>
+      <outfile xil_pn:name="_xmsgs/xst.xmsgs"/>
+      <outfile xil_pn:name="webtalk_pn.xml"/>
+      <outfile xil_pn:name="xst"/>
+    </transform>
+  </transforms>
 
 </generated_project>
