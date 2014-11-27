@@ -32,103 +32,63 @@ use IEEE.STD_LOGIC_1164.ALL;
 --use UNISIM.VComponents.all;
 
 entity Phase0_InstructionFetch is
-   Port ( clk, rst : in STD_LOGIC;
-   
+   Generic (
+      address_size : INTEGER := 32;
+      instruction_size : INTEGER := 32
+   );
+   Port (
    -- Entradas
-      in_pc_salto 	 : in STD_LOGIC_VECTOR (31 downto 0);       -- Direccion de salto
-      in_pc_salto_ctr : in STD_LOGIC;								     -- Señal de control de salto
-
+      in_pc : in STD_LOGIC_VECTOR (address_size-1 downto 0); -- Direccion PC
    -- Salidas
-      out_pc_reg 			: out  STD_LOGIC_VECTOR (31 downto 0);   -- Valor de pc siguiente
-      out_instruction_reg : out  STD_LOGIC_VECTOR (31 downto 0)  -- Valor de Instruccion
+      out_pc : out  STD_LOGIC_VECTOR (address_size-1 downto 0);   -- Valor de pc + 4
+      out_instruction : out  STD_LOGIC_VECTOR (instruction_size-1 downto 0)  -- Valor de Instruccion en direccion PC
    ); 
 end Phase0_InstructionFetch;
 
 architecture Behavioral of Phase0_InstructionFetch is
 
-   --Modulo de memoria de Instrucciones
+---------------------------------Sumador PC---------------------------------
+   --Modulo sumador pc
+   component pcAdder
+      Generic(
+         size : INTEGER := 32
+      );
+      Port ( 
+         in_pc : in  STD_LOGIC_VECTOR (31 downto 0);
+         out_pc : out  STD_LOGIC_VECTOR (31 downto 0)
+      );
+   end component;
+---------------------------------Sumador PC---------------------------------
+
+---------------------------------Memoria de instrucciones---------------------------------
    component MemInstruction
       Port ( in_pc : in  STD_LOGIC_VECTOR (31 downto 0);
              out_instruction : out  STD_LOGIC_VECTOR (31 downto 0));
    end component; 
-
-   --Modulo sumador pc
-   component pcAdder
-      Port ( in_pc : in  STD_LOGIC_VECTOR (31 downto 0);
-             out_pc : out  STD_LOGIC_VECTOR (31 downto 0));
-   end component;
-
-   -- señales PC
--- Registro contador de programa
-   signal s_pc_reg : STD_LOGIC_VECTOR (31 downto 0); 
--- Resultado de sumar 4 a registro de programa, salida de PCAdder (pc+4)
-   signal s_pc4 : STD_LOGIC_VECTOR (31 downto 0); 
--- Siguiente contador de programa, salida de multiplexor (pc+4 ó pc_salto)
-   signal s_pc_next : STD_LOGIC_VECTOR (31 downto 0); 
-
-   -- señales de instruccion
--- Instruccion en dirección "s_pc_reg", salida de modulo memoria de instrucciones
-   signal s_instruction : STD_LOGIC_VECTOR (31 downto 0); 
+---------------------------------Memoria de instrucciones---------------------------------
 
 begin
---------Contador de Programa---------
 
-   -- Multiplexor para contador de programa
-   p_mux_pc: process(in_pc_salto_ctr, s_pc4, in_pc_salto)
-   begin
-      if in_pc_salto_ctr='0' then
-         s_pc_next <= s_pc4;
-      else
-         s_pc_next <= in_pc_salto;   
-      end if;
-   end process;
-
-   -- Guardar valor de contador de programa
-   p_bi_pc: process(rst, clk)
-   begin
-      if rising_edge(clk) then
-         if rst='0' then
-            s_pc_reg <= (others=>'0');
-         else
-            s_pc_reg <= s_pc_next;
-         end if;
-      end if;
-   end process;
-   
+---------------------------------Sumador PC---------------------------------
    --Modulo sumador pc
    -- Suma 4 al valor actual del contador de programa (s_pc_reg) 
    --    y lo asigna a la señal (s_pc4)
-   i_pcAdder: pcAdder port map( in_pc => s_pc_reg,
-                                out_pc => s_pc4 
-                               );
---------Contador de Programa---------
+   i_pcAdder: pcAdder port map( 
+         in_pc => in_pc,
+         out_pc => out_pc 
+   );
+---------------------------------Sumador PC---------------------------------
 
--------Memoria de instrucciones------
+---------------------------------Memoria de instrucciones---------------------------------
    --Modulo de memoria de Instrucciones
    -- Devuelve la instruccion situada en la direccion solicitada
    --    por el contador de programa, la instruccion devuelta la asigna
    --    a la señal (s_instruction)
-   i_MemInstruction: MemInstruction port map( in_pc => s_pc_reg,
-                                              out_instruction => s_instruction
-                                             );
--------Memoria de instrucciones------
-
-
-
----------Registros de salida---------
-  -- Guardar valores en biestables de salida
-   p_bi_salida: process(rst, clk)
-   begin
-      if clk'event and clk='1' then
-         if rst='0' then
-            out_pc_reg <= (others=>'0');
-            out_instruction_reg <= (others=>'0');
-         else
-            out_pc_reg <= s_pc4;
-            out_instruction_reg <= s_instruction;
-         end if;
-      end if;
-   end process;
----------Registros de salida---------
+   i_MemInstruction: MemInstruction port map( 
+         in_pc => in_pc,
+         out_instruction => out_instruction
+   );
+                                             
+---------------------------------Memoria de instrucciones---------------------------------
 
 end Behavioral;

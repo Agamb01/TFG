@@ -1,3 +1,0 @@
-vhdl work "BrAdder.vhd"
-vhdl work "ALU.vhd"
-vhdl work "Phase2_Execution.vhd"

@@ -2,9 +2,9 @@
 -- Company: 
 -- Engineer:
 --
--- Create Date:   12:08:01 10/22/2014
+-- Create Date:   00:31:32 11/27/2014
 -- Design Name:   
--- Module Name:   C:/TFG/VHDL/Processor/TB2_PCAdder.vhd
+-- Module Name:   D:/TFG/TFG/VHDL/Processor/TB_PCAdder.vhd
 -- Project Name:  Processor
 -- Target Device:  
 -- Tool versions:  
@@ -41,34 +41,39 @@ ARCHITECTURE behavior OF TB_PCAdder IS
  
     COMPONENT PCAdder
     PORT(
-         PC_in : IN  std_logic_vector(31 downto 0);
-         PC_out : OUT  std_logic_vector(31 downto 0)
+         in_pc : IN  std_logic_vector(31 downto 0);
+         out_pc : OUT  std_logic_vector(31 downto 0)
         );
     END COMPONENT;
     
 
    --Inputs
-   signal PC_in : std_logic_vector(31 downto 0) := (others => '0');
+   signal in_pc : std_logic_vector(31 downto 0) := (others => '0');
 
  	--Outputs
-   signal PC_out : std_logic_vector(31 downto 0);
-
-   -- Clock period definitions
+   signal out_pc : std_logic_vector(31 downto 0);
+   
    constant clk_period : time := 10 ns;
  
 BEGIN
  
 	-- Instantiate the Unit Under Test (UUT)
    uut: PCAdder PORT MAP (
-          PC_in => PC_in,
-          PC_out => PC_out
+          in_pc => in_pc,
+          out_pc => out_pc
         );
 
    -- Stimulus process
    stim_proc: process
-   begin		
+   begin			
+      -- hold reset state for 100 ns.
+      wait for 100 ns;	
+
 		wait for clk_period;
-      PC_in <= PC_out;
+      -- insert stimulus here 
+      in_pc <= out_pc;
+
+--      wait;
    end process;
 
 END;

@@ -2,9 +2,9 @@
 -- Company: 
 -- Engineer: 
 -- 
--- Create Date:    12:21:02 11/17/2014 
+-- Create Date:    11:57:41 11/24/2014 
 -- Design Name: 
--- Module Name:    ALU - Behavioral 
+-- Module Name:    register - Behavioral 
 -- Project Name: 
 -- Target Devices: 
 -- Tool versions: 
@@ -29,24 +29,36 @@ use IEEE.STD_LOGIC_1164.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity ALU is
-   Port ( 
-      -- Entradas
-      in_BusA   : in  STD_LOGIC_VECTOR (31 downto 0);
-      in_BusB   : in  STD_LOGIC_VECTOR (31 downto 0);
-      in_op     : in  STD_LOGIC_VECTOR (0 downto 0);
-      
-      --Salidas
-      out_flags : out  STD_LOGIC_VECTOR (0 downto 0);
-      out_busO  : out  STD_LOGIC_VECTOR (31 downto 0)
+entity reg is
+   Generic (
+      size : INTEGER := 32
    );
-end ALU;
+   Port ( 
+      clk, rst : in STD_LOGIC;
+      enable : in STD_LOGIC;
+      in_data : in STD_LOGIC_VECTOR(size-1 downto 0); --size-1?
+      out_data : out  STD_LOGIC_VECTOR (size-1 downto 0)
+   );
+end reg;
 
-architecture Behavioral of ALU is
+architecture Behavioral of reg is
+
+   signal s_reg : STD_LOGIC_VECTOR(size-1 downto 0); --registro 
 
 begin
 
+   out_data <= s_reg;
 
+   process(clk, rst)
+   begin
+      if rising_edge(clk) then
+         if rst='0' then
+            s_reg <= (others => '0');
+         elsif enable='1' then
+            s_reg <= in_data;
+         end if;
+      end if;
+   end process;
 
 end Behavioral;
 

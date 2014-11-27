@@ -34,16 +34,11 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 --TODO: Completar
 
-
-
 entity MemInstruction is
-    Port (
-         -- Entradas
-         in_pc : in  STD_LOGIC_VECTOR (31 downto 0);
-         
-         -- Salidas
-         out_instruction : out  STD_LOGIC_VECTOR (31 downto 0) 
-     );
+   Port (
+      in_pc : in  STD_LOGIC_VECTOR (31 downto 0);
+      out_instruction : out  STD_LOGIC_VECTOR (31 downto 0) 
+   );
 end MemInstruction;
 
 architecture Behavioral of MemInstruction is

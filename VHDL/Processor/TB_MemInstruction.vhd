@@ -2,9 +2,9 @@
 -- Company: 
 -- Engineer:
 --
--- Create Date:   10:35:49 10/23/2014
+-- Create Date:   00:35:43 11/27/2014
 -- Design Name:   
--- Module Name:   C:/TFG/VHDL/Processor/TB_MemInstruction.vhd
+-- Module Name:   D:/TFG/TFG/VHDL/Processor/TB_MemInstruction.vhd
 -- Project Name:  Processor
 -- Target Device:  
 -- Tool versions:  
@@ -41,19 +41,17 @@ ARCHITECTURE behavior OF TB_MemInstruction IS
  
     COMPONENT MemInstruction
     PORT(
-         PC : IN  std_logic_vector(31 downto 0);
-         Instruction : OUT  std_logic_vector(31 downto 0)
+         in_pc : IN  std_logic_vector(31 downto 0);
+         out_instruction : OUT  std_logic_vector(31 downto 0)
         );
     END COMPONENT;
     
 
    --Inputs
-   signal PC : std_logic_vector(31 downto 0) := (others => '0');
+   signal in_pc : std_logic_vector(31 downto 0) := (others => '0');
 
  	--Outputs
-   signal Instruction : std_logic_vector(31 downto 0);
-   -- No clocks detected in port list. Replace clk below with 
-   -- appropriate port name 
+   signal out_instruction : std_logic_vector(31 downto 0);
  
    constant clk_period : time := 10 ns;
  
@@ -61,19 +59,9 @@ BEGIN
  
 	-- Instantiate the Unit Under Test (UUT)
    uut: MemInstruction PORT MAP (
-          PC => PC,
-          Instruction => Instruction
+          in_pc => in_pc,
+          out_instruction => out_instruction
         );
-
-   -- Clock process definitions
---   clk_process :process
---   begin
---		clk <= '0';
---		wait for clk_period/2;
---		clk <= '1';
---		wait for clk_period/2;
---   end process;
- 
 
    -- Stimulus process
    stim_proc: process
@@ -82,9 +70,14 @@ BEGIN
       wait for 100 ns;	
 
       wait for clk_period*10;
-
+      
       -- insert stimulus here 
-
+      in_pc <= (others=>'0');
+      wait for clk_period*10;
+      in_pc <= (others=>'1');
+      wait for clk_period*10;
+      in_pc <= (others=>'0');   
+      
       wait;
    end process;
 

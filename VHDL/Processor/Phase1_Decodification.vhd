@@ -57,7 +57,8 @@ architecture Behavioral of Phase1_Decodification is
 
 -- Modulo banco de registros
    component RegisterBank
-      port ( in_regA : in STD_LOGIC_VECTOR(3 downto 0);
+      port ( clk, rst : in STD_LOGIC;
+             in_regA : in STD_LOGIC_VECTOR(3 downto 0);
              in_regB : in STD_LOGIC_VECTOR(3 downto 0);
              in_regW : in STD_LOGIC_VECTOR(3 downto 0);  
              in_busW : in STD_LOGIC_VECTOR(31 downto 0);
@@ -87,6 +88,8 @@ begin
    s_regB <= in_instruction(3 downto 0);    -- Rm[3-0]
 
    i_RegisterBank: RegisterBank port map (
+          clk => clk,
+          rst => rst,
           in_regA => s_regA,  
           in_regB => s_regB,  
           in_regW => in_regW,  
@@ -115,7 +118,7 @@ begin
       else
          s_integer(15 downto 12) <= in_instruction(19 downto 16);
          s_integer(31 downto 16) <= (others=>in_instruction(19));
-      end if;   
+      end if;           
    end process;
 ---------Entero---------
 

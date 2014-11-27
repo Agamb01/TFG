@@ -1,12 +1,12 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2014-11-20T18:05:18</DateModified>
-  <ModuleName>Phase2_Execution</ModuleName>
+  <DateModified>2014-11-24T10:51:06</DateModified>
+  <ModuleName>PCAdder</ModuleName>
   <SummaryTimeStamp>2014-11-18T11:26:52</SummaryTimeStamp>
   <SavedFilePath>D:/TFG/TFG/VHDL/Processor/iseconfig/Phase1_Decodification.xreport</SavedFilePath>
   <ImplementationReportsDirectory>D:/TFG/TFG/VHDL/Processor\</ImplementationReportsDirectory>
-  <DateInitialized>2014-11-20T18:05:18</DateInitialized>
+  <DateInitialized>2014-11-24T10:51:06</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>
  <body>

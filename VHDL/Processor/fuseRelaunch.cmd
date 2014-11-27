@@ -1,1 +1,1 @@
--intstyle "ise" -incremental -lib "secureip" -o "C:/TFG/VHDL/Processor/TB_PCAdder_isim_beh.exe" -prj "C:/TFG/VHDL/Processor/TB_PCAdder_beh.prj" "work.TB_PCAdder" 
+-intstyle "ise" -incremental -lib "secureip" -o "D:/TFG/TFG/VHDL/Processor/TB_PCAdder_isim_beh.exe" -prj "D:/TFG/TFG/VHDL/Processor/TB_PCAdder_beh.prj" "work.TB_PCAdder" 

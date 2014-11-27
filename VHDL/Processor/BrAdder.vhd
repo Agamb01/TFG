@@ -31,16 +31,21 @@ use IEEE.STD_LOGIC_1164.ALL;
 --http://www.academia.edu/253031/Design_and_Implementation_of_a_Fast_Unsigned_32-bit_Multiplier_Using_VHDL
 
 entity BrAdder is
-    Port ( in_A : in  STD_LOGIC_VECTOR (31 downto 0);
-           in_B : in  STD_LOGIC_VECTOR (31 downto 0);
-           out_res : out  STD_LOGIC_VECTOR (31 downto 0));
+   Generic (
+      op_size : INTEGER := 31
+   );
+   Port ( 
+      in_A : in  STD_LOGIC_VECTOR (op_size downto 0);
+      in_B : in  STD_LOGIC_VECTOR (op_size downto 0);
+      out_res : out  STD_LOGIC_VECTOR (op_size downto 0)
+   );
 end BrAdder;
 
 architecture Behavioral of BrAdder is
 
-   signal Gen: STD_LOGIC_VECTOR (31 downto 0);
-   signal Pro: STD_LOGIC_VECTOR (31 downto 0);
-   signal Carry: STD_LOGIC_VECTOR (32 downto 0);
+   signal Gen: STD_LOGIC_VECTOR (op_size downto 0);
+   signal Pro: STD_LOGIC_VECTOR (op_size downto 0);
+   signal Carry: STD_LOGIC_VECTOR (op_size+1 downto 0);
 
 begin
 
@@ -50,7 +55,7 @@ begin
   Add: process(Gen, Pro, Carry)
   begin
     Carry(0) <= '0';
-    For i in 1 to 32 loop
+    For i in 1 to op_size+1 loop
       Carry(i) <= Gen(i-1) or (Pro(i-1) 
                            and Carry(i-1));
     End loop;  
@@ -58,8 +63,8 @@ begin
 
 process(Pro, Carry)
 begin
-  out_res <= Pro xor Carry(31 downto 0);
+  out_res <= Pro xor Carry(op_size downto 0);
 end process;
---Cout <= Carry(32);
+--Cout <= Carry(op_size+1);
 end Behavioral;
 
