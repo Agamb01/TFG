@@ -1,12 +1,12 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2014-11-27T00:39:38</DateModified>
-  <ModuleName>Phase0_InstructionFetch</ModuleName>
-  <SummaryTimeStamp>2014-11-27T00:25:35</SummaryTimeStamp>
-  <SavedFilePath>D:/TFG/TFG/VHDL/Processor/iseconfig/PCAdder.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>D:/TFG/TFG/VHDL/Processor\</ImplementationReportsDirectory>
-  <DateInitialized>2014-11-27T00:39:38</DateInitialized>
+  <DateModified>2014-11-29T11:58:29</DateModified>
+  <ModuleName>Processor</ModuleName>
+  <SummaryTimeStamp>2014-11-29T11:51:04</SummaryTimeStamp>
+  <SavedFilePath>C:/TFG/TFG/VHDL/Processor/iseconfig/PCAdder.xreport</SavedFilePath>
+  <ImplementationReportsDirectory>C:/TFG/TFG/VHDL/Processor\</ImplementationReportsDirectory>
+  <DateInitialized>2014-11-29T11:45:38</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>
  <body>

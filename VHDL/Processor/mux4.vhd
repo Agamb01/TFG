@@ -2,9 +2,9 @@
 -- Company: 
 -- Engineer: 
 -- 
--- Create Date:    11:57:41 11/24/2014 
+-- Create Date:    17:34:18 11/27/2014 
 -- Design Name: 
--- Module Name:    register - Behavioral 
+-- Module Name:    mux - Behavioral 
 -- Project Name: 
 -- Target Devices: 
 -- Tool versions: 
@@ -29,36 +29,29 @@ use IEEE.STD_LOGIC_1164.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity reg is
+entity mux2 is
    Generic (
       size : INTEGER := 32
    );
    Port ( 
-      clk, rst : in STD_LOGIC;
-      enable : in STD_LOGIC;
-      in_data : in STD_LOGIC_VECTOR(size-1 downto 0); --size-1?
-      out_data : out  STD_LOGIC_VECTOR (size-1 downto 0)
+      in_A : in STD_LOGIC_VECTOR (size-1 downto 0);
+      in_B : in STD_LOGIC_VECTOR (size-1 downto 0);
+      sel : in STD_LOGIC;
+      out_C : out STD_LOGIC_VECTOR (size-1 downto 0)
    );
-end reg;
+end mux2;
 
-architecture Behavioral of reg is
-
-   signal s_reg : STD_LOGIC_VECTOR(size-1 downto 0); --registro 
+architecture Behavioral of mux2 is
 
 begin
 
-   out_data <= s_reg;
-
-   process(clk, rst)
-   begin
-      if rising_edge(clk) then
-         if rst='0' then
-            s_reg <= (others => '0');
-         elsif enable='1' then
-            s_reg <= in_data;
-         end if;
+p_mux: process(in_A, in_B, sel)
+	begin
+		if sel='0' then
+         out_C <= in_A;
+      else
+         out_C <= in_B;
       end if;
    end process;
-
 end Behavioral;
 
