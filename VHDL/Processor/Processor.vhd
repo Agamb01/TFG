@@ -52,16 +52,17 @@ entity Processor is
       test_id_regW         : in STD_LOGIC_VECTOR(3 downto 0);
       test_id_busW         : in STD_LOGIC_VECTOR(31 downto 0);
 
-      -- Test out (ID)
-      test_id_pc_reg      : out STD_LOGIC_VECTOR(31 downto 0);
-      test_id_busA_reg    : out STD_LOGIC_VECTOR(31 downto 0);
-      test_id_busB_reg    : out STD_LOGIC_VECTOR(31 downto 0);
-      test_id_entero_reg  : out STD_LOGIC_VECTOR(31 downto 0);
-      test_id_regW0_reg   : out STD_LOGIC_VECTOR(3 downto 0);
-      test_id_regW1_reg   : out STD_LOGIC_VECTOR(3 downto 0);
-      test_id_WB_ctr_reg  : out STD_LOGIC_VECTOR(11 downto 0);
-      test_id_MEM_ctr_reg : out STD_LOGIC_VECTOR(9 downto 0);
-      test_id_EXE_ctr_reg : out STD_LOGIC_VECTOR(9 downto 0)
+      -- Test in (EXE)
+      test_exe_enable     : in STD_LOGIC;
+
+      -- Test out (EXE)
+      test_exe_PCBr_reg      : out STD_LOGIC_VECTOR(31 downto 0);
+      test_exe_ALU_bus_reg   : out STD_LOGIC_VECTOR(31 downto 0);
+      test_exe_ALU_flags_reg : out STD_LOGIC_VECTOR(0 downto 0);
+      test_exe_busB_reg      : out STD_LOGIC_VECTOR(31 downto 0);
+      test_exe_regW_reg      : out STD_LOGIC_VECTOR(3 downto 0);
+      test_exe_WB_ctr_reg    : out STD_LOGIC_VECTOR(11 downto 0);
+      test_exe_MEM_ctr_reg   : out STD_LOGIC_VECTOR(9 downto 0)
    );
 end Processor;
 
@@ -183,6 +184,55 @@ end component;
    signal s_id_EXE_ctr_enable : STD_LOGIC;
 ---------------------------------Instruction Decode---------------------------------
 
+---------------------------------Execution---------------------------------
+component Phase2_Execution 
+   port (  
+      --Entradas
+      in_PC          : in STD_LOGIC_VECTOR(31 downto 0);
+      in_entero      : in STD_LOGIC_VECTOR(31 downto 0);
+      in_busA        : in STD_LOGIC_VECTOR(31 downto 0);
+      in_busB        : in STD_LOGIC_VECTOR(31 downto 0);
+      in_regW0       : in STD_LOGIC_VECTOR(3 downto 0);
+      in_regW1       : in STD_LOGIC_VECTOR(3 downto 0);
+       
+      --Salidas
+      out_PC_salto   : out STD_LOGIC_VECTOR(31 downto 0);
+      out_ALU_flags   : out STD_LOGIC_VECTOR(0 downto 0);
+      out_ALU_bus     : out STD_LOGIC_VECTOR(31 downto 0);
+      out_regW       : out STD_LOGIC_VECTOR(3 downto 0);
+
+      --Señales de control
+      in_EXE_control : in STD_LOGIC_VECTOR(9 downto 0)
+   );
+end component;
+
+   -- Señal de direccion de salto PC(EXE->IF)
+   signal s_exe_PCBr             : STD_LOGIC_VECTOR(31 downto 0);
+   signal s_exe_PCBr_reg         : STD_LOGIC_VECTOR(31 downto 0);
+   signal s_exe_PCBr_enable      : STD_LOGIC;
+   
+-- Registros de cambio de fase(EXE->MEM)
+   -- Señales de datos(EXE->MEM)
+   signal s_exe_ALU_bus           : STD_LOGIC_VECTOR(31 downto 0);
+   signal s_exe_ALU_bus_reg       : STD_LOGIC_VECTOR(31 downto 0);
+   signal s_exe_ALU_bus_enable    : STD_LOGIC;
+   signal s_exe_ALU_flags        : STD_LOGIC_VECTOR(0 downto 0);
+   signal s_exe_ALU_flags_reg     : STD_LOGIC_VECTOR(0 downto 0);
+   signal s_exe_ALU_flags_enable  : STD_LOGIC;
+   signal s_exe_busB_reg         : STD_LOGIC_VECTOR(31 downto 0);
+   signal s_exe_busB_enable      : STD_LOGIC;
+   -- Reñales de registro destino(EXE->MEM)
+   signal s_exe_regW             : STD_LOGIC_VECTOR(3 downto 0);
+   signal s_exe_regW_reg         : STD_LOGIC_VECTOR(3 downto 0);
+   signal s_exe_regW_enable      : STD_LOGIC;
+   -- Señales de control (EXE->MEM)
+   signal s_exe_WB_ctr_reg       : STD_LOGIC_VECTOR(11 downto 0);
+   signal s_exe_WB_ctr_enable    : STD_LOGIC;
+   signal s_exe_MEM_ctr_reg      : STD_LOGIC_VECTOR(9 downto 0);
+   signal s_exe_MEM_ctr_enable   : STD_LOGIC;
+---------------------------------Execution---------------------------------
+
+
 begin
 
 --TESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTEST
@@ -193,16 +243,6 @@ s_pc_enable       <= test_if_enable;
 s_if_inst_enable  <= test_if_enable;
 s_if_pc_enable    <= test_if_enable;
 
-test_id_pc_reg       <= s_id_pc_reg;
-test_id_busA_reg     <= s_id_busA_reg; 
-test_id_busB_reg     <= s_id_busB_reg;
-test_id_entero_reg   <= s_id_entero_reg; 
-test_id_regW0_reg    <= s_id_regW0_reg;
-test_id_regW1_reg    <= s_id_regW1_reg;
-test_id_WB_ctr_reg   <= s_id_WB_ctr_reg; 
-test_id_MEM_ctr_reg  <= s_id_MEM_ctr_reg; 
-test_id_EXE_ctr_reg  <= s_id_EXE_ctr_reg; 
-
 s_id_pc_enable       <= test_id_enable;
 s_id_busA_enable     <= test_id_enable; 
 s_id_busB_enable     <= test_id_enable;
@@ -211,7 +251,23 @@ s_id_regW0_enable    <= test_id_enable;
 s_id_regW1_enable    <= test_id_enable;
 s_id_WB_ctr_enable   <= test_id_enable; 
 s_id_MEM_ctr_enable  <= test_id_enable; 
-s_id_EXE_ctr_enable  <= test_id_enable; p
+s_id_EXE_ctr_enable  <= test_id_enable;
+
+s_exe_busB_enable      <= test_exe_enable;
+s_exe_WB_ctr_enable    <= test_exe_enable; 
+s_exe_MEM_ctr_enable   <= test_exe_enable; 
+s_exe_PCBr_enable      <= test_exe_enable;
+s_exe_ALU_flags_enable <= test_exe_enable;
+s_exe_ALU_bus_enable   <= test_exe_enable;
+s_exe_regW_enable      <= test_exe_enable;
+
+test_exe_busB_reg      <= s_exe_busB_reg;
+test_exe_WB_ctr_reg    <= s_exe_WB_ctr_reg; 
+test_exe_MEM_ctr_reg   <= s_exe_MEM_ctr_reg; 
+test_exe_PCBr_reg      <= s_exe_PCBr_reg;
+test_exe_ALU_flags_reg <= s_exe_ALU_flags_reg;
+test_exe_ALU_bus_reg   <= s_exe_ALU_bus_reg;
+test_exe_regW_reg      <= s_exe_regW_reg;
 
 --TESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTEST
 
@@ -391,6 +447,104 @@ i_id_regW1_reg0: reg_async
    );
 
 ---------------------------------Instruction Decode---------------------------------
+
+---------------------------------Execution---------------------------------
+i_exe_busB_reg0: reg_async
+   port map( 
+      clk => clk,
+      rst => rst,
+      enable => s_exe_busB_enable,
+      in_data => s_id_busB_reg,
+      out_data => s_exe_busB_reg
+   );
+   
+i_exe_WB_ctr_reg0: reg_async 
+   generic map(
+      size => 12
+   )
+   port map( 
+      clk => clk,
+      rst => rst,
+      enable => s_exe_WB_ctr_enable,
+      in_data => s_id_WB_ctr_reg,
+      out_data => s_exe_WB_ctr_reg
+   );
+   
+i_exe_MEM_ctr_reg0: reg_async 
+   generic map(
+      size => 10
+   )
+   port map( 
+      clk => clk,
+      rst => rst,
+      enable => s_exe_MEM_ctr_enable,
+      in_data => s_id_MEM_ctr_reg,
+      out_data => s_exe_MEM_ctr_reg
+   );
+
+i_phase2: Phase2_Execution
+   port map (  
+      --Entradas
+      in_PC      => s_id_pc_reg,
+      in_entero  => s_id_entero_reg,
+      in_busA    => s_id_busA_reg,
+      in_busB    => s_id_busB_reg,
+      in_regW0   => s_id_regW0_reg,
+      in_regW1   => s_id_regW1_reg,
+
+      --Salidas
+      out_PC_salto   => s_exe_PCBr,
+      out_ALU_flags  => s_exe_ALU_flags,
+      out_ALU_bus    => s_exe_ALU_bus,
+      out_regW       => s_exe_regW,
+
+      --Señales de control
+      in_EXE_control  => s_id_EXE_ctr_reg
+   );
+
+i_exe_PCBr_reg0: reg_async 
+   port map( 
+      clk => clk,
+      rst => rst,
+      enable => s_exe_PCBr_enable,
+      in_data => s_exe_PCBr,
+      out_data => s_exe_PCBr_reg
+   );
+   
+i_exe_ALU_flags_reg0: reg_async 
+   generic map(
+      size => 1
+   )
+   port map( 
+      clk => clk,
+      rst => rst,
+      enable => s_exe_ALU_flags_enable,
+      in_data => s_exe_ALU_flags,
+      out_data => s_exe_ALU_flags_reg
+   );
+   
+i_exe_ALU_bus_reg0: reg_async 
+   port map( 
+      clk => clk,
+      rst => rst,
+      enable => s_exe_ALU_bus_enable,
+      in_data => s_exe_ALU_bus,
+      out_data => s_exe_ALU_bus_reg
+   );     
+   
+i_exe_regW_reg0: reg_async 
+   generic map(
+      size => 4
+   )
+   port map( 
+      clk => clk,
+      rst => rst,
+      enable => s_exe_regW_enable,
+      in_data => s_exe_regW,
+      out_data => s_exe_regW_reg
+   );   
+
+---------------------------------Execution---------------------------------
 
 end Behavioral;
 

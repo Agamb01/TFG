@@ -9,6 +9,7 @@
          <ClosedNodesVersion>2</ClosedNodesVersion>
          <ClosedNode>/Processor - Behavioral C:|TFG|TFG|VHDL|Processor|Processor.vhd/i_phase0 - Phase0_InstructionFetch - Behavioral</ClosedNode>
          <ClosedNode>/Processor - Behavioral C:|TFG|TFG|VHDL|Processor|Processor.vhd/i_phase1 - Phase1_InstructionDecode - Behavioral</ClosedNode>
+         <ClosedNode>/Processor - Behavioral C:|TFG|TFG|VHDL|Processor|Processor.vhd/i_phase2 - Phase2_Execution - Behavioral</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
          <SelectedItem>Processor - Behavioral (C:/TFG/TFG/VHDL/Processor/Processor.vhd)</SelectedItem>
@@ -64,13 +65,13 @@
          <ClosedNode>User Constraints</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem></SelectedItem>
+         <SelectedItem>View RTL Schematic</SelectedItem>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000119000000010000000100000000000000000000000064ffffffff000000810000000000000001000001190000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem></CurrentItem>
+      <CurrentItem>View RTL Schematic</CurrentItem>
    </ItemView>
    <SourceProcessView>000000ff00000000000000020000010e000000a101000000050100000002</SourceProcessView>
    <CurrentView>Implementation</CurrentView>
