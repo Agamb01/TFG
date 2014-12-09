@@ -109,8 +109,8 @@ begin
 -------------------------------Control Principal-----------------------------
 
 -------------------------------Banco de registros-----------------------------
-   s_regA <= in_instruction(19 downto 16);  -- Rn[19-16]
-   s_regB <= in_instruction(3 downto 0);    -- Rm[3-0]
+   s_regA <= in_instruction(19 downto 16);  -- Rn=instruccion[19-16]
+   s_regB <= in_instruction(3 downto 0);    -- Rm=instruccion[3-0]
 
    i_RegisterBank: RegisterBank port map (
           clk => clk,

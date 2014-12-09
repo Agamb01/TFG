@@ -39,7 +39,7 @@ ARCHITECTURE behavior OF TB_reg IS
  
     -- Component Declaration for the Unit Under Test (UUT)
  
-    COMPONENT reg
+    COMPONENT reg_sync
     PORT(
          clk : IN  std_logic;
          rst : IN  std_logic;
@@ -65,7 +65,7 @@ ARCHITECTURE behavior OF TB_reg IS
 BEGIN
  
 	-- Instantiate the Unit Under Test (UUT)
-   uut: reg PORT MAP (
+   uut: reg_sync PORT MAP (
           clk => clk,
           rst => rst,
           enable => enable,

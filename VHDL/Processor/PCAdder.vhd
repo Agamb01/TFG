@@ -1,6 +1,6 @@
 ----------------------------------------------------------------------------------
--- Company: Universidad Complutense de Madrid
--- Engineer: Andres Gamboa Melendez
+-- Company: 
+-- Engineer: 
 -- 
 -- Create Date: 11:13:31 10/17/2014 
 -- Design Name: Modulo Sumador de contador de programa
