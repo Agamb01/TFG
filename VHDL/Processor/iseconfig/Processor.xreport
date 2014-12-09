@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2014-12-09T18:37:11</DateModified>
+  <DateModified>2014-12-09T19:32:34</DateModified>
   <ModuleName>ExtensioSigno</ModuleName>
-  <SummaryTimeStamp>2014-12-09T17:28:07</SummaryTimeStamp>
+  <SummaryTimeStamp>2014-12-09T19:06:35</SummaryTimeStamp>
   <SavedFilePath>C:/TFG/TFG/VHDL/Processor/iseconfig/Processor.xreport</SavedFilePath>
   <ImplementationReportsDirectory>C:/TFG/TFG/VHDL/Processor\</ImplementationReportsDirectory>
   <DateInitialized>2014-12-09T14:16:27</DateInitialized>

@@ -1,14 +1,16 @@
 ----------------------------------------------------------------------------------
 -- Company: 
--- Engineer: 
+-- Engineer: Andrés Gamboa Meléndez 
 -- 
--- Create Date:    17:50:36 12/01/2014 
+-- Create Date:    11:27:36 09/12/2014 
 -- Design Name: 
 -- Module Name:    ExtensioSigno - Behavioral 
 -- Project Name: 
 -- Target Devices: 
 -- Tool versions: 
--- Description: 
+-- Description: Este módulo analiza la instruccion de entrada y obtiene un número entero.
+--              Dependiendo del tipo de instrucción(operación, load, store o salto) utiliza
+--              utiliza diferentes bits de la instrucción.
 --
 -- Dependencies: 
 --
@@ -38,29 +40,28 @@ end ExtensioSigno;
 
 architecture Behavioral of ExtensioSigno is
 
-   signal s_ctr_move : STD_LOGIC; -- Indica si es una operación MOVE
-
    signal entero_ALU12  : STD_LOGIC_VECTOR(31 downto 0);
    signal entero_ALU16  : STD_LOGIC_VECTOR(31 downto 0);
    signal entero_LDST   : STD_LOGIC_VECTOR(31 downto 0);
    signal entero_BR     : STD_LOGIC_VECTOR(31 downto 0);
    signal entero_BRCond : STD_LOGIC_VECTOR(31 downto 0);
 
-   signal inst_ALU12  : STD_LOGIC;
-   signal inst_ALU16  : STD_LOGIC;
-   signal inst_LDST   : STD_LOGIC; 
-   signal inst_BR     : STD_LOGIC;
-   signal inst_BRCond : STD_LOGIC;
+   -- Estas señales indican si se ha detectado que la instruccion es de cierto tipo.
+   signal inst_ALU12  : STD_LOGIC;  -- Operación con inmediato de 12 bits
+   signal inst_ALU16  : STD_LOGIC;  -- Operación con inmediato de 16 bits
+   signal inst_LDST   : STD_LOGIC;  -- Load o store
+   signal inst_BR     : STD_LOGIC;  -- Salto incondicional
+   signal inst_BRCond : STD_LOGIC;  -- Salto condicional
 
 begin
 
----------Entero---------                                    --TODO: Revisar
+--Entero ALU (Non-Immediate)
+-- En esta implementación no se usa entero para operaciones sin inmediato
+
 
 --Entero ALU (Immediate)
 --Intruccion: [31:27,15]= "11110,0"
 -- ALU 12bits: [25:24,22] = "10,0" Entero: [26,14:12,7:0]
--- ALU 16bits: [25:24,22] = "10,1" Entero: [19:16,26,14:12,7:0]
-
    p_ALU12: process(in_inst)
    begin
       entero_ALU12(31 downto 12) <= (others=>in_inst(26)); --Extension de signo
@@ -78,6 +79,7 @@ begin
 
    end process;
 
+-- ALU 16bits: [25:24,22] = "10,1" Entero: [19:16,26,14:12,7:0]
    p_ALU16: process(in_inst)
    begin
       entero_ALU16(31 downto 16) <= (others=>in_inst(19)); --Extension de signo
@@ -95,9 +97,6 @@ begin
       end if;
       
    end process;
-
---Entero ALU (Non-Immediate)
--- En esta implementación no se usa entero
 
 --Entero LOAD/STORE 12bits
 --Intruccion: [31:25]= "1111100"
@@ -165,35 +164,19 @@ begin
 
    end process;
 
-
-
---Entero ALU (Immediate)
---Intruccion: [31:27,15]= "11110,0"
--- ALU 12bits: [25:24,22] = "10,0" Entero: [26,14:12,7:0]
--- ALU 16bits: [25:24,22] = "10,1" Entero: [19:16,26,14:12,7:0]
-
---Entero LOAD/STORE 12bits
---Intruccion: [31:25]= "1111100"
-
---Entero BRANCH 
---Intruccion: [31:27]= "11110" [15]="1" [12]="1"
-
---Entero CONDITIONAL BRANCH
---Intruccion: [31:27]= "11110" [15]="1" [12]="0"
-                  
--- Seleccionar entero segun instruccion
+-- Selecciona entero segun tipo de instruccion detectada
    p_select: process(in_inst, inst_ALU12, entero_ALU12, inst_ALU16, entero_ALU16, 
                         inst_LDST, entero_LDST, inst_BR, entero_BR, inst_BRCond, entero_BRCond)
    begin
-      if inst_ALU12='1' then
+      if inst_ALU12='1' then           -- ALU 12bits (Immediate)
          out_entero <= entero_ALU12;
-      elsif inst_ALU16='1' then
+      elsif inst_ALU16='1' then        -- ALU 16 bits
          out_entero <= entero_ALU16;
-      elsif inst_LDST='1' then
+      elsif inst_LDST='1' then         -- LOAD/STORE
          out_entero <= entero_LDST;
-      elsif inst_BR='1' then
+      elsif inst_BR='1' then           -- Salto incondicional
          out_entero <= entero_BR;
-      elsif inst_BRCond='1' then
+      elsif inst_BRCond='1' then       -- Salto condicional
          out_entero <= entero_BRCond;
       else
          out_entero <= (others=>'0');
