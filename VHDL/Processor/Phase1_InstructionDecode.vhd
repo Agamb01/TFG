@@ -33,11 +33,9 @@ entity Phase1_InstructionDecode is
    Port ( clk, rst : in STD_LOGIC;  
          
    -- Entradas (IF->ID)
---      in_pc            : in STD_LOGIC_VECTOR(31 downto 0);  -- Entrada de contador de programa
-      in_instruction   : in STD_LOGIC_VECTOR(31 downto 0);  -- Instruccion actual
+      in_inst   : in STD_LOGIC_VECTOR(31 downto 0);  -- Instruccion actual
 
    -- Salidas (ID->EXE)
---      out_pc       : out STD_LOGIC_VECTOR(31 downto 0); -- Salida de contador de programa
       out_busA     : out STD_LOGIC_VECTOR(31 downto 0); -- Datos de registro A
       out_busB     : out STD_LOGIC_VECTOR(31 downto 0); -- Datos de registro B
       out_regW0    : out STD_LOGIC_VECTOR(3 downto 0);  -- Registro destino 0 (bits 15-12)
@@ -61,7 +59,7 @@ architecture Behavioral of Phase1_InstructionDecode is
 -------------------------------Control Principal-----------------------------
 component ControlPrincipal
    Port ( 
-      in_instruction : in  STD_LOGIC_VECTOR(31 downto 0);
+      in_inst : in  STD_LOGIC_VECTOR(31 downto 0);
       out_WB_control : out STD_LOGIC_VECTOR(11 downto 0);
       out_MEM_control : out STD_LOGIC_VECTOR(9 downto 0);
       out_EXE_control : out STD_LOGIC_VECTOR(9 downto 0)
@@ -91,7 +89,7 @@ end component;
 -------------------------------Extension de signo-----------------------------
 component ExtensioSigno
    Port ( 
-      in_instruction : in  STD_LOGIC_VECTOR (31 downto 0);
+      in_inst : in  STD_LOGIC_VECTOR (31 downto 0);
       out_entero : out STD_LOGIC_VECTOR(31 downto 0)
    );
 end component;
@@ -101,7 +99,7 @@ begin
 
 -------------------------------Control Principal-----------------------------
    i_ControlPrincipal: ControlPrincipal port map( 
-      in_instruction => in_instruction,
+      in_inst => in_inst,
       out_WB_control => out_WB_control,
       out_MEM_control => out_MEM_control,
       out_EXE_control => out_EXE_control
@@ -109,8 +107,8 @@ begin
 -------------------------------Control Principal-----------------------------
 
 -------------------------------Banco de registros-----------------------------
-   s_regA <= in_instruction(19 downto 16);  -- Rn=instruccion[19-16]
-   s_regB <= in_instruction(3 downto 0);    -- Rm=instruccion[3-0]
+   s_regA <= in_inst(19 downto 16);  -- Rn=instruccion[19-16]
+   s_regB <= in_inst(3 downto 0);    -- Rm=instruccion[3-0]
 
    i_RegisterBank: RegisterBank port map (
           clk => clk,
@@ -125,13 +123,13 @@ begin
          );
 
  -- Registros destino
-   out_regW0 <= in_instruction(11 downto 8); -- Rd[11-8]
-   out_regW1 <= in_instruction(15 downto 12); -- Rt[15-12]
+   out_regW0 <= in_inst(11 downto 8); -- Rd[11-8]
+   out_regW1 <= in_inst(15 downto 12); -- Rt[15-12]
 -------------------------------Banco de registros-----------------------------
 
 -------------------------------Extension de signo-----------------------------
    i_ExtensionSigno: ExtensioSigno port map ( 
-      in_instruction => in_instruction,
+      in_inst => in_inst,
       out_entero => out_entero 
    );
 -------------------------------Extension de signo-----------------------------

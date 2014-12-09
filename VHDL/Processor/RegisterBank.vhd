@@ -50,7 +50,7 @@ architecture Behavioral of RegisterBank is
 
 begin
 
--- proceso lectura (necesario proceso?)
+-- proceso lectura
    p_lectura: process(regs, in_regA, in_regB)
    begin
       out_busA <= regs(to_integer(unsigned(in_regA)));

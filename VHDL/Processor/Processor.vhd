@@ -35,8 +35,6 @@ use IEEE.STD_LOGIC_1164.ALL;
 ------Registro: i_<phase>_<data>_reg<num>
 
 
-
-
 entity Processor is
    Port ( 
       clk, rst : in STD_LOGIC; -- Clock y reset estandar
@@ -92,16 +90,16 @@ component mux2 is
    );
 end component;
 
----------------------------------Instruction Fetch---------------------------------
+---------------------------------inst Fetch---------------------------------
 component Phase0_InstructionFetch is
    Generic (
       address_size : INTEGER := 32;
-      instruction_size : INTEGER := 32
+      inst_size : INTEGER := 32
    );
    Port (
       in_pc : in STD_LOGIC_VECTOR (address_size-1 downto 0);               -- Direccion de salto
       out_pc : out STD_LOGIC_VECTOR (address_size-1 downto 0);             -- Valor de pc siguiente
-      out_instruction : out STD_LOGIC_VECTOR (instruction_size-1 downto 0) -- Valor de Instruccion
+      out_inst : out STD_LOGIC_VECTOR (inst_size-1 downto 0) -- Valor de Instruccion
    ); 
 end component;
 
@@ -121,17 +119,15 @@ signal s_if_pc_reg : STD_LOGIC_VECTOR(31 downto 0);   -- Registro PC (IF->ID)
 signal s_if_pc_enable : STD_LOGIC;                    -- Habilitar registro PC (IF->ID)
 signal s_if_inst_reg : STD_LOGIC_VECTOR(31 downto 0); -- Resgistro instruccion (IF->ID)
 signal s_if_inst_enable : STD_LOGIC;                  -- Habilitar resgistro instruccion (IF->ID)
----------------------------------Instruction Fetch---------------------------------
+---------------------------------inst Fetch---------------------------------
 
----------------------------------Instruction Decode---------------------------------
+---------------------------------inst Decode---------------------------------
 component Phase1_InstructionDecode
    Port ( clk, rst : in STD_LOGIC;
    -- Entradas (IF->ID)
---      in_pc            : in STD_LOGIC_VECTOR(31 downto 0);  -- Entrada de contador de programa
-      in_instruction   : in STD_LOGIC_VECTOR(31 downto 0);  -- Instruccion actual
+      in_inst   : in STD_LOGIC_VECTOR(31 downto 0);  -- Instruccion actual
 
    -- Salidas (ID->EXE)
---      out_pc       : out STD_LOGIC_VECTOR(31 downto 0); -- Salida de contador de programa
       out_busA     : out STD_LOGIC_VECTOR(31 downto 0); -- Datos de registro A
       out_busB     : out STD_LOGIC_VECTOR(31 downto 0); -- Datos de registro B
       out_regW0    : out STD_LOGIC_VECTOR(3 downto 0);  -- Registro destino 0 (bits 15-12)
@@ -182,7 +178,7 @@ end component;
    signal s_id_EXE_ctr        : STD_LOGIC_VECTOR(9 downto 0);
    signal s_id_EXE_ctr_reg    : STD_LOGIC_VECTOR(9 downto 0);
    signal s_id_EXE_ctr_enable : STD_LOGIC;
----------------------------------Instruction Decode---------------------------------
+---------------------------------inst Decode---------------------------------
 
 ---------------------------------Execution---------------------------------
 component Phase2_Execution 
@@ -292,16 +288,16 @@ i_pc_reg0: reg_async
    );
 ---------------------------------PC---------------------------------
 
----------------------------------Instruction Fetch---------------------------------
+---------------------------------inst Fetch---------------------------------
 i_phase0: Phase0_InstructionFetch 
    generic map(
       address_size => 32,
-      instruction_size => 32   
+      inst_size => 32   
    ) 
    port map(
       in_pc => s_pc_reg,
       out_pc => s_pc4,
-      out_instruction => s_inst
+      out_inst => s_inst
    );
    
 i_if_pc_reg0: reg_async 
@@ -321,16 +317,16 @@ i_if_inst_reg0: reg_async
       in_data => s_inst,
       out_data => s_if_inst_reg
    );
----------------------------------Instruction Fetch---------------------------------
+---------------------------------inst Fetch---------------------------------
 
----------------------------------Instruction Decode---------------------------------
+---------------------------------inst Decode---------------------------------
 i_phase1: Phase1_InstructionDecode 
    port map ( 
       clk => clk, 
       rst => rst,  
          
    -- Entradas (IF->ID)
-      in_instruction => s_if_inst_reg,
+      in_inst => s_if_inst_reg,
 
    -- Salidas (ID->EXE)
       out_busA => s_id_busA,
@@ -446,7 +442,7 @@ i_id_regW1_reg0: reg_async
       out_data => s_id_regW1_reg
    );
 
----------------------------------Instruction Decode---------------------------------
+---------------------------------inst Decode---------------------------------
 
 ---------------------------------Execution---------------------------------
 i_exe_busB_reg0: reg_async
