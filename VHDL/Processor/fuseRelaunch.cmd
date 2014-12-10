@@ -1,1 +1,1 @@
--intstyle "ise" -incremental -lib "secureip" -o "C:/TFG/TFG/VHDL/Processor/TB_ExtensionSigno_isim_beh.exe" -prj "C:/TFG/TFG/VHDL/Processor/TB_ExtensionSigno_beh.prj" "work.TB_ExtensionSigno" 
+-intstyle "ise" -incremental -lib "secureip" -o "C:/TFG/TFG/VHDL/Processor/TB_RegisterBank_isim_beh.exe" -prj "C:/TFG/TFG/VHDL/Processor/TB_RegisterBank_beh.prj" "work.TB_RegisterBank" 
