@@ -29,7 +29,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity DataMemory is
+entity MemData is
     Port ( clk, rst     : in  STD_LOGIC;
            in_address   : in  STD_LOGIC_VECTOR (31 downto 0);
            in_wrdata    : in  STD_LOGIC_VECTOR (31 downto 0);
@@ -38,9 +38,9 @@ entity DataMemory is
            out_rddata   : out  STD_LOGIC_VECTOR (31 downto 0);
            out_data_ready : out STD_LOGIC
     );
-end DataMemory;
+end MemData;
 
-architecture Behavioral of DataMemory is
+architecture Behavioral of MemData is
 
    type memory_array is array (0 to 15) of std_logic_vector(31 downto 0);
 

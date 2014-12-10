@@ -29,14 +29,14 @@ use IEEE.STD_LOGIC_1164.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity phase3_memory is
+entity Phase3_Memory is
     Port ( clk, rst   : in  STD_LOGIC;
            in_ALUbus  : in  STD_LOGIC_VECTOR (31 downto 0);
            in_busB    : in  STD_LOGIC_VECTOR (31 downto 0);
            out_MEMbus : out  STD_LOGIC_VECTOR (31 downto 0));
-end phase3_memory;
+end Phase3_Memory;
 
-architecture Behavioral of phase3_memory is
+architecture Behavioral of phase3_Memory is
 
 begin
 

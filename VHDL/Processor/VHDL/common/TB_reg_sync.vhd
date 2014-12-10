@@ -32,10 +32,10 @@ USE ieee.std_logic_1164.ALL;
 -- arithmetic functions with Signed or Unsigned values
 --USE ieee.numeric_std.ALL;
  
-ENTITY TB_reg IS
-END TB_reg;
+ENTITY TB_reg_sync IS
+END TB_reg_sync;
  
-ARCHITECTURE behavior OF TB_reg IS 
+ARCHITECTURE behavior OF TB_reg_sync IS 
  
     -- Component Declaration for the Unit Under Test (UUT)
  

@@ -8,15 +8,24 @@
       <ClosedNodes>
          <ClosedNodesVersion>2</ClosedNodesVersion>
          <ClosedNode>/Processor - Behavioral C:|TFG|TFG|VHDL|Processor|Processor.vhd/i_phase0 - Phase0_InstructionFetch - Behavioral</ClosedNode>
+         <ClosedNode>/Processor - Behavioral C:|TFG|TFG|VHDL|Processor|VHDL|Processor.vhd/i_phase0 - Phase0_InstructionFetch - Behavioral</ClosedNode>
+         <ClosedNode>/Processor - Behavioral C:|TFG|TFG|VHDL|Processor|VHDL|Processor.vhd/i_phase1 - Phase1_InstructionDecode - Behavioral</ClosedNode>
+         <ClosedNode>/Processor - Behavioral C:|TFG|TFG|VHDL|Processor|VHDL|Processor.vhd/i_phase2 - Phase2_Execution - Behavioral</ClosedNode>
+         <ClosedNode>/TB_ExtensionSigno - behavior C:|TFG|TFG|VHDL|Processor|VHDL|Testbench|TB_ExtensionSigno.vhd</ClosedNode>
+         <ClosedNode>/TB_MemInstruction - behavior C:|TFG|TFG|VHDL|Processor|VHDL|Testbench|TB_MemInstruction.vhd</ClosedNode>
+         <ClosedNode>/TB_PCAdder - behavior C:|TFG|TFG|VHDL|Processor|VHDL|Testbench|TB_PCAdder.vhd</ClosedNode>
+         <ClosedNode>/TB_RegisterBank - behavior C:|TFG|TFG|VHDL|Processor|VHDL|Testbench|TB_RegisterBank.vhd</ClosedNode>
+         <ClosedNode>/TB_mux2 - behavior C:|TFG|TFG|VHDL|Processor|VHDL|Testbench|TB_mux2.vhd</ClosedNode>
+         <ClosedNode>/TB_reg - behavior C:|TFG|TFG|VHDL|Processor|VHDL|Testbench|TB_reg.vhd</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>i_RegisterBank - RegisterBank - Behavioral (C:/TFG/TFG/VHDL/Processor/RegisterBank.vhd)</SelectedItem>
+         <SelectedItem>i_exe_ALU_bus_reg0 - reg_async - Behavioral (C:/TFG/TFG/VHDL/Processor/VHDL/common/reg_async.vhd)</SelectedItem>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000010000000000000000000000000000000002020000000100000001000000640000020a000000020000000000000000000000000200000064ffffffff0000008100000003000000020000020a0000000100000003000000000000000100000003</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
-      <CurrentItem>i_RegisterBank - RegisterBank - Behavioral (C:/TFG/TFG/VHDL/Processor/RegisterBank.vhd)</CurrentItem>
+      <CurrentItem>i_exe_ALU_bus_reg0 - reg_async - Behavioral (C:/TFG/TFG/VHDL/Processor/VHDL/common/reg_async.vhd)</CurrentItem>
    </ItemView>
    <ItemView engineview="SynthesisOnly" sourcetype="" guiview="Process" >
       <ClosedNodes>
@@ -72,29 +81,36 @@
       <CurrentItem></CurrentItem>
    </ItemView>
    <SourceProcessView>000000ff00000000000000020000010e000000a101000000050100000002</SourceProcessView>
-   <CurrentView>Behavioral Simulation</CurrentView>
+   <CurrentView>Implementation</CurrentView>
    <ItemView engineview="BehavioralSim" guiview="Source" compilemode="AutoCompile" >
       <ClosedNodes>
          <ClosedNodesVersion>2</ClosedNodesVersion>
          <ClosedNode>/Processor - Behavioral C:|TFG|TFG|VHDL|Processor|Processor.vhd</ClosedNode>
          <ClosedNode>/Processor - Behavioral C:|TFG|TFG|VHDL|Processor|Processor.vhd/i_phase0 - Phase0_InstructionFetch - Behavioral</ClosedNode>
          <ClosedNode>/Processor - Behavioral C:|TFG|TFG|VHDL|Processor|Processor.vhd/i_phase2 - Phase2_Execution - Behavioral</ClosedNode>
+         <ClosedNode>/Processor - Behavioral C:|TFG|TFG|VHDL|Processor|VHDL|Processor.vhd</ClosedNode>
          <ClosedNode>/TB_ExtensionSigno - behavior C:|TFG|TFG|VHDL|Processor|TB_ExtensionSigno.vhd</ClosedNode>
+         <ClosedNode>/TB_ExtensionSigno - behavior C:|TFG|TFG|VHDL|Processor|VHDL|Testbench|TB_ExtensionSigno.vhd</ClosedNode>
          <ClosedNode>/TB_MemInstruction - behavior C:|TFG|TFG|VHDL|Processor|TB_MemInstruction.vhd</ClosedNode>
+         <ClosedNode>/TB_MemInstruction - behavior C:|TFG|TFG|VHDL|Processor|VHDL|Testbench|TB_MemInstruction.vhd</ClosedNode>
          <ClosedNode>/TB_MemInstruction - behavior C:|TFG|VHDL|Processor|TB_MemInstruction.vhd</ClosedNode>
          <ClosedNode>/TB_PCAdder - behavior C:|TFG|TFG|VHDL|Processor|TB_PCAdder.vhd</ClosedNode>
+         <ClosedNode>/TB_PCAdder - behavior C:|TFG|TFG|VHDL|Processor|VHDL|Testbench|TB_PCAdder.vhd</ClosedNode>
          <ClosedNode>/TB_RegisterBank - behavior C:|TFG|TFG|VHDL|Processor|TB_RegisterBank.vhd</ClosedNode>
+         <ClosedNode>/TB_RegisterBank - behavior C:|TFG|TFG|VHDL|Processor|VHDL|Testbench|TB_RegisterBank.vhd</ClosedNode>
          <ClosedNode>/TB_mux2 - behavior C:|TFG|TFG|VHDL|Processor|TB_mux2.vhd</ClosedNode>
+         <ClosedNode>/TB_mux2 - behavior C:|TFG|TFG|VHDL|Processor|VHDL|Testbench|TB_mux2.vhd</ClosedNode>
          <ClosedNode>/TB_reg - behavior C:|TFG|TFG|VHDL|Processor|TB_reg.vhd</ClosedNode>
+         <ClosedNode>/TB_reg - behavior C:|TFG|TFG|VHDL|Processor|VHDL|Testbench|TB_reg.vhd</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>TB_RegisterBank - behavior (C:/TFG/TFG/VHDL/Processor/TB_RegisterBank.vhd)</SelectedItem>
+         <SelectedItem>Unassigned User Library Modules</SelectedItem>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000010000000000000000000000000000000002020000000100000001000000640000016f000000020000000000000000000000000200000064ffffffff0000008100000003000000020000016f0000000100000003000000000000000100000003</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
-      <CurrentItem>TB_RegisterBank - behavior (C:/TFG/TFG/VHDL/Processor/TB_RegisterBank.vhd)</CurrentItem>
+      <CurrentItem>Unassigned User Library Modules</CurrentItem>
    </ItemView>
    <ItemView engineview="BehavioralSim" sourcetype="" guiview="Process" >
       <ClosedNodes>
@@ -102,13 +118,13 @@
          <ClosedNode>Design Utilities/Compile HDL Simulation Libraries</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem></SelectedItem>
+         <SelectedItem/>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000010000000000000000000000000000000000000000000000012a000000010000000100000000000000000000000064ffffffff0000008100000000000000010000012a0000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem></CurrentItem>
+      <CurrentItem/>
    </ItemView>
    <ItemView engineview="BehavioralSim" sourcetype="DESUT_VHDL_ARCHITECTURE" guiview="Process" >
       <ClosedNodes>
