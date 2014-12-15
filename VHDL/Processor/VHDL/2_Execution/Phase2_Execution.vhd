@@ -57,10 +57,10 @@ architecture Behavioral of Phase2_Execution is
          size : INTEGER := 32
       );
       Port ( 
-         in_A : in STD_LOGIC_VECTOR (size-1 downto 0);
-         in_B : in STD_LOGIC_VECTOR (size-1 downto 0);
+         in_0 : in STD_LOGIC_VECTOR (size-1 downto 0);
+         in_1 : in STD_LOGIC_VECTOR (size-1 downto 0);
          sel : in STD_LOGIC;
-         out_C : out STD_LOGIC_VECTOR (size-1 downto 0)
+         out_0 : out STD_LOGIC_VECTOR (size-1 downto 0)
       );
    end component;
    
@@ -125,10 +125,10 @@ i_BrAdder: BrAdder
    s_ctr_mux_ALUB <= in_EXE_control(0);
 i_mux_ALU_busB: mux2
    port map( 
-      in_A  => in_busB,
-      in_B  => in_entero,
+      in_0  => in_busB,
+      in_1  => in_entero,
       sel   => s_ctr_mux_ALUB,
-      out_C => s_ALU_busB
+      out_0 => s_ALU_busB
    );
    
    -- ALU operation
@@ -153,10 +153,10 @@ i_mux_ALU_regW: mux2
       size => 4
    )
    port map( 
-      in_A  => in_regW0,
-      in_B  => in_regW1,
+      in_0  => in_regW0,
+      in_1  => in_regW1,
       sel   => s_ctr_mux_regW,
-      out_C => out_regW
+      out_0 => out_regW
    );
 -------------------------------Selector registro destino-----------------------------
 

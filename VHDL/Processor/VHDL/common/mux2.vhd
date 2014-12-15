@@ -1,6 +1,6 @@
 ----------------------------------------------------------------------------------
 -- Company: 
--- Engineer: 
+-- Engineer: Andrés Gamboa Meléndez
 -- 
 -- Create Date:    17:34:18 11/27/2014 
 -- Design Name: 
@@ -8,7 +8,7 @@
 -- Project Name: 
 -- Target Devices: 
 -- Tool versions: 
--- Description: 
+-- Description: Multiplexor de dos entradas.
 --
 -- Dependencies: 
 --
@@ -29,28 +29,29 @@ use IEEE.STD_LOGIC_1164.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity mux2 is
+entity Mux2 is
    Generic (
       size : INTEGER := 32
    );
    Port ( 
-      in_A : in STD_LOGIC_VECTOR (size-1 downto 0);
-      in_B : in STD_LOGIC_VECTOR (size-1 downto 0);
+      in_0 : in STD_LOGIC_VECTOR (size-1 downto 0);
+      in_1 : in STD_LOGIC_VECTOR (size-1 downto 0);
       sel : in STD_LOGIC;
-      out_C : out STD_LOGIC_VECTOR (size-1 downto 0)
+      out_0 : out STD_LOGIC_VECTOR (size-1 downto 0)
    );
-end mux2;
+end Mux2;
 
-architecture Behavioral of mux2 is
+architecture Behavioral of Mux2 is
 
 begin
 
-p_mux: process(in_A, in_B, sel)
+-- Proceso principal, selecciona 
+p_mux: process(in_0, in_1, sel)
 	begin
 		if sel='1' then
-         out_C <= in_B;
+         out_0 <= in_1;
       else
-         out_C <= in_A;
+         out_0 <= in_0;
       end if;
    end process;
 end Behavioral;

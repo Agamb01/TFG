@@ -83,10 +83,10 @@ component mux2 is
       size : INTEGER := 32
    );
    Port ( 
-      in_A : in STD_LOGIC_VECTOR (size-1 downto 0);
-      in_B : in STD_LOGIC_VECTOR (size-1 downto 0);
+      in_0 : in STD_LOGIC_VECTOR (size-1 downto 0);
+      in_1 : in STD_LOGIC_VECTOR (size-1 downto 0);
       sel : in STD_LOGIC;
-      out_C : out STD_LOGIC_VECTOR (size-1 downto 0)
+      out_0 : out STD_LOGIC_VECTOR (size-1 downto 0)
    );
 end component;
 
@@ -130,12 +130,12 @@ component Phase1_InstructionDecode
    -- Salidas (ID->EXE)
       out_busA     : out STD_LOGIC_VECTOR(31 downto 0); -- Datos de registro A
       out_busB     : out STD_LOGIC_VECTOR(31 downto 0); -- Datos de registro B
-      out_regW0    : out STD_LOGIC_VECTOR(3 downto 0);  -- Registro destino 0 (bits 15-12)
-      out_regW1    : out STD_LOGIC_VECTOR(3 downto 0);  -- Registro destino 1 (bits 14-11)
+      out_regW0    : out STD_LOGIC_VECTOR(3 downto 0);  -- Registro destino 0 (bits 15-12, LOAD)
+      out_regW1    : out STD_LOGIC_VECTOR(3 downto 0);  -- Registro destino 1 (bits 14-11, ALUop)
       out_entero   : out STD_LOGIC_VECTOR(31 downto 0);  -- entero con extension de signo
       
    -- Señales de control (WB->ID)
-      in_ctr_WREnable : in STD_LOGIC;
+      in_WREnable : in STD_LOGIC;
       in_regW         : in STD_LOGIC_VECTOR(3 downto 0);   -- 
       in_busW         : in STD_LOGIC_VECTOR(31 downto 0);  -- 
 
@@ -272,10 +272,10 @@ test_exe_regW_reg      <= s_exe_regW_reg;
    -- Multiplexor para contador de programa
 i_pc_mux: mux2
    port map( 
-      in_A => s_pc4,
-      in_B => s_pc_salto,
+      in_0 => s_pc4,
+      in_1 => s_pc_salto,
       sel => s_pc_mux_ctr,
-      out_C => s_pc_next
+      out_0 => s_pc_next
    );
 
 i_pc_reg0: reg_async 
@@ -336,7 +336,7 @@ i_phase1: Phase1_InstructionDecode
       out_entero => s_id_entero,
       
    -- Señales de control (WB->ID)
-      in_ctr_WREnable => test_id_ctr_WREnable,
+      in_WREnable => test_id_ctr_WREnable,
       in_regW => test_id_regW,
       in_busW => test_id_busW,
 

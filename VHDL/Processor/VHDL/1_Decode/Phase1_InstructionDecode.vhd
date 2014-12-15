@@ -43,7 +43,7 @@ entity Phase1_InstructionDecode is
       out_entero   : out STD_LOGIC_VECTOR(31 downto 0);  -- entero con extension de signo
       
    -- Señales de control (WB->ID)
-      in_ctr_WREnable : in STD_LOGIC;
+      in_WREnable : in STD_LOGIC;
       in_regW          : in STD_LOGIC_VECTOR(3 downto 0);   -- 
       in_busW          : in STD_LOGIC_VECTOR(31 downto 0);  -- 
 
@@ -76,7 +76,7 @@ end component;
              in_regB : in STD_LOGIC_VECTOR(3 downto 0);
              in_regW : in STD_LOGIC_VECTOR(3 downto 0);  
              in_busW : in STD_LOGIC_VECTOR(31 downto 0);
-             in_ctr_WREnable : in STD_LOGIC;
+             in_WREnable : in STD_LOGIC;
              out_busA : out STD_LOGIC_VECTOR(31 downto 0);
              out_busB : out STD_LOGIC_VECTOR(31 downto 0)
             );
@@ -117,7 +117,7 @@ begin
           in_regB => s_regB,  
           in_regW => in_regW,  
           in_busW => in_busW, 
-          in_ctr_WREnable => in_ctr_WREnable,
+          in_WREnable => in_WREnable,
           out_busA => out_busA, 
           out_busB => out_busB
          );

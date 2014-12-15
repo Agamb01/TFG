@@ -2,15 +2,15 @@
 -- Company: 
 -- Engineer:
 --
--- Create Date:   00:31:32 11/27/2014
+-- Create Date:   11:10:30 12/11/2014
 -- Design Name:   
--- Module Name:   D:/TFG/TFG/VHDL/Processor/TB_PCAdder.vhd
+-- Module Name:   C:/TFG/TFG/VHDL/Processor/TB_BrAdder.vhd
 -- Project Name:  Processor
 -- Target Device:  
 -- Tool versions:  
 -- Description:   
 -- 
--- VHDL Test Bench Created by ISE for module: PCAdder
+-- VHDL Test Bench Created by ISE for module: BrAdder
 -- 
 -- Dependencies:
 -- 
@@ -30,44 +30,53 @@ USE ieee.std_logic_1164.ALL;
  
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
---USE ieee.numeric_std.ALL;
+USE ieee.numeric_std.ALL;
  
-ENTITY TB_PCAdder IS
-END TB_PCAdder;
+ENTITY TB_BrAdder IS
+END TB_BrAdder;
  
-ARCHITECTURE behavior OF TB_PCAdder IS 
+ARCHITECTURE behavior OF TB_BrAdder IS 
  
     -- Component Declaration for the Unit Under Test (UUT)
  
-    COMPONENT PCAdder
+    COMPONENT BrAdder
     PORT(
-         in_pc : IN  std_logic_vector(31 downto 0);
-         out_pc : OUT  std_logic_vector(31 downto 0)
+         in_A : IN  std_logic_vector(31 downto 0);
+         in_B : IN  std_logic_vector(31 downto 0);
+         out_res : OUT  std_logic_vector(31 downto 0)
         );
     END COMPONENT;
     
 
    --Inputs
-   signal in_pc : std_logic_vector(31 downto 0) := "11111111111111111111111111110000"; --(others => '0');
+   signal in_A : std_logic_vector(31 downto 0) := (others => '0');
+   signal in_B : std_logic_vector(31 downto 0) := (others => '0');
 
  	--Outputs
-   signal out_pc : std_logic_vector(31 downto 0);
-   
+   signal out_res : std_logic_vector(31 downto 0);
+ 
    constant clk_period : time := 10 ns;
  
 BEGIN
  
 	-- Instantiate the Unit Under Test (UUT)
-   uut: PCAdder PORT MAP (
-          in_pc => in_pc,
-          out_pc => out_pc
-        );
+   uut: BrAdder PORT MAP (
+          in_A => in_A,
+          in_B => in_B,
+          out_res => out_res
+        ); 
 
    -- Stimulus process
    stim_proc: process
-   begin			
+   begin		
+      -- hold reset state for 100 ns.
       wait for 100 ns;	
-      in_pc <= out_pc;
+      in_A <= std_logic_vector(to_signed(32,32));
+      in_B <= std_logic_vector(to_signed(12,32));
+      wait for clk_period;
+      in_A <= std_logic_vector(to_signed(24,32));
+      in_B <= std_logic_vector(to_signed(-16,32));
+      wait;
    end process;
 
 END;

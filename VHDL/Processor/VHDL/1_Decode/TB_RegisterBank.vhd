@@ -47,7 +47,7 @@ ARCHITECTURE behavior OF TB_RegisterBank IS
          in_regB : IN  std_logic_vector(3 downto 0);
          in_regW : IN  std_logic_vector(3 downto 0);
          in_busW : IN  std_logic_vector(31 downto 0);
-         in_ctr_WREnable : IN  std_logic;
+         in_WREnable : IN  std_logic;
          out_busA : OUT  std_logic_vector(31 downto 0);
          out_busB : OUT  std_logic_vector(31 downto 0)
         );
@@ -61,7 +61,7 @@ ARCHITECTURE behavior OF TB_RegisterBank IS
    signal in_regB : std_logic_vector(3 downto 0) := (others => '0');
    signal in_regW : std_logic_vector(3 downto 0) := (others => '0');
    signal in_busW : std_logic_vector(31 downto 0) := (others => '0');
-   signal in_ctr_WREnable : std_logic := '0';
+   signal in_WREnable : std_logic := '0';
 
  	--Outputs
    signal out_busA : std_logic_vector(31 downto 0);
@@ -80,7 +80,7 @@ BEGIN
           in_regB => in_regB,
           in_regW => in_regW,
           in_busW => in_busW,
-          in_ctr_WREnable => in_ctr_WREnable,
+          in_WREnable => in_WREnable,
           out_busA => out_busA,
           out_busB => out_busB
         );
@@ -107,7 +107,7 @@ BEGIN
       --Deshabilitar escritura
       in_busW <= (others=>'0');
       in_regW <= (others=>'0');
-      in_ctr_WREnable <= '0';
+      in_WREnable <= '0';
       
       -- Prueba lectura
    -- Leer registros 0 y 1
@@ -153,13 +153,13 @@ BEGIN
       in_busW(31 downto 3) <= (others=>'0');
       in_busW(2 downto 0) <= "111";
       in_regW <= "0001";
-      in_ctr_WREnable <= '1';
+      in_WREnable <= '1';
       wait for clk_period;
    -- Escribir "2" en el registro 2 y leer de registro 1
       in_busW(31 downto 3) <= (others=>'0');
       in_busW(2 downto 0) <= "110";
       in_regW <= "0010";
-      in_ctr_WREnable <= '1';
+      in_WREnable <= '1';
       in_regA <= "0001";
       in_regB <= "0001";
       wait for clk_period;
@@ -167,7 +167,7 @@ BEGIN
       in_busW(31 downto 3) <= (others=>'0');
       in_busW(2 downto 0) <= "100";
       in_regW <= "0011";
-      in_ctr_WREnable <= '1';
+      in_WREnable <= '1';
       in_regA <= "0010";
       in_regB <= "0010";
       wait for clk_period;
@@ -175,7 +175,7 @@ BEGIN
       in_busW(31 downto 3) <= (others=>'0');
       in_busW(2 downto 0) <= "100";
       in_regW <= "0011";
-      in_ctr_WREnable <= '0';
+      in_WREnable <= '0';
       in_regA <= "0011";
       in_regB <= "0011";
       wait for clk_period;
@@ -183,7 +183,7 @@ BEGIN
       in_busW(31 downto 3) <= (others=>'0');
       in_busW(2 downto 0) <= "001";
       in_regW <= "0100";
-      in_ctr_WREnable <= '1';
+      in_WREnable <= '1';
       in_regA <= "0100";
       in_regB <= "0100";
       wait for clk_period;
@@ -191,7 +191,7 @@ BEGIN
       in_busW(31 downto 3) <= (others=>'0');
       in_busW(2 downto 0) <= "100";
       in_regW <= "0100";
-      in_ctr_WREnable <= '0';
+      in_WREnable <= '0';
       in_regA <= "0100";
       in_regB <= "0100";
       wait for clk_period;

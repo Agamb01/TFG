@@ -1,6 +1,6 @@
 ----------------------------------------------------------------------------------
 -- Company: 
--- Engineer: 
+-- Engineer: Andrés Gamboa Meléndez
 -- 
 -- Create Date:    11:57:41 11/24/2014 
 -- Design Name: 
@@ -8,7 +8,7 @@
 -- Project Name: 
 -- Target Devices: 
 -- Tool versions: 
--- Description: 
+-- Description: Registro con reset asíncrono
 --
 -- Dependencies: 
 --
@@ -29,26 +29,27 @@ use IEEE.STD_LOGIC_1164.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity reg_async is
+entity Reg_Async is
    Generic (
       size : INTEGER := 32
    );
-   Port ( 
+   Port (
       clk, rst : in STD_LOGIC;
       enable : in STD_LOGIC;
-      in_data : in STD_LOGIC_VECTOR(size-1 downto 0); --size-1?
+      in_data : in STD_LOGIC_VECTOR(size-1 downto 0);
       out_data : out  STD_LOGIC_VECTOR (size-1 downto 0)
    );
-end reg_async;
+end Reg_Async;
 
-architecture Behavioral of reg_async is
+architecture Behavioral of Reg_Async is
 
-   signal s_reg : STD_LOGIC_VECTOR(size-1 downto 0); --registro 
+   signal s_reg : STD_LOGIC_VECTOR(size-1 downto 0); -- Señal registro 
 
 begin
 
    out_data <= s_reg;
 
+   -- Proceso principal, registro con reset asíncrono
    process(clk, rst)
    begin
       if rst='0' then

@@ -40,6 +40,7 @@ end ExtensioSigno;
 
 architecture Behavioral of ExtensioSigno is
 
+   -- Enteros segun tipo de instruccion
    signal entero_ALU12  : STD_LOGIC_VECTOR(31 downto 0);
    signal entero_ALU16  : STD_LOGIC_VECTOR(31 downto 0);
    signal entero_LDST   : STD_LOGIC_VECTOR(31 downto 0);
@@ -60,8 +61,8 @@ begin
 
 
 --Entero ALU (Immediate)
---Intruccion: [31:27,15]= "11110,0"
--- ALU 12bits: [25:24,22] = "10,0" Entero: [26,14:12,7:0]
+  --Intruccion: [31:27,15]= "11110,0"
+  -- ALU 12 bits: [25:24,22] = "10,0" Entero: [26,14:12,7:0]
    p_ALU12: process(in_inst)
    begin
       entero_ALU12(31 downto 12) <= (others=>in_inst(26)); --Extension de signo
@@ -79,7 +80,7 @@ begin
 
    end process;
 
--- ALU 16bits: [25:24,22] = "10,1" Entero: [19:16,26,14:12,7:0]
+  -- ALU 16 bits: [25:24,22] = "10,1" Entero: [19:16,26,14:12,7:0]
    p_ALU16: process(in_inst)
    begin
       entero_ALU16(31 downto 16) <= (others=>in_inst(19)); --Extension de signo
@@ -99,10 +100,10 @@ begin
    end process;
 
 --Entero LOAD/STORE 12bits
---Intruccion: [31:25]= "1111100"
--- Sign extended: [24]="1"
--- Zero extended: [24]="0"
---Entero: [11:0]
+  --Intruccion: [31:25]= "1111100"
+  -- Sign extended: [24]="1"
+  -- Zero extended: [24]="0"
+  --Entero: [11:0]
    p_LDST: process(in_inst)
    begin
       entero_LDST(11 downto 0) <= in_inst(11 downto 0);      --Entero[11:0]=Instr[11:0]
@@ -122,8 +123,8 @@ begin
    end process;
 
 --Entero BRANCH 
---Intruccion: [31:27]= "11110" [15]="1" [12]="1"
--- Entero: 26,[13,11,25:16,10:0],"0"
+  --Intruccion: [31:27]= "11110" [15]="1" [12]="1"
+  -- Entero: 26,[13,11,25:16,10:0],"0"
    p_BR: process(in_inst)
    begin
       entero_BR(31 downto 24) <= (others=>in_inst(26)); --Extension de signo
@@ -144,8 +145,8 @@ begin
 
 
 --Entero CONDITIONAL BRANCH
---Intruccion: [31:27]= "11110" [15]="1" [12]="0"
--- Entero: 26,[13,11,21:16,10:0],"0"
+  --Intruccion: [31:27]= "11110" [15]="1" [12]="0"
+  -- Entero: 26,[13,11,21:16,10:0],"0"
    p_BRCond: process(in_inst)
    begin
       entero_BRCond(31 downto 20) <= (others=>in_inst(26)); --Extension de signo
@@ -168,7 +169,7 @@ begin
    p_select: process(in_inst, inst_ALU12, entero_ALU12, inst_ALU16, entero_ALU16, 
                         inst_LDST, entero_LDST, inst_BR, entero_BR, inst_BRCond, entero_BRCond)
    begin
-      if inst_ALU12='1' then           -- ALU 12bits (Immediate)
+      if inst_ALU12='1' then           -- ALU 12 bits (Immediate)
          out_entero <= entero_ALU12;
       elsif inst_ALU16='1' then        -- ALU 16 bits
          out_entero <= entero_ALU16;
