@@ -38,17 +38,16 @@ entity Phase1_InstructionDecode is
    -- Salidas (ID->EXE)
       out_busA     : out STD_LOGIC_VECTOR(31 downto 0); -- Datos de registro A
       out_busB     : out STD_LOGIC_VECTOR(31 downto 0); -- Datos de registro B
-      out_regW0    : out STD_LOGIC_VECTOR(3 downto 0);  -- Registro destino 0 (bits 15-12)
-      out_regW1    : out STD_LOGIC_VECTOR(3 downto 0);  -- Registro destino 1 (bits 14-11)
-      out_entero   : out STD_LOGIC_VECTOR(31 downto 0);  -- entero con extension de signo
+      out_regW     : out STD_LOGIC_VECTOR(3 downto 0);  -- Registro destino
+      out_entero   : out STD_LOGIC_VECTOR(31 downto 0); -- entero con extension de signo
       
    -- Señales de control (WB->ID)
-      in_WREnable : in STD_LOGIC;
-      in_regW          : in STD_LOGIC_VECTOR(3 downto 0);   -- 
-      in_busW          : in STD_LOGIC_VECTOR(31 downto 0);  -- 
+      in_WREnable    : in STD_LOGIC;
+      in_regW        : in STD_LOGIC_VECTOR(3 downto 0);   -- 
+      in_busW        : in STD_LOGIC_VECTOR(31 downto 0);  -- 
 
    -- Señales de control (ID->EXE)
-      out_WB_control : out STD_LOGIC_VECTOR(11 downto 0);
+      out_WB_control  : out STD_LOGIC_VECTOR(11 downto 0);
       out_MEM_control : out STD_LOGIC_VECTOR(9 downto 0);
       out_EXE_control : out STD_LOGIC_VECTOR(9 downto 0)
    );
@@ -57,28 +56,28 @@ end Phase1_InstructionDecode;
 architecture Behavioral of Phase1_InstructionDecode is
 
 -------------------------------Control Principal-----------------------------
-component ControlPrincipal
-   Port ( 
-      in_inst : in  STD_LOGIC_VECTOR(31 downto 0);
-      out_WB_control : out STD_LOGIC_VECTOR(11 downto 0);
-      out_MEM_control : out STD_LOGIC_VECTOR(9 downto 0);
-      out_EXE_control : out STD_LOGIC_VECTOR(9 downto 0)
-   );
-end component;
+   component ControlPrincipal
+      Port ( 
+         in_inst : in  STD_LOGIC_VECTOR(31 downto 0);
+         out_WB_control : out STD_LOGIC_VECTOR(11 downto 0);
+         out_MEM_control : out STD_LOGIC_VECTOR(9 downto 0);
+         out_EXE_control : out STD_LOGIC_VECTOR(9 downto 0)
+      );
+   end component;
 -------------------------------Control Principal-----------------------------
 
 
 -------------------------------Banco de registros-----------------------------
 -- Modulo banco de registros
    component RegisterBank
-      port ( clk, rst : in STD_LOGIC;
-             in_regA : in STD_LOGIC_VECTOR(3 downto 0);
-             in_regB : in STD_LOGIC_VECTOR(3 downto 0);
-             in_regW : in STD_LOGIC_VECTOR(3 downto 0);  
-             in_busW : in STD_LOGIC_VECTOR(31 downto 0);
+      port ( clk, rst    : in STD_LOGIC;
+             in_regA     : in STD_LOGIC_VECTOR(3 downto 0);
+             in_regB     : in STD_LOGIC_VECTOR(3 downto 0);
+             in_regW     : in STD_LOGIC_VECTOR(3 downto 0);  
+             in_busW     : in STD_LOGIC_VECTOR(31 downto 0);
              in_WREnable : in STD_LOGIC;
-             out_busA : out STD_LOGIC_VECTOR(31 downto 0);
-             out_busB : out STD_LOGIC_VECTOR(31 downto 0)
+             out_busA    : out STD_LOGIC_VECTOR(31 downto 0);
+             out_busB    : out STD_LOGIC_VECTOR(31 downto 0)
             );
    end component;
 
@@ -87,30 +86,43 @@ end component;
 -------------------------------Banco de registros-----------------------------
 
 -------------------------------Extension de signo-----------------------------
-component ExtensioSigno
-   Port ( 
-      in_inst : in  STD_LOGIC_VECTOR (31 downto 0);
-      out_entero : out STD_LOGIC_VECTOR(31 downto 0)
-   );
-end component;
+   component ExtensioSigno
+      Port ( 
+         in_inst     : in  STD_LOGIC_VECTOR (31 downto 0);
+         out_entero  : out STD_LOGIC_VECTOR(31 downto 0)
+      );
+   end component;
 -------------------------------Extension de signo-----------------------------
 
 begin
 
 -------------------------------Control Principal-----------------------------
-   i_ControlPrincipal: ControlPrincipal port map( 
-      in_inst => in_inst,
-      out_WB_control => out_WB_control,
-      out_MEM_control => out_MEM_control,
-      out_EXE_control => out_EXE_control
-   );
+   i_ControlPrincipal: 
+      ControlPrincipal port map( 
+         in_inst => in_inst,
+         out_WB_control => out_WB_control,
+         out_MEM_control => out_MEM_control,
+         out_EXE_control => out_EXE_control
+      );
 -------------------------------Control Principal-----------------------------
 
 -------------------------------Banco de registros-----------------------------
    s_regA <= in_inst(19 downto 16);  -- Rn=instruccion[19-16]
-   s_regB <= in_inst(3 downto 0);    -- Rm=instruccion[3-0]
-
-   i_RegisterBank: RegisterBank port map (
+   
+   --Proceso seleccion de registro B
+   --  si es instruccion de load/store: regB <= Rt (instruccion[15-12])
+   --  en otro caso: regB <= Rm (instruccion[3-0])
+   process(in_inst)
+   begin 
+      if in_inst(31 downto 25)="1111100" then
+         s_regB <= in_inst(15 downto 12);
+      else
+         s_regB <= in_inst(3 downto 0);
+      end if;
+   end process;
+   
+   i_RegisterBank: 
+      RegisterBank port map (
           clk => clk,
           rst => rst,
           in_regA => s_regA,  
@@ -120,11 +132,19 @@ begin
           in_WREnable => in_WREnable,
           out_busA => out_busA, 
           out_busB => out_busB
-         );
+      );
 
- -- Registros destino
-   out_regW0 <= in_inst(11 downto 8); -- Rd[11-8]
-   out_regW1 <= in_inst(15 downto 12); -- Rt[15-12]
+   --Proceso seleccion de registro destino
+   --  si es instruccion de load/store: regW <= Rt (instruccion[15-12])
+   --  en otro caso: regW <= Rd (instruccion[11-8])
+   process(in_inst)
+   begin 
+      if in_inst(31 downto 25)="1111100" then
+         s_regW <= in_inst(15 downto 12);
+      else
+         s_regW <= in_inst(11 downto 8);
+      end if;
+   end process;
 -------------------------------Banco de registros-----------------------------
 
 -------------------------------Extension de signo-----------------------------
