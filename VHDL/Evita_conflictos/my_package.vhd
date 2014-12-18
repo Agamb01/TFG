@@ -16,6 +16,9 @@ package my_package is
 
    type tipo_paradas is array(0 to Numero_Fases) of STD_LOGIC_VECTOR(1 downto 0);
 
+   type set_tipo_paradas is array(0 to Numero_Fases+1) of tipo_paradas;
+
+
 end my_package;
 
 package body my_package is

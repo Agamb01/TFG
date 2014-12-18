@@ -1,1 +1,1 @@
--intstyle "ise" -incremental -lib "secureip" -o "C:/TFG/TFG/VHDL/Evita_conflictos/TB_modulo_isim_beh.exe" -prj "C:/TFG/TFG/VHDL/Evita_conflictos/TB_modulo_beh.prj" "work.TB_modulo" 
+-intstyle "ise" -incremental -lib "secureip" -o "D:/TFG/TFG/VHDL/Evita_conflictos/TB_modulo_isim_beh.exe" -prj "D:/TFG/TFG/VHDL/Evita_conflictos/TB_modulo_beh.prj" "work.TB_modulo" 

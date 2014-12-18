@@ -36,12 +36,12 @@ library work;
 -- Entradas:
 --    Clock de sistema
 --    Reset de sistema
---    Vector de paradas de la siguiente instrucción
+--    Array de paradas de la siguiente instrucción
 --    Bit de instruccion "NADA" siguiente
 --    
 
 -- Salidas:
---    Vector de paradas de esta instrucción
+--    Array de paradas de esta instrucción
 --    Bit de instrucción "NADA" actual
 --    Enable para lógica de fase
 
@@ -72,12 +72,12 @@ begin
          nada_reg <= '1';
       elsif rising_edge(clk) then
          -- Si la instrucción es "NADA" o no tiene que esperar carga valores de entrada
-         if (unsigned(paradas_reg(0)) > 0) then 
-            paradas_reg(0) <= std_logic_vector( unsigned(paradas_reg(0)) - 1 );
---            nada_reg <= nada_reg;
-         elsif (nada_reg = '1') or (unsigned(paradas_reg(0)) = 0) then 
+         if (nada_reg = '1') or (unsigned(paradas_reg(0)) = 0) then
             paradas_reg(0 to Numero_Fases) <= in_paradas(0 to Numero_Fases);
             nada_reg <= in_nada;
+         elsif (unsigned(paradas_reg(0)) > 0) then 
+            paradas_reg(0) <= std_logic_vector( unsigned(paradas_reg(0)) - 1 );
+--            nada_reg <= nada_reg;         
          end if;
       end if;
    end process;
@@ -88,9 +88,15 @@ begin
       out_paradas(Numero_Fases) <= (others => '0');
       
       out_nada <= nada_reg;
-      
       out_enable <= not nada_reg;
-      
+
+--      if (unsigned(paradas_reg(0)) > 0) and nada_reg = '0' then
+--         out_nada <= '0';
+--         out_enable <= '1';
+--      else
+--         out_nada <= '1';
+--         out_enable <= '0';
+--      end if;
    end process;
    
 
