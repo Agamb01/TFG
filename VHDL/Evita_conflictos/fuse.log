@@ -1,0 +1,22 @@
+Running: fuse.exe -relaunch -intstyle "ise" -incremental -lib "secureip" -o "C:/TFG/TFG/VHDL/Evita_conflictos/TB_modulo_isim_beh.exe" -prj "C:/TFG/TFG/VHDL/Evita_conflictos/TB_modulo_beh.prj" "work.TB_modulo" 
+ISim P.58f (signature 0x7708f090)
+Number of CPUs detected in this system: 2
+Turning on mult-threading, number of parallel sub-compilation jobs: 4 
+Determining compilation order of HDL files
+Parsing VHDL file "C:/TFG/TFG/VHDL/Evita_conflictos/my_package.vhd" into library work
+Parsing VHDL file "C:/TFG/TFG/VHDL/Evita_conflictos/modulo.vhd" into library work
+Parsing VHDL file "C:/TFG/TFG/VHDL/Evita_conflictos/TB_modulo.vhd" into library work
+Starting static elaboration
+Completed static elaboration
+Compiling package standard
+Compiling package std_logic_1164
+Compiling package my_package
+Compiling package numeric_std
+Compiling architecture behavioral of entity modulo [modulo_default]
+Compiling architecture behavior of entity tb_modulo
+Time Resolution for simulation is 1ps.
+Waiting for 2 sub-compilation(s) to finish...
+Compiled 7 VHDL Units
+Built simulation executable C:/TFG/TFG/VHDL/Evita_conflictos/TB_modulo_isim_beh.exe
+Fuse Memory Usage: 34756 KB
+Fuse CPU Usage: 1171 ms
