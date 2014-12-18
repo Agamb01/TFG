@@ -1,3 +1,0 @@
-vhdl work "my_package.vhd"
-vhdl work "modulo.vhd"
-vhdl work "TB_modulo.vhd"
