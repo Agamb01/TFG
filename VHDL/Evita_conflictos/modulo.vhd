@@ -87,16 +87,16 @@ begin
       out_paradas(0 to Numero_Fases-1) <= paradas_reg(1 to Numero_Fases);
       out_paradas(Numero_Fases) <= (others => '0');
       
-      out_nada <= nada_reg;
-      out_enable <= not nada_reg;
+      -- Se habilita el funcionamiento del modulo interno 
+      -- si existe una instruccion valida
+      out_enable <= not nada_reg; 
 
---      if (unsigned(paradas_reg(0)) > 0) and nada_reg = '0' then
---         out_nada <= '0';
---         out_enable <= '1';
---      else
---         out_nada <= '1';
---         out_enable <= '0';
---      end if;
+   -- La instruccion se propaga solo si es el ultimo ciclo de la instruccion en esta fase
+      if (unsigned(paradas_reg(0)) = 0) and nada_reg = '0' then
+         out_nada <= '0';
+      else
+         out_nada <= '1';
+      end if;
    end process;
    
 

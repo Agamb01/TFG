@@ -38,8 +38,8 @@ entity main is
       in_nada     : in STD_LOGIC;
       in_paradas  : in tipo_paradas;
       
-      out_nada    : out STD_LOGIC;
-      out_paradas : out tipo_paradas;
+      out_nada    : out STD_LOGIC_VECTOR(0 to Numero_Fases);
+      out_paradas : out set_tipo_paradas;
       out_enable  : out STD_LOGIC_VECTOR(0 to Numero_Fases)
    );
 end main;
@@ -80,8 +80,9 @@ begin
       );
    end generate GEN;
       
-   out_paradas <= set_paradas(Numero_Fases+1);
-   out_nada <= set_nada(Numero_Fases+1);
+--   out_paradas <= set_paradas(Numero_Fases+1);
+   out_paradas <= set_paradas;
+   out_nada <= set_nada(1 to Numero_Fases+1);
    out_enable <= set_enable;
    
 end Behavioral;
