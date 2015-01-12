@@ -1,0 +1,5 @@
+work	"VHDL/1_InstructionDecode/ExtensioSigno.vhd"
+work	"VHDL/1_InstructionDecode/ID_main.vhd"
+work	"VHDL/1_InstructionDecode/Phase1_InstructionDecode.vhd"
+work	"VHDL/1_InstructionDecode/RegisterBank.vhd"
+work	"VHDL/common/my_package.vhd"
