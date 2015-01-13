@@ -1,1 +1,1 @@
--intstyle "ise" -incremental -lib "secureip" -o "C:/TFG/TFG/VHDL/Proc_Evita_Conflictos/TB_ID_main_isim_beh.exe" -prj "C:/TFG/TFG/VHDL/Proc_Evita_Conflictos/TB_ID_main_beh.prj" "work.TB_ID_main" 
+-intstyle "ise" -incremental -lib "secureip" -o "D:/TFG/TFG/VHDL/Proc_Evita_Conflictos/TB_ALU_isim_beh.exe" -prj "D:/TFG/TFG/VHDL/Proc_Evita_Conflictos/TB_ALU_beh.prj" "work.TB_ALU" 
