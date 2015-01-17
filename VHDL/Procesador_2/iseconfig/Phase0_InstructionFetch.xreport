@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2014-12-18T16:39:04</DateModified>
+  <DateModified>2015-01-17T11:08:11</DateModified>
   <ModuleName>Phase0_InstructionFetch</ModuleName>
   <SummaryTimeStamp>Unknown</SummaryTimeStamp>
   <SavedFilePath>C:/TFG/TFG/VHDL/Procesador_2/iseconfig/Phase0_InstructionFetch.xreport</SavedFilePath>

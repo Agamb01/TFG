@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<symbol version="7" name="copy_of_and2">
+    <symboltype>BLOCK</symboltype>
+    <timestamp>2015-1-15T17:25:9</timestamp>
+    <attr value="AND2" name="VeriModel" />
+    <attr value="AND" name="Device" />
+    <attr value="Copy Of Symbol With Level: XILINX" name="Level" />
+    <attr value="AND2" name="VhdlModel" />
+    <attr value="2.0.0" name="Libver" />
+    <pin polarity="Input" x="0" y="-64" name="I0" />
+    <pin polarity="Input" x="0" y="-128" name="I1" />
+    <pin polarity="Output" x="256" y="-96" name="O" />
+    <graph>
+        <line x2="64" y1="-64" y2="-64" x1="0" />
+        <line x2="64" y1="-128" y2="-128" x1="0" />
+        <line x2="192" y1="-96" y2="-96" x1="256" />
+        <arc ex="144" ey="-144" sx="144" sy="-48" r="48" cx="144" cy="-96" />
+        <line x2="64" y1="-48" y2="-48" x1="144" />
+        <line x2="144" y1="-144" y2="-144" x1="64" />
+        <line x2="64" y1="-48" y2="-144" x1="64" />
+        <text style="fontsize:36;fontname:Arial" x="60" y="-24">AND2</text>
+    </graph>
+</symbol>

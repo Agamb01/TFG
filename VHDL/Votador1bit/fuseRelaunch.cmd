@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -lib "secureip" -o "C:/TFG/TFG/VHDL/Votador1bit/TB_votador1bit_isim_beh.exe" -prj "C:/TFG/TFG/VHDL/Votador1bit/TB_votador1bit_beh.prj" "work.TB_votador1bit" 

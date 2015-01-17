@@ -1,0 +1,9 @@
+MODULE sch_votador
+	SUBMODULE copy_of_or3
+		INSTANCE XLXI_2
+	SUBMODULE copy_of_and2
+		INSTANCE XLXI_3
+	SUBMODULE copy_of_and2
+		INSTANCE XLXI_4
+	SUBMODULE copy_of_and2
+		INSTANCE XLXI_5

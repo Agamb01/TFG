@@ -1,0 +1,5 @@
+MODULE sch_comparador
+	SUBMODULE copy_of_xnor2
+		INSTANCE XLXI_9
+	SUBMODULE copy_of_fd
+		INSTANCE XLXI_10
