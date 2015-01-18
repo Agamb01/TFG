@@ -1,0 +1,26 @@
+\select@language {spanish}
+\contentsline {chapter}{Agradecimientos}{\es@scroman {ix}}{chapter*.1}
+\contentsline {chapter}{Resumen}{\es@scroman {xi}}{chapter*.2}
+\contentsline {chapter}{\numberline {1}Introducci\'on}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}Introducci\'on}{1}{section.1.1}
+\contentsline {chapter}{\numberline {2}Tema de Fallos}{3}{chapter.2}
+\contentsline {section}{\numberline {2.1}Fallos Transitorios}{3}{section.2.1}
+\contentsline {section}{\numberline {2.2}Fallos Permanentes}{3}{section.2.2}
+\contentsline {chapter}{\numberline {3}Tolerancia a Fallos Transitorios}{5}{chapter.3}
+\contentsline {section}{\numberline {3.1}Como se consigue la tolerancia}{5}{section.3.1}
+\contentsline {section}{\numberline {3.2}Votadores}{5}{section.3.2}
+\contentsline {section}{\numberline {3.3}Configuraci\'on del entorno}{5}{section.3.3}
+\contentsline {section}{\numberline {3.4}Injecci\'on de fallos}{5}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}Modo post injeccion}{6}{subsection.3.4.1}
+\contentsline {subsection}{\numberline {3.4.2}Modo pre injeccion}{6}{subsection.3.4.2}
+\contentsline {chapter}{\numberline {4}Procesador ARM}{7}{chapter.4}
+\contentsline {section}{\numberline {4.1}Arquitectura del Cortex-M4}{7}{section.4.1}
+\contentsline {section}{\numberline {4.2}Nuestra Arquitectura}{7}{section.4.2}
+\contentsline {chapter}{\numberline {5}Resultados}{9}{chapter.5}
+\contentsline {section}{\numberline {5.1}Temp}{9}{section.5.1}
+\contentsline {chapter}{\numberline {6}An\'alisis de Rsultados}{11}{chapter.6}
+\contentsline {section}{\numberline {6.1}Temp}{11}{section.6.1}
+\contentsline {chapter}{\numberline {7}Conclusiones}{13}{chapter.7}
+\contentsline {section}{\numberline {7.1}Temp}{13}{section.7.1}
+\contentsline {chapter}{\numberline {A}As\IeC {\'\i } se hizo...}{15}{appendix.Alph1}
+\contentsline {section}{\numberline {A.1}Introducci\'on}{15}{section.Alph1.1}

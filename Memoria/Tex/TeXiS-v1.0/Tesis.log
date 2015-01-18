@@ -1,0 +1,715 @@
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.1.17)  18 JAN 2015 18:08
+entering extended mode
+**Tesis.tex
+(D:\TFG\TFG\Memoria\Tex\TeXiS-v1.0\Tesis.tex
+LaTeX2e <2011/06/27>
+Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
+abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
+croatian, czech, danish, dutch, esperanto, estonian, farsi, finnish, french, ga
+lician, german, german-x-2013-05-26, greek, gujarati, hindi, hungarian, iceland
+ic, indonesian, interlingua, irish, italian, kannada, kurmanji, latin, latvian,
+ lithuanian, malayalam, marathi, mongolian, mongolianlmc, monogreek, ngerman, n
+german-x-2013-05-26, nynorsk, oriya, panjabi, pinyin, polish, portuguese, roman
+ian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swissgerm
+an, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, usengl
+ishmax, welsh, loaded.
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\book.cls"
+Document Class: book 2007/10/19 v1.4h Standard LaTeX document class
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\bk11.clo"
+File: bk11.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@chapter=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+\@input{config.aux}
+(D:\TFG\TFG\Memoria\Tex\TeXiS-v1.0\config.tex)
+(D:\TFG\TFG\Memoria\Tex\TeXiS-v1.0\TeXiS/TeXiS.sty
+Package: TeXiS/TeXiS 
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\tools\verbatim.sty"
+Package: verbatim 2003/08/22 v1.5q LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks14
+\verbatim@line=\toks15
+\verbatim@in@stream=\read1
+)
+\example@out=\write3
+
+\@input{TeXiS/TeXiS_pream.aux}
+(D:\TFG\TFG\Memoria\Tex\TeXiS-v1.0\TeXiS/TeXiS_pream.tex
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\shortvrb.sty"
+Package: shortvrb 2010/02/04 v2.1e Standard LaTeX documentation package (FMi)
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\inputenc.sty"
+Package: inputenc 2008/03/30 v1.1d Input encoding file
+\inpenc@prehook=\toks16
+\inpenc@posthook=\toks17
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\latin1.def"
+File: latin1.def 2008/03/30 v1.1d Input encoding file
+))
+("C:\Program Files\MiKTeX 2.9\tex\latex\natbib\natbib.sty"
+Package: natbib 2010/09/13 8.31b (PWD, AO)
+\bibhang=\skip43
+\bibsep=\skip44
+LaTeX Info: Redefining \cite on input line 694.
+\c@NAT@ctr=\count88
+)
+("C:\Program Files\MiKTeX 2.9\tex\generic\babel\babel.sty"
+Package: babel 2008/07/08 v3.8m The Babel package
+
+*************************************
+* Local config file bblopts.cfg used
+*
+("C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\bblopts.cfg"
+File: bblopts.cfg 2006/07/31 v1.0 MiKTeX 'babel' configuration
+)
+("C:\Program Files\MiKTeX 2.9\tex\generic\babel\spanish.ldf"
+Language: spanish.ldf 2009/01/02 v5.0h Spanish support from the babel system
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\babel\babel.def"
+File: babel.def 2008/07/08 v3.8m Babel common definitions
+\babel@savecnt=\count89
+\U@D=\dimen103
+)
+\es@datefmt=\count90
+\es@quottoks=\toks18
+\es@quotdepth=\count91
+Package babel Info: Making " an active character on input line 492.
+Package babel Info: Making . an active character on input line 585.
+Package babel Info: Making < an active character on input line 630.
+Package babel Info: Making > an active character on input line 630.
+Package babel Info: Making ' an active character on input line 657.
+))
+("C:\Program Files\MiKTeX 2.9\tex\latex\url\url.sty"
+\Urlmuskip=\muskip10
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.sty"
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\hyperref.sty"
+Package: hyperref 2012/11/06 v6.83m Hypertext links for LaTeX
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\hobsub-hyperref.sty"
+Package: hobsub-hyperref 2012/04/25 v1.12 Bundle oberdiek, subset hyperref (HO)
+
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\hobsub-generic.sty"
+Package: hobsub-generic 2012/04/25 v1.12 Bundle oberdiek, subset generic (HO)
+Package: hobsub 2012/04/25 v1.12 Construct package bundles (HO)
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+Package: ifvtex 2010/03/01 v1.5 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+Package: intcalc 2007/09/27 v1.1 Expandable calculations with integers (HO)
+Package hobsub Info: Skipping package `ifpdf' (already loaded).
+Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
+Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
+Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+Package: pdfescape 2011/11/25 v1.13 Implements pdfTeX's escape features (HO)
+Package: bigintcalc 2012/04/08 v1.3 Expandable calculations on big integers (HO
+)
+Package: bitset 2011/01/30 v1.1 Handle bit-vector datatype (HO)
+Package: uniquecounter 2011/01/30 v1.2 Provide unlimited unique counter (HO)
+)
+Package hobsub Info: Skipping package `hobsub' (already loaded).
+Package: letltxmacro 2010/09/02 v1.4 Let assignment for LaTeX macros (HO)
+Package: hopatch 2011/06/24 v1.1 Wrapper for package hooks (HO)
+Package: xcolor-patch 2011/01/30 xcolor patch
+Package: atveryend 2011/06/30 v1.8 Hooks at the very end of document (HO)
+Package atveryend Info: \enddocument detected (standard20110627).
+Package: atbegshi 2011/10/05 v1.16 At begin shipout hook (HO)
+Package: refcount 2011/10/16 v3.4 Data extraction from label references (HO)
+Package: hycolor 2011/01/30 v1.7 Color options for hyperref/bookmark (HO)
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks19
+)
+("C:\Program Files\MiKTeX 2.9\tex\generic\ifxetex\ifxetex.sty"
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\auxhook.sty"
+Package: auxhook 2011/03/04 v1.3 Hooks for auxiliary files (HO)
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\kvoptions.sty"
+Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
+)
+\@linkdim=\dimen104
+\Hy@linkcounter=\count92
+\Hy@pagecounter=\count93
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\pd1enc.def"
+File: pd1enc.def 2012/11/06 v6.83m Hyperref: PDFDocEncoding definition (HO)
+)
+\Hy@SavedSpaceFactor=\count94
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\hyperref.cfg"
+File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
+)
+
+Package hyperref Warning: Invalid value `0'
+(hyperref)                for option `pdfborder'.
+(hyperref)                Option setting is ignored on input line 4319.
+
+Package hyperref Info: Option `colorlinks' set `true' on input line 4319.
+Package hyperref Info: Option `hyperindex' set `true' on input line 4319.
+Package hyperref Info: Option `pdfpagelabels' set `true' on input line 4319.
+Package hyperref Info: Hyper figures OFF on input line 4443.
+Package hyperref Info: Link nesting OFF on input line 4448.
+Package hyperref Info: Hyper index ON on input line 4451.
+Package hyperref Info: Plain pages OFF on input line 4458.
+Package hyperref Info: Backreferencing OFF on input line 4463.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4688.
+\c@Hy@tempcnt=\count95
+LaTeX Info: Redefining \url on input line 5041.
+\XeTeXLinkMargin=\dimen105
+\Fld@menulength=\count96
+\Field@Width=\dimen106
+\Fld@charsize=\dimen107
+Package hyperref Info: Hyper figures OFF on input line 6295.
+Package hyperref Info: Link nesting OFF on input line 6300.
+Package hyperref Info: Hyper index ON on input line 6303.
+Package hyperref Info: backreferencing OFF on input line 6310.
+Package hyperref Info: Link coloring ON on input line 6313.
+Package hyperref Info: Link coloring with OCG OFF on input line 6320.
+Package hyperref Info: PDF/A mode OFF on input line 6325.
+LaTeX Info: Redefining \ref on input line 6365.
+LaTeX Info: Redefining \pageref on input line 6369.
+\Hy@abspage=\count97
+\c@Item=\count98
+\c@Hfootnote=\count99
+)
+
+Package hyperref Message: Driver (autodetected): hpdftex.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\hpdftex.def"
+File: hpdftex.def 2012/11/06 v6.83m Hyperref driver for pdfTeX
+\Fld@listcount=\count100
+\c@bookmark@seq@number=\count101
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\rerunfilecheck.sty"
+Package: rerunfilecheck 2011/04/15 v1.7 Rerun checks for auxiliary files (HO)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+82.
+)
+\Hy@SectionHShift=\skip45
+)
+Package hyperref Info: Option `colorlinks' set `false' on input line 268.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\makeidx.sty"
+Package: makeidx 2000/03/29 v1.0m Standard LaTeX package
+)
+\@indexfile=\write4
+
+Writing index file Tesis.idx
+("C:\Program Files\MiKTeX 2.9\tex\latex\tools\multicol.sty"
+Package: multicol 2011/06/27 v1.7a multicolumn formatting (FMi)
+\c@tracingmulticols=\count102
+\mult@box=\box26
+\multicol@leftmargin=\dimen108
+\c@unbalance=\count103
+\c@collectmore=\count104
+\doublecol@number=\count105
+\multicoltolerance=\count106
+\multicolpretolerance=\count107
+\full@width=\dimen109
+\page@free=\dimen110
+\premulticols=\dimen111
+\postmulticols=\dimen112
+\multicolsep=\skip46
+\multicolbaselineskip=\skip47
+\partial@page=\box27
+\last@line=\box28
+\mult@rightbox=\box29
+\mult@grightbox=\box30
+\mult@gfirstbox=\box31
+\mult@firstbox=\box32
+\@tempa=\box33
+\@tempa=\box34
+\@tempa=\box35
+\@tempa=\box36
+\@tempa=\box37
+\@tempa=\box38
+\@tempa=\box39
+\@tempa=\box40
+\@tempa=\box41
+\@tempa=\box42
+\@tempa=\box43
+\@tempa=\box44
+\@tempa=\box45
+\@tempa=\box46
+\@tempa=\box47
+\@tempa=\box48
+\@tempa=\box49
+\c@columnbadness=\count108
+\c@finalcolumnbadness=\count109
+\last@try=\dimen113
+\multicolovershoot=\dimen114
+\multicolundershoot=\dimen115
+\mult@nat@firstbox=\box50
+\colbreak@box=\box51
+\multicol@sort@counter=\count110
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\subfig\subfig.sty"
+Package: subfig 2005/06/28 ver: 1.3 subfig package
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\caption\caption.sty"
+Package: caption 2013/05/02 v3.3-89 Customizing captions (AR)
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\caption\caption3.sty"
+Package: caption3 2013/05/02 v1.6-88 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 57.
+\captionmargin=\dimen116
+\captionmargin@=\dimen117
+\captionwidth=\dimen118
+\caption@tempdima=\dimen119
+\caption@indent=\dimen120
+\caption@parindent=\dimen121
+\caption@hangindent=\dimen122
+)
+\c@ContinuedFloat=\count111
+Package caption Info: hyperref package is loaded.
+)
+\c@KVtest=\count112
+\sf@farskip=\skip48
+\sf@captopadj=\dimen123
+\sf@capskip=\skip49
+\sf@nearskip=\skip50
+\c@subfigure=\count113
+\c@subfigure@save=\count114
+\c@lofdepth=\count115
+\c@subtable=\count116
+\c@subtable@save=\count117
+\c@lotdepth=\count118
+\sf@top=\skip51
+\sf@bottom=\skip52
+)
+\sf@box=\box52
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\listings\listings.sty"
+\lst@mode=\count119
+\lst@gtempboxa=\box53
+\lst@token=\toks20
+\lst@length=\count120
+\lst@currlwidth=\dimen124
+\lst@column=\count121
+\lst@pos=\count122
+\lst@lostspace=\dimen125
+\lst@width=\dimen126
+\lst@newlines=\count123
+\lst@lineno=\count124
+\lst@maxwidth=\dimen127
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\listings\lstmisc.sty"
+File: lstmisc.sty 2014/09/06 1.5e (Carsten Heinz)
+\c@lstnumber=\count125
+\lst@skipnumbers=\count126
+\lst@framebox=\box54
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\listings\listings.cfg"
+File: listings.cfg 2014/09/06 1.5e listings configuration
+))
+Package: listings 2014/09/06 1.5e (Carsten Heinz)
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\tools\tabularx.sty"
+Package: tabularx 1999/01/07 v2.07 `tabularx' package (DPC)
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\tools\array.sty"
+Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
+\col@sep=\dimen128
+\extrarowheight=\dimen129
+\NC@list=\toks21
+\extratabsurround=\skip53
+\backup@length=\skip54
+)
+\TX@col@width=\dimen130
+\TX@old@table=\dimen131
+\TX@old@col=\dimen132
+\TX@target=\dimen133
+\TX@delta=\dimen134
+\TX@cols=\count127
+\TX@ftn=\toks22
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\fontenc.sty"
+Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\t1enc.def"
+File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 43.
+))
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\epsfig.sty"
+Package: epsfig 1999/02/16 v1.7a (e)psfig emulation (SPQR)
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\trig.sty"
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\graphics.cfg"
+File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
+)
+Package graphics Info: Driver file: pdftex.def on input line 91.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\pdftex-def\pdftex.def"
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+\Gread@gobject=\count128
+))
+\Gin@req@height=\dimen135
+\Gin@req@width=\dimen136
+)
+\epsfxsize=\dimen137
+\epsfysize=\dimen138
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\tools\calc.sty"
+Package: calc 2007/08/22 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count129
+\calc@Bcount=\count130
+\calc@Adimen=\dimen139
+\calc@Bdimen=\dimen140
+\calc@Askip=\skip55
+\calc@Bskip=\skip56
+LaTeX Info: Redefining \setlength on input line 76.
+LaTeX Info: Redefining \addtolength on input line 77.
+\calc@Ccount=\count131
+\calc@Cskip=\skip57
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\titlesec\titlesec.sty"
+Package: titlesec 2011/12/15 v2.10.0 Sectioning titles
+\ttl@box=\box55
+\beforetitleunit=\skip58
+\aftertitleunit=\skip59
+\ttl@plus=\dimen141
+\ttl@minus=\dimen142
+\ttl@toksa=\toks23
+\titlewidth=\dimen143
+\titlewidthlast=\dimen144
+\titlewidthfirst=\dimen145
+))
+\@input{TeXiS/TeXiS_cab.aux}
+(D:\TFG\TFG\Memoria\Tex\TeXiS-v1.0\TeXiS/TeXiS_cab.tex
+("C:\Program Files\MiKTeX 2.9\tex\latex\fancyhdr\fancyhdr.sty"
+\fancy@headwidth=\skip60
+\f@ncyO@elh=\skip61
+\f@ncyO@erh=\skip62
+\f@ncyO@olh=\skip63
+\f@ncyO@orh=\skip64
+\f@ncyO@elf=\skip65
+\f@ncyO@erf=\skip66
+\f@ncyO@olf=\skip67
+\f@ncyO@orf=\skip68
+))
+\@input{TeXiS/TeXiS_cover.aux}
+(D:\TFG\TFG\Memoria\Tex\TeXiS-v1.0\TeXiS/TeXiS_cover.tex)
+\@input{TeXiS/TeXiS_dedic.aux}
+(D:\TFG\TFG\Memoria\Tex\TeXiS-v1.0\TeXiS/TeXiS_dedic.tex)
+\@input{TeXiS/TeXiS_bib.aux}
+(D:\TFG\TFG\Memoria\Tex\TeXiS-v1.0\TeXiS/TeXiS_bib.tex))
+\@input{constantes.aux}
+(D:\TFG\TFG\Memoria\Tex\TeXiS-v1.0\constantes.tex)
+Copyright Marco Antonio and Pedro Pablo Gomez Martin
+(D:\TFG\TFG\Memoria\Tex\TeXiS-v1.0\Tesis.aux
+(D:\TFG\TFG\Memoria\Tex\TeXiS-v1.0\Cascaras/cover.aux)
+(D:\TFG\TFG\Memoria\Tex\TeXiS-v1.0\Cascaras/dedicatoria.aux)
+(D:\TFG\TFG\Memoria\Tex\TeXiS-v1.0\Cascaras/agradecimientos.aux)
+(D:\TFG\TFG\Memoria\Tex\TeXiS-v1.0\Cascaras/resumen.aux)
+(D:\TFG\TFG\Memoria\Tex\TeXiS-v1.0\TeXiS/TeXiS_toc.aux)
+(D:\TFG\TFG\Memoria\Tex\TeXiS-v1.0\Capitulos/01Introduccion.aux)
+(D:\TFG\TFG\Memoria\Tex\TeXiS-v1.0\Capitulos/02TemaFallos.aux)
+(D:\TFG\TFG\Memoria\Tex\TeXiS-v1.0\Capitulos/03ToleranciaFallosTransitorios.aux
+) (D:\TFG\TFG\Memoria\Tex\TeXiS-v1.0\Capitulos/04ProcesadorARM.aux)
+(D:\TFG\TFG\Memoria\Tex\TeXiS-v1.0\Capitulos/05Resultados.aux)
+(D:\TFG\TFG\Memoria\Tex\TeXiS-v1.0\Capitulos/06AnalisisResultados.aux)
+(D:\TFG\TFG\Memoria\Tex\TeXiS-v1.0\Capitulos/07Conclusiones.aux)
+(D:\TFG\TFG\Memoria\Tex\TeXiS-v1.0\Apendices/01ApendiceA.aux)
+(D:\TFG\TFG\Memoria\Tex\TeXiS-v1.0\Cascaras/bibliografia.aux)
+(D:\TFG\TFG\Memoria\Tex\TeXiS-v1.0\Cascaras/fin.aux))
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 105.
+LaTeX Font Info:    ... okay on input line 105.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 105.
+LaTeX Font Info:    ... okay on input line 105.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 105.
+LaTeX Font Info:    ... okay on input line 105.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 105.
+LaTeX Font Info:    ... okay on input line 105.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 105.
+LaTeX Font Info:    ... okay on input line 105.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 105.
+LaTeX Font Info:    ... okay on input line 105.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 105.
+LaTeX Font Info:    ... okay on input line 105.
+\AtBeginShipoutBox=\box56
+Package hyperref Info: Link coloring OFF on input line 105.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
+Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\gettitlestring.sty"
+Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
+)
+\c@section@level=\count132
+)
+LaTeX Info: Redefining \ref on input line 105.
+LaTeX Info: Redefining \pageref on input line 105.
+LaTeX Info: Redefining \nameref on input line 105.
+
+(D:\TFG\TFG\Memoria\Tex\TeXiS-v1.0\Tesis.out)
+(D:\TFG\TFG\Memoria\Tex\TeXiS-v1.0\Tesis.out)
+\@outlinefile=\write5
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: subfig package v1.3 is loaded.
+Package caption Info: listings package is loaded.
+Package caption Info: End \AtBeginDocument code.
+\c@lstlisting=\count133
+
+("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count134
+\scratchdimen=\dimen146
+\scratchbox=\box57
+\nofMPsegments=\count135
+\nofMParguments=\count136
+\everyMPshowfont=\toks24
+\MPscratchCnt=\count137
+\MPscratchDim=\dimen147
+\MPnumerator=\count138
+\makeMPintoPDFobject=\count139
+\everyMPtoPDFconversion=\toks25
+) (D:\TFG\TFG\Memoria\Tex\TeXiS-v1.0\guionado.tex)
+(D:\TFG\TFG\Memoria\Tex\TeXiS-v1.0\Cascaras/cover.tex
+\cambioIzquierdo=\skip69
+\cambioDerecho=\skip70
+\margenPortada=\skip71
+\evensidemarginOriginal=\skip72
+\oddsidemarginOriginal=\skip73
+\longTitulo=\skip74
+
+<Imagenes/Vectorial/escudoUCM.pdf, id=131, 597.23125pt x 844.15375pt>
+File: Imagenes/Vectorial/escudoUCM.pdf Graphic file (type pdf)
+
+<use Imagenes/Vectorial/escudoUCM.pdf>
+Package pdftex.def Info: Imagenes/Vectorial/escudoUCM.pdf used on input line 16
+3.
+(pdftex.def)             Requested size: 119.44412pt x 168.82776pt.
+ [1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map} <D:/TFG/TFG/Memoria/Tex/Te
+XiS-v1.0/Imagenes/Vectorial/escudoUCM.pdf>] [2] [3]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 163.
+
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\base\omscmr.fd"
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 163.
+)
+[4] (D:\TFG\TFG\Memoria\Tex\TeXiS-v1.0\Cascaras/dedicatoria.tex [5
+
+
+] [6]
+[7] [8]) (D:\TFG\TFG\Memoria\Tex\TeXiS-v1.0\Cascaras/agradecimientos.tex
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <10.95> on input line 58.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 58.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 58.
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 77.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\t1cmtt.fd"
+File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+) [9
+
+
+
+]) [10]
+(D:\TFG\TFG\Memoria\Tex\TeXiS-v1.0\Cascaras/resumen.tex) [11
+
+
+
+]
+(D:\TFG\TFG\Memoria\Tex\TeXiS-v1.0\TeXiS/TeXiS_toc.tex [12
+
+
+
+]
+(D:\TFG\TFG\Memoria\Tex\TeXiS-v1.0\Tesis.toc)
+\tf@toc=\write6
+ [13] [14]
+(D:\TFG\TFG\Memoria\Tex\TeXiS-v1.0\Tesis.lof)
+\tf@lof=\write7
+ [15
+
+] [16
+
+]
+(D:\TFG\TFG\Memoria\Tex\TeXiS-v1.0\Tesis.lot)
+\tf@lot=\write8
+ [17]) [18
+
+
+]
+(D:\TFG\TFG\Memoria\Tex\TeXiS-v1.0\Capitulos/01Introduccion.tex
+Cap\'itulo 1.
+) [1
+
+
+] (D:\TFG\TFG\Memoria\Tex\TeXiS-v1.0\Capitulos/02TemaFallos.tex [2
+
+
+
+]
+Cap\'itulo 2.
+) [3]
+(D:\TFG\TFG\Memoria\Tex\TeXiS-v1.0\Capitulos/03ToleranciaFallosTransitorios.tex
+[4
+
+
+
+]
+Cap\'itulo 3.
+[5]) [6] (D:\TFG\TFG\Memoria\Tex\TeXiS-v1.0\Capitulos/04ProcesadorARM.tex
+Cap\'itulo 4.
+) [7
+
+
+
+] (D:\TFG\TFG\Memoria\Tex\TeXiS-v1.0\Capitulos/05Resultados.tex [8
+
+
+
+]
+Cap\'itulo 5.
+) [9] (D:\TFG\TFG\Memoria\Tex\TeXiS-v1.0\Capitulos/06AnalisisResultados.tex
+[10
+
+
+
+]
+Cap\'itulo 6.
+) [11] (D:\TFG\TFG\Memoria\Tex\TeXiS-v1.0\Capitulos/07Conclusiones.tex [12
+
+
+
+]
+Cap\'itulo 7.
+) [13] (D:\TFG\TFG\Memoria\Tex\TeXiS-v1.0\Apendices/01ApendiceA.tex [14
+
+
+
+]
+Ap\'{e}ndice A.
+) [15] [16
+
+
+] (D:\TFG\TFG\Memoria\Tex\TeXiS-v1.0\Cascaras/bibliografia.tex
+No file Tesis.bbl.
+) (D:\TFG\TFG\Memoria\Tex\TeXiS-v1.0\Cascaras/fin.tex [17
+
+
+
+] [18])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 193.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 193.
+
+(D:\TFG\TFG\Memoria\Tex\TeXiS-v1.0\Tesis.aux
+(D:\TFG\TFG\Memoria\Tex\TeXiS-v1.0\Cascaras/cover.aux)
+(D:\TFG\TFG\Memoria\Tex\TeXiS-v1.0\Cascaras/dedicatoria.aux)
+(D:\TFG\TFG\Memoria\Tex\TeXiS-v1.0\Cascaras/agradecimientos.aux)
+(D:\TFG\TFG\Memoria\Tex\TeXiS-v1.0\Cascaras/resumen.aux)
+(D:\TFG\TFG\Memoria\Tex\TeXiS-v1.0\TeXiS/TeXiS_toc.aux)
+(D:\TFG\TFG\Memoria\Tex\TeXiS-v1.0\Capitulos/01Introduccion.aux)
+(D:\TFG\TFG\Memoria\Tex\TeXiS-v1.0\Capitulos/02TemaFallos.aux)
+(D:\TFG\TFG\Memoria\Tex\TeXiS-v1.0\Capitulos/03ToleranciaFallosTransitorios.aux
+) (D:\TFG\TFG\Memoria\Tex\TeXiS-v1.0\Capitulos/04ProcesadorARM.aux)
+(D:\TFG\TFG\Memoria\Tex\TeXiS-v1.0\Capitulos/05Resultados.aux)
+(D:\TFG\TFG\Memoria\Tex\TeXiS-v1.0\Capitulos/06AnalisisResultados.aux)
+(D:\TFG\TFG\Memoria\Tex\TeXiS-v1.0\Capitulos/07Conclusiones.aux)
+(D:\TFG\TFG\Memoria\Tex\TeXiS-v1.0\Apendices/01ApendiceA.aux)
+(D:\TFG\TFG\Memoria\Tex\TeXiS-v1.0\Cascaras/bibliografia.aux)
+(D:\TFG\TFG\Memoria\Tex\TeXiS-v1.0\Cascaras/fin.aux))
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 193.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 193.
+Package rerunfilecheck Info: File `Tesis.out' has not changed.
+(rerunfilecheck)             Checksum: 7420AB3B1EE3B4E53E73AACE84711914;1942.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 193.
+ ) 
+Here is how much of TeX's memory you used:
+ 10051 strings out of 493921
+ 150473 string characters out of 3147285
+ 238949 words of memory out of 3000000
+ 12779 multiletter control sequences out of 15000+200000
+ 21514 words of font info for 44 fonts, out of 3000000 for 9000
+ 1079 hyphenation exceptions out of 8191
+ 55i,11n,51p,282b,399s stack positions out of 5000i,500n,10000p,200000b,50000s
+ <C:\Users\Andy\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\e
+cxc1000.pk> <C:\Users\Andy\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec
+\dpi600\ecxc1095.pk> <C:\Users\Andy\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jk
+nappen\ec\dpi600\ecbx1095.pk> <C:\Users\Andy\AppData\Local\MiKTeX\2.9\fonts\pk\
+ljfour\jknappen\ec\dpi600\eccc1095.pk> <C:\Users\Andy\AppData\Local\MiKTeX\2.9\
+fonts\pk\ljfour\jknappen\ec\dpi600\ectt1095.pk> <C:\Users\Andy\AppData\Local\Mi
+KTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm0800.pk> <C:\Users\Andy\AppData
+\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecti1000.pk> <C:\Users\And
+y\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx2488.pk> <C:\
+Users\Andy\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecti1095
+.pk> <C:\Users\Andy\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600
+\ecrm1095.pk> <C:\Users\Andy\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\
+ec\dpi600\ecti1200.pk> <C:\Users\Andy\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\
+jknappen\ec\dpi600\ecrm2488.pk> <C:\Users\Andy\AppData\Local\MiKTeX\2.9\fonts\p
+k\ljfour\jknappen\ec\dpi600\eccc1000.pk> <C:\Users\Andy\AppData\Local\MiKTeX\2.
+9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1000.pk> <C:\Users\Andy\AppData\Local\
+MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1200.pk> <C:\Users\Andy\AppDa
+ta\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1440.pk> <C:\Users\A
+ndy\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx2074.pk><C:
+/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program
+ Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on Tesis.pdf (36 pages, 567849 bytes).
+PDF statistics:
+ 870 PDF objects out of 1000 (max. 8388607)
+ 72 named destinations out of 1000 (max. 500000)
+ 262 words of extra memory for PDF output out of 10000 (max. 10000000)
+

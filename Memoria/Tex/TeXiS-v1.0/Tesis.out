@@ -1,0 +1,32 @@
+\BOOKMARK [0][-]{titulo.0}{P\341gina de T\355tulo}{}% 1
+\BOOKMARK [0][-]{dedicatoria.0}{Dedicatoria}{}% 2
+\BOOKMARK [0][-]{chapter*.1}{Agradecimientos}{}% 3
+\BOOKMARK [0][-]{chapter*.2}{Resumen}{}% 4
+\BOOKMARK [0][-]{indices.0}{\315ndices}{}% 5
+\BOOKMARK [1][-]{tabla de contenidos.1}{Tabla de contenidos}{indices.0}% 6
+\BOOKMARK [1][-]{indice de figuras.1}{\315ndice de figuras}{indices.0}% 7
+\BOOKMARK [1][-]{indice de tablas.1}{\315ndice de tablas}{indices.0}% 8
+\BOOKMARK [0][-]{chapter.1}{Introducci\363n}{}% 9
+\BOOKMARK [1][-]{section.1.1}{Introducci\363n}{chapter.1}% 10
+\BOOKMARK [0][-]{chapter.2}{Tema de Fallos}{}% 11
+\BOOKMARK [1][-]{section.2.1}{Fallos Transitorios}{chapter.2}% 12
+\BOOKMARK [1][-]{section.2.2}{Fallos Permanentes}{chapter.2}% 13
+\BOOKMARK [0][-]{chapter.3}{Tolerancia a Fallos Transitorios}{}% 14
+\BOOKMARK [1][-]{section.3.1}{Como se consigue la tolerancia}{chapter.3}% 15
+\BOOKMARK [1][-]{section.3.2}{Votadores}{chapter.3}% 16
+\BOOKMARK [1][-]{section.3.3}{Configuraci\363n del entorno}{chapter.3}% 17
+\BOOKMARK [1][-]{section.3.4}{Injecci\363n de fallos}{chapter.3}% 18
+\BOOKMARK [2][-]{subsection.3.4.1}{Modo post injeccion}{section.3.4}% 19
+\BOOKMARK [2][-]{subsection.3.4.2}{Modo pre injeccion}{section.3.4}% 20
+\BOOKMARK [0][-]{chapter.4}{Procesador ARM}{}% 21
+\BOOKMARK [1][-]{section.4.1}{Arquitectura del Cortex-M4}{chapter.4}% 22
+\BOOKMARK [1][-]{section.4.2}{Nuestra Arquitectura}{chapter.4}% 23
+\BOOKMARK [0][-]{chapter.5}{Resultados}{}% 24
+\BOOKMARK [1][-]{section.5.1}{Temp}{chapter.5}% 25
+\BOOKMARK [0][-]{chapter.6}{An\341lisis de Rsultados}{}% 26
+\BOOKMARK [1][-]{section.6.1}{Temp}{chapter.6}% 27
+\BOOKMARK [0][-]{chapter.7}{Conclusiones}{}% 28
+\BOOKMARK [1][-]{section.7.1}{Temp}{chapter.7}% 29
+\BOOKMARK [0][-]{appendix.Alph1}{As\355 se hizo...}{}% 30
+\BOOKMARK [1][-]{section.Alph1.1}{Introducci\363n}{appendix.Alph1}% 31
+\BOOKMARK [0][-]{fin.0}{Fin}{}% 32
