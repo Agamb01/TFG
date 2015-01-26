@@ -31,7 +31,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity main is
    Port(
-      clk, rst : in STD_LOGIC;
+      clk : in STD_LOGIC; -- , rst 
       input_A : STD_LOGIC;
       input_B : STD_LOGIC;
       output_Z : out STD_LOGIC
@@ -89,7 +89,7 @@ begin
 
 -- Registros A, B, C
 -- Votador
-   i_votador: votadorNbits
+   i_votador: votador
       port map(
          A => data_A,
          B => data_B,

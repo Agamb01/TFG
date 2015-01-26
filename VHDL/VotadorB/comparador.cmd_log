@@ -1,0 +1,2 @@
+vhdtdtfi -lib work comparador.vhd -prj VotadorB -o comparador.spl -module comparador -template C:/Xilinx/14.5/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family artix7 comparador.spl C:/TFG/TFG/VHDL/VotadorB/comparador.sym 

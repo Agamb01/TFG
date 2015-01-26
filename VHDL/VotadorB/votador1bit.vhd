@@ -41,9 +41,9 @@ entity votador is
       C : in  STD_LOGIC;
       Z : out  STD_LOGIC
    );
-end votador1bit;
+end votador;
 
-architecture Behavioral of votador1bit is
+architecture Behavioral of votador is
 
 ---------------------------------------
 -- C\AB | 00 | 01 | 11 | 10
