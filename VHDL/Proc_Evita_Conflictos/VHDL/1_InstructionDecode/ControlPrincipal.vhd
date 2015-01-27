@@ -82,19 +82,30 @@ begin
 -- Seleccion operación
 --  Operacion de ALU depende de bits [24-21] si operacion con registro
 --  Operacion de ALU depende de bits [23,21,20] si operacion con inmediato
+-- Tabla operaciones
+-- ADD  000
+-- SUB  001
+-- MOV  010
+-- MOVT 011
+
+-- AND  100
+-- ORR  101
+-- EOR  110
+-- CMP  111
+
    process (s_intr_type)
    begin
       if s_intr_type = ALU12 then
          case in_inst(23) & in_inst(21 downto 20) is
-            when "000"  => s_ALU_op <= "000"; --ADD
-            when "110"  => s_ALU_op <= "110"; --SUB
-            when others => s_ALU_op <= "000";
+            when "000"  => s_ALU_op <= ""; --ADD
+            when "110"  => s_ALU_op <= ""; --SUB
+            when others => s_ALU_op <= "";
          end case;
       elsif s_intr_type = ALU16 then
          case in_inst(23) & in_inst(21 downto 20) is
-            when "000"  => s_ALU_op <= "100"; --MOV
-            when "100"  => s_ALU_op <= "111"; --MOVT
-            when others => s_ALU_op <= "000";
+            when "000"  => s_ALU_op <= ""; --MOV
+            when "100"  => s_ALU_op <= ""; --MOVT
+            when others => s_ALU_op <= "";
          end case;
       elsif s_intr_type = ALUREG then
 

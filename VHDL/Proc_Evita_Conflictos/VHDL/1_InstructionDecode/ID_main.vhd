@@ -90,29 +90,29 @@ end ID_main;
 architecture Behavioral of ID_main is
 
 -- Modulo que realiza el trabajo de la fase
-component Phase1_InstructionDecode is
-   Port ( clk, rst : in STD_LOGIC;  
+   component Phase1_InstructionDecode is
+      Port ( clk, rst : in STD_LOGIC;  
+            
+      -- Entradas (IF->ID)
+         in_inst   : in STD_LOGIC_VECTOR(31 downto 0);  -- Instruccion actual
+
+      -- Salidas (ID->EXE)
+         out_busA     : out STD_LOGIC_VECTOR(31 downto 0); -- Datos de registro A
+         out_busB     : out STD_LOGIC_VECTOR(31 downto 0); -- Datos de registro B
+         out_regW     : out STD_LOGIC_VECTOR(3 downto 0);  -- Registro destino
+         out_entero   : out STD_LOGIC_VECTOR(31 downto 0); -- entero con extension de signo
          
-   -- Entradas (IF->ID)
-      in_inst   : in STD_LOGIC_VECTOR(31 downto 0);  -- Instruccion actual
+      -- Señales de control (WB->ID)
+         in_WREnable    : in STD_LOGIC;
+         in_regW        : in STD_LOGIC_VECTOR(3 downto 0);   -- 
+         in_busW        : in STD_LOGIC_VECTOR(31 downto 0);  -- 
 
-   -- Salidas (ID->EXE)
-      out_busA     : out STD_LOGIC_VECTOR(31 downto 0); -- Datos de registro A
-      out_busB     : out STD_LOGIC_VECTOR(31 downto 0); -- Datos de registro B
-      out_regW     : out STD_LOGIC_VECTOR(3 downto 0);  -- Registro destino
-      out_entero   : out STD_LOGIC_VECTOR(31 downto 0); -- entero con extension de signo
-      
-   -- Señales de control (WB->ID)
-      in_WREnable    : in STD_LOGIC;
-      in_regW        : in STD_LOGIC_VECTOR(3 downto 0);   -- 
-      in_busW        : in STD_LOGIC_VECTOR(31 downto 0);  -- 
-
-   -- Señales de control (ID->EXE)
-      out_WB_control  : out STD_LOGIC_VECTOR(11 downto 0);
-      out_MEM_control : out STD_LOGIC_VECTOR(9 downto 0);
-      out_EXE_control : out STD_LOGIC_VECTOR(9 downto 0)
-   );
-end component;
+      -- Señales de control (ID->EXE)
+         out_WB_control  : out STD_LOGIC_VECTOR(11 downto 0);
+         out_MEM_control : out STD_LOGIC_VECTOR(9 downto 0);
+         out_EXE_control : out STD_LOGIC_VECTOR(9 downto 0)
+      );
+   end component;
 
    signal paradas_reg: tipo_paradas; -- Señales de cuantas paradas deben ejecutarse
    signal nula_reg: STD_LOGIC; -- Indica si la instrucción guardada en "NULA"
@@ -156,7 +156,6 @@ begin
    end process;
    
 -- Modulo funcional de la fase ID
---
    i_pID: Phase1_InstructionDecode
       Port map ( 
          clk => clk,
@@ -180,6 +179,8 @@ begin
          out_MEM_control => out_MEM_control,
          out_EXE_control => out_EXE_control
       );
+--
+
 
 end Behavioral;
 

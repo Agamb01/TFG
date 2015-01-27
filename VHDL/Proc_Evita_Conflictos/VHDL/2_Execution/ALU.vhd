@@ -31,9 +31,11 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity ALU is
    Port ( 
+      -- ENTRADAS
       in_A : in  STD_LOGIC_VECTOR (31 downto 0);
       in_B : in  STD_LOGIC_VECTOR (31 downto 0);
       in_op : in STD_LOGIC_VECTOR (2 downto 0);
+      -- SALIDAS
       out_R : out  STD_LOGIC_VECTOR (31 downto 0);
       out_f : out  STD_LOGIC_VECTOR (1 downto 0) -- Flags(N,Z)
    );
