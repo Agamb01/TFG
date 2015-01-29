@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IMPORTANT: This is an internal file that has been generated   -->
+<!--     by the Xilinx ISE software.  Any direct editing or        -->
+<!--     changes made to this file may result in unpredictable     -->
+<!--     behavior or data corruption.  It is strongly advised that -->
+<!--     users do not edit the contents of this file.              -->
+<!--                                                               -->
+<!-- Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.    -->
+
+<messages>
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;C:/TFG/TFG/VHDL/Proc_Evita_Conflictos/VHDL/0_InstructionFetch/IF_main.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;C:/TFG/TFG/VHDL/Proc_Evita_Conflictos/VHDL/0_InstructionFetch/MemInstruction.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;C:/TFG/TFG/VHDL/Proc_Evita_Conflictos/VHDL/0_InstructionFetch/PCAdder.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;C:/TFG/TFG/VHDL/Proc_Evita_Conflictos/VHDL/0_InstructionFetch/Phase0_InstructionFetch.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;C:/TFG/TFG/VHDL/Proc_Evita_Conflictos/VHDL/1_InstructionDecode/ControlPrincipal.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;C:/TFG/TFG/VHDL/Proc_Evita_Conflictos/VHDL/1_InstructionDecode/ExtensioSigno.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;C:/TFG/TFG/VHDL/Proc_Evita_Conflictos/VHDL/1_InstructionDecode/ID_main.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;C:/TFG/TFG/VHDL/Proc_Evita_Conflictos/VHDL/1_InstructionDecode/Phase1_InstructionDecode.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;C:/TFG/TFG/VHDL/Proc_Evita_Conflictos/VHDL/1_InstructionDecode/RegisterBank.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;C:/TFG/TFG/VHDL/Proc_Evita_Conflictos/VHDL/2_Execution/ALU.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;C:/TFG/TFG/VHDL/Proc_Evita_Conflictos/VHDL/2_Execution/BrAdder.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;C:/TFG/TFG/VHDL/Proc_Evita_Conflictos/VHDL/2_Execution/EXE_main.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;C:/TFG/TFG/VHDL/Proc_Evita_Conflictos/VHDL/2_Execution/Phase2_Execution.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;C:/TFG/TFG/VHDL/Proc_Evita_Conflictos/VHDL/3_Memory/MEM_main.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;C:/TFG/TFG/VHDL/Proc_Evita_Conflictos/VHDL/3_Memory/MemData.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;C:/TFG/TFG/VHDL/Proc_Evita_Conflictos/VHDL/3_Memory/Phase3_Memory.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;C:/TFG/TFG/VHDL/Proc_Evita_Conflictos/VHDL/common/Mux2.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;C:/TFG/TFG/VHDL/Proc_Evita_Conflictos/VHDL/common/my_package.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;C:/TFG/TFG/VHDL/Proc_Evita_Conflictos/VHDL/main.vhd&quot; into library work</arg>
+</msg>
+
+</messages>
+
