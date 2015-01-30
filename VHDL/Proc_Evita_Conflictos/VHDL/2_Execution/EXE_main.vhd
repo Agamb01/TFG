@@ -58,6 +58,8 @@ library work;
 entity EXE_main is
    Port( 
       clk, rst       : in STD_LOGIC;
+      
+      --Entradas modulo esperas
       in_paradas     : in tipo_paradas;
       in_nula        : in STD_LOGIC;
       out_paradas    : out tipo_paradas;
@@ -76,7 +78,16 @@ entity EXE_main is
       out_ALU_flags  : out STD_LOGIC_VECTOR(1 downto 0); -- Flags(N,Z)
 
       --Señales de control(ID->EXE)
-      in_EXE_control : in STD_LOGIC_VECTOR(3 downto 0) -- [3:1]=ALUop, [0]=ALUsrc
+      in_EXE_control : in STD_LOGIC_VECTOR(3 downto 0)
+        -- [3:1]=ALUop, [0]=ALUsrc
+
+   -- Entradas y salidas de paso, sirven para simplificar el diseño superior
+      in_regW         : in STD_LOGIC_VECTOR(3 downto 0);  -- Registro destino
+      in_WB_control   : in STD_LOGIC_VECTOR(11 downto 0);
+      in_MEM_control  : in STD_LOGIC_VECTOR(5 downto 0);
+      out_regW        : out STD_LOGIC_VECTOR(3 downto 0);  -- Registro destino
+      out_WB_control  : out STD_LOGIC_VECTOR(11 downto 0);
+      out_MEM_control : out STD_LOGIC_VECTOR(5 downto 0);
 
    );
 end EXE_main;
@@ -102,48 +113,40 @@ architecture Behavioral of EXE_main is
       );
    end component;
 
-   signal paradas_reg: tipo_paradas; -- Señales de cuantas paradas deben ejecutarse
-   signal nula_reg: STD_LOGIC; -- Indica si la instrucción guardada en "NULA"
+-- Modulo que gestiona las esperas
+   component mod_esperas is
+      Port( 
+         clk, rst       : in STD_LOGIC;
+         in_paradas     : in tipo_paradas;
+         in_nula        : in STD_LOGIC;
+         out_paradas    : out tipo_paradas;
+         out_nula       : out STD_LOGIC;
+         out_valid_data : out STD_LOGIC
+      );
+   end component;
 
  --  signal s_enable : STD_LOGIC;
 begin
 
-   -- Si la instrucción actual es "NULA" o no necesita realizar ninguna parada, 
-   -- carga valores para la siguiente instrucción
-   p_carga: process(clk, rst)
-   begin
-      -- Si hay reset carga instrucción "NULA" 
-      if rst = '0' then
-         nula_reg <= '1';
-      elsif rising_edge(clk) then
-         -- Si la instrucción es "NULA" o no tiene que esperar, carga valores de entrada
-         if (nula_reg = '1') or (unsigned(paradas_reg(0)) = 0) then
-            paradas_reg(0 to Numero_Fases) <= in_paradas(0 to Numero_Fases);
-            nula_reg <= in_nula;
-         elsif (unsigned(paradas_reg(0)) > 0) then 
-            paradas_reg(0) <= std_logic_vector( unsigned(paradas_reg(0)) - 1 );
-         end if;
-      end if;
-   end process;
+-- Señales de paso, sirven para simplificar el diseño superior
+   out_regW <= in_regW;
+   out_WB_control <= in_WB_control;
+   out_MEM_control <= in_MEM_control;
    
-   p_salida: process(paradas_reg, nula_reg)
-   begin
-      out_paradas(0 to Numero_Fases-1) <= paradas_reg(1 to Numero_Fases);
-      out_paradas(Numero_Fases) <= (others => '0');
-      
-      -- Se habilita el funcionamiento del modulo interno 
-      -- si existe una instruccion valida
-      -- out_enable <= 
-       out_nula <= nula_reg;
-   -- La instruccion se propaga solo si es el ultimo ciclo de la instruccion en esta fase
-      if (nula_reg = '0') and (unsigned(paradas_reg(0)) = 0) then
-         out_valid_data <= '1';
-      else
-         out_valid_data <= '0';
-      end if;
-   end process;
    
--- Modulo funcional de la fase ID
+-- Modulo que gestiona las esperas
+   i_esperas: mod_esperas
+      Port map (
+         clk            => clk, 
+         rst            => rst,
+         in_paradas     => in_paradas,
+         in_nula        => in_nula,
+         out_paradas    => out_paradas,
+         out_nula       => out_nula,
+         out_valid_data => out_valid_data
+      );
+   
+-- Modulo funcional de la fase EXE
    i_pEXE: Phase2_Execution
       Port map (
          --Entradas (ID->EXE)

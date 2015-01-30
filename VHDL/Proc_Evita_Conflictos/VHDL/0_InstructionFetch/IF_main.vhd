@@ -83,47 +83,33 @@ architecture Behavioral of IF_main is
       ); 
    end component;
 
-   signal paradas_reg: tipo_paradas; -- Señales de cuantas paradas deben ejecutarse
-   signal nula_reg: STD_LOGIC; -- Indica si la instrucción guardada en "NULA"
+-- Modulo que gestiona las esperas
+   component mod_esperas is
+      Port( 
+         clk, rst       : in STD_LOGIC;
+         in_paradas     : in tipo_paradas;
+         in_nula        : in STD_LOGIC;
+         out_paradas    : out tipo_paradas;
+         out_nula       : out STD_LOGIC;
+         out_valid_data : out STD_LOGIC
+      );
+   end component;
 
  --  signal s_enable : STD_LOGIC;
 begin
 
-   -- Si la instrucción actual es "NULA" o no necesita realizar ninguna parada, 
-   -- carga valores para la siguiente instrucción
-   p_carga: process(clk, rst)
-   begin
-      -- Si hay reset carga instrucción "NULA" 
-      if rst = '0' then
-         nula_reg <= '1';
-      elsif rising_edge(clk) then
-         -- Si la instrucción es "NULA" o no tiene que esperar, carga valores de entrada
-         if (nula_reg = '1') or (unsigned(paradas_reg(0)) = 0) then
-            paradas_reg(0 to Numero_Fases) <= in_paradas(0 to Numero_Fases);
-            nula_reg <= in_nula;
-         elsif (unsigned(paradas_reg(0)) > 0) then 
-            paradas_reg(0) <= std_logic_vector( unsigned(paradas_reg(0)) - 1 );
-         end if;
-      end if;
-   end process;
-   
-   p_salida: process(paradas_reg, nula_reg)
-   begin
-      out_paradas(0 to Numero_Fases-1) <= paradas_reg(1 to Numero_Fases);
-      out_paradas(Numero_Fases) <= (others => '0');
-      
-      -- Se habilita el funcionamiento del modulo interno 
-      -- si existe una instruccion valida
-      -- out_enable <= 
-       out_nula <= nula_reg;
-   -- La instruccion se propaga solo si es el ultimo ciclo de la instruccion en esta fase
-      if (nula_reg = '0') and (unsigned(paradas_reg(0)) = 0) then
-         out_valid_data <= '1';
-      else
-         out_valid_data <= '0';
-      end if;
-   end process;
-   
+  
+-- Modulo que gestiona las esperas
+   i_esperas: mod_esperas
+      Port map (
+         clk            => clk, 
+         rst            => rst,
+         in_paradas     => in_paradas,
+         in_nula        => in_nula,
+         out_paradas    => out_paradas,
+         out_nula       => out_nula,
+         out_valid_data => out_valid_data
+      );
    
 -- Modulo funcional de la fase IF
    i_pIF: Phase0_InstructionFetch 

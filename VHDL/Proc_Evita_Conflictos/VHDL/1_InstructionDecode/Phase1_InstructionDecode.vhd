@@ -48,8 +48,10 @@ entity Phase1_InstructionDecode is
 
    -- Señales de control (ID->EXE)
       out_WB_control  : out STD_LOGIC_VECTOR(11 downto 0);
-      out_MEM_control : out STD_LOGIC_VECTOR(9 downto 0);
-      out_EXE_control : out STD_LOGIC_VECTOR(9 downto 0)
+      out_MEM_control : out STD_LOGIC_VECTOR(5 downto 0);
+        -- [5:2]=BRCond(Negative,Zero,Cond,Incond), [1]=MemRead, [0]=MemWrite
+      out_EXE_control : out STD_LOGIC_VECTOR(3 downto 0)
+        -- [3:1]=ALUop, [0]=ALUsrc
    );
 end Phase1_InstructionDecode;
 

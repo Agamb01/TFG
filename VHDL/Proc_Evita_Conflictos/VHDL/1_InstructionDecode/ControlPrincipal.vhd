@@ -33,10 +33,13 @@ use IEEE.STD_LOGIC_1164.ALL;
 entity ControlPrincipal is
    Port ( 
       in_inst     : in  STD_LOGIC_VECTOR(31 downto 0);
-      out_WB_ctr  : out STD_LOGIC_VECTOR(11 downto 0);
-      out_MEM_ctr : out STD_LOGIC_VECTOR(9 downto 0);
-      out_EXE_ctr : out STD_LOGIC_VECTOR(9 downto 0);
-      out_test    : out STD_LOGIC_VECTOR(4 downto 0)
+      out_WB_ctr  : out STD_LOGIC_VECTOR(1 downto 0);
+        -- [1]=MemtoReg, [0]=RegWrite
+      out_MEM_control : out STD_LOGIC_VECTOR(5 downto 0);
+        -- [5:2]=BRCond(Negative,Zero,Cond,Incond), [1]=MemRead, [0]=MemWrite
+      out_EXE_control : out STD_LOGIC_VECTOR(3 downto 0)
+        -- [3:1]=ALUop, [0]=ALUsrc
+      --out_test    : out STD_LOGIC_VECTOR(4 downto 0)
    );
 end ControlPrincipal;
 
@@ -121,25 +124,25 @@ begin
 
 
 -- Proceso salidas
-   process (s_intr_type)
-   begin   
-      case s_intr_type is
-         when ALU12 =>
-           out_test <= "10000";
-         when ALU16 =>
-           out_test <= "01000";
-         when LDST =>
-           out_test <= "00100";
-         when BR =>
-           out_test <= "00010";
-         when BRCond =>
-           out_test <= "00001";
-         when UNDEFINED =>
-           out_test <= "00000";         
-         when others => 
-           out_test <= "00000";
-      end case;
-   end process;
+--   process (s_intr_type)
+--   begin   
+--      case s_intr_type is
+--         when ALU12 =>
+--           out_test <= "10000";
+--         when ALU16 =>
+--           out_test <= "01000";
+--         when LDST =>
+--           out_test <= "00100";
+--         when BR =>
+--           out_test <= "00010";
+--         when BRCond =>
+--           out_test <= "00001";
+--         when UNDEFINED =>
+--           out_test <= "00000";         
+--         when others => 
+--           out_test <= "00000";
+--      end case;
+--   end process;
 
 
 -- Obtener señales para fase de ejecución

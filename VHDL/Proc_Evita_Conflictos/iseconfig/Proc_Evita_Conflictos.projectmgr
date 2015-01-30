@@ -9,9 +9,15 @@
          <ClosedNodesVersion>2</ClosedNodesVersion>
          <ClosedNode>/EXE_main - Behavioral C:|TFG|TFG|VHDL|Proc_Evita_Conflictos|VHDL|2_Execution|EXE_main.vhd</ClosedNode>
          <ClosedNode>/EXE_main - Behavioral C:|TFG|TFG|VHDL|Proc_Evita_Conflictos|VHDL|2_Execution|EXE_main.vhd/i_pEXE - Phase2_Execution - Behavioral</ClosedNode>
+         <ClosedNode>/EXE_main - Behavioral D:|TFG|TFG|VHDL|Proc_Evita_Conflictos|VHDL|2_Execution|EXE_main.vhd</ClosedNode>
+         <ClosedNode>/EXE_main - Behavioral D:|TFG|TFG|VHDL|Proc_Evita_Conflictos|VHDL|2_Execution|EXE_main.vhd/i_pEXE - Phase2_Execution - Behavioral</ClosedNode>
          <ClosedNode>/ID_main - Behavioral C:|TFG|TFG|VHDL|Proc_Evita_Conflictos|VHDL|1_InstructionDecode|ID_main.vhd</ClosedNode>
+         <ClosedNode>/ID_main - Behavioral D:|TFG|TFG|VHDL|Proc_Evita_Conflictos|VHDL|1_InstructionDecode|ID_main.vhd</ClosedNode>
+         <ClosedNode>/ID_main - Behavioral D:|TFG|TFG|VHDL|Proc_Evita_Conflictos|VHDL|1_InstructionDecode|ID_main.vhd/i_pID - Phase1_InstructionDecode - Behavioral</ClosedNode>
          <ClosedNode>/IF_main - Behavioral C:|TFG|TFG|VHDL|Proc_Evita_Conflictos|VHDL|0_InstructionFetch|IF_main.vhd</ClosedNode>
+         <ClosedNode>/IF_main - Behavioral D:|TFG|TFG|VHDL|Proc_Evita_Conflictos|VHDL|0_InstructionFetch|IF_main.vhd</ClosedNode>
          <ClosedNode>/MEM_main - Behavioral C:|TFG|TFG|VHDL|Proc_Evita_Conflictos|VHDL|3_Memory|MEM_main.vhd</ClosedNode>
+         <ClosedNode>/MEM_main - Behavioral D:|TFG|TFG|VHDL|Proc_Evita_Conflictos|VHDL|3_Memory|MEM_main.vhd</ClosedNode>
          <ClosedNode>/Phase2_Execution - Behavioral C:|TFG|TFG|VHDL|Proc_Evita_Conflictos|VHDL|2_Execution|Phase2_Execution.vhd</ClosedNode>
          <ClosedNode>/Phase3_Memory - Behavioral C:|TFG|TFG|VHDL|Proc_Evita_Conflictos|VHDL|3_Memory|Phase3_Memory.vhd</ClosedNode>
          <ClosedNode>/TB_MemInstruction - behavior C:|TFG|TFG|VHDL|Proc_Evita_Conflictos|VHDL|0_InstructionFetch|TB|TB_MemInstruction.vhd</ClosedNode>
@@ -19,13 +25,13 @@
          <ClosedNode>/TB_mux2 - behavior C:|TFG|TFG|VHDL|Proc_Evita_Conflictos|TB_Mux2.vhd</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>MEM_main - Behavioral (C:/TFG/TFG/VHDL/Proc_Evita_Conflictos/VHDL/3_Memory/MEM_main.vhd)</SelectedItem>
+         <SelectedItem>ControlPrincipal - Behavioral (D:/TFG/TFG/VHDL/Proc_Evita_Conflictos/VHDL/1_InstructionDecode/ControlPrincipal.vhd)</SelectedItem>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000020200000001000000010000006400000154000000020000000000000000000000000200000064ffffffff000000810000000300000002000001540000000100000003000000000000000100000003</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
-      <CurrentItem>MEM_main - Behavioral (C:/TFG/TFG/VHDL/Proc_Evita_Conflictos/VHDL/3_Memory/MEM_main.vhd)</CurrentItem>
+      <CurrentItem>ControlPrincipal - Behavioral (D:/TFG/TFG/VHDL/Proc_Evita_Conflictos/VHDL/1_InstructionDecode/ControlPrincipal.vhd)</CurrentItem>
    </ItemView>
    <ItemView engineview="SynthesisOnly" sourcetype="" guiview="Process" >
       <ClosedNodes>
@@ -37,7 +43,7 @@
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000169000000010000000100000000000000000000000064ffffffff000000810000000000000001000001690000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000136000000010000000100000000000000000000000064ffffffff000000810000000000000001000001360000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
       <CurrentItem/>
    </ItemView>
@@ -77,7 +83,7 @@
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000169000000010000000100000000000000000000000064ffffffff000000810000000000000001000001690000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000136000000010000000100000000000000000000000064ffffffff000000810000000000000001000001360000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
       <CurrentItem></CurrentItem>
    </ItemView>
@@ -95,21 +101,27 @@
          <ClosedNode>/TB_ALU - behavior C:|TFG|TFG|VHDL|Proc_Evita_Conflictos|VHDL|2_Execution|TB|TB_ALU.vhd</ClosedNode>
          <ClosedNode>/TB_ALU - behavior C:|TFG|TFG|VHDL|Proc_Evita_Conflictos|VHDL|TB_ALU.vhd</ClosedNode>
          <ClosedNode>/TB_ALU - behavior D:|TFG|TFG|VHDL|Proc_Evita_Conflictos|TB_ALU.vhd</ClosedNode>
+         <ClosedNode>/TB_ALU - behavior D:|TFG|TFG|VHDL|Proc_Evita_Conflictos|VHDL|2_Execution|TB|TB_ALU.vhd</ClosedNode>
          <ClosedNode>/TB_BrAdder - behavior C:|TFG|TFG|VHDL|Proc_Evita_Conflictos|TB_BrAdder.vhd</ClosedNode>
          <ClosedNode>/TB_BrAdder - behavior C:|TFG|TFG|VHDL|Proc_Evita_Conflictos|VHDL|2_Execution|TB|TB_BrAdder.vhd</ClosedNode>
+         <ClosedNode>/TB_BrAdder - behavior D:|TFG|TFG|VHDL|Proc_Evita_Conflictos|VHDL|2_Execution|TB|TB_BrAdder.vhd</ClosedNode>
          <ClosedNode>/TB_EXE_main - behavior C:|TFG|TFG|VHDL|Proc_Evita_Conflictos|TB_EXE_main.vhd</ClosedNode>
          <ClosedNode>/TB_EXE_main - behavior C:|TFG|TFG|VHDL|Proc_Evita_Conflictos|VHDL|2_Execution|TB|TB_EXE_main.vhd</ClosedNode>
+         <ClosedNode>/TB_EXE_main - behavior D:|TFG|TFG|VHDL|Proc_Evita_Conflictos|VHDL|2_Execution|TB|TB_EXE_main.vhd</ClosedNode>
          <ClosedNode>/TB_ExtensionSigno - behavior C:|TFG|TFG|VHDL|Proc_Evita_Conflictos|VHDL|1_InstructionDecode|TB|TB_ExtensionSigno.vhd</ClosedNode>
          <ClosedNode>/TB_ExtensionSigno - behavior D:|TFG|TFG|VHDL|Proc_Evita_Conflictos|VHDL|1_InstructionDecode|TB|TB_ExtensionSigno.vhd</ClosedNode>
          <ClosedNode>/TB_ID_main - behavior C:|TFG|TFG|VHDL|Proc_Evita_Conflictos|TB_ID_main.vhd/uut - ID_main - Behavioral/i_pID - Phase1_InstructionDecode - Behavioral</ClosedNode>
          <ClosedNode>/TB_ID_main - behavior C:|TFG|TFG|VHDL|Proc_Evita_Conflictos|VHDL|1_InstructionDecode|TB|TB_ID_main.vhd</ClosedNode>
          <ClosedNode>/TB_ID_main - behavior D:|TFG|TFG|VHDL|Proc_Evita_Conflictos|TB_ID_main.vhd/uut - ID_main - Behavioral/i_pID - Phase1_InstructionDecode - Behavioral</ClosedNode>
+         <ClosedNode>/TB_ID_main - behavior D:|TFG|TFG|VHDL|Proc_Evita_Conflictos|VHDL|1_InstructionDecode|TB|TB_ID_main.vhd</ClosedNode>
          <ClosedNode>/TB_IF_main - behavior C:|TFG|TFG|VHDL|Proc_Evita_Conflictos|TB_IF_main.vhd</ClosedNode>
          <ClosedNode>/TB_IF_main - behavior C:|TFG|TFG|VHDL|Proc_Evita_Conflictos|TB_IF_main.vhd/uut - IF_main - Behavioral</ClosedNode>
          <ClosedNode>/TB_IF_main - behavior C:|TFG|TFG|VHDL|Proc_Evita_Conflictos|VHDL|0_InstructionFetch|TB|TB_IF_main.vhd</ClosedNode>
          <ClosedNode>/TB_IF_main - behavior D:|TFG|TFG|VHDL|Proc_Evita_Conflictos|VHDL|0_InstructionFetch|TB|TB_IF_main.vhd</ClosedNode>
          <ClosedNode>/TB_MEM_main - behavior C:|TFG|TFG|VHDL|Proc_Evita_Conflictos|TB_MEM_main.vhd</ClosedNode>
+         <ClosedNode>/TB_MEM_main - behavior D:|TFG|TFG|VHDL|Proc_Evita_Conflictos|TB_MEM_main.vhd</ClosedNode>
          <ClosedNode>/TB_MemData - behavior C:|TFG|TFG|VHDL|Proc_Evita_Conflictos|VHDL|3_Memory|TB|TB_MemData.vhd</ClosedNode>
+         <ClosedNode>/TB_MemData - behavior D:|TFG|TFG|VHDL|Proc_Evita_Conflictos|VHDL|3_Memory|TB|TB_MemData.vhd</ClosedNode>
          <ClosedNode>/TB_MemInstruction - behavior C:|TFG|TFG|VHDL|Proc_Evita_Conflictos|VHDL|0_InstructionFetch|TB|TB_MemInstruction.vhd</ClosedNode>
          <ClosedNode>/TB_MemInstruction - behavior D:|TFG|TFG|VHDL|Proc_Evita_Conflictos|VHDL|0_InstructionFetch|TB|TB_MemInstruction.vhd</ClosedNode>
          <ClosedNode>/TB_PCAdder - behavior C:|TFG|TFG|VHDL|Proc_Evita_Conflictos|VHDL|0_InstructionFetch|TB|TB_PCAdder.vhd</ClosedNode>
@@ -121,24 +133,28 @@
          <ClosedNode>/TB_Phase1_InstructionDecode - behavior C:|TFG|TFG|VHDL|Proc_Evita_Conflictos|TB_Phase1_InstructionDecode.vhd/uut - Phase1_InstructionDecode - Behavioral</ClosedNode>
          <ClosedNode>/TB_Phase1_InstructionDecode - behavior C:|TFG|TFG|VHDL|Proc_Evita_Conflictos|VHDL|1_InstructionDecode|TB|TB_Phase1_InstructionDecode.vhd</ClosedNode>
          <ClosedNode>/TB_Phase1_InstructionDecode - behavior D:|TFG|TFG|VHDL|Proc_Evita_Conflictos|TB_Phase1_InstructionDecode.vhd</ClosedNode>
+         <ClosedNode>/TB_Phase1_InstructionDecode - behavior D:|TFG|TFG|VHDL|Proc_Evita_Conflictos|VHDL|1_InstructionDecode|TB|TB_Phase1_InstructionDecode.vhd</ClosedNode>
          <ClosedNode>/TB_Phase2_Execution - behavior C:|TFG|TFG|VHDL|Proc_Evita_Conflictos|TB_Phase2_Execution.vhd</ClosedNode>
          <ClosedNode>/TB_Phase2_Execution - behavior C:|TFG|TFG|VHDL|Proc_Evita_Conflictos|VHDL|2_Execution|TB|TB_Phase2_Execution.vhd</ClosedNode>
+         <ClosedNode>/TB_Phase2_Execution - behavior D:|TFG|TFG|VHDL|Proc_Evita_Conflictos|VHDL|2_Execution|TB|TB_Phase2_Execution.vhd</ClosedNode>
          <ClosedNode>/TB_Phase3_Memory - behavior C:|TFG|TFG|VHDL|Proc_Evita_Conflictos|TB_Phase3_Memory.vhd</ClosedNode>
          <ClosedNode>/TB_Phase3_Memory - behavior C:|TFG|TFG|VHDL|Proc_Evita_Conflictos|VHDL|3_Memory|TB|TB_Phase3_Memory.vhd</ClosedNode>
+         <ClosedNode>/TB_Phase3_Memory - behavior D:|TFG|TFG|VHDL|Proc_Evita_Conflictos|VHDL|3_Memory|TB|TB_Phase3_Memory.vhd</ClosedNode>
          <ClosedNode>/TB_RegisterBank - behavior C:|TFG|TFG|VHDL|Proc_Evita_Conflictos|VHDL|1_InstructionDecode|TB|TB_RegisterBank.vhd</ClosedNode>
          <ClosedNode>/TB_RegisterBank - behavior D:|TFG|TFG|VHDL|Proc_Evita_Conflictos|VHDL|1_InstructionDecode|TB|TB_RegisterBank.vhd</ClosedNode>
          <ClosedNode>/TB_mux2 - behavior C:|TFG|TFG|VHDL|Proc_Evita_Conflictos|TB_Mux2.vhd</ClosedNode>
          <ClosedNode>/TB_mux2 - behavior C:|TFG|TFG|VHDL|Proc_Evita_Conflictos|VHDL|common|TB|TB_Mux2.vhd</ClosedNode>
+         <ClosedNode>/TB_mux2 - behavior D:|TFG|TFG|VHDL|Proc_Evita_Conflictos|VHDL|common|TB|TB_Mux2.vhd</ClosedNode>
          <ClosedNode>/TM_MemData - behavior C:|TFG|TFG|VHDL|Proc_Evita_Conflictos|TM_MemData.vhd</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>TB_MEM_main - behavior (C:/TFG/TFG/VHDL/Proc_Evita_Conflictos/TB_MEM_main.vhd)</SelectedItem>
+         <SelectedItem>TB_EXE_main - behavior (D:/TFG/TFG/VHDL/Proc_Evita_Conflictos/VHDL/2_Execution/TB/TB_EXE_main.vhd)</SelectedItem>
       </SelectedItems>
-      <ScrollbarPosition orientation="vertical" >4</ScrollbarPosition>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000202000000010000000100000064000001db000000020000000000000000000000000200000064ffffffff000000810000000300000002000001db0000000100000003000000000000000100000003</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
-      <CurrentItem>TB_MEM_main - behavior (C:/TFG/TFG/VHDL/Proc_Evita_Conflictos/TB_MEM_main.vhd)</CurrentItem>
+      <CurrentItem>TB_EXE_main - behavior (D:/TFG/TFG/VHDL/Proc_Evita_Conflictos/VHDL/2_Execution/TB/TB_EXE_main.vhd)</CurrentItem>
    </ItemView>
    <ItemView engineview="BehavioralSim" sourcetype="" guiview="Process" >
       <ClosedNodes>
@@ -159,14 +175,15 @@
          <ClosedNodesVersion>1</ClosedNodesVersion>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>Simulate Behavioral Model</SelectedItem>
+         <SelectedItem/>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000169000000010000000100000000000000000000000064ffffffff000000810000000000000001000001690000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000136000000010000000100000000000000000000000064ffffffff000000810000000000000001000001360000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem>Simulate Behavioral Model</CurrentItem>
+      <CurrentItem/>
    </ItemView>
    <SourceProcessView>000000ff00000000000000020000011b0000011b01000000050100000002</SourceProcessView>
    <CurrentView>Implementation</CurrentView>
+   <CopyAdditionalFiles/>
 </Project>
