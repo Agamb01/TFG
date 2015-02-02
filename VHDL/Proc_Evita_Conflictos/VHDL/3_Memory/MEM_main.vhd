@@ -80,8 +80,18 @@ entity MEM_main is
       out_BRctr  : out STD_LOGIC;
 
       --Señales de control (ID->MEM)
-      in_MEM_control : in STD_LOGIC_VECTOR(5 downto 0) 
+      in_MEM_control : in STD_LOGIC_VECTOR(5 downto 0);
         -- [5:2]=BRCond(Negative,Zero,Cond,Incond), [1]=MemRead, [0]=MemWrite
+
+      -- Entradas y salidas de paso, sirven para simplificar el diseño superior
+      in_PC_salto     : in STD_LOGIC_VECTOR(31 downto 0);
+      in_regW         : in STD_LOGIC_VECTOR(3 downto 0);  -- Registro destino
+      in_WB_control   : in STD_LOGIC_VECTOR(1 downto 0);
+      
+      out_PC_salto    : out STD_LOGIC_VECTOR(31 downto 0);
+      out_ALUbus      : out STD_LOGIC_VECTOR(31 downto 0);
+      out_regW        : out STD_LOGIC_VECTOR(3 downto 0);  -- Registro destino
+      out_WB_control  : out STD_LOGIC_VECTOR(1 downto 0)
 
    );
 end MEM_main;
@@ -127,7 +137,13 @@ architecture Behavioral of MEM_main is
  --  signal s_enable : STD_LOGIC;
 begin
 
-  
+-- Señales de paso, sirven para simplificar el diseño superior
+   out_PC_salto   <= in_PC_salto;
+   out_ALUbus     <= in_ALUbus;
+   out_regW       <= in_regW;
+   out_WB_control <= in_WB_control;
+
+
 -- Modulo que gestiona las esperas
    i_esperas: mod_esperas
       Port map (

@@ -1,4 +1,1 @@
-work	"VHDL/3_Memory/MEM_main.vhd"
-work	"VHDL/3_Memory/MemData.vhd"
-work	"VHDL/3_Memory/Phase3_Memory.vhd"
-work	"VHDL/common/my_package.vhd"
+work	"VHDL/1_InstructionDecode/ControlPrincipal.vhd"

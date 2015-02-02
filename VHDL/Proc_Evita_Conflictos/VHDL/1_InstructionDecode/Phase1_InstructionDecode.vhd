@@ -47,7 +47,7 @@ entity Phase1_InstructionDecode is
       in_busW        : in STD_LOGIC_VECTOR(31 downto 0);  -- 
 
    -- Señales de control (ID->EXE)
-      out_WB_control  : out STD_LOGIC_VECTOR(11 downto 0);
+      out_WB_control  : out STD_LOGIC_VECTOR(1 downto 0);
       out_MEM_control : out STD_LOGIC_VECTOR(5 downto 0);
         -- [5:2]=BRCond(Negative,Zero,Cond,Incond), [1]=MemRead, [0]=MemWrite
       out_EXE_control : out STD_LOGIC_VECTOR(3 downto 0)
@@ -58,14 +58,19 @@ end Phase1_InstructionDecode;
 architecture Behavioral of Phase1_InstructionDecode is
 
 -------------------------------Control Principal-----------------------------
---   component ControlPrincipal
---      Port ( 
---         in_inst : in  STD_LOGIC_VECTOR(31 downto 0);
---         out_WB_control : out STD_LOGIC_VECTOR(11 downto 0);
---         out_MEM_control : out STD_LOGIC_VECTOR(9 downto 0);
---         out_EXE_control : out STD_LOGIC_VECTOR(9 downto 0)
---      );
---   end component;
+component ControlPrincipal2 is
+   Port ( 
+      in_inst     : in  STD_LOGIC_VECTOR(31 downto 0);
+      
+      out_WB_control  : out STD_LOGIC_VECTOR(1 downto 0);
+        -- [1]=MemtoReg, [0]=RegWrite
+      out_MEM_control : out STD_LOGIC_VECTOR(5 downto 0);
+        -- [5:2]=BRCond(Negative,Zero,Cond,Incond), [1]=MemRead, [0]=MemWrite
+      out_EXE_control : out STD_LOGIC_VECTOR(3 downto 0)
+        -- [3:1]=ALUop, [0]=ALUsrc
+      --out_test    : out STD_LOGIC_VECTOR(4 downto 0)
+   );
+end component;
 -------------------------------Control Principal-----------------------------
 
 
@@ -99,13 +104,13 @@ architecture Behavioral of Phase1_InstructionDecode is
 begin
 
 -------------------------------Control Principal-----------------------------
---   i_ControlPrincipal: 
---      ControlPrincipal port map( 
---         in_inst => in_inst,
---         out_WB_control => out_WB_control,
---         out_MEM_control => out_MEM_control,
---         out_EXE_control => out_EXE_control
---      );
+   i_ControlPrincipal2: 
+      ControlPrincipal2 port map( 
+         in_inst => in_inst,
+         out_WB_control => out_WB_control,
+         out_MEM_control => out_MEM_control,
+         out_EXE_control => out_EXE_control
+      );
 -------------------------------Control Principal-----------------------------
 
 -------------------------------Banco de registros-----------------------------

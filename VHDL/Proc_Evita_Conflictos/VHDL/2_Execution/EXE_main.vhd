@@ -78,16 +78,18 @@ entity EXE_main is
       out_ALU_flags  : out STD_LOGIC_VECTOR(1 downto 0); -- Flags(N,Z)
 
       --Señales de control(ID->EXE)
-      in_EXE_control : in STD_LOGIC_VECTOR(3 downto 0)
+      in_EXE_control : in STD_LOGIC_VECTOR(3 downto 0);
         -- [3:1]=ALUop, [0]=ALUsrc
 
    -- Entradas y salidas de paso, sirven para simplificar el diseño superior
       in_regW         : in STD_LOGIC_VECTOR(3 downto 0);  -- Registro destino
-      in_WB_control   : in STD_LOGIC_VECTOR(11 downto 0);
+      in_WB_control   : in STD_LOGIC_VECTOR(1 downto 0);
       in_MEM_control  : in STD_LOGIC_VECTOR(5 downto 0);
+      
+      out_BusB        : out STD_LOGIC_VECTOR(31 downto 0);
       out_regW        : out STD_LOGIC_VECTOR(3 downto 0);  -- Registro destino
-      out_WB_control  : out STD_LOGIC_VECTOR(11 downto 0);
-      out_MEM_control : out STD_LOGIC_VECTOR(5 downto 0);
+      out_WB_control  : out STD_LOGIC_VECTOR(1 downto 0);
+      out_MEM_control : out STD_LOGIC_VECTOR(5 downto 0)
 
    );
 end EXE_main;
@@ -109,7 +111,8 @@ architecture Behavioral of EXE_main is
          out_ALU_flags  : out STD_LOGIC_VECTOR(1 downto 0); -- Flags(N,Z)
 
          --Señales de control(ID->EXE)
-         in_EXE_control : in STD_LOGIC_VECTOR(3 downto 0) -- [3:1]=ALUop, [0]=ALUsrc
+         in_EXE_control : in STD_LOGIC_VECTOR(3 downto 0) 
+           -- [3:1]=ALUop, [0]=ALUsrc
       );
    end component;
 
@@ -129,10 +132,10 @@ architecture Behavioral of EXE_main is
 begin
 
 -- Señales de paso, sirven para simplificar el diseño superior
-   out_regW <= in_regW;
-   out_WB_control <= in_WB_control;
+   out_regW        <= in_regW;
+   out_WB_control  <= in_WB_control;
    out_MEM_control <= in_MEM_control;
-   
+   out_BusB        <= in_BusB;
    
 -- Modulo que gestiona las esperas
    i_esperas: mod_esperas

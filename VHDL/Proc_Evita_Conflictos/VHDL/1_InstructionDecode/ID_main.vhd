@@ -80,7 +80,8 @@ entity ID_main is
       in_busW        : in STD_LOGIC_VECTOR(31 downto 0); 
 
    -- Señales de control (ID->EXE)
-      out_WB_control  : out STD_LOGIC_VECTOR(11 downto 0);
+      out_WB_control  : out STD_LOGIC_VECTOR(1 downto 0);
+        -- [1]=MemtoReg, [0]=RegWrite
       out_MEM_control : out STD_LOGIC_VECTOR(5 downto 0);
         -- [5:2]=BRCond(Negative,Zero,Cond,Incond), [1]=MemRead, [0]=MemWrite
       out_EXE_control : out STD_LOGIC_VECTOR(3 downto 0);
@@ -88,7 +89,7 @@ entity ID_main is
         
    -- Entradas y salidas de paso, sirven para simplificar el diseño superior
       in_PC : in STD_LOGIC_VECTOR(31 downto 0);
-      out_PC : out STD_LOGIC_VECTOR(31 downto 0);
+      out_PC : out STD_LOGIC_VECTOR(31 downto 0)
    );
 end ID_main;
 
@@ -113,7 +114,8 @@ architecture Behavioral of ID_main is
          in_busW        : in STD_LOGIC_VECTOR(31 downto 0);  -- 
 
       -- Señales de control (ID->EXE)
-         out_WB_control  : out STD_LOGIC_VECTOR(11 downto 0);
+         out_WB_control  : out STD_LOGIC_VECTOR(1 downto 0);
+           -- [1]=MemtoReg, [0]=RegWrite
          out_MEM_control : out STD_LOGIC_VECTOR(5 downto 0);
            -- [5:2]=BRCond(Negative,Zero,Cond,Incond), [1]=MemRead, [0]=MemWrite
          out_EXE_control : out STD_LOGIC_VECTOR(3 downto 0)

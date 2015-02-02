@@ -33,13 +33,13 @@ use IEEE.STD_LOGIC_1164.ALL;
 entity ControlPrincipal is
    Port ( 
       in_inst     : in  STD_LOGIC_VECTOR(31 downto 0);
-      out_WB_ctr  : out STD_LOGIC_VECTOR(1 downto 0);
+      
+      out_WB_control  : out STD_LOGIC_VECTOR(1 downto 0);
         -- [1]=MemtoReg, [0]=RegWrite
       out_MEM_control : out STD_LOGIC_VECTOR(5 downto 0);
         -- [5:2]=BRCond(Negative,Zero,Cond,Incond), [1]=MemRead, [0]=MemWrite
       out_EXE_control : out STD_LOGIC_VECTOR(3 downto 0)
         -- [3:1]=ALUop, [0]=ALUsrc
-      --out_test    : out STD_LOGIC_VECTOR(4 downto 0)
    );
 end ControlPrincipal;
 
@@ -47,13 +47,24 @@ architecture Behavioral of ControlPrincipal is
 
    type type_inst is (ALU12, ALU16, ALUREG, LDST, BR, BRCond, UNDEFINED);
    signal s_intr_type : type_inst; 
-   
-   
+      
+   -- Señales EXE
    signal s_ALU_op : STD_LOGIC_VECTOR(2 downto 0);
+   signal s_ALUsrc : STD_LOGIC;
+
+   --Señales MEM
+   signal s_BRCond  : STD_LOGIC_VECTOR(3 downto 0);
+   signal s_MemRead : STD_LOGIC;
+   signal s_MemWr   : STD_LOGIC; 
+   
+   --Señales WB
+   signal s_MemtoReg : STD_LOGIC;
+   signal s_RegWrite : STD_LOGIC; 
+   
 begin
 
 -- Identificar tipo de instrucción
-   process (in_inst)
+   p_identify: process (in_inst)
    begin
    --Control de instruccion ALU12
       if ( (in_inst(31 downto 27)="11110" and in_inst(15)='0') and 
@@ -81,6 +92,23 @@ begin
    end process;
 
 
+--------------------------------------------------------------------------------
+-----------------------------Señales de control EXE-----------------------------
+--------------------------------------------------------------------------------
+--      out_EXE_control : out STD_LOGIC_VECTOR(3 downto 0)
+--        -- [3:1]=ALUop, [0]=ALUsrc
+
+   out_EXE_control(3 downto 1) <= s_ALU_op;
+   out_EXE_control(0)          <= s_ALUsrc;
+
+   p_ALUsrc: process (s_intr_type)
+   begin
+      if s_intr_type=ALUREG then
+         s_ALUsrc <= '0';
+      else
+         s_ALUsrc <= '1';
+      end if;
+   end process;
 
 -- Seleccion operación
 --  Operacion de ALU depende de bits [24-21] si operacion con registro
@@ -95,69 +123,105 @@ begin
 -- ORR  101
 -- EOR  110
 -- CMP  111
-
-   process (s_intr_type)
+   
+   p_ALUop: process (s_intr_type, in_inst)
    begin
-      if s_intr_type = ALU12 then
+      if s_intr_type = ALU16 then
          case in_inst(23) & in_inst(21 downto 20) is
-            when "000"  => s_ALU_op <= ""; --ADD
-            when "110"  => s_ALU_op <= ""; --SUB
-            when others => s_ALU_op <= "";
-         end case;
-      elsif s_intr_type = ALU16 then
-         case in_inst(23) & in_inst(21 downto 20) is
-            when "000"  => s_ALU_op <= ""; --MOV
-            when "100"  => s_ALU_op <= ""; --MOVT
-            when others => s_ALU_op <= "";
+            when "000"  => s_ALU_op <= "010"; --MOV
+            when "100"  => s_ALU_op <= "011"; --MOVT
+            when others => s_ALU_op <= "010";
          end case;
       elsif s_intr_type = ALUREG then
-
+         case in_inst(24 downto 21) is
+            when "0000"  => 
+               s_ALU_op <= "100"; --AND
+            when "0010"  => 
+               if in_inst(19 downto 16)="1111" then
+                  s_ALU_op <= "010"; --MOV
+               else
+                  s_ALU_op <= "101"; --ORR
+               end if;
+            when "0100"  => 
+               s_ALU_op <= "110"; --EOR
+            when "1000"  => 
+               s_ALU_op <= "000"; --ADD
+            when "1101"  => 
+               if in_inst(11 downto 8)="1111" then -- and in_inst(20)='1' then
+                  s_ALU_op <= "111"; --CMP
+               else 
+                  s_ALU_op <= "001"; --SUB
+               end if;
+            when others => 
+               s_ALU_op <= "010"; --MOV
+         end case;
+      else
+         s_ALU_op <= "010"; -- MOV
       end if;
    end process;
 
 
+--------------------------------------------------------------------------------
+-----------------------------Señales de control MEM-----------------------------
+--------------------------------------------------------------------------------
+--      out_MEM_control : out STD_LOGIC_VECTOR(5 downto 0);
+--        -- [5:2]=BRCond(Negative,Zero,Cond,Incond), [1]=MemRead, [0]=MemWrite
+   out_MEM_control(5 downto 2) <= s_BRCond;
+   out_MEM_control(1)          <= s_MemRead;
+   out_MEM_control(0)          <= s_MemWr; 
 
+   p_MEM_control: process (s_intr_type, in_inst)
+   begin
+      if s_intr_type = BR then
+         s_BRCond  <= "0001";
+         s_MemRead <= '0';
+         s_MemWr   <= '0';
+      elsif s_intr_type = BRCond then
+         s_BRCond(3 downto 2)  <= in_inst(24 downto 23); -- Supuesto
+         s_BRCond(1 downto 0)  <= "10";
+         s_MemRead <= '0';
+         s_MemWr   <= '0';
+      elsif s_intr_type = LDST then
+         s_BRCond  <= "0000";
+         s_MemRead <= in_inst(20);
+         s_MemWr   <= not in_inst(20);
+      else
+         s_BRCond  <= "0000";
+         s_MemRead <= '0';
+         s_MemWr   <= '0';
+      end if;
+   end process;
 
+--------------------------------------------------------------------------------
+-----------------------------Señales de control WB------------------------------
+--------------------------------------------------------------------------------
+--      out_WB_control  : out STD_LOGIC_VECTOR(1 downto 0);
+--        -- [1]=MemtoReg, [0]=RegWrite
 
+   out_WB_control(1) <= s_MemtoReg;
+   out_WB_control(0) <= s_RegWrite;
+   
+   p_WB_control: process (s_intr_type, in_inst)
+   begin
+      case s_intr_type is
+         when ALUREG => 
+            s_MemtoReg <= '0';
+            s_RegWrite <= '1';
+         when ALU12 => 
+            s_MemtoReg <= '0';
+            s_RegWrite <= '1';
+         when ALU16 => 
+            s_MemtoReg <= '0';
+            s_RegWrite <= '1';
+         when LDST => 
+            s_MemtoReg <= in_inst(20);
+            s_RegWrite <= in_inst(20);
+         when others =>
+            s_MemtoReg <= '0';
+            s_RegWrite <= '0';
+      end case;
+   end process;
 
-
-
-
--- Proceso salidas
---   process (s_intr_type)
---   begin   
---      case s_intr_type is
---         when ALU12 =>
---           out_test <= "10000";
---         when ALU16 =>
---           out_test <= "01000";
---         when LDST =>
---           out_test <= "00100";
---         when BR =>
---           out_test <= "00010";
---         when BRCond =>
---           out_test <= "00001";
---         when UNDEFINED =>
---           out_test <= "00000";         
---         when others => 
---           out_test <= "00000";
---      end case;
---   end process;
-
-
--- Obtener señales para fase de ejecución
-
---   process()
-
-   out_EXE_ctr <= in_inst(9 downto 0);
-
--- Obtener señales para fase de memoria
-
-   out_MEM_ctr <= in_inst(19 downto 10);
-
--- Obtener señales para fase de write back
-
-   out_WB_ctr <= in_inst(31 downto 20);
 
 
 
