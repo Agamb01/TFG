@@ -5,5 +5,8 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
+<msg type="error" file="HDLCompiler" num="806" delta="unknown" >"D:/TFG/TFG/VHDL/Proc_Evita_Conflictos/TB_ControlPrincipal.vhd" Line 249: Syntax error near &quot;<arg fmt="%s" index="1">END</arg>&quot;.
+</msg>
+
 </messages>
 

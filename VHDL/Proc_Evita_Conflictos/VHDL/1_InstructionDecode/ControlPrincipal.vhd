@@ -34,6 +34,8 @@ entity ControlPrincipal is
    Port ( 
       in_inst     : in  STD_LOGIC_VECTOR(31 downto 0);
       
+--      out_type    : out type_inst;
+      
       out_WB_control  : out STD_LOGIC_VECTOR(1 downto 0);
         -- [1]=MemtoReg, [0]=RegWrite
       out_MEM_control : out STD_LOGIC_VECTOR(5 downto 0);
@@ -62,6 +64,11 @@ architecture Behavioral of ControlPrincipal is
    signal s_RegWrite : STD_LOGIC; 
    
 begin
+
+--out_type <= s_intr_type;
+
+
+
 
 -- Identificar tipo de instrucción
    p_identify: process (in_inst)
