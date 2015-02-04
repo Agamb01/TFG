@@ -162,8 +162,14 @@ begin
             when others => 
                s_ALU_op <= "010"; --MOV
          end case;
-      else
-         s_ALU_op <= "010"; -- MOV
+      elsif s_intr_type = LDST then
+         s_ALU_op <= "000"; -- ADD
+      elsif s_intr_type = BR then 
+         s_ALU_op <= "000"; -- ADD
+      elsif s_intr_type = BRCond then 
+         s_ALU_op <= "000"; -- ADD
+      else    
+         s_ALU_op <= "000"; -- ADD
       end if;
    end process;
 
@@ -184,7 +190,7 @@ begin
          s_MemRead <= '0';
          s_MemWr   <= '0';
       elsif s_intr_type = BRCond then
-         s_BRCond(3 downto 2)  <= in_inst(24 downto 23); -- Supuesto
+         s_BRCond(3 downto 2)  <= in_inst(23 downto 22); -- Supuesto
          s_BRCond(1 downto 0)  <= "10";
          s_MemRead <= '0';
          s_MemWr   <= '0';
@@ -212,8 +218,13 @@ begin
    begin
       case s_intr_type is
          when ALUREG => 
-            s_MemtoReg <= '0';
-            s_RegWrite <= '1';
+            if in_inst(11 downto 8)="1111" then -- CMP
+               s_MemtoReg <= '0';
+               s_RegWrite <= '0';
+            else 
+               s_MemtoReg <= '0';
+               s_RegWrite <= '1';
+            end if;
          when ALU12 => 
             s_MemtoReg <= '0';
             s_RegWrite <= '1';

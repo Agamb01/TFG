@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2015-02-02T17:15:55</DateModified>
-  <ModuleName>ControlPrincipal</ModuleName>
-  <SummaryTimeStamp>2015-02-01T20:27:10</SummaryTimeStamp>
-  <SavedFilePath>D:/TFG/TFG/VHDL/Proc_Evita_Conflictos/iseconfig/main.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>D:/TFG/TFG/VHDL/Proc_Evita_Conflictos\</ImplementationReportsDirectory>
+  <DateModified>2015-02-04T18:34:23</DateModified>
+  <ModuleName>main</ModuleName>
+  <SummaryTimeStamp>2015-02-04T18:31:04</SummaryTimeStamp>
+  <SavedFilePath>C:/TFG/TFG/VHDL/Proc_Evita_Conflictos/iseconfig/main.xreport</SavedFilePath>
+  <ImplementationReportsDirectory>C:/TFG/TFG/VHDL/Proc_Evita_Conflictos\</ImplementationReportsDirectory>
   <DateInitialized>2015-02-02T17:15:55</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>

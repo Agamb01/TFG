@@ -116,6 +116,9 @@ architecture Behavioral of EXE_main is
       );
    end component;
 
+   signal s_ALU_flags     : STD_LOGIC_VECTOR(1 downto 0); -- Flags(N,Z)
+   signal s_ALU_flags_reg : STD_LOGIC_VECTOR(1 downto 0); -- Flags(N,Z)
+
 -- Modulo que gestiona las esperas
    component mod_esperas is
       Port( 
@@ -161,11 +164,25 @@ begin
          --Salidas (EXE->MEM)
          out_PC_salto => out_PC_salto,
          out_ALU_bus => out_ALU_bus,
-         out_ALU_flags => out_ALU_flags,
+         out_ALU_flags => s_ALU_flags,
 
          --Señales de control(ID->EXE)
          in_EXE_control => in_EXE_control
       );
+
+   out_ALU_flags <= s_ALU_flags_reg;
+   --Proceso guarda flags en registros
+   p_arith: process(clk, rst)
+   begin
+      if rst='0' then 
+         s_ALU_flags_reg <= "00";
+      elsif rising_edge(clk) then
+         if in_EXE_control(3 downto 1) = "111" then
+            s_ALU_flags_reg <= s_ALU_flags;
+         end if;
+      end if;
+   end process;
+   
 --
 
 

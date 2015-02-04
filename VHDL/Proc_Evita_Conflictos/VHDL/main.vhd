@@ -34,8 +34,8 @@ library work;
    
 entity main is
    Port(
-      clk, rst : in STD_LOGIC;
-      out_test : out std_logic_vector(31 downto 0)
+      clk, rst : in STD_LOGIC
+--      out_test : out std_logic_vector(31 downto 0)
    );
 end main;
 
@@ -403,7 +403,7 @@ begin
    ID_in_busW     <= WB_out_busW;
    
     --Señales de paso 
-   ID_in_pc <= IF_out_pc_reg;
+   ID_in_pc <= IF_out_pc4_reg;
 
    -- Modulo ID
    i_ID: ID_main
@@ -640,7 +640,7 @@ begin
 --------------------------------Write Back--------------------------------
 
 ---TEST---
-out_test <= MEM_out_MEMbus;
+--out_test <= MEM_out_MEMbus;
 
 ---TEST---
 

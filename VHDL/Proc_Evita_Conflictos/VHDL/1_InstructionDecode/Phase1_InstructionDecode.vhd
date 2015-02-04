@@ -58,7 +58,7 @@ end Phase1_InstructionDecode;
 architecture Behavioral of Phase1_InstructionDecode is
 
 -------------------------------Control Principal-----------------------------
-component ControlPrincipal2 is
+component ControlPrincipal is
    Port ( 
       in_inst     : in  STD_LOGIC_VECTOR(31 downto 0);
       
@@ -104,8 +104,8 @@ end component;
 begin
 
 -------------------------------Control Principal-----------------------------
-   i_ControlPrincipal2: 
-      ControlPrincipal2 port map( 
+   i_ControlPrincipal: 
+      ControlPrincipal port map( 
          in_inst => in_inst,
          out_WB_control => out_WB_control,
          out_MEM_control => out_MEM_control,

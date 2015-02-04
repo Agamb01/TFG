@@ -172,15 +172,15 @@ BEGIN
        wait for clk_period;	
          
    --BEQ <-24>	   -- BrCond Igual que (Zero) 01 
-      in_inst <= "11110100011111111011111111110100";
+      in_inst <= "11110100011111111010111111110100";
     wait for clk_period;	
 
    --BGT <-24>	   -- BrCond Mayor que (Positivo) 00
-      in_inst <= "11110100001111111011111111110100";
+      in_inst <= "11110100001111111010111111110100";
     wait for clk_period;	
  
    --BLT <-24>	   -- BrCond Menor que (Negativo) 10
-      in_inst <= "11110100101111111011111111110100";
+      in_inst <= "11110100101111111010111111110100";
     wait for clk_period;	
    
     wait;
@@ -233,16 +233,16 @@ BEGIN
    -- RESET
    wait for 100 ns;	
    wait for clk_period/2; -- Espera medio ciclo de reloj para sincornizar las comprobaciones
-      Assert out_EXE_control = "0000"
-         report "Intruccion RESET, EXE: Esperado '0000'"
-         severity ERROR;
-      Assert out_MEM_control = "000000"
-         report "Intruccion RESET, MEM: Esperado '000000'"
-         severity ERROR;
-      Assert out_WB_control = "00"
-         report "Intruccion RESET, WB: Esperado '00'"
-         severity ERROR;
-   wait for clk_period;
+--      Assert out_EXE_control = "0000"
+--         report "Intruccion RESET, EXE: Esperado '0000'"
+--         severity ERROR;
+--      Assert out_MEM_control = "000000"
+--         report "Intruccion RESET, MEM: Esperado '000000'"
+--         severity ERROR;
+--      Assert out_WB_control = "00"
+--         report "Intruccion RESET, WB: Esperado '00'"
+--         severity ERROR;
+--   wait for clk_period;
    
 --Operaciones Enteros
    --MOV R1, #13
@@ -320,84 +320,115 @@ BEGIN
 
    --Mov R4, R1
       Assert out_EXE_control = "0100"
-         report "Intruccion AND, EXE: Esperado '0100'"
+         report "Intruccion MOV, EXE: Esperado '0100'"
          severity ERROR;
       Assert out_MEM_control = "000000"
-         report "Intruccion AND, MEM: Esperado '000000'"
+         report "Intruccion MOV, MEM: Esperado '000000'"
          severity ERROR;
       Assert out_WB_control = "01"
-         report "Intruccion AND, WB: Esperado '01'"
+         report "Intruccion MOV, WB: Esperado '01'"
          severity ERROR;
    wait for clk_period;
 
    --Orr R4, R2, R1
       Assert out_EXE_control = "1010"
-         report "Intruccion AND, EXE: Esperado '1010'"
+         report "Intruccion ORR, EXE: Esperado '1010'"
          severity ERROR;
       Assert out_MEM_control = "000000"
-         report "Intruccion AND, MEM: Esperado '000000'"
+         report "Intruccion ORR, MEM: Esperado '000000'"
          severity ERROR;
       Assert out_WB_control = "01"
-         report "Intruccion AND, WB: Esperado '01'"
+         report "Intruccion ORR, WB: Esperado '01'"
          severity ERROR;
    wait for clk_period;
 
    --Sub R4, R2, R1
       Assert out_EXE_control = "0010"
-         report "Intruccion AND, EXE: Esperado '0010'"
+         report "Intruccion SUB, EXE: Esperado '0010'"
          severity ERROR;
       Assert out_MEM_control = "000000"
-         report "Intruccion AND, MEM: Esperado '000000'"
+         report "Intruccion SUB, MEM: Esperado '000000'"
          severity ERROR;
       Assert out_WB_control = "01"
-         report "Intruccion AND, WB: Esperado '01'"
+         report "Intruccion SUB, WB: Esperado '01'"
          severity ERROR;
    wait for clk_period;
 
 --Operaciones LD/ST
    --LDR R1, R2, #0
-      Assert out_EXE_control = "0101"
-         report "Intruccion AND, EXE: Esperado '0101'"
+      Assert out_EXE_control = "0001"
+         report "Intruccion LDR, EXE: Esperado '0001'"
          severity ERROR;
       Assert out_MEM_control = "000010"
-         report "Intruccion AND, MEM: Esperado '000010'"
+         report "Intruccion LDR, MEM: Esperado '000010'"
          severity ERROR;
       Assert out_WB_control = "11"
-         report "Intruccion AND, WB: Esperado '11'"
+         report "Intruccion LDR, WB: Esperado '11'"
          severity ERROR;
    wait for clk_period;
 
    --STR R2, R3, #2
-      Assert out_EXE_control = "0101"
-         report "Intruccion AND, EXE: Esperado '0101'"
+      Assert out_EXE_control = "0001"
+         report "Intruccion STR, EXE: Esperado '0001'"
          severity ERROR;
       Assert out_MEM_control = "000001"
-         report "Intruccion AND, MEM: Esperado '000001'"
+         report "Intruccion STR, MEM: Esperado '000001'"
          severity ERROR;
-      Assert out_WB_control = "01"
-         report "Intruccion AND, WB: Esperado '01'"
+      Assert out_WB_control = "00"
+         report "Intruccion STR, WB: Esperado '00'"
          severity ERROR;
    wait for clk_period;
    
 --Operaciones de salto
    --B #<+768> --Entero esperado: 768
+      Assert out_EXE_control = "0001"
+         report "Intruccion B, EXE: Esperado '0001'"
+         severity ERROR;
+      Assert out_MEM_control = "000100"
+         report "Intruccion B, MEM: Esperado '000000'"
+         severity ERROR;
+      Assert out_WB_control = "00"
+         report "Intruccion B, WB: Esperado '00'"
+         severity ERROR;
+   wait for clk_period;
+
    --BEQ <-24>	   -- BrCond Igual que (Zero) 01 
+      Assert out_EXE_control = "0001"
+         report "Intruccion BEQ, EXE: Esperado '0001'"
+         severity ERROR;
+      Assert out_MEM_control = "011000"
+         report "Intruccion BEQ, MEM: Esperado '011000'"
+         severity ERROR;
+      Assert out_WB_control = "00"
+         report "Intruccion BEQ, WB: Esperado '00'"
+         severity ERROR;
+   wait for clk_period;
+
    --BGT <-24>	   -- BrCond Mayor que (Positivo) 00
+      Assert out_EXE_control = "0001"
+         report "Intruccion BGT, EXE: Esperado '0001'"
+         severity ERROR;
+      Assert out_MEM_control = "001000"
+         report "Intruccion BGT, MEM: Esperado '001000'"
+         severity ERROR;
+      Assert out_WB_control = "00"
+         report "Intruccion BGT, WB: Esperado '00'"
+         severity ERROR;
+   wait for clk_period;
+
    --BLT <-24>	   -- BrCond Menor que (Negativo) 10
+      Assert out_EXE_control = "0001"
+         report "Intruccion BLT, EXE: Esperado '0001'"
+         severity ERROR;
+      Assert out_MEM_control = "101000"
+         report "Intruccion BLT, MEM: Esperado '101000'"
+         severity ERROR;
+      Assert out_WB_control = "00"
+         report "Intruccion BLT, WB: Esperado '00'"
+         severity ERROR;
+   wait for clk_period;
+
       
---   out_EXE_control : out STD_LOGIC_VECTOR(3 downto 0)
---     -- [3:1]=ALUop, [0]=ALUsrc
- -- Tabla operaciones (ALUop)
--- ADD  000
--- SUB  001
--- MOV  010
--- MOVT 011
-
--- AND  100
--- ORR  101
--- EOR  110
--- CMP  111
-
 --   out_MEM_control : out STD_LOGIC_VECTOR(5 downto 0);
 --     -- [5:2]=BRCond(Negative,Zero,Cond,Incond), [1]=MemRead, [0]=MemWrite
 
@@ -405,7 +436,7 @@ BEGIN
 --     -- [1]=MemtoReg, [0]=RegWrite
 
       
-      
-   end process
+   wait;
+   end process;
 
 END;

@@ -1,9 +1,0 @@
-Running: C:\Xilinx\14.4\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib secureip -o D:/TFG/TFG/VHDL/Proc_Evita_Conflictos/TB_ControlPrincipal_isim_beh.exe -prj D:/TFG/TFG/VHDL/Proc_Evita_Conflictos/TB_ControlPrincipal_beh.prj work.TB_ControlPrincipal 
-ISim P.49d (signature 0x7708f090)
-Number of CPUs detected in this system: 4
-Turning on mult-threading, number of parallel sub-compilation jobs: 8 
-Determining compilation order of HDL files
-Parsing VHDL file "D:/TFG/TFG/VHDL/Proc_Evita_Conflictos/VHDL/1_InstructionDecode/ControlPrincipal.vhd" into library work
-Parsing VHDL file "D:/TFG/TFG/VHDL/Proc_Evita_Conflictos/TB_ControlPrincipal.vhd" into library work
-ERROR:HDLCompiler:806 - "D:/TFG/TFG/VHDL/Proc_Evita_Conflictos/TB_ControlPrincipal.vhd" Line 249: Syntax error near "END".
-VHDL file D:/TFG/TFG/VHDL/Proc_Evita_Conflictos/TB_ControlPrincipal.vhd ignored due to errors

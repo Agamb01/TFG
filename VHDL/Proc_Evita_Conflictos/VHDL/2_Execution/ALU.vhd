@@ -82,7 +82,7 @@ begin
             N <= '0';
             Z <= '0'; 
          when "010" => -- MOV: Move wide
-            s_R(31 downto 16) <= in_A(31 downto 16);
+            s_R(31 downto 16) <= in_B(31 downto 16);
             s_R(15 downto 0)  <= in_B(15 downto 0);
             N <= '0';
             Z <= '0'; 

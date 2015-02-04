@@ -84,7 +84,7 @@ architecture Behavioral of IF_main is
 -- Modulo que genera las esperas
    component mod_gen_esperas is
       Port( 
-         clk, rst       : in STD_LOGIC;
+--         clk, rst       : in STD_LOGIC;
          in_pc          : in STD_LOGIC_VECTOR(31 downto 0);
          out_paradas    : out tipo_paradas;
          out_nula       : out STD_LOGIC;
@@ -99,8 +99,8 @@ begin
 -- Modulo que gestiona las esperas
    i_esperas: mod_gen_esperas
       Port map (
-         clk            => clk, 
-         rst            => rst,
+--         clk            => clk, 
+--         rst            => rst,
          in_pc          => in_pc,
          out_paradas    => out_paradas,
          out_nula       => out_nula,
