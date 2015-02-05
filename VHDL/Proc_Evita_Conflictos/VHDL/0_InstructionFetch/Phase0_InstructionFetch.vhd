@@ -61,7 +61,12 @@ architecture Behavioral of Phase0_InstructionFetch is
 ---------------------------------Sumador PC---------------------------------
 
 ---------------------------------Memoria de instrucciones---------------------------------
-   component MemInstruction
+   component MemInstruction1
+      Port ( in_pc : in  STD_LOGIC_VECTOR (31 downto 0);
+             out_inst : out  STD_LOGIC_VECTOR (31 downto 0));
+   end component; 
+
+   component MemInstruction2
       Port ( in_pc : in  STD_LOGIC_VECTOR (31 downto 0);
              out_inst : out  STD_LOGIC_VECTOR (31 downto 0));
    end component; 
@@ -84,7 +89,7 @@ begin
    -- Devuelve la instruccion situada en la direccion solicitada
    --    por el contador de programa, la instruccion devuelta la asigna
    --    a la señal (s_inst)
-   i_MemInstruction: MemInstruction port map( 
+   i_MemInstruction: MemInstruction1 port map( 
          in_pc => in_pc,
          out_inst => out_inst
    );

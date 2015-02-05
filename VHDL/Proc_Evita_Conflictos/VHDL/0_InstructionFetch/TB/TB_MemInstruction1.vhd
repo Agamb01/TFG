@@ -32,14 +32,14 @@ USE ieee.std_logic_1164.ALL;
 -- arithmetic functions with Signed or Unsigned values
 USE ieee.numeric_std.ALL;
  
-ENTITY TB_MemInstruction IS
-END TB_MemInstruction;
+ENTITY TB_MemInstruction1 IS
+END TB_MemInstruction1;
  
-ARCHITECTURE behavior OF TB_MemInstruction IS 
+   ARCHITECTURE behavior OF TB_MemInstruction1 IS 
  
     -- Component Declaration for the Unit Under Test (UUT)
  
-    COMPONENT MemInstruction
+    COMPONENT MemInstruction1
     PORT(
          in_pc : IN  std_logic_vector(31 downto 0);
          out_inst : OUT  std_logic_vector(31 downto 0)
@@ -58,7 +58,7 @@ ARCHITECTURE behavior OF TB_MemInstruction IS
 BEGIN
  
 	-- Instantiate the Unit Under Test (UUT)
-   uut: MemInstruction PORT MAP (
+   uut: MemInstruction1 PORT MAP (
           in_pc => in_pc,
           out_inst => out_inst
         );
@@ -89,37 +89,37 @@ BEGIN
       -- Instruccion 1      
       in_pc(31 downto 0) <= std_logic_vector(to_unsigned(4, 32));
    wait for clk_period;   
-      assert out_inst = "11110010110000000000000100000000" 
+      assert out_inst = "11110010010000000000001000011111" 
       report "Error en instruccion 1"
       severity ERROR;
       -- Instruccion 2   
       in_pc(31 downto 0) <= std_logic_vector(to_unsigned(8, 32));
    wait for clk_period;
-      assert out_inst = "11110010010000000000001000011111" 
+      assert out_inst = "11101011000000010000001100000010" 
       report "Error en instruccion 2"
       severity ERROR;
       -- Instruccion 3
       in_pc(31 downto 0) <= std_logic_vector(to_unsigned(12, 32));
    wait for clk_period;
-      assert out_inst = "11110010110000000000001000000000" 
+      assert out_inst = "11101011101000100000010000000001" 
       report "Error en instruccion 3"
       severity ERROR;
       -- Instruccion 4
       in_pc(31 downto 0) <= std_logic_vector(to_unsigned(16, 32));
    wait for clk_period;
-      assert out_inst = "11101011000000010000001100000010" 
+      assert out_inst = "11110111111111111011111111111000" 
       report "Error en instruccion 4"
       severity ERROR;
       -- Instruccion 5
       in_pc(31 downto 0) <= std_logic_vector(to_unsigned(20, 32));
    wait for clk_period;
-      assert out_inst = "11101011101000100000010000000001" 
+      assert out_inst = "00000000000000000000000000000000" 
       report "Error en instruccion 5"
       severity ERROR;
       -- Instruccion 6
       in_pc(31 downto 0) <= std_logic_vector(to_unsigned(24, 32));
    wait for clk_period;
-      assert out_inst = "11110111111111111011111111110100" 
+      assert out_inst = "00000000000000000000000000000000" 
       report "Error en instruccion 6"
       severity ERROR;
       -- Instruccion 7
@@ -127,6 +127,12 @@ BEGIN
    wait for clk_period;
       assert out_inst = "00000000000000000000000000000000" 
       report "Error en instruccion 7"
+      severity ERROR;
+      -- Instruccion 15
+      in_pc(31 downto 0) <= std_logic_vector(to_unsigned(60, 32));
+   wait for clk_period;
+      assert out_inst = "00000000000000000000000000000000" 
+      report "Error en instruccion 15"
       severity ERROR;
       
    wait;

@@ -34,31 +34,39 @@ use IEEE.NUMERIC_STD.ALL;
 
 --TODO: Completar
 
-entity MemInstruction is
+entity MemInstruction1 is
    Port (
       in_pc : in  STD_LOGIC_VECTOR (31 downto 0);
       out_inst : out  STD_LOGIC_VECTOR (31 downto 0) 
    );
-end MemInstruction;
+end MemInstruction1;
 
-architecture Behavioral of MemInstruction is
+architecture Behavioral of MemInstruction1 is
 
-   constant NUM_INST : INTEGER := 8;
-   -- 32 = 8 instrucciones * 4 bytes / La memoria se divide en bytes
-   type mem_array is array (0 to 31) of std_logic_vector(7 downto 0);
+   constant NUM_INST : INTEGER := 16;
+   -- 64 = 16 instrucciones * 4 bytes / La memoria se divide en bytes
+   type mem_array is array (0 to 63) of std_logic_vector(7 downto 0);
 
    constant mem : mem_array := (
-      "11110010", "01000000", "00000001", "00011000", --MOV R1, #24
-      "11110010", "11000000", "00000001", "00000000", --MOVT R1, #0
-      
-      "11110010", "01000000", "00000010", "00011111", --MOV R2, #31
-      "11110010", "11000000", "00000010", "00000000", --MOVT R2, #0
-      
-      "11101011", "00000001", "00000011", "00000010", --ADD R3, R1, R2
-      "11101011", "10100010", "00000100", "00000001", --SUB R4, R2, R1
-      
-      "11110111", "11111111", "10111111", "11110100", --B #<-24> Seis instrucciones
-      "00000000", "00000000", "00000000", "00000000"  --NULA
+         "11110010", "01000000", "00000001", "00011000", -- MOV R1, #24
+         "11110010", "01000000", "00000010", "00011111", -- MOV R2, #31
+         "11101011", "00000001", "00000011", "00000010", -- ADD R3, R1, R2
+         "11101011", "10100010", "00000100", "00000001", -- SUB R4, R2, R1
+
+         "11110111", "11111111", "10111111", "11111000", -- B <-24>
+         "00000000", "00000000", "00000000", "00000000", -- NOP
+         "00000000", "00000000", "00000000", "00000000", -- NOP
+         "00000000", "00000000", "00000000", "00000000", -- NOP
+         
+         "00000000", "00000000", "00000000", "00000000", -- NOP
+         "00000000", "00000000", "00000000", "00000000", -- NOP
+         "00000000", "00000000", "00000000", "00000000", -- NOP
+         "00000000", "00000000", "00000000", "00000000", -- NOP
+         
+         "00000000", "00000000", "00000000", "00000000", -- NOP
+         "00000000", "00000000", "00000000", "00000000", -- NOP
+         "00000000", "00000000", "00000000", "00000000", -- NOP
+         "00000000", "00000000", "00000000", "00000000"  -- NOP
       );
 
 begin
@@ -67,7 +75,7 @@ begin
   -- proceso lectura, lectura asincrona
    p_lectura: process(in_pc)
    begin
-      if to_integer(unsigned(in_pc)) >= 0 and to_integer(unsigned(in_pc(31 downto 3))) < NUM_INST then
+      if to_integer(unsigned(in_pc)) >= 0 and to_integer(unsigned(in_pc(31 downto 2))) < NUM_INST then
          out_inst(31 downto 24) <= mem(to_integer(unsigned(in_pc)+0));
          out_inst(23 downto 16) <= mem(to_integer(unsigned(in_pc)+1));
          out_inst(15 downto 8)  <= mem(to_integer(unsigned(in_pc)+2));
