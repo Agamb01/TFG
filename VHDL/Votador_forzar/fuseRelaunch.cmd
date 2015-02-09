@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -lib "secureip" -o "D:/TFG/TFG/VHDL/Votador_forzar/TB_Sistema_Tolerancia_isim_beh.exe" -prj "D:/TFG/TFG/VHDL/Votador_forzar/TB_Sistema_Tolerancia_beh.prj" "work.TB_Sistema_Tolerancia" 

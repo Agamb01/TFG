@@ -153,7 +153,6 @@
          <ClosedNode>/TB_IF_main - behavior D:|TFG|TFG|VHDL|Proc_Evita_Conflictos|VHDL|0_InstructionFetch|TB|TB_IF_main.vhd</ClosedNode>
          <ClosedNode>/TB_MEM_main - behavior C:|TFG|TFG|VHDL|Proc_Evita_Conflictos|TB_MEM_main.vhd</ClosedNode>
          <ClosedNode>/TB_MEM_main - behavior D:|TFG|TFG|VHDL|Proc_Evita_Conflictos|TB_MEM_main.vhd</ClosedNode>
-         <ClosedNode>/TB_MEM_main - behavior D:|TFG|TFG|VHDL|Proc_Evita_Conflictos|VHDL|3_Memory|TB|TB_MEM_main.vhd</ClosedNode>
          <ClosedNode>/TB_MemData - behavior C:|TFG|TFG|VHDL|Proc_Evita_Conflictos|VHDL|3_Memory|TB|TB_MemData.vhd</ClosedNode>
          <ClosedNode>/TB_MemData - behavior D:|TFG|TFG|VHDL|Proc_Evita_Conflictos|VHDL|3_Memory|TB|TB_MemData.vhd</ClosedNode>
          <ClosedNode>/TB_MemInstruction - behavior C:|TFG|TFG|VHDL|Proc_Evita_Conflictos|VHDL|0_InstructionFetch|TB|TB_MemInstruction.vhd</ClosedNode>
