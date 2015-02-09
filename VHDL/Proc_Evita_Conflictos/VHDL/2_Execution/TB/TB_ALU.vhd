@@ -25,6 +25,9 @@
 -- to guarantee that the testbench will bind correctly to the post-implementation 
 -- simulation model.
 --------------------------------------------------------------------------------
+library modelsim_lib;
+use modelsim_lib.util.all;
+
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
  
@@ -63,9 +66,13 @@ ARCHITECTURE behavior OF TB_ALU IS
  
    constant clk_period : time := 10 ns;
  
+-- spy signals
+--   signal spy_prueba : std_logic;
+ 
 BEGIN
  
 	-- Instantiate the Unit Under Test (UUT)
+  -- test1: entity work.GT1(Behavioral) 
    uut: ALU PORT MAP (
           in_A => in_A,
           in_B => in_B,
@@ -74,6 +81,21 @@ BEGIN
           out_f => out_f
         );
 
+   -- Iniciarlizar señales espía
+--   spy_process : process
+--   begin
+--      init_signal_spy("/tb_alu/uut/N","/tb_alu/spy_prueba",1);
+--    wait for 100 ns;  
+--      assert spy_prueba = '1'
+--         report "Prueba 1"
+--         severity ERROR;
+--      assert spy_prueba = '0'
+--         report "Prueba 0"
+--         severity ERROR;
+--
+--      wait;
+--   end process spy_process;
+  
    -- Clock process definitions
    clk_process :process
    begin
@@ -90,7 +112,7 @@ BEGIN
       -- hold reset state for 100 ns.
 
    wait for 100ns;
-   
+      
    -- TEST SUMA POSITIVO
       in_A <= std_logic_vector(to_signed(7, 32));
       in_B <= std_logic_vector(to_signed(42, 32));
@@ -156,7 +178,7 @@ BEGIN
       in_B <= "00000000"&"00000000"&"00000000"&"00000000";
       in_op <= "010";
    wait for clk_period/2;
-      assert out_R = "11111111"&"11111111"&"00000000"&"00000000"
+      assert out_R = "00000000"&"00000000"&"00000000"&"00000000"
       report "Test MOV"
       severity ERROR;
    wait for clk_period/2;

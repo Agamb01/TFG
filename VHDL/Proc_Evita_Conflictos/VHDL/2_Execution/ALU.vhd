@@ -63,11 +63,10 @@ architecture Behavioral of ALU is
    -- V -> Overflow (No implementado)
    signal N, Z : std_logic;
 
-
 begin
    
    out_R <= s_R;
-   out_f <= N & Z;
+   out_f <= N & Z;   
    
    --Proceso Aritmetico-Logico
    p_arith: process(in_A, in_B, in_op)

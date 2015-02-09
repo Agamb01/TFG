@@ -39,7 +39,7 @@ END TB_MemInstruction2;
  
     -- Component Declaration for the Unit Under Test (UUT)
  
-    COMPONENT MemInstruction1
+    COMPONENT MemInstruction2
     PORT(
          in_pc : IN  std_logic_vector(31 downto 0);
          out_inst : OUT  std_logic_vector(31 downto 0)
@@ -58,7 +58,7 @@ END TB_MemInstruction2;
 BEGIN
  
 	-- Instantiate the Unit Under Test (UUT)
-   uut: MemInstruction1 PORT MAP (
+   uut: MemInstruction2 PORT MAP (
           in_pc => in_pc,
           out_inst => out_inst
         );
@@ -91,7 +91,7 @@ BEGIN
       -- Instruccion 1      
       in_pc(31 downto 0) <= std_logic_vector(to_unsigned(4, 32));
    wait for clk_period;   
-      assert out_inst = "11110010010000000000000100100000" 
+      assert out_inst = "11110010010000000000001000100000" 
       report "Error en instruccion 1"
       severity ERROR;
       -- Instruccion 2   
@@ -109,7 +109,7 @@ BEGIN
       -- Instruccion 4
       in_pc(31 downto 0) <= std_logic_vector(to_unsigned(16, 32));
    wait for clk_period;
-      assert out_inst = "11101010010000100000010000000001" 
+      assert out_inst = "11101010010000010000010100000011" 
       report "Error en instruccion 4"
       severity ERROR;
       -- Instruccion 5
@@ -121,7 +121,7 @@ BEGIN
       -- Instruccion 6
       in_pc(31 downto 0) <= std_logic_vector(to_unsigned(24, 32));
    wait for clk_period;
-      assert out_inst = "11110111111111111011111111110100" 
+      assert out_inst = "11110111111111111011111111110010" 
       report "Error en instruccion 6"
       severity ERROR;
       -- Instruccion 7

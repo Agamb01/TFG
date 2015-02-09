@@ -107,7 +107,7 @@ BEGIN
       -- Instruccion 4
       in_pc(31 downto 0) <= std_logic_vector(to_unsigned(16, 32));
    wait for clk_period;
-      assert out_inst = "11110111111111111011111111111000" 
+      assert out_inst = "11110111111111111011111111110110" 
       report "Error en instruccion 4"
       severity ERROR;
       -- Instruccion 5
