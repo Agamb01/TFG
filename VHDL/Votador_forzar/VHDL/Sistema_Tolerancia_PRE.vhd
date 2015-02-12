@@ -84,6 +84,15 @@ begin
    end process;
    
    data_out <= (regs(0) and regs(1)) or (regs(0) and regs(2)) or (regs(1) and regs(2)); 
+   
+--   data_out <= (regs(0) and regs(1) and regs(2)) or (regs(0) and regs(1) and regs(3)) 
+--               or (regs(0) and regs(1) and regs(4)) or (regs(0) and regs(2) and regs(3))
+--               or (regs(0) and regs(2) and regs(4)) or (regs(0) and regs(3) and regs(4))
+--               or
+--               (regs(1) and regs(2) and regs(3)) or (regs(1) and regs(2) and regs(4))
+--               or (regs(1) and regs(3) and regs(4))
+--               or
+--               (regs(2) and regs(3) and regs(4)); 
 
 --   p_reg_A: process (clk, rst)
 --   begin
@@ -145,7 +154,7 @@ begin
 --      end if;   
 --   end process;
 --
---   data_out_2 <= (A_reg and B_reg) or (A_reg and C_reg) or (B_reg and C_reg); 
+--   data_out <= (A_reg and B_reg) or (A_reg and C_reg) or (B_reg and C_reg); 
 
 end Behavioral;
 

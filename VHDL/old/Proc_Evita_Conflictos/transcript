@@ -1,0 +1,326 @@
+# Reading C:/Modeltech_pe_edu_10.4/tcl/vsim/pref.tcl
+# do {TB_Programa3.fdo}
+# ** Warning: (vlib-34) Library already exists at "work".
+# 
+# Model Technology ModelSim PE Student Edition vcom 10.4 Compiler 2014.12 Dec  3 2014
+# Start time: 17:07:05 on Feb 10,2015
+# vcom -reportprogress 300 -explicit -93 VHDL/common/my_package.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling package my_package
+# -- Compiling package body my_package
+# -- Loading package my_package
+# End time: 17:07:05 on Feb 10,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim PE Student Edition vcom 10.4 Compiler 2014.12 Dec  3 2014
+# Start time: 17:07:05 on Feb 10,2015
+# vcom -reportprogress 300 -explicit -93 VHDL/common/Mux2.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity Mux2
+# -- Compiling architecture Behavioral of Mux2
+# End time: 17:07:06 on Feb 10,2015, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim PE Student Edition vcom 10.4 Compiler 2014.12 Dec  3 2014
+# Start time: 17:07:06 on Feb 10,2015
+# vcom -reportprogress 300 -explicit -93 VHDL/3_Memory/MemData.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity MemData
+# -- Compiling architecture Behavioral of MemData
+# End time: 17:07:06 on Feb 10,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim PE Student Edition vcom 10.4 Compiler 2014.12 Dec  3 2014
+# Start time: 17:07:06 on Feb 10,2015
+# vcom -reportprogress 300 -explicit -93 VHDL/2_Execution/BrAdder.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity BrAdder
+# -- Compiling architecture Behavioral of BrAdder
+# End time: 17:07:07 on Feb 10,2015, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim PE Student Edition vcom 10.4 Compiler 2014.12 Dec  3 2014
+# Start time: 17:07:07 on Feb 10,2015
+# vcom -reportprogress 300 -explicit -93 VHDL/2_Execution/ALU.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity ALU
+# -- Compiling architecture Behavioral of ALU
+# End time: 17:07:07 on Feb 10,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim PE Student Edition vcom 10.4 Compiler 2014.12 Dec  3 2014
+# Start time: 17:07:08 on Feb 10,2015
+# vcom -reportprogress 300 -explicit -93 VHDL/1_InstructionDecode/RegisterBank.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity RegisterBank
+# -- Compiling architecture Behavioral of RegisterBank
+# End time: 17:07:08 on Feb 10,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim PE Student Edition vcom 10.4 Compiler 2014.12 Dec  3 2014
+# Start time: 17:07:08 on Feb 10,2015
+# vcom -reportprogress 300 -explicit -93 VHDL/1_InstructionDecode/ExtensioSigno.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity ExtensioSigno
+# -- Compiling architecture Behavioral of ExtensioSigno
+# End time: 17:07:09 on Feb 10,2015, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim PE Student Edition vcom 10.4 Compiler 2014.12 Dec  3 2014
+# Start time: 17:07:09 on Feb 10,2015
+# vcom -reportprogress 300 -explicit -93 VHDL/1_InstructionDecode/ControlPrincipal.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity ControlPrincipal
+# -- Compiling architecture Behavioral of ControlPrincipal
+# ** Warning: VHDL/1_InstructionDecode/ControlPrincipal.vhd(137): (vcom-1186) Array type case expression must be of a locally static subtype.
+# 
+# End time: 17:07:09 on Feb 10,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 1
+# Model Technology ModelSim PE Student Edition vcom 10.4 Compiler 2014.12 Dec  3 2014
+# Start time: 17:07:09 on Feb 10,2015
+# vcom -reportprogress 300 -explicit -93 VHDL/0_InstructionFetch/PCAdder.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity PCAdder
+# -- Compiling architecture Behavioral of PCAdder
+# End time: 17:07:10 on Feb 10,2015, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim PE Student Edition vcom 10.4 Compiler 2014.12 Dec  3 2014
+# Start time: 17:07:10 on Feb 10,2015
+# vcom -reportprogress 300 -explicit -93 VHDL/0_InstructionFetch/MemInstruction3.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity MemInstruction3
+# -- Compiling architecture Behavioral of MemInstruction3
+# End time: 17:07:10 on Feb 10,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim PE Student Edition vcom 10.4 Compiler 2014.12 Dec  3 2014
+# Start time: 17:07:11 on Feb 10,2015
+# vcom -reportprogress 300 -explicit -93 VHDL/common/mod_gen_esperas.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package my_package
+# -- Compiling entity mod_gen_esperas
+# -- Compiling architecture Behavioral of mod_gen_esperas
+# End time: 17:07:11 on Feb 10,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim PE Student Edition vcom 10.4 Compiler 2014.12 Dec  3 2014
+# Start time: 17:07:11 on Feb 10,2015
+# vcom -reportprogress 300 -explicit -93 VHDL/common/mod_esperas.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package my_package
+# -- Compiling entity mod_esperas
+# -- Compiling architecture Behavioral of mod_esperas
+# End time: 17:07:12 on Feb 10,2015, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim PE Student Edition vcom 10.4 Compiler 2014.12 Dec  3 2014
+# Start time: 17:07:12 on Feb 10,2015
+# vcom -reportprogress 300 -explicit -93 VHDL/3_Memory/Phase3_Memory.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity Phase3_Memory
+# -- Compiling architecture Behavioral of phase3_Memory
+# End time: 17:07:12 on Feb 10,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim PE Student Edition vcom 10.4 Compiler 2014.12 Dec  3 2014
+# Start time: 17:07:12 on Feb 10,2015
+# vcom -reportprogress 300 -explicit -93 VHDL/2_Execution/Phase2_Execution.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity Phase2_Execution
+# -- Compiling architecture Behavioral of Phase2_Execution
+# End time: 17:07:13 on Feb 10,2015, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim PE Student Edition vcom 10.4 Compiler 2014.12 Dec  3 2014
+# Start time: 17:07:13 on Feb 10,2015
+# vcom -reportprogress 300 -explicit -93 VHDL/1_InstructionDecode/Phase1_InstructionDecode.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity Phase1_InstructionDecode
+# -- Compiling architecture Behavioral of Phase1_InstructionDecode
+# End time: 17:07:13 on Feb 10,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim PE Student Edition vcom 10.4 Compiler 2014.12 Dec  3 2014
+# Start time: 17:07:14 on Feb 10,2015
+# vcom -reportprogress 300 -explicit -93 VHDL/0_InstructionFetch/Phase0_InstructionFetch.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity Phase0_InstructionFetch
+# -- Compiling architecture Behavioral of Phase0_InstructionFetch
+# End time: 17:07:14 on Feb 10,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim PE Student Edition vcom 10.4 Compiler 2014.12 Dec  3 2014
+# Start time: 17:07:14 on Feb 10,2015
+# vcom -reportprogress 300 -explicit -93 VHDL/3_Memory/MEM_main.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package my_package
+# -- Compiling entity MEM_main
+# -- Compiling architecture Behavioral of MEM_main
+# End time: 17:07:15 on Feb 10,2015, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim PE Student Edition vcom 10.4 Compiler 2014.12 Dec  3 2014
+# Start time: 17:07:15 on Feb 10,2015
+# vcom -reportprogress 300 -explicit -93 VHDL/2_Execution/EXE_main.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package my_package
+# -- Compiling entity EXE_main
+# -- Compiling architecture Behavioral of EXE_main
+# End time: 17:07:15 on Feb 10,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim PE Student Edition vcom 10.4 Compiler 2014.12 Dec  3 2014
+# Start time: 17:07:15 on Feb 10,2015
+# vcom -reportprogress 300 -explicit -93 VHDL/1_InstructionDecode/ID_main.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package my_package
+# -- Compiling entity ID_main
+# -- Compiling architecture Behavioral of ID_main
+# End time: 17:07:16 on Feb 10,2015, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim PE Student Edition vcom 10.4 Compiler 2014.12 Dec  3 2014
+# Start time: 17:07:16 on Feb 10,2015
+# vcom -reportprogress 300 -explicit -93 VHDL/0_InstructionFetch/IF_main.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package my_package
+# -- Compiling entity IF_main
+# -- Compiling architecture Behavioral of IF_main
+# End time: 17:07:17 on Feb 10,2015, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim PE Student Edition vcom 10.4 Compiler 2014.12 Dec  3 2014
+# Start time: 17:07:17 on Feb 10,2015
+# vcom -reportprogress 300 -explicit -93 VHDL/main.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package my_package
+# -- Compiling entity main
+# -- Compiling architecture Behavioral of main
+# End time: 17:07:18 on Feb 10,2015, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim PE Student Edition vcom 10.4 Compiler 2014.12 Dec  3 2014
+# Start time: 17:07:18 on Feb 10,2015
+# vcom -reportprogress 300 -explicit -93 VHDL/TB_Programa3.vhd 
+# -- Loading package STANDARD
+# -- Loading package util
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity TB_Programa3
+# -- Compiling architecture behavior of TB_Programa3
+# End time: 17:07:18 on Feb 10,2015, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# //  ModelSim PE Student Edition 10.4 Dec  3 2014 
+# //
+# //  Copyright 1991-2014 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //  THIS DOCUMENT CONTAINS TRADE SECRETS AND COMMERCIAL OR FINANCIAL
+# //  INFORMATION THAT ARE PRIVILEGED, CONFIDENTIAL, AND EXEMPT FROM
+# //  DISCLOSURE UNDER THE FREEDOM OF INFORMATION ACT, 5 U.S.C. SECTION 552.
+# //  FURTHERMORE, THIS INFORMATION IS PROHIBITED FROM DISCLOSURE UNDER
+# //  THE TRADE SECRETS ACT, 18 U.S.C. SECTION 1905.
+# //
+# // NOT FOR CORPORATE OR PRODUCTION USE.
+# // THE ModelSim PE Student Edition IS NOT A SUPPORTED PRODUCT.
+# // FOR HIGHER EDUCATION PURPOSES ONLY
+# //
+# vsim -gui -do "do {TB_Programa3.fdo}" 
+# Start time: 17:07:19 on Feb 10,2015
+# Loading std.standard
+# Loading modelsim_lib.util(body)
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.tb_programa3(behavior)
+# Loading work.my_package(body)
+# Loading work.main(behavioral)
+# Loading work.mux2(behavioral)
+# Loading work.if_main(behavioral)
+# Loading work.mod_gen_esperas(behavioral)
+# Loading work.phase0_instructionfetch(behavioral)
+# Loading work.pcadder(behavioral)
+# Loading work.meminstruction3(behavioral)
+# Loading work.id_main(behavioral)
+# Loading work.mod_esperas(behavioral)
+# Loading work.phase1_instructiondecode(behavioral)
+# Loading work.controlprincipal(behavioral)
+# Loading work.registerbank(behavioral)
+# Loading work.extensiosigno(behavioral)
+# Loading work.exe_main(behavioral)
+# Loading work.phase2_execution(behavioral)
+# Loading work.bradder(behavioral)
+# Loading work.alu(behavioral)
+# Loading work.mem_main(behavioral)
+# Loading work.phase3_memory(behavioral)
+# Loading work.memdata(behavioral)
+# ** Warning: Design size of 10400 statements or 25 leaf instances exceeds ModelSim PE Student Edition recommended capacity.
+# Expect performance to be quite adversely affected.
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+# ** Note: init_signal_spy [VHDL/TB_Programa3.vhd] : Mirroring the value of '/TB_Programa3/uut/i_ID/i_pID/i_RegisterBank/regs' onto '/TB_Programa3/spy_regs'.
+# 
+# ** Note: init_signal_spy [VHDL/TB_Programa3.vhd] : Mirroring the value of '/TB_Programa3/uut/i_MEM/i_pMEM/i_MemData/mem' onto '/TB_Programa3/spy_mem'.
+# 
+# ** Note: init_signal_spy [VHDL/TB_Programa3.vhd] : Mirroring the value of '/TB_Programa3/uut/IF_out_pc_reg' onto '/TB_Programa3/spy_PC'.
+# 
+# ** Note: init_signal_spy [VHDL/TB_Programa3.vhd] : Mirroring the value of '/TB_Programa3/uut/IF_out_inst_reg' onto '/TB_Programa3/spy_INSTR'.
+# 
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /tb_programa3/uut/i_ID/i_pID/i_RegisterBank
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /tb_programa3/uut/i_ID/i_pID/i_RegisterBank
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /tb_programa3/uut/i_IF/i_pIF/i_MemInstruction
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /tb_programa3/uut/i_IF/i_pIF/i_MemInstruction
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /tb_programa3/uut/i_IF/i_pIF/i_MemInstruction
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /tb_programa3/uut/i_IF/i_pIF/i_MemInstruction
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /tb_programa3/uut/i_IF/i_pIF/i_MemInstruction
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /tb_programa3/uut/i_IF/i_pIF/i_MemInstruction
+# End time: 18:22:15 on Feb 10,2015, Elapsed time: 1:14:56
+# Errors: 0, Warnings: 9

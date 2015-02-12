@@ -1,0 +1,134 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!--This is an ISE project configuration file.-->
+<!--It holds project specific layout data for the projectmgr plugin.-->
+<!--Copyright (c) 1995-2009 Xilinx, Inc.  All rights reserved.-->
+<Project version="2" owner="projectmgr" name="Procesador_TF" >
+   <!--This is an ISE project configuration file.-->
+   <ItemView engineview="SynthesisOnly" guiview="Source" compilemode="AutoCompile" >
+      <ClosedNodes>
+         <ClosedNodesVersion>2</ClosedNodesVersion>
+         <ClosedNode>/TB_Programa3 - behavior D:|TFG|TFG|VHDL|Procesador_TF|VHDL|TB_Programa3.vhd</ClosedNode>
+         <ClosedNode>/TB_Sistema_Tolerancia_2 - behavior D:|TFG|TFG|VHDL|Procesador_TF|VHDL|tolerancia|TB_Sistema_Tolerancia_2.vhd</ClosedNode>
+         <ClosedNode>/main - Behavioral D:|TFG|TFG|VHDL|Procesador_TF|VHDL|main.vhd/i_EXE - EXE_main - Behavioral</ClosedNode>
+         <ClosedNode>/main - Behavioral D:|TFG|TFG|VHDL|Procesador_TF|VHDL|main.vhd/i_ID - ID_main - Behavioral</ClosedNode>
+         <ClosedNode>/main - Behavioral D:|TFG|TFG|VHDL|Procesador_TF|VHDL|main.vhd/i_IF - IF_main - Behavioral</ClosedNode>
+         <ClosedNode>/main - Behavioral D:|TFG|TFG|VHDL|Procesador_TF|VHDL|main.vhd/i_MEM - MEM_main - Behavioral</ClosedNode>
+      </ClosedNodes>
+      <SelectedItems>
+         <SelectedItem>main - Behavioral (D:/TFG/TFG/VHDL/Procesador_TF/VHDL/main.vhd)</SelectedItem>
+      </SelectedItems>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
+      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000202000000010000000100000064000001a8000000020000000000000000000000000200000064ffffffff000000810000000300000002000001a80000000100000003000000000000000100000003</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
+      <CurrentItem>main - Behavioral (D:/TFG/TFG/VHDL/Procesador_TF/VHDL/main.vhd)</CurrentItem>
+   </ItemView>
+   <ItemView engineview="SynthesisOnly" sourcetype="DESUT_VHDL_ARCHITECTURE" guiview="Process" >
+      <ClosedNodes>
+         <ClosedNodesVersion>1</ClosedNodesVersion>
+         <ClosedNode>Configure Target Device</ClosedNode>
+         <ClosedNode>Design Utilities</ClosedNode>
+         <ClosedNode>Implement Design</ClosedNode>
+         <ClosedNode>Synthesize - XST</ClosedNode>
+         <ClosedNode>User Constraints</ClosedNode>
+      </ClosedNodes>
+      <SelectedItems>
+         <SelectedItem>Synthesize - XST</SelectedItem>
+      </SelectedItems>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000136000000010000000100000000000000000000000064ffffffff000000810000000000000001000001360000000100000000</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
+      <CurrentItem>Synthesize - XST</CurrentItem>
+   </ItemView>
+   <ItemView guiview="File" >
+      <ClosedNodes>
+         <ClosedNodesVersion>1</ClosedNodesVersion>
+      </ClosedNodes>
+      <SelectedItems>
+         <SelectedItem>TB_Registro_TF.vhd</SelectedItem>
+      </SelectedItems>
+      <ScrollbarPosition orientation="vertical" >23</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
+      <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000000000000001000000000000000000000000000000000000027d000000040101000100000000000000000000000064ffffffff000000810000000000000004000000c500000001000000000000004400000001000000000000006600000001000000000000010e0000000100000000</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
+      <CurrentItem>TB_Registro_TF.vhd</CurrentItem>
+   </ItemView>
+   <ItemView guiview="Library" >
+      <ClosedNodes>
+         <ClosedNodesVersion>1</ClosedNodesVersion>
+         <ClosedNode>work</ClosedNode>
+      </ClosedNodes>
+      <SelectedItems/>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000000000000010000000000000000000000000000000000000109000000010001000100000000000000000000000064ffffffff000000810000000000000001000001090000000100000000</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
+      <CurrentItem>work</CurrentItem>
+   </ItemView>
+   <ItemView engineview="BehavioralSim" guiview="Source" compilemode="AutoCompile" >
+      <ClosedNodes>
+         <ClosedNodesVersion>2</ClosedNodesVersion>
+         <ClosedNode>/TB_ALU - behavior D:|TFG|TFG|VHDL|Procesador_TF|VHDL|2_Execution|TB|TB_ALU.vhd</ClosedNode>
+         <ClosedNode>/TB_BrAdder - behavior D:|TFG|TFG|VHDL|Procesador_TF|VHDL|2_Execution|TB|TB_BrAdder.vhd</ClosedNode>
+         <ClosedNode>/TB_ControlPrincipal - behavior D:|TFG|TFG|VHDL|Procesador_TF|VHDL|1_InstructionDecode|TB|TB_ControlPrincipal.vhd</ClosedNode>
+         <ClosedNode>/TB_EXE_main - behavior D:|TFG|TFG|VHDL|Procesador_TF|VHDL|2_Execution|TB|TB_EXE_main.vhd</ClosedNode>
+         <ClosedNode>/TB_ExtensionSigno - behavior D:|TFG|TFG|VHDL|Procesador_TF|VHDL|1_InstructionDecode|TB|TB_ExtensionSigno.vhd</ClosedNode>
+         <ClosedNode>/TB_ID_main - behavior D:|TFG|TFG|VHDL|Procesador_TF|VHDL|1_InstructionDecode|TB|TB_ID_main.vhd</ClosedNode>
+         <ClosedNode>/TB_IF_main - behavior D:|TFG|TFG|VHDL|Procesador_TF|VHDL|0_InstructionFetch|TB|TB_IF_main.vhd</ClosedNode>
+         <ClosedNode>/TB_MEM_main - behavior D:|TFG|TFG|VHDL|Procesador_TF|VHDL|3_Memory|TB|TB_MEM_main.vhd</ClosedNode>
+         <ClosedNode>/TB_MemData - behavior D:|TFG|TFG|VHDL|Procesador_TF|VHDL|3_Memory|TB|TB_MemData.vhd</ClosedNode>
+         <ClosedNode>/TB_MemInstruction1 - behavior D:|TFG|TFG|VHDL|Procesador_TF|VHDL|0_InstructionFetch|TB|TB_MemInstruction1.vhd</ClosedNode>
+         <ClosedNode>/TB_MemInstruction2 - behavior D:|TFG|TFG|VHDL|Procesador_TF|VHDL|0_InstructionFetch|TB|TB_MemInstruction2.vhd</ClosedNode>
+         <ClosedNode>/TB_PCAdder - behavior D:|TFG|TFG|VHDL|Procesador_TF|VHDL|0_InstructionFetch|TB|TB_PCAdder.vhd</ClosedNode>
+         <ClosedNode>/TB_Phase0_InstructionFetch - behavior D:|TFG|TFG|VHDL|Procesador_TF|VHDL|0_InstructionFetch|TB|TB_Phase0_InstructionFetch.vhd</ClosedNode>
+         <ClosedNode>/TB_Phase1_InstructionDecode - behavior D:|TFG|TFG|VHDL|Procesador_TF|VHDL|1_InstructionDecode|TB|TB_Phase1_InstructionDecode.vhd</ClosedNode>
+         <ClosedNode>/TB_Phase2_Execution - behavior D:|TFG|TFG|VHDL|Procesador_TF|VHDL|2_Execution|TB|TB_Phase2_Execution.vhd</ClosedNode>
+         <ClosedNode>/TB_Phase3_Memory - behavior D:|TFG|TFG|VHDL|Procesador_TF|VHDL|3_Memory|TB|TB_Phase3_Memory.vhd</ClosedNode>
+         <ClosedNode>/TB_Programa3 - behavior D:|TFG|TFG|VHDL|Procesador_TF|VHDL|TB_Programa3.vhd</ClosedNode>
+         <ClosedNode>/TB_RegisterBank - behavior D:|TFG|TFG|VHDL|Procesador_TF|VHDL|1_InstructionDecode|TB|TB_RegisterBank.vhd</ClosedNode>
+         <ClosedNode>/TB_Registro_TF - behavior D:|TFG|TFG|VHDL|Procesador_TF|VHDL|tolerancia|TB_Registro_TF.vhd</ClosedNode>
+         <ClosedNode>/TB_Sistema_Tolerancia_2 - behavior D:|TFG|TFG|VHDL|Procesador_TF|VHDL|tolerancia|TB_Registro_TF.vhd</ClosedNode>
+         <ClosedNode>/TB_main - behavior D:|TFG|TFG|VHDL|Procesador_TF|VHDL|TB_main.vhd</ClosedNode>
+         <ClosedNode>/TB_mux2 - behavior D:|TFG|TFG|VHDL|Procesador_TF|VHDL|common|TB|TB_Mux2.vhd</ClosedNode>
+      </ClosedNodes>
+      <SelectedItems>
+         <SelectedItem>TB_Programa3 - behavior (D:/TFG/TFG/VHDL/Procesador_TF/VHDL/TB_Programa3.vhd)</SelectedItem>
+      </SelectedItems>
+      <ScrollbarPosition orientation="vertical" >16</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
+      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000202000000010000000100000064000001db000000020000000000000000000000000200000064ffffffff000000810000000300000002000001db0000000100000003000000000000000100000003</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
+      <CurrentItem>TB_Programa3 - behavior (D:/TFG/TFG/VHDL/Procesador_TF/VHDL/TB_Programa3.vhd)</CurrentItem>
+   </ItemView>
+   <ItemView engineview="BehavioralSim" sourcetype="" guiview="Process" >
+      <ClosedNodes>
+         <ClosedNodesVersion>1</ClosedNodesVersion>
+         <ClosedNode>Design Utilities</ClosedNode>
+         <ClosedNode>ModelSim Simulator</ClosedNode>
+      </ClosedNodes>
+      <SelectedItems>
+         <SelectedItem/>
+      </SelectedItems>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000136000000010000000100000000000000000000000064ffffffff000000810000000000000001000001360000000100000000</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
+      <CurrentItem/>
+   </ItemView>
+   <ItemView engineview="BehavioralSim" sourcetype="DESUT_VHDL_ARCHITECTURE" guiview="Process" >
+      <ClosedNodes>
+         <ClosedNodesVersion>1</ClosedNodesVersion>
+      </ClosedNodes>
+      <SelectedItems>
+         <SelectedItem>Simulate Behavioral Model</SelectedItem>
+      </SelectedItems>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000136000000010000000100000000000000000000000064ffffffff000000810000000000000001000001360000000100000000</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
+      <CurrentItem>Simulate Behavioral Model</CurrentItem>
+   </ItemView>
+   <SourceProcessView>000000ff00000000000000020000011b0000011b01000000050100000002</SourceProcessView>
+   <CurrentView>Behavioral Simulation</CurrentView>
+</Project>

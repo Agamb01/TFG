@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2015-02-09T18:55:59</DateModified>
-  <ModuleName>Sistema_Tolerancia_PRE</ModuleName>
+  <DateModified>2015-02-12T11:38:03</DateModified>
+  <ModuleName>main</ModuleName>
   <SummaryTimeStamp>Unknown</SummaryTimeStamp>
   <SavedFilePath>D:/TFG/TFG/VHDL/Votador_forzar/iseconfig/main.xreport</SavedFilePath>
   <ImplementationReportsDirectory>D:/TFG/TFG/VHDL/Votador_forzar\</ImplementationReportsDirectory>

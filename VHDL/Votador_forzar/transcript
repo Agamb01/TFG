@@ -1,40 +1,38 @@
 # Reading C:/Modeltech_pe_edu_10.4/tcl/vsim/pref.tcl
-# do {TB_Sistema_Tolerancia_POST.fdo}
+# do {TB_Sistema_Tolerancia_2.fdo}
 # ** Warning: (vlib-34) Library already exists at "work".
 # 
 # Model Technology ModelSim PE Student Edition vcom 10.4 Compiler 2014.12 Dec  3 2014
-# Start time: 19:16:49 on Feb 09,2015
-# vcom -reportprogress 300 -explicit -93 VHDL/my_package.vhd 
+# Start time: 17:57:39 on Feb 11,2015
+# vcom -reportprogress 300 -explicit -93 IDs_regs_fallos.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
-# -- Compiling package my_package
-# -- Compiling package body my_package
-# -- Loading package my_package
-# End time: 19:16:49 on Feb 09,2015, Elapsed time: 0:00:00
+# -- Compiling package IDs_regs_fallos
+# End time: 17:57:39 on Feb 11,2015, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim PE Student Edition vcom 10.4 Compiler 2014.12 Dec  3 2014
-# Start time: 19:16:49 on Feb 09,2015
-# vcom -reportprogress 300 -explicit -93 VHDL/Sistema_Tolerancia_POST.vhd 
+# Start time: 17:57:39 on Feb 11,2015
+# vcom -reportprogress 300 -explicit -93 Sistema_Tolerancia_2.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
-# -- Loading package my_package
-# -- Compiling entity Sistema_Tolerancia_POST
-# -- Compiling architecture Behavioral of Sistema_Tolerancia_POST
-# End time: 19:16:49 on Feb 09,2015, Elapsed time: 0:00:00
+# -- Loading package IDs_regs_fallos
+# -- Compiling entity Sistema_Tolerancia_2
+# -- Compiling architecture Behavioral of Sistema_Tolerancia_2
+# End time: 17:57:40 on Feb 11,2015, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim PE Student Edition vcom 10.4 Compiler 2014.12 Dec  3 2014
-# Start time: 19:16:49 on Feb 09,2015
-# vcom -reportprogress 300 -explicit -93 VHDL/TB/TB_Sistema_Tolerancia_POST.vhd 
+# Start time: 17:57:40 on Feb 11,2015
+# vcom -reportprogress 300 -explicit -93 TB_Sistema_Tolerancia_2.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Loading package NUMERIC_STD
-# -- Loading package my_package
-# -- Compiling entity TB_Sistema_Tolerancia_POST
-# -- Compiling architecture behavior of TB_Sistema_Tolerancia_POST
-# End time: 19:16:50 on Feb 09,2015, Elapsed time: 0:00:01
+# -- Loading package IDs_regs_fallos
+# -- Compiling entity TB_Sistema_Tolerancia_2
+# -- Compiling architecture behavior of TB_Sistema_Tolerancia_2
+# End time: 17:57:40 on Feb 11,2015, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # //  ModelSim PE Student Edition 10.4 Dec  3 2014 
 # //
@@ -54,17 +52,17 @@
 # // THE ModelSim PE Student Edition IS NOT A SUPPORTED PRODUCT.
 # // FOR HIGHER EDUCATION PURPOSES ONLY
 # //
-# vsim -gui -do "do {TB_Sistema_Tolerancia_POST.fdo}" 
-# Start time: 19:16:50 on Feb 09,2015
+# vsim -gui -do "do {TB_Sistema_Tolerancia_2.fdo}" 
+# Start time: 17:57:40 on Feb 11,2015
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
 # Loading ieee.numeric_std(body)
-# Loading work.my_package(body)
-# Loading work.tb_sistema_tolerancia_post(behavior)
-# Loading work.sistema_tolerancia_post(behavioral)
+# Loading work.ids_regs_fallos
+# Loading work.tb_sistema_tolerancia_2(behavior)
+# Loading work.sistema_tolerancia_2(behavioral)
 # .main_pane.wave.interior.cs.body.pw.wf
 # .main_pane.structure.interior.cs.body.struct
 # .main_pane.objects.interior.cs.body.tree
-# End time: 19:17:19 on Feb 09,2015, Elapsed time: 0:00:29
+# End time: 17:57:57 on Feb 11,2015, Elapsed time: 0:00:17
 # Errors: 0, Warnings: 0

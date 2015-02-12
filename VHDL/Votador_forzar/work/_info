@@ -1,0 +1,115 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/TFG/TFG/VHDL/Votador_forzar
+Pids_regs_fallos
+Z1 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z2 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+w1423672947
+R0
+8IDs_regs_fallos.vhd
+FIDs_regs_fallos.vhd
+l0
+L13
+VKTBGfI^79]UJJc<59B?<D2
+!s100 Nk@:TFDiA0k:b?iFYU8zS0
+Z3 OP;C;10.4;61
+31
+Z4 !s110 1423673859
+!i10b 1
+!s108 1423673859.539000
+!s90 -reportprogress|300|-explicit|-93|IDs_regs_fallos.vhd|
+!s107 IDs_regs_fallos.vhd|
+!i113 1
+Z5 o-explicit -93 -O0
+Z6 tExplicit 1
+Esistema_tolerancia_2
+Z7 w1423671923
+Z8 DPx4 work 15 ids_regs_fallos 0 22 KTBGfI^79]UJJc<59B?<D2
+R1
+R2
+R0
+Z9 8Sistema_Tolerancia_2.vhd
+Z10 FSistema_Tolerancia_2.vhd
+l0
+L34
+VcVBK>bODU=b3m@E^k9I>@3
+!s100 _?^[lXzTgzcK]E0ilC5B;0
+R3
+31
+R4
+!i10b 1
+Z11 !s108 1423673859.627000
+Z12 !s90 -reportprogress|300|-explicit|-93|Sistema_Tolerancia_2.vhd|
+Z13 !s107 Sistema_Tolerancia_2.vhd|
+!i113 1
+R5
+R6
+Abehavioral
+R8
+R1
+R2
+DEx4 work 20 sistema_tolerancia_2 0 22 cVBK>bODU=b3m@E^k9I>@3
+l48
+L44
+V7BRWn[AK;d_ikfdGl:7J11
+!s100 gS?iTGVg@[XOOSSFmbQz90
+R3
+31
+R4
+!i10b 1
+R11
+R12
+R13
+!i113 1
+R5
+R6
+Etb_sistema_tolerancia_2
+Z14 w1423673845
+R8
+Z15 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+R1
+R2
+R0
+Z16 8TB_Sistema_Tolerancia_2.vhd
+Z17 FTB_Sistema_Tolerancia_2.vhd
+l0
+L37
+VKNTZd=HPMJ2McZ?5>5NAm0
+!s100 S_:jOPj<aSJ?fb:d5L1NY2
+R3
+31
+Z18 !s110 1423673860
+!i10b 1
+Z19 !s108 1423673860.210000
+Z20 !s90 -reportprogress|300|-explicit|-93|TB_Sistema_Tolerancia_2.vhd|
+Z21 !s107 TB_Sistema_Tolerancia_2.vhd|
+!i113 1
+R5
+R6
+Abehavior
+R8
+R15
+R1
+R2
+Z22 DEx4 work 23 tb_sistema_tolerancia_2 0 22 KNTZd=HPMJ2McZ?5>5NAm0
+l73
+L40
+VX^FPDNZ9]CWXP:Ho[0eO23
+!s100 4BLc:6aX1]6U1e3eMz?K=2
+R3
+31
+R18
+!i10b 1
+R19
+R20
+R21
+!i113 1
+R5
+R6
