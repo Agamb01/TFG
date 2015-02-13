@@ -17,16 +17,21 @@ package IDs_regs_fallos is
    type t_ID_reg is (
       -- Sin seleccion de registro
       ID_0, 
+      
       -- Registros de fase IF->ID
       id_IF_out_pc_reg, id_IF_out_inst_reg, id_IF_out_pc4_reg,
+      
       -- Registros de fase ID->EXE
       id_ID_out_busA_reg, id_ID_out_busB_reg, id_ID_out_regW_reg, id_ID_out_entero_reg, 
       id_ID_out_WB_control_reg, id_ID_out_MEM_control_reg, id_ID_out_EXE_control_reg,
-      id_ID_out_pc_reg
+      id_ID_out_pc_reg,
+      
       -- Registros de fase EXE->MEM
-
+      id_EXE_out_PC_salto, id_EXE_out_ALU_bus, id_EXE_out_ALU_flags, id_EXE_out_BusB, 
+      id_EXE_out_regW, id_EXE_out_WB_control, id_EXE_out_MEM_control,      
+      
       -- Registros de fase MEM->WB
-   
+      id_MEM_out_MEMbus, id_MEM_out_ALUbus, id_MEM_out_regW, id_MEM_out_WB_control
    );
 
    -- Informacion del fallo insertados

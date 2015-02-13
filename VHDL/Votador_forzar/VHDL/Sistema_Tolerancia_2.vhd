@@ -32,12 +32,15 @@ use IEEE.STD_LOGIC_1164.ALL;
 use work.IDs_regs_fallos.all;
 
 entity Sistema_Tolerancia_2 is
+   Generic (
+      size_data : integer := 32
+   );
    Port ( 
       clk, rst : in STD_LOGIC;
       ID_const : in t_ID_reg;
       fallo_in : in t_Fallo;
-      dato_in  : in STD_LOGIC_VECTOR (31 downto 0);
-      dato_out : out STD_LOGIC_VECTOR (31 downto 0)
+      dato_in  : in STD_LOGIC_VECTOR (size_dato-1 downto 0);
+      dato_out : out STD_LOGIC_VECTOR (size_dato-1 downto 0)
    );
 end Sistema_Tolerancia_2;
 

@@ -575,25 +575,89 @@ begin
    p_EXE_regs: process(clk, rst)
    begin
       if rst='0' then
-         EXE_out_PC_salto_reg    <= (others=>'0');
-         EXE_out_ALU_bus_reg     <= (others=>'0');
+--         EXE_out_PC_salto_reg    <= (others=>'0');
+--         EXE_out_ALU_bus_reg     <= (others=>'0');
          EXE_out_ALU_flags_reg   <= (others=>'0');
 
-         EXE_out_BusB_reg        <= (others=>'0');
+--         EXE_out_BusB_reg        <= (others=>'0');
          EXE_out_regW_reg        <= (others=>'0');
          EXE_out_WB_control_reg  <= (others=>'0');
          EXE_out_MEM_control_reg <= (others=>'0');
       elsif rising_edge(clk) then
-         EXE_out_PC_salto_reg    <= EXE_out_PC_salto;
-         EXE_out_ALU_bus_reg     <= EXE_out_ALU_bus;
+--         EXE_out_PC_salto_reg    <= EXE_out_PC_salto;
+--         EXE_out_ALU_bus_reg     <= EXE_out_ALU_bus;
          EXE_out_ALU_flags_reg   <= EXE_out_ALU_flags;
 
-         EXE_out_BusB_reg        <= EXE_out_BusB;
+--         EXE_out_BusB_reg        <= EXE_out_BusB;
          EXE_out_regW_reg        <= EXE_out_regW;
          EXE_out_WB_control_reg  <= EXE_out_WB_control;
          EXE_out_MEM_control_reg <= EXE_out_MEM_control;
       end if;
    end process;
+   
+   r_EXE_out_PC_salto : Registro_TF 
+      port map ( 
+         clk => clk, rst => rst,
+         ID_const => id_EXE_out_PC_salto,
+         fallo_in => fallo,
+         dato_in  => EXE_out_PC_salto,
+         dato_out => EXE_out_PC_salto_reg
+      );
+
+   r_EXE_out_ALU_bus : Registro_TF 
+      port map ( 
+         clk => clk, rst => rst,
+         ID_const => id_EXE_out_ALU_bus,
+         fallo_in => fallo,
+         dato_in  => EXE_out_ALU_bus,
+         dato_out => EXE_out_ALU_bus_reg
+      );
+
+--   r_EXE_out_ALU_flags : Registro_TF 
+--      port map ( 
+--         clk => clk, rst => rst,
+--         ID_const => id_EXE_out_ALU_flags,
+--         fallo_in => fallo,
+--         dato_in  => EXE_out_ALU_flags,
+--         dato_out => EXE_out_ALU_flags_reg
+--      );
+
+   r_EXE_out_BusB : Registro_TF 
+      port map ( 
+         clk => clk, rst => rst,
+         ID_const => id_EXE_out_BusB,
+         fallo_in => fallo,
+         dato_in  => EXE_out_BusB,
+         dato_out => EXE_out_BusB_reg
+      );
+
+--   r_EXE_out_regW : Registro_TF 
+--      port map ( 
+--         clk => clk, rst => rst,
+--         ID_const => id_EXE_out_regW,
+--         fallo_in => fallo,
+--         dato_in  => EXE_out_regW,
+--         dato_out => EXE_out_regW_reg
+--      );
+
+--   r_EXE_out_WB_control : Registro_TF 
+--      port map ( 
+--         clk => clk, rst => rst,
+--         ID_const => id_EXE_out_WB_control,
+--         fallo_in => fallo,
+--         dato_in  => EXE_out_WB_control,
+--         dato_out => EXE_out_WB_control_reg
+--      );
+
+--   r_EXE_out_MEM_control : Registro_TF 
+--      port map ( 
+--         clk => clk, rst => rst,
+--         ID_const => id_EXE_out_MEM_control,
+--         fallo_in => fallo,
+--         dato_in  => EXE_out_MEM_control,
+--         dato_out => EXE_out_MEM_control_reg
+--      );
+
 ---------------------------------Execution--------------------------------
 
 ----------------------------------Memory----------------------------------
@@ -647,17 +711,54 @@ begin
    p_MEM_regs: process(clk, rst)
    begin
       if rst='0' then
-         MEM_out_MEMbus_reg      <= (others=>'0');
-         MEM_out_ALUbus_reg      <= (others=>'0');
+--         MEM_out_MEMbus_reg      <= (others=>'0');
+--         MEM_out_ALUbus_reg      <= (others=>'0');
          MEM_out_regW_reg        <= (others=>'0');
          MEM_out_WB_control_reg  <= (others=>'0');
       elsif rising_edge(clk) then
-         MEM_out_MEMbus_reg      <= MEM_out_MEMbus;
-         MEM_out_ALUbus_reg      <= MEM_out_ALUbus;
+--         MEM_out_MEMbus_reg      <= MEM_out_MEMbus;
+--         MEM_out_ALUbus_reg      <= MEM_out_ALUbus;
          MEM_out_regW_reg        <= MEM_out_regW;
          MEM_out_WB_control_reg  <= MEM_out_WB_control;
       end if;
    end process;
+   
+   r_MEM_out_MEMbus : Registro_TF 
+      port map ( 
+         clk => clk, rst => rst,
+         ID_const => id_MEM_out_MEMbus,
+         fallo_in => fallo,
+         dato_in  => MEM_out_MEMbus,
+         dato_out => MEM_out_MEMbus_reg
+      );
+
+   r_MEM_out_ALUbus : Registro_TF 
+      port map ( 
+         clk => clk, rst => rst,
+         ID_const => id_MEM_out_ALUbus,
+         fallo_in => fallo,
+         dato_in  => MEM_out_ALUbus,
+         dato_out => MEM_out_ALUbus_reg
+      );
+
+--   r_MEM_out_regW : Registro_TF 
+--      port map ( 
+--         clk => clk, rst => rst,
+--         ID_const => id_MEM_out_regW,
+--         fallo_in => fallo,
+--         dato_in  => MEM_out_regW,
+--         dato_out => MEM_out_regW_reg
+--      );
+
+--   r_MEM_out_WB_control : Registro_TF 
+--      port map ( 
+--         clk => clk, rst => rst,
+--         ID_const => id_MEM_out_WB_control,
+--         fallo_in => fallo,
+--         dato_in  => MEM_out_WB_control,
+--         dato_out => MEM_out_WB_control_reg
+--      );
+
 ----------------------------------Memory----------------------------------
 
 --------------------------------Write Back--------------------------------
