@@ -50,7 +50,7 @@ library work;
    
 entity IF_main is
    Port( 
-      clk, rst       : in STD_LOGIC;
+--      clk, rst       : in STD_LOGIC;
 
       -- Contador de programa actual
       in_pc          : in std_logic_vector(31 downto 0);

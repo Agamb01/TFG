@@ -33,14 +33,15 @@ library work;
    use work.my_package.all;
    use work.IDs_regs_fallos.all;
    
-entity main is
+entity cpu is
    Port(
       clk, rst : in STD_LOGIC;
+      led : out STD_LOGIC_VECTOR (15 downto 0);
       fallo : in t_Fallo
    );
-end main;
+end cpu;
 
-architecture Behavioral of main is
+architecture Behavioral of cpu is
 --------------------------------Common--------------------------------
   -- Multiplexor
    component mux2 is
@@ -72,7 +73,7 @@ architecture Behavioral of main is
 ----------------------------Instruction Fetch-----------------------------
    component IF_main is
       Port( 
-         clk, rst       : in STD_LOGIC;
+--         clk, rst       : in STD_LOGIC;
          
          -- Contador de programa actual
          in_pc          : in std_logic_vector(31 downto 0);
@@ -328,8 +329,8 @@ begin
    -- Modulo IF
    i_IF: IF_main 
       port map (
-         clk => clk,
-         rst => rst, 
+--         clk => clk,
+--         rst => rst, 
          
          in_pc    => IF_out_pc_reg,
          out_pc   => IF_out_pc4,
@@ -392,6 +393,7 @@ begin
     --Señales de paso 
    ID_in_pc <= IF_out_pc4_reg;
 
+led <= ID_in_inst(15 downto 0);
    -- Modulo ID
    i_ID: ID_main
       port map ( 

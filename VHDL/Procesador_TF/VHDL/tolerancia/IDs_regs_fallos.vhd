@@ -38,7 +38,7 @@ package IDs_regs_fallos is
    type t_Fallo is
     record
      -- ID del registro afectado
-      ID : t_ID_reg;
+      ID : t_ID_reg;-- 5 bits
      -- Registros afectados por el error:
       -- 000 -> Ningun afectado
       -- 100, 010, 001 -> Uno afectado
