@@ -1,0 +1,450 @@
+Release 14.4 - xst P.49d (nt64)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.15 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.15 secs
+ 
+--> Reading design: generador_fallos.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "generador_fallos.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "generador_fallos"
+Output Format                      : NGC
+Target Device                      : xc7a100t-1-csg324
+
+---- Source Options
+Top Module Name                    : generador_fallos
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 32
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : NO
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : Yes
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Parsing VHDL file "D:\TFG\TFG\VHDL\Procesador_TF\VHDL\tolerancia\IDs_regs_fallos.vhd" into library work
+Parsing package <IDs_regs_fallos>.
+Parsing VHDL file "D:\TFG\TFG\VHDL\Procesador_TF\VHDL\common\my_package.vhd" into library work
+Parsing package <my_package>.
+Parsing package body <my_package>.
+Parsing VHDL file "D:\TFG\TFG\VHDL\Procesador_TF\generador_fallos.vhd" into library work
+Parsing entity <generador_fallos>.
+Parsing architecture <Behavioral> of entity <generador_fallos>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating entity <generador_fallos> (architecture <Behavioral>) from library <work>.
+WARNING:HDLCompiler:871 - "D:\TFG\TFG\VHDL\Procesador_TF\generador_fallos.vhd" Line 51: Using initial value
+   ((id_0,"UUU",'U',"UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU","UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU"),(id_0,"UUU",'U',"UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU","UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU"),(id_0,"UUU",'U',"UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU","UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU"),(id_0,"UUU",'U',"UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU","UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU"),(id_0,"UUU",'U',"UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU","UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU"),(id_0,"UUU",'U',"UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU","UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU"),(id_0,"UUU",'U',"UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU","UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU"),(id_0,"UUU",'U',"UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU","UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU"),(id_0,"UUU",'U',"UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU","UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU"),(id_0,"UUU",'U',"UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU","UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU"),(id_0,"UUU",'U',"UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU","UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU"),(id_0,"UUU",'U',"UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU","UUUUUUUUUUU
+   UUUUUUUUUUUUUUUUUUUUU"),(id_0,"UUU",'U',"UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU","UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU"),(id_0,"UUU",'U',"UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU","UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU"),(id_0,"UUU",'U',"UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU","UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU"),(id_0,"UUU",'U',"UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU","UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU")) for fallos since it is never assigned
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <generador_fallos>.
+    Related source file is "D:\TFG\TFG\VHDL\Procesador_TF\generador_fallos.vhd".
+WARNING:Xst:2999 - Signal 'ciclo_inserta', unconnected in block 'generador_fallos', is tied to its initial value.
+    Found 16x32-bit single-port Read Only RAM <Mram_ciclo_inserta> for signal <ciclo_inserta>.
+    Found 1-bit register for signal <enable>.
+    Found 32-bit register for signal <cuenta_ciclos_reg>.
+    Found 5-bit register for signal <cuenta_fallos_reg>.
+    Found 5-bit register for signal <fallo_ID>.
+    Found 3-bit register for signal <fallo_reg>.
+    Found 1-bit register for signal <fallo_tipo>.
+    Found 32-bit register for signal <fallo_bool>.
+    Found 32-bit register for signal <fallo_dato>.
+    Found 32-bit adder for signal <cuenta_ciclos_reg[31]_GND_6_o_add_0_OUT> created at line 1241.
+    Found 5-bit adder for signal <cuenta_fallos_reg[4]_GND_6_o_add_8_OUT> created at line 1241.
+    Found 32-bit comparator equal for signal <BUS_0002_cuenta_ciclos_reg[31]_equal_4_o> created at line 82
+    Summary:
+	inferred   1 RAM(s).
+	inferred   2 Adder/Subtractor(s).
+	inferred 111 D-type flip-flop(s).
+	inferred   1 Comparator(s).
+Unit <generador_fallos> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 1
+ 16x32-bit single-port Read Only RAM                   : 1
+# Adders/Subtractors                                   : 2
+ 32-bit adder                                          : 1
+ 5-bit adder                                           : 1
+# Registers                                            : 8
+ 1-bit register                                        : 2
+ 3-bit register                                        : 1
+ 32-bit register                                       : 3
+ 5-bit register                                        : 2
+# Comparators                                          : 1
+ 32-bit comparator equal                               : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+WARNING:Xst:1710 - FF/Latch <fallo_dato_16> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_dato_15> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_dato_14> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_dato_13> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_dato_12> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_dato_11> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_dato_10> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_dato_9> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_dato_8> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_dato_7> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_dato_6> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_dato_5> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_dato_4> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_dato_3> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_dato_2> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_dato_1> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_dato_0> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_tipo> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_reg_2> (without init value) has a constant value of 1 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_reg_1> (without init value) has a constant value of 1 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_reg_0> (without init value) has a constant value of 1 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_dato_31> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_dato_30> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_dato_29> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_dato_28> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_dato_27> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_dato_26> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_dato_25> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_dato_24> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_dato_23> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_dato_22> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_dato_21> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_dato_20> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_dato_19> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_dato_18> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_dato_17> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_bool_17> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_bool_16> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_bool_15> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_bool_14> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_bool_13> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_bool_12> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_bool_11> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_bool_10> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_bool_9> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_bool_8> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_bool_7> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_bool_6> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_bool_5> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_bool_4> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_bool_3> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_bool_2> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_bool_1> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_bool_0> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fallo_ID_4> has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fallo_ID_3> has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fallo_ID_2> has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fallo_ID_1> has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <fallo_ID_0> has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_bool_31> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_bool_30> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_bool_29> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_bool_28> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_bool_27> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_bool_26> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_bool_25> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_bool_24> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_bool_23> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_bool_22> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_bool_21> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_bool_20> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_bool_19> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_bool_18> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Registers                                            : 73
+ Flip-Flops                                            : 73
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1710 - FF/Latch <fallo_dato_16> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_dato_15> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_dato_14> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_dato_13> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_dato_12> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_dato_11> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_dato_10> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_dato_9> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_dato_8> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_dato_7> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_dato_6> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_dato_5> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_dato_4> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_dato_3> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_dato_2> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_dato_1> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_dato_0> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_tipo> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_reg_2> (without init value) has a constant value of 1 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_reg_1> (without init value) has a constant value of 1 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_reg_0> (without init value) has a constant value of 1 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_dato_31> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_dato_30> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_dato_29> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_dato_28> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_dato_27> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_dato_26> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_dato_25> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_dato_24> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_dato_23> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_dato_22> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_dato_21> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_dato_20> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_dato_19> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_dato_18> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_dato_17> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_bool_17> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_bool_16> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_bool_15> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_bool_14> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_bool_13> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_bool_12> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_bool_11> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_bool_10> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_bool_9> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_bool_8> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_bool_7> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_bool_6> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_bool_5> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_bool_4> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_bool_3> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_bool_2> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_bool_1> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_bool_0> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_ID_4> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_ID_3> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_ID_2> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_ID_1> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_ID_0> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_bool_31> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_bool_30> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_bool_29> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_bool_28> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_bool_27> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_bool_26> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_bool_25> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_bool_24> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_bool_23> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_bool_22> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_bool_21> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_bool_20> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_bool_19> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fallo_bool_18> (without init value) has a constant value of 0 in block <generador_fallos>. This FF/Latch will be trimmed during the optimization process.
+
+Optimizing unit <generador_fallos> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block generador_fallos, actual ratio is 0.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Found no macro
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : generador_fallos.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 2
+#      GND                         : 1
+#      VCC                         : 1
+# IO Buffers                       : 73
+#      OBUF                        : 73
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 7a100tcsg324-1 
+
+
+Slice Logic Utilization: 
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:      0
+   Number with an unused Flip Flop:       0  out of      0         
+   Number with an unused LUT:             0  out of      0         
+   Number of fully used LUT-FF pairs:     0  out of      0         
+   Number of unique control sets:         0
+
+IO Utilization: 
+ Number of IOs:                          75
+ Number of bonded IOBs:                  73  out of    210    34%  
+
+Specific Feature Utilization:
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+No clock signals found in this design
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -1
+
+   Minimum period: No path found
+   Minimum input arrival time before clock: No path found
+   Maximum output required time after clock: No path found
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 12.00 secs
+Total CPU time to Xst completion: 12.34 secs
+ 
+--> 
+
+Total memory usage is 431776 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :  148 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+

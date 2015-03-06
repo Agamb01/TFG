@@ -1,0 +1,3 @@
+vhdl work "VHDL/tolerancia/IDs_regs_fallos.vhd"
+vhdl work "VHDL/common/my_package.vhd"
+vhdl work "generador_fallos.vhd"

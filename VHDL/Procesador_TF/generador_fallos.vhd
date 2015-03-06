@@ -44,47 +44,52 @@ end generador_fallos;
 architecture Behavioral of generador_fallos is
 
    -- Fallos
-   constant num_fallos : integer := 15;
-   type array_fallos is array (0 to 15) of t_Fallo;
-   type array_activa_fallos is array (0 to 15) of Std_logic_vector(31 downto 0)
-      := ( (ID_0, "", "")
-      
-      
-      );
+   constant num_fallos : integer := 16;
+   type array_fallos is array (0 to num_fallos-1) of t_Fallo;
+   type array_ciclo_inserta is array (0 to num_fallos-1) of Std_logic_vector(31 downto 0);
 
    signal fallos : array_fallos;
-   signal activa_fallos : array_activa_fallos;
+   signal ciclo_inserta : array_ciclo_inserta;
 
-   -- Contador
-   signal cuenta_pc_reg : Std_logic_vector(31 downto 0);
+   -- Contadores
+   signal cuenta_ciclos_reg : Std_logic_vector(31 downto 0);
    signal cuenta_fallos_reg : Std_logic_vector(4 downto 0);
 
    signal enable : std_logic;
 begin
 
-p_cuenta_pc: process (clk, rst)
+
+-- Contador de ciclos, Cuenta cada ciclo para 
+p_cuenta_ciclos: process (clk, rst)
    begin
       if rst='0' then 
-         cuenta_pc_reg <= (others =>'0');
+         cuenta_ciclos_reg <= (others =>'0');
       elsif rising_edge(clk) then
-         cuenta_pc_reg <= std_logic_vector(unsigned(cuenta_pc_reg) + 4);
+         cuenta_ciclos_reg <= std_logic_vector(unsigned(cuenta_ciclos_reg) + 1);
       end if;
    end process;
 
+
+-- Inserta fallos
 p_fallos: process(clk, rst)
    begin
-      if rst='0' then 
-         cuenta_fallos_reg <= (others =>'0');
+      if rst='0' then -- Reinicia la cuenta del fallo a insertar
+         -- Empieza en 1 porque debe decidirse si se inserta un fallo en el siguiente ciclo de reloj
+         cuenta_fallos_reg <= std_logic_vector(to_unsigned(1,5));
          enable <= '1';
       elsif rising_edge(clk) then
-         if enable = '1' and cuenta_pc_reg = activa_fallos(to_integer(unsigned(cuenta_fallos_reg))) then
+         -- Si se habilita la inserción y se debe insertar un fallo en el ciclo siguiente
+         if enable = '1' and cuenta_ciclos_reg = ciclo_inserta(to_integer(unsigned(cuenta_fallos_reg))) then
+            -- Se asigna el fallo a la salida
             fallo <= fallos(to_integer(unsigned(cuenta_fallos_reg)));
-            if to_integer(unsigned(cuenta_fallos_reg)) = num_fallos then
+            -- Si llegamos al final de la memoria de fallos, se dehabilita la inserción
+            if to_integer(unsigned(cuenta_fallos_reg)) = num_fallos-1 then
                enable <= '0';
-            else
+            else -- E.o.c. se continúa la cuenta
                cuenta_fallos_reg <= std_logic_vector(unsigned(cuenta_fallos_reg) + 1);
             end if;
          else
+         -- Si se dehabilita la inserción de fallos, se inserta un fallo nulo, sin registro asignado
             fallo <=( ID => ID_0,
                       reg => (others=>'0'),
                       tipo => '0',

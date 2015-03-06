@@ -22,10 +22,65 @@
   <sourceproject xmlns="http://www.xilinx.com/XMLSchema" xil_pn:fileType="FILE_XISE" xil_pn:name="Procesador_TF.xise"/>
 
   <files xmlns="http://www.xilinx.com/XMLSchema">
+    <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/xst.xmsgs"/>
     <file xil_pn:fileType="FILE_NCD" xil_pn:name="control_Cpu_guide.ncd" xil_pn:origination="imported"/>
+    <file xil_pn:fileType="FILE_CMD_LOG" xil_pn:name="generador_fallos.cmd_log"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_LSO" xil_pn:name="generador_fallos.lso"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGC" xil_pn:name="generador_fallos.ngc"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGR" xil_pn:name="generador_fallos.ngr"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="generador_fallos.prj"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_STX" xil_pn:name="generador_fallos.stx"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_REPORT" xil_pn:name="generador_fallos.syr"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST" xil_pn:name="generador_fallos.xst"/>
+    <file xil_pn:fileType="FILE_HTML" xil_pn:name="generador_fallos_envsettings.html"/>
+    <file xil_pn:fileType="FILE_HTML" xil_pn:name="generador_fallos_summary.html"/>
+    <file xil_pn:fileType="FILE_XRPT" xil_pn:name="generador_fallos_xst.xrpt"/>
     <file xil_pn:fileType="FILE_NCD" xil_pn:name="main_guide.ncd" xil_pn:origination="imported"/>
+    <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="webtalk_pn.xml"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="xst"/>
   </files>
 
-  <transforms xmlns="http://www.xilinx.com/XMLSchema"/>
+  <transforms xmlns="http://www.xilinx.com/XMLSchema">
+    <transform xil_pn:end_ts="1425310065" xil_pn:name="TRAN_schematicsToHdl" xil_pn:prop_ck="-6364508853016590088" xil_pn:start_ts="1425310065">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1425310065" xil_pn:name="TRAN_regenerateCores" xil_pn:prop_ck="-2986549782075030914" xil_pn:start_ts="1425310065">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1425310065" xil_pn:name="TRAN_SubProjectAbstractToPreProxy" xil_pn:start_ts="1425310065">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1425310065" xil_pn:name="TRAN_xawsTohdl" xil_pn:prop_ck="675110114120428698" xil_pn:start_ts="1425310065">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1425310065" xil_pn:name="TRAN_SubProjectPreToStructuralProxy" xil_pn:prop_ck="3206529612922900429" xil_pn:start_ts="1425310065">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1425310065" xil_pn:name="TRAN_platgen" xil_pn:prop_ck="-7567925899706095480" xil_pn:start_ts="1425310065">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1425310307" xil_pn:in_ck="337976391891428436" xil_pn:name="TRANEXT_xstsynthesize_virtex6" xil_pn:prop_ck="2863735180932631748" xil_pn:start_ts="1425310292">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="WarningsGenerated"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="_xmsgs/xst.xmsgs"/>
+      <outfile xil_pn:name="generador_fallos.lso"/>
+      <outfile xil_pn:name="generador_fallos.ngc"/>
+      <outfile xil_pn:name="generador_fallos.ngr"/>
+      <outfile xil_pn:name="generador_fallos.prj"/>
+      <outfile xil_pn:name="generador_fallos.stx"/>
+      <outfile xil_pn:name="generador_fallos.syr"/>
+      <outfile xil_pn:name="generador_fallos.xst"/>
+      <outfile xil_pn:name="generador_fallos_xst.xrpt"/>
+      <outfile xil_pn:name="webtalk_pn.xml"/>
+      <outfile xil_pn:name="xst"/>
+    </transform>
+  </transforms>
 
 </generated_project>
