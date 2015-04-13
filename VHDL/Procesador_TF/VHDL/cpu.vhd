@@ -30,7 +30,6 @@ use IEEE.NUMERIC_STD.ALL;
 --use UNISIM.VComponents.all;
 
 library work;
-   use work.my_package.all;
    use work.IDs_regs_fallos.all;
    
 entity cpu is

@@ -45,9 +45,9 @@ use IEEE.NUMERIC_STD.ALL;
 --    Contador de programa siguiente
 --    Instruccion correspondiente a PC actual
 
-library work;
-   use work.my_package.all;
-   
+
+
+
 entity IF_main is
    Port( 
 --      clk, rst       : in STD_LOGIC;

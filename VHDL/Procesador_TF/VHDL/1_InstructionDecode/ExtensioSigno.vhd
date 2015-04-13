@@ -31,14 +31,14 @@ use IEEE.STD_LOGIC_1164.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity ExtensioSigno is
+entity ExtensionSigno is
    Port ( 
       in_inst : in  STD_LOGIC_VECTOR (31 downto 0);
       out_entero : out STD_LOGIC_VECTOR(31 downto 0)
    );
-end ExtensioSigno;
+end ExtensionSigno;
 
-architecture Behavioral of ExtensioSigno is
+architecture Behavioral of ExtensionSigno is
 
    type type_inst is (ALU12, ALU16, ALUREG, LDST, BR, BRCond, UNDEFINED);
    signal s_intr_type : type_inst; 

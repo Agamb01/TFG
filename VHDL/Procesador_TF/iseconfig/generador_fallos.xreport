@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2015-03-02T13:38:04</DateModified>
+  <DateModified>2015-04-03T11:42:57</DateModified>
   <ModuleName>generador_fallos</ModuleName>
   <SummaryTimeStamp>Unknown</SummaryTimeStamp>
   <SavedFilePath>D:/TFG/TFG/VHDL/Procesador_TF/iseconfig/generador_fallos.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>D:/TFG/TFG/VHDL/Procesador_TF</ImplementationReportsDirectory>
+  <ImplementationReportsDirectory>D:/TFG/TFG/VHDL/Procesador_TF\</ImplementationReportsDirectory>
   <DateInitialized>2015-03-02T13:34:46</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>

@@ -29,8 +29,6 @@ use IEEE.NUMERIC_STD.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-library work;
-   use work.my_package.all;
    
 entity main is
    Port(

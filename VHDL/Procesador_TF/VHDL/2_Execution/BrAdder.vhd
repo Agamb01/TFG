@@ -1,21 +1,21 @@
-----------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
 -- Company: 
--- Engineer: Andrés Gamboa Meléndez
+-- Engineer:         Andrés Gamboa Meléndez
 -- 
--- Create Date: 11:13:31 10/17/2014 
--- Design Name: 1
--- Module Name: BrAdder - Behavioral 
--- Project Name: ARM compatible micro-processor
--- Target Devices: Nexys4
--- Tool versions: Xilinx ISE Webpack 14.4
--- Description: Sumador de 32 bit, suma dos entradas
+-- Create Date:      11:13:31 10/17/2014 
+-- Design Name:      Procesador_TF
+-- Module Name:      BrAdder - Behavioral 
+-- Project Name:     Procesador tolerante a fallos transitorios
+--                     compatible con ARM a nivel de instrucciones
+-- Target Devices:   Digilent Nexys 4 - Artix 7 FPGA
+-- Tool versions:    Xilinx ISE 14.4 (nt64)
+-- Description:      Sumador de 32 bit, suma dos entradas
 --
--- Dependencies: 
+-- Dependencies:     
 --
--- Revision: 
--- Revision 0.01 - File Created
 -- Additional Comments: 
-----------------------------------------------------------------------------------
+--
+-------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
@@ -28,13 +28,22 @@ use IEEE.NUMERIC_STD.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
+
+
+-------------------------------------------------------------------------------
+--                                 BRAdder                                   --
+-------------------------------------------------------------------------------
+-- Suma dos operandos de entrada
+--
+
+
 entity BrAdder is
    Generic (
       op_size : INTEGER := 32
    );
    Port ( 
-      in_A : in  STD_LOGIC_VECTOR (op_size-1 downto 0);
-      in_B : in  STD_LOGIC_VECTOR (op_size-1 downto 0);
+      in_A    : in  STD_LOGIC_VECTOR (op_size-1 downto 0);
+      in_B    : in  STD_LOGIC_VECTOR (op_size-1 downto 0);
       out_res : out  STD_LOGIC_VECTOR (op_size-1 downto 0)
    );
 end BrAdder;
