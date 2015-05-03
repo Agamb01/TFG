@@ -1,0 +1,15 @@
+\begin{thebibliography}{2}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+
+\bibitem[{Habinc(2002)}]{Habinc2002}
+{\sc Habinc, S.}
+\newblock {Functional Triple Modular Redundancy (FTMR)}.
+\newblock {\em Design and Assessment Report, Gaisler Research\/}, p\'aginas
+  1--56, 2002.
+
+\bibitem[{Sadasivan(2006)}]{Sadasivan2006}
+{\sc Sadasivan, S.}
+\newblock {An introduction to the arm cortex-m3 processor}.
+\newblock 2006.
+
+\end{thebibliography}

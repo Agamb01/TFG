@@ -1,0 +1,360 @@
+%---------------------------------------------------------------------
+%
+%                          Capítulo 8
+%
+%---------------------------------------------------------------------
+
+\chapter{Procesador}
+\label{cap8}
+
+\begin{FraseCelebre}
+\begin{Frase}
+...
+\end{Frase}
+\begin{Fuente}
+...
+\end{Fuente}
+\end{FraseCelebre}
+
+\begin{resumen}
+...
+\end{resumen}
+
+
+%-------------------------------------------------------------------
+\section*{Procesador}
+%-------------------------------------------------------------------
+\label{cap8:sec:procesador}
+
+Se ha diseñado e implementado manualmente un procesador con arquitectura RISC basado en la arquitectura de los procesadores DLX estudiados durante el grado en ingeniería de computadores[1][2]. Se trata de un procesador con un ancho de palabra de 32 bits y una segmentación en 5 etapas.
+
+La implementación ha sido adaptada para poder ejecutar instrucciones del repertorio ARM. En concreto, se permite ejecutar un subconjunto del juego de instrucciones THUMB-2. Este juego de instrucciones es utilizado principalmente por los procesadores de la gama ARM CORTEX M. Otras gamas de procesadores ARM también soportan el juego de instrucciones THUMB-2 además de las instrucciones ARM. 
+
+
+%-------------------------------------------------------------------
+\section{Esctructura}
+%-------------------------------------------------------------------
+\label{cap8:sec:esctructura}
+
+\begin{itemize}
+
+  \item El banco de registros dispone de 16 registros (R0 .. R15) de propósito general con un tamaño de 32 bits. Estos registros se pueden utilizar para guardar datos leídos de memoria y enviar los valores a memoria. Podemos trabajar con los valores que tengan almacenados ejecutando operaciones sobre ellos. El registro R15 es accesible de forma limitada puesto que el identificador de este registro se utiliza para diferenciar unas instrucciones de otras.
+
+  \item Además existe el registro del contador de programa (PC). Este registro especial almacena la dirección de memoria de la instrucción que debe ejecutarse a continuación. Se incrementa automáticamente en 4 cada ciclo. Y solo se puede alterar este mecanismo por medio de instrucciones de control. 
+
+  \item La memoria es accesible por palabras de 32 bits. Es decir, todo acceso a memoria carga o almacena 32 bits. Para acceder a memoria se dispone de instrucciones de lectura y escritura de una palabra con direccionamiento relativo a registro base. La dirección de acceso se calcula con un registro base al que se le suma un inmediato de 12 bits.
+
+  \item Las instrucciones se componen de 32 bits con formato variable. 
+	
+\end{itemize}
+
+%-------------------------------------------------------------------
+\section{Tipos de datos}
+%-------------------------------------------------------------------
+\label{cap8:sec:tiposdedatos}
+
+Para simplificar la arquitectura del procesador, se ha limitado el tamaño de datos a palabras completas de 32 bits.  Se trabaja con un bus de ancho de palabra de 32 bits donde todos los bits cargados tienen valor.
+
+
+%-------------------------------------------------------------------
+\section{Instrucciones}
+%-------------------------------------------------------------------
+\label{cap8:sec:instrucciones}
+
+El juego de instrucciones elegido está compuesto por instrucciones de 32 bits con formato variable. El formato de las diferentes instrucciones se explicarán más adelante.
+
+A diferencia de la arquitectura DLX y sus instrucciones sencillas, se ha utilizado un juego de instrucciones más complejo, lo que requiere una unidad de control compleja para decodificar las instrucciones.
+
+El procesador implementado es capaz de ejecutar 3 tipos de instrucciones:
+
+\begin{itemize}
+  \item Accesos a memoria
+  \item Operaciones sobre registros
+	  \renewcommand{\theenumi}{\alph{enumi})}
+    \begin{enumerate}
+      \item Operaciones con dos registros
+      \item Operaciones con un registro y un inmediato
+    \end{enumerate}
+  \item Operaciones de salto
+\end{itemize}
+
+Ahora se explica brevemente los diferentes tipos de instrucciones. Más adelante se expondrán las instrucciones con más detalle, explicando los campos de cada una.
+
+
+%-------------------------------------------------------------------
+\subsection{Accesos a memoria}
+%-------------------------------------------------------------------
+\label{cap8:sec:instrucciones:accesosamemoria}
+Las instrucciones de acceso a memoria son necesarias cuando se requiere cargar (load) un dato desde la memoria al banco de registros, o almacenar (store) el valor de un registro en la memoria.
+
+Es posible acceder a las direcciones de memoria direccionadas por byte. En esta implementación se está obligado a cargar valores de 4 bytes de tamaño (tamaño de palabra). Es recomendable utilizar direcciones de memoria que sean múltiplos de 4.
+Para el cálculo de la dirección de carga o almacenamiento se ha implementado un único modo de direccionamiento. Registro base "Rn + imm12". 
+
+La dirección base se obtiene del registro Rn, y se suma un inmediato de 12 bits obtenido de la instrucción.
+
+
+%-------------------------------------------------------------------
+\subsection{Procesamiento de datos}
+%-------------------------------------------------------------------
+\label{cap8:sec:instrucciones:procesamientodedatos}
+
+Las instrucciones de procesamiento realizan cálculos aritméticos y lógicos. Se aplican sobre dos operandos y el resultado (si existe) se almacena en un registro.
+
+Dependiendo de la instrucción los operandos pueden ser:
+
+
+%-------------------------------------------------------------------
+\subsubsection{Operaciones con dos registros}
+%-------------------------------------------------------------------
+\label{cap8:sec:instrucciones:procesamientodedatos:dosregistros}
+
+Los datos con los que se trabaja se extraen de dos registros codificados en 4 bits.
+
+Al utilizar el registro R15 se deben tener en cuenta ciertas restricciones. Este registro se utiliza para diferenciar ciertas operaciones de otras. Por ejemplo, si el código de operación es "0010" y el registro origen Rn es R15 ("1111") la operación ejecutada será la operación "MOVE", si el registro Rn es cualquier otro, se ejecutará una "Ó lógica" (operación or).
+
+
+%-------------------------------------------------------------------
+\subsubsection{Operaciones con un registro y un inmediato}
+%-------------------------------------------------------------------
+\label{cap8:sec:instrucciones:procesamientodedatos:unregistrouninmdiato}
+
+El conjunto de operaciones con inmediato se limita a cuatro operaciones. Se permite mover un inmediato de 16 bits a un registro, pudiendo elegir si los dos bytes se almacenarán en los 16 bits más significativos o en los 16 bits menos significativos. Además se permite sumar o restar un inmediato de 12 bits a un registro.
+
+
+%-------------------------------------------------------------------
+\subsection{Operaciones de control}
+%-------------------------------------------------------------------
+\label{cap8:sec:instrucciones:operacionesdecontrol}
+
+Las operaciones de control intervienen en la ejecución normal del programa. Se utilizan para modificar el valor del registro del contador de programa. 
+
+Los procesadores ARM combinan instrucciones de 32 bits con instrucciones de 16 bits. Por ello, el inmediato con el desplazamiento es desplazado un bit hacia la izquierda. En nuestro caso nos debemos asegurar de codificar las instrucciones con un 0 en el bit menos significativo del inmediato. Con esto se evita acabar en una dirección equivocada, y leer dos mitades de dos instrucciones distintas.
+
+Existen dos tipos de instrucciones de salto. El primero es el salto incondicional y permite sumar un entero de 24 bits al valor del contador de programa y almacenar el resultado en el mismo.
+
+La segunda operación de control es el salto condicional. Para este tipo de salto se reduce el tamaño del inmediato a 20 bits. El tamaño del inmediato se ve afectado porque se requiere un campo extra de 4 bits para la condición de salto.
+
+Previamente a un salto condicional se debe ejecutar una operación de comparación. Esta operación activa los flags de la unidad aritmético-lógica dependiendo del resultado de la comparación, y estos se mantienen hasta que se vuelva a ejecutar otra comparación. Los flags se comparan a la condición de salto y en caso de coincidir, se realiza el salto. Si no se ejecuta la comparación, el estado de los flags es desconocido y el procesador se comportará de manera no controlada. 
+
+
+%-------------------------------------------------------------------
+\section{Arquitectura}
+%-------------------------------------------------------------------
+\label{cap8:sec:arquitectura}
+
+
+%-------------------------------------------------------------------
+\subsection{Ruta de datos}
+%-------------------------------------------------------------------
+\label{cap8:sec:arquitectura:rutadedatos}
+
+En la \ref{fig:P_DataPath} se muestra el diseño de la ruta de datos del procesador. La ruta de datos del procesador consta de 5 etapas. Estas etapas se explican a continuación.
+
+\begin{figure}
+	\centering
+		\includegraphics[width=\textwidth]{Imagenes/EPS/P_DataPath.eps}
+	\caption{Ruta de datos DLX-ARM}
+	\label{fig:P_DataPath}
+\end{figure}
+
+
+%-------------------------------------------------------------------
+\subsubsection{Búsqueda de instrucción}
+%-------------------------------------------------------------------
+\label{cap8:sec:arquitectura:rutadedatos:rutadedatos:rutadedatos:rutadedatos:fetch}
+
+La primera etapa es la encargada de cargar las instrucciones de memoria y transmitirlas a la siguiente etapa. De forma paralela calcula la dirección de la siguiente instrucción. Para estas tareas sus componentes son:
+
+\begin{itemize}
+	\item El acceso a la memoria de instrucciones se realiza a través de un módulo independiente. Este módulo recibe la dirección de memoria y devuelve la instrucción a ejecutar. Actualmente este modulo es una memoria ROM. Esta memoria contiene las instrucciones del programa en código binario.
+	\item El contador de programa es el registro que almacena la dirección de memoria donde se localiza la instrucción.
+  \item Un sumador encargado de incrementar en 4 el contador de programa.
+  \item Un multiplexor encargado de seleccionar la siguiente dirección. En caso de haberse ejecutado un salto, se seleccionará la dirección calculada en la etapa de ejecución. En caso contrario, la ejecución normal, la siguiente instrucción será la salida del sumador de la etapa. 
+\end{itemize}
+
+
+%-------------------------------------------------------------------
+\subsubsection{Decodificación}
+%-------------------------------------------------------------------
+\label{cap8:sec:arquitectura:rutadedatos:rutadedatos:rutadedatos:decode}
+
+En la etapa de decodificación se analiza la instrucción y se obtienen los datos necesarios para realizar las operaciones correctamente. Para decodificar las instrucciones dispone de:
+
+\begin{itemize}
+	\item Un banco de registros que contiene los registros que almacenan los datos con los que se trabaja.
+  \item Un circuito combinacional de extensión de signo. Este circuito obtiene el inmediato codificado dentro de la instrucción que se está ejecutando.
+\end{itemize}
+
+
+%-------------------------------------------------------------------
+\subsubsection{Ejecución}
+%-------------------------------------------------------------------
+\label{cap8:sec:arquitectura:rutadedatos:rutadedatos:execution}
+
+En la etapa de ejecución se realizan los cálculos aritméticos o lógicos sobre los datos obtenidos del banco de registro y del circuito de extensión de signo. Para realizar los cálculos incluye:
+
+\begin{itemize}
+	\item Una Unidad Aritmético-Lógica (ALU) para las operaciones sobre los registros. Junto a la ALU aparece un multiplexor que permite seleccionar el origen de los datos.
+	\item Un sumador para el cálculo de la dirección de salto.
+\end{itemize}
+
+
+%-------------------------------------------------------------------
+\subsubsection{Acceso a memoria}
+%-------------------------------------------------------------------
+\label{cap8:sec:arquitectura:rutadedatos:memory}
+
+En la etapa de memoria se realizan intercambios de datos con la memoria principal.
+
+\begin{itemize}
+	\item Memoria de datos. Es el módulo encargado de la interacción con los datos almacenados en memoria. Permite cargar los datos de memoria en los registros y almacenarlos después de trabajar con ellos. Actualmente esta memoria está implementada como una memoria RAM de acceso directo de un ciclo. 
+\end{itemize}
+
+
+%-------------------------------------------------------------------
+\subsubsection{Escritura en registros}
+%-------------------------------------------------------------------
+\label{cap8:sec:arquitectura:rutadedatos:writeback}
+
+En la etapa final del procesador se escriben los resultados calculados por la ALU, o los datos cargados de memoria en el banco de registros. 
+
+\begin{itemize}
+	\item Contiene un multiplexor para seleccionar el origen de los datos que se almacenarán en el registro.
+\end{itemize}
+
+
+%-------------------------------------------------------------------
+\subsection{Ruta de control}
+%-------------------------------------------------------------------
+\label{cap8:sec:arquitectura:rutadecontrol}
+
+Para completar el procesador es necesario una unidad de control principal. Ésta unidad se encarga de analizar la instrucción que debe ejecutarse y prepara las señales de control para el resto de módulos. En la \ref{fig:P_ControlPath}, podemos observar el procesador con la unidad de control y las señales de control. A continuación se enumeran las señales de control y se explica su funcionalidad.
+
+\begin{figure}
+	\centering
+		\includegraphics[width=\textwidth]{Imagenes/EPS/P_ControlPath.eps}
+	\caption{Ruta de control DLX-ARM}
+	\label{fig:P_ControlPath}
+\end{figure}
+
+
+%-------------------------------------------------------------------
+\subsubsection{Búsqueda de instrucción}
+%-------------------------------------------------------------------
+\label{cap8:sec:arquitectura:rutadecontrol:fetch}
+
+\begin{description}
+	\item[PCSrc] Esta señal se calcula en la etapa de acceso a memoria. La señal PCSrc indica si se cargará un salto o se continúa la ejecución normal del programa. Esta señal se deriva de una comparación entre las condiciones de salto de la instrucción y el valor de las ALU flags calculadas por instrucciones anteriores. Esta comparación se realiza en la etapa de memoria. La señal PCSrc selecciona el origen para la siguiente dirección que se cargará en el contador de programa.
+\end{description}
+
+
+%-------------------------------------------------------------------
+\subsubsection{Decodificación}
+%-------------------------------------------------------------------
+\label{cap8:sec:arquitectura:rutadecontrol:decode}
+
+\begin{description}
+	\item[RegWrite] Esta señal proviene de la etapa de escritura en registros.
+\end{description}
+
+
+%-------------------------------------------------------------------
+\subsubsection{Ejecución}
+%-------------------------------------------------------------------
+\label{cap8:sec:arquitectura:execution}
+
+\begin{description}
+	\item[ALUSrc] Selecciona el origen del segundo operando de entrada para la unidad aritmético-lógica.
+	\item[ALUop] Selecciona la operación que se aplica en la unidad aritmético-lógica.
+\end{description}
+
+
+%-------------------------------------------------------------------
+\subsubsection{Acceso a memoria}
+%-------------------------------------------------------------------
+\label{cap8:sec:arquitectura:rutadecontrol:memory}
+
+\begin{description}
+	\item[MemWrite] Indica que la instrucción debe acceder a memoria en modo escritura. 
+	\item[MemRead] Indica que la instrucción debe acceder a memoria en modo lectura.
+	\item[BranchCond] Condición necesaria para activar la señal de control "PCSrc".
+\end{description}
+
+
+%-------------------------------------------------------------------
+\subsubsection{Escritura en registros}
+%-------------------------------------------------------------------
+\label{cap8:sec:arquitectura:rutadecontrol:writeback}
+
+\begin{description}
+	\item[MemtoReg] Indica si el resultado de la instrucción tiene origen en la memoria de datos o en la unidad aritmético-lógica. 
+	\item[RegWrite] Indica si el resultado de la instrucción debe almacenarse en el banco de registros.
+\end{description}
+
+
+%-------------------------------------------------------------------
+\section{Formato de instrucciones}
+%-------------------------------------------------------------------
+\label{cap8:sec:formatodeinstrucciones}
+
+El juego de instrucciones implementado es un subconjunto de las instrucciones de la arquitectura Thumb-2. 
+En este apartado se explican las instrucciones implementadas con sus campos. Para más información sobre el juego de instrucciones THUMB-2 se acudir al manual de referencias[3].
+
+Organizado en 3 tipos, el juego de instrucciones se divide en instrucciones de transferencia, instrucciones de operaciones e instrucciones de control de flujo.
+
+Las instrucciones implementadas, divididas por grupo, son:
+
+%-------------------------------------------------------------------
+\subsection{Transferencia}
+%-------------------------------------------------------------------
+\label{cap8:sec:formatodeinstrucciones:transferencia}
+
+Instrucciones de acceso a memoria, LOAD y STORE de un único dato con desplazamiento.
+%\begin{table}[htbp]
+%  \resizebox{\textwidth}{!} {
+%    \begin{center}
+%	  \begin{tabular}{|l|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+%	    \hline
+%												& 31 & 30 & 29 & 28 & 27 & 26 & 25 & 24 & 23 & 22 & 21 & 20 & 19 & 18 & 17 & 16 & 
+													%15 & 14 & 13 & 12 & 11 & 10 & 9  & 8  & 7  & 6  & 5  & 4  & 3  & 2  & 1  & 0  \\ \hline
+													%
+				%Formato general & 1  & 1  & 1  & 1  & 1  & 0  & 0  &  \multicolumn{25}{|c|}{ }                  \\ \hline
+			%
+				%Rn + imm12      & \multicolumn{7}{|c|}{} & S & 1 & \multicolumn{2}{|c|}{Size} & L & \multicolumn{4}{|c|}{Rn} &
+												%\multicolumn{4}{|c|}{Rd} & \multicolumn{12}{|c|}{imm12} \\ \hline
+		%\end{tabular}
+		%\end{center}
+	%}
+	%\caption{Instruccion de acceso a memoria}
+	%\label{tab:InstMemoria}
+%\end{table}
+
+%%-------------------------------------------------------------------
+%\section*{\NotasBibliograficas}
+%%-------------------------------------------------------------------
+%\TocNotasBibliograficas
+%
+%Citamos algo para que aparezca en la bibliografía\ldots
+%\citep{ldesc2e}
+%
+%\medskip
+%
+%Y también ponemos el acrónimo \ac{CVS} para que no cruja.
+%
+%Ten en cuenta que si no quieres acrónimos (o no quieres que te falle la compilación en ``release'' mientras no tengas ninguno) basta con que no definas la constante \verb+\acronimosEnRelease+ (en \texttt{config.tex}).
+%
+%
+%%-------------------------------------------------------------------
+%\section*{\ProximoCapitulo}
+%%-------------------------------------------------------------------
+%\TocProximoCapitulo
+%
+%...
+
+% Variable local para emacs, para  que encuentre el fichero maestro de
+% compilación y funcionen mejor algunas teclas rápidas de AucTeX
+%%%
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../Tesis.tex"
+%%% End:

@@ -1,0 +1,147 @@
+%---------------------------------------------------------------------
+%
+%                          Capítulo 1
+%
+%---------------------------------------------------------------------
+
+\chapter{Introducción}
+\label{cap1}
+
+\begin{FraseCelebre}
+\begin{Frase}
+...
+\end{Frase}
+\begin{Fuente}
+...
+\end{Fuente}
+\end{FraseCelebre}
+
+\begin{resumen}
+En el capítulo 1 se realiza una introducción al trabajo realizado durante el proyecto. Se plantea el problema, se enumeran los objetivos del trabajo y se define la estructura de este documento.
+\end{resumen}
+
+%%-------------------------------------------------------------------
+\section{Introducción}
+%%-------------------------------------------------------------------
+\label{cap1:introduccion}
+
+Esta memoria es el resultado del trabajo realizado para la asignatura "`Trabajo de fin de grado"' del \grado. Trabajo realizado en el departamento de Arquitectura de Computadores y Automática con \director como director.
+
+Este trabajo se centra en la implementación de un microprocesador tolerante a fallos. El procesador ha sido diseñado para ser compatible con instrucciones ARM, del repertorio del microprocesador "`ARM Cortex M3"' [\cite{Sadasivan2006}]. Y la tolerancia a fallos aplicada ha sido el "`modelo de replicado triple de módulos(TMR)"' [\cite{Habinc2002}].
+
+
+
+%%-------------------------------------------------------------------
+\section{Motivación}
+%%-------------------------------------------------------------------
+\label{cap1:motivacion}
+
+
+
+%El proyecto trata de la implementación de un procesador VHDL segmentado, compatible a nivel de instrucciones con un ARM 32 bits.La tolerancia a fallos transitorios, se basará en la detección de fallos mediante la replicación triple de módulos, y posterior recuperación del fallo mediante: 
+%1. El modulo triplicado permite conocer el valor correcto de la señal 
+%2. Volvemos a ejecutar las instrucciones (por ejemplo todos los módulos discrepan) 
+%3. Reiniciamos el sistema (por ejemplo error en el registro PC)  
+%El principal objetivo del proyecto es proporcionar el procesador tolerante a fallos, frente a las prestaciones del procesador. La planificación del proyecto tiene estrictamente que dedicarle como mínimo un tercio del tiempo a la recolección de resultados, por lo que el nivel de segmentación, y el conjunto de instrucciones implementadas vendrá limitado por el tiempo disponible.
+
+
+
+%%-------------------------------------------------------------------
+\section{Antecedentes}
+%%-------------------------------------------------------------------
+\label{cap1:antecedentes}
+
+
+
+%%-------------------------------------------------------------------
+\section{Planteamiento del problema}
+%%-------------------------------------------------------------------
+\label{cap1:planteamiento}
+
+
+
+%%-------------------------------------------------------------------
+\section{Objetivos}
+%%-------------------------------------------------------------------
+\label{cap1:objetivos}
+
+
+El proyecto se ha divido en cuatro tareas dedicadas a la implementación del microprocesador y a la aplicación de la tolerancia a fallos.
+
+\begin{enumerate}
+  \item Primero se ha implementado el procesador segmentado en 5 etapas. Para ello se ha partido de la arquitectura DLX vista en las asignaturas de computadores de nuestro grado. 
+	\item A continuación se ha rediseñado la ruta de control. El nuevo juego de instrucciones usado, completamente distinto al que utiliza un DLX convencional, obliga a cambiar la ruta de control. Simulando unos pequeños programas se comprueba que el procesador es capaz de decodificar y ejecutar las nuevas instrucciones. 
+	\item Una vez implementado el procesador completo y comprobado su funcionamiento se diseña y se incorpora la tolerancia a fallos. Para ello se triplican los módulos que pueden causar mayor numero de fallos y se insertan votadores de mayoría. %Estos votadores reciben la salida de un módulo y sus dos replicas y permiten conocer el valor de la mayoría.
+	\item Para finalizar se ha diseñado un sistema externo de inserción de fallos. Este sistema es capaz de alterar los valores de las salidas de los módulos triplicados, para comprobar después como afecta esto al funcionamiento del procesador.
+\end{enumerate}
+
+
+%%-------------------------------------------------------------------
+\section{Estructura del documento}
+%%-------------------------------------------------------------------
+\label{cap1:estructura}
+
+\begin{description}
+  \item Capitulo \ref{cap1} \textit{Introducción}: 
+	
+	En el capitulo 1 se realiza la introducción al trabajo propuesto y realizado para el trabajo de fin de grado en el que se basa el presente documento.
+	
+  \item Capitulo \ref{cap2} \textit{Trabajo relacionado}:
+	
+	En el capitulo 2 se realiza una exposición de la investigación llevada a cabo para realizar el trabajo. Se exponen definiciones y otros datos de interés para el lector.
+
+	\item Capitulo \ref{cap3} \textit{Procesador}: 
+	
+	En el capitulo 3 se describe el procesador implementado con su estructura y arquitectura.
+	
+	\item Capitulo \ref{cap4} \textit{Proporcionando tolerancia a fallos}: 
+	
+	En el capitulo 4 se describe cómo se ha proporcionado la tolerancia a fallos y qué técnicas se han utilizado.
+	
+	\item Capitulo \ref{cap5} \textit{Resultados}: 
+	
+	En el capitulo 5 se muestran los resultados obtenidos de las simulaciones realizadas.
+	
+	\item Capitulo \ref{cap6} \textit{Análisis de los resultados}: 
+	
+	En el capitulo 6 se analizan los datos.
+	
+	\item Capitulo \ref{cap7} \textit{Conclusiones}: 
+	
+	En el capitulo 7 se describen las conclusiones tras analizar los resultados.
+	
+\end{description}
+
+
+
+
+
+%%-------------------------------------------------------------------
+%\section*{\NotasBibliograficas}
+%%-------------------------------------------------------------------
+%\TocNotasBibliograficas
+%
+%Citamos algo para que aparezca en la bibliografía\ldots
+%\citep{ldesc2e}
+%
+%\medskip
+%
+%Y también ponemos el acrónimo \ac{CVS} para que no cruja.
+%
+%Ten en cuenta que si no quieres acrónimos (o no quieres que te falle la compilación en ``release'' mientras no tengas ninguno) basta con que no definas la constante \verb+\acronimosEnRelease+ (en \texttt{config.tex}).
+%
+%
+%%-------------------------------------------------------------------
+%\section*{\ProximoCapitulo}
+%%-------------------------------------------------------------------
+%\TocProximoCapitulo
+%
+%...
+
+% Variable local para emacs, para  que encuentre el fichero maestro de
+% compilación y funcionen mejor algunas teclas rápidas de AucTeX
+%%%
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../Tesis.tex"
+%%% End:
