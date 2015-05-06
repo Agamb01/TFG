@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.1.17)  3 MAY 2015 12:08
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.1.17)  4 MAY 2015 19:45
 entering extended mode
 **Tesis.tex
-(C:\Users\Andy\Desktop\MemoriaTFG_prueba\Tesis.tex
+(D:\TFG\TFG\Memoria\MemoriaTFG_prueba\Tesis.tex
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, arabic, armenian, assamese, basque, bengali
 , bokmal, bulgarian, catalan, coptic, croatian, czech, danish, dutch, esperanto, estonian, farsi, finnish, french, galic
@@ -29,7 +29,7 @@ File: bk11.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 \bibindent=\dimen102
 )
 \@input{config.aux}
-(C:\Users\Andy\Desktop\MemoriaTFG_prueba\config.tex) (C:\Users\Andy\Desktop\MemoriaTFG_prueba\TeXiS/TeXiS.sty
+(D:\TFG\TFG\Memoria\MemoriaTFG_prueba\config.tex) (D:\TFG\TFG\Memoria\MemoriaTFG_prueba\TeXiS/TeXiS.sty
 Package: TeXiS/TeXiS 
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\tools\verbatim.sty"
@@ -41,16 +41,17 @@ Package: verbatim 2003/08/22 v1.5q LaTeX2e package for verbatim enhancements
 \example@out=\write3
 
 \@input{TeXiS/TeXiS_pream.aux}
-(C:\Users\Andy\Desktop\MemoriaTFG_prueba\TeXiS/TeXiS_pream.tex ("C:\Program Files\MiKTeX 2.9\tex\latex\base\shortvrb.sty
-"
+(D:\TFG\TFG\Memoria\MemoriaTFG_prueba\TeXiS/TeXiS_pream.tex ("C:\Program Files\MiKTeX 2.9\tex\latex\base\shortvrb.sty"
 Package: shortvrb 2010/02/04 v2.1e Standard LaTeX documentation package (FMi)
-) ("C:\Program Files\MiKTeX 2.9\tex\latex\base\inputenc.sty"
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\inputenc.sty"
 Package: inputenc 2008/03/30 v1.1d Input encoding file
 \inpenc@prehook=\toks16
 \inpenc@posthook=\toks17
  ("C:\Program Files\MiKTeX 2.9\tex\latex\base\latin1.def"
 File: latin1.def 2008/03/30 v1.1d Input encoding file
-)) ("C:\Program Files\MiKTeX 2.9\tex\latex\natbib\natbib.sty"
+))
+("C:\Program Files\MiKTeX 2.9\tex\latex\natbib\natbib.sty"
 Package: natbib 2010/09/13 8.31b (PWD, AO)
 \bibhang=\skip43
 \bibsep=\skip44
@@ -389,8 +390,7 @@ Package: titlesec 2011/12/15 v2.10.0 Sectioning titles
 \titlewidthfirst=\dimen145
 ))
 \@input{TeXiS/TeXiS_cab.aux}
-(C:\Users\Andy\Desktop\MemoriaTFG_prueba\TeXiS/TeXiS_cab.tex
-("C:\Program Files\MiKTeX 2.9\tex\latex\fancyhdr\fancyhdr.sty"
+(D:\TFG\TFG\Memoria\MemoriaTFG_prueba\TeXiS/TeXiS_cab.tex ("C:\Program Files\MiKTeX 2.9\tex\latex\fancyhdr\fancyhdr.sty"
 \fancy@headwidth=\skip60
 \f@ncyO@elh=\skip61
 \f@ncyO@erh=\skip62
@@ -402,12 +402,12 @@ Package: titlesec 2011/12/15 v2.10.0 Sectioning titles
 \f@ncyO@orf=\skip68
 ))
 \@input{TeXiS/TeXiS_cover.aux}
-(C:\Users\Andy\Desktop\MemoriaTFG_prueba\TeXiS/TeXiS_cover.tex)
+(D:\TFG\TFG\Memoria\MemoriaTFG_prueba\TeXiS/TeXiS_cover.tex)
 \@input{TeXiS/TeXiS_dedic.aux}
 \@input{TeXiS/TeXiS_bib.aux}
-(C:\Users\Andy\Desktop\MemoriaTFG_prueba\TeXiS/TeXiS_bib.tex))
+(D:\TFG\TFG\Memoria\MemoriaTFG_prueba\TeXiS/TeXiS_bib.tex))
 \@input{constantes.aux}
-(C:\Users\Andy\Desktop\MemoriaTFG_prueba\constantes.tex)
+(D:\TFG\TFG\Memoria\MemoriaTFG_prueba\constantes.tex)
 Copyright Marco Antonio and Pedro Pablo Gomez Martin
 ("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\epstopdf.sty"
 Package: epstopdf 2010/02/09 v2.5 Conversion with epstopdf on the fly (HO)
@@ -421,22 +421,21 @@ Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
 Package grfext Info: Graphics extension search list:
 (grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPEG,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 452.
-)) (C:\Users\Andy\Desktop\MemoriaTFG_prueba\Tesis.aux
-(C:\Users\Andy\Desktop\MemoriaTFG_prueba\Cascaras/cover.aux)
-(C:\Users\Andy\Desktop\MemoriaTFG_prueba\Cascaras/dedicatoria.aux)
-(C:\Users\Andy\Desktop\MemoriaTFG_prueba\Cascaras/agradecimientos.aux)
-(C:\Users\Andy\Desktop\MemoriaTFG_prueba\Cascaras/resumen.aux)
-(C:\Users\Andy\Desktop\MemoriaTFG_prueba\Capitulos/01Introduccion.aux)
-(C:\Users\Andy\Desktop\MemoriaTFG_prueba\Capitulos/02TemaFallos.aux)
-(C:\Users\Andy\Desktop\MemoriaTFG_prueba\Capitulos/03ToleranciaFallosTransitorios.aux)
-(C:\Users\Andy\Desktop\MemoriaTFG_prueba\Capitulos/04ProcesadorARM.aux)
-(C:\Users\Andy\Desktop\MemoriaTFG_prueba\Capitulos/05Resultados.aux)
-(C:\Users\Andy\Desktop\MemoriaTFG_prueba\Capitulos/06AnalisisResultados.aux)
-(C:\Users\Andy\Desktop\MemoriaTFG_prueba\Capitulos/07Conclusiones.aux)
-(C:\Users\Andy\Desktop\MemoriaTFG_prueba\Capitulos/08TrabajoPropio.aux)
-(C:\Users\Andy\Desktop\MemoriaTFG_prueba\Apendices/01ApendiceA.aux)
-(C:\Users\Andy\Desktop\MemoriaTFG_prueba\Cascaras/bibliografia.aux)
-(C:\Users\Andy\Desktop\MemoriaTFG_prueba\Cascaras/fin.aux))
+)) (D:\TFG\TFG\Memoria\MemoriaTFG_prueba\Tesis.aux
+(D:\TFG\TFG\Memoria\MemoriaTFG_prueba\Cascaras/cover.aux) (D:\TFG\TFG\Memoria\MemoriaTFG_prueba\Cascaras/dedicatoria.aux
+) (D:\TFG\TFG\Memoria\MemoriaTFG_prueba\Cascaras/agradecimientos.aux)
+(D:\TFG\TFG\Memoria\MemoriaTFG_prueba\Cascaras/resumen.aux)
+(D:\TFG\TFG\Memoria\MemoriaTFG_prueba\Capitulos/01Introduccion.aux)
+(D:\TFG\TFG\Memoria\MemoriaTFG_prueba\Capitulos/02TemaFallos.aux)
+(D:\TFG\TFG\Memoria\MemoriaTFG_prueba\Capitulos/03ToleranciaFallosTransitorios.aux)
+(D:\TFG\TFG\Memoria\MemoriaTFG_prueba\Capitulos/04ProcesadorARM.aux)
+(D:\TFG\TFG\Memoria\MemoriaTFG_prueba\Capitulos/05Resultados.aux)
+(D:\TFG\TFG\Memoria\MemoriaTFG_prueba\Capitulos/06AnalisisResultados.aux)
+(D:\TFG\TFG\Memoria\MemoriaTFG_prueba\Capitulos/07Conclusiones.aux)
+(D:\TFG\TFG\Memoria\MemoriaTFG_prueba\Capitulos/08TrabajoPropio.aux)
+(D:\TFG\TFG\Memoria\MemoriaTFG_prueba\Apendices/01ApendiceA.aux)
+(D:\TFG\TFG\Memoria\MemoriaTFG_prueba\Cascaras/bibliografia.aux) (D:\TFG\TFG\Memoria\MemoriaTFG_prueba\Cascaras/fin.aux)
+)
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 109.
 LaTeX Font Info:    ... okay on input line 109.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 109.
@@ -455,7 +454,8 @@ LaTeX Font Info:    ... okay on input line 109.
 Package hyperref Info: Link coloring OFF on input line 109.
  ("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
- ("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\gettitlestring.sty"
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\gettitlestring.sty"
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count132
@@ -463,16 +463,14 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 109.
 LaTeX Info: Redefining \pageref on input line 109.
 LaTeX Info: Redefining \nameref on input line 109.
-
-(C:\Users\Andy\Desktop\MemoriaTFG_prueba\Tesis.out) (C:\Users\Andy\Desktop\MemoriaTFG_prueba\Tesis.out)
+ (D:\TFG\TFG\Memoria\MemoriaTFG_prueba\Tesis.out) (D:\TFG\TFG\Memoria\MemoriaTFG_prueba\Tesis.out)
 \@outlinefile=\write4
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
 \c@lstlisting=\count133
-
-("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
+ ("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count134
 \scratchdimen=\dimen146
@@ -485,7 +483,7 @@ Package caption Info: End \AtBeginDocument code.
 \MPnumerator=\count138
 \makeMPintoPDFobject=\count139
 \everyMPtoPDFconversion=\toks25
-) (C:\Users\Andy\Desktop\MemoriaTFG_prueba\guionado.tex) [12
+) (D:\TFG\TFG\Memoria\MemoriaTFG_prueba\guionado.tex) [12
 
 
 
@@ -507,12 +505,9 @@ Package caption Info: End \AtBeginDocument code.
 
 
 ]
-(C:\Users\Andy\Desktop\MemoriaTFG_prueba\Capitulos/01Introduccion.tex
+(D:\TFG\TFG\Memoria\MemoriaTFG_prueba\Capitulos/01Introduccion.tex
 Cap\'itulo 1.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [1
+[1
 
 
 {C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}] [2]) [3] [26
@@ -526,29 +521,29 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-] (C:\Users\Andy\Desktop\MemoriaTFG_prueba\Cascaras/bibliografia.tex
-(C:\Users\Andy\Desktop\MemoriaTFG_prueba\Tesis.bbl)) [27
+]
+(D:\TFG\TFG\Memoria\MemoriaTFG_prueba\Cascaras/bibliografia.tex (D:\TFG\TFG\Memoria\MemoriaTFG_prueba\Tesis.bbl))
+[27
 
 
 ]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 197.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 197.
- (C:\Users\Andy\Desktop\MemoriaTFG_prueba\Tesis.aux
-(C:\Users\Andy\Desktop\MemoriaTFG_prueba\Cascaras/cover.aux)
-(C:\Users\Andy\Desktop\MemoriaTFG_prueba\Cascaras/dedicatoria.aux)
-(C:\Users\Andy\Desktop\MemoriaTFG_prueba\Cascaras/agradecimientos.aux)
-(C:\Users\Andy\Desktop\MemoriaTFG_prueba\Cascaras/resumen.aux)
-(C:\Users\Andy\Desktop\MemoriaTFG_prueba\Capitulos/01Introduccion.aux)
-(C:\Users\Andy\Desktop\MemoriaTFG_prueba\Capitulos/02TemaFallos.aux)
-(C:\Users\Andy\Desktop\MemoriaTFG_prueba\Capitulos/03ToleranciaFallosTransitorios.aux)
-(C:\Users\Andy\Desktop\MemoriaTFG_prueba\Capitulos/04ProcesadorARM.aux)
-(C:\Users\Andy\Desktop\MemoriaTFG_prueba\Capitulos/05Resultados.aux)
-(C:\Users\Andy\Desktop\MemoriaTFG_prueba\Capitulos/06AnalisisResultados.aux)
-(C:\Users\Andy\Desktop\MemoriaTFG_prueba\Capitulos/07Conclusiones.aux)
-(C:\Users\Andy\Desktop\MemoriaTFG_prueba\Capitulos/08TrabajoPropio.aux)
-(C:\Users\Andy\Desktop\MemoriaTFG_prueba\Apendices/01ApendiceA.aux)
-(C:\Users\Andy\Desktop\MemoriaTFG_prueba\Cascaras/bibliografia.aux)
-(C:\Users\Andy\Desktop\MemoriaTFG_prueba\Cascaras/fin.aux))
+ (D:\TFG\TFG\Memoria\MemoriaTFG_prueba\Tesis.aux (D:\TFG\TFG\Memoria\MemoriaTFG_prueba\Cascaras/cover.aux)
+(D:\TFG\TFG\Memoria\MemoriaTFG_prueba\Cascaras/dedicatoria.aux)
+(D:\TFG\TFG\Memoria\MemoriaTFG_prueba\Cascaras/agradecimientos.aux)
+(D:\TFG\TFG\Memoria\MemoriaTFG_prueba\Cascaras/resumen.aux)
+(D:\TFG\TFG\Memoria\MemoriaTFG_prueba\Capitulos/01Introduccion.aux)
+(D:\TFG\TFG\Memoria\MemoriaTFG_prueba\Capitulos/02TemaFallos.aux)
+(D:\TFG\TFG\Memoria\MemoriaTFG_prueba\Capitulos/03ToleranciaFallosTransitorios.aux)
+(D:\TFG\TFG\Memoria\MemoriaTFG_prueba\Capitulos/04ProcesadorARM.aux)
+(D:\TFG\TFG\Memoria\MemoriaTFG_prueba\Capitulos/05Resultados.aux)
+(D:\TFG\TFG\Memoria\MemoriaTFG_prueba\Capitulos/06AnalisisResultados.aux)
+(D:\TFG\TFG\Memoria\MemoriaTFG_prueba\Capitulos/07Conclusiones.aux)
+(D:\TFG\TFG\Memoria\MemoriaTFG_prueba\Capitulos/08TrabajoPropio.aux)
+(D:\TFG\TFG\Memoria\MemoriaTFG_prueba\Apendices/01ApendiceA.aux)
+(D:\TFG\TFG\Memoria\MemoriaTFG_prueba\Cascaras/bibliografia.aux) (D:\TFG\TFG\Memoria\MemoriaTFG_prueba\Cascaras/fin.aux)
+)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 197.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 197.
 Package rerunfilecheck Info: File `Tesis.out' has not changed.
@@ -557,12 +552,12 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 197.
  ) 
 Here is how much of TeX's memory you used:
  10020 strings out of 493921
- 150233 string characters out of 3147285
+ 149942 string characters out of 3147285
  242860 words of memory out of 3000000
  12841 multiletter control sequences out of 15000+200000
  15083 words of font info for 30 fonts, out of 3000000 for 9000
  1079 hyphenation exceptions out of 8191
- 55i,10n,47p,428b,496s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 55i,10n,47p,473b,498s stack positions out of 5000i,500n,10000p,200000b,50000s
 pdfTeX warning (dest): name{chapter.7} has been referenced but does not exist, replaced by a fixed one
 
 pdfTeX warning (dest): name{chapter.6} has been referenced but does not exist, replaced by a fixed one
@@ -575,17 +570,17 @@ pdfTeX warning (dest): name{chapter.3} has been referenced but does not exist, r
 
 pdfTeX warning (dest): name{chapter.2} has been referenced but does not exist, replaced by a fixed one
 
- <C:\Users\Andy\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\eccc1000.pk> <C:\Users\Andy\AppData\Local\Mi
-KTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecti1095.pk> <C:\Users\Andy\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappe
+ <C:\Users\Andy\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecti1095.pk> <C:\Users\Andy\AppData\Local\Mi
+KTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\eccc1000.pk> <C:\Users\Andy\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappe
 n\ec\dpi600\eccc1095.pk> <C:\Users\Andy\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1095.pk> <C:\Use
 rs\Andy\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1440.pk> <C:\Users\Andy\AppData\Local\MiKTeX\2.9
 \fonts\pk\ljfour\jknappen\ec\dpi600\ecxc1000.pk> <C:\Users\Andy\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi
 600\ecrm1000.pk> <C:\Users\Andy\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecti1000.pk> <C:\Users\Andy\
 AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx2488.pk> <C:\Users\Andy\AppData\Local\MiKTeX\2.9\fonts\p
 k\ljfour\jknappen\ec\dpi600\ecbx2074.pk>
-Output written on Tesis.pdf (6 pages, 105876 bytes).
+Output written on Tesis.pdf (6 pages, 106880 bytes).
 PDF statistics:
- 378 PDF objects out of 1000 (max. 8388607)
+ 379 PDF objects out of 1000 (max. 8388607)
  27 named destinations out of 1000 (max. 500000)
  57 words of extra memory for PDF output out of 10000 (max. 10000000)
 
