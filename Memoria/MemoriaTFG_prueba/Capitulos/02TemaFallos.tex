@@ -4,43 +4,184 @@
 %
 %---------------------------------------------------------------------
 
-\chapter{Tema de Fallos}
+\chapter{Titulo por definir}
 \label{cap2}
 
 \begin{FraseCelebre}
-\begin{Frase}
-...
-\end{Frase}
-\begin{Fuente}
-...
-\end{Fuente}
+  \begin{Frase}
+    "`La verdadera ciencia enseña, sobre todo, a dudar y a ser ignorante."' 
+  \end{Frase}
+  \begin{Fuente}
+    Ernest Rutherford 
+  \end{Fuente}
 \end{FraseCelebre}
 
 \begin{resumen}
-...
+En este capítulo se define con detalle lo que es un procesador y su importancia en el mundo hoy en día. También se habla sobre una arquitectura más concreta, la arquitectura ARM.
+A continuación se define qué es un fallo y qué tipos de fallos pueden ocurrir en los sistemas. Además se explican algunas técnicas de tolerancia a fallos.
+Para terminar se justifica la importancia de la tolerancia en los sistemas y concretamente porque es necesaria la tolerancia en los microprocesadores.
 \end{resumen}
 
 
 %-------------------------------------------------------------------
 \section*{Introducción}
 %-------------------------------------------------------------------
-\label{cap2:sec:introduccion}
+\label{cap2:introduccion}
+
+...
+
+
+%-------------------------------------------------------------------
+\section{Procesador}
+%-------------------------------------------------------------------
+\label{cap2:procesador}
+
+El diccionario de la Real Academia Española define al procesador como la "`unidad central de proceso (CPU), formada por uno o dos chips"'. La CPU es el circuito integrado encargado de acceder a las instrucciones de los programas informáticos, analizarlas y ejecutarlas realizando operaciones aritméticas, lógicas y de entrada/salida. 
+
+Von neumann
+
+Tareas del procesador:
+
+\begin{enumerate}
+  \item Acceder a las instrucciones almacenadas en memoria.
+  \item Analizar las instrucciones y establecer las señales de control internas.
+  \item Ejecutar operaciones sobre datos.
+  \item Almacenar los resultados en memoria.
+\end{enumerate}
+
+% Bibliografía 
+
+%-------------------------------------------------------------------
+\subsection*{Instrucciones}
+%-------------------------------------------------------------------
+\label{cap2:procesador:instrucciones}
+
+
+%-------------------------------------------------------------------
+\subsection*{Instrucciones}
+%-------------------------------------------------------------------
+\label{cap2:procesador:instrucciones}
+
+
+%-------------------------------------------------------------------
+\subsection*{Memoria}
+%-------------------------------------------------------------------
+\label{cap2:procesador:memoria}
+
+%-------------------------------------------------------------------
+\subsection*{Direccionamiento}
+%-------------------------------------------------------------------
+\label{cap2:procesador:direccionamiento}
+
+%-------------------------------------------------------------------
+\subsection*{Segmentación}
+%-------------------------------------------------------------------
+\label{cap2:procesador:segmentacion}
+
+
+Memoria 
+
+Entrada/salida
+
+
+%-------------------------------------------------------------------
+\subsection{DLX}
+%-------------------------------------------------------------------
+\label{cap2:procesador:dlx}
+
+...
+
+
+%-------------------------------------------------------------------
+\subsection{ARM}
+%-------------------------------------------------------------------
+\label{cap2:procesador:arm}
 
 ...
 
 %-------------------------------------------------------------------
-\section{Fallos Transitorios}
+\section{Fallos}
 %-------------------------------------------------------------------
-\label{cap2:sec:FallosTransitorios}
+\label{cap2:fallos}
+
+Existen una gran variedad de fallos que pueden ocurrir en un sistema electrónico. Los fallos se pueden clasificar en fallos software y fallos hardware. Y los podemos encontrar desde fallos en la definición de requisitos que se propagan hasta la fase de producción, hasta fallos producidos en el sistema por agentes externos como la radiación. 
+
+En esta sección se hablará de esta última clase de fallos, los fallos producidos por agentes externos que no se pueden evitar en las fases de diseño. Y que afectan al hardware, dañando sus componentes o alterando los valores de las señales con las que se trabaja.
+
+
+Los fallos analizados en esta sección se van a dividir en dos categorías; fallos permanentes y fallos transitorios.
+
+%-------------------------------------------------------------------
+\subsection{Fallos Permanentes}
+%-------------------------------------------------------------------
+\label{cap2:fallos:fallospermanentes}
+
+Los fallos permanentes son aquellos que afectan al sistema de forma irreversible. Producen cambios en el diseño que estropean el correcto funcionamiento del módulo o circuito que lo sufre. Estos fallos no se solucionan reiniciando el sistema.
+
+%bibliografia: jesd89a.pdf
+
+critical charge:
+
+hard error:
+
+
+single-event functional interrupt (SEFI):
+
+single-event latch-up (SEL):
+
+single event transient (SET):
+
+single-event upset (SEU):
+
+single-event upset (SEU) rate:
+
+soft error, device:
+
+soft error rate (SER):
+
+
+
+
+
+%-------------------------------------------------------------------
+\subsection{Fallos Transitorios}
+%-------------------------------------------------------------------
+\label{cap2:fallos:fallostransitorios}
+
+...
+
+
+
+%-------------------------------------------------------------------
+\section{Tolerancia a Fallos}
+%-------------------------------------------------------------------
+\label{cap2:tolerancia}
+
+la tolerancia a fallos se define como la capacidad de un sistema de funcionar correctamente 
+
+Existen dos tipos de tolerancia; tolerancia estática y tolerancia dinámica.
+
+%-------------------------------------------------------------------
+\subsection{Tolerancia estática}
+%-------------------------------------------------------------------
+\label{cap2:tolerancia:toleranciaestatica}
 
 ...
 
 %-------------------------------------------------------------------
-\section{Fallos Permanentes}
+\subsection{Tolerancia en dinámica}
 %-------------------------------------------------------------------
-\label{cap2:sec:FallosPermanentes}
+\label{cap2:tolerancia:toleranciadinamica}
 
 ...
+
+%-------------------------------------------------------------------
+\subsection{Tolerancia en microprocesadores}
+%-------------------------------------------------------------------
+\label{cap2:tolerancia:microprocesadores}
+
+...
+
 
 %%-------------------------------------------------------------------
 %\section*{\NotasBibliograficas}
