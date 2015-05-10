@@ -1,4 +1,4 @@
-\begin{thebibliography}{2}
+\begin{thebibliography}{4}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[{Habinc(2002)}]{Habinc2002}
@@ -6,6 +6,19 @@
 \newblock {Functional Triple Modular Redundancy (FTMR)}.
 \newblock {\em Design and Assessment Report, Gaisler Research\/}, p\'aginas
   1--56, 2002.
+
+\bibitem[{Hennessy y Patterson(1993)}]{Hennessy1993}
+{\sc Hennessy, J.~L.} y {\sc Patterson, D.~A.}
+\newblock {\em {Arquitectura de Computadores: Un enfoque cuantitativo}\/}.
+\newblock Mcgraw Hill Editorial, 1993.
+\newblock ISBN 1558600698.
+
+\bibitem[{Jedec(2006)}]{Jedec2006}
+{\sc Jedec}.
+\newblock {Measurement and Reporting of Alpha Particle and Terrestrial Cosmic
+  Ray Induced Soft Error in Semiconductor Devices: JESD89A}.
+\newblock {\em JEDEC Sold State Technology Association\/}, p\'aginas 1--85,
+  2006.
 
 \bibitem[{Sadasivan(2006)}]{Sadasivan2006}
 {\sc Sadasivan, S.}

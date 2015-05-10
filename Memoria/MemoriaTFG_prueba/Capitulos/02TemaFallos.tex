@@ -18,7 +18,9 @@
 
 \begin{resumen}
 En este capítulo se define con detalle lo que es un procesador y su importancia en el mundo hoy en día. También se habla sobre una arquitectura más concreta, la arquitectura ARM.
+
 A continuación se define qué es un fallo y qué tipos de fallos pueden ocurrir en los sistemas. Además se explican algunas técnicas de tolerancia a fallos.
+
 Para terminar se justifica la importancia de la tolerancia en los sistemas y concretamente porque es necesaria la tolerancia en los microprocesadores.
 \end{resumen}
 
@@ -36,11 +38,16 @@ Para terminar se justifica la importancia de la tolerancia en los sistemas y con
 %-------------------------------------------------------------------
 \label{cap2:procesador}
 
-El diccionario de la Real Academia Española define al procesador como la "`unidad central de proceso (CPU), formada por uno o dos chips"'. La CPU es el circuito integrado encargado de acceder a las instrucciones de los programas informáticos, analizarlas y ejecutarlas realizando operaciones aritméticas, lógicas y de entrada/salida. 
+El Diccionario de la Real Academia Española (DRAE) define al procesador como la "`unidad central de proceso (CPU), formada por uno o dos chips"' \ref{fig:cpu}. 
 
-Von neumann
+\begin{figure}[htbp]
+	\centering
+		\includegraphics[width=0.50\textwidth]{Imagenes/Procesador/CPU.eps}
+	\caption{Procesador DRAE}
+	\label{fig:cpu}
+\end{figure}
 
-Tareas del procesador:
+La CPU es el circuito integrado encargado de acceder a las instrucciones de los programas informáticos y ejecutarlas. Para poder ejecutar un programa, el procesador debe realizar las siguientes tareas:
 
 \begin{enumerate}
   \item Acceder a las instrucciones almacenadas en memoria.
@@ -49,39 +56,85 @@ Tareas del procesador:
   \item Almacenar los resultados en memoria.
 \end{enumerate}
 
-% Bibliografía 
+A continuación se definen los elementos fundamentales para definir un procesador.
 
 %-------------------------------------------------------------------
-\subsection*{Instrucciones}
+\subsection{Arquitectura}
+%-------------------------------------------------------------------
+\label{cap2:procesador:arquitectura}
+
+Un procesador está formado por una serie de módulos conectados entre sí. La arquitectura del procesador define el diseño de estos módulos y de qué manera se conectan entre ellos.
+
+La arquitectura del procesador diseñada por Von Neumann separó los componentes del procesador en módulos básicos. La CPU es el núcleo de los computadores, se divide en computación y control, y contiene todo excepto la memoria y los elementos de entrada y salida [\cite{Hennessy1993}]. % Arquitectura de Computadores: Un enfoque cuantitativo
+
+
+%-------------------------------------------------------------------
+\subsection{Repertorio de instrucciones}
 %-------------------------------------------------------------------
 \label{cap2:procesador:instrucciones}
 
-
-%-------------------------------------------------------------------
-\subsection*{Instrucciones}
-%-------------------------------------------------------------------
-\label{cap2:procesador:instrucciones}
+El repertorio de instrucciones define todas las operaciones que el procesador es capaz de entender y ejecutar. Este juego de instrucciones incluye las operaciones aritmético-lógicas que puede aplicar a los datos, las operaciones de control sobre el flujo del programa, las instrucciones de lectura y escritura en memoria así como todas las instrucciones propias que se hayan diseñado para el procesador.
 
 
 %-------------------------------------------------------------------
-\subsection*{Memoria}
+\subsection{Memoria}
 %-------------------------------------------------------------------
 \label{cap2:procesador:memoria}
 
-%-------------------------------------------------------------------
-\subsection*{Direccionamiento}
-%-------------------------------------------------------------------
-\label{cap2:procesador:direccionamiento}
+Los procesadores tienen una serie de registros que almacenan temporalmente los valores con los que está trabajando.
+El conjunto de estos registros se conoce como banco de registros. Estos registros de propósito general son muy limitados. Por ello el procesador necesita de apoyo externo para alojar la información, para esto tiene acceso a una memoria externa.
+
+El acceso a la memoria externa divide las arquitecturas en dos tipos. La arquitecturas Von Neumann utiliza una única memoria para almacenar tanto los datos como las instrucciones. Las arquitecturas Harvard, sin embargo, separan la memoria de datos de la memoria de instrucciones \ref{fig:vonneumann_harvard}.
+
+\begin{figure*}[htbp]
+  \centering
+  \subfloat{\includegraphics[width=0.45\textwidth]{Imagenes/Procesador/VonNeumann.eps}} 
+	  \hspace{5mm}
+  \subfloat{\includegraphics[width=0.45\textwidth]{Imagenes/Procesador/Harvard.eps}}
+  \caption{Arquitectura Von Neumann y Arquitectura Harvard} \label{fig:vonneumann_harvard}
+\end{figure*}
+
 
 %-------------------------------------------------------------------
-\subsection*{Segmentación}
+\subsection{Segmentación}
 %-------------------------------------------------------------------
 \label{cap2:procesador:segmentacion}
 
+La segmentación es una técnica de implementación, que no es imprescindible pero aumenta el rendimiento del procesador. Esta permite que haya varias instrucciones en ejecución al mismo tiempo en el mismo procesador. El procesador es dividido en etapas y en cada etapa se realiza una parte del trabajo completo de la instrucción de forma secuencial.
 
-Memoria 
+La segmentación permite que en cada ciclo de reloj se busque una instrucción y se comience su ejecución. Esto permite reducir el número de ciclos total que necesita el programa. 
 
-Entrada/salida
+En la tabla \ref{tab:segmentacion} podemos ver cómo se lanza una serie de instrucciones. Se observa cómo las instrucciones ocupan unicamente una etapa del procesador, y cómo avanzan por el procesador dejando libre la etapa anterior para la siguiente instrucción. 
+
+\begin{table}[h]
+	\centering
+	\resizebox{\textwidth}{!} {
+		\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
+		  \hline
+			 & \multicolumn{9}{|c|}{Ciclo de reloj}                   \\ \hline
+			Número de instrucción & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 \\ \hline
+			i     & IF & ID & EX & MEM & WB & & & &                   \\ \hline
+			i + 1 & & IF & ID & EX & MEM & WB & & & 									\\ \hline
+			i + 2 & & & IF & ID & EX & MEM & WB & &                   \\ \hline
+			i + 3 & & & & IF & ID & EX & MEM & WB &                   \\ \hline
+			i + 4 & & & & & IF & ID & EX & MEM & WB                   \\ \hline
+		\end{tabular}
+	}
+	\caption{Segmentacion simple de 5 etapas}
+	\label{tab:segmentacion}
+\end{table}
+
+
+Para conocer los ciclos por instrucción que necesita un programa se utiliza la formula \ref{eq:cpi}. Si aplicamos esta formula a un programa en dos procesadores iguales, con la única diferencia de que uno de ellos está segmentado ayuda la segmentación al rendimiento del procesador.
+
+\begin{equation}
+		\textrm{Ciclos por instrucción (CPI)} = \frac{\textrm{Número de ciclos total}}{\textrm{Número de instrucciones}}
+  \label{eq:cpi}
+\end{equation}
+
+Vamos a suponer un procesador no segmentado que tarda 5 ciclos de reloj en ejecutar cualquier instrucción. Suponemos un segundo procesador que también tarda 5 ciclos de reloj, pero este está segmentado en 5 etapas de 1 ciclo cada una. Ahora vamos a ejecutar un programa de 10 instrucciones en ambos procesadores. 
+
+En el procesador no segmentado obtenemos que el programa tarda 50 ciclos en ejecutarse y el CPI es de 5. Al ejecutar el mismo programa en el procesador segmentado, este tarda 5 ciclos en llenar las 5 etapas del procesador. A partir de ahora cada ciclo de reloj se termina una instrucción, terminando la ejecución en 15 ciclos de reloj. El nuevo CPI es de 1,5. La segmentación ha reducido el tiempo de ejecución de este programa a menos de una tercera parte.
 
 
 %-------------------------------------------------------------------
@@ -98,6 +151,9 @@ Entrada/salida
 \label{cap2:procesador:arm}
 
 ...
+
+
+
 
 %-------------------------------------------------------------------
 \section{Fallos}
@@ -116,7 +172,7 @@ Los fallos analizados en esta sección se van a dividir en dos categorías; fallos
 %-------------------------------------------------------------------
 \label{cap2:fallos:fallospermanentes}
 
-Los fallos permanentes son aquellos que afectan al sistema de forma irreversible. Producen cambios en el diseño que estropean el correcto funcionamiento del módulo o circuito que lo sufre. Estos fallos no se solucionan reiniciando el sistema.
+Los fallos permanentes son aquellos que afectan al sistema de forma irreversible. Producen cambios en el diseño que estropean el correcto funcionamiento del módulo o circuito que lo sufre. Estos fallos no se solucionan reiniciando el sistema. [\cite{Jedec2006}]
 
 %bibliografia: jesd89a.pdf
 
@@ -157,7 +213,7 @@ soft error rate (SER):
 %-------------------------------------------------------------------
 \label{cap2:tolerancia}
 
-la tolerancia a fallos se define como la capacidad de un sistema de funcionar correctamente 
+La tolerancia a fallos se define como la capacidad de un sistema de funcionar correctamente incluso si se produce un fallo o anomalía en el sistema
 
 Existen dos tipos de tolerancia; tolerancia estática y tolerancia dinámica.
 

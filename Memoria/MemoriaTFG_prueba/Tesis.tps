@@ -11,14 +11,14 @@ MaxPos.x=-1
 MaxPos.y=-1
 NormalPos.left=4
 NormalPos.top=26
-NormalPos.right=1008
-NormalPos.bottom=622
+NormalPos.right=1120
+NormalPos.bottom=582
 Class=LaTeXView
-Document=Tesis.tex
+Document=config.tex
 
 [Frame0_View0,0]
-TopLine=0
-Cursor=113
+TopLine=51
+Cursor=2617
 
 [Frame1]
 Flags=0
@@ -29,14 +29,14 @@ MaxPos.x=-1
 MaxPos.y=-1
 NormalPos.left=4
 NormalPos.top=26
-NormalPos.right=1008
-NormalPos.bottom=622
-Class=LaTeXView
-Document=config.tex
+NormalPos.right=1120
+NormalPos.bottom=582
+Class=BibTeXView
+Document=otros.bib
 
 [Frame1_View0,0]
-TopLine=40
-Cursor=2488
+TopLine=0
+Cursor=1199
 
 [Frame2]
 Flags=0
@@ -47,14 +47,14 @@ MaxPos.x=-1
 MaxPos.y=-1
 NormalPos.left=4
 NormalPos.top=26
-NormalPos.right=1008
-NormalPos.bottom=622
+NormalPos.right=1120
+NormalPos.bottom=582
 Class=LaTeXView
-Document=Capitulos\02TemaFallos.tex
+Document=Cascaras\Acronimos.tex
 
 [Frame2_View0,0]
-TopLine=197
-Cursor=6089
+TopLine=0
+Cursor=123
 
 [Frame3]
 Flags=0
@@ -65,16 +65,16 @@ MaxPos.x=-1
 MaxPos.y=-1
 NormalPos.left=4
 NormalPos.top=26
-NormalPos.right=1008
-NormalPos.bottom=622
+NormalPos.right=1120
+NormalPos.bottom=582
 Class=LaTeXView
-Document=Cascaras\Acronimos.tex
+Document=Capitulos\02TemaFallos.tex
 
 [Frame3_View0,0]
-TopLine=0
-Cursor=88
+TopLine=34
+Cursor=1690
 
 [SessionInfo]
 FrameCount=4
-ActiveFrame=2
+ActiveFrame=3
 
