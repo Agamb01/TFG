@@ -67,6 +67,13 @@ Un procesador está formado por una serie de módulos conectados entre sí. La arqu
 
 La arquitectura del procesador diseñada por Von Neumann separó los componentes del procesador en módulos básicos. La CPU es el núcleo de los computadores, se divide en computación y control, y contiene todo excepto la memoria y los elementos de entrada y salida [\cite{Hennessy1993}]. % Arquitectura de Computadores: Un enfoque cuantitativo
 
+Según el juego de instrucciones que sea capaz de ejecutar un procesador, su arquitectura puede clasificarse como:
+
+\begin{enumerate}
+  \item \textit{Reduced instruction set computer (RISC)}. Utiliza un repertorio de instrucciones reducido, con instrucciones de tamaño fijo y poca variedad en su formato.
+	\item \textit{Complex instruction set computer (CISC)}. Utiliza un repertorio de instrucciones muy amplio, permitiendo realizar operaciones complejas como realizar cálculos entre datos en memoria y datos en registro.
+	\item \textit{Simple instruction set computer (SISC)}.  Utiliza un repertorio de instrucciones enfocado al procesamiento paralelo.
+\end{enumerate}
 
 %-------------------------------------------------------------------
 \subsection{Repertorio de instrucciones}
@@ -103,10 +110,11 @@ El acceso a la memoria externa divide las arquitecturas en dos tipos. La arquite
 La segmentación es una técnica de implementación, que no es imprescindible pero aumenta el rendimiento del procesador. Esta permite que haya varias instrucciones en ejecución al mismo tiempo en el mismo procesador. El procesador es dividido en etapas y en cada etapa se realiza una parte del trabajo completo de la instrucción de forma secuencial.
 
 La segmentación permite que en cada ciclo de reloj se busque una instrucción y se comience su ejecución. Esto permite reducir el número de ciclos total que necesita el programa. 
+%[\cite{Hennessy1993}]. % Arquitectura de Computadores: Un enfoque cuantitativo
 
 En la tabla \ref{tab:segmentacion} podemos ver cómo se lanza una serie de instrucciones. Se observa cómo las instrucciones ocupan unicamente una etapa del procesador, y cómo avanzan por el procesador dejando libre la etapa anterior para la siguiente instrucción. 
 
-\begin{table}[h]
+\begin{table}[htbp]
 	\centering
 	\resizebox{\textwidth}{!} {
 		\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
@@ -125,16 +133,43 @@ En la tabla \ref{tab:segmentacion} podemos ver cómo se lanza una serie de instru
 \end{table}
 
 
-Para conocer los ciclos por instrucción que necesita un programa se utiliza la formula \ref{eq:cpi}. Si aplicamos esta formula a un programa en dos procesadores iguales, con la única diferencia de que uno de ellos está segmentado ayuda la segmentación al rendimiento del procesador.
+%-------------------------------------------------------------------
+\subsubsection{Ventajas de la segmentación}
+%-------------------------------------------------------------------
+\label{cap2:procesador:segmentacion:ventajas}
+
+La segmentación proporciona la ventaja de poder lanzar una instrucción por cada ciclo de reloj. Esta característica aumenta el rendimiento del procesador y obtenemos un menor número de ciclos por instrucción total. Para conocer los ciclos por instrucción que necesita un programa se utiliza la formula \ref{eq:cpi}. 
 
 \begin{equation}
 		\textrm{Ciclos por instrucción (CPI)} = \frac{\textrm{Número de ciclos total}}{\textrm{Número de instrucciones}}
   \label{eq:cpi}
 \end{equation}
 
-Vamos a suponer un procesador no segmentado que tarda 5 ciclos de reloj en ejecutar cualquier instrucción. Suponemos un segundo procesador que también tarda 5 ciclos de reloj, pero este está segmentado en 5 etapas de 1 ciclo cada una. Ahora vamos a ejecutar un programa de 10 instrucciones en ambos procesadores. 
+Vamos a suponer un procesador no segmentado que tarda 5 ciclos de reloj en ejecutar cualquier instrucción. Suponemos un segundo procesador que también tarda 5 ciclos de reloj, pero este está segmentado en 5 etapas de 1 ciclo cada una. Ahora vamos a ejecutar un programa de 3 instrucciones en ambos procesadores. 
 
-En el procesador no segmentado obtenemos que el programa tarda 50 ciclos en ejecutarse y el CPI es de 5. Al ejecutar el mismo programa en el procesador segmentado, este tarda 5 ciclos en llenar las 5 etapas del procesador. A partir de ahora cada ciclo de reloj se termina una instrucción, terminando la ejecución en 15 ciclos de reloj. El nuevo CPI es de 1,5. La segmentación ha reducido el tiempo de ejecución de este programa a menos de una tercera parte.
+Como podemos ver en la figura \ref{fig:SecuencialVSSegmentada}, el procesador no segmentado tarda 15 ciclos en ejecutar las 3 instrucciones y utilizando la formula anterior obtenemos un CPI es de 5. Al ejecutar el mismo programa en el procesador segmentado, este tarda 5 ciclos en llenar las 5 etapas del procesador. A partir de ahora cada ciclo de reloj termina una instrucción, terminando la ejecución en 7 ciclos de reloj. El nuevo CPI es de 2,33. La segmentación ha reducido el número de ciclos por instrucción de este programa a menos de la mitad.
+
+\begin{figure}[htbp]
+	\centering
+		\includegraphics[width=0.75\textwidth]{Imagenes/Procesador/SecuencialVSSegmentado.eps}
+	\caption{Ejecución secuencial comparada con ejecución segmentada}
+	\label{fig:SecuencialVSSegmentada}
+\end{figure}
+
+
+%-------------------------------------------------------------------
+\subsubsection{Riesgos de la segmentación}
+%-------------------------------------------------------------------
+\label{cap2:procesador:segmentacion:riesgos}
+
+Además de las ventajas vistas en el apartado anterior, la segmentación también implica unos riesgos a la hora de ejecutar las instrucciones. Estos riesgos pueden ser de los siguientes tipos[\cite{Hennessy1993}]: % Arquitectura de Computadores: Un enfoque cuantitativo
+
+\begin{enumerate}
+  \item \textit{Riesgos estructurales}. Surgen cuando 2 o más instrucciones necesitan acceder a los mismos recursos.
+	\item \textit{Riesgos de datos}. Surgen cuando una instrucción depende del resultado de una instrucción anterior, y esta todavía no lo ha escrito en el registro correspondiente.
+	\item \textit{Riesgos de control}. Surgen de las instrucciones que afectan al registro del contador de programa (PC). 
+\end{enumerate}
+
 
 
 %-------------------------------------------------------------------
@@ -142,7 +177,83 @@ En el procesador no segmentado obtenemos que el programa tarda 50 ciclos en ejec
 %-------------------------------------------------------------------
 \label{cap2:procesador:dlx}
 
-...
+El microprocesador DLX fue diseñado por John Hennessy y David A. Patterson, diseñadores de la arquitecturas MIPS y Berkeley RISC respectivamente. Es un procesador sencillo con arquitectura RISC y proporciona una base fácil de comprender, se utiliza ampliamente en educación universitaria para explicar las arquitecturas de computadores [\cite{Pascual2011}].
+
+Basado en las máquinas de carga/almacenamiento, el DLX se centra en proporcionar[\cite{Hennessy1993}]: % Arquitectura de Computadores: Un enfoque cuantitativo
+
+\begin{itemize}
+  \item Un sencillo repertorio de instrucciones de carga/almacenamiento.
+	\item Un diseño de segmentación eficiente.
+	\item Un repertorio de instrucciones fácil de descodificar.
+\end{itemize}
+
+%-------------------------------------------------------------------
+\subsubsection{Arquitectura RISC}
+%-------------------------------------------------------------------
+\label{cap2:procesador:dlx:arquitectura}
+
+El microprocesador DLX utiliza una arquitectura RISC con instrucciones de 32 bits. Posee un banco de registros compuesto por 32 registros de propósito general, además de un segundo conjunto de registros que se pueden usar como 32 registros de simple precisión o como 16 registros en punto flotante.
+
+
+%-------------------------------------------------------------------
+\subsubsection{Instrucciones DLX}
+%-------------------------------------------------------------------
+\label{cap2:procesador:dlx:instrucciones}
+
+Todas las instrucciones del repertorio del procesador DLX tienen un tamaño de 32 bits y están alineadas en memoria. los bits [31:26] forman el campo de código de operación e indica qué instrucción se debe ejecutar.
+
+Se dividen en tres tipos según su formato (figura \ref{fig:instrucciones_dlx}):
+
+\begin{itemize}
+  \item \textit{Tipo R}. Instrucciones sobre dos registros.
+	\item \textit{Tipo I}. Instrucciones sobre un registro y un inmediato.
+	\item \textit{Tipo J}. Instrucciones de salto.
+\end{itemize}
+
+\begin{figure}[htbp]
+	\centering
+		\includegraphics[width=0.75\textwidth]{Imagenes/Instrucciones/dlx.eps}
+	\caption{Formato de instrucciones DLX}
+	\label{fig:instrucciones_dlx}
+\end{figure}
+
+Dependiendo de su funcionalidad también se pueden clasificar como:
+
+\begin{itemize}
+  \item \textit{Instrucciones de carga y almacenamientos}. Instrucciones de acceso a memoria.
+	\item \textit{Operaciones sobre la unidad aritmético lógica}. Instrucciones para realizar operaciones sobre dos operandos.
+	\item \textit{Operaciones de control}. Instrucciones de bifurcaciones y saltos.
+\end{itemize}
+ 
+
+%-------------------------------------------------------------------
+\subsubsection{Segmentación DLX}
+%-------------------------------------------------------------------
+\label{cap2:procesador:dlx:segmentacion}
+
+El DLX basa su rendimiento en la segmentación y se divide en 5 etapas
+
+\begin{itemize}
+	\item \textit{Búsqueda de la instrucción (IF)}: Esta primera etapa es la encargada de acceder a memoria y traer la siguiente instrucción.
+	\item \textit{Descodificación de la instrucción (ID)}: En la segunda etapa se descodifica la instrucción cargada en la primera etapa, obteniendo las señales de control. Y extrae los operandos del banco de registro o de la propia instrucción. 
+	\item \textit{Ejecución y cálculo de direcciones efectivas (EX)}: La tercera etapa se encarga de ejecutar la instrucción realizando los cálculos aritméticos o lógicos necesarios. Algunas operaciones requieren de más tiempo de ejecución y evitar que se bloquee el pipeline se utilizan unidades funcionales segmentadas.
+	\item \textit{Acceso a memoria (MEM)}: En la etapa de memoria es cuando se ejecutan las operaciones de carga y almacenamiento. Las instrucciones de carga traen datos de memoria y los almacenan en los registros. Mientras que las instrucciones de almacenamiento guardan los datos en memoria.
+	\item \textit{Postescritura (WB)}: En la última etapa se almacenan los resultados de las instrucciones en los registros.
+\end{itemize}
+
+Como pudimos ver en la figura \ref{tab:segmentacion}, las instrucciones se buscan en cada ciclo de reloj.
+
+
+%-------------------------------------------------------------------
+\subsubsection{Memoria DLX}
+%-------------------------------------------------------------------
+\label{cap2:procesador:dlx:memoria}
+
+Todos las referencias a memoria se realizan a través de instrucciones de carga y almacenamiento, cargando los datos en los registros, donde se pueden acceder y trabajar con ellos, y almacenándolos en memoria.
+
+El acceso a memoria es direccionable por bytes en el modo "`Big endian"' con una dirección de 32 bits almacenada previamente en un registro. Los accesos pueden realizarse a un byte, media palabra o una palabra completa. Además se puede acceder a palabras en doble precisión para almacenarlas en los registros de punto flotante. 
+
+
 
 
 %-------------------------------------------------------------------
@@ -152,8 +263,34 @@ En el procesador no segmentado obtenemos que el programa tarda 50 ciclos en ejec
 
 ...
 
+%-------------------------------------------------------------------
+\subsubsection{Arquitectura ARM}
+%-------------------------------------------------------------------
+\label{cap2:procesador:arm:arquitectura}
 
 
+...
+
+%-------------------------------------------------------------------
+\subsubsection{Repertorio de instrucciones ARM}
+%-------------------------------------------------------------------
+\label{cap2:procesador:arm:instrucciones}
+
+...
+
+%-------------------------------------------------------------------
+\subsubsection{Segmentación ARM}
+%-------------------------------------------------------------------
+\label{cap2:procesador:arm:segmentacion}
+
+...
+
+%-------------------------------------------------------------------
+\subsubsection{Memoria ARM}
+%-------------------------------------------------------------------
+\label{cap2:procesador:arm:memoria}
+
+...
 
 %-------------------------------------------------------------------
 \section{Fallos}
