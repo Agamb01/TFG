@@ -1,5 +1,10 @@
-\begin{thebibliography}{4}
+\begin{thebibliography}{7}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+
+\bibitem[{{Arnau Llombart}()}]{Antiguas}
+{\sc {Arnau Llombart}, V.}
+\newblock {Manual DLX}.
+\newblock ????
 
 \bibitem[{Habinc(2002)}]{Habinc2002}
 {\sc Habinc, S.}
@@ -13,12 +18,24 @@
 \newblock Mcgraw Hill Editorial, 1993.
 \newblock ISBN 1558600698.
 
+\bibitem[{Hennessy y Patterson(2006)}]{Hennessy2006}
+{\sc Hennessy, J.~L.} y {\sc Patterson, D.~a.}
+\newblock {\em {Computer Architecture, Fourth Edition: A Quantitative
+  Approach}\/}.
+\newblock 0. 2006.
+\newblock ISBN 0123704901.
+
 \bibitem[{Jedec(2006)}]{Jedec2006}
 {\sc Jedec}.
 \newblock {Measurement and Reporting of Alpha Particle and Terrestrial Cosmic
   Ray Induced Soft Error in Semiconductor Devices: JESD89A}.
 \newblock {\em JEDEC Sold State Technology Association\/}, p\'aginas 1--85,
   2006.
+
+\bibitem[{Pascual(2011)}]{Pascual2011}
+{\sc Pascual, J.~M.}
+\newblock {\em {Simulador DLX con repertorio multimedia}\/}.
+\newblock Tesis Doctoral, Universidad Complutense de Madrid, 2011.
 
 \bibitem[{Sadasivan(2006)}]{Sadasivan2006}
 {\sc Sadasivan, S.}

@@ -162,11 +162,17 @@ Como podemos ver en la figura \ref{fig:SecuencialVSSegmentada}, el procesador no
 %-------------------------------------------------------------------
 \label{cap2:procesador:segmentacion:riesgos}
 
-Además de las ventajas vistas en el apartado anterior, la segmentación también implica unos riesgos a la hora de ejecutar las instrucciones. Estos riesgos pueden ser de los siguientes tipos[\cite{Hennessy1993}]: % Arquitectura de Computadores: Un enfoque cuantitativo
+Además de las ventajas vistas en el apartado anterior, la segmentación también implica unos riesgos a la hora de ejecutar las instrucciones. Estos riesgos implican que las instrucciones deban esperar un número de ciclos a poder continuar su ejecución, parando la entrada de instrucciones en el microprocesador. Estos riesgos pueden ser de los siguientes tipos[\cite{Hennessy1993}]: % Arquitectura de Computadores: Un enfoque cuantitativo
 
 \begin{enumerate}
   \item \textit{Riesgos estructurales}. Surgen cuando 2 o más instrucciones necesitan acceder a los mismos recursos.
-	\item \textit{Riesgos de datos}. Surgen cuando una instrucción depende del resultado de una instrucción anterior, y esta todavía no lo ha escrito en el registro correspondiente.
+	\item \textit{Riesgos de datos}. Surgen cuando una instrucción depende del resultado de una instrucción anterior, y esta todavía no lo ha escrito en el registro correspondiente. Estos riesgos a su vez pueden ser de los siguientes tipos:
+	  \begin{itemize}
+		  \item \textsl{Lectura después de escritura (RAW)}. Una instrucción intenta leer un dato antes de que se escriba en el registro.
+			\item \textsl{Escritura después de lectura (WAR)}. La \textit{instrucción i+1} escribe el resultado en el registro antes de que la \textit{instrucción i} haya leído el dato del mismo registro. Esto solo ocurre con instrucciones que realicen una escritura anticipada como por ejemplo instrucciones de auto-incremento de direccionamiento.
+			\item \textsl{Escritura después de escritura (WAW)}. Ocurre cuando las escrituras se realizan en orden incorrecto, por ejemplo la \textit{instrucción i+1} escribe su resultado antes de que lo haga la \textit{instrucción i}, ambas escriben en el mismo registro.
+			\item \textsl{Lectura después de lectura (RAR)}. Esto no es un riesgo, ya que no se modifica ningún dato.
+	  \end{itemize}
 	\item \textit{Riesgos de control}. Surgen de las instrucciones que afectan al registro del contador de programa (PC). 
 \end{enumerate}
 
@@ -202,28 +208,30 @@ El microprocesador DLX utiliza una arquitectura RISC con instrucciones de 32 bit
 
 Todas las instrucciones del repertorio del procesador DLX tienen un tamaño de 32 bits y están alineadas en memoria. los bits [31:26] forman el campo de código de operación e indica qué instrucción se debe ejecutar.
 
-Se dividen en tres tipos según su formato (figura \ref{fig:instrucciones_dlx}):
+Se dividen en tres tipos según su formato [\cite{Antiguas}]:
 
 \begin{itemize}
-  \item \textit{Tipo R}. Instrucciones sobre dos registros.
-	\item \textit{Tipo I}. Instrucciones sobre un registro y un inmediato.
-	\item \textit{Tipo J}. Instrucciones de salto.
+  \item \textit{Tipo R}. Instrucciones aritmético-lógicas.
+	\item \textit{Tipo I}. Instrucciones de transferencia.
+	\item \textit{Tipo J}. Instrucciones de bifurcación.
 \end{itemize}
+
+Como podemos observar en la figura \ref{fig:instrucciones_dlx}, el formato es muy similar en los tres tipos, esto reduce la ruta de datos, simplificando su implementación.
 
 \begin{figure}[htbp]
 	\centering
-		\includegraphics[width=0.75\textwidth]{Imagenes/Instrucciones/dlx.eps}
+		\includegraphics[width=0.75\textwidth]{Imagenes/Instrucciones/IntruccionesDLX.eps}
 	\caption{Formato de instrucciones DLX}
 	\label{fig:instrucciones_dlx}
 \end{figure}
 
-Dependiendo de su funcionalidad también se pueden clasificar como:
+%Dependiendo de su funcionalidad también se pueden clasificar como:
 
-\begin{itemize}
-  \item \textit{Instrucciones de carga y almacenamientos}. Instrucciones de acceso a memoria.
-	\item \textit{Operaciones sobre la unidad aritmético lógica}. Instrucciones para realizar operaciones sobre dos operandos.
-	\item \textit{Operaciones de control}. Instrucciones de bifurcaciones y saltos.
-\end{itemize}
+%\begin{itemize}
+  %\item \textit{Instrucciones de carga y almacenamientos}. Instrucciones de acceso a memoria.
+	%\item \textit{Operaciones sobre la unidad aritmético lógica}. Instrucciones para realizar operaciones sobre dos operandos.
+	%\item \textit{Operaciones de control}. Instrucciones de bifurcaciones y saltos.
+%\end{itemize}
  
 
 %-------------------------------------------------------------------
@@ -241,7 +249,20 @@ El DLX basa su rendimiento en la segmentación y se divide en 5 etapas
 	\item \textit{Postescritura (WB)}: En la última etapa se almacenan los resultados de las instrucciones en los registros.
 \end{itemize}
 
-Como pudimos ver en la figura \ref{tab:segmentacion}, las instrucciones se buscan en cada ciclo de reloj.
+Como pudimos ver en la figura \ref{tab:segmentacion}, las instrucciones se buscan en cada ciclo de reloj, a menos que surjan riesgos debido a la segmentación. Como vimos en el apartado \ref{cap2:procesador:segmentacion:riesgos}, la segmentación implica ciertos riesgos. Para solucionar o reducir estos, el dlx implementa las siguientes técnicas[\cite{Hennessy2006}]:
+
+\begin{enumerate}
+  \item Para reducir los ciclos de espera debidos a los \textit{riesgos estructurales} se duplican y/o segmentan las unidades funcionales. Se consigue un mayor número de etapas para poder cargar nuevas instrucciones.
+	\item Los \textit{riesgos de datos} implican que algunos datos son accedidos antes de completarse la instrucciones que los calculan. La técnica apropiada para reducir estos riesgos se llama "`adelantamiento"'(forwarding) o "`cortocircuito"'. Se consigue que la unidad aritmético-lógica pueda recibir los datos incluso si estos no han sido almacenados todavía en los registros.
+		\begin{itemize}
+		  \item \textsl{Lectura después de escritura (RAW)}. Debido al cortocircuito implementado, el dato es recibido de las etapas siguientes y no es necesario que se haya escrito en los registros.
+			\item \textsl{Escritura después de lectura (WAR)}. No puede ocurrir debido a que todas las lecturas se realizan al comienzo de la ejecución, en la etapa de descodificación, y las escrituras al final, en la etapa de postescritura.
+			\item \textsl{Escritura después de escritura (WAW)}. 
+	  \end{itemize}
+	\item \textit{Riesgos de control}. Solo se presenta en segmentaciones que escriben en más de una etapa, este ejemplo no se ve afectado ya que solo escribe en la etapa de postescritura.
+\end{enumerate}
+
+
 
 
 %-------------------------------------------------------------------
