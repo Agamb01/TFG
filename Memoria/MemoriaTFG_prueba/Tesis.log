@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.1.17)  12 MAY 2015 17:28
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.1.17)  12 MAY 2015 23:17
 entering extended mode
 **Tesis.tex
 (D:\TFG\TFG\Memoria\MemoriaTFG_prueba\Tesis.tex
@@ -532,14 +532,14 @@ Package epstopdf Info: Source file: <Imagenes/Procesador/VonNeumann.eps>
 (epstopdf)                    size: 102331 bytes
 (epstopdf)             Command: <epstopdf --outfile=Imagenes/Procesador/VonNeumann-eps-converted-to.pdf Imagenes/Procesa
 dor/VonNeumann.eps>
-(epstopdf)             \includegraphics on input line 98.
+(epstopdf)             \includegraphics on input line 100.
 Package epstopdf Info: Output file is already uptodate.
 
 <Imagenes/Procesador/VonNeumann-eps-converted-to.pdf, id=111, 1421.31pt x 1027.84pt>
 File: Imagenes/Procesador/VonNeumann-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Imagenes/Procesador/VonNeumann-eps-converted-to.pdf>
-Package pdftex.def Info: Imagenes/Procesador/VonNeumann-eps-converted-to.pdf used on input line 98.
+Package pdftex.def Info: Imagenes/Procesador/VonNeumann-eps-converted-to.pdf used on input line 100.
 (pdftex.def)             Requested size: 161.9989pt x 117.14047pt.
 Package epstopdf Info: Source file: <Imagenes/Procesador/Harvard.eps>
 (epstopdf)                    date: 2015-05-10 16:46:00
@@ -549,23 +549,23 @@ Package epstopdf Info: Source file: <Imagenes/Procesador/Harvard.eps>
 (epstopdf)                    size: 120257 bytes
 (epstopdf)             Command: <epstopdf --outfile=Imagenes/Procesador/Harvard-eps-converted-to.pdf Imagenes/Procesador
 /Harvard.eps>
-(epstopdf)             \includegraphics on input line 100.
+(epstopdf)             \includegraphics on input line 102.
 Package epstopdf Info: Output file is already uptodate.
 
 <Imagenes/Procesador/Harvard-eps-converted-to.pdf, id=112, 1421.31pt x 1027.84pt>
 File: Imagenes/Procesador/Harvard-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Imagenes/Procesador/Harvard-eps-converted-to.pdf>
-Package pdftex.def Info: Imagenes/Procesador/Harvard-eps-converted-to.pdf used on input line 100.
+Package pdftex.def Info: Imagenes/Procesador/Harvard-eps-converted-to.pdf used on input line 102.
 (pdftex.def)             Requested size: 161.9989pt x 117.14047pt.
  [9 <D:/TFG/TFG/Memoria/MemoriaTFG_prueba/Imagenes/Procesador/VonNeumann-eps-converted-to.pdf> <D:/TFG/TFG/Memoria/Memor
 iaTFG_prueba/Imagenes/Procesador/Harvard-eps-converted-to.pdf>]
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <10.95> on input line 130.
+(Font)              <10.95> on input line 132.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 130.
+(Font)              <8> on input line 132.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 130.
+(Font)              <6> on input line 132.
 Package epstopdf Info: Source file: <Imagenes/Procesador/SecuencialVSSegmentado.eps>
 (epstopdf)                    date: 2015-05-12 16:06:46
 (epstopdf)                    size: 8573771 bytes
@@ -574,14 +574,14 @@ Package epstopdf Info: Source file: <Imagenes/Procesador/SecuencialVSSegmentado.
 (epstopdf)                    size: 116226 bytes
 (epstopdf)             Command: <epstopdf --outfile=Imagenes/Procesador/SecuencialVSSegmentado-eps-converted-to.pdf Imag
 enes/Procesador/SecuencialVSSegmentado.eps>
-(epstopdf)             \includegraphics on input line 154.
+(epstopdf)             \includegraphics on input line 156.
 Package epstopdf Info: Output file is already uptodate.
 
-<Imagenes/Procesador/SecuencialVSSegmentado-eps-converted-to.pdf, id=145, 1469.49pt x 1027.84pt>
+<Imagenes/Procesador/SecuencialVSSegmentado-eps-converted-to.pdf, id=144, 1469.49pt x 1027.84pt>
 File: Imagenes/Procesador/SecuencialVSSegmentado-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Imagenes/Procesador/SecuencialVSSegmentado-eps-converted-to.pdf>
-Package pdftex.def Info: Imagenes/Procesador/SecuencialVSSegmentado-eps-converted-to.pdf used on input line 154.
+Package pdftex.def Info: Imagenes/Procesador/SecuencialVSSegmentado-eps-converted-to.pdf used on input line 156.
 (pdftex.def)             Requested size: 270.0pt x 188.84569pt.
  [10] [11 <D:/TFG/TFG/Memoria/MemoriaTFG_prueba/Imagenes/Procesador/SecuencialVSSegmentado-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <Imagenes/Instrucciones/IntruccionesDLX.eps>
@@ -592,24 +592,24 @@ Package epstopdf Info: Source file: <Imagenes/Instrucciones/IntruccionesDLX.eps>
 (epstopdf)                    size: 41179 bytes
 (epstopdf)             Command: <epstopdf --outfile=Imagenes/Instrucciones/IntruccionesDLX-eps-converted-to.pdf Imagenes
 /Instrucciones/IntruccionesDLX.eps>
-(epstopdf)             \includegraphics on input line 223.
+(epstopdf)             \includegraphics on input line 231.
 Package epstopdf Info: Output file is already uptodate.
 
-<Imagenes/Instrucciones/IntruccionesDLX-eps-converted-to.pdf, id=181, 761.84625pt x 376.40625pt>
+<Imagenes/Instrucciones/IntruccionesDLX-eps-converted-to.pdf, id=180, 761.84625pt x 376.40625pt>
 File: Imagenes/Instrucciones/IntruccionesDLX-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Imagenes/Instrucciones/IntruccionesDLX-eps-converted-to.pdf>
-Package pdftex.def Info: Imagenes/Instrucciones/IntruccionesDLX-eps-converted-to.pdf used on input line 223.
+Package pdftex.def Info: Imagenes/Instrucciones/IntruccionesDLX-eps-converted-to.pdf used on input line 231.
 (pdftex.def)             Requested size: 270.0pt x 133.39827pt.
  [12] [13 <D:/TFG/TFG/Memoria/MemoriaTFG_prueba/Imagenes/Instrucciones/IntruccionesDLX-eps-converted-to.pdf>] [14] [15])
- [16] [32
+ [16] [26
 
 
 
 
 ]
 (D:\TFG\TFG\Memoria\MemoriaTFG_prueba\Cascaras/bibliografia.tex (D:\TFG\TFG\Memoria\MemoriaTFG_prueba\Tesis.bbl))
-[33
+[27
 
 
 ]
@@ -634,11 +634,11 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 197.
 Here is how much of TeX's memory you used:
  10129 strings out of 493921
  151675 string characters out of 3147285
- 244590 words of memory out of 3000000
+ 244602 words of memory out of 3000000
  12926 multiletter control sequences out of 15000+200000
  19888 words of font info for 41 fonts, out of 3000000 for 9000
  1079 hyphenation exceptions out of 8191
- 55i,10n,47p,626b,519s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 55i,11n,47p,668b,528s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\Andy\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecsl1095.pk> <C:\Users\Andy\AppData\Local\
 MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1095.pk> <C:\Users\Andy\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknap
 pen\ec\dpi600\eccc1000.pk> <C:\Users\Andy\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecti1095.pk> <C:\U
@@ -650,9 +650,9 @@ y\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecxc1000.pk> <C:\U
 ti1000.pk> <C:\Users\Andy\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx2488.pk> <C:\Users\Andy\AppDat
 a\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx2074.pk><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfon
 ts/cm/cmr10.pfb>
-Output written on Tesis.pdf (14 pages, 631721 bytes).
+Output written on Tesis.pdf (14 pages, 632980 bytes).
 PDF statistics:
- 677 PDF objects out of 1000 (max. 8388607)
+ 679 PDF objects out of 1000 (max. 8388607)
  59 named destinations out of 1000 (max. 500000)
  146 words of extra memory for PDF output out of 10000 (max. 10000000)
 
