@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.1.17)  12 MAY 2015 23:17
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.1.17)  13 MAY 2015 17:56
 entering extended mode
 **Tesis.tex
 (D:\TFG\TFG\Memoria\MemoriaTFG_prueba\Tesis.tex
@@ -404,6 +404,7 @@ Package: titlesec 2011/12/15 v2.10.0 Sectioning titles
 \@input{TeXiS/TeXiS_cover.aux}
 (D:\TFG\TFG\Memoria\MemoriaTFG_prueba\TeXiS/TeXiS_cover.tex)
 \@input{TeXiS/TeXiS_dedic.aux}
+(D:\TFG\TFG\Memoria\MemoriaTFG_prueba\TeXiS/TeXiS_dedic.tex)
 \@input{TeXiS/TeXiS_bib.aux}
 (D:\TFG\TFG\Memoria\MemoriaTFG_prueba\TeXiS/TeXiS_bib.tex))
 \@input{constantes.aux}
@@ -478,7 +479,20 @@ Package caption Info: End \AtBeginDocument code.
 \MPnumerator=\count138
 \makeMPintoPDFobject=\count139
 \everyMPtoPDFconversion=\toks25
-) (D:\TFG\TFG\Memoria\MemoriaTFG_prueba\guionado.tex) [12
+) (D:\TFG\TFG\Memoria\MemoriaTFG_prueba\guionado.tex) (D:\TFG\TFG\Memoria\MemoriaTFG_prueba\Cascaras/cover.tex
+\cambioIzquierdo=\skip69
+\cambioDerecho=\skip70
+\margenPortada=\skip71
+\evensidemarginOriginal=\skip72
+\oddsidemarginOriginal=\skip73
+\longTitulo=\skip74
+
+<Imagenes/Vectorial/escudoUCM.pdf, id=163, 597.23125pt x 844.15375pt>
+File: Imagenes/Vectorial/escudoUCM.pdf Graphic file (type pdf)
+ <use Imagenes/Vectorial/escudoUCM.pdf>
+Package pdftex.def Info: Imagenes/Vectorial/escudoUCM.pdf used on input line 163.
+(pdftex.def)             Requested size: 119.44412pt x 168.82776pt.
+ [1
 
 
 
@@ -496,11 +510,108 @@ Package caption Info: End \AtBeginDocument code.
 
 
 
+{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map} <D:/TFG/TFG/Memoria/MemoriaTFG_prueba/Imagenes/Vectorial/escudoUCM.
+pdf>]
+[2] [3]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 163.
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\base\omscmr.fd"
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 163.
+) [4]
+(D:\TFG\TFG\Memoria\MemoriaTFG_prueba\Cascaras/dedicatoria.tex [5
 
+
+] [6] [7] [8])
+(D:\TFG\TFG\Memoria\MemoriaTFG_prueba\Cascaras/agradecimientos.tex
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <10.95> on input line 58.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 58.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 58.
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 77.
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\base\t1cmtt.fd"
+File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+) [9
+
+
+
+]) [10] (D:\TFG\TFG\Memoria\MemoriaTFG_prueba\Cascaras/resumen.tex) [11
+
+
+
+] [12
 
 
 ]
-(D:\TFG\TFG\Memoria\MemoriaTFG_prueba\Capitulos/02TemaFallos.tex [6
+(D:\TFG\TFG\Memoria\MemoriaTFG_prueba\Capitulos/01Introduccion.tex
+Cap\'itulo 1.
+[1
+
+
+] <Imagenes/Estadisticas/penetracion_movil.png, id=246, 593.96906pt x 319.1925pt>
+File: Imagenes/Estadisticas/penetracion_movil.png Graphic file (type png)
+
+<use Imagenes/Estadisticas/penetracion_movil.png>
+Package pdftex.def Info: Imagenes/Estadisticas/penetracion_movil.png used on input line 41.
+(pdftex.def)             Requested size: 161.9989pt x 87.05493pt.
+
+<Imagenes/Estadisticas/penetracion_ordenador.png, id=248, 587.19376pt x 306.39468pt>
+File: Imagenes/Estadisticas/penetracion_ordenador.png Graphic file (type png)
+
+<use Imagenes/Estadisticas/penetracion_ordenador.png>
+Package pdftex.def Info: Imagenes/Estadisticas/penetracion_ordenador.png used on input line 43.
+(pdftex.def)             Requested size: 161.9989pt x 84.52762pt.
+File: Imagenes/Estadisticas/penetracion_movil.png Graphic file (type png)
+ <use Imagenes/Estadisticas/penetracion_movil.png>
+Package pdftex.def Info: Imagenes/Estadisticas/penetracion_movil.png used on input line 61.
+(pdftex.def)             Requested size: 161.9989pt x 87.05493pt.
+File: Imagenes/Estadisticas/penetracion_ordenador.png Graphic file (type png)
+
+<use Imagenes/Estadisticas/penetracion_ordenador.png>
+Package pdftex.def Info: Imagenes/Estadisticas/penetracion_ordenador.png used on input line 63.
+(pdftex.def)             Requested size: 161.9989pt x 84.52762pt.
+ [2 <D:/TFG/TFG/Memoria/MemoriaTFG_prueba/Imagenes/Estadisticas/penetracion_movil.png> <D:/TFG/TFG/Memoria/MemoriaTFG_pr
+ueba/Imagenes/Estadisticas/penetracion_ordenador.png>] [3] [4]
+
+LaTeX Warning: Reference `' on page 5 undefined on input line 133.
+
+
+LaTeX Warning: Reference `' on page 5 undefined on input line 135.
+
+
+LaTeX Warning: Reference `' on page 5 undefined on input line 137.
+
+
+LaTeX Warning: Reference `' on page 5 undefined on input line 139.
+
+
+LaTeX Warning: Reference `' on page 5 undefined on input line 141.
+
+
+LaTeX Warning: Reference `' on page 5 undefined on input line 143.
+
+
+LaTeX Warning: Reference `' on page 5 undefined on input line 145.
+
+
+LaTeX Warning: Reference `' on page 5 undefined on input line 147.
+
+
+LaTeX Warning: Reference `' on page 5 undefined on input line 149.
+
+
+LaTeX Warning: Reference `' on page 5 undefined on input line 151.
+
+
+LaTeX Warning: Reference `' on page 5 undefined on input line 153.
+
+
+LaTeX Warning: Reference `' on page 5 undefined on input line 155.
+
+) [5] (D:\TFG\TFG\Memoria\MemoriaTFG_prueba\Capitulos/02TemaFallos.tex [6
 
 
 
@@ -516,14 +627,13 @@ Package epstopdf Info: Source file: <Imagenes/Procesador/CPU.eps>
 .eps>
 (epstopdf)             \includegraphics on input line 45.
 Package epstopdf Info: Output file is already uptodate.
-<Imagenes/Procesador/CPU-eps-converted-to.pdf, id=73, 1027.84pt x 1027.84pt>
+<Imagenes/Procesador/CPU-eps-converted-to.pdf, id=287, 1027.84pt x 1027.84pt>
 File: Imagenes/Procesador/CPU-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Imagenes/Procesador/CPU-eps-converted-to.pdf>
 Package pdftex.def Info: Imagenes/Procesador/CPU-eps-converted-to.pdf used on input line 45.
 (pdftex.def)             Requested size: 180.0pt x 180.00015pt.
- [7{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}] [8 <D:/TFG/TFG/Memoria/MemoriaTFG_prueba/Imagenes/Procesador/CP
-U-eps-converted-to.pdf>]
+ [7] [8 <D:/TFG/TFG/Memoria/MemoriaTFG_prueba/Imagenes/Procesador/CPU-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <Imagenes/Procesador/VonNeumann.eps>
 (epstopdf)                    date: 2015-05-10 16:27:51
 (epstopdf)                    size: 16181876 bytes
@@ -534,8 +644,7 @@ Package epstopdf Info: Source file: <Imagenes/Procesador/VonNeumann.eps>
 dor/VonNeumann.eps>
 (epstopdf)             \includegraphics on input line 100.
 Package epstopdf Info: Output file is already uptodate.
-
-<Imagenes/Procesador/VonNeumann-eps-converted-to.pdf, id=111, 1421.31pt x 1027.84pt>
+ <Imagenes/Procesador/VonNeumann-eps-converted-to.pdf, id=315, 1421.31pt x 1027.84pt>
 File: Imagenes/Procesador/VonNeumann-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Imagenes/Procesador/VonNeumann-eps-converted-to.pdf>
@@ -552,7 +661,7 @@ Package epstopdf Info: Source file: <Imagenes/Procesador/Harvard.eps>
 (epstopdf)             \includegraphics on input line 102.
 Package epstopdf Info: Output file is already uptodate.
 
-<Imagenes/Procesador/Harvard-eps-converted-to.pdf, id=112, 1421.31pt x 1027.84pt>
+<Imagenes/Procesador/Harvard-eps-converted-to.pdf, id=316, 1421.31pt x 1027.84pt>
 File: Imagenes/Procesador/Harvard-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Imagenes/Procesador/Harvard-eps-converted-to.pdf>
@@ -560,12 +669,6 @@ Package pdftex.def Info: Imagenes/Procesador/Harvard-eps-converted-to.pdf used o
 (pdftex.def)             Requested size: 161.9989pt x 117.14047pt.
  [9 <D:/TFG/TFG/Memoria/MemoriaTFG_prueba/Imagenes/Procesador/VonNeumann-eps-converted-to.pdf> <D:/TFG/TFG/Memoria/Memor
 iaTFG_prueba/Imagenes/Procesador/Harvard-eps-converted-to.pdf>]
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <10.95> on input line 132.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 132.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 132.
 Package epstopdf Info: Source file: <Imagenes/Procesador/SecuencialVSSegmentado.eps>
 (epstopdf)                    date: 2015-05-12 16:06:46
 (epstopdf)                    size: 8573771 bytes
@@ -577,7 +680,7 @@ enes/Procesador/SecuencialVSSegmentado.eps>
 (epstopdf)             \includegraphics on input line 156.
 Package epstopdf Info: Output file is already uptodate.
 
-<Imagenes/Procesador/SecuencialVSSegmentado-eps-converted-to.pdf, id=144, 1469.49pt x 1027.84pt>
+<Imagenes/Procesador/SecuencialVSSegmentado-eps-converted-to.pdf, id=348, 1469.49pt x 1027.84pt>
 File: Imagenes/Procesador/SecuencialVSSegmentado-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Imagenes/Procesador/SecuencialVSSegmentado-eps-converted-to.pdf>
@@ -595,24 +698,122 @@ Package epstopdf Info: Source file: <Imagenes/Instrucciones/IntruccionesDLX.eps>
 (epstopdf)             \includegraphics on input line 231.
 Package epstopdf Info: Output file is already uptodate.
 
-<Imagenes/Instrucciones/IntruccionesDLX-eps-converted-to.pdf, id=180, 761.84625pt x 376.40625pt>
+<Imagenes/Instrucciones/IntruccionesDLX-eps-converted-to.pdf, id=382, 761.84625pt x 376.40625pt>
 File: Imagenes/Instrucciones/IntruccionesDLX-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Imagenes/Instrucciones/IntruccionesDLX-eps-converted-to.pdf>
 Package pdftex.def Info: Imagenes/Instrucciones/IntruccionesDLX-eps-converted-to.pdf used on input line 231.
 (pdftex.def)             Requested size: 270.0pt x 133.39827pt.
  [12] [13 <D:/TFG/TFG/Memoria/MemoriaTFG_prueba/Imagenes/Instrucciones/IntruccionesDLX-eps-converted-to.pdf>] [14] [15])
- [16] [26
-
+ [16]
+(D:\TFG\TFG\Memoria\MemoriaTFG_prueba\Capitulos/08TrabajoPropio.tex
+Cap\'itulo 3.
+[17
 
 
 
 ]
-(D:\TFG\TFG\Memoria\MemoriaTFG_prueba\Cascaras/bibliografia.tex (D:\TFG\TFG\Memoria\MemoriaTFG_prueba\Tesis.bbl))
-[27
+
+! LaTeX Error: File `' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.70 		\includegraphics[width=0.75\textwidth]{}
+                                               
+I could not locate the file with any of these extensions:
+.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPEG,.JBIG2,.JB2,.eps
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+[18]
+
+! LaTeX Error: File `' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.114 		\includegraphics[width=0.75\textwidth]{}
+                                                
+I could not locate the file with any of these extensions:
+.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPEG,.JBIG2,.JB2,.eps
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+[19]
+
+! LaTeX Error: File `' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.154 		\includegraphics[width=0.75\textwidth]{}
+                                                
+I could not locate the file with any of these extensions:
+.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPEG,.JBIG2,.JB2,.eps
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Package epstopdf Info: Source file: <Imagenes/EPS/P_DataPath.eps>
+(epstopdf)                    date: 2015-04-22 14:41:00
+(epstopdf)                    size: 4482840 bytes
+(epstopdf)             Output file: <Imagenes/EPS/P_DataPath-eps-converted-to.pdf>
+(epstopdf)                    date: 2015-04-22 17:23:19
+(epstopdf)                    size: 101975 bytes
+(epstopdf)             Command: <epstopdf --outfile=Imagenes/EPS/P_DataPath-eps-converted-to.pdf Imagenes/EPS/P_DataPath
+.eps>
+(epstopdf)             \includegraphics on input line 175.
+Package epstopdf Info: Output file is already uptodate.
+<Imagenes/EPS/P_DataPath-eps-converted-to.pdf, id=446, 1195.46625pt x 711.65875pt>
+File: Imagenes/EPS/P_DataPath-eps-converted-to.pdf Graphic file (type pdf)
+
+<use Imagenes/EPS/P_DataPath-eps-converted-to.pdf>
+Package pdftex.def Info: Imagenes/EPS/P_DataPath-eps-converted-to.pdf used on input line 175.
+(pdftex.def)             Requested size: 360.0pt x 214.30284pt.
+ [20] [21 <D:/TFG/TFG/Memoria/MemoriaTFG_prueba/Imagenes/EPS/P_DataPath-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <Imagenes/EPS/P_ControlPath.eps>
+(epstopdf)                    date: 2015-04-22 17:38:22
+(epstopdf)                    size: 4469273 bytes
+(epstopdf)             Output file: <Imagenes/EPS/P_ControlPath-eps-converted-to.pdf>
+(epstopdf)                    date: 2015-04-22 17:50:34
+(epstopdf)                    size: 111652 bytes
+(epstopdf)             Command: <epstopdf --outfile=Imagenes/EPS/P_ControlPath-eps-converted-to.pdf Imagenes/EPS/P_Contr
+olPath.eps>
+(epstopdf)             \includegraphics on input line 268.
+Package epstopdf Info: Output file is already uptodate.
+ <Imagenes/EPS/P_ControlPath-eps-converted-to.pdf, id=471, 1195.46625pt x 711.65875pt>
+File: Imagenes/EPS/P_ControlPath-eps-converted-to.pdf Graphic file (type pdf)
+
+<use Imagenes/EPS/P_ControlPath-eps-converted-to.pdf>
+Package pdftex.def Info: Imagenes/EPS/P_ControlPath-eps-converted-to.pdf used on input line 268.
+(pdftex.def)             Requested size: 360.0pt x 214.30284pt.
+ [22]
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <9> on input line 327.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 327.
+ [23 <D:/TFG/TFG/Memoria/MemoriaTFG_prueba/Imagenes/EPS/P_ControlPath-eps-converted-to.pdf>]) [24] (D:\TFG\TFG\Memoria\M
+emoriaTFG_prueba\Apendices/01ApendiceA.tex
+Ap\'{e}ndice A.
+) [25
+
+
+
+] [26
+
+
+] (D:\TFG\TFG\Memoria\MemoriaTFG_prueba\Cascaras/bibliografia.tex
+(D:\TFG\TFG\Memoria\MemoriaTFG_prueba\Tesis.bbl)) [27
+
+
+] (D:\TFG\TFG\Memoria\MemoriaTFG_prueba\Cascaras/fin.tex [28
 
 
 ]
+[29])
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 197.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 197.
  (D:\TFG\TFG\Memoria\MemoriaTFG_prueba\Tesis.aux (D:\TFG\TFG\Memoria\MemoriaTFG_prueba\Cascaras/cover.aux)
@@ -628,31 +829,40 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 197.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 197.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 197.
 Package rerunfilecheck Info: File `Tesis.out' has not changed.
-(rerunfilecheck)             Checksum: A38C5C4D5DA501948828ECBF1529A2CF;1021.
+(rerunfilecheck)             Checksum: 4FE1228EC4C35040A205C05D1AA085D7;2559.
+
+
+LaTeX Warning: There were undefined references.
+
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 197.
  ) 
 Here is how much of TeX's memory you used:
- 10129 strings out of 493921
- 151675 string characters out of 3147285
- 244602 words of memory out of 3000000
- 12926 multiletter control sequences out of 15000+200000
- 19888 words of font info for 41 fonts, out of 3000000 for 9000
+ 10367 strings out of 493921
+ 156499 string characters out of 3147285
+ 244951 words of memory out of 3000000
+ 13040 multiletter control sequences out of 15000+200000
+ 24093 words of font info for 49 fonts, out of 3000000 for 9000
  1079 hyphenation exceptions out of 8191
- 55i,11n,47p,668b,528s stack positions out of 5000i,500n,10000p,200000b,50000s
- <C:\Users\Andy\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecsl1095.pk> <C:\Users\Andy\AppData\Local\
-MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1095.pk> <C:\Users\Andy\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknap
-pen\ec\dpi600\eccc1000.pk> <C:\Users\Andy\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecti1095.pk> <C:\U
-sers\Andy\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1200.pk> <C:\Users\Andy\AppData\Local\MiKTeX\2
+ 55i,11n,47p,796b,528s stack positions out of 5000i,500n,10000p,200000b,50000s
+ <C:\Users\Andy\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm0900.pk> <C:\Users\Andy\AppData\Local\
+MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm0600.pk> <C:\Users\Andy\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknap
+pen\ec\dpi600\ecsl1095.pk> <C:\Users\Andy\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1095.pk> <C:\U
+sers\Andy\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecxc1000.pk> <C:\Users\Andy\AppData\Local\MiKTeX\2
 .9\fonts\pk\ljfour\jknappen\ec\dpi600\eccc1095.pk> <C:\Users\Andy\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\d
-pi600\ecrm1095.pk> <C:\Users\Andy\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1440.pk> <C:\Users\And
-y\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecxc1000.pk> <C:\Users\Andy\AppData\Local\MiKTeX\2.9\fonts
-\pk\ljfour\jknappen\ec\dpi600\ecrm1000.pk> <C:\Users\Andy\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ec
-ti1000.pk> <C:\Users\Andy\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx2488.pk> <C:\Users\Andy\AppDat
-a\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx2074.pk><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfon
-ts/cm/cmr10.pfb>
-Output written on Tesis.pdf (14 pages, 632980 bytes).
+pi600\ectt1095.pk> <C:\Users\Andy\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm0800.pk> <C:\Users\And
+y\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecti1000.pk> <C:\Users\Andy\AppData\Local\MiKTeX\2.9\fonts
+\pk\ljfour\jknappen\ec\dpi600\ecbx2488.pk> <C:\Users\Andy\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ec
+ti1095.pk> <C:\Users\Andy\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1095.pk> <C:\Users\Andy\AppDat
+a\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecti1200.pk> <C:\Users\Andy\AppData\Local\MiKTeX\2.9\fonts\pk\ljfo
+ur\jknappen\ec\dpi600\ecrm2488.pk> <C:\Users\Andy\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\eccc1000.p
+k> <C:\Users\Andy\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1000.pk> <C:\Users\Andy\AppData\Local\
+MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1200.pk> <C:\Users\Andy\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknap
+pen\ec\dpi600\ecbx1440.pk> <C:\Users\Andy\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx2074.pk><C:/Pr
+ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfont
+s/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on Tesis.pdf (41 pages, 1349165 bytes).
 PDF statistics:
- 679 PDF objects out of 1000 (max. 8388607)
- 59 named destinations out of 1000 (max. 500000)
- 146 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1225 PDF objects out of 1440 (max. 8388607)
+ 130 named destinations out of 1000 (max. 500000)
+ 371 words of extra memory for PDF output out of 10000 (max. 10000000)
 
