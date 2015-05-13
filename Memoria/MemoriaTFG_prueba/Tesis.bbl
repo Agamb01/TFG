@@ -1,10 +1,17 @@
-\begin{thebibliography}{7}
+\begin{thebibliography}{8}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[{{Arnau Llombart}()}]{Antiguas}
 {\sc {Arnau Llombart}, V.}
 \newblock {Manual DLX}.
 \newblock ????
+
+\bibitem[{Brinkgreve et\ al.(2011)Brinkgreve, Swolfs y
+  Engin}]{R.B.J.BrinkgreveW.M.Swolfs2011}
+{\sc Brinkgreve, R.}, {\sc Swolfs, W.} y {\sc Engin, E.}
+\newblock {\em {ARM Architecture Reference Manual Thumb-2 Supplement}\/}.
+\newblock 2011.
+\newblock ISBN 9781597180948.
 
 \bibitem[{Habinc(2002)}]{Habinc2002}
 {\sc Habinc, S.}
