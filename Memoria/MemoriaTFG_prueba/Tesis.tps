@@ -17,7 +17,7 @@ Class=LaTeXView
 Document=Capitulos\02TemaFallos.tex
 
 [Frame0_View0,0]
-TopLine=493
+TopLine=407
 Cursor=15233
 
 [Frame1]
@@ -35,7 +35,7 @@ Class=LaTeXView
 Document=Capitulos\08TrabajoPropio.tex
 
 [Frame1_View0,0]
-TopLine=446
+TopLine=444
 Cursor=18106
 
 [Frame2]
@@ -53,7 +53,7 @@ Class=LaTeXView
 Document=Tesis.tex
 
 [Frame2_View0,0]
-TopLine=169
+TopLine=167
 Cursor=4917
 
 [Frame3]
@@ -72,7 +72,7 @@ Document=config.tex
 
 [Frame3_View0,0]
 TopLine=50
-Cursor=2882
+Cursor=2602
 
 [Frame4]
 Flags=0
@@ -112,5 +112,5 @@ Cursor=701
 
 [SessionInfo]
 FrameCount=6
-ActiveFrame=3
+ActiveFrame=0
 

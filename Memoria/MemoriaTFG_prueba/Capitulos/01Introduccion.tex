@@ -6,14 +6,14 @@
 \chapter{Introducción}
 \label{cap:introduccion}
 
-\begin{FraseCelebre}
-\begin{Frase}
-...
-\end{Frase}
-\begin{Fuente}
-...
-\end{Fuente}
-\end{FraseCelebre}
+%\begin{FraseCelebre}
+%\begin{Frase}
+%...
+%\end{Frase}
+%\begin{Fuente}
+%...
+%\end{Fuente}
+%\end{FraseCelebre}
 
 \begin{resumen}
 En este capítulo se realiza una introducción al trabajo realizado durante el proyecto. Se plantea el problema, se enumeran los objetivos del trabajo y se define la estructura de este documento.
@@ -24,9 +24,9 @@ En este capítulo se realiza una introducción al trabajo realizado durante el pro
 %%-------------------------------------------------------------------
 \label{cap:introduccion:introduccion}
 
-Esta monografía es el resultado del estudio e investigación realizados para la asignatura "`Trabajo de fin de grado"' del \grado que se ha llevado a cabo en el departamento de "`Arquitectura de Computadores y Automática"' de la Universidad Complutense de Madrid, bajo la dirección del (Doctor), D. \director.
+Esta monografía es el resultado del estudio e investigación realizados para la asignatura "`Trabajo de fin de grado"' del Grado en Ingeniería de Computadores que se ha llevado a cabo en el departamento de "`Arquitectura de Computadores y Automática"' de la Universidad Complutense de Madrid, bajo la dirección del Dr. Jose Miguel Montañana Aliaga.
 
-El trabajo se centra en la implementación de un microprocesador tolerante a fallos y con un diseño que le permita ser compatible con las instrucciones ARM del repertorio del microprocesador "`ARM Cortex M3"' \cite{Sadasivan2006}. La tolerancia a fallos aplicada ha sido el "`modelo de replicado triple de módulos(TMR)"' \cite{Habinc2002}.
+El trabajo se centra en la implementación de un microprocesador tolerante a fallos transitorios, con un diseño que le permita ser compatible con las instrucciones ARM del repertorio del microprocesador "`ARM Cortex M3"' \cite{Sadasivan2006}. La tolerancia a fallos aplicada ha sido el "`modelo de replicado triple de módulos(TMR)"' \cite{Habinc2002}.
 
 
 %%-------------------------------------------------------------------
@@ -34,7 +34,7 @@ El trabajo se centra en la implementación de un microprocesador tolerante a fall
 %%-------------------------------------------------------------------
 \label{cap:introduccion:motivacion}
 
-Hoy en día, el uso de la tecnología y la informática se extienden a nivel mundial  y es de aplicación a cada vez, un mayor número de campos. La tecnología cada vez está más presente en nuestras vidas, ya no se concibe un hogar o puesto de trabajo sin un ordenador sobre la mesa. El uso de los computadores con carácter personal cada año es más común como podemos ver en la figura \ref{fig:uso_en_hogares}. Las estadísticas, realizadas por el Instituto Nacional de Estadística (INE), muestran que en España más del 95\% de los hogares posee al menos un teléfono móvil, normalmente teléfonos inteligentes, y más del 70\% posee un ordenador personal, lo que es un indicativo de la necesidad tecnológica que existe en estos tiempos.
+Hoy en día, el uso de la tecnología y la informática se extienden a nivel mundial, con aplicación a cada vez, un mayor número de campos. La tecnología cada vez está más presente en nuestras vidas, ya no se concibe un hogar o puesto de trabajo sin un ordenador sobre la mesa. El uso de los computadores con carácter personal cada año es más común como podemos ver en la figura \ref{fig:uso_en_hogares}. Las estadísticas, realizadas por el Instituto Nacional de Estadística (INE), muestran que en España más del 95\% de los hogares posee al menos un teléfono móvil, normalmente teléfonos inteligentes, y más del 70\% posee un ordenador personal, lo que es un indicativo de la necesidad tecnológica que existe en estos tiempos.
 
 \begin{figure*}[htbp]
   \centering
@@ -48,7 +48,7 @@ Todos los sistemas son susceptibles de sufrir fallos y errores a varios niveles 
 
 En sistemas personales como pueden ser los teléfonos inteligentes y los ordenadores personales, los fallos que sufren, normalmente no provocan consecuencias serias. Pero estos sistemas son solo una pequeña parte de los que existen y que se utilizan día a día en todo el mundo. 
 
-En los campos de medicina y transporte también hay multitud de dispositivos diferentes basados en microelectrónica. Sistemas biomédicos que asisten a la vida de una persona, que controlan un marca pasos o asisten a la respiración, si sufren un error pueden provocar consecuencias irremediables. Los sistemas de transporte controlados por sistemas electrónicos pueden sufrir los mismos tipos de fallos y causar catástrofes
+En los campos de medicina y transporte también hay multitud de dispositivos diferentes basados en microelectrónica. Sistemas biomédicos que asisten a la vida de una persona, que controlan un marca pasos o asisten a la respiración, si sufren un error pueden provocar consecuencias irremediables. Los sistemas de transporte controlados por sistemas electrónicos pueden sufrir los mismos tipos de fallos y causar catástrofes.
 
 La importancia de asegurar estos dispositivos frente a posibles fallos se deriva de su control sobre sistemas vitales y por ser responsables de la vida de seres humanos. Si uno de estos sistemas falla se pone en riesgo la vida de una o muchas personas. 
 
@@ -65,8 +65,6 @@ Las radiaciones cósmicas puede provocar fallos en cualquier sistema electrónico,
 \end{figure*}
 
 Cada vez los sistemas electrónicos contienen transistores de menor tamaño, lo que disminuye su tolerancia a los "`ruidos de transmisión"' haciéndolos más sensibles a la radiación y a los rayos cósmicos que inducen fallos a los sistemas.
-
-Lo que tienen en común los dispositivos mencionados, y muchos otros presentes en nuestra vida cotidiana, es que son sistemas con componentes micro-electrónicos. Poseen un microprocesador que es el cerebro y responsable de dirigir el sistema ejecutando los programas y como tal sistema electrónico,  susceptible de sufrir fallos. Fallo que en este componente puede causar graves consecuencias en el resto del sistema.
 
 Lo que tienen en común los dispositivos mencionados, y muchos otros presentes en nuestra vida cotidiana, es que son sistemas con componentes micro-electrónicos. Poseen un microprocesador que es el cerebro y responsable de dirigir el sistema ejecutando los programas y como tal sistema electrónico,  susceptible de sufrir fallos. Fallo que en este componente puede causar graves consecuencias en el resto del sistema.
 
@@ -101,19 +99,20 @@ Por lo comentado en el apartado anterior se ha decidido que este trabajo esté de
 El proyecto se ha divido en cuatro tareas dedicadas a la implementación del microprocesador y a la aplicación de la tolerancia a fallos.
 
 \begin{enumerate}
-  \item Primera. Implementación del procesador.
+ \renewcommand\labelenumi{\bfseries\theenumi}
+  \item \textbf{Primera. Implementación del procesador.}
 	
 	Se ha implementado el procesador segmentado en 5 etapas. Para ello se ha partido de la arquitectura DLX vista en las asignaturas de computadores de nuestro grado. 
 	
-	\item Segunda. Ruta de control
+	\item \textbf{Segunda. Ruta de control}
 	
 	Se ha rediseñado la ruta de control y parte de la ruta de datos. El nuevo juego de instrucciones usado, completamente distinto al que utiliza un DLX convencional, obliga a cambiar la ruta de control. Simulando unos pequeños programas se comprueba que el procesador es capaz de decodificar y ejecutar las nuevas instrucciones. 
 	
-	\item Tercera. Diseño de tolerancia a fallos. 
+	\item \textbf{Tercera. Diseño de tolerancia a fallos.} 
 	
-	Una vez implementado el procesador completo y comprobado su funcionamiento se diseña y se incorpora la tolerancia a fallos. Para ello se triplican los módulos que pueden causar mayor número de fallos y se insertan votadores de mayoría.
+	Una vez implementado el procesador completo y comprobado su funcionamiento se diseña y se incorpora la tolerancia a fallos. Para ello se \textbf{triplican} los módulos que pueden causar mayor número de fallos y se insertan \textbf{votadores} de mayoría.
 	
-	\item	Cuarta. Diseño del sistema de inserción de fallos.
+	\item	\textbf{Cuarta. Diseño del sistema de inserción de fallos.}
 	
 	Para finalizar se ha diseñado un sistema externo de inserción de fallos. Este sistema es capaz de alterar los valores de las salidas de los módulos triplicados, para comprobar después como afecta esto al funcionamiento del procesador.
 	
@@ -138,7 +137,7 @@ El proyecto se ha divido en cuatro tareas dedicadas a la implementación del micr
 	
 	En el capitulo \ref{} se describe el procesador implementado con su estructura y arquitectura.
 	
-	\item Capitulo \ref{} \textit{Proporcionando tolerancia a fallos}: 
+	\item Capitulo \ref{} \textit{Proporcionando tolerancia a fallos transitorios}: 
 	
 	En el capitulo \ref{} se describe cómo se ha proporcionado la tolerancia a fallos y qué técnicas se han utilizado.
 	

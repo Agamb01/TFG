@@ -343,26 +343,30 @@ El acceso a memoria es direccionable por bytes en el modo "`Big endian"' con una
 
 ...
 
+
+
+
 %-------------------------------------------------------------------
 \section{Fallos}
 %-------------------------------------------------------------------
 \label{cap2:fallos}
 
-En un sistema electrónico pueden ocurrir una gran variedad de fallos, se clasifican en fallos de software y fallos de hardware, y se pueden encontrar, desde fallos en la definición de requisitos que se propagan hasta la fase de producción, hasta fallos producidos en el sistema por agentes externos como la radiación.
+Un fallo ocurre cuando nuestro sistema no ha funcionado correctamente. Y se pueden encontrar desde fallos en la definición de requisitos que se propagan hasta la fase de producción, hasta fallos producidos en el sistema por agentes externos como la radiación.Puede haber sido un fallo transitorio, o un fallo permanente. 
 
-En esta sección se tratará esta última clase de fallos, los fallos producidos por agentes externos que no se pueden evitar en las fases de diseño. Y que afectan al hardware, dañando sus componentes o alterando los valores de las señales con las que se trabaja.
+Cuando el fallo ocurrido afecta a los datos o las instrucciones cambiando su valor o funcionalidad, se conoce como \textit{soft error} o \textit{fallo transitorio}. En este tipo de fallos el chip que lo sufre no se ha visto alterado ni dañado, solo se han visto modificados los datos con los que trabaja. Por tanto, si se reinicia el sistema este funciona correctamente.
+
+
+En un sistema electrónico pueden ocurrir una gran variedad de fallos, se clasifican en \textit{soft errors} o \textit{fallos transitorios} y \textit{hard errors} o \textit{fallos permanentes}. La diferencia entre estos dos tipos de fallos está en que los \textit{fallos permanentes} no se solucionan con reiniciar el sistema.
+
+En esta sección se olvidan de los fallos que se producen a partir de una mala implementación y se centra en los fallos producidos por agentes externos que no se pueden evitar en las fases de diseño. Y que afectan al hardware, dañando sus componentes o alterando los valores de las señales con las que se trabaja.
+
+
+Por que surgen los fallos con origen externo:
+
 
 
 Los fallos analizados en esta sección se van a dividir en dos categorías: fallos permanentes y fallos transitorios.
 
-%-------------------------------------------------------------------
-\subsection{Fallos Permanentes}
-%-------------------------------------------------------------------
-\label{cap2:fallos:fallospermanentes}
-
-Los fallos permanentes son aquellos que afectan al sistema de forma irreversible. Producen cambios en el diseño que estropean el correcto funcionamiento del módulo o circuito que lo sufre. Estos fallos no se solucionan reiniciando el sistema. [\cite{Jedec2006}]
-
-%bibliografia: jesd89a.pdf
 
 critical charge:
 
@@ -385,6 +389,19 @@ soft error, device:
 
 soft error rate (SER):
 
+
+
+
+%-------------------------------------------------------------------
+\subsection{Fallos Permanentes}
+%-------------------------------------------------------------------
+\label{cap2:fallos:fallospermanentes}
+
+Los fallos permanentes son aquellos que afectan al sistema de forma irreversible. Producen cambios en el diseño que estropean el correcto funcionamiento del módulo o circuito que lo sufre. Estos fallos no se solucionan reiniciando el sistema. [\cite{Jedec2006}]
+
+%bibliografia: jesd89a.pdf
+
+Los fallos permanentes, una vez detectados, pueden solucionarse sustituyendo el chip, o moviendolo de un lugar a otro dentro del mismo chip,vease el apartado \ref{cap2:fpga}.
 
 
 
