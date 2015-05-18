@@ -33,318 +33,318 @@ Para terminar se justifica la importancia de la tolerancia en los sistemas y con
 %...
 
 
-%-------------------------------------------------------------------
-\section{Procesador}
-%-------------------------------------------------------------------
-\label{cap2:procesador}
-
-El Diccionario de la Real Academia Española (DRAE) define el procesador como la "`unidad central de proceso (CPU), formada por uno o dos chips"'. Figura \ref{fig:cpu}. 
-
-\begin{figure}[htbp]
-	\centering
-		\includegraphics[width=0.50\textwidth]{Imagenes/Procesador/CPU.eps}
-	\caption{Procesador DRAE}
-	\label{fig:cpu}
-\end{figure}
-
-La CPU es el circuito integrado encargado de acceder a las instrucciones de los programas informáticos y ejecutarlas. Para poder ejecutar un programa, el procesador debe realizar las siguientes tareas:
-
-\begin{enumerate}
-  \item Acceder a las instrucciones almacenadas en memoria.
-  \item Analizar las instrucciones y establecer las señales de control internas.
-  \item Ejecutar operaciones sobre datos.
-  \item Almacenar los resultados en memoria.
-\end{enumerate}
-
-A continuación se definen los elementos fundamentales para definir un procesador.
-
-%-------------------------------------------------------------------
-\subsection{Arquitectura}
-%-------------------------------------------------------------------
-\label{cap2:procesador:arquitectura}
-
-Un procesador está formado por una serie de módulos conectados entre sí, siendo la arquitectura del mismo la que define el diseño de los módulos que lo componen y de qué manera se conectan entre ellos.
-
-La arquitectura del procesador diseñada por Von Neumann separa los componentes del procesador en módulos básicos. La CPU es el verdadero núcleo de los computadores, donde se realizan las funciones de computación y control, y contiene todos los componentes la memoria y los elementos de entrada y salida [\cite{Hennessy1993}]. % Arquitectura de Computadores: Un enfoque cuantitativo
-
-Según el juego de instrucciones que sea capaz de ejecutar un procesador, su arquitectura puede clasificarse como:
-
-\begin{enumerate}
-  \item \textit{Reduced instruction set computer (RISC)}. Utiliza un repertorio de instrucciones reducido, con instrucciones de tamaño fijo y poca variedad en su formato.
-	
-	\item \textit{Complex instruction set computer (CISC)}. Utiliza un repertorio de instrucciones muy amplio, permite realizar operaciones complejas tales como realizar cálculos entre los datos en memoria y los datos en registro.
-	
-	\item \textit{Simple instruction set computer (SISC)}.  Utiliza un repertorio de instrucciones enfocado al procesamiento paralelo.
-\end{enumerate}
-
-%-------------------------------------------------------------------
-\subsection{Repertorio de instrucciones}
-%-------------------------------------------------------------------
-\label{cap2:procesador:instrucciones}
-
-El repertorio de instrucciones define todas las operaciones que el procesador es capaz de entender y ejecutar. Este juego de instrucciones incluye las operaciones aritmético-lógicas que puede aplicar a los datos, las operaciones de control sobre el flujo del programa, las instrucciones de lectura y escritura en memoria, así como todas las instrucciones propias que se hayan diseñado para el procesador.
-
-
-%-------------------------------------------------------------------
-\subsection{Memoria}
-%-------------------------------------------------------------------
-\label{cap2:procesador:memoria}
-
-Los procesadores tienen una serie de registros donde se almacenan temporalmente los valores con los que está trabajando.
-El conjunto de estos registros se conoce como "`banco de registros"'. Estos registros de propósito general son muy limitados. Por ello el procesador necesita de apoyo externo para alojar la información, para lo que tiene acceso a una memoria externa.
-
-El acceso a la memoria externa divide las arquitecturas en dos tipos. La arquitecturas Von Neumann utiliza una única memoria para almacenar tanto los datos como las instrucciones. Las arquitecturas Harvard, sin embargo, separan la memoria de datos de la memoria de instrucciones. Figura \ref{fig:vonneumann_harvard}.
-
-\begin{figure*}[htbp]
-  \centering
-  \subfloat{\includegraphics[width=0.45\textwidth]{Imagenes/Procesador/VonNeumann.eps}} 
-	  \hspace{5mm}
-  \subfloat{\includegraphics[width=0.45\textwidth]{Imagenes/Procesador/Harvard.eps}}
-  \caption{Arquitectura Von Neumann y Arquitectura Harvard} \label{fig:vonneumann_harvard}
-\end{figure*}
-
-
-%-------------------------------------------------------------------
-\subsection{Segmentación}
-%-------------------------------------------------------------------
-\label{cap2:procesador:segmentacion}
-
-La segmentación es una técnica de implementación, que no siendo imprescindible, aumenta el rendimiento del procesador. Permite que haya varias instrucciones en ejecución al mismo tiempo en el mismo procesador. El procesador es dividido en etapas y en cada una de ellas se realiza una parte del trabajo completo de la instrucción de forma secuencial.
-
-La segmentación permite que en cada ciclo de reloj se busque una instrucción y se comience su ejecución, con ello se consigue reducir el número de ciclos total que necesita el programa. 
-%[\cite{Hennessy1993}]. % Arquitectura de Computadores: Un enfoque cuantitativo
-
-En la tabla \ref{tab:segmentacion} podemos ver cómo se lanzan una serie de instrucciones. Se observa cómo las instrucciones ocupan unicamente una etapa del procesador, y cómo avanzan por el procesador dejando libre la etapa anterior para la siguiente instrucción. 
-
-\begin{table}[htbp]
-	\centering
-	\resizebox{\textwidth}{!} {
-		\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
-		  \hline
-			 & \multicolumn{9}{|c|}{Ciclo de reloj}                   \\ \hline
-			Número de instrucción & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 \\ \hline
-			i     & IF & ID & EX & MEM & WB & & & &                   \\ \hline
-			i + 1 & & IF & ID & EX & MEM & WB & & & 									\\ \hline
-			i + 2 & & & IF & ID & EX & MEM & WB & &                   \\ \hline
-			i + 3 & & & & IF & ID & EX & MEM & WB &                   \\ \hline
-			i + 4 & & & & & IF & ID & EX & MEM & WB                   \\ \hline
-		\end{tabular}
-	}
-	\caption{Segmentacion simple de 5 etapas}
-	\label{tab:segmentacion}
-\end{table}
-
-
-%-------------------------------------------------------------------
-\subsubsection{Ventajas de la segmentación}
-%-------------------------------------------------------------------
-\label{cap2:procesador:segmentacion:ventajas}
-
-La segmentación proporciona la ventaja de poder lanzar una instrucción por cada ciclo de reloj. Esta característica aumenta el rendimiento del procesador al obtener un menor número total de ciclos por instrucción para un mismo programa. Para conocer los ciclos por instrucción que necesita un programa se utiliza la formula. % \ref{eq:cpi}. 
-
-\begin{equation}
-		\textrm{Ciclos por instrucción (CPI)} = \frac{\textrm{Número de ciclos total}}{\textrm{Número de instrucciones}}
-  \label{eq:cpi}
-\end{equation}
-
-A modo de ejemplo, veamos que sucede al ejecutar un programa de 3 instrucciones sobre un procesador que tarde 5 ciclos de reloj en ejecutar cualquier instrucción, pero en un caso no segmentado, y en otro caso segmentado en 5 etapas de 1 ciclo cada una.
-
-Como podemos ver en la figura \ref{fig:SecuencialVSSegmentada}, el procesador no segmentado tarda 15 ciclos en ejecutar las 3 instrucciones y utilizando la formula anterior se obtiene un valor de CPI es 5. Al ejecutar el mismo programa en el procesador segmentado, este tarda 5 ciclos en llenar las 5 etapas del procesador. A partir de ahora cada ciclo de reloj termina una instrucción, completandose la ejecución del programa en 7 ciclos de reloj. El nuevo valor de CPI es de 2,33. Así pues, la segmentación ha reducido el número de ciclos por instrucción de este programa a menos de la mitad.
-
-\begin{figure}[htbp]
-	\centering
-		\includegraphics[width=0.75\textwidth]{Imagenes/Procesador/SecuencialVSSegmentado.eps}
-	\caption{Ejecución secuencial comparada con ejecución segmentada}
-	\label{fig:SecuencialVSSegmentada}
-\end{figure}
-
-
-%-------------------------------------------------------------------
-\subsubsection{Riesgos de la segmentación}
-%-------------------------------------------------------------------
-\label{cap2:procesador:segmentacion:riesgos}
-
-Además de las ventajas vistas en el apartado anterior, la segmentación también implica unos riesgos a la hora de ejecutar las instrucciones. Estos riesgos implican que las instrucciones deban esperar un número de ciclos para poder continuar su ejecución, retrasando la entrada de instrucciones en el microprocesador. Estos riesgos pueden ser de los siguientes tipos[\cite{Hennessy1993}]: % Arquitectura de Computadores: Un enfoque cuantitativo
-
-\begin{enumerate}
-  \item \textit{Riesgos estructurales}. Surgen cuando 2 o más instrucciones necesitan acceder a los mismos recursos.
-	
-	\item \textit{Riesgos de datos}. Surgen cuando una instrucción depende del resultado de una instrucción anterior, y este todavía no se ha escrito en el registro correspondiente. A su vez pueden ser:
-	
-	  \begin{itemize}
-		  \item \textsl{Lectura después de escritura (RAW)}. Una instrucción intenta leer un dato antes de que se escriba en el registro.
-			
-			\item \textsl{Escritura después de lectura (WAR)}. La \textit{instrucción i+1} escribe el resultado en el registro antes de que la \textit{instrucción i} haya leído el dato del mismo registro. Esto solo ocurre con instrucciones que realicen una escritura anticipada como por ejemplo instrucciones de auto-incremento de direccionamiento.
-			
-			\item \textsl{Escritura después de escritura (WAW)}. Ocurre cuando las escrituras se realizan en orden incorrecto. Por ejemplo la \textit{instrucción i+1} escribe su resultado antes de que lo haga la \textit{instrucción i}, ambas escriben en el mismo registro.
-			
-			\item \textsl{Lectura después de lectura (RAR)}. Realmente no es un riesgo como tal, ya que no se modifica ningún dato.
-	  \end{itemize}
-		
-	\item \textit{Riesgos de control}. Surgen a consecuencia de las instrucciones que afectan al registro del contador de programa (PC). 
-\end{enumerate}
-
-
-
-%-------------------------------------------------------------------
-\subsection{DLX}
-%-------------------------------------------------------------------
-\label{cap2:procesador:dlx}
-
-El microprocesador DLX fue diseñado por John Hennessy y David A. Patterson, diseñadores de las arquitecturas MIPS y Berkeley RISC respectivamente. Es un procesador sencillo con arquitectura RISC y proporciona una base fácil de comprender. Se utiliza ampliamente en educación universitaria para explicar las arquitecturas de computadores [\cite{Pascual2011}].
-
-Basado en las máquinas de carga/almacenamiento, el DLX se centra en proporcionar[\cite{Hennessy1993}]: % Arquitectura de Computadores: Un enfoque cuantitativo
-
-\begin{itemize}
-  \item Un sencillo repertorio de instrucciones de carga/almacenamiento.
-	\item Un diseño de segmentación eficiente.
-	\item Un repertorio de instrucciones fácil de descodificar.
-\end{itemize}
-
-%-------------------------------------------------------------------
-\subsubsection{Arquitectura RISC}
-%-------------------------------------------------------------------
-\label{cap2:procesador:dlx:arquitectura}
-
-El microprocesador DLX utiliza una arquitectura RISC con instrucciones de 32 bits. Posee un banco de registros compuesto por 32 registros de propósito general, además de un segundo conjunto de registros que se pueden usar como 32 registros de simple precisión o como 16 registros en punto flotante.
-
-
-%-------------------------------------------------------------------
-\subsubsection{Instrucciones DLX}
-%-------------------------------------------------------------------
-\label{cap2:procesador:dlx:instrucciones}
-
-Todas las instrucciones del repertorio del procesador DLX tienen un tamaño de 32 bits y están alineadas en memoria. En cualquier instrucción los bits [31:26] forman el campo de código de operación que se debe ejecutar.
-
-Se dividen en tres tipos según su formato [\cite{Antiguas}]:
-
-\begin{itemize}
-  \item \textit{Tipo R}. Instrucciones aritmético-lógicas.
-	\item \textit{Tipo I}. Instrucciones de transferencia.
-	\item \textit{Tipo J}. Instrucciones de bifurcación.
-\end{itemize}
-
-Como podemos observar en la figura \ref{fig:instrucciones_dlx}, el formato es muy similar en los tres tipos, lo que reduce la ruta de datos, simplificando su implementación.
-
-\begin{figure}[htbp]
-	\centering
-		\includegraphics[width=0.75\textwidth]{Imagenes/Instrucciones/IntruccionesDLX.eps}
-	\caption{Formato de instrucciones DLX}
-	\label{fig:instrucciones_dlx}
-\end{figure}
-
-%Dependiendo de su funcionalidad también se pueden clasificar como:
-
+%%-------------------------------------------------------------------
+%\section{Procesador}
+%%-------------------------------------------------------------------
+%\label{cap2:procesador}
+%
+%El Diccionario de la Real Academia Española (DRAE) define el procesador como la "`unidad central de proceso (CPU), formada por uno o dos chips"'. Figura \ref{fig:cpu}. 
+%
+%\begin{figure}[htbp]
+	%\centering
+		%\includegraphics[width=0.50\textwidth]{Imagenes/Procesador/CPU.eps}
+	%\caption{Procesador DRAE}
+	%\label{fig:cpu}
+%\end{figure}
+%
+%La CPU es el circuito integrado encargado de acceder a las instrucciones de los programas informáticos y ejecutarlas. Para poder ejecutar un programa, el procesador debe realizar las siguientes tareas:
+%
+%\begin{enumerate}
+  %\item Acceder a las instrucciones almacenadas en memoria.
+  %\item Analizar las instrucciones y establecer las señales de control internas.
+  %\item Ejecutar operaciones sobre datos.
+  %\item Almacenar los resultados en memoria.
+%\end{enumerate}
+%
+%A continuación se definen los elementos fundamentales para definir un procesador.
+%
+%%-------------------------------------------------------------------
+%\subsection{Arquitectura}
+%%-------------------------------------------------------------------
+%\label{cap2:procesador:arquitectura}
+%
+%Un procesador está formado por una serie de módulos conectados entre sí, siendo la arquitectura del mismo la que define el diseño de los módulos que lo componen y de qué manera se conectan entre ellos.
+%
+%La arquitectura del procesador diseñada por Von Neumann separa los componentes del procesador en módulos básicos. La CPU es el verdadero núcleo de los computadores, donde se realizan las funciones de computación y control, y contiene todos los componentes la memoria y los elementos de entrada y salida [\cite{Hennessy1993}]. % Arquitectura de Computadores: Un enfoque cuantitativo
+%
+%Según el juego de instrucciones que sea capaz de ejecutar un procesador, su arquitectura puede clasificarse como:
+%
+%\begin{enumerate}
+  %\item \textit{Reduced instruction set computer (RISC)}. Utiliza un repertorio de instrucciones reducido, con instrucciones de tamaño fijo y poca variedad en su formato.
+	%
+	%\item \textit{Complex instruction set computer (CISC)}. Utiliza un repertorio de instrucciones muy amplio, permite realizar operaciones complejas tales como realizar cálculos entre los datos en memoria y los datos en registro.
+	%
+	%\item \textit{Simple instruction set computer (SISC)}.  Utiliza un repertorio de instrucciones enfocado al procesamiento paralelo.
+%\end{enumerate}
+%
+%%-------------------------------------------------------------------
+%\subsection{Repertorio de instrucciones}
+%%-------------------------------------------------------------------
+%\label{cap2:procesador:instrucciones}
+%
+%El repertorio de instrucciones define todas las operaciones que el procesador es capaz de entender y ejecutar. Este juego de instrucciones incluye las operaciones aritmético-lógicas que puede aplicar a los datos, las operaciones de control sobre el flujo del programa, las instrucciones de lectura y escritura en memoria, así como todas las instrucciones propias que se hayan diseñado para el procesador.
+%
+%
+%%-------------------------------------------------------------------
+%\subsection{Memoria}
+%%-------------------------------------------------------------------
+%\label{cap2:procesador:memoria}
+%
+%Los procesadores tienen una serie de registros donde se almacenan temporalmente los valores con los que está trabajando.
+%El conjunto de estos registros se conoce como "`banco de registros"'. Estos registros de propósito general son muy limitados. Por ello el procesador necesita de apoyo externo para alojar la información, para lo que tiene acceso a una memoria externa.
+%
+%El acceso a la memoria externa divide las arquitecturas en dos tipos. La arquitecturas Von Neumann utiliza una única memoria para almacenar tanto los datos como las instrucciones. Las arquitecturas Harvard, sin embargo, separan la memoria de datos de la memoria de instrucciones. Figura \ref{fig:vonneumann_harvard}.
+%
+%\begin{figure*}[htbp]
+  %\centering
+  %\subfloat{\includegraphics[width=0.45\textwidth]{Imagenes/Procesador/VonNeumann.eps}} 
+	  %\hspace{5mm}
+  %\subfloat{\includegraphics[width=0.45\textwidth]{Imagenes/Procesador/Harvard.eps}}
+  %\caption{Arquitectura Von Neumann y Arquitectura Harvard} \label{fig:vonneumann_harvard}
+%\end{figure*}
+%
+%
+%%-------------------------------------------------------------------
+%\subsection{Segmentación}
+%%-------------------------------------------------------------------
+%\label{cap2:procesador:segmentacion}
+%
+%La segmentación es una técnica de implementación, que no siendo imprescindible, aumenta el rendimiento del procesador. Permite que haya varias instrucciones en ejecución al mismo tiempo en el mismo procesador. El procesador es dividido en etapas y en cada una de ellas se realiza una parte del trabajo completo de la instrucción de forma secuencial.
+%
+%La segmentación permite que en cada ciclo de reloj se busque una instrucción y se comience su ejecución, con ello se consigue reducir el número de ciclos total que necesita el programa. 
+%%[\cite{Hennessy1993}]. % Arquitectura de Computadores: Un enfoque cuantitativo
+%
+%En la tabla \ref{tab:segmentacion} podemos ver cómo se lanzan una serie de instrucciones. Se observa cómo las instrucciones ocupan unicamente una etapa del procesador, y cómo avanzan por el procesador dejando libre la etapa anterior para la siguiente instrucción. 
+%
+%\begin{table}[htbp]
+	%\centering
+	%\resizebox{\textwidth}{!} {
+		%\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
+		  %\hline
+			 %& \multicolumn{9}{|c|}{Ciclo de reloj}                   \\ \hline
+			%Número de instrucción & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 \\ \hline
+			%i     & IF & ID & EX & MEM & WB & & & &                   \\ \hline
+			%i + 1 & & IF & ID & EX & MEM & WB & & & 									\\ \hline
+			%i + 2 & & & IF & ID & EX & MEM & WB & &                   \\ \hline
+			%i + 3 & & & & IF & ID & EX & MEM & WB &                   \\ \hline
+			%i + 4 & & & & & IF & ID & EX & MEM & WB                   \\ \hline
+		%\end{tabular}
+	%}
+	%\caption{Segmentacion simple de 5 etapas}
+	%\label{tab:segmentacion}
+%\end{table}
+%
+%
+%%-------------------------------------------------------------------
+%\subsubsection{Ventajas de la segmentación}
+%%-------------------------------------------------------------------
+%\label{cap2:procesador:segmentacion:ventajas}
+%
+%La segmentación proporciona la ventaja de poder lanzar una instrucción por cada ciclo de reloj. Esta característica aumenta el rendimiento del procesador al obtener un menor número total de ciclos por instrucción para un mismo programa. Para conocer los ciclos por instrucción que necesita un programa se utiliza la formula. % \ref{eq:cpi}. 
+%
+%\begin{equation}
+		%\textrm{Ciclos por instrucción (CPI)} = \frac{\textrm{Número de ciclos total}}{\textrm{Número de instrucciones}}
+  %\label{eq:cpi}
+%\end{equation}
+%
+%A modo de ejemplo, veamos que sucede al ejecutar un programa de 3 instrucciones sobre un procesador que tarde 5 ciclos de reloj en ejecutar cualquier instrucción, pero en un caso no segmentado, y en otro caso segmentado en 5 etapas de 1 ciclo cada una.
+%
+%Como podemos ver en la figura \ref{fig:SecuencialVSSegmentada}, el procesador no segmentado tarda 15 ciclos en ejecutar las 3 instrucciones y utilizando la formula anterior se obtiene un valor de CPI es 5. Al ejecutar el mismo programa en el procesador segmentado, este tarda 5 ciclos en llenar las 5 etapas del procesador. A partir de ahora cada ciclo de reloj termina una instrucción, completandose la ejecución del programa en 7 ciclos de reloj. El nuevo valor de CPI es de 2,33. Así pues, la segmentación ha reducido el número de ciclos por instrucción de este programa a menos de la mitad.
+%
+%\begin{figure}[htbp]
+	%\centering
+		%\includegraphics[width=0.75\textwidth]{Imagenes/Procesador/SecuencialVSSegmentado.eps}
+	%\caption{Ejecución secuencial comparada con ejecución segmentada}
+	%\label{fig:SecuencialVSSegmentada}
+%\end{figure}
+%
+%
+%%-------------------------------------------------------------------
+%\subsubsection{Riesgos de la segmentación}
+%%-------------------------------------------------------------------
+%\label{cap2:procesador:segmentacion:riesgos}
+%
+%Además de las ventajas vistas en el apartado anterior, la segmentación también implica unos riesgos a la hora de ejecutar las instrucciones. Estos riesgos implican que las instrucciones deban esperar un número de ciclos para poder continuar su ejecución, retrasando la entrada de instrucciones en el microprocesador. Estos riesgos pueden ser de los siguientes tipos[\cite{Hennessy1993}]: % Arquitectura de Computadores: Un enfoque cuantitativo
+%
+%\begin{enumerate}
+  %\item \textit{Riesgos estructurales}. Surgen cuando 2 o más instrucciones necesitan acceder a los mismos recursos.
+	%
+	%\item \textit{Riesgos de datos}. Surgen cuando una instrucción depende del resultado de una instrucción anterior, y este todavía no se ha escrito en el registro correspondiente. A su vez pueden ser:
+	%
+	  %\begin{itemize}
+		  %\item \textsl{Lectura después de escritura (RAW)}. Una instrucción intenta leer un dato antes de que se escriba en el registro.
+			%
+			%\item \textsl{Escritura después de lectura (WAR)}. La \textit{instrucción i+1} escribe el resultado en el registro antes de que la \textit{instrucción i} haya leído el dato del mismo registro. Esto solo ocurre con instrucciones que realicen una escritura anticipada como por ejemplo instrucciones de auto-incremento de direccionamiento.
+			%
+			%\item \textsl{Escritura después de escritura (WAW)}. Ocurre cuando las escrituras se realizan en orden incorrecto. Por ejemplo la \textit{instrucción i+1} escribe su resultado antes de que lo haga la \textit{instrucción i}, ambas escriben en el mismo registro.
+			%
+			%\item \textsl{Lectura después de lectura (RAR)}. Realmente no es un riesgo como tal, ya que no se modifica ningún dato.
+	  %\end{itemize}
+		%
+	%\item \textit{Riesgos de control}. Surgen a consecuencia de las instrucciones que afectan al registro del contador de programa (PC). 
+%\end{enumerate}
+%
+%
+%
+%%-------------------------------------------------------------------
+%\subsection{DLX}
+%%-------------------------------------------------------------------
+%\label{cap2:procesador:dlx}
+%
+%El microprocesador DLX fue diseñado por John Hennessy y David A. Patterson, diseñadores de las arquitecturas MIPS y Berkeley RISC respectivamente. Es un procesador sencillo con arquitectura RISC y proporciona una base fácil de comprender. Se utiliza ampliamente en educación universitaria para explicar las arquitecturas de computadores [\cite{Pascual2011}].
+%
+%Basado en las máquinas de carga/almacenamiento, el DLX se centra en proporcionar[\cite{Hennessy1993}]: % Arquitectura de Computadores: Un enfoque cuantitativo
+%
 %\begin{itemize}
-  %\item \textit{Instrucciones de carga y almacenamientos}. Instrucciones de acceso a memoria.
-	%\item \textit{Operaciones sobre la unidad aritmético lógica}. Instrucciones para realizar operaciones sobre dos operandos.
-	%\item \textit{Operaciones de control}. Instrucciones de bifurcaciones y saltos.
+  %\item Un sencillo repertorio de instrucciones de carga/almacenamiento.
+	%\item Un diseño de segmentación eficiente.
+	%\item Un repertorio de instrucciones fácil de descodificar.
 %\end{itemize}
- 
-
-%-------------------------------------------------------------------
-\subsubsection{Segmentación DLX}
-%-------------------------------------------------------------------
-\label{cap2:procesador:dlx:segmentacion}
-
-El DLX basa su rendimiento en la segmentación y se divide en 5 etapas
-
-\begin{itemize}
-	\item \textit{Búsqueda de la instrucción (IF)} 
-	
-	Esta primera etapa es la encargada de acceder a memoria y traer la siguiente instrucción.
-	
-	\item \textit{Descodificación de la instrucción (ID)}
-	
-	En la segunda etapa se descodifica la instrucción cargada en la primera etapa, obteniendo las señales de control. Extrae los operandos del banco de registro o de la propia instrucción.
-	
-	\item \textit{Ejecución y cálculo de direcciones efectivas (EX)}
-	
-	La tercera etapa se encarga de ejecutar la instrucción utilizando las unidades funcionales. Las unidades funcionales pueden estar segmentadas y/o duplicadas.
-	
-	\item \textit{Acceso a memoria (MEM)}
-	
-	En la etapa de memoria es cuando se ejecutan las operaciones de carga y almacenamiento. Las instrucciones de carga traen datos de la memoria y los almacenan en los registros, mientras que las instrucciones de almacenamiento guardan los datos en memoria.
-	
-	\item \textit{Postescritura (WB)}
-	
-	En la última etapa se almacenan los resultados de las instrucciones en los registros.
-	
-\end{itemize}
-
-Como pudimos ver en la figura \ref{tab:segmentacion}, las instrucciones se buscan en cada ciclo de reloj, a menos que surjan riesgos debido a la segmentación. Como vimos en el apartado \ref{cap2:procesador:segmentacion:riesgos}, la segmentación implica ciertos riesgos. Para solucionar o reducir estos, el DLX implementa las siguientes técnicas[\cite{Hennessy2006}]:
-
-\begin{enumerate}
-  \item Duplicar y/o segmentar las unidades funcionales. Con ello se reducen los ciclos de espera debidos a los \textit{riesgos estructurale}s. Se consigue un mayor número de etapas para poder cargar nuevas instrucciones.
-	
-	\item "`Adelantamiento"'(forwarding) o "`Cortocircuito"'. Técnica encaminada a resolver los \textit{riesgos de datos}. Se consigue proporcionar un acceso a los resultados de instrucciones previas que todavía no han almacenado los datos en el "`banco de registros"'. 
-		\begin{itemize}
-		
-		  \item \textsl{Lectura después de escritura (RAW)}. Debido al cortocircuito implementado, el dato es recibido de las etapas siguientes y no es necesario que se haya escrito en los registros.
-			
-			\item \textsl{Escritura después de lectura (WAR)}. No puede ocurrir debido a que todas las lecturas se realizan al comienzo de la ejecución, en la etapa de descodificación, y las escrituras al final, en la etapa de postescritura.
-			
-			\item \textsl{Escritura después de escritura (WAW)}. Solo se presenta en segmentaciones que escriben en más de una etapa, esta arquitectura no se ve afectada ya que solo escribe en la etapa de postescritura. puede ocurrir de
-			
-	  \end{itemize}
-		
-	\item \textit{Riesgos de control}. Si se ejecuta una instrucción de salto, el cambio no se ve reflejado hasta la fase de memoria, esto implica una detención de 3 ciclos. En DLX se utiliza lógica especializada para averiguar si el salto es efectivo y para la calcular la dirección destino de salto en la etapa de descodificación. 
-	
-\end{enumerate}
-
-Cuando existe un riesgo que no es posible evitar con estas técnicas se aplica un interbloqueo de la segmentación. Esta técnica detecta un riesgo y detiene la ejecución de la instrucción hasta que el riesgo desaparece. El bloqueo se realiza en la fase de decodificación, donde es posible determinar si existe algún riesgo.
-
-
-%-------------------------------------------------------------------
-\subsubsection{Memoria DLX}
-%-------------------------------------------------------------------
-\label{cap2:procesador:dlx:memoria}
-
-Todos las referencias a memoria se realizan a través de instrucciones de carga y almacenamiento, cargando los datos en los registros, donde se pueden acceder y trabajar con ellos, y almacenándolos en memoria.
-
-El acceso a memoria es direccionable por bytes en el modo "`Big endian"' con una dirección de 32 bits almacenada previamente en un registro. Los accesos pueden realizarse a un byte, media palabra o una palabra completa. Además se puede acceder a palabras en doble precisión para almacenarlas en los registros de punto flotante. 
-
-
-
-
-%-------------------------------------------------------------------
-\subsection{ARM}
-%-------------------------------------------------------------------
-\label{cap2:procesador:arm}
-
-...
-
-%-------------------------------------------------------------------
-\subsubsection{Arquitectura ARM}
-%-------------------------------------------------------------------
-\label{cap2:procesador:arm:arquitectura}
-
-
-...
-
-%-------------------------------------------------------------------
-\subsubsection{Repertorio de instrucciones ARM}
-%-------------------------------------------------------------------
-\label{cap2:procesador:arm:instrucciones}
-
-...
-
-%-------------------------------------------------------------------
-\subsubsection{Segmentación ARM}
-%-------------------------------------------------------------------
-\label{cap2:procesador:arm:segmentacion}
-
-...
-
-%-------------------------------------------------------------------
-\subsubsection{Memoria ARM}
-%-------------------------------------------------------------------
-\label{cap2:procesador:arm:memoria}
-
-...
-
-
-
+%
+%%-------------------------------------------------------------------
+%\subsubsection{Arquitectura RISC}
+%%-------------------------------------------------------------------
+%\label{cap2:procesador:dlx:arquitectura}
+%
+%El microprocesador DLX utiliza una arquitectura RISC con instrucciones de 32 bits. Posee un banco de registros compuesto por 32 registros de propósito general, además de un segundo conjunto de registros que se pueden usar como 32 registros de simple precisión o como 16 registros en punto flotante.
+%
+%
+%%-------------------------------------------------------------------
+%\subsubsection{Instrucciones DLX}
+%%-------------------------------------------------------------------
+%\label{cap2:procesador:dlx:instrucciones}
+%
+%Todas las instrucciones del repertorio del procesador DLX tienen un tamaño de 32 bits y están alineadas en memoria. En cualquier instrucción los bits [31:26] forman el campo de código de operación que se debe ejecutar.
+%
+%Se dividen en tres tipos según su formato [\cite{Antiguas}]:
+%
+%\begin{itemize}
+  %\item \textit{Tipo R}. Instrucciones aritmético-lógicas.
+	%\item \textit{Tipo I}. Instrucciones de transferencia.
+	%\item \textit{Tipo J}. Instrucciones de bifurcación.
+%\end{itemize}
+%
+%Como podemos observar en la figura \ref{fig:instrucciones_dlx}, el formato es muy similar en los tres tipos, lo que reduce la ruta de datos, simplificando su implementación.
+%
+%\begin{figure}[htbp]
+	%\centering
+		%\includegraphics[width=0.75\textwidth]{Imagenes/Instrucciones/IntruccionesDLX.eps}
+	%\caption{Formato de instrucciones DLX}
+	%\label{fig:instrucciones_dlx}
+%\end{figure}
+%
+%%Dependiendo de su funcionalidad también se pueden clasificar como:
+%
+%%\begin{itemize}
+  %%\item \textit{Instrucciones de carga y almacenamientos}. Instrucciones de acceso a memoria.
+	%%\item \textit{Operaciones sobre la unidad aritmético lógica}. Instrucciones para realizar operaciones sobre dos operandos.
+	%%\item \textit{Operaciones de control}. Instrucciones de bifurcaciones y saltos.
+%%\end{itemize}
+ %
+%
+%%-------------------------------------------------------------------
+%\subsubsection{Segmentación DLX}
+%%-------------------------------------------------------------------
+%\label{cap2:procesador:dlx:segmentacion}
+%
+%El DLX basa su rendimiento en la segmentación y se divide en 5 etapas
+%
+%\begin{itemize}
+	%\item \textit{Búsqueda de la instrucción (IF)} 
+	%
+	%Esta primera etapa es la encargada de acceder a memoria y traer la siguiente instrucción.
+	%
+	%\item \textit{Descodificación de la instrucción (ID)}
+	%
+	%En la segunda etapa se descodifica la instrucción cargada en la primera etapa, obteniendo las señales de control. Extrae los operandos del banco de registro o de la propia instrucción.
+	%
+	%\item \textit{Ejecución y cálculo de direcciones efectivas (EX)}
+	%
+	%La tercera etapa se encarga de ejecutar la instrucción utilizando las unidades funcionales. Las unidades funcionales pueden estar segmentadas y/o duplicadas.
+	%
+	%\item \textit{Acceso a memoria (MEM)}
+	%
+	%En la etapa de memoria es cuando se ejecutan las operaciones de carga y almacenamiento. Las instrucciones de carga traen datos de la memoria y los almacenan en los registros, mientras que las instrucciones de almacenamiento guardan los datos en memoria.
+	%
+	%\item \textit{Postescritura (WB)}
+	%
+	%En la última etapa se almacenan los resultados de las instrucciones en los registros.
+	%
+%\end{itemize}
+%
+%Como pudimos ver en la figura \ref{tab:segmentacion}, las instrucciones se buscan en cada ciclo de reloj, a menos que surjan riesgos debido a la segmentación. Como vimos en el apartado \ref{cap2:procesador:segmentacion:riesgos}, la segmentación implica ciertos riesgos. Para solucionar o reducir estos, el DLX implementa las siguientes técnicas[\cite{Hennessy2006}]:
+%
+%\begin{enumerate}
+  %\item Duplicar y/o segmentar las unidades funcionales. Con ello se reducen los ciclos de espera debidos a los \textit{riesgos estructurale}s. Se consigue un mayor número de etapas para poder cargar nuevas instrucciones.
+	%
+	%\item "`Adelantamiento"'(forwarding) o "`Cortocircuito"'. Técnica encaminada a resolver los \textit{riesgos de datos}. Se consigue proporcionar un acceso a los resultados de instrucciones previas que todavía no han almacenado los datos en el "`banco de registros"'. 
+		%\begin{itemize}
+		%
+		  %\item \textsl{Lectura después de escritura (RAW)}. Debido al cortocircuito implementado, el dato es recibido de las etapas siguientes y no es necesario que se haya escrito en los registros.
+			%
+			%\item \textsl{Escritura después de lectura (WAR)}. No puede ocurrir debido a que todas las lecturas se realizan al comienzo de la ejecución, en la etapa de descodificación, y las escrituras al final, en la etapa de postescritura.
+			%
+			%\item \textsl{Escritura después de escritura (WAW)}. Solo se presenta en segmentaciones que escriben en más de una etapa, esta arquitectura no se ve afectada ya que solo escribe en la etapa de postescritura. puede ocurrir de
+			%
+	  %\end{itemize}
+		%
+	%\item \textit{Riesgos de control}. Si se ejecuta una instrucción de salto, el cambio no se ve reflejado hasta la fase de memoria, esto implica una detención de 3 ciclos. En DLX se utiliza lógica especializada para averiguar si el salto es efectivo y para la calcular la dirección destino de salto en la etapa de descodificación. 
+	%
+%\end{enumerate}
+%
+%Cuando existe un riesgo que no es posible evitar con estas técnicas se aplica un interbloqueo de la segmentación. Esta técnica detecta un riesgo y detiene la ejecución de la instrucción hasta que el riesgo desaparece. El bloqueo se realiza en la fase de decodificación, donde es posible determinar si existe algún riesgo.
+%
+%
+%%-------------------------------------------------------------------
+%\subsubsection{Memoria DLX}
+%%-------------------------------------------------------------------
+%\label{cap2:procesador:dlx:memoria}
+%
+%Todos las referencias a memoria se realizan a través de instrucciones de carga y almacenamiento, cargando los datos en los registros, donde se pueden acceder y trabajar con ellos, y almacenándolos en memoria.
+%
+%El acceso a memoria es direccionable por bytes en el modo "`Big endian"' con una dirección de 32 bits almacenada previamente en un registro. Los accesos pueden realizarse a un byte, media palabra o una palabra completa. Además se puede acceder a palabras en doble precisión para almacenarlas en los registros de punto flotante. 
+%
+%
+%
+%
+%%-------------------------------------------------------------------
+%\subsection{ARM}
+%%-------------------------------------------------------------------
+%\label{cap2:procesador:arm}
+%
+%...
+%
+%%-------------------------------------------------------------------
+%\subsubsection{Arquitectura ARM}
+%%-------------------------------------------------------------------
+%\label{cap2:procesador:arm:arquitectura}
+%
+%
+%...
+%
+%%-------------------------------------------------------------------
+%\subsubsection{Repertorio de instrucciones ARM}
+%%-------------------------------------------------------------------
+%\label{cap2:procesador:arm:instrucciones}
+%
+%...
+%
+%%-------------------------------------------------------------------
+%\subsubsection{Segmentación ARM}
+%%-------------------------------------------------------------------
+%\label{cap2:procesador:arm:segmentacion}
+%
+%...
+%
+%%-------------------------------------------------------------------
+%\subsubsection{Memoria ARM}
+%%-------------------------------------------------------------------
+%\label{cap2:procesador:arm:memoria}
+%
+%...
+%
+%
+%
 
 %-------------------------------------------------------------------
 \section{Fallos}
@@ -358,40 +358,100 @@ Cuando el fallo ocurrido afecta a los elementos de memoria alterando sus valores
 En esta sección se olvidan los fallos que se producen a partir de una mala implementación y se centra en los fallos producidos por agentes externos que no se pueden evitar en las fases de diseño. Y que afectan al hardware, dañando sus componentes o alterando los valores de las señales con las que trabaja.
 
 %-------------------------------------------------------------------
-\subsection*{Origen}
+\subsection{Causas}
 %-------------------------------------------------------------------
-\label{cap2:fallos:origen}
+\label{cap2:fallos:causas}
 
-La causa de estos fallos se conoce como \textit{Single-Event Effects (SEEs)}, y se deben al choque de una partícula de energía contra un elemento del circuito integrado.
 
-Todos los elementos de un circuitos integrados menores a un milímetro son susceptibles a los SEE. Si la partícula colisiona contra o cerca de un transistor, y esta tiene suficiente energía, inducirá un cambio de valor en el mismo, esto se conoce como Single-Event Upset (SEU). Si la partícula colisiona contra una conexión, puede inducir corriente y voltaje que puede propagarse por el circuito.
+Estos fallos se conocen como \textit{Single-Event Effects (SEEs)}, y se deben al choque de una partícula de energía contra un elemento del circuito integrado	\ref{fig:SEU_FPGA}. 
 
-El origen de partículas puede venir del espacio, de núcleos de átomos que viajan a casi a la velocidad de la luz y chocan contra la tierra desde todas las direcciones, llamados rayos cósmicos. 
-%Cosmic rays originate in outer space, travel at nearly the speed of light, and strike Earth from all directions. Cosmic rays are the nuclei of atoms, ranging from the lightest to the heaviest elements in the periodic table.
-Además la presión del aire también participa en la generación de estas partículas y su transporte hasta el nivel de suelo. [\cite{Hu2010}]
-%Air pressure also plays a significant role in causing neutron-generating reactions and in transporting neutrons to ground level. An intense neutron environment exists at higher altitudes in the atmosphere, 10 km to 40 km and more above the surface. In addition, Earth’s magnetic field causes the flux to vary from the equator to the poles, with the equator having the least flux and the poles having the greatest flux. The magnetic field of the sun as it varies during the sunspot cycle also influences the flux of cosmic rays on earth by roughly 20%. 
+\begin{figure}[htbp]
+	\centering
+		\includegraphics[width=0.85\textwidth]{Imagenes/SEU/SEU_FPGA.jpg}
+	\caption{Single Event Upset en una FPGA[\cite{Hu2010}].}
+	\label{fig:SEU_FPGA}
+\end{figure}
+
+Estas partículas pueden ser:
+
+\begin{itemize}
+
+  \item Los \textbf{rayos cósmicos} con suficiente carga, puede depositar energía suficiente para invertir un bit en un elemento de memoria, en una puerta lógica, o en una sección del circuito. Estos rayos pueden tener un origen galáctico o solar.  
+		
+  \item Un \textbf{protón y neutrones de alta energía}, con origen radiactivo o solar, puede provocar una reacción radiactiva ionizando elementos en el chip y provocando un SEE.
+
+\end{itemize}
+
+Los rayos cósmicos y las partículas solares reaccionan con la atmósfera provocando un efecto de lluvia de partículas. Este efecto se distribuye de manera diferente alrededor de la tierra debido a la densidad de la atmósfera, permitiendo que las partículas lleguen a nivel de suelo o bloqueando sus efectos.
+
+Como se mostró en la introducción, los efectos varían según la latitud, la longitud y la altitud \ref{fig:errores_vs_altitud2}. Las partículas colisionan contra la atmósfera y pierden energía. Cuanto menos densa sea la zona donde colisionen menos partículas colisionarán, perderán menos energía, y el porcentaje de fallos será mayor. 
+
+\begin{figure*}[htbp]
+  \centering
+  \includegraphics[width=0.75\textwidth]{Imagenes/Estadisticas/Neutrones1.eps}
+	\caption{Flujo de neutrones según a 40.000 pies de altitud[\cite{Hu2010}].} 
+	\label{fig:errores_vs_altitud2}
+\end{figure*}
 
 
 
 
 %-------------------------------------------------------------------
-\subsection{Fallos Transitorios}
+\subsection{Tipos de fallos}
 %-------------------------------------------------------------------
-\label{cap2:fallos:transitorios}
+\label{cap2:fallos:tipos}
 
-Los \textbf{fallos transitorios}, también llamados \textit{soft errors}, [\cite{Actel2002}].
-
-SET: Son fallos que afectan a las conexiones del chip. 
-
-SEU: Son fallos que alteran la carga almacenada en un transistor.
-
-
-
+Se clasifican los fallos en dos tipos, fallos transitorios o no destructivos y fallos permanentes o destructivos.
 
 %-------------------------------------------------------------------
-\subsection{Fallos Permanentes}
+\subsubsection*{Fallos Transitorios}
 %-------------------------------------------------------------------
-\label{cap2:fallos:permanentes}
+\label{cap2:fallos:tipos:transitorios}
+
+Los \textit{fallos transitorios}, tambien llamados \textit{soft errors}, son aquellos que cambian el estado del dispositivo o celda sin afectar a su funcionalidad.
+
+Los principales fallos transitorios son [\cite{Jedec2006}]:
+
+\begin{itemize}
+
+  \item \textbf{Single-Event Upset (SEU)}
+	
+	Aquellos fallos que afectan a los elementos de memoria, celdas de memoria o registros, del chip invirtiendo su valor. En un microprocesador pueden corromper los datos del banco de registro o los datos y las señales de control entre las etapas de segmentación.	
+	
+  \item \textbf{Single-Event Functional Interrupt (SEFI)}
+	
+	Fallos que producen una perdida temporal de la funcionalidad del dispositivo. Provocando un mal funcionamiento detectable, que no requiere reiniciar el sistema para recuperar la funcionalidad. Normalmente se asocia con un SEU en los registros de control.
+	
+  \item \textbf{Single-Event Transient (SET)}
+	
+	Picos de energía provocados por una partícula en un nodo de un circuito integrado. Pueden propagarse y almacenarse en un biestable si se produce en un flanco de reloj.
+	
+\end{itemize}
+
+\begin{figure}[htbp]
+	\centering
+		\includegraphics[width=0.5\textwidth]{Imagenes/SEU/Soft_SEE.png}
+	\caption{Fallos Transitorios}
+	\label{fig:Soft_SEE}
+\end{figure}
+
+
+El sistema sufre las consecuencias como un cambio de valor en un bit. Si este bit afecta a un celda de memoria en un registro corromperá el dato almacenado. Si afecta a un biestable en cualquier etapa de la segmentación, puede alterar el comportamiento de la instrucción, siendo más o menos grave según el lugar donde se produzca el fallo.
+
+
+
+
+
+
+%-------------------------------------------------------------------
+\subsubsection{Fallos Permanentes}
+%-------------------------------------------------------------------
+\label{cap2:fallos:tipos:permanentes}
+
+
+Los \textit{fallos permanentes} o \textit{hard errors} son los que afectan a la funcionalidad del dispositivo y lo dañan permanentemente.
+
+
 
 Los fallos permanentes son aquellos que afectan al hardware de forma irreversible. Producen cambios en el diseño que estropean el correcto funcionamiento del módulo o circuito que lo sufre. Estos fallos no se solucionan reiniciando el sistema. [\cite{Jedec2006}]
 
@@ -412,6 +472,8 @@ Los fallos permanentes, una vez detectados, pueden solucionarse sustituyendo el 
 La tolerancia a fallos se define como la capacidad de un sistema de funcionar correctamente incluso si se produce un fallo o anomalía en el sistema
 
 Existen dos tipos de tolerancia; tolerancia estática y tolerancia dinámica.
+
+Aquellos fallos que no se enmascaran por no usarse el segmento donde se producen pueden causar graves consecuencias, para ello existen técnicas de tolerancia a fallos que se comentan a continuación.
 
 %-------------------------------------------------------------------
 \subsection{Tolerancia estática}

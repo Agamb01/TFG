@@ -11,8 +11,8 @@ MaxPos.x=-1
 MaxPos.y=-1
 NormalPos.left=4
 NormalPos.top=26
-NormalPos.right=1339
-NormalPos.bottom=582
+NormalPos.right=1008
+NormalPos.bottom=622
 Class=LaTeXView
 Document=Tesis.tex
 
@@ -29,8 +29,8 @@ MaxPos.x=-1
 MaxPos.y=-1
 NormalPos.left=4
 NormalPos.top=26
-NormalPos.right=1339
-NormalPos.bottom=582
+NormalPos.right=1008
+NormalPos.bottom=622
 Class=LaTeXView
 Document=config.tex
 
@@ -47,14 +47,14 @@ MaxPos.x=-1
 MaxPos.y=-1
 NormalPos.left=4
 NormalPos.top=26
-NormalPos.right=1339
-NormalPos.bottom=582
+NormalPos.right=1008
+NormalPos.bottom=622
 Class=BibTeXView
 Document=otros.bib
 
 [Frame2_View0,0]
-TopLine=0
-Cursor=0
+TopLine=130
+Cursor=6742
 
 [Frame3]
 Flags=0
@@ -65,13 +65,13 @@ MaxPos.x=-1
 MaxPos.y=-1
 NormalPos.left=4
 NormalPos.top=26
-NormalPos.right=1339
-NormalPos.bottom=582
+NormalPos.right=1008
+NormalPos.bottom=622
 Class=LaTeXView
 Document=Capitulos\08TrabajoPropio.tex
 
 [Frame3_View0,0]
-TopLine=446
+TopLine=470
 Cursor=18106
 
 [Frame4]
@@ -83,16 +83,34 @@ MaxPos.x=-1
 MaxPos.y=-1
 NormalPos.left=4
 NormalPos.top=26
-NormalPos.right=1339
-NormalPos.bottom=582
+NormalPos.right=1008
+NormalPos.bottom=622
 Class=LaTeXView
 Document=Capitulos\02TemaFallos.tex
 
 [Frame4_View0,0]
-TopLine=452
-Cursor=22372
+TopLine=546
+Cursor=22748
+
+[Frame5]
+Flags=0
+ShowCmd=1
+MinPos.x=-1
+MinPos.y=-1
+MaxPos.x=-1
+MaxPos.y=-1
+NormalPos.left=4
+NormalPos.top=26
+NormalPos.right=1008
+NormalPos.bottom=622
+Class=LaTeXView
+Document=WorkingOn.txt
+
+[Frame5_View0,0]
+TopLine=0
+Cursor=530
 
 [SessionInfo]
-FrameCount=5
-ActiveFrame=4
+FrameCount=6
+ActiveFrame=5
 
