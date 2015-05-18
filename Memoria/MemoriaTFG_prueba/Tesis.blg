@@ -12,8 +12,11 @@ The style file: TeXiS/TeXiS.bst
 A level-1 auxiliary file: Cascaras/fin.aux
 Database file #1: latex.bib
 Database file #2: otros.bib
+Warning--empty year in Antiguas; set to ????
 Warning--missing publisher in R.B.J.BrinkgreveW.M.Swolfs2011
 Warning--missing publisher in Hennessy2006
 Warning--empty journal in Hu2010
+Warning--empty journal in Investigation2008
+Warning--there's a number but no volume in Investigation2008
 Warning--missing school in Melis2014
-(There were 4 warnings)
+(There were 7 warnings)

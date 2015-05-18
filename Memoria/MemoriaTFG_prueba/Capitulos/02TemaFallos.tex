@@ -24,18 +24,18 @@ A continuación se define qué es un fallo y qué tipos de fallos pueden ocurrir en
 Para terminar se justifica la importancia de la tolerancia en los sistemas y concretamente porque es necesaria la tolerancia en los microprocesadores.
 \end{resumen}
 
+%%%
+%%%-------------------------------------------------------------------
+%%%\section*{Introducción}
+%%%-------------------------------------------------------------------
+%%%\label{cap2:introduccion}
+%%%
+%%%...
 
-%%-------------------------------------------------------------------
-%\section*{Introducción}
-%%-------------------------------------------------------------------
-%\label{cap2:introduccion}
 %
-%...
-
-
-%%-------------------------------------------------------------------
+%-------------------------------------------------------------------
 %\section{Procesador}
-%%-------------------------------------------------------------------
+%-------------------------------------------------------------------
 %\label{cap2:procesador}
 %
 %El Diccionario de la Real Academia Española (DRAE) define el procesador como la "`unidad central de proceso (CPU), formada por uno o dos chips"'. Figura \ref{fig:cpu}. 
@@ -58,9 +58,9 @@ Para terminar se justifica la importancia de la tolerancia en los sistemas y con
 %
 %A continuación se definen los elementos fundamentales para definir un procesador.
 %
-%%-------------------------------------------------------------------
+%-------------------------------------------------------------------
 %\subsection{Arquitectura}
-%%-------------------------------------------------------------------
+%-------------------------------------------------------------------
 %\label{cap2:procesador:arquitectura}
 %
 %Un procesador está formado por una serie de módulos conectados entre sí, siendo la arquitectura del mismo la que define el diseño de los módulos que lo componen y de qué manera se conectan entre ellos.
@@ -77,17 +77,17 @@ Para terminar se justifica la importancia de la tolerancia en los sistemas y con
 	%\item \textit{Simple instruction set computer (SISC)}.  Utiliza un repertorio de instrucciones enfocado al procesamiento paralelo.
 %\end{enumerate}
 %
-%%-------------------------------------------------------------------
+%-------------------------------------------------------------------
 %\subsection{Repertorio de instrucciones}
-%%-------------------------------------------------------------------
+%-------------------------------------------------------------------
 %\label{cap2:procesador:instrucciones}
 %
 %El repertorio de instrucciones define todas las operaciones que el procesador es capaz de entender y ejecutar. Este juego de instrucciones incluye las operaciones aritmético-lógicas que puede aplicar a los datos, las operaciones de control sobre el flujo del programa, las instrucciones de lectura y escritura en memoria, así como todas las instrucciones propias que se hayan diseñado para el procesador.
 %
 %
-%%-------------------------------------------------------------------
+%-------------------------------------------------------------------
 %\subsection{Memoria}
-%%-------------------------------------------------------------------
+%-------------------------------------------------------------------
 %\label{cap2:procesador:memoria}
 %
 %Los procesadores tienen una serie de registros donde se almacenan temporalmente los valores con los que está trabajando.
@@ -104,15 +104,15 @@ Para terminar se justifica la importancia de la tolerancia en los sistemas y con
 %\end{figure*}
 %
 %
-%%-------------------------------------------------------------------
+%-------------------------------------------------------------------
 %\subsection{Segmentación}
-%%-------------------------------------------------------------------
+%-------------------------------------------------------------------
 %\label{cap2:procesador:segmentacion}
 %
 %La segmentación es una técnica de implementación, que no siendo imprescindible, aumenta el rendimiento del procesador. Permite que haya varias instrucciones en ejecución al mismo tiempo en el mismo procesador. El procesador es dividido en etapas y en cada una de ellas se realiza una parte del trabajo completo de la instrucción de forma secuencial.
 %
 %La segmentación permite que en cada ciclo de reloj se busque una instrucción y se comience su ejecución, con ello se consigue reducir el número de ciclos total que necesita el programa. 
-%%[\cite{Hennessy1993}]. % Arquitectura de Computadores: Un enfoque cuantitativo
+%[\cite{Hennessy1993}]. % Arquitectura de Computadores: Un enfoque cuantitativo
 %
 %En la tabla \ref{tab:segmentacion} podemos ver cómo se lanzan una serie de instrucciones. Se observa cómo las instrucciones ocupan unicamente una etapa del procesador, y cómo avanzan por el procesador dejando libre la etapa anterior para la siguiente instrucción. 
 %
@@ -135,9 +135,9 @@ Para terminar se justifica la importancia de la tolerancia en los sistemas y con
 %\end{table}
 %
 %
-%%-------------------------------------------------------------------
+%-------------------------------------------------------------------
 %\subsubsection{Ventajas de la segmentación}
-%%-------------------------------------------------------------------
+%-------------------------------------------------------------------
 %\label{cap2:procesador:segmentacion:ventajas}
 %
 %La segmentación proporciona la ventaja de poder lanzar una instrucción por cada ciclo de reloj. Esta característica aumenta el rendimiento del procesador al obtener un menor número total de ciclos por instrucción para un mismo programa. Para conocer los ciclos por instrucción que necesita un programa se utiliza la formula. % \ref{eq:cpi}. 
@@ -159,9 +159,9 @@ Para terminar se justifica la importancia de la tolerancia en los sistemas y con
 %\end{figure}
 %
 %
-%%-------------------------------------------------------------------
+%-------------------------------------------------------------------
 %\subsubsection{Riesgos de la segmentación}
-%%-------------------------------------------------------------------
+%-------------------------------------------------------------------
 %\label{cap2:procesador:segmentacion:riesgos}
 %
 %Además de las ventajas vistas en el apartado anterior, la segmentación también implica unos riesgos a la hora de ejecutar las instrucciones. Estos riesgos implican que las instrucciones deban esperar un número de ciclos para poder continuar su ejecución, retrasando la entrada de instrucciones en el microprocesador. Estos riesgos pueden ser de los siguientes tipos[\cite{Hennessy1993}]: % Arquitectura de Computadores: Un enfoque cuantitativo
@@ -186,9 +186,9 @@ Para terminar se justifica la importancia de la tolerancia en los sistemas y con
 %
 %
 %
-%%-------------------------------------------------------------------
+%-------------------------------------------------------------------
 %\subsection{DLX}
-%%-------------------------------------------------------------------
+%-------------------------------------------------------------------
 %\label{cap2:procesador:dlx}
 %
 %El microprocesador DLX fue diseñado por John Hennessy y David A. Patterson, diseñadores de las arquitecturas MIPS y Berkeley RISC respectivamente. Es un procesador sencillo con arquitectura RISC y proporciona una base fácil de comprender. Se utiliza ampliamente en educación universitaria para explicar las arquitecturas de computadores [\cite{Pascual2011}].
@@ -201,17 +201,17 @@ Para terminar se justifica la importancia de la tolerancia en los sistemas y con
 	%\item Un repertorio de instrucciones fácil de descodificar.
 %\end{itemize}
 %
-%%-------------------------------------------------------------------
+%-------------------------------------------------------------------
 %\subsubsection{Arquitectura RISC}
-%%-------------------------------------------------------------------
+%-------------------------------------------------------------------
 %\label{cap2:procesador:dlx:arquitectura}
 %
 %El microprocesador DLX utiliza una arquitectura RISC con instrucciones de 32 bits. Posee un banco de registros compuesto por 32 registros de propósito general, además de un segundo conjunto de registros que se pueden usar como 32 registros de simple precisión o como 16 registros en punto flotante.
 %
 %
-%%-------------------------------------------------------------------
+%-------------------------------------------------------------------
 %\subsubsection{Instrucciones DLX}
-%%-------------------------------------------------------------------
+%-------------------------------------------------------------------
 %\label{cap2:procesador:dlx:instrucciones}
 %
 %Todas las instrucciones del repertorio del procesador DLX tienen un tamaño de 32 bits y están alineadas en memoria. En cualquier instrucción los bits [31:26] forman el campo de código de operación que se debe ejecutar.
@@ -232,19 +232,11 @@ Para terminar se justifica la importancia de la tolerancia en los sistemas y con
 	%\caption{Formato de instrucciones DLX}
 	%\label{fig:instrucciones_dlx}
 %\end{figure}
-%
-%%Dependiendo de su funcionalidad también se pueden clasificar como:
-%
-%%\begin{itemize}
-  %%\item \textit{Instrucciones de carga y almacenamientos}. Instrucciones de acceso a memoria.
-	%%\item \textit{Operaciones sobre la unidad aritmético lógica}. Instrucciones para realizar operaciones sobre dos operandos.
-	%%\item \textit{Operaciones de control}. Instrucciones de bifurcaciones y saltos.
-%%\end{itemize}
  %
 %
-%%-------------------------------------------------------------------
+%-------------------------------------------------------------------
 %\subsubsection{Segmentación DLX}
-%%-------------------------------------------------------------------
+%-------------------------------------------------------------------
 %\label{cap2:procesador:dlx:segmentacion}
 %
 %El DLX basa su rendimiento en la segmentación y se divide en 5 etapas
@@ -295,9 +287,9 @@ Para terminar se justifica la importancia de la tolerancia en los sistemas y con
 %Cuando existe un riesgo que no es posible evitar con estas técnicas se aplica un interbloqueo de la segmentación. Esta técnica detecta un riesgo y detiene la ejecución de la instrucción hasta que el riesgo desaparece. El bloqueo se realiza en la fase de decodificación, donde es posible determinar si existe algún riesgo.
 %
 %
-%%-------------------------------------------------------------------
+%-------------------------------------------------------------------
 %\subsubsection{Memoria DLX}
-%%-------------------------------------------------------------------
+%-------------------------------------------------------------------
 %\label{cap2:procesador:dlx:memoria}
 %
 %Todos las referencias a memoria se realizan a través de instrucciones de carga y almacenamiento, cargando los datos en los registros, donde se pueden acceder y trabajar con ellos, y almacenándolos en memoria.
@@ -305,50 +297,48 @@ Para terminar se justifica la importancia de la tolerancia en los sistemas y con
 %El acceso a memoria es direccionable por bytes en el modo "`Big endian"' con una dirección de 32 bits almacenada previamente en un registro. Los accesos pueden realizarse a un byte, media palabra o una palabra completa. Además se puede acceder a palabras en doble precisión para almacenarlas en los registros de punto flotante. 
 %
 %
-%
-%
-%%-------------------------------------------------------------------
+%-------------------------------------------------------------------
 %\subsection{ARM}
-%%-------------------------------------------------------------------
+%-------------------------------------------------------------------
 %\label{cap2:procesador:arm}
 %
 %...
 %
-%%-------------------------------------------------------------------
+%-------------------------------------------------------------------
 %\subsubsection{Arquitectura ARM}
-%%-------------------------------------------------------------------
+%-------------------------------------------------------------------
 %\label{cap2:procesador:arm:arquitectura}
 %
 %
 %...
 %
-%%-------------------------------------------------------------------
+%-------------------------------------------------------------------
 %\subsubsection{Repertorio de instrucciones ARM}
-%%-------------------------------------------------------------------
+%-------------------------------------------------------------------
 %\label{cap2:procesador:arm:instrucciones}
 %
 %...
 %
-%%-------------------------------------------------------------------
+%-------------------------------------------------------------------
 %\subsubsection{Segmentación ARM}
-%%-------------------------------------------------------------------
+%-------------------------------------------------------------------
 %\label{cap2:procesador:arm:segmentacion}
 %
 %...
 %
-%%-------------------------------------------------------------------
+%-------------------------------------------------------------------
 %\subsubsection{Memoria ARM}
-%%-------------------------------------------------------------------
+%-------------------------------------------------------------------
 %\label{cap2:procesador:arm:memoria}
 %
 %...
 %
 %
 %
-
-%%-------------------------------------------------------------------
+%
+%-------------------------------------------------------------------
 %\section{Fallos}
-%%-------------------------------------------------------------------
+%-------------------------------------------------------------------
 %\label{cap2:fallos}
 %
 %Un fallo ocurre cuando nuestro sistema no ha funcionado correctamente. Se pueden encontrar desde fallos en la definición de requisitos que se propagan hasta la fase de producción, hasta fallos producidos en el sistema por agentes externos como la radiación. En un sistema electrónico pueden ocurrir fallos que se clasifican en \textit{soft errors} o \textit{fallos transitorios} y \textit{hard errors} o \textit{fallos permanentes}.
@@ -357,9 +347,9 @@ Para terminar se justifica la importancia de la tolerancia en los sistemas y con
 %
 %En esta sección se olvidan los fallos que se producen a partir de una mala implementación y se centra en los fallos producidos por agentes externos que no se pueden evitar en las fases de diseño. Y que afectan al hardware, dañando sus componentes o alterando los valores de las señales con las que trabaja.
 %
-%%-------------------------------------------------------------------
+%-------------------------------------------------------------------
 %\subsection{Causas}
-%%-------------------------------------------------------------------
+%-------------------------------------------------------------------
 %\label{cap2:fallos:causas}
 %
 %
@@ -396,16 +386,16 @@ Para terminar se justifica la importancia de la tolerancia en los sistemas y con
 %
 %
 %
-%%-------------------------------------------------------------------
+%-------------------------------------------------------------------
 %\subsection{Tipos de fallos}
-%%-------------------------------------------------------------------
+%-------------------------------------------------------------------
 %\label{cap2:fallos:tipos}
 %
 %Se clasifican los fallos en dos tipos, fallos transitorios o no destructivos y fallos permanentes o destructivos.
 %
-%%-------------------------------------------------------------------
+%-------------------------------------------------------------------
 %\subsubsection{Fallos Transitorios}
-%%-------------------------------------------------------------------
+%-------------------------------------------------------------------
 %\label{cap2:fallos:tipos:transitorios}
 %
 %Los \textit{fallos transitorios}, también llamados \textit{soft errors}, son aquellos que cambian el estado del dispositivo o celda sin afectar a su funcionalidad.
@@ -440,15 +430,13 @@ Para terminar se justifica la importancia de la tolerancia en los sistemas y con
 %
 %Algunas técnicas de tolerancia frente a estos fallos se analizan en el apartado \ref{cap2:tolerancia:estatica}.
 %
-%%-------------------------------------------------------------------
+%-------------------------------------------------------------------
 %\subsubsection{Fallos Permanentes}
-%%-------------------------------------------------------------------
+%-------------------------------------------------------------------
 %\label{cap2:fallos:tipos:permanentes}
 %
 %
 %Los \textit{fallos permanentes} o \textit{hard errors} son los que afectan a la funcionalidad del dispositivo y lo dañan permanentemente. Pueden producir cambios en el diseño que estropean el correcto funcionamiento del módulo o circuito que lo sufre [\cite{Jedec2006}].
-%
-%Los fallos permanentes, una vez detectados, unicamente pueden solucionarse sustituyendo el chip o moviendolo de un lugar a otro dentro del mismo chip, véase el apartado de \ref{cap2:tolerancia:dinamica}.
 %
 %Los principales tipos de fallos permanente son:
 %
@@ -466,7 +454,7 @@ Para terminar se justifica la importancia de la tolerancia en los sistemas y con
 %
 %Existen otros tipos de fallos permanentes, \textit{Single-Event Burnout (SEB)} y \textit{Single-Event Gate Rupture (SEGR)}, que destruyen el transistor a nivel físico.	
   %
-%Algunas técnicas de tolerancia frente a estos fallos se analizan en el apartado \ref{cap2:tolerancia:dinamica}.
+%Los fallos permanentes, una vez detectados, unicamente pueden solucionarse sustituyendo el chip o moviendolo de un lugar a otro dentro del mismo chip, véase el apartado de \ref{cap2:tolerancia:dinamica}.
 
 
 %-------------------------------------------------------------------
