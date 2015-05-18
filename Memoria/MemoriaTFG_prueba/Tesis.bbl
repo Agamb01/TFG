@@ -1,11 +1,6 @@
 \begin{thebibliography}{7}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
-\bibitem[{Actel(2002)}]{Actel2002}
-{\sc Actel}.
-\newblock {Neutrons from Above Soft Error Rates}.
-\newblock (October), 2002.
-
 \bibitem[{Brinkgreve et\ al.(2011)Brinkgreve, Swolfs y
   Engin}]{R.B.J.BrinkgreveW.M.Swolfs2011}
 {\sc Brinkgreve, R.}, {\sc Swolfs, W.} y {\sc Engin, E.}
@@ -37,6 +32,12 @@
   Ray Induced Soft Error in Semiconductor Devices: JESD89A}.
 \newblock {\em JEDEC Sold State Technology Association\/}, p\'aginas 1--85,
   2006.
+
+\bibitem[{Melis(2014)}]{Melis2014}
+{\sc Melis, W.~K.}
+\newblock {\em {Reconstruction of High-energy Neutrino-induced Particle Showers
+  in KM3NeT .}\/}.
+\newblock Tesis Doctoral, 2014.
 
 \bibitem[{Sadasivan(2006)}]{Sadasivan2006}
 {\sc Sadasivan, S.}

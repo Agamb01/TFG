@@ -12,9 +12,8 @@ The style file: TeXiS/TeXiS.bst
 A level-1 auxiliary file: Cascaras/fin.aux
 Database file #1: latex.bib
 Database file #2: otros.bib
-Warning--empty journal in Actel2002
-Warning--there's a number but no volume in Actel2002
 Warning--missing publisher in R.B.J.BrinkgreveW.M.Swolfs2011
 Warning--missing publisher in Hennessy2006
 Warning--empty journal in Hu2010
-(There were 5 warnings)
+Warning--missing school in Melis2014
+(There were 4 warnings)

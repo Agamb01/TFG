@@ -346,122 +346,127 @@ Para terminar se justifica la importancia de la tolerancia en los sistemas y con
 %
 %
 
-%-------------------------------------------------------------------
-\section{Fallos}
-%-------------------------------------------------------------------
-\label{cap2:fallos}
-
-Un fallo ocurre cuando nuestro sistema no ha funcionado correctamente. Se pueden encontrar desde fallos en la definición de requisitos que se propagan hasta la fase de producción, hasta fallos producidos en el sistema por agentes externos como la radiación. En un sistema electrónico pueden ocurrir fallos que se clasifican en \textit{soft errors} o \textit{fallos transitorios} y \textit{hard errors} o \textit{fallos permanentes}.
-
-Cuando el fallo ocurrido afecta a los elementos de memoria alterando sus valores, esto incluye tanto a los datos como a las instrucciones, se conoce como \textit{soft error} o \textit{fallo transitorio}. Sin embargo, si el fallo daña o altera el funcionamiento del chip, se conoce como \textit{hard error} o \textit{fallo permanente}. 
-
-En esta sección se olvidan los fallos que se producen a partir de una mala implementación y se centra en los fallos producidos por agentes externos que no se pueden evitar en las fases de diseño. Y que afectan al hardware, dañando sus componentes o alterando los valores de las señales con las que trabaja.
-
-%-------------------------------------------------------------------
-\subsection{Causas}
-%-------------------------------------------------------------------
-\label{cap2:fallos:causas}
-
-
-Estos fallos se conocen como \textit{Single-Event Effects (SEEs)}, y se deben al choque de una partícula de energía contra un elemento del circuito integrado	\ref{fig:SEU_FPGA}. 
-
-\begin{figure}[htbp]
-	\centering
-		\includegraphics[width=0.85\textwidth]{Imagenes/SEU/SEU_FPGA.jpg}
-	\caption{Single Event Upset en una FPGA[\cite{Hu2010}].}
-	\label{fig:SEU_FPGA}
-\end{figure}
-
-Estas partículas pueden ser:
-
-\begin{itemize}
-
-  \item Los \textbf{rayos cósmicos} con suficiente carga, puede depositar energía suficiente para invertir un bit en un elemento de memoria, en una puerta lógica, o en una sección del circuito. Estos rayos pueden tener un origen galáctico o solar.  
-		
-  \item Un \textbf{protón y neutrones de alta energía}, con origen radiactivo o solar, puede provocar una reacción radiactiva ionizando elementos en el chip y provocando un SEE.
-
-\end{itemize}
-
-Los rayos cósmicos y las partículas solares reaccionan con la atmósfera provocando un efecto de lluvia de partículas. Este efecto se distribuye de manera diferente alrededor de la tierra debido a la densidad de la atmósfera, permitiendo que las partículas lleguen a nivel de suelo o bloqueando sus efectos.
-
-Como se mostró en la introducción, los efectos varían según la latitud, la longitud y la altitud \ref{fig:errores_vs_altitud2}. Las partículas colisionan contra la atmósfera y pierden energía. Cuanto menos densa sea la zona donde colisionen menos partículas colisionarán, perderán menos energía, y el porcentaje de fallos será mayor. 
-
-\begin{figure*}[htbp]
-  \centering
-  \includegraphics[width=0.75\textwidth]{Imagenes/Estadisticas/Neutrones1.eps}
-	\caption{Flujo de neutrones según a 40.000 pies de altitud[\cite{Hu2010}].} 
-	\label{fig:errores_vs_altitud2}
-\end{figure*}
-
-
-
-
-%-------------------------------------------------------------------
-\subsection{Tipos de fallos}
-%-------------------------------------------------------------------
-\label{cap2:fallos:tipos}
-
-Se clasifican los fallos en dos tipos, fallos transitorios o no destructivos y fallos permanentes o destructivos.
-
-%-------------------------------------------------------------------
-\subsubsection*{Fallos Transitorios}
-%-------------------------------------------------------------------
-\label{cap2:fallos:tipos:transitorios}
-
-Los \textit{fallos transitorios}, también llamados \textit{soft errors}, son aquellos que cambian el estado del dispositivo o celda sin afectar a su funcionalidad.
-
-Los principales fallos transitorios son [\cite{Jedec2006}]:
-
-\begin{itemize}
-
-  \item \textbf{Single-Event Upset (SEU)}
-	
-	Aquellos fallos que afectan a los elementos de memoria, celdas de memoria o registros, del chip invirtiendo su valor. En un microprocesador pueden corromper los datos del banco de registro o los datos y las señales de control entre las etapas de segmentación.	
-	
-  \item \textbf{Single-Event Functional Interrupt (SEFI)}
-	
-	Fallos que producen una perdida temporal de la funcionalidad del dispositivo. Provocando un mal funcionamiento detectable, que no requiere reiniciar el sistema para recuperar la funcionalidad. Normalmente se asocia con un SEU en los registros de control.
-	
-  \item \textbf{Single-Event Transient (SET)}
-	
-	Picos de energía provocados por una partícula en un nodo de un circuito integrado. Pueden propagarse y almacenarse en un biestable si se produce en un flanco de reloj.
-	
-\end{itemize}
-
-\begin{figure}[htbp]
-	\centering
-		\includegraphics[width=0.5\textwidth]{Imagenes/SEU/Soft_SEE.png}
-	\caption{Fallos Transitorios}
-	\label{fig:Soft_SEE}
-\end{figure}
-
-
-El sistema sufre las consecuencias como un cambio de valor en un bit. En un microprocesador el bit afectado es una celda de memoria en un registro corromperá el dato almacenado. Si afecta a un biestable en cualquier etapa de la segmentación, puede alterar el comportamiento de la instrucción, siendo más o menos grave según el lugar donde se produzca el fallo.
-
-
-
-
-
-
-%-------------------------------------------------------------------
-\subsubsection{Fallos Permanentes}
-%-------------------------------------------------------------------
-\label{cap2:fallos:tipos:permanentes}
-
-
-Los \textit{fallos permanentes} o \textit{hard errors} son los que afectan a la funcionalidad del dispositivo y lo dañan permanentemente.
-
-
-
-Los fallos permanentes son aquellos que afectan al hardware de forma irreversible. Producen cambios en el diseño que estropean el correcto funcionamiento del módulo o circuito que lo sufre. Estos fallos no se solucionan reiniciando el sistema. [\cite{Jedec2006}]
-
-% bibliografia: jesd89a.pdf
-
-Los fallos permanentes, una vez detectados, pueden solucionarse sustituyendo el chip o moviendolo de un lugar a otro dentro del mismo chip, véase el apartado de \ref{cap2:tolerancia:dinamica}.
-
-
-
-
+%%-------------------------------------------------------------------
+%\section{Fallos}
+%%-------------------------------------------------------------------
+%\label{cap2:fallos}
+%
+%Un fallo ocurre cuando nuestro sistema no ha funcionado correctamente. Se pueden encontrar desde fallos en la definición de requisitos que se propagan hasta la fase de producción, hasta fallos producidos en el sistema por agentes externos como la radiación. En un sistema electrónico pueden ocurrir fallos que se clasifican en \textit{soft errors} o \textit{fallos transitorios} y \textit{hard errors} o \textit{fallos permanentes}.
+%
+%Cuando el fallo ocurrido afecta a los elementos de memoria alterando sus valores, esto incluye tanto a los datos como a las instrucciones, se conoce como \textit{soft error} o \textit{fallo transitorio}. Sin embargo, si el fallo daña o altera el funcionamiento del chip, se conoce como \textit{hard error} o \textit{fallo permanente}. 
+%
+%En esta sección se olvidan los fallos que se producen a partir de una mala implementación y se centra en los fallos producidos por agentes externos que no se pueden evitar en las fases de diseño. Y que afectan al hardware, dañando sus componentes o alterando los valores de las señales con las que trabaja.
+%
+%%-------------------------------------------------------------------
+%\subsection{Causas}
+%%-------------------------------------------------------------------
+%\label{cap2:fallos:causas}
+%
+%
+%Estos fallos se conocen como \textit{Single-Event Effects (SEEs)}, y se deben al choque de una partícula de energía contra un elemento del circuito integrado	\ref{fig:SEU_FPGA}. 
+%
+%\begin{figure}[htbp]
+	%\centering
+		%\includegraphics[width=0.80\textwidth]{Imagenes/SEU/SEU_FPGA.jpg}
+	%\caption{Single Event Upset en una FPGA[\cite{Hu2010}].}
+	%\label{fig:SEU_FPGA}
+%\end{figure}
+%
+%Estas partículas pueden ser:
+%
+%\begin{itemize}
+%
+  %\item Los \textbf{rayos cósmicos} con suficiente carga, puede depositar energía suficiente para invertir un bit en un elemento de memoria, en una puerta lógica, o en una sección del circuito. Estos rayos pueden tener un origen galáctico o solar.  
+		%
+  %\item Los \textbf{protones y neutrones de alta energía}, con origen radiactivo o solar, puede provocar una reacción radiactiva ionizando elementos en el chip y provocando un SEE.
+%
+%\end{itemize}
+%
+%Los rayos cósmicos y las partículas solares reaccionan con la atmósfera provocando un efecto de lluvia de partículas. Este efecto se distribuye de manera diferente alrededor de la tierra debido a la densidad de la atmósfera, permitiendo que las partículas lleguen a nivel de suelo o bloqueando sus efectos.
+%
+%Como se mostró en la introducción, los efectos varían según la latitud, la longitud y la altitud \ref{fig:errores_vs_altitud2}. Al entrar en contacto con la atmósfera las partículas colisionan contra estas y pierden energía. Cuanto menos densa sea la zona donde colisionen menos partículas colisionarán, perderán menos energía, y el porcentaje de fallos será menor. Para más información sobre lluvias de partículas dirigirse a \cite{Melis2014}.
+%
+%\begin{figure*}[htbp]
+  %\centering
+  %\includegraphics[width=0.75\textwidth]{Imagenes/Estadisticas/Neutrones1.eps}
+	%\caption{Flujo de neutrones a 40.000 pies de altitud[\cite{Hu2010}].} 
+	%\label{fig:errores_vs_altitud2}
+%\end{figure*}
+%
+%
+%
+%
+%%-------------------------------------------------------------------
+%\subsection{Tipos de fallos}
+%%-------------------------------------------------------------------
+%\label{cap2:fallos:tipos}
+%
+%Se clasifican los fallos en dos tipos, fallos transitorios o no destructivos y fallos permanentes o destructivos.
+%
+%%-------------------------------------------------------------------
+%\subsubsection{Fallos Transitorios}
+%%-------------------------------------------------------------------
+%\label{cap2:fallos:tipos:transitorios}
+%
+%Los \textit{fallos transitorios}, también llamados \textit{soft errors}, son aquellos que cambian el estado del dispositivo o celda sin afectar a su funcionalidad.
+%
+%Los principales tipos de fallos transitorios son [\cite{Jedec2006}]:
+%
+%\begin{itemize}
+%
+  %\item \textbf{Single-Event Upset (SEU)}
+	%
+	%Aquellos fallos que afectan a los elementos de memoria, celdas de memoria o registros, del chip invirtiendo su valor. En un microprocesador pueden corromper los datos del banco de registro o los datos y las señales de control entre las etapas de segmentación.	
+	%
+  %\item \textbf{Single-Event Functional Interrupt (SEFI)}
+	%
+	%Fallos que producen una perdida temporal de la funcionalidad del dispositivo. Provocando un mal funcionamiento detectable, que no requiere reiniciar el sistema para recuperar la funcionalidad. Normalmente se asocia con un SEU en los registros de control.
+	%
+  %\item \textbf{Single-Event Transient (SET)}
+	%
+	%Picos de energía provocados por una partícula en un nodo de un circuito integrado. Pueden propagarse y almacenarse en un biestable si se produce en un flanco de reloj.
+	%
+%\end{itemize}
+%
+%\begin{figure}[htbp]
+	%\centering
+		%\includegraphics[width=0.5\textwidth]{Imagenes/SEU/Soft_SEE.png}
+	%\caption{Fallos Transitorios}
+	%\label{fig:Soft_SEE}
+%\end{figure}
+%
+%
+%El sistema sufre las consecuencias como un cambio de valor en un bit. Si se produce un fallo de este tipo en una celda de memoria o en un registro de un microprocesador corromperá el dato almacenado. Si afecta a un biestable en cualquier etapa de la segmentación, puede alterar el comportamiento de la instrucción, siendo más o menos grave según el lugar donde se produzca el fallo.
+%
+%Algunas técnicas de tolerancia frente a estos fallos se analizan en el apartado \ref{cap2:tolerancia:estatica}.
+%
+%%-------------------------------------------------------------------
+%\subsubsection{Fallos Permanentes}
+%%-------------------------------------------------------------------
+%\label{cap2:fallos:tipos:permanentes}
+%
+%
+%Los \textit{fallos permanentes} o \textit{hard errors} son los que afectan a la funcionalidad del dispositivo y lo dañan permanentemente. Pueden producir cambios en el diseño que estropean el correcto funcionamiento del módulo o circuito que lo sufre [\cite{Jedec2006}].
+%
+%Los fallos permanentes, una vez detectados, unicamente pueden solucionarse sustituyendo el chip o moviendolo de un lugar a otro dentro del mismo chip, véase el apartado de \ref{cap2:tolerancia:dinamica}.
+%
+%Los principales tipos de fallos permanente son:
+%
+%\begin{itemize}
+%
+  %\item \textbf{Single Event Latch-up (SEL)}
+	%
+	%Corto circuito en un transistor que provoca el mal funcionamiento del mismo. En algunos casos pueden ser reparados reiniciando el sistema.
+	%
+  %\item \textbf{Single Event Hard Errors (SHE)}	
+	%
+	%Este fallo se identifica por causar que las celdas afectadas no puedan cambiar de estado.	
+	%
+%\end{itemize}
+%
+%Existen otros tipos de fallos permanentes, \textit{Single-Event Burnout (SEB)} y \textit{Single-Event Gate Rupture (SEGR)}, que destruyen el transistor a nivel físico.	
+  %
+%Algunas técnicas de tolerancia frente a estos fallos se analizan en el apartado \ref{cap2:tolerancia:dinamica}.
 
 
 %-------------------------------------------------------------------
