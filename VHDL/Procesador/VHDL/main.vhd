@@ -6,8 +6,6 @@
 -- Design Name: 
 -- Module Name:    main - Behavioral 
 -- Project Name: 
--- Target Devices: 
--- Tool versions: 
 -- Description: 
 --
 -- Dependencies: 

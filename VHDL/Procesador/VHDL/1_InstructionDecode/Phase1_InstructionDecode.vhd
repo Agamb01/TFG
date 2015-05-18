@@ -48,6 +48,7 @@ entity Phase1_InstructionDecode is
 
    -- Señales de control (ID->EXE)
       out_WB_control  : out STD_LOGIC_VECTOR(1 downto 0);
+        -- [1]=MemtoReg, [0]=RegWrite
       out_MEM_control : out STD_LOGIC_VECTOR(5 downto 0);
         -- [5:2]=BRCond(Negative,Zero,Cond,Incond), [1]=MemRead, [0]=MemWrite
       out_EXE_control : out STD_LOGIC_VECTOR(3 downto 0)
@@ -68,7 +69,6 @@ component ControlPrincipal is
         -- [5:2]=BRCond(Negative,Zero,Cond,Incond), [1]=MemRead, [0]=MemWrite
       out_EXE_control : out STD_LOGIC_VECTOR(3 downto 0)
         -- [3:1]=ALUop, [0]=ALUsrc
-      --out_test    : out STD_LOGIC_VECTOR(4 downto 0)
    );
 end component;
 -------------------------------Control Principal-----------------------------
@@ -85,7 +85,7 @@ end component;
              in_WREnable : in STD_LOGIC;
              out_busA    : out STD_LOGIC_VECTOR(31 downto 0);
              out_busB    : out STD_LOGIC_VECTOR(31 downto 0)
-            );
+      );
    end component;
 
    signal s_regA : STD_LOGIC_VECTOR(3 downto 0);   -- Registro A
