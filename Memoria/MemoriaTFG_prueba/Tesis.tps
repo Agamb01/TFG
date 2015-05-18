@@ -53,7 +53,7 @@ Class=BibTeXView
 Document=otros.bib
 
 [Frame2_View0,0]
-TopLine=130
+TopLine=165
 Cursor=6742
 
 [Frame3]
@@ -89,8 +89,8 @@ Class=LaTeXView
 Document=Capitulos\02TemaFallos.tex
 
 [Frame4_View0,0]
-TopLine=546
-Cursor=22748
+TopLine=543
+Cursor=24736
 
 [Frame5]
 Flags=0
@@ -108,9 +108,9 @@ Document=WorkingOn.txt
 
 [Frame5_View0,0]
 TopLine=0
-Cursor=530
+Cursor=563
 
 [SessionInfo]
 FrameCount=6
-ActiveFrame=5
+ActiveFrame=4
 
