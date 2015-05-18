@@ -25,12 +25,12 @@ Para terminar se justifica la importancia de la tolerancia en los sistemas y con
 \end{resumen}
 
 
-%-------------------------------------------------------------------
-\section*{Introducción}
-%-------------------------------------------------------------------
-\label{cap2:introduccion}
-
-...
+%%-------------------------------------------------------------------
+%\section*{Introducción}
+%%-------------------------------------------------------------------
+%\label{cap2:introduccion}
+%
+%...
 
 
 %-------------------------------------------------------------------
@@ -351,57 +351,25 @@ El acceso a memoria es direccionable por bytes en el modo "`Big endian"' con una
 %-------------------------------------------------------------------
 \label{cap2:fallos}
 
-Un fallo ocurre cuando nuestro sistema no ha funcionado correctamente. Y se pueden encontrar desde fallos en la definición de requisitos que se propagan hasta la fase de producción, hasta fallos producidos en el sistema por agentes externos como la radiación.Puede haber sido un fallo transitorio, o un fallo permanente. 
+Un fallo ocurre cuando nuestro sistema no ha funcionado correctamente. Se pueden encontrar desde fallos en la definición de requisitos que se propagan hasta la fase de producción, hasta fallos producidos en el sistema por agentes externos como la radiación. En un sistema electrónico pueden ocurrir fallos que se clasifican en \textit{soft errors} o \textit{fallos transitorios} y \textit{hard errors} o \textit{fallos permanentes}.
 
-Cuando el fallo ocurrido afecta a los datos o las instrucciones cambiando su valor o funcionalidad, se conoce como \textit{soft error} o \textit{fallo transitorio}. En este tipo de fallos el chip que lo sufre no se ha visto alterado ni dañado, solo se han visto modificados los datos con los que trabaja. Por tanto, si se reinicia el sistema este funciona correctamente.
+Cuando el fallo ocurrido afecta a los elementos de memoria alterando sus valores, esto incluye tanto a los datos como a las instrucciones, se conoce como \textit{soft error} o \textit{fallo transitorio}. Sin embargo, si el fallo daña o altera el funcionamiento del chip, se conoce como \textit{hard error} o \textit{fallo permanente}. 
 
-
-En un sistema electrónico pueden ocurrir una gran variedad de fallos, se clasifican en \textit{soft errors} o \textit{fallos transitorios} y \textit{hard errors} o \textit{fallos permanentes}. La diferencia entre estos dos tipos de fallos está en que los \textit{fallos permanentes} no se solucionan con reiniciar el sistema.
-
-En esta sección se olvidan de los fallos que se producen a partir de una mala implementación y se centra en los fallos producidos por agentes externos que no se pueden evitar en las fases de diseño. Y que afectan al hardware, dañando sus componentes o alterando los valores de las señales con las que se trabaja.
-
-
-Por que surgen los fallos con origen externo:
-
-
-
-Los fallos analizados en esta sección se van a dividir en dos categorías: fallos permanentes y fallos transitorios.
-
-
-critical charge:
-
-soft error:
-
-hard error:
-
-
-single-event functional interrupt (SEFI):
-
-single-event latch-up (SEL):
-
-single event transient (SET):
-
-single-event upset (SEU):
-
-single-event upset (SEU) rate:
-
-soft error, device:
-
-soft error rate (SER):
-
-
-
+En esta sección se olvidan los fallos que se producen a partir de una mala implementación y se centra en los fallos producidos por agentes externos que no se pueden evitar en las fases de diseño. Y que afectan al hardware, dañando sus componentes o alterando los valores de las señales con las que trabaja.
 
 %-------------------------------------------------------------------
-\subsection{Fallos Permanentes}
+\subsection*{Origen}
 %-------------------------------------------------------------------
-\label{cap2:fallos:fallospermanentes}
+\label{cap2:fallos:origen}
 
-Los fallos permanentes son aquellos que afectan al sistema de forma irreversible. Producen cambios en el diseño que estropean el correcto funcionamiento del módulo o circuito que lo sufre. Estos fallos no se solucionan reiniciando el sistema. [\cite{Jedec2006}]
+La causa de estos fallos se conoce como \textit{Single-Event Effects (SEEs)}, y se deben al choque de una partícula de energía contra un elemento del circuito integrado.
 
-%bibliografia: jesd89a.pdf
+Todos los elementos de un circuitos integrados menores a un milímetro son susceptibles a los SEE. Si la partícula colisiona contra o cerca de un transistor, y esta tiene suficiente energía, inducirá un cambio de valor en el mismo, esto se conoce como Single-Event Upset (SEU). Si la partícula colisiona contra una conexión, puede inducir corriente y voltaje que puede propagarse por el circuito.
 
-Los fallos permanentes, una vez detectados, pueden solucionarse sustituyendo el chip, o moviendolo de un lugar a otro dentro del mismo chip,vease el apartado \ref{cap2:fpga}.
+El origen de partículas puede venir del espacio, de núcleos de átomos que viajan a casi a la velocidad de la luz y chocan contra la tierra desde todas las direcciones, llamados rayos cósmicos. 
+%Cosmic rays originate in outer space, travel at nearly the speed of light, and strike Earth from all directions. Cosmic rays are the nuclei of atoms, ranging from the lightest to the heaviest elements in the periodic table.
+Además la presión del aire también participa en la generación de estas partículas y su transporte hasta el nivel de suelo. [\cite{Hu2010}]
+%Air pressure also plays a significant role in causing neutron-generating reactions and in transporting neutrons to ground level. An intense neutron environment exists at higher altitudes in the atmosphere, 10 km to 40 km and more above the surface. In addition, Earth’s magnetic field causes the flux to vary from the equator to the poles, with the equator having the least flux and the poles having the greatest flux. The magnetic field of the sun as it varies during the sunspot cycle also influences the flux of cosmic rays on earth by roughly 20%. 
 
 
 
@@ -409,9 +377,30 @@ Los fallos permanentes, una vez detectados, pueden solucionarse sustituyendo el 
 %-------------------------------------------------------------------
 \subsection{Fallos Transitorios}
 %-------------------------------------------------------------------
-\label{cap2:fallos:fallostransitorios}
+\label{cap2:fallos:transitorios}
 
-...
+Los \textbf{fallos transitorios}, también llamados \textit{soft errors}, [\cite{Actel2002}].
+
+SET: Son fallos que afectan a las conexiones del chip. 
+
+SEU: Son fallos que alteran la carga almacenada en un transistor.
+
+
+
+
+%-------------------------------------------------------------------
+\subsection{Fallos Permanentes}
+%-------------------------------------------------------------------
+\label{cap2:fallos:permanentes}
+
+Los fallos permanentes son aquellos que afectan al hardware de forma irreversible. Producen cambios en el diseño que estropean el correcto funcionamiento del módulo o circuito que lo sufre. Estos fallos no se solucionan reiniciando el sistema. [\cite{Jedec2006}]
+
+% bibliografia: jesd89a.pdf
+
+Los fallos permanentes, una vez detectados, pueden solucionarse sustituyendo el chip o moviendolo de un lugar a otro dentro del mismo chip, véase el apartado de \ref{cap2:tolerancia:dinamica}.
+
+
+
 
 
 
@@ -427,14 +416,14 @@ Existen dos tipos de tolerancia; tolerancia estática y tolerancia dinámica.
 %-------------------------------------------------------------------
 \subsection{Tolerancia estática}
 %-------------------------------------------------------------------
-\label{cap2:tolerancia:toleranciaestatica}
+\label{cap2:tolerancia:estatica}
 
 ...
 
 %-------------------------------------------------------------------
-\subsection{Tolerancia en dinámica}
+\subsection{Tolerancia dinámica}
 %-------------------------------------------------------------------
-\label{cap2:tolerancia:toleranciadinamica}
+\label{cap2:tolerancia:dinamica}
 
 ...
 
