@@ -89,8 +89,8 @@ Class=LaTeXView
 Document=Capitulos\02TemaFallos.tex
 
 [Frame4_View0,0]
-TopLine=624
-Cursor=28897
+TopLine=600
+Cursor=26763
 
 [SessionInfo]
 FrameCount=5

@@ -464,7 +464,6 @@ Para terminar se justifica la importancia de la tolerancia en los sistemas y con
 
 La tolerancia a fallos se define como la capacidad de un sistema de funcionar correctamente incluso si se produce un fallo o anomalía en el sistema. 
 
-
 Aquellos fallos que no se enmascaran por no usarse el segmento donde se producen pueden causar graves consecuencias, para ello existen técnicas de tolerancia a fallos que se comentan a continuación.
 
 Cuando ocurren fallos de los comentados en la sección \ref{cap2:fallos} pueden no llegan a provocar errores en el funcionamiento del sistema. Los cambios provocados por los fallos se ven enmascarados por las siguientes razones:
@@ -473,46 +472,34 @@ Cuando ocurren fallos de los comentados en la sección \ref{cap2:fallos} pueden n
 
   \item \textbf{Enmascarado lógico}: Se evita el error en una puerta lógica, gracias a que el valor del dato no es necesario para estimar la salida. En la figura \ref{fig:Logical_masking} vemos que el valor de la señal invertida es indiferente para calcular el resultado ya que el resultado de una puerta "`or"' es "`1"' siempre que una de sus entradas sea "`1"'.
 	
+	\begin{figure}[htbp]
+		\centering
+			\includegraphics[width=0.75\textwidth]{Imagenes/SEU/Logical_masking.jpg}
+		\caption{Fallo enmascarado por una puerta lógica.}
+		\label{fig:Logical_masking}
+	\end{figure}
+
 	\item \textbf{Enmascarado eléctrico}: El fallo producido pierde intensidad en el recorrido lógico y no tiene efecto al llegar al elemento de memoria que lo almacenaría. Figura \ref{fig:Electrical_masking}.
 	
-	\item \textbf{Enmascarado temporal}: El fallo se propaga con suficiente energía hasta el biestable, pero no se almacena debido a que no ocurre en la ventana de reloj.
+	\begin{figure}[htbp]
+		\centering
+			\includegraphics[width=0.75\textwidth]{Imagenes/SEU/Electrical_masking.jpg}
+		\caption{Fallo enmascarado eléctricamente.}
+		\label{fig:Electrical_masking}
+	\end{figure}
 
+	\item \textbf{Enmascarado temporal}: El fallo se propaga con suficiente energía hasta el biestable, sin embargo, ocurre fuera de la de la ventana crítica de tiempo y la señal puede estabilizarse a su valor correcto antes de almacenarse en el biestable Figura \ref{fig:Latching_masking}.
+
+	\begin{figure}[htbp]
+		\centering
+			\includegraphics[width=0.75\textwidth]{Imagenes/SEU/Latching_masking.jpg}
+		\caption{Fallo enmascarado por ventana de tiempo.}
+		\label{fig:Latching_masking}
+	\end{figure}
 
 \end{itemize}
 
-\begin{figure*}[htbp]
-  \centering
-  \subfloat{\includegraphics[width=0.45\textwidth]{Imagenes/Estadisticas/penetracion_movil.png}} 
-	  \hspace{5mm}
-  \subfloat{\includegraphics[width=0.45\textwidth]{Imagenes/Estadisticas/penetracion_ordenador.png}}
-  \caption{Estadísticas de uso en hogares españoles.} \label{fig:uso_en_hogares}
-\end{figure*}
-
-
-\begin{figure}[htbp]
-	\centering
-		\includegraphics[width=0.75\textwidth]{Imagenes/SEU/Logical_masking.gif}
-	\caption{Fallo enmascarado por una puerta lógica.}
-	\label{fig:Logical_masking}
-\end{figure}
-
-\begin{figure}[htbp]
-	\centering
-		\includegraphics[width=0.75\textwidth]{Imagenes/SEU/Electrical_masking.jpg}
-	\caption{Fallo enmascarado por electricamente.}
-	\label{fig:Electrical_masking}
-\end{figure}
-
-\begin{figure}[htbp]
-	\centering
-		\includegraphics[width=0.75\textwidth]{Imagenes/SEU/Latching_masking.gif}
-	\caption{Fallo enmascarado por tiempo.}
-	\label{fig:Latching_masking}
-\end{figure}
-
-
-
-Para poder tolerar los fallos vistos en la sección \ref{cap2:fallos} existen dos tipos de tolerancia; tolerancia estática y tolerancia dinámica.
+Para los fallos que no se enmascaran, descritos en la sección \ref{cap2:fallos}, existen técnicas de tolerancia que se describen a continuación.
 
 %-------------------------------------------------------------------
 \subsection{Tolerancia estática}
