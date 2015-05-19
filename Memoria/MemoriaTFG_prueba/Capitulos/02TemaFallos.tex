@@ -428,7 +428,6 @@ Para terminar se justifica la importancia de la tolerancia en los sistemas y con
 %
 %El sistema sufre las consecuencias como un cambio de valor en un bit. Si se produce un fallo de este tipo en una celda de memoria o en un registro de un microprocesador corromperá el dato almacenado. Si afecta a un biestable en cualquier etapa de la segmentación, puede alterar el comportamiento de la instrucción, siendo más o menos grave según el lugar donde se produzca el fallo.
 %
-%Algunas técnicas de tolerancia frente a estos fallos se analizan en el apartado \ref{cap2:tolerancia:estatica}.
 %
 %-------------------------------------------------------------------
 %\subsubsection{Fallos Permanentes}
@@ -454,7 +453,7 @@ Para terminar se justifica la importancia de la tolerancia en los sistemas y con
 %
 %Existen otros tipos de fallos permanentes, \textit{Single-Event Burnout (SEB)} y \textit{Single-Event Gate Rupture (SEGR)}, que destruyen el transistor a nivel físico.	
   %
-%Los fallos permanentes, una vez detectados, unicamente pueden solucionarse sustituyendo el chip o moviendolo de un lugar a otro dentro del mismo chip, véase el apartado de \ref{cap2:tolerancia:dinamica}.
+%Los fallos permanentes, una vez detectados, unicamente pueden solucionarse sustituyendo el chip o moviendolo de un lugar a otro dentro del mismo chip.
 
 
 %-------------------------------------------------------------------
@@ -464,13 +463,13 @@ Para terminar se justifica la importancia de la tolerancia en los sistemas y con
 
 La tolerancia a fallos se define como la capacidad de un sistema de funcionar correctamente incluso si se produce un fallo o anomalía en el sistema. 
 
-Aquellos fallos que no se enmascaran por no usarse el segmento donde se producen pueden causar graves consecuencias, para ello existen técnicas de tolerancia a fallos que se comentan a continuación.
-
-Cuando ocurren fallos de los comentados en la sección \ref{cap2:fallos} pueden no llegan a provocar errores en el funcionamiento del sistema. Los cambios provocados por los fallos se ven enmascarados por las siguientes razones:
+En ocasiones se producen fallos que no llegan a propagarse por el sitema y no producen errores en su funcionamiento, esto ocurre cuando los cambios realizados por los fallos se ven enmascarados. Puede deberse a alguna de las siguientes razones:
 
 \begin{itemize}
 
-  \item \textbf{Enmascarado lógico}: Se evita el error en una puerta lógica, gracias a que el valor del dato no es necesario para estimar la salida. En la figura \ref{fig:Logical_masking} vemos que el valor de la señal invertida es indiferente para calcular el resultado ya que el resultado de una puerta "`or"' es "`1"' siempre que una de sus entradas sea "`1"'.
+  \item \textbf{Enmascarado lógico}
+	
+	Se evita el error en una puerta lógica, gracias a que el valor del dato no es necesario para estimar la salida. En la figura \ref{fig:Logical_masking} vemos que el valor de la señal invertida es indiferente para calcular el resultado ya que el resultado de una puerta "`or"' es "`1"' siempre que una de sus entradas sea "`1"'.
 	
 	\begin{figure}[htbp]
 		\centering
@@ -479,7 +478,9 @@ Cuando ocurren fallos de los comentados en la sección \ref{cap2:fallos} pueden n
 		\label{fig:Logical_masking}
 	\end{figure}
 
-	\item \textbf{Enmascarado eléctrico}: El fallo producido pierde intensidad en el recorrido lógico y no tiene efecto al llegar al elemento de memoria que lo almacenaría. Figura \ref{fig:Electrical_masking}.
+	\item \textbf{Enmascarado eléctrico}
+	
+	El fallo producido pierde intensidad en el recorrido lógico y no tiene efecto al llegar al elemento de memoria que lo almacenaría. Figura \ref{fig:Electrical_masking}.
 	
 	\begin{figure}[htbp]
 		\centering
@@ -488,7 +489,9 @@ Cuando ocurren fallos de los comentados en la sección \ref{cap2:fallos} pueden n
 		\label{fig:Electrical_masking}
 	\end{figure}
 
-	\item \textbf{Enmascarado temporal}: El fallo se propaga con suficiente energía hasta el biestable, sin embargo, ocurre fuera de la de la ventana crítica de tiempo y la señal puede estabilizarse a su valor correcto antes de almacenarse en el biestable Figura \ref{fig:Latching_masking}.
+	\item \textbf{Enmascarado temporal}
+	
+	El fallo se propaga con suficiente energía hasta el biestable, sin embargo, ocurre fuera de la de la ventana crítica de tiempo y la señal puede estabilizarse a su valor correcto antes de almacenarse en el biestable Figura \ref{fig:Latching_masking}.
 
 	\begin{figure}[htbp]
 		\centering
@@ -499,7 +502,37 @@ Cuando ocurren fallos de los comentados en la sección \ref{cap2:fallos} pueden n
 
 \end{itemize}
 
-Para los fallos que no se enmascaran, descritos en la sección \ref{cap2:fallos}, existen técnicas de tolerancia que se describen a continuación.
+Hay diferentes grados de tolerancia que dependen de la aplicación del sistema:
+
+\begin{itemize}
+
+  \item \textbf{Tolerancia completa  (fail operational)}
+  
+	El sistema puede seguir funcionando sin perder funcionalidad ni prestaciones.
+	
+  \item \textbf{Degradación aceptable (failsoft)}
+  
+	El sistema continua funcionando parcialmente hasta la reparación del fallo.
+	
+  \item \textbf{Parada segura (failsafe)}
+  
+	El sistema se detiene en un estado seguro hasta que se repare el fallo.
+	
+\end{itemize}
+
+
+La tolerancia se trata principalmente aplicando la redundancia en uno o varios de los siguientes campos:
+
+\begin{itemize}
+  \item \textbf{Redundancia de Información:} Se mantienen varias copias de los datos.
+  \item \textbf{Redundancia de Recursos:} Se replican varias veces los componentes funcionales.
+	\item \textbf{Redundancia de Tiempo:} Se realiza una acción varias veces.
+\end{itemize}
+
+
+
+
+
 
 %-------------------------------------------------------------------
 \subsection{Tolerancia estática}
