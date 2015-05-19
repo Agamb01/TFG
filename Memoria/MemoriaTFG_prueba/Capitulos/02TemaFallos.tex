@@ -521,32 +521,69 @@ Hay diferentes grados de tolerancia que dependen de la aplicación del sistema:
 \end{itemize}
 
 
-La tolerancia se trata principalmente aplicando la redundancia en uno o varios de los siguientes campos:
+La tolerancia a fallos hardware se trata principalmente aplicando la redundancia de uno o varios de los siguientes tipos:
+
+
+%-------------------------------------------------------------------
+\subsection{Redundancia en la información}
+%-------------------------------------------------------------------
+\label{cap2:tolerancia:informacion}
+
+La redundancia de datos se basa en mantener varias copias de todos los datos en diferentes ubicaciones junto a códigos de detección y corrección de errores. La replicación de datos consigue que la perdida o daño de una memoria no implique la perdida de los datos que almacena. Los códigos de detección y corrección permiten comprobar los datos en busca de errores y corregir los datos si fuese necesario.
+
+El ejemplo más claro de este tipo de tolerancia es el conocido como \textit{conjunto redundante de discos independientes} o \textit{redundant array of independent disks (RAID)}. Las diferentes clases de RAID proporcionan un acceso a los datos rápido y transparente para el sistema operativo [\cite{Torrecillas}]. Por ejemplo:
 
 \begin{itemize}
-  \item \textbf{Redundancia de Información:} Se mantienen varias copias de los datos.
-  \item \textbf{Redundancia de Recursos:} Se replican varias veces los componentes funcionales.
-	\item \textbf{Redundancia de Tiempo:} Se realiza una acción varias veces.
+  \item \textbf{RAID 1:} Se basa en la utilización de discos adicionales sobre los que se realiza una copia de los datos que se están modificando. 
+  \item \textbf{RAID 5:} Reparte la información en bloques con bits de paridad, que se guardan en diferentes discos.
 \end{itemize}
 
 
+%-------------------------------------------------------------------
+\subsection{Redundancia en el tiempo}
+%-------------------------------------------------------------------
+\label{cap2:tolerancia:tiempo}
 
+La redundancia en el tiempo es efectiva contra los fallos transitorios. Esta consiste en ejecutar parte de un programa o el programa completo varias veces. Los fallos transitorios, como se ha explicado anteriormente, se producen en zonas aleatorias del chip, siendo poco probable que aparezca el mismo error en el mismo lugar.
 
+Este tipo de redundancia requiere una menor cantidad de hardware y de software, pero requiere ejecutar varias veces el programa, reduciendo el rendimiento del sistema.
 
+Algunas técnicas de redundancia en el tiempo se basan en "`puntos de control"' o "`checkpoints"'. Estas técnicas requieren almacenar los datos con los que se está trabajando cada cierto tiempo, creando un "`punto de control"', esto permite que al detectar un error se pueda recurrir al último "`checkpoint"' en vez de reiniciar el programa completo \cite{Kadav2013}.
 
 %-------------------------------------------------------------------
-\subsection{Tolerancia estática}
+\subsection{Redundancia en el hardware}
 %-------------------------------------------------------------------
-\label{cap2:tolerancia:estatica}
+\label{cap2:tolerancia:hardware}
 
-...
+La redundancia hardware se basa en la inserción de módulos extra para la detección y corrección de los fallos. Aunque su objetivo es el de reducir el número de fallos que provocan errores, la inserción de módulos extra implica un aumento en la complejidad del sistema, con ello aumenta la posible aparición de nuevos fallos.
+
+El tolerancia con hardware redundante se clasifica en:
+
+\begin{itemize}
+  \item \textbf{Tolerancia estática:} Los componentes redundantes están siempre activos.
+  \item \textbf{Tolerancia dinámica:} Los componentes redundantes se activan cuando se detecta un fallo.
+  \item \textbf{Tolerancia híbrida:} Combinan tolerancia estática con tolerancia dinámica.
+\end{itemize}
+
+Algunas técnicas se detallan a continuación.
 
 %-------------------------------------------------------------------
-\subsection{Tolerancia dinámica}
+\subsubsection{Redundancia modular n-ésima}
 %-------------------------------------------------------------------
-\label{cap2:tolerancia:dinamica}
+\label{cap2:tolerancia:hardware:nmr}
 
-...
+La 
+
+%-------------------------------------------------------------------
+\subsubsection{Tolerancia dinámica}
+%-------------------------------------------------------------------
+\label{cap2:tolerancia:hardware:dinamica}
+
+Reconfiguración dinámica
+
+
+
+
 
 %-------------------------------------------------------------------
 \subsection{Tolerancia en microprocesadores}

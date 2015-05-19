@@ -1,18 +1,3 @@
-Working on:   02TemaFallos/Fallos/Causas
-
-
-
-PDF MENDELEY: 
-Reconstruction of high Energy Neutrino- induced.....
-
-
-ONLINE:
-http://www.kip.uni-heidelberg.de/DCS-Board/datasheets/actel/SER_FAQs.pdf
-http://www.actel.com/documents/SER_FAQ.pdf
-http://www.tezzaron.com/media/soft_errors_1_1_secure.pdf
-http://space.epfl.ch/webdav/site/space/shared/industry_media/07%20SEE%20Effect%20F.Sturesson.pdf
-http://www.kip.uni-heidelberg.de/~coulon/Lectures/Detectors/Free_PDFs/Lecture9.pdf
-https://accelconf.web.cern.ch/accelconf/IPAC10/papers/wepeb070.pdf
-
+Working on:   02TemaFallos/Fallos/Tolerancia
 
 
