@@ -11,8 +11,8 @@ MaxPos.x=-1
 MaxPos.y=-1
 NormalPos.left=4
 NormalPos.top=26
-NormalPos.right=1339
-NormalPos.bottom=582
+NormalPos.right=1008
+NormalPos.bottom=622
 Class=LaTeXView
 Document=Tesis.tex
 
@@ -29,8 +29,8 @@ MaxPos.x=-1
 MaxPos.y=-1
 NormalPos.left=4
 NormalPos.top=26
-NormalPos.right=1339
-NormalPos.bottom=582
+NormalPos.right=1008
+NormalPos.bottom=622
 Class=LaTeXView
 Document=Cascaras\acronimos.tex
 
@@ -47,8 +47,8 @@ MaxPos.x=-1
 MaxPos.y=-1
 NormalPos.left=4
 NormalPos.top=26
-NormalPos.right=1339
-NormalPos.bottom=582
+NormalPos.right=1008
+NormalPos.bottom=622
 Class=LaTeXView
 Document=config.tex
 
@@ -65,8 +65,8 @@ MaxPos.x=-1
 MaxPos.y=-1
 NormalPos.left=4
 NormalPos.top=26
-NormalPos.right=1339
-NormalPos.bottom=582
+NormalPos.right=1008
+NormalPos.bottom=622
 Class=LaTeXView
 Document=Capitulos\03TrabajoPropio.tex
 
@@ -83,14 +83,14 @@ MaxPos.x=-1
 MaxPos.y=-1
 NormalPos.left=4
 NormalPos.top=26
-NormalPos.right=1339
-NormalPos.bottom=582
+NormalPos.right=1008
+NormalPos.bottom=622
 Class=LaTeXView
 Document=Capitulos\02TemaFallos.tex
 
 [Frame4_View0,0]
-TopLine=665
-Cursor=33387
+TopLine=710
+Cursor=33153
 
 [Frame5]
 Flags=0
@@ -101,8 +101,8 @@ MaxPos.x=-1
 MaxPos.y=-1
 NormalPos.left=4
 NormalPos.top=26
-NormalPos.right=1339
-NormalPos.bottom=582
+NormalPos.right=1008
+NormalPos.bottom=622
 Class=LaTeXView
 Document=WorkingOn.txt
 
