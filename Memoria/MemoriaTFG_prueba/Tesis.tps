@@ -11,14 +11,14 @@ MaxPos.x=-1
 MaxPos.y=-1
 NormalPos.left=4
 NormalPos.top=26
-NormalPos.right=1008
-NormalPos.bottom=622
+NormalPos.right=640
+NormalPos.bottom=566
 Class=LaTeXView
-Document=Tesis.tex
+Document=Capitulos\02TemaFallos.tex
 
 [Frame0_View0,0]
-TopLine=123
-Cursor=4804
+TopLine=521
+Cursor=18771
 
 [Frame1]
 Flags=0
@@ -29,14 +29,14 @@ MaxPos.x=-1
 MaxPos.y=-1
 NormalPos.left=4
 NormalPos.top=26
-NormalPos.right=1008
-NormalPos.bottom=622
+NormalPos.right=640
+NormalPos.bottom=566
 Class=LaTeXView
-Document=Cascaras\acronimos.tex
+Document=Capitulos\Trabajando.tex
 
 [Frame1_View0,0]
-TopLine=10
-Cursor=846
+TopLine=221
+Cursor=8296
 
 [Frame2]
 Flags=0
@@ -47,14 +47,14 @@ MaxPos.x=-1
 MaxPos.y=-1
 NormalPos.left=4
 NormalPos.top=26
-NormalPos.right=1008
-NormalPos.bottom=622
+NormalPos.right=640
+NormalPos.bottom=566
 Class=LaTeXView
-Document=config.tex
+Document=C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\hyperref.sty
 
 [Frame2_View0,0]
-TopLine=49
-Cursor=2602
+TopLine=4771
+Cursor=114554
 
 [Frame3]
 Flags=0
@@ -65,14 +65,14 @@ MaxPos.x=-1
 MaxPos.y=-1
 NormalPos.left=4
 NormalPos.top=26
-NormalPos.right=1008
-NormalPos.bottom=622
+NormalPos.right=640
+NormalPos.bottom=566
 Class=LaTeXView
-Document=Capitulos\03TrabajoPropio.tex
+Document=Tesis.tex
 
 [Frame3_View0,0]
-TopLine=84
-Cursor=228
+TopLine=216
+Cursor=4831
 
 [Frame4]
 Flags=0
@@ -83,14 +83,14 @@ MaxPos.x=-1
 MaxPos.y=-1
 NormalPos.left=4
 NormalPos.top=26
-NormalPos.right=1008
-NormalPos.bottom=622
+NormalPos.right=640
+NormalPos.bottom=566
 Class=LaTeXView
-Document=Capitulos\02TemaFallos.tex
+Document=Cascaras\acronimos.tex
 
 [Frame4_View0,0]
-TopLine=710
-Cursor=33153
+TopLine=17
+Cursor=170
 
 [Frame5]
 Flags=0
@@ -101,16 +101,52 @@ MaxPos.x=-1
 MaxPos.y=-1
 NormalPos.left=4
 NormalPos.top=26
-NormalPos.right=1008
-NormalPos.bottom=622
+NormalPos.right=640
+NormalPos.bottom=566
+Class=LaTeXView
+Document=Capitulos\03TrabajoPropio.tex
+
+[Frame5_View0,0]
+TopLine=14
+Cursor=228
+
+[Frame6]
+Flags=0
+ShowCmd=1
+MinPos.x=-1
+MinPos.y=-1
+MaxPos.x=-1
+MaxPos.y=-1
+NormalPos.left=4
+NormalPos.top=26
+NormalPos.right=640
+NormalPos.bottom=566
+Class=LaTeXView
+Document=config.tex
+
+[Frame6_View0,0]
+TopLine=78
+Cursor=2832
+
+[Frame7]
+Flags=0
+ShowCmd=1
+MinPos.x=-1
+MinPos.y=-1
+MaxPos.x=-1
+MaxPos.y=-1
+NormalPos.left=4
+NormalPos.top=26
+NormalPos.right=640
+NormalPos.bottom=566
 Class=LaTeXView
 Document=WorkingOn.txt
 
-[Frame5_View0,0]
+[Frame7_View0,0]
 TopLine=0
 Cursor=50
 
 [SessionInfo]
-FrameCount=6
-ActiveFrame=4
+FrameCount=8
+ActiveFrame=0
 

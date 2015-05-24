@@ -1,0 +1,164 @@
+%---------------------------------------------------------------------
+%
+%                     Capítulo Pruebas para correccion
+%
+%---------------------------------------------------------------------
+
+\chapter{Titulo por definir}
+\label{cap2A}
+
+\begin{FraseCelebre}
+  \begin{Frase}
+    "`La verdadera ciencia enseña, sobre todo, a dudar y a ser ignorante."' 
+  \end{Frase}
+  \begin{Fuente}
+    Ernest Rutherford 
+  \end{Fuente}
+\end{FraseCelebre}
+
+\begin{resumen}
+En este capítulo se define con detalle lo que es un procesador y su importancia en el mundo de hoy en día. También se tratan dos arquitectura más concretas, la arquitectura DLX y la arquitectura ARM.
+
+A continuación se define qué es un fallo y qué tipos de fallos pueden ocurrir en los sistemas. Además se explican algunas técnicas de tolerancia a fallos.
+
+Para terminar, se justifica la importancia de la tolerancia en los sistemas y concretamente porqué es necesaria la tolerancia en los microprocesadores.
+\end{resumen}
+
+%-----------------------------------------------------------------
+\subsection{ARM}
+%-----------------------------------------------------------------
+\label{cap:procesador:arm}
+
+Un poco de historia y su importancia en el mercado.
+
+\cite{Bustillos2012}
+
+
+%-----------------------------------------------------------------
+\subsubsection{Arquitectura ARM}
+%-----------------------------------------------------------------
+\label{cap:procesador:arm:arquitectura}
+
+La arquitectura ARM \cite{Limited2007b} es una arquitectura RISC con las características de esta:
+
+\begin{itemize}
+  \item Banco de registros uniforme.
+	\item Las instrucciones de procesamiento operan sobre los datos almacenados en los registros.
+	\item Modos de direccionamiento simples.
+	\item Instrucciones de tamaño fijo.
+\end{itemize}
+
+La arquitectura ARM proporciona algunas características adicionales para proporcionar un equilibrio entre el rendimiento, el tamaño del código, el consumo y silicio requerido:
+
+\begin{itemize}
+  \item Control adicional sobre la unidad aritmético-lógica.
+	\item Auto-incremento y auto-decremento para el direccionamiento.
+	\item Instrucciones de carga y almacenamiento múltiple.
+	\item Ejecución condicional de instrucciones.
+\end{itemize}
+
+Contiene un banco de registros de 31 registros de propósito general. De estos solo son visibles 16 registros, y pueden ser accedidos por cualquier instrucción. Los otros registros se utilizan para acelerar el procesado. Tres de estos registros tienen un uso especial y son el "`puntero de pila (SP)"', el "`registro de enlace (LR)"' y el "`contador de programa (PC)"'.
+
+%-----------------------------------------------------------------
+\subsubsection{Repertorio de instrucciones ARM}
+%-----------------------------------------------------------------
+\label{cap:procesador:arm:instrucciones}
+
+El repertorio de instrucciones se divide en seis categorias:
+
+\begin{itemize}
+
+  \item \textbf{Salto}
+	
+	Además de permitir que las instrucciones aritmético-lógicas alteren el flujo de control almacenando sus resultados en el registro PC, se incluye una instrucción estándar capaz de aplicar un salto de hasta 32MB hacia delante o hacia atrás.
+	
+  Otra instrucción de salto permite almacenar el valor del contador de programa en un registro para poder volver al mismo punto al finalizar el desvío. Esto es útil cuando se quiere llamar a una subrutina.
+	
+	También se permite lanzar instrucciones de salto las cuales realizan un cambio de juego de instrucciones. En caso de necesitar lanzar subrutinas en alguno de los otros juegos de instrucciones compatibles con la arquitectura como Thumb o Jazelle.
+	
+  \item \textbf{Procesamiento de datos}
+	
+	El procesamiento de datos se realiza mediante instrucciones aritmético-lógicas, operaciones de comparación, instrucciones sobre múltiples datos, instrucciones de multiplicación y operaciones diversas.
+	
+	Las instrucciones aritmético-lógicas, como su nombre describe, ejecutan operaciones aritméticas o lógicas sobre dos operandos. El primer operando siempre será un registro, mientras que el segundo puede ser un inmediato, o un segundo registro. Almacenando el resultado en un registro.
+	
+	Las operaciones de comparación aplican una operación aritmético-lógica, como se ha comentado antes. Sin embargo no escriben el resultado en un registro, en cambio actualizan los flags de condición.
+	
+  \item \textbf{Transferencia de registros de estado}
+	
+	Estas instrucciones son capaces de transferir contenido entre los registros especiales CPSR y SPSR y los registros de propósito general. 
+	
+	Al escribir en el registro CPSR se consigue establecer los valores de los bits de condición, habilitar o deshabilitar interrupciones, cambiar el estado y el modo del procesador y cambiar el modo de acceso a memoria entre "`little endian"' o "`big endian"'.
+	
+  \item \textbf{Carga y almacenamiento}
+	
+	Las instrucciones de carga y almacenamiento permiten transmitir datos entre los registros de propósito general y la memoria externa.
+	
+	Se pueden cargar o almacenar los registros de forma individual, un solo dato por instrucción, o de forma colectiva, un bloque de datos con una sola instrucción.
+	
+  \item \textbf{Co-procesador}
+	
+	Las instrucciones de co-procesador comunican al procesador principal con un co-procesador auxiliar para transmitir instrucciones o datos.
+	
+	Existen tres clases de este tipo de instrucciones. Procesado de datos, comienza el trabajo específico del co-procesador. Transferencia de instrucciones, envía o recibe datos del procesador a la memoria. Transferencia de registro, envía o recibe datos entre los registros del microprocesador y el co-procesador.
+	
+  \item \textbf{Excepciones}
+	
+	Las instrucciones de excepción generan interrupciones en el código. Las instrucciones "`Interrupción software"' normalmente se utiliza para realizar peticiones al sistema operativo. Mientras que las instrucciones "`Punto de interrupción software"' generan excepciones abortando la ejecución del programa.
+	
+\end{itemize}
+
+Los procesadores ARM son compatibles con tres juegos de instrucciones: Thumb/Thumb-2, ARM y Jazelle. ARM \cite{ARM-InstructionSet} y Thumb/Thumb-2 \cite{R.B.J.BrinkgreveW.M.Swolfs2011}
+ son juegos de instrucciones completos, mientras Jazelle es una extensión de ARM \cite{ARM-InstructionSet}.
+
+
+
+
+
+%-----------------------------------------------------------------
+\subsubsection{Segmentación ARM}
+%-----------------------------------------------------------------
+\label{cap:procesador:arm:segmentacion}
+
+La arquitectura ARM está segmentada en 3 etapas para aumentar la velocidad de flujo de entrada de las instrucciones en el procesador. Esto permite realizar varias operaciones al mismo tiempo y operar de forma continua. \cite{Limited2000}
+
+Las tres etapas en las que se divide la segmentación son (Figura \ref{fig:ARM-Pipeline}): 
+
+\begin{enumerate}
+  \item \textbf{Búsqueda de instrucción}
+	
+	La instrucción es accedida desde la memoria.
+	
+  \item \textbf{Decodificación}
+	
+	Los registros utilizados son extraídos de la instrucción.
+	
+  \item \textbf{Ejecución}
+
+  Los valores de los registros son accedidos del banco de registros. Las operaciones son realizadas. Y se almacenan los resultados en el banco de registros.
+
+\end{enumerate}
+
+\begin{figure}
+	\centering
+		\includegraphics[width=0.80\textwidth]{Imagenes/ARM/ARM-Pipeline.eps}
+	\caption{Segmentación ARM}
+	\label{fig:ARM-Pipeline}
+\end{figure}
+
+Mientras que una instrucción es ejecutada, la siguiente es decodificada y una tercera es traída de memoria.
+
+%-----------------------------------------------------------------
+\subsubsection{Memoria ARM}
+%-----------------------------------------------------------------
+\label{cap:procesador:arm:memoria}
+
+Se utiliza una arquitectura Von-Neumann con un único bus de 32 bits para acceder tanto a las instrucciones y como a los datos.
+
+El único tipo de instrucciones con acceso a memoria son las instrucciones de carga y almacenamiento. Puede transmitir datos de 8, 16 o 32 bits, alineados cada 1, 2 y 4 bytes respectivamente. \cite{Limited2000}
+
+
+
+
+
+

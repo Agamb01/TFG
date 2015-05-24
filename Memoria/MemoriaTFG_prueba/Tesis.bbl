@@ -1,4 +1,4 @@
-\begin{thebibliography}{8}
+\begin{thebibliography}{15}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[{Brinkgreve et\ al.(2011)Brinkgreve, Swolfs y
@@ -7,6 +7,16 @@
 \newblock {\em {ARM Architecture Reference Manual Thumb-2 Supplement}\/}.
 \newblock 2011.
 \newblock ISBN 9781597180948.
+
+\bibitem[{Bustillos(2012)}]{Bustillos2012}
+{\sc Bustillos, C.~T.}
+\newblock {Simulador arm en el \'{a}mbito docente}.
+\newblock 2012.
+
+\bibitem[{{Gonz\'{a}lez Salas}(2014)}]{carlos2014}
+{\sc {Gonz\'{a}lez Salas}, J.~C.}
+\newblock {\em {Filtro adaptativo tolerante a fallos}\/}.
+\newblock Tesis Doctoral, 2014.
 
 \bibitem[{Habinc(2002)}]{Habinc2002}
 {\sc Habinc, S.}
@@ -40,10 +50,37 @@
   ASPLOS '13\/}, p\'agina 473, 2013.
 \newblock ISSN 15232867.
 
+\bibitem[{Kirrmann(2005)}]{Kirrmann2005}
+{\sc Kirrmann, H.}
+\newblock {Fault Tolerant Computing in Industrial Automation}.
+\newblock {\em Lecture notes ABB Corporate ResearchETH\/}, 2005.
+
+\bibitem[{Limited(2000)}]{Limited2000}
+{\sc Limited, A. R.~M.}
+\newblock {ARM7TDMI-S}.
+\newblock (Rev 3), 2000.
+
+\bibitem[{Limited(2007)}]{Limited2007b}
+{\sc Limited, a. R.~M.}
+\newblock {ARM Architecture Reference Manual}.
+\newblock p\'aginas 1--1138, 2007.
+
 \bibitem[{Sadasivan(2006)}]{Sadasivan2006}
 {\sc Sadasivan, S.}
 \newblock {An introduction to the arm cortex-m3 processor}.
 \newblock 2006.
+
+\bibitem[{States(2011)}]{States2011}
+{\sc States, U.}
+\newblock {Reduce Cost and Board Space}.
+\newblock vol. 374, p\'aginas 1--8, 2011.
+
+\bibitem[{Summary et\ al.()Summary, Field, Long, Transfer, Instruction y
+  Examples}]{ARM-InstructionSet}
+{\sc Summary, I.~S.}, {\sc Field, T.~C.}, {\sc Long, M.}, {\sc Transfer,
+  S.~D.}, {\sc Instruction, U.} y {\sc Examples, I.~S.}
+\newblock {ARM Instruction Set}.
+\newblock p\'aginas 1--60, ????
 
 \bibitem[{Torrecillas()}]{Torrecillas}
 {\sc Torrecillas, J.~M.}
