@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.1.17)  23 MAY 2015 20:33
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.1.17)  24 MAY 2015 19:26
 entering extended mode
 **Tesis.tex
 (D:\TFG\TFG\Memoria\MemoriaTFG_prueba\Tesis.tex
@@ -425,12 +425,8 @@ Package grfext Info: Graphics extension search list:
 (D:\TFG\TFG\Memoria\MemoriaTFG_prueba\Cascaras/cover.aux) (D:\TFG\TFG\Memoria\MemoriaTFG_prueba\Cascaras/dedicatoria.aux
 ) (D:\TFG\TFG\Memoria\MemoriaTFG_prueba\Cascaras/agradecimientos.aux)
 (D:\TFG\TFG\Memoria\MemoriaTFG_prueba\Cascaras/resumen.aux)
-(D:\TFG\TFG\Memoria\MemoriaTFG_prueba\Capitulos/ParaCorreccion.aux)
-(D:\TFG\TFG\Memoria\MemoriaTFG_prueba\Capitulos/Trabajando.aux
-
-LaTeX Warning: Label `cap2A' multiply defined.
-
-) (D:\TFG\TFG\Memoria\MemoriaTFG_prueba\Capitulos/01Introduccion.aux)
+(D:\TFG\TFG\Memoria\MemoriaTFG_prueba\Capitulos/01Introduccion.aux)
+(D:\TFG\TFG\Memoria\MemoriaTFG_prueba\Capitulos/02TemaFallos.aux)
 (D:\TFG\TFG\Memoria\MemoriaTFG_prueba\Capitulos/03TrabajoPropio.aux)
 (D:\TFG\TFG\Memoria\MemoriaTFG_prueba\Apendices/01ApendiceA.aux)
 (D:\TFG\TFG\Memoria\MemoriaTFG_prueba\Cascaras/bibliografia.aux) (D:\TFG\TFG\Memoria\MemoriaTFG_prueba\Cascaras/fin.aux)
@@ -504,17 +500,115 @@ Package caption Info: End \AtBeginDocument code.
 
 
 ]
-(D:\TFG\TFG\Memoria\MemoriaTFG_prueba\Capitulos/Trabajando.tex [6
+(D:\TFG\TFG\Memoria\MemoriaTFG_prueba\Capitulos/02TemaFallos.tex [16
 
 
 
 ]
-Cap\'itulo 2.
+Cap\'itulo 4.
+Package epstopdf Info: Source file: <Imagenes/Procesador/CPU.eps>
+(epstopdf)                    date: 2015-05-10 19:10:24
+(epstopdf)                    size: 8126099 bytes
+(epstopdf)             Output file: <Imagenes/Procesador/CPU-eps-converted-to.pdf>
+(epstopdf)                    date: 2015-05-10 19:11:46
+(epstopdf)                    size: 73558 bytes
+(epstopdf)             Command: <epstopdf --outfile=Imagenes/Procesador/CPU-eps-converted-to.pdf Imagenes/Procesador/CPU
+.eps>
+(epstopdf)             \includegraphics on input line 45.
+Package epstopdf Info: Output file is already uptodate.
+<Imagenes/Procesador/CPU-eps-converted-to.pdf, id=77, 1027.84pt x 1027.84pt>
+File: Imagenes/Procesador/CPU-eps-converted-to.pdf Graphic file (type pdf)
 
-Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 28.
+<use Imagenes/Procesador/CPU-eps-converted-to.pdf>
+Package pdftex.def Info: Imagenes/Procesador/CPU-eps-converted-to.pdf used on input line 45.
+(pdftex.def)             Requested size: 180.0pt x 180.00015pt.
+ [17{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}] [18 <D:/TFG/TFG/Memoria/MemoriaTFG_prueba/Imagenes/Procesador/
+CPU-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <Imagenes/Procesador/VonNeumann.eps>
+(epstopdf)                    date: 2015-05-10 16:27:51
+(epstopdf)                    size: 16181876 bytes
+(epstopdf)             Output file: <Imagenes/Procesador/VonNeumann-eps-converted-to.pdf>
+(epstopdf)                    date: 2015-05-18 16:31:42
+(epstopdf)                    size: 102331 bytes
+(epstopdf)             Command: <epstopdf --outfile=Imagenes/Procesador/VonNeumann-eps-converted-to.pdf Imagenes/Procesa
+dor/VonNeumann.eps>
+(epstopdf)             \includegraphics on input line 100.
+Package epstopdf Info: Output file is already uptodate.
 
-[7{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}] [8] [9]
+<Imagenes/Procesador/VonNeumann-eps-converted-to.pdf, id=116, 1421.31pt x 1027.84pt>
+File: Imagenes/Procesador/VonNeumann-eps-converted-to.pdf Graphic file (type pdf)
+
+<use Imagenes/Procesador/VonNeumann-eps-converted-to.pdf>
+Package pdftex.def Info: Imagenes/Procesador/VonNeumann-eps-converted-to.pdf used on input line 100.
+(pdftex.def)             Requested size: 161.9989pt x 117.14047pt.
+Package epstopdf Info: Source file: <Imagenes/Procesador/Harvard.eps>
+(epstopdf)                    date: 2015-05-10 16:46:00
+(epstopdf)                    size: 16280988 bytes
+(epstopdf)             Output file: <Imagenes/Procesador/Harvard-eps-converted-to.pdf>
+(epstopdf)                    date: 2015-05-18 16:31:42
+(epstopdf)                    size: 120257 bytes
+(epstopdf)             Command: <epstopdf --outfile=Imagenes/Procesador/Harvard-eps-converted-to.pdf Imagenes/Procesador
+/Harvard.eps>
+(epstopdf)             \includegraphics on input line 102.
+Package epstopdf Info: Output file is already uptodate.
+
+<Imagenes/Procesador/Harvard-eps-converted-to.pdf, id=117, 1421.31pt x 1027.84pt>
+File: Imagenes/Procesador/Harvard-eps-converted-to.pdf Graphic file (type pdf)
+
+<use Imagenes/Procesador/Harvard-eps-converted-to.pdf>
+Package pdftex.def Info: Imagenes/Procesador/Harvard-eps-converted-to.pdf used on input line 102.
+(pdftex.def)             Requested size: 161.9989pt x 117.14047pt.
+ [19 <D:/TFG/TFG/Memoria/MemoriaTFG_prueba/Imagenes/Procesador/VonNeumann-eps-converted-to.pdf> <D:/TFG/TFG/Memoria/Memo
+riaTFG_prueba/Imagenes/Procesador/Harvard-eps-converted-to.pdf>]
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <10.95> on input line 132.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 132.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 132.
+Package epstopdf Info: Source file: <Imagenes/Procesador/SecuencialVSSegmentado.eps>
+(epstopdf)                    date: 2015-05-12 16:06:46
+(epstopdf)                    size: 8573771 bytes
+(epstopdf)             Output file: <Imagenes/Procesador/SecuencialVSSegmentado-eps-converted-to.pdf>
+(epstopdf)                    date: 2015-05-12 16:07:03
+(epstopdf)                    size: 116226 bytes
+(epstopdf)             Command: <epstopdf --outfile=Imagenes/Procesador/SecuencialVSSegmentado-eps-converted-to.pdf Imag
+enes/Procesador/SecuencialVSSegmentado.eps>
+(epstopdf)             \includegraphics on input line 156.
+Package epstopdf Info: Output file is already uptodate.
+
+<Imagenes/Procesador/SecuencialVSSegmentado-eps-converted-to.pdf, id=150, 1469.49pt x 1027.84pt>
+File: Imagenes/Procesador/SecuencialVSSegmentado-eps-converted-to.pdf Graphic file (type pdf)
+
+<use Imagenes/Procesador/SecuencialVSSegmentado-eps-converted-to.pdf>
+Package pdftex.def Info: Imagenes/Procesador/SecuencialVSSegmentado-eps-converted-to.pdf used on input line 156.
+(pdftex.def)             Requested size: 270.0pt x 188.84569pt.
+ [20] [21 <D:/TFG/TFG/Memoria/MemoriaTFG_prueba/Imagenes/Procesador/SecuencialVSSegmentado-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <Imagenes/Instrucciones/IntruccionesDLX.eps>
+(epstopdf)                    date: 2015-05-12 16:35:40
+(epstopdf)                    size: 1792554 bytes
+(epstopdf)             Output file: <Imagenes/Instrucciones/IntruccionesDLX-eps-converted-to.pdf>
+(epstopdf)                    date: 2015-05-12 16:42:05
+(epstopdf)                    size: 41179 bytes
+(epstopdf)             Command: <epstopdf --outfile=Imagenes/Instrucciones/IntruccionesDLX-eps-converted-to.pdf Imagenes
+/Instrucciones/IntruccionesDLX.eps>
+(epstopdf)             \includegraphics on input line 231.
+Package epstopdf Info: Output file is already uptodate.
+
+<Imagenes/Instrucciones/IntruccionesDLX-eps-converted-to.pdf, id=187, 761.84625pt x 376.40625pt>
+File: Imagenes/Instrucciones/IntruccionesDLX-eps-converted-to.pdf Graphic file (type pdf)
+
+<use Imagenes/Instrucciones/IntruccionesDLX-eps-converted-to.pdf>
+Package pdftex.def Info: Imagenes/Instrucciones/IntruccionesDLX-eps-converted-to.pdf used on input line 231.
+(pdftex.def)             Requested size: 270.0pt x 133.39827pt.
+ [22] [23 <D:/TFG/TFG/Memoria/MemoriaTFG_prueba/Imagenes/Instrucciones/IntruccionesDLX-eps-converted-to.pdf>] [24]
+<Imagenes/ARM/snapdragon-processors-810.png, id=221, 481.8pt x 481.8pt>
+File: Imagenes/ARM/snapdragon-processors-810.png Graphic file (type png)
+
+<use Imagenes/ARM/snapdragon-processors-810.png>
+Package pdftex.def Info: Imagenes/ARM/snapdragon-processors-810.png used on input line 313.
+(pdftex.def)             Requested size: 180.0pt x 179.9982pt.
+ [25 <D:/TFG/TFG/Memoria/MemoriaTFG_prueba/Imagenes/ARM/snapdragon-processors-810.png>] [26] [27]
 Package epstopdf Info: Source file: <Imagenes/ARM/ARM-Pipeline.eps>
 (epstopdf)                    date: 2015-05-23 19:58:55
 (epstopdf)                    size: 1387262 bytes
@@ -523,69 +617,215 @@ Package epstopdf Info: Source file: <Imagenes/ARM/ARM-Pipeline.eps>
 (epstopdf)                    size: 17964 bytes
 (epstopdf)             Command: <epstopdf --outfile=Imagenes/ARM/ARM-Pipeline-eps-converted-to.pdf Imagenes/ARM/ARM-Pipe
 line.eps>
-(epstopdf)             \includegraphics on input line 144.
+(epstopdf)             \includegraphics on input line 429.
 Package epstopdf Info: Output file is already uptodate.
-
-<Imagenes/ARM/ARM-Pipeline-eps-converted-to.pdf, id=57, 658.46pt x 96.36pt>
+ <Imagenes/ARM/ARM-Pipeline-eps-converted-to.pdf, id=252, 658.46pt x 96.36pt>
 File: Imagenes/ARM/ARM-Pipeline-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Imagenes/ARM/ARM-Pipeline-eps-converted-to.pdf>
-Package pdftex.def Info: Imagenes/ARM/ARM-Pipeline-eps-converted-to.pdf used on input line 144.
+Package pdftex.def Info: Imagenes/ARM/ARM-Pipeline-eps-converted-to.pdf used on input line 429.
 (pdftex.def)             Requested size: 288.0011pt x 42.14708pt.
-) [10 <D:/TFG/TFG/Memoria/MemoriaTFG_prueba/Imagenes/ARM/ARM-Pipeline-eps-converted-to.pdf>] [32
+ [28 <D:/TFG/TFG/Memoria/MemoriaTFG_prueba/Imagenes/ARM/ARM-Pipeline-eps-converted-to.pdf>] <Imagenes/SEU/SEU_FPGA.jpg, 
+id=273, 643.6547pt x 268.00125pt>
+File: Imagenes/SEU/SEU_FPGA.jpg Graphic file (type jpg)
+ <use Imagenes/SEU/SEU_FPGA.jpg>
+Package pdftex.def Info: Imagenes/SEU/SEU_FPGA.jpg used on input line 467.
+(pdftex.def)             Requested size: 288.0011pt x 119.92061pt.
 
+[29 <D:/TFG/TFG/Memoria/MemoriaTFG_prueba/Imagenes/SEU/SEU_FPGA.jpg>]
+Package epstopdf Info: Source file: <Imagenes/Estadisticas/Neutrones1.eps>
+(epstopdf)                    date: 2015-05-17 13:08:44
+(epstopdf)                    size: 3075103 bytes
+(epstopdf)             Output file: <Imagenes/Estadisticas/Neutrones1-eps-converted-to.pdf>
+(epstopdf)                    date: 2015-05-17 13:12:22
+(epstopdf)                    size: 56342 bytes
+(epstopdf)             Command: <epstopdf --outfile=Imagenes/Estadisticas/Neutrones1-eps-converted-to.pdf Imagenes/Estad
+isticas/Neutrones1.eps>
+(epstopdf)             \includegraphics on input line 488.
+Package epstopdf Info: Output file is already uptodate.
+
+<Imagenes/Estadisticas/Neutrones1-eps-converted-to.pdf, id=287, 932.48375pt x 607.26875pt>
+File: Imagenes/Estadisticas/Neutrones1-eps-converted-to.pdf Graphic file (type pdf)
+
+<use Imagenes/Estadisticas/Neutrones1-eps-converted-to.pdf>
+Package pdftex.def Info: Imagenes/Estadisticas/Neutrones1-eps-converted-to.pdf used on input line 488.
+(pdftex.def)             Requested size: 270.0pt x 175.8347pt.
+ [30 <D:/TFG/TFG/Memoria/MemoriaTFG_prueba/Imagenes/Estadisticas/Neutrones1-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <Imagenes/SEU/SEU.eps>
+(epstopdf)                    date: 2015-05-23 10:13:17
+(epstopdf)                    size: 537484 bytes
+(epstopdf)             Output file: <Imagenes/SEU/SEU-eps-converted-to.pdf>
+(epstopdf)                    date: 2015-05-23 10:16:23
+(epstopdf)                    size: 11993 bytes
+(epstopdf)             Command: <epstopdf --outfile=Imagenes/SEU/SEU-eps-converted-to.pdf Imagenes/SEU/SEU.eps>
+(epstopdf)             \includegraphics on input line 528.
+Package epstopdf Info: Output file is already uptodate.
+ <Imagenes/SEU/SEU-eps-converted-to.pdf, id=308, 182.6825pt x 261.97874pt>
+File: Imagenes/SEU/SEU-eps-converted-to.pdf Graphic file (type pdf)
+
+<use Imagenes/SEU/SEU-eps-converted-to.pdf>
+Package pdftex.def Info: Imagenes/SEU/SEU-eps-converted-to.pdf used on input line 528.
+(pdftex.def)             Requested size: 161.9989pt x 232.32887pt.
+Package epstopdf Info: Source file: <Imagenes/SEU/SET.eps>
+(epstopdf)                    date: 2015-05-23 10:18:23
+(epstopdf)                    size: 522673 bytes
+(epstopdf)             Output file: <Imagenes/SEU/SET-eps-converted-to.pdf>
+(epstopdf)                    date: 2015-05-23 10:18:29
+(epstopdf)                    size: 9181 bytes
+(epstopdf)             Command: <epstopdf --outfile=Imagenes/SEU/SET-eps-converted-to.pdf Imagenes/SEU/SET.eps>
+(epstopdf)             \includegraphics on input line 529.
+Package epstopdf Info: Output file is already uptodate.
+ <Imagenes/SEU/SET-eps-converted-to.pdf, id=309, 182.6825pt x 261.97874pt>
+File: Imagenes/SEU/SET-eps-converted-to.pdf Graphic file (type pdf)
+
+<use Imagenes/SEU/SET-eps-converted-to.pdf>
+Package pdftex.def Info: Imagenes/SEU/SET-eps-converted-to.pdf used on input line 529.
+(pdftex.def)             Requested size: 161.9989pt x 232.32887pt.
+ [31 <D:/TFG/TFG/Memoria/MemoriaTFG_prueba/Imagenes/SEU/SEU-eps-converted-to.pdf> <D:/TFG/TFG/Memoria/MemoriaTFG_prueba/
+Imagenes/SEU/SET-eps-converted-to.pdf>]
+<Imagenes/SEU/Logical_masking.jpg, id=329, 271.76532pt x 85.06781pt>
+File: Imagenes/SEU/Logical_masking.jpg Graphic file (type jpg)
+ <use Imagenes/SEU/Logical_masking.jpg>
+Package pdftex.def Info: Imagenes/SEU/Logical_masking.jpg used on input line 581.
+(pdftex.def)             Requested size: 270.0pt x 84.51852pt.
+
+<Imagenes/SEU/Electrical_masking.jpg, id=331, 264.99pt x 85.82062pt>
+File: Imagenes/SEU/Electrical_masking.jpg Graphic file (type jpg)
+ <use Imagenes/SEU/Electrical_masking.jpg>
+Package pdftex.def Info: Imagenes/SEU/Electrical_masking.jpg used on input line 592.
+(pdftex.def)             Requested size: 270.0pt x 87.44942pt.
+
+<Imagenes/SEU/Latching_masking.jpg, id=333, 284.56313pt x 113.67468pt>
+File: Imagenes/SEU/Latching_masking.jpg Graphic file (type jpg)
+ <use Imagenes/SEU/Latching_masking.jpg>
+Package pdftex.def Info: Imagenes/SEU/Latching_masking.jpg used on input line 603.
+(pdftex.def)             Requested size: 270.0pt x 107.8689pt.
+ [32]
+[33 <D:/TFG/TFG/Memoria/MemoriaTFG_prueba/Imagenes/SEU/Logical_masking.jpg> <D:/TFG/TFG/Memoria/MemoriaTFG_prueba/Imagen
+es/SEU/Electrical_masking.jpg> <D:/TFG/TFG/Memoria/MemoriaTFG_prueba/Imagenes/SEU/Latching_masking.jpg>] [34]
+Package epstopdf Info: Source file: <Imagenes/Tolerancia/No_NMR.eps>
+(epstopdf)                    date: 2015-05-24 19:16:10
+(epstopdf)                    size: 1232905 bytes
+(epstopdf)             Output file: <Imagenes/Tolerancia/No_NMR-eps-converted-to.pdf>
+(epstopdf)                    date: 2015-05-24 19:16:15
+(epstopdf)                    size: 10926 bytes
+(epstopdf)             Command: <epstopdf --outfile=Imagenes/Tolerancia/No_NMR-eps-converted-to.pdf Imagenes/Tolerancia/
+No_NMR.eps>
+(epstopdf)             \includegraphics on input line 688.
+Package epstopdf Info: Output file is already uptodate.
+
+<Imagenes/Tolerancia/No_NMR-eps-converted-to.pdf, id=359, 542.025pt x 253.94875pt>
+File: Imagenes/Tolerancia/No_NMR-eps-converted-to.pdf Graphic file (type pdf)
+
+<use Imagenes/Tolerancia/No_NMR-eps-converted-to.pdf>
+Package pdftex.def Info: Imagenes/Tolerancia/No_NMR-eps-converted-to.pdf used on input line 688.
+(pdftex.def)             Requested size: 161.9989pt x 75.89845pt.
+Package epstopdf Info: Source file: <Imagenes/Tolerancia/NMR.eps>
+(epstopdf)                    date: 2015-05-24 19:10:39
+(epstopdf)                    size: 4162773 bytes
+(epstopdf)             Output file: <Imagenes/Tolerancia/NMR-eps-converted-to.pdf>
+(epstopdf)                    date: 2015-05-24 19:12:34
+(epstopdf)                    size: 51440 bytes
+(epstopdf)             Command: <epstopdf --outfile=Imagenes/Tolerancia/NMR-eps-converted-to.pdf Imagenes/Tolerancia/NMR
+.eps>
+(epstopdf)             \includegraphics on input line 689.
+Package epstopdf Info: Output file is already uptodate.
+
+<Imagenes/Tolerancia/NMR-eps-converted-to.pdf, id=360, 916.42375pt x 554.07pt>
+File: Imagenes/Tolerancia/NMR-eps-converted-to.pdf Graphic file (type pdf)
+
+<use Imagenes/Tolerancia/NMR-eps-converted-to.pdf>
+Package pdftex.def Info: Imagenes/Tolerancia/NMR-eps-converted-to.pdf used on input line 689.
+(pdftex.def)             Requested size: 161.9989pt x 97.94441pt.
+ [35 <D:/TFG/TFG/Memoria/MemoriaTFG_prueba/Imagenes/Tolerancia/No_NMR-eps-converted-to.pdf> <D:/TFG/TFG/Memoria/MemoriaT
+FG_prueba/Imagenes/Tolerancia/NMR-eps-converted-to.pdf>]
+
+LaTeX Warning: Reference `cap2:fpga' on page 36 undefined on input line 703.
+
+Package epstopdf Info: Source file: <Imagenes/Tolerancia/parcial_dinamica.eps>
+(epstopdf)                    date: 2015-05-21 17:40:11
+(epstopdf)                    size: 2716700 bytes
+(epstopdf)             Output file: <Imagenes/Tolerancia/parcial_dinamica-eps-converted-to.pdf>
+(epstopdf)                    date: 2015-05-21 17:41:47
+(epstopdf)                    size: 61120 bytes
+(epstopdf)             Command: <epstopdf --outfile=Imagenes/Tolerancia/parcial_dinamica-eps-converted-to.pdf Imagenes/T
+olerancia/parcial_dinamica.eps>
+(epstopdf)             \includegraphics on input line 722.
+Package epstopdf Info: Output file is already uptodate.
+<Imagenes/Tolerancia/parcial_dinamica-eps-converted-to.pdf, id=386, 1092.08pt x 465.74pt>
+File: Imagenes/Tolerancia/parcial_dinamica-eps-converted-to.pdf Graphic file (type pdf)
+
+<use Imagenes/Tolerancia/parcial_dinamica-eps-converted-to.pdf>
+Package pdftex.def Info: Imagenes/Tolerancia/parcial_dinamica-eps-converted-to.pdf used on input line 722.
+(pdftex.def)             Requested size: 360.0pt x 153.53122pt.
+) [36 <D:/TFG/TFG/Memoria/MemoriaTFG_prueba/Imagenes/Tolerancia/parcial_dinamica-eps-converted-to.pdf>]pdfTeX warning (e
+xt4): destination with the same identifier (name{page.26}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.154 \backmatter
+                  [26
 
 
 
 
 ] (D:\TFG\TFG\Memoria\MemoriaTFG_prueba\Cascaras/bibliografia.tex
-(D:\TFG\TFG\Memoria\MemoriaTFG_prueba\Tesis.bbl [33
+(D:\TFG\TFG\Memoria\MemoriaTFG_prueba\Tesis.bblpdfTeX warning (ext4): destination with the same identifier (name{page.27
+}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.75 
+      [27
 
 
-])) [34]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 201.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 201.
+]))pdfTeX warning (ext4): destination with the same identifier (name{page.28}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.160 \include{Cascaras/bibliografia}
+                                      [28]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 197.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 197.
  (D:\TFG\TFG\Memoria\MemoriaTFG_prueba\Tesis.aux
 (D:\TFG\TFG\Memoria\MemoriaTFG_prueba\Cascaras/cover.aux) (D:\TFG\TFG\Memoria\MemoriaTFG_prueba\Cascaras/dedicatoria.aux
 ) (D:\TFG\TFG\Memoria\MemoriaTFG_prueba\Cascaras/agradecimientos.aux)
 (D:\TFG\TFG\Memoria\MemoriaTFG_prueba\Cascaras/resumen.aux)
-(D:\TFG\TFG\Memoria\MemoriaTFG_prueba\Capitulos/ParaCorreccion.aux)
-(D:\TFG\TFG\Memoria\MemoriaTFG_prueba\Capitulos/Trabajando.aux)
 (D:\TFG\TFG\Memoria\MemoriaTFG_prueba\Capitulos/01Introduccion.aux)
+(D:\TFG\TFG\Memoria\MemoriaTFG_prueba\Capitulos/02TemaFallos.aux)
 (D:\TFG\TFG\Memoria\MemoriaTFG_prueba\Capitulos/03TrabajoPropio.aux)
 (D:\TFG\TFG\Memoria\MemoriaTFG_prueba\Apendices/01ApendiceA.aux)
 (D:\TFG\TFG\Memoria\MemoriaTFG_prueba\Cascaras/bibliografia.aux) (D:\TFG\TFG\Memoria\MemoriaTFG_prueba\Cascaras/fin.aux)
 )
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 201.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 201.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 197.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 197.
 Package rerunfilecheck Info: File `Tesis.out' has not changed.
-(rerunfilecheck)             Checksum: C236BD7344B8688F2A938F6276689B11;111.
+(rerunfilecheck)             Checksum: BAD5FEC953785F3128DD810E30B6201B;1095.
 
 
-LaTeX Warning: There were multiply-defined labels.
+LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 201.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 197.
  ) 
 Here is how much of TeX's memory you used:
- 10058 strings out of 493921
- 150239 string characters out of 3147285
- 242123 words of memory out of 3000000
- 12891 multiletter control sequences out of 15000+200000
- 15080 words of font info for 30 fonts, out of 3000000 for 9000
+ 10307 strings out of 493921
+ 156014 string characters out of 3147285
+ 246555 words of memory out of 3000000
+ 13045 multiletter control sequences out of 15000+200000
+ 20653 words of font info for 42 fonts, out of 3000000 for 9000
  1079 hyphenation exceptions out of 8191
- 55i,11n,49p,432b,492s stack positions out of 5000i,500n,10000p,200000b,50000s
- <C:\Users\Andy\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecti1095.pk> <C:\Users\Andy\AppData\Local\
-MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\eccc1000.pk> <C:\Users\Andy\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknap
-pen\ec\dpi600\eccc1095.pk> <C:\Users\Andy\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1095.pk> <C:\U
-sers\Andy\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1095.pk> <C:\Users\Andy\AppData\Local\MiKTeX\2
+ 55i,11n,49p,668b,494s stack positions out of 5000i,500n,10000p,200000b,50000s
+ <C:\Users\Andy\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm0900.pk> <C:\Users\Andy\AppData\Local\
+MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecsl1095.pk> <C:\Users\Andy\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknap
+pen\ec\dpi600\ecbx1095.pk> <C:\Users\Andy\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\eccc1000.pk> <C:\U
+sers\Andy\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecti1095.pk> <C:\Users\Andy\AppData\Local\MiKTeX\2
 .9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1200.pk> <C:\Users\Andy\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\d
-pi600\ecxc1000.pk> <C:\Users\Andy\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1000.pk> <C:\Users\And
-y\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecti1000.pk> <C:\Users\Andy\AppData\Local\MiKTeX\2.9\fonts
-\pk\ljfour\jknappen\ec\dpi600\ecbx2488.pk> <C:\Users\Andy\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ec
-bx2074.pk>
-Output written on Tesis.pdf (9 pages, 155456 bytes).
+pi600\eccc1095.pk> <C:\Users\Andy\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1095.pk> <C:\Users\And
+y\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1440.pk> <C:\Users\Andy\AppData\Local\MiKTeX\2.9\fonts
+\pk\ljfour\jknappen\ec\dpi600\ecxc1000.pk> <C:\Users\Andy\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ec
+rm1000.pk> <C:\Users\Andy\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecti1000.pk> <C:\Users\Andy\AppDat
+a\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx2488.pk> <C:\Users\Andy\AppData\Local\MiKTeX\2.9\fonts\pk\ljfo
+ur\jknappen\ec\dpi600\ecbx2074.pk><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb>
+Output written on Tesis.pdf (25 pages, 1242946 bytes).
 PDF statistics:
- 474 PDF objects out of 1000 (max. 8388607)
- 32 named destinations out of 1000 (max. 500000)
- 22 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 960 PDF objects out of 1000 (max. 8388607)
+ 99 named destinations out of 1000 (max. 500000)
+ 214 words of extra memory for PDF output out of 10000 (max. 10000000)
 
