@@ -730,7 +730,14 @@ Hay dos formas de aplicar la re-configuración a un sistema \cite{carlos2014}:
 %%-----------------------------------------------------------------
 \label{cap2:tolerancia:microprocesadores}
 
-...
+La importancia de aplicar estas técnicas a los microprocesadores viene de su utilización. Son sistemas sin un uso específico, lo que incluye su utilización en misiones espaciales, 
+
+La NASA utiliza microprocesadores para sus misiones espaciales. Los incluye en sus sistemas de asistencia a la vida y sistemas de experimentación. Tradicionalmente la NASA ha utilizado técnicas de tolerancia estática, como las técnicas de NMR por su buena confiabilidad \cite{Sorin}. Esto es necesario por la mayor tasa de fallos encontrada fuera de la atmósfera terrestre. 
+
+Algunas técnicas aplicadas a microprocesadores, sin modificar su diseño interno, requieren de un sistema externo conectado al microprocesador, que sea capaz de comprobar los valores internos, detectar los fallos y recuperar el sistema, relanzando las instrucciones o recuperando los valores correctos. Para prevenir los casos en los que los fallos se producen en el circuito de comparación y detección, se puede recurrir a técnicas de NMR en estos circuitos. Evitando tener que modificar la estructura interna del microprocesador, se replica el sistema de comprobación, que normalmente tendrá una implementación más simple que el propio microprocesador. \cite{Weaver2001}
+
+Otras técnicas utilizadas sobre microprocesadores evitan modificar o añadir sistemas auxiliares para comprobar y corregir los fallos. Se centran en la \textit{"`tolerancia en el tiempo"'}, duplicando el programa y lanzando ambos en el mismo procesador de forma simultanea. Se propone esta técnica por considerar que las técnicas de \textit{"`tolerancia hardware"'} sean demasiado intrusivas para el diseño, 
+
 
 
 %%%-----------------------------------------------------------------
