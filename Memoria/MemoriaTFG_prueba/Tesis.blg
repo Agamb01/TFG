@@ -8,26 +8,29 @@ A level-1 auxiliary file: Capitulos/02TemaFallos.aux
 A level-1 auxiliary file: Capitulos/03TrabajoPropio.aux
 A level-1 auxiliary file: Apendices/01ApendiceA.aux
 A level-1 auxiliary file: Cascaras/bibliografia.aux
-The style file: TeXiS/TeXiS.bst
+The style file: abbrv.bst
 A level-1 auxiliary file: Cascaras/fin.aux
 Database file #1: latex.bib
 Database file #2: otros.bib
-Warning--empty year in Antiguas; set to ????
-Warning--missing publisher in R.B.J.BrinkgreveW.M.Swolfs2011
+Warning--empty publisher in R.B.J.BrinkgreveW.M.Swolfs2011
 Warning--empty journal in Bustillos2012
-Warning--missing school in carlos2014
-Warning--missing publisher in Hennessy2006
+Warning--empty school in carlos2014
+Warning--there's a number but no series in Hennessy2006
+Warning--empty publisher in Hennessy2006
 Warning--empty journal in Hu2010
+Warning--empty journal in Ieee-std-2010
+Warning--there's a number but no volume in Ieee-std-2010
 Warning--empty journal in Investigation2008
 Warning--there's a number but no volume in Investigation2008
 Warning--empty journal in Limited2000
 Warning--there's a number but no volume in Limited2000
 Warning--empty journal in Limited2007b
-Warning--missing school in Melis2014
+Warning--empty school in Melis2014
 Warning--empty journal in Mobile
-Warning--empty year in Mobile; set to ????
+Warning--empty year in Mobile
+Warning--empty year in Sorin
 Warning--empty journal in States2011
 Warning--empty journal in ARM-InstructionSet
-Warning--empty year in ARM-InstructionSet; set to ????
-Warning--empty year in Torrecillas; set to ????
-(There were 18 warnings)
+Warning--empty year in ARM-InstructionSet
+Warning--there's a number but no volume in Weaver2001
+(There were 21 warnings)

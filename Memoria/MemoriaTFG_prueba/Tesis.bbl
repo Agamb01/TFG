@@ -1,124 +1,153 @@
-\begin{thebibliography}{21}
-\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+\begin{thebibliography}{10}
 
-\bibitem[{{Arnau Llombart}()}]{Antiguas}
-{\sc {Arnau Llombart}, V.}
+\bibitem{Antiguas}
+V.~{Arnau Llombart}.
 \newblock {Manual DLX}.
-\newblock ????
 
-\bibitem[{Brinkgreve et\ al.(2011)Brinkgreve, Swolfs y
-  Engin}]{R.B.J.BrinkgreveW.M.Swolfs2011}
-{\sc Brinkgreve, R.}, {\sc Swolfs, W.} y {\sc Engin, E.}
-\newblock {\em {ARM Architecture Reference Manual Thumb-2 Supplement}\/}.
+\bibitem{R.B.J.BrinkgreveW.M.Swolfs2011}
+R.~Brinkgreve, W.~Swolfs, and E.~Engin.
+\newblock {\em {ARM Architecture Reference Manual Thumb-2 Supplement}}.
 \newblock 2011.
-\newblock ISBN 9781597180948.
 
-\bibitem[{Bustillos(2012)}]{Bustillos2012}
-{\sc Bustillos, C.~T.}
+\bibitem{Bustillos2012}
+C.~T. Bustillos.
 \newblock {Simulador arm en el \'{a}mbito docente}.
 \newblock 2012.
 
-\bibitem[{{Gonz\'{a}lez Salas}(2014)}]{carlos2014}
-{\sc {Gonz\'{a}lez Salas}, J.~C.}
-\newblock {\em {Filtro adaptativo tolerante a fallos}\/}.
-\newblock Tesis Doctoral, 2014.
+\bibitem{Gaisler2002}
+J.~Gaisler.
+\newblock {A portable and fault-tolerant microprocessor based on the SPARC V8
+  architecture}.
+\newblock {\em Proceedings of the 2002 International Conference on Dependable
+  Systems and Networks}, pages 409--415, 2002.
 
-\bibitem[{Habinc(2002)}]{Habinc2002}
-{\sc Habinc, S.}
+\bibitem{carlos2014}
+J.~C. {Gonz\'{a}lez Salas}.
+\newblock {\em {Filtro adaptativo tolerante a fallos}}.
+\newblock PhD thesis, 2014.
+
+\bibitem{Habinc2002}
+S.~Habinc.
 \newblock {Functional Triple Modular Redundancy (FTMR)}.
-\newblock {\em Design and Assessment Report, Gaisler Research\/}, p\'aginas
-  1--56, 2002.
+\newblock {\em Design and Assessment Report, Gaisler Research}, pages 1--56,
+  2002.
 
-\bibitem[{Hennessy y Patterson(1993)}]{Hennessy1993}
-{\sc Hennessy, J.~L.} y {\sc Patterson, D.~A.}
-\newblock {\em {Arquitectura de Computadores: Un enfoque cuantitativo}\/}.
+\bibitem{Hennessy1993}
+J.~L. Hennessy and D.~A. Patterson.
+\newblock {\em {Arquitectura de Computadores: Un enfoque cuantitativo}}.
 \newblock Mcgraw Hill Editorial, 1993.
-\newblock ISBN 1558600698.
 
-\bibitem[{Hennessy y Patterson(2006)}]{Hennessy2006}
-{\sc Hennessy, J.~L.} y {\sc Patterson, D.~a.}
+\bibitem{Hennessy2006}
+J.~L. Hennessy and D.~a. Patterson.
 \newblock {\em {Computer Architecture, Fourth Edition: A Quantitative
-  Approach}\/}.
-\newblock 0. 2006.
-\newblock ISBN 0123704901.
+  Approach}}.
+\newblock Number~0. 2006.
 
-\bibitem[{Hu y Zain(2010)}]{Hu2010}
-{\sc Hu, A.~C.} y {\sc Zain, S.}
+\bibitem{Hu2010}
+A.~C. Hu and S.~Zain.
 \newblock {NSEU Mitigation in Avionics Applications}.
-\newblock vol. 1073, p\'aginas 1--12, 2010.
+\newblock 1073:1--12, 2010.
 
-\bibitem[{Investigation(2008)}]{Investigation2008}
-{\sc Investigation, A.~O.}
+\bibitem{Ieee-std-2010}
+O.~Ieee-std.
+\newblock {LEON3 7-Stage Integer Pipeline}.
+\newblock (March), 2010.
+
+\bibitem{Investigation2008}
+A.~O. Investigation.
 \newblock {ATSB TRANSPORT SAFETY REPORT Aviation Occurrence Investigation
   AO-2008-070 Final}.
 \newblock (October), 2008.
 
-\bibitem[{Jedec(2006)}]{Jedec2006}
-{\sc Jedec}.
+\bibitem{Jedec2006}
+Jedec.
 \newblock {Measurement and Reporting of Alpha Particle and Terrestrial Cosmic
   Ray Induced Soft Error in Semiconductor Devices: JESD89A}.
-\newblock {\em JEDEC Sold State Technology Association\/}, p\'aginas 1--85,
-  2006.
+\newblock {\em JEDEC Sold State Technology Association}, pages 1--85, 2006.
 
-\bibitem[{Kadav et\ al.(2013)Kadav, Renzelmann y Swift}]{Kadav2013}
-{\sc Kadav, A.}, {\sc Renzelmann, M.~J.} y {\sc Swift, M.~M.}
+\bibitem{Kadav2013}
+A.~Kadav, M.~J. Renzelmann, and M.~M. Swift.
 \newblock {Fine-grained fault tolerance using device checkpoints}.
 \newblock {\em Proceedings of the eighteenth international conference on
   Architectural support for programming languages and operating systems -
-  ASPLOS '13\/}, p\'agina 473, 2013.
-\newblock ISSN 15232867.
+  ASPLOS '13}, page 473, 2013.
 
-\bibitem[{Kirrmann(2005)}]{Kirrmann2005}
-{\sc Kirrmann, H.}
+\bibitem{Kirrmann2005}
+H.~Kirrmann.
 \newblock {Fault Tolerant Computing in Industrial Automation}.
-\newblock {\em Lecture notes ABB Corporate ResearchETH\/}, 2005.
+\newblock {\em Lecture notes ABB Corporate ResearchETH}, 2005.
 
-\bibitem[{Limited(2000)}]{Limited2000}
-{\sc Limited, A. R.~M.}
+\bibitem{Kuon2007}
+I.~Kuon, R.~Tessier, and J.~Rose.
+\newblock {FPGA Architecture: Survey and Challenges}.
+\newblock {\em Foundations and Trends® in Electronic Design Automation},
+  2(2):135--253, 2007.
+
+\bibitem{Limited2000}
+A.~R.~M. Limited.
 \newblock {ARM7TDMI-S}.
 \newblock (Rev 3), 2000.
 
-\bibitem[{Limited(2007)}]{Limited2007b}
-{\sc Limited, a. R.~M.}
+\bibitem{Limited2007b}
+a.~R.~M. Limited.
 \newblock {ARM Architecture Reference Manual}.
-\newblock p\'aginas 1--1138, 2007.
+\newblock pages 1--1138, 2007.
 
-\bibitem[{Melis(2014)}]{Melis2014}
-{\sc Melis, W.~K.}
+\bibitem{Melis2014}
+W.~K. Melis.
 \newblock {\em {Reconstruction of High-energy Neutrino-induced Particle Showers
-  in KM3NeT .}\/}.
-\newblock Tesis Doctoral, 2014.
+  in KM3NeT .}}
+\newblock PhD thesis, 2014.
 
-\bibitem[{Mobile()}]{Mobile}
-{\sc Mobile, C.}
+\bibitem{Mobile}
+C.~Mobile.
 \newblock {Streaming 4K Ultra HD video at home and on the go}.
-\newblock p\'aginas 0--1, ????
+\newblock pages 0--1.
 
-\bibitem[{Pascual(2011)}]{Pascual2011}
-{\sc Pascual, J.~M.}
-\newblock {\em {Simulador DLX con repertorio multimedia}\/}.
-\newblock Tesis Doctoral, Universidad Complutense de Madrid, 2011.
+\bibitem{Pascual2011}
+J.~M. Pascual.
+\newblock {\em {Simulador DLX con repertorio multimedia}}.
+\newblock PhD thesis, Universidad Complutense de Madrid, 2011.
 
-\bibitem[{Sadasivan(2006)}]{Sadasivan2006}
-{\sc Sadasivan, S.}
-\newblock {An introduction to the arm cortex-m3 processor}.
-\newblock 2006.
+\bibitem{Rose}
+J.~Rose, A.~E. Gamal, and A.~Sangiovanni-Vincentelli.
+\newblock {Architecture of Field-Programmable Gate Arrays}.
 
-\bibitem[{States(2011)}]{States2011}
-{\sc States, U.}
+\bibitem{Rotenberg1999}
+E.~Rotenberg.
+\newblock {AR-SMT: a microarchitectural approach to fault tolerance in
+  microprocessors}.
+\newblock {\em Digest of Papers. Twenty-Ninth Annual International Symposium on
+  Fault-Tolerant Computing (Cat. No.99CB36352)}, 1999.
+
+\bibitem{Sadasivan2006}
+S.~Sadasivan.
+\newblock {An introduction to the arm cortex-m3 processor}, 2006.
+
+\bibitem{Sorin}
+D.~J. Sorin and S.~Ozev.
+\newblock {Fault Tolerant Microprocessors for Space Missions}.
+\newblock {\em Memory}, pages 1--4.
+
+\bibitem{States2011}
+U.~States.
 \newblock {Reduce Cost and Board Space}.
-\newblock vol. 374, p\'aginas 1--8, 2011.
+\newblock 374:1--8, 2011.
 
-\bibitem[{Summary et\ al.()Summary, Field, Long, Transfer, Instruction y
-  Examples}]{ARM-InstructionSet}
-{\sc Summary, I.~S.}, {\sc Field, T.~C.}, {\sc Long, M.}, {\sc Transfer,
-  S.~D.}, {\sc Instruction, U.} y {\sc Examples, I.~S.}
+\bibitem{ARM-InstructionSet}
+I.~S. Summary, T.~C. Field, M.~Long, S.~D. Transfer, U.~Instruction, and I.~S.
+  Examples.
 \newblock {ARM Instruction Set}.
-\newblock p\'aginas 1--60, ????
+\newblock pages 1--60.
 
-\bibitem[{Torrecillas()}]{Torrecillas}
-{\sc Torrecillas, J.~M.}
+\bibitem{Torrecillas}
+J.~M. Torrecillas.
 \newblock {RAID - Tolerancia a Fallos}.
-\newblock ????
+
+\bibitem{Weaver2001}
+C.~Weaver and T.~Austin.
+\newblock {A fault tolerant approach to microprocessor design}.
+\newblock {\em Proceedings of the International Conference on Dependable
+  Systems and Networks}, (July):411--420, 2001.
 
 \end{thebibliography}
