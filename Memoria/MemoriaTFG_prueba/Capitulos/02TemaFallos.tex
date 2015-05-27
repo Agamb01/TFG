@@ -4,15 +4,24 @@
 %
 %---------------------------------------------------------------------
 
-\chapter{Titulo por definir}
+\chapter{Estado del arte}
 \label{cap2}
+
+%\begin{FraseCelebre}
+  %\begin{Frase}
+    %"`La verdadera ciencia enseña, sobre todo, a dudar y a ser ignorante."' 
+  %\end{Frase}
+  %\begin{Fuente}
+    %Ernest Rutherford 
+  %\end{Fuente}
+%\end{FraseCelebre}
 
 \begin{FraseCelebre}
   \begin{Frase}
-    "`La verdadera ciencia enseña, sobre todo, a dudar y a ser ignorante."' 
+    "`Un hombre provisto de papel, lápiz y goma, y con sujeción a una disciplina estricta, es en efecto una máquina de Turing universal."' 
   \end{Frase}
   \begin{Fuente}
-    Ernest Rutherford 
+    Alan Turing
   \end{Fuente}
 \end{FraseCelebre}
 
@@ -28,7 +37,7 @@ Para terminar, se justifica la importancia de la tolerancia en los sistemas y co
 %%%%-----------------------------------------------------------------
 %%%\section*{Introducción}
 %%%%-----------------------------------------------------------------
-%%%\label{cap2:introduccion}
+%%%\label{arte:introduccion}
 %%%
 %%%...
 
@@ -36,7 +45,7 @@ Para terminar, se justifica la importancia de la tolerancia en los sistemas y co
 %%-----------------------------------------------------------------
 \section{Procesador}
 %%-----------------------------------------------------------------
-\label{cap2:procesador}
+\label{arte:procesador}
 
 El Diccionario de la Real Academia Española (DRAE) define el procesador como la "`Unidad Central de Proceso (CPU), formada por uno o dos chips"'. Figura \ref{fig:cpu}. 
 
@@ -61,7 +70,7 @@ A continuación se definen los elementos fundamentales para constituir un procesa
 %%%%-----------------------------------------------------------------
 \subsection{Arquitectura}
 %-----------------------------------------------------------------
-\label{cap2:procesador:arquitectura}
+\label{arte:procesador:arquitectura}
 
 Un procesador está formado por una serie de módulos conectados entre sí, siendo la arquitectura del mismo la que define el diseño de los módulos que lo componen y de qué manera se conectan entre ellos.
 
@@ -80,7 +89,7 @@ Según el juego de instrucciones que sea capaz de ejecutar un procesador, su arqu
 %%-----------------------------------------------------------------
 \subsection{Repertorio de instrucciones}
 %-----------------------------------------------------------------
-\label{cap2:procesador:instrucciones}
+\label{arte:procesador:instrucciones}
 
 El repertorio de instrucciones define todas las operaciones que el procesador es capaz de entender y ejecutar. Este juego de instrucciones incluye las operaciones aritmético-lógicas que pueden aplicarse a los datos, las operaciones de control sobre el flujo del programa, las instrucciones de lectura y escritura en memoria, así como todas las instrucciones propias que se hayan diseñado para el procesador.
 
@@ -88,7 +97,7 @@ El repertorio de instrucciones define todas las operaciones que el procesador es
 %-----------------------------------------------------------------
 \subsection{Memoria}
 %-----------------------------------------------------------------
-\label{cap2:procesador:memoria}
+\label{arte:procesador:memoria}
 
 Los procesadores tienen una serie de registros donde se almacenan temporalmente los valores con los que está trabajando.
 El conjunto de estos registros se conoce como "`banco de registros"'. Estos registros de propósito general son muy limitados, por lo que el procesador necesita de apoyo externo para alojar la información, para ello tiene acceso a una memoria externa.
@@ -107,7 +116,7 @@ El modo de acceso a la memoria externa divide las arquitecturas en dos tipos. La
 %-----------------------------------------------------------------
 \subsection{Segmentación}
 %-----------------------------------------------------------------
-\label{cap2:procesador:segmentacion}
+\label{arte:procesador:segmentacion}
 
 La segmentación es una técnica de implementación, que no siendo imprescindible, aumenta el rendimiento del procesador. Permite que haya varias instrucciones en ejecución al mismo tiempo en el mismo procesador. Se consigue dividiendo el procesador en etapas de modo que en cada una de ellas se realiza de forma secuencial una parte del trabajo completo de la instrucción de forma secuencial.
 
@@ -138,7 +147,7 @@ En la tabla \ref{tab:segmentacion} podemos ver cómo se procesa una serie de inst
 %-----------------------------------------------------------------
 \subsubsection{Ventajas de la segmentación}
 %-----------------------------------------------------------------
-\label{cap2:procesador:segmentacion:ventajas}
+\label{arte:procesador:segmentacion:ventajas}
 
 La segmentación proporciona la ventaja de poder lanzar una instrucción por cada ciclo de reloj. Característica que aumenta el rendimiento del procesador al obtener un menor número total de ciclos por instrucción para un mismo programa. Para conocer los ciclos por instrucción que necesita un programa se utiliza la formula. % \ref{eq:cpi}. 
 
@@ -162,7 +171,7 @@ Como podemos ver en la figura \ref{fig:SecuencialVSSegmentada}, el procesador no
 %-----------------------------------------------------------------
 \subsubsection{Riesgos de la segmentación}
 %-----------------------------------------------------------------
-\label{cap2:procesador:segmentacion:riesgos}
+\label{arte:procesador:segmentacion:riesgos}
 
 A pesar de la ventaja vista en el apartado anterior, la segmentación también implica unos riesgos a la hora de ejecutar las instrucciones. Estos riesgos se traducen en que las instrucciones deban esperar un número de ciclos para poder continuar su ejecución, retrasando así el momento de su entrada en el microprocesador. Estos riesgos pueden ser de los siguientes tipos\cite{Hennessy1993}: % Arquitectura de Computadores: Un enfoque cuantitativo
 
@@ -189,7 +198,7 @@ A pesar de la ventaja vista en el apartado anterior, la segmentación también imp
 %-----------------------------------------------------------------
 \subsection{DLX}
 %-----------------------------------------------------------------
-\label{cap2:procesador:dlx}
+\label{arte:procesador:dlx}
 
 El microprocesador DLX fue diseñado por John Hennessy y David A. Patterson, diseñadores de las arquitecturas MIPS y Berkeley RISC respectivamente. Es un procesador sencillo con arquitectura RISC, que proporciona una base fácil de comprender. Se utiliza ampliamente en educación universitaria para explicar las arquitecturas de computadores \cite{Pascual2011}.
 
@@ -204,7 +213,7 @@ Basado en las máquinas de carga/almacenamiento, el DLX se centra en proporcionar
 %-----------------------------------------------------------------
 \subsubsection{Arquitectura RISC}
 %-----------------------------------------------------------------
-\label{cap2:procesador:dlx:arquitectura}
+\label{arte:procesador:dlx:arquitectura}
 
 El microprocesador DLX utiliza una arquitectura RISC con instrucciones de 32 bits. Posee un banco de registros compuesto por 32 registros de propósito general, además de un segundo conjunto de registros que se pueden usar como 32 registros de simple precisión o como 16 registros en punto flotante.
 
@@ -212,7 +221,7 @@ El microprocesador DLX utiliza una arquitectura RISC con instrucciones de 32 bit
 %-----------------------------------------------------------------
 \subsubsection{Instrucciones DLX}
 %-----------------------------------------------------------------
-\label{cap2:procesador:dlx:instrucciones}
+\label{arte:procesador:dlx:instrucciones}
 
 Todas las instrucciones del repertorio del procesador DLX tienen un tamaño de 32 bits y están alineadas en memoria. En cualquier instrucción los bits [31:26] forman el campo de código de operación que se debe ejecutar.
 
@@ -237,7 +246,7 @@ Como podemos observar en la figura \ref{fig:instrucciones_dlx}, el formato es mu
 %-----------------------------------------------------------------
 \subsubsection{Segmentación DLX}
 %-----------------------------------------------------------------
-\label{cap2:procesador:dlx:segmentacion}
+\label{arte:procesador:dlx:segmentacion}
 
 El DLX basa su rendimiento en la segmentación que se divide en 5 etapas
 
@@ -264,7 +273,7 @@ El DLX basa su rendimiento en la segmentación que se divide en 5 etapas
 	
 \end{itemize}
 
-Como pudimos ver en la figura \ref{tab:segmentacion}, las instrucciones se buscan en cada ciclo de reloj, a menos que surjan riesgos debido a la segmentación. Como vimos en el apartado \ref{cap2:procesador:segmentacion:riesgos}, la segmentación implica ciertos riesgos. Para solucionar o reducir estos, el DLX implementa las siguientes técnicas \cite{Hennessy2006}:
+Como pudimos ver en la figura \ref{tab:segmentacion}, las instrucciones se buscan en cada ciclo de reloj, a menos que surjan riesgos debido a la segmentación. Como vimos en el apartado \ref{arte:procesador:segmentacion:riesgos}, la segmentación implica ciertos riesgos. Para solucionar o reducir estos, el DLX implementa las siguientes técnicas \cite{Hennessy2006}:
 
 \begin{enumerate}
   \item Duplicar y/o segmentar las unidades funcionales. Con ello se reducen los ciclos de espera debidos a los \textit{riesgos estructurale}s. Se consigue un mayor número de etapas para poder cargar nuevas instrucciones.
@@ -290,7 +299,7 @@ Cuando existe un riesgo que no es posible evitar con estas técnicas se aplica un
 %-----------------------------------------------------------------
 \subsubsection{Memoria DLX}
 %-----------------------------------------------------------------
-\label{cap2:procesador:dlx:memoria}
+\label{arte:procesador:dlx:memoria}
 
 Todas las referencias a memoria se realizan a través de instrucciones de carga y almacenamiento, cargando los datos en los registros, donde se pueden acceder y trabajar con ellos, y almacenándolos en memoria.
 
@@ -444,7 +453,7 @@ El único tipo de instrucciones con acceso a memoria son las instrucciones de car
 %%-----------------------------------------------------------------
 \section{Field-Programmable Gate Arrays}
 %%-----------------------------------------------------------------
-\label{cap2:fpga}
+\label{arte:fpga}
 
 Las FPGAs, del inglés Field-Programmable Gate Arrays, consisten en bloques lógicos con conexiones programables para realizar diferentes diseños \cite{Rose}. Figura \ref{fig:ArquitecturaFPGA}.
 
@@ -482,7 +491,7 @@ Es por ello que las FPGAs se utilizan en todo tipo de sectores desde el procesam
 %-----------------------------------------------------------------
 \section{Fallos}
 %-----------------------------------------------------------------
-\label{cap2:fallos}
+\label{arte:fallos}
 
 Un fallo ocurre cuando un sistema no ha funcionado correctamente. Se pueden encontrar desde fallos en la definición de requisitos que se propagan hasta la fase de producción, hasta fallos producidos en el sistema por agentes externos, como la radiación. En un sistema electrónico pueden ocurrir fallos que se clasifican en \textit{"`soft errors"'} o \textit{fallos transitorios} y \textit{"`hard errors"'} o \textit{fallos permanentes}.
 
@@ -493,7 +502,7 @@ En esta sección no se contemplan los fallos que se producen a partir de una mala
 %-----------------------------------------------------------------
 \subsection{Causas}
 %-----------------------------------------------------------------
-\label{cap2:fallos:causas}
+\label{arte:fallos:causas}
 
 
 En general, estos fallos se conocen como \textit{"`Single-Event Effects (SEEs)"'}. Se deben al choque de una partícula de energía contra un elemento del circuito integrado. Figura	\ref{fig:SEU_FPGA}. 
@@ -530,14 +539,14 @@ Como ya se adelantó en la introducción, los efectos varían según la latitud, la 
 %-----------------------------------------------------------------
 \subsection{Tipos de fallos}
 %-----------------------------------------------------------------
-\label{cap2:fallos:tipos}
+\label{arte:fallos:tipos}
 
 Los fallos se clasifican los fallos en dos tipos: Fallos transitorios o no destructivos, y fallos permanentes o destructivos.
 
 %-----------------------------------------------------------------
 \subsubsection{Fallos Transitorios}
 %-----------------------------------------------------------------
-\label{cap2:fallos:tipos:transitorios}
+\label{arte:fallos:tipos:transitorios}
 
 Los \textit{fallos transitorios}, también llamados \textit{"`soft errors"'}, son aquellos que cambian el estado del dispositivo o celda sin afectar a su funcionalidad.
 
@@ -573,7 +582,7 @@ El sistema sufre las consecuencias como un cambio de valor en un bit. Si se prod
 %-----------------------------------------------------------------
 \subsubsection{Fallos Permanentes}
 %-----------------------------------------------------------------
-\label{cap2:fallos:tipos:permanentes}
+\label{arte:fallos:tipos:permanentes}
 
 
 Los \textit{fallos permanentes} o \textit{"`hard errors"'} son los que afectan a la funcionalidad del dispositivo y lo dañan permanentemente. Pueden producir cambios en el diseño que impiden el correcto funcionamiento del módulo o circuito que lo sufre. \cite{Jedec2006}
@@ -594,13 +603,13 @@ Los principales tipos de fallos permanentes son:
 
 Existen otros tipos de fallos permanentes, \textit{Single-Event Burnout (SEB)} y \textit{Single-Event Gate Rupture (SEGR)}, que destruyen el transistor a nivel físico.	
   
-Los fallos permanentes, una vez detectados, únicamente pueden solucionarse sustituyendo el chip o modificando la configuración interna del propio chip. Véase el apartado \ref{cap2:tolerancia:hardware:reconfiguracion}.
+Los fallos permanentes, una vez detectados, únicamente pueden solucionarse sustituyendo el chip o modificando la configuración interna del propio chip. Véase el apartado \ref{arte:tolerancia:hardware:reconfiguracion}.
 
 
 %%-----------------------------------------------------------------
 \section{Tolerancia a Fallos}
 %%-----------------------------------------------------------------
-\label{cap2:tolerancia}
+\label{arte:tolerancia}
 
 La tolerancia a fallos se define como la capacidad de un sistema para funcionar correctamente, incluso si se produce un fallo o anomalía en el sistema. 
 
@@ -667,7 +676,7 @@ La tolerancia a fallos hardware se resuelve principalmente aplicando la redundan
 %%-----------------------------------------------------------------
 \subsection{Redundancia en la información}
 %%-----------------------------------------------------------------
-\label{cap2:tolerancia:informacion}
+\label{arte:tolerancia:informacion}
 
 La redundancia de datos se basa en mantener varias copias de todos los datos en diferentes ubicaciones junto a códigos de detección y corrección de errores. La replicación de datos consigue que la perdida o daño de una memoria no implique la perdida de los datos que almacena, mientras que los códigos de detección y corrección permiten comprobar los datos en busca de errores y corregir los datos si fuese necesario.
 
@@ -682,7 +691,7 @@ El ejemplo más claro de este tipo de tolerancia es el conocido como \textit{conj
 %%-----------------------------------------------------------------
 \subsection{Redundancia en el tiempo}
 %%-----------------------------------------------------------------
-\label{cap2:tolerancia:tiempo}
+\label{arte:tolerancia:tiempo}
 
 La redundancia en el tiempo es efectiva contra los fallos transitorios. Consiste en ejecutar parte de un programa o el programa completo varias veces. Los fallos transitorios, como se ha explicado anteriormente, se producen en zonas aleatorias del chip, siendo poco probable que aparezca el mismo error en el mismo lugar.
 
@@ -694,7 +703,7 @@ Algunas técnicas de redundancia en el tiempo se basan en "`puntos de control"' o
 %%-----------------------------------------------------------------
 \subsection{Redundancia en el hardware}
 %%-----------------------------------------------------------------
-\label{cap2:tolerancia:hardware}
+\label{arte:tolerancia:hardware}
 
 La redundancia hardware se basa en la inserción de módulos extra para la detección y corrección de los fallos. Aunque su objetivo es el de reducir el número de fallos que provocan errores, la inserción de módulos extra implica un aumento en la complejidad del sistema, paradógicamente, con ello aumenta la posible aparición de nuevos fallos.
 
@@ -711,7 +720,7 @@ Algunas técnicas se detallan a continuación \cite{Kirrmann2005}.
 %%-----------------------------------------------------------------
 \subsubsection{Redundancia modular}
 %%-----------------------------------------------------------------
-\label{cap2:tolerancia:hardware:nmr}
+\label{arte:tolerancia:hardware:nmr}
 
 La redundancia modular consiste en replicar \textit{N} veces el bloque al que se desea aplicar la tolerancia, siendo \textit{N} un número impar, y a través de una votación de mayoría de las salidas extraer el valor correcto del módulo. Al aplicar la redundancia modular es posible corregir los fallos producidos en $\frac{N}{2}$ de los módulos redundantes. 
 
@@ -734,11 +743,11 @@ Esta técnica permite evitar los fallos producidos dentro de los bloques, sin emb
 %%-----------------------------------------------------------------
 \subsubsection{Re-configuración}
 %%-----------------------------------------------------------------
-\label{cap2:tolerancia:hardware:reconfiguracion}
+\label{arte:tolerancia:hardware:reconfiguracion}
 
 La re-configuración de un sistema consiste en cambiar su implementación en el momento deseado. Por ejemplo, cuando nuestro sistema empieza a fallar debido a que parte del chip se ha dañado, en vez de eliminar el chip y sustituirlo por otro, se puede configurar el mismo circuito de manera que se eviten las zonas dañadas.
 
-En el apartado \ref{cap2:fpga} de este mismo capitulo se han introducido las FPGAs, sistemas re-programables que permiten al diseñador re-configurar su estructura para realizar diferentes tareas, o la misma con una nueva implementación u organización de los componentes.
+En el apartado \ref{arte:fpga} de este mismo capitulo se han introducido las FPGAs, sistemas re-programables que permiten al diseñador re-configurar su estructura para realizar diferentes tareas, o la misma con una nueva implementación u organización de los componentes.
 
 En la imagen \ref{fig:parcial_dinamica} podemos ver un ejemplo de re-configuración, concretamente de re-configuración en un caso de tolerancia dinámica parcial.
 
@@ -765,7 +774,7 @@ Hay dos formas de aplicar la re-configuración a un sistema \cite{carlos2014}:
 %%-----------------------------------------------------------------
 \subsection{Tolerancia en microprocesadores}
 %%-----------------------------------------------------------------
-\label{cap2:tolerancia:microprocesadores}
+\label{arte:tolerancia:microprocesadores}
 
 La importancia de aplicar estas técnicas a los microprocesadores viene condicionada por la utilización final que se haga de los mismos. Inicialmente, los microprocesadores nacen sin un uso específico, es precisamente su empleo final el que determina la necesidad de emplear técnicas de tolerancia. Tal puede ser el caso en misiones espaciales o como cotroladores de sistemas vitales. 
 

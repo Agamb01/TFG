@@ -1,15 +1,2 @@
-Working on:   02TemaFallos/Tolerancia Fallos/Tolerancia Microprocesador
-
-
-
-
-https://www.google.es/search?q=tolerancia+a+fallos+en+microprocesadores&ie=utf-8&oe=utf-8&gws_rd=cr&ei=285iVbiTD8Lc7AbhrYPABw#q=tolerancia+a+fallos+en+procesadores
-
-http://scholar.google.es/scholar?start=10&q=fault+tolerant+microprocessor&hl=es&as_sdt=0,5&as_vis=1
-
-http://edi-info.ir/files/A-Portable-and-Fault-Tolerant-Microprocessor-Based-on-the-SPARC-V8-Architecture.pdf
-
-http://www.ece.northwestern.edu/~rjoseph/ece510-fall2005/papers/DSN01-diva.pdf
-
-http://people.engr.ncsu.edu/ericro/publications/conference_FTCS-29.pdf
+Working on:   03Trabajopropio
 

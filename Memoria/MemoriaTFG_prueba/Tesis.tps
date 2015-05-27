@@ -12,13 +12,13 @@ MaxPos.y=-1
 NormalPos.left=4
 NormalPos.top=26
 NormalPos.right=1339
-NormalPos.bottom=582
+NormalPos.bottom=395
 Class=LaTeXView
 Document=Tesis.tex
 
 [Frame0_View0,0]
-TopLine=126
-Cursor=5903
+TopLine=134
+Cursor=4986
 
 [Frame1]
 Flags=0
@@ -30,13 +30,13 @@ MaxPos.y=-1
 NormalPos.left=4
 NormalPos.top=26
 NormalPos.right=1339
-NormalPos.bottom=582
+NormalPos.bottom=395
 Class=LaTeXView
 Document=config.tex
 
 [Frame1_View0,0]
-TopLine=53
-Cursor=2652
+TopLine=51
+Cursor=2488
 
 [Frame2]
 Flags=0
@@ -48,12 +48,12 @@ MaxPos.y=-1
 NormalPos.left=4
 NormalPos.top=26
 NormalPos.right=1339
-NormalPos.bottom=582
+NormalPos.bottom=395
 Class=LaTeXView
 Document=Cascaras\acronimos.tex
 
 [Frame2_View0,0]
-TopLine=25
+TopLine=23
 Cursor=1106
 
 [Frame3]
@@ -66,13 +66,13 @@ MaxPos.y=-1
 NormalPos.left=4
 NormalPos.top=26
 NormalPos.right=1339
-NormalPos.bottom=582
+NormalPos.bottom=395
 Class=LaTeXView
 Document=WorkingOn.txt
 
 [Frame3_View0,0]
 TopLine=0
-Cursor=619
+Cursor=29
 
 [Frame4]
 Flags=0
@@ -84,13 +84,13 @@ MaxPos.y=-1
 NormalPos.left=4
 NormalPos.top=26
 NormalPos.right=1339
-NormalPos.bottom=582
+NormalPos.bottom=395
 Class=LaTeXView
-Document=Capitulos\02TemaFallos.tex
+Document=Capitulos\03TrabajoPropio.tex
 
 [Frame4_View0,0]
-TopLine=852
-Cursor=43895
+TopLine=12
+Cursor=1070
 
 [Frame5]
 Flags=0
@@ -102,15 +102,15 @@ MaxPos.y=-1
 NormalPos.left=4
 NormalPos.top=26
 NormalPos.right=1339
-NormalPos.bottom=582
+NormalPos.bottom=395
 Class=LaTeXView
-Document=TeXiS\TeXiS_pream.tex
+Document=Capitulos\02TemaFallos.tex
 
 [Frame5_View0,0]
-TopLine=703
-Cursor=30189
+TopLine=9
+Cursor=648
 
 [SessionInfo]
 FrameCount=6
-ActiveFrame=1
+ActiveFrame=4
 
