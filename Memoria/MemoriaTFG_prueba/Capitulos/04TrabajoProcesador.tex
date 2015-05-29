@@ -17,7 +17,7 @@
 \end{FraseCelebre}
 
 \begin{resumen}
-...
+En este capitulo se presenta el diseño del procesador implementado: su arquitectura, 
 \end{resumen}
 
 
@@ -42,10 +42,10 @@ La implementación ha sido adaptada para poder ejecutar instrucciones del reperto
 
   \item Además se cuenta con el registro del contador de programa (PC). Este registro especial almacena la dirección de memoria de la instrucción que debe ejecutarse a continuación. Se incrementa automáticamente en 4 cada ciclo y solo se puede alterar este mecanismo por medio de instrucciones de control. 
 
-  \item La memoria es accesible por palabras de 32 bits. Es decir, todo acceso a memoria carga o almacena 32 bits. Para acceder a memoria se dispone de instrucciones de lectura y escritura de una palabra con direccionamiento relativo a registro base. La dirección de acceso se calcula con un registro base al que se le suma un inmediato de 12 bits.
+  \item Las instrucciones tienen un formato variable pero un tamaño constante de 32 bits. 
 
-  \item Las instrucciones se componen de 32 bits con formato variable. 
-	
+  \item La memoria es accesible por palabras. Es decir, todo acceso a memoria carga o almacena un dato de 32 bits. Para acceder a memoria se dispone de instrucciones de lectura y escritura de una palabra con direccionamiento relativo a registro base. La dirección de acceso se calcula con un registro base al que se le suma un inmediato de 12 bits.
+		
 \end{itemize}
 
 %-------------------------------------------------------------------
@@ -53,7 +53,7 @@ La implementación ha sido adaptada para poder ejecutar instrucciones del reperto
 %-------------------------------------------------------------------
 \label{cap8:sec:tiposdedatos}
 
-Para simplificar la arquitectura del procesador, se ha limitado el tamaño de datos a palabras completas de 32 bits.  Se trabaja con un bus de ancho de palabra de 32 bits donde todos los bits cargados tienen valor.
+Para simplificar la arquitectura del procesador, se ha limitado el tamaño de datos a palabras completas de 32 bits.  Se trabaja con un bus de ancho de palabra del mismo tamaño donde todos los bits cargados tienen valor.
 
 
 %-------------------------------------------------------------------
@@ -113,7 +113,7 @@ Dependiendo de la instrucción los operandos pueden ser:
 	\centering
 		%\includegraphics[width=0.75\textwidth]{Imagenes/Instrucciones/procesamiento}
 	\caption{Formato para instrucciones aritmético-lógicas.}
-	\label{instruccionesALU}
+	\label{fig:instruccionesALU}
 \end{figure}
 
 %-------------------------------------------------------------------
@@ -141,7 +141,7 @@ El conjunto de operaciones con inmediato se limita a cuatro. Se permite mover un
 
 Las operaciones de control intervienen en la ejecución normal del programa. Se utilizan para modificar el valor del registro del contador de programa. 
 
-Los procesadores ARM combinan instrucciones de 32 bits con instrucciones de 16 bits. Por ello, el inmediato con el desplazamiento es desplazado un bit hacia la izquierda. En nuestro caso nos debemos asegurar de codificar las instrucciones con un 0 en el bit menos significativo del inmediato. Con esto se evita acabar en una dirección equivocada, y leer dos mitades de dos instrucciones distintas.
+Los procesadores ARM combinan instrucciones de 32 bits con instrucciones de 16 bits. Por ello, el inmediato es desplazado un bit hacia la izquierda. En nuestro caso nos debemos asegurar de codificar las instrucciones con un 0 en el bit menos significativo del inmediato. Con esto se evita acabar en una dirección equivocada, y leer dos mitades de dos instrucciones distintas.
 
 Existen dos tipos de instrucciones de salto. El primero es el salto incondicional y permite sumar un entero de 24 bits al valor del contador de programa y almacenar el resultado en el mismo.
 
@@ -153,7 +153,7 @@ Previamente a un salto condicional se debe ejecutar una operación de comparación
 	\centering
 		%\includegraphics[width=0.75\textwidth]{}
 	\caption{Formato para instrucciones de control.}
-	\label{instruccionesBR}
+	\label{fig:instruccionesBR}
 \end{figure}
 
 

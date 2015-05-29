@@ -4,30 +4,26 @@
 %
 %---------------------------------------------------------------------
 
-\chapter{Procesador}
+\chapter{Introducción al procesador}
 \label{procesador}
 
 \begin{FraseCelebre}
   \begin{Frase}
-    "`La verdadera ciencia enseña, sobre todo, a dudar y a ser ignorante."' 
+    "`La idea detrás de los computadores digitales puede explicarse diciendo que estas máquinas están destinadas a llevar a cabo cualquier operación que pueda ser realizado por un equipo humano."' 
   \end{Frase}
   \begin{Fuente}
-    Ernest Rutherford 
+    Alan Turing
   \end{Fuente}
 \end{FraseCelebre}
 
 \begin{resumen}
-En este capítulo se define con detalle lo que es un procesador y su importancia en el mundo de hoy en día. También se tratan dos arquitectura más concretas, la arquitectura DLX y la arquitectura ARM.
-
-A continuación se define qué es un fallo y qué tipos de fallos pueden ocurrir en los sistemas. Además se explican algunas técnicas de tolerancia a fallos.
-
-Para terminar, se justifica la importancia de la tolerancia en los sistemas y concretamente porqué es necesaria la tolerancia en los microprocesadores.
+En este capítulo se define con detalle lo que es un procesador y su importancia en el mundo de hoy en día. También se introduce la arquitectura ARM.
 \end{resumen}
 
 %%-----------------------------------------------------------------
-\section{Introducción al procesador}
+\section{Procesador}
 %%-----------------------------------------------------------------
-\label{procesador:introduccion}
+\label{procesador:procesador}
 
 El Diccionario de la Real Academia Española (DRAE) define el procesador como la "`Unidad Central de Proceso (CPU), formada por uno o dos chips"'. Figura \ref{fig:cpu}. 
 
@@ -134,6 +130,8 @@ La segmentación proporciona la ventaja de poder lanzar una instrucción por cada 
   \label{eq:cpi}
 \end{equation}
 
+A modo de ejemplo, veamos que sucede al ejecutar un programa de 3 instrucciones sobre un procesador que emplee 5 ciclos de reloj en ejecutar cualquier instrucción, pero en un caso no segmentado, y en otro caso segmentado en 5 etapas de 1 ciclo cada una:
+
 \begin{figure}[htpb]
 	\centering
 		\includegraphics[width=0.60\textwidth]{Imagenes/Procesador/SecuencialVSSegmentado.eps}
@@ -141,7 +139,7 @@ La segmentación proporciona la ventaja de poder lanzar una instrucción por cada 
 	\label{fig:SecuencialVSSegmentada}
 \end{figure}
 
-A modo de ejemplo, veamos que sucede al ejecutar un programa de 3 instrucciones sobre un procesador que emplee 5 ciclos de reloj en ejecutar cualquier instrucción, pero en un caso no segmentado, y en otro caso segmentado en 5 etapas de 1 ciclo cada una. Como podemos ver en la figura \ref{fig:SecuencialVSSegmentada}, el procesador no segmentado tarda 15 ciclos en ejecutar las 3 instrucciones y aplicando la formula anterior se obtiene que el valor de CPI es 5. Al ejecutar el mismo programa en el procesador segmentado, este tarda 5 ciclos en ocupar las 5 etapas del procesador. A partir de ese momento con cada ciclo de reloj se completa una instrucción, completándose la ejecución del programa en 7 ciclos de reloj. El nuevo valor de CPI es de 2,33. Así pues, la segmentación ha reducido el número de ciclos por instrucción de este programa a menos de la mitad.
+Como podemos ver en la figura \ref{fig:SecuencialVSSegmentada}, el procesador no segmentado tarda 15 ciclos en ejecutar las 3 instrucciones y aplicando la formula anterior se obtiene que el valor de CPI es 5. Al ejecutar el mismo programa en el procesador segmentado, este tarda 5 ciclos en ocupar las 5 etapas del procesador. A partir de ese momento con cada ciclo de reloj se completa una instrucción, completándose la ejecución del programa en 7 ciclos de reloj. El nuevo valor de CPI es de 2,33. Así pues, la segmentación ha reducido el número de ciclos por instrucción de este programa a menos de la mitad.
 
 %-----------------------------------------------------------------
 \subsubsection{Inconvenientes de la segmentación}
@@ -170,7 +168,7 @@ Un programa es un conjunto de instrucciones que ejecutadas en orden realizan una
 
 
 %-----------------------------------------------------------------
-\subsection{ARM}
+\section{ARM}
 %-----------------------------------------------------------------
 \label{procesador:arm}
 
@@ -196,7 +194,7 @@ Todo ello no impide que la arquitectura ARM resulte muy eficiente y proporcione 
 
 
 %-----------------------------------------------------------------
-\subsubsection{Arquitectura ARM}
+\subsection{Arquitectura ARM}
 %-----------------------------------------------------------------
 \label{procesador:arm:arquitectura}
 
@@ -221,7 +219,7 @@ La arquitectura ARM añade algunas características adicionales para proporcionar 
 La arquitectura ARM contiene un banco de registros con 31 registros de propósito general. De estos sólo son visibles 16, a los cuales puede acceder cualquier instrucción. Los otros registros se utilizan para acelerar el procesado. Tres de los 31 registros tienen un uso especial y son el "`puntero de pila (SP)"', el "`registro de enlace (LR)"' y el "`contador de programa (PC)"'.
 
 %-----------------------------------------------------------------
-\subsubsection{Repertorio de instrucciones ARM}
+\subsection{Repertorio de instrucciones ARM}
 %-----------------------------------------------------------------
 \label{procesador:arm:instrucciones}
 
@@ -272,7 +270,7 @@ El repertorio de instrucciones se divide en seis categorías:
 Los procesadores ARM son capaces de procesar instrucciones de tres repertorios diferentes. El repertorio ARM \cite{ARM-InstructionSet}, el set Thumb/ Thumb-2 \cite{R.B.J.BrinkgreveW.M.Swolfs2011} y las instrucciones Jazelle \cite{ARM-InstructionSet}.
 
 %-----------------------------------------------------------------
-\subsubsection{Segmentación ARM}
+\subsection{Segmentación ARM}
 %-----------------------------------------------------------------
 \label{procesador:arm:segmentacion}
 
@@ -307,7 +305,7 @@ Las tres etapas en las que se divide la segmentación del "`ARM7TDMI"' son: (Figu
 Mientras se ejecuta una instrucción, la siguiente es decodificada y una tercera es traída de memoria. 
 
 %-----------------------------------------------------------------
-\subsubsection{Memoria ARM}
+\subsection{Memoria ARM}
 %-----------------------------------------------------------------
 \label{procesador:arm:memoria}
 
@@ -325,11 +323,17 @@ Las FPGAs, del inglés Field-Programmable Gate Arrays, consisten en bloques lógic
 Los bloques pueden ser tan simples como un transistor o tan complejos como un microprocesador. Las FPGAs comerciales suelen tener bloques basados en:
 
 \begin{itemize}
+
 	\item Parejas de transistores.
+	
 	\item Puertas lógicas simples.
+	
 	\item Multiplexores.
+	
 	\item Look-up tables (LUT).
+	
 	\item Estructuras de puertas AND-OR.
+	
 \end{itemize}
 
 \begin{figure}

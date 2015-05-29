@@ -2,41 +2,50 @@
 \BOOKMARK [0][-]{dedicatoria.0}{Dedicatoria}{}% 2
 \BOOKMARK [0][-]{chapter*.1}{Agradecimientos}{}% 3
 \BOOKMARK [0][-]{chapter*.2}{Resumen}{}% 4
-\BOOKMARK [0][-]{chapter.1}{Introducci\363n}{}% 5
-\BOOKMARK [1][-]{section.1.1}{Introducci\363n}{chapter.1}% 6
-\BOOKMARK [1][-]{section.1.2}{Motivaci\363n}{chapter.1}% 7
-\BOOKMARK [1][-]{section.1.3}{Planteamiento del problema}{chapter.1}% 8
-\BOOKMARK [1][-]{section.1.4}{Objetivos}{chapter.1}% 9
-\BOOKMARK [1][-]{section.1.5}{Estructura del documento***}{chapter.1}% 10
-\BOOKMARK [0][-]{chapter.2}{Procesador}{}% 11
-\BOOKMARK [1][-]{section.2.1}{Introducci\363n al procesador}{chapter.2}% 12
-\BOOKMARK [2][-]{subsection.2.1.1}{Arquitectura}{section.2.1}% 13
-\BOOKMARK [2][-]{subsection.2.1.2}{Repertorio de instrucciones}{section.2.1}% 14
-\BOOKMARK [2][-]{subsection.2.1.3}{Memoria}{section.2.1}% 15
-\BOOKMARK [2][-]{subsection.2.1.4}{Segmentaci\363n}{section.2.1}% 16
-\BOOKMARK [2][-]{subsection.2.1.5}{ARM}{section.2.1}% 17
-\BOOKMARK [1][-]{section.2.2}{Field-Programmable Gate Arrays \(FPGA\)}{chapter.2}% 18
-\BOOKMARK [0][-]{chapter.3}{Instroducci\363n a los fallos y su tolerancia}{}% 19
-\BOOKMARK [1][-]{section.3.1}{Introducci\363n a los fallos}{chapter.3}% 20
-\BOOKMARK [2][-]{subsection.3.1.1}{Causas}{section.3.1}% 21
-\BOOKMARK [2][-]{subsection.3.1.2}{Tipos de fallos}{section.3.1}% 22
-\BOOKMARK [1][-]{section.3.2}{Tolerancia a Fallos}{chapter.3}% 23
-\BOOKMARK [2][-]{subsection.3.2.1}{Redundancia en la informaci\363n}{section.3.2}% 24
-\BOOKMARK [2][-]{subsection.3.2.2}{Redundancia en el tiempo}{section.3.2}% 25
-\BOOKMARK [2][-]{subsection.3.2.3}{Redundancia en el hardware}{section.3.2}% 26
-\BOOKMARK [1][-]{section.3.3}{Tolerancia en microprocesadores}{chapter.3}% 27
-\BOOKMARK [0][-]{chapter.4}{Procesador}{}% 28
-\BOOKMARK [1][-]{section.4.1}{Esctructura}{chapter.4}% 29
-\BOOKMARK [1][-]{section.4.2}{Tipos de datos}{chapter.4}% 30
-\BOOKMARK [1][-]{section.4.3}{Instrucciones}{chapter.4}% 31
-\BOOKMARK [2][-]{subsection.4.3.1}{Accesos a memoria}{section.4.3}% 32
-\BOOKMARK [2][-]{subsection.4.3.2}{Procesamiento de datos}{section.4.3}% 33
-\BOOKMARK [2][-]{subsection.4.3.3}{Operaciones de control}{section.4.3}% 34
-\BOOKMARK [1][-]{section.4.4}{Arquitectura}{chapter.4}% 35
-\BOOKMARK [2][-]{subsection.4.4.1}{Ruta de datos}{section.4.4}% 36
-\BOOKMARK [2][-]{subsection.4.4.2}{Ruta de control}{section.4.4}% 37
-\BOOKMARK [1][-]{section.4.5}{Formato de instrucciones}{chapter.4}% 38
-\BOOKMARK [2][-]{subsection.4.5.1}{Transferencia}{section.4.5}% 39
-\BOOKMARK [0][-]{appendix.Alph1}{As\355 se hizo...}{}% 40
-\BOOKMARK [1][-]{section.Alph1.1}{Introducci\363n}{appendix.Alph1}% 41
-\BOOKMARK [0][-]{fin.0}{Fin}{}% 42
+\BOOKMARK [0][-]{indices.0}{\315ndices}{}% 5
+\BOOKMARK [1][-]{tabla de contenidos.1}{Tabla de contenidos}{indices.0}% 6
+\BOOKMARK [1][-]{indice de figuras.1}{\315ndice de figuras}{indices.0}% 7
+\BOOKMARK [1][-]{indice de tablas.1}{\315ndice de tablas}{indices.0}% 8
+\BOOKMARK [0][-]{chapter.1}{Introducci\363n}{}% 9
+\BOOKMARK [1][-]{section.1.1}{Introducci\363n}{chapter.1}% 10
+\BOOKMARK [1][-]{section.1.2}{Motivaci\363n}{chapter.1}% 11
+\BOOKMARK [1][-]{section.1.3}{Planteamiento del problema}{chapter.1}% 12
+\BOOKMARK [1][-]{section.1.4}{Objetivos}{chapter.1}% 13
+\BOOKMARK [1][-]{section.1.5}{Estructura del documento***}{chapter.1}% 14
+\BOOKMARK [0][-]{chapter.2}{Introducci\363n al procesador}{}% 15
+\BOOKMARK [1][-]{section.2.1}{Procesador}{chapter.2}% 16
+\BOOKMARK [2][-]{subsection.2.1.1}{Arquitectura}{section.2.1}% 17
+\BOOKMARK [2][-]{subsection.2.1.2}{Repertorio de instrucciones}{section.2.1}% 18
+\BOOKMARK [2][-]{subsection.2.1.3}{Memoria}{section.2.1}% 19
+\BOOKMARK [2][-]{subsection.2.1.4}{Segmentaci\363n}{section.2.1}% 20
+\BOOKMARK [1][-]{section.2.2}{ARM}{chapter.2}% 21
+\BOOKMARK [2][-]{subsection.2.2.1}{Arquitectura ARM}{section.2.2}% 22
+\BOOKMARK [2][-]{subsection.2.2.2}{Repertorio de instrucciones ARM}{section.2.2}% 23
+\BOOKMARK [2][-]{subsection.2.2.3}{Segmentaci\363n ARM}{section.2.2}% 24
+\BOOKMARK [2][-]{subsection.2.2.4}{Memoria ARM}{section.2.2}% 25
+\BOOKMARK [1][-]{section.2.3}{Field-Programmable Gate Arrays \(FPGA\)}{chapter.2}% 26
+\BOOKMARK [0][-]{chapter.3}{Instroducci\363n a los fallos y su tolerancia}{}% 27
+\BOOKMARK [1][-]{section.3.1}{Introducci\363n a los fallos}{chapter.3}% 28
+\BOOKMARK [2][-]{subsection.3.1.1}{Causas}{section.3.1}% 29
+\BOOKMARK [2][-]{subsection.3.1.2}{Tipos de fallos}{section.3.1}% 30
+\BOOKMARK [1][-]{section.3.2}{Tolerancia a Fallos}{chapter.3}% 31
+\BOOKMARK [2][-]{subsection.3.2.1}{Redundancia en la informaci\363n}{section.3.2}% 32
+\BOOKMARK [2][-]{subsection.3.2.2}{Redundancia en el tiempo}{section.3.2}% 33
+\BOOKMARK [2][-]{subsection.3.2.3}{Redundancia en el hardware}{section.3.2}% 34
+\BOOKMARK [1][-]{section.3.3}{Tolerancia en microprocesadores}{chapter.3}% 35
+\BOOKMARK [0][-]{chapter.4}{Procesador}{}% 36
+\BOOKMARK [1][-]{section.4.1}{Esctructura}{chapter.4}% 37
+\BOOKMARK [1][-]{section.4.2}{Tipos de datos}{chapter.4}% 38
+\BOOKMARK [1][-]{section.4.3}{Instrucciones}{chapter.4}% 39
+\BOOKMARK [2][-]{subsection.4.3.1}{Accesos a memoria}{section.4.3}% 40
+\BOOKMARK [2][-]{subsection.4.3.2}{Procesamiento de datos}{section.4.3}% 41
+\BOOKMARK [2][-]{subsection.4.3.3}{Operaciones de control}{section.4.3}% 42
+\BOOKMARK [1][-]{section.4.4}{Arquitectura}{chapter.4}% 43
+\BOOKMARK [2][-]{subsection.4.4.1}{Ruta de datos}{section.4.4}% 44
+\BOOKMARK [2][-]{subsection.4.4.2}{Ruta de control}{section.4.4}% 45
+\BOOKMARK [1][-]{section.4.5}{Formato de instrucciones}{chapter.4}% 46
+\BOOKMARK [2][-]{subsection.4.5.1}{Transferencia}{section.4.5}% 47
+\BOOKMARK [0][-]{appendix.Alph1}{As\355 se hizo...}{}% 48
+\BOOKMARK [1][-]{section.Alph1.1}{Introducci\363n}{appendix.Alph1}% 49
+\BOOKMARK [0][-]{appendix*.29}{Bibliograf\355a}{}% 50
+\BOOKMARK [0][-]{fin.0}{Fin}{}% 51

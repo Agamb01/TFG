@@ -3,18 +3,17 @@ A level-1 auxiliary file: Cascaras/cover.aux
 A level-1 auxiliary file: Cascaras/dedicatoria.aux
 A level-1 auxiliary file: Cascaras/agradecimientos.aux
 A level-1 auxiliary file: Cascaras/resumen.aux
+A level-1 auxiliary file: TeXiS/TeXiS_toc.aux
 A level-1 auxiliary file: Capitulos/01Introduccion.aux
 A level-1 auxiliary file: Capitulos/02IntroduccionProcesador.aux
 A level-1 auxiliary file: Capitulos/03IntroduccionFallosTolerancia.aux
-A level-1 auxiliary file: Capitulos/04TrabajoPropio.aux
+A level-1 auxiliary file: Capitulos/04TrabajoProcesador.aux
 A level-1 auxiliary file: Apendices/01ApendiceA.aux
 A level-1 auxiliary file: Cascaras/bibliografia.aux
 The style file: abbrv.bst
 A level-1 auxiliary file: Cascaras/fin.aux
 Database file #1: latex.bib
 Database file #2: otros.bib
-Warning--empty journal in Bickt
-Warning--empty year in Bickt
 Warning--empty publisher in R.B.J.BrinkgreveW.M.Swolfs2011
 Warning--empty journal in Bustillos2012
 Warning--empty journal in Estadistica2014
@@ -37,4 +36,4 @@ Warning--empty journal in States2011
 Warning--empty journal in ARM-InstructionSet
 Warning--empty year in ARM-InstructionSet
 Warning--there's a number but no volume in Weaver2001
-(There were 24 warnings)
+(There were 22 warnings)
