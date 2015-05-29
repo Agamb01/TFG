@@ -1,0 +1,382 @@
+%---------------------------------------------------------------------
+%
+%                          Capítulo 3
+%
+%---------------------------------------------------------------------
+
+\chapter{Instroducción a los fallos y su tolerancia}
+\label{fallos}
+
+\begin{FraseCelebre}
+  \begin{Frase}
+    "`La verdadera ciencia enseña, sobre todo, a dudar y a ser ignorante."' 
+  \end{Frase}
+  \begin{Fuente}
+    Ernest Rutherford 
+  \end{Fuente}
+\end{FraseCelebre}
+
+\begin{resumen}
+En este capítulo se define con detalle lo que es un procesador y su importancia en el mundo de hoy en día. También se tratan dos arquitectura más concretas, la arquitectura DLX y la arquitectura ARM.
+
+A continuación se define qué es un fallo y qué tipos de fallos pueden ocurrir en los sistemas. Además se explican algunas técnicas de tolerancia a fallos.
+
+Para terminar, se justifica la importancia de la tolerancia en los sistemas y concretamente porqué es necesaria la tolerancia en los microprocesadores.
+\end{resumen}
+
+%%-----------------------------------------------------------------
+\section{Introducción a los fallos}
+%%-----------------------------------------------------------------
+\label{fallos:introduccion}
+
+Un fallo ocurre cuando un sistema no ha funcionado correctamente. Se pueden encontrar desde fallos en la definición de requisitos que se propagan hasta la fase de producción, hasta fallos producidos en el sistema por agentes externos, como la radiación. En un sistema electrónico pueden ocurrir fallos que se clasifican en \textit{"`soft errors"'} o \textit{fallos transitorios} y \textit{"`hard errors"'} o \textit{fallos permanentes}.
+
+Cuando el fallo ocurrido afecta a los elementos de memoria alterando sus valores, lo que incluye tanto a los datos como a las instrucciones, se conoce como \textit{"`soft error"'} o \textit{fallo transitorio}. Sin embargo, si el fallo daña o altera el funcionamiento del chip, se conoce como \textit{"`hard error"'} o \textit{fallo permanente}. 
+
+En esta sección no se contemplan los fallos que se producen a partir de una mala implementación, únicamente se centra en los fallos producidos por agentes externos que no se pueden evitar en las fases de diseño, y que afectan al hardware, dañando sus componentes o alterando los valores de las señales con las que trabaja.
+
+%-----------------------------------------------------------------
+\subsection{Causas}
+%-----------------------------------------------------------------
+\label{cap2:fallos:causas}
+
+
+En general, estos fallos se conocen como \textit{"`Single-Event Effects (SEEs)"'}. Se deben al choque de una partícula de energía contra un elemento del circuito integrado. Figura	\ref{fig:SEU_FPGA}. 
+
+\begin{figure}[htbp]
+	\centering
+		\includegraphics[width=0.80\textwidth]{Imagenes/SEU/SEU_FPGA.jpg}
+	\caption{Single Event Upset en una FPGA \cite{Hu2010}.}
+	\label{fig:SEU_FPGA}
+\end{figure}
+
+Las partículas de energía pueden ser:
+
+\begin{itemize}
+
+  \item Los \textbf{rayos cósmicos}: Si poseen suficiente carga pueden depositar energía suficiente para invertir un bit en un elemento de memoria, en una puerta lógica, o en una sección del circuito. Estos rayos pueden tener un origen galáctico o solar.  
+		
+  \item Los \textbf{protones y neutrones de alta energía}: Bien sean de origen radiactivo o solar, pueden provocar una reacción radiactiva ionizando elementos en el chip y provocando un SEE.
+
+\end{itemize}
+
+Los rayos cósmicos y las partículas solares reaccionan con la atmósfera provocando un efecto de lluvia de partículas. La atmósfera actúa a modo de filtro contra estas partículas. Este efecto se distribuye de manera diferente alrededor de la tierra debido a la densidad de la atmósfera, variando la proporción de partículas que llegan a nivel de suelo y las que quedan bloqueadas.
+
+Como ya se adelantó en la introducción, los efectos varían según la latitud, la longitud y la altitud. Figura \ref{fig:errores_vs_altitud2}. Al entrar en contacto con la atmósfera las partículas colisionan contra estas y pierden energía. Cuanto menor sea la densidad, mayor será el número de partículas que llega al nivel del suelo manteniendo su energía, mayor será el numero de partículas que puedan colisionar contra un chip y en consecuencia mayor la probabilidad que se produzca un fallo. Para más información sobre lluvias de partículas véase \cite{Melis2014}.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.75\textwidth]{Imagenes/Estadisticas/Neutrones1.eps}
+	\caption{Flujo de neutrones a 40.000 pies de altitud \cite{Hu2010}.} 
+	\label{fig:errores_vs_altitud2}
+\end{figure}
+
+
+%-----------------------------------------------------------------
+\subsection{Tipos de fallos}
+%-----------------------------------------------------------------
+\label{cap2:fallos:tipos}
+
+Los fallos se clasifican los fallos en dos tipos: Fallos transitorios o no destructivos, y fallos permanentes o destructivos.
+
+%-----------------------------------------------------------------
+\subsubsection{Fallos Transitorios}
+%-----------------------------------------------------------------
+\label{cap2:fallos:tipos:transitorios}
+
+Los \textit{fallos transitorios}, también llamados \textit{"`soft errors"'}, son aquellos que cambian el estado del dispositivo o celda sin afectar a su funcionalidad.
+
+Los principales tipos de fallos transitorios son \cite{Jedec2006}:
+
+\begin{itemize}
+
+  \item \textbf{Single-Event Upset (SEU)}
+	
+	Aquellos fallos que afectan a los elementos del chip invirtiendo su valor: memoria, celdas de memoria o registros. En un microprocesador se pueden corromper los datos del banco de registro, o los datos y las señales de control entre las etapas de segmentación. Figura \ref{fig:Soft_SEU}.
+	
+  \item \textbf{Single-Event Functional Interrupt (SEFI)}
+	
+	Fallos que producen una perdida temporal de la funcionalidad del dispositivo, provocando un mal funcionamiento detectable, que no requiere reiniciar el sistema para recuperar la funcionalidad. Normalmente se asocia con un SEU en los registros de control.
+	
+  \item \textbf{Single-Event Transient (SET)}
+	
+	Picos de energía provocados por una partícula en un nodo de un circuito integrado. Pueden propagarse y almacenarse en un biestable si se produce en un flanco de reloj. Figura \ref{fig:Soft_SET}.
+	
+\end{itemize}
+
+\begin{figure}[htbp]
+  \centering
+  \subfloat[Single-Event Upset (SEU)\label{fig:Soft_SEU}]{\includegraphics[width=0.45\textwidth]{Imagenes/SEU/SEU.eps}} \qquad
+  \subfloat[Single-Event Transient (SET)\label{fig:Soft_SET}]{\includegraphics[width=0.45\textwidth]{Imagenes/SEU/SET.eps}}
+  \caption{Fallos Transitorios}
+  \label{fig:Soft_SEE}
+\end{figure}
+
+El sistema sufre las consecuencias como un cambio de valor en un bit. Si se produce un fallo de este tipo en una celda de memoria o en un registro de un microprocesador se corromperá el dato almacenado. Si afecta a un biestable en cualquier etapa de la segmentación, puede alterar el comportamiento de la instrucción, siendo más o menos grave según el lugar donde se produzca el fallo.
+
+
+%-----------------------------------------------------------------
+\subsubsection{Fallos Permanentes}
+%-----------------------------------------------------------------
+\label{cap2:fallos:tipos:permanentes}
+
+
+Los \textit{fallos permanentes} o \textit{"`hard errors"'} son los que afectan a la funcionalidad del dispositivo y lo dañan permanentemente. Pueden producir cambios en el diseño que impiden el correcto funcionamiento del módulo o circuito que lo sufre. \cite{Jedec2006}
+
+Los principales tipos de fallos permanentes son:
+
+\begin{itemize}
+
+  \item \textbf{Single-Event Latch-up (SEL)}
+	
+	Corto-circuito en un transistor que provoca el mal funcionamiento del mismo. En algunos casos pueden ser reparados reiniciando el sistema.
+	
+  \item \textbf{Single-Event Hard Errors (SHE)}	
+	
+	Este fallo se identifica por causar que las celdas afectadas no puedan cambiar de estado.	
+	
+\end{itemize}
+
+Existen otros tipos de fallos permanentes, \textit{Single-Event Burnout (SEB)} y \textit{Single-Event Gate Rupture (SEGR)}, que destruyen el transistor a nivel físico.	
+  
+Los fallos permanentes, una vez detectados, únicamente pueden solucionarse sustituyendo el chip o modificando la configuración interna del propio chip. Véase el apartado \ref{cap2:tolerancia:hardware:reconfiguracion}.
+
+
+%%-----------------------------------------------------------------
+\section{Tolerancia a Fallos}
+%%-----------------------------------------------------------------
+\label{cap2:tolerancia}
+
+La tolerancia a fallos se define como la capacidad de un sistema para funcionar correctamente, incluso si se produce un fallo o anomalía en el sistema. 
+
+En ocasiones se producen fallos que no llegan a propagarse por el sitema y no producen errores en su funcionamiento, algo que ocurre cuando los cambios sufridos en un sistema debidos a un fallo, se ven enmascarados. Pueden deberse a alguna de las siguientes razones:
+
+\begin{itemize}
+
+  \item \textbf{Enmascarado lógico}
+	
+	Se evita el error en una puerta lógica, gracias a que el valor del dato no es necesario para estimar la salida. En la figura \ref{fig:Logical_masking} vemos que el valor de la señal invertida es indiferente para calcular el resultado ya que el resultado de una puerta "`or"' es "`1"' siempre que una de sus entradas sea "`1"'.
+	
+	\begin{figure}[htbp]
+		\centering
+			\includegraphics[width=0.75\textwidth]{Imagenes/SEU/Logical_masking.jpg}
+		\caption{Fallo enmascarado por una puerta lógica.}
+		\label{fig:Logical_masking}
+	\end{figure}
+
+	\item \textbf{Enmascarado eléctrico}
+	
+	El fallo producido pierde intensidad en el recorrido lógico y no tiene efecto al llegar al elemento de memoria donde se almacenaría. Figura \ref{fig:Electrical_masking}.
+	
+	\begin{figure}[htbp]
+		\centering
+			\includegraphics[width=0.75\textwidth]{Imagenes/SEU/Electrical_masking.jpg}
+		\caption{Fallo enmascarado eléctricamente.}
+		\label{fig:Electrical_masking}
+	\end{figure}
+
+	\item \textbf{Enmascarado temporal}
+	
+	El fallo se propaga con suficiente energía hasta el biestable, sin embargo, ocurre fuera de la de la ventana crítica de tiempo y la señal puede estabilizarse a su valor correcto antes de almacenarse en el biestable Figura \ref{fig:Latching_masking}.
+
+	\begin{figure}[htbp]
+		\centering
+			\includegraphics[width=0.75\textwidth]{Imagenes/SEU/Latching_masking.jpg}
+		\caption{Fallo enmascarado por ventana de tiempo.}
+		\label{fig:Latching_masking}
+	\end{figure}
+
+\end{itemize}
+
+Dependiendo de la aplicación del sistema, se distinguen diferentes grados de tolerancia:
+
+\begin{itemize}
+
+  \item \textbf{Tolerancia completa  (fail operational)}
+  
+	El sistema puede seguir funcionando sin perder funcionalidad ni prestaciones.
+	
+  \item \textbf{Degradación aceptable (failsoft)}
+  
+	El sistema continua funcionando parcialmente hasta la reparación del fallo.
+	
+  \item \textbf{Parada segura (failsafe)}
+  
+	El sistema se detiene en un estado seguro hasta que se repare el fallo.
+	
+\end{itemize}
+
+La tolerancia a fallos hardware se resuelve principalmente aplicando la redundancia en una o varias de sus modalidades:
+
+
+%%-----------------------------------------------------------------
+\subsection{Redundancia en la información}
+%%-----------------------------------------------------------------
+\label{cap2:tolerancia:informacion}
+
+La redundancia de datos se basa en mantener varias copias de todos los datos en diferentes ubicaciones junto a códigos de detección y corrección de errores. La replicación de datos consigue que la perdida o daño de una memoria no implique la perdida de los datos que almacena, mientras que los códigos de detección y corrección permiten comprobar los datos en busca de errores y corregir los datos si fuese necesario.
+
+El ejemplo más claro de este tipo de tolerancia es el conocido como \textit{conjunto redundante de discos independientes} o \textit{redundant array of independent disks (RAID)}. Las diferentes clases de RAID proporcionan un acceso a los datos rápido y transparente para el sistema operativo \cite{Torrecillas}. Por ejemplo:
+
+\begin{itemize}
+  \item \textbf{RAID 1:} Se basa en la utilización de discos adicionales sobre los que se realiza una copia de los datos que se están modificando. 
+  \item \textbf{RAID 5:} Reparte la información en bloques con bits de paridad, que se guardan en diferentes discos.
+\end{itemize}
+
+
+%%-----------------------------------------------------------------
+\subsection{Redundancia en el tiempo}
+%%-----------------------------------------------------------------
+\label{cap2:tolerancia:tiempo}
+
+La redundancia en el tiempo es efectiva contra los fallos transitorios. Consiste en ejecutar parte de un programa o el programa completo varias veces. Los fallos transitorios, como se ha explicado anteriormente, se producen en zonas aleatorias del chip, siendo poco probable que aparezca el mismo error en el mismo lugar.
+
+Aunque este tipo de redundancia requiere una menor cantidad de hardware y de software, obliga a ejecutar varias veces el programa, con lo que se produce una reducción en  el rendimiento del sistema.
+
+Algunas técnicas de redundancia en el tiempo se basan en "`puntos de control"' o "`checkpoints"'. Consisten en  almacenar los datos con los que se está trabajando cada cierto tiempo, se crea así un "`punto de control"'. eUna vez se detecta un error se recurre al último "`checkpoint"' en lugar de tener que reiniciar el programa completo \cite{Kadav2013}.
+
+
+%%-----------------------------------------------------------------
+\subsection{Redundancia en el hardware}
+%%-----------------------------------------------------------------
+\label{cap2:tolerancia:hardware}
+
+La redundancia hardware se basa en la inserción de módulos extra para la detección y corrección de los fallos. Aunque su objetivo es el de reducir el número de fallos que provocan errores, la inserción de módulos extra implica un aumento en la complejidad del sistema, paradógicamente, con ello aumenta la posible aparición de nuevos fallos.
+
+El tolerancia con hardware redundante se clasifica en:
+
+\begin{itemize}
+  \item \textbf{Tolerancia estática:} Se hace uso de varias unidades que realizan la misma función en paralelo.
+  \item \textbf{Tolerancia dinámica:} Consiste en mantener una unidad en funcionamiento y varias de repuesto para sustituirla si fuera necesario.
+  \item \textbf{Tolerancia híbrida:} Combinan tolerancia estática con tolerancia dinámica.
+\end{itemize}
+
+Algunas técnicas se detallan a continuación \cite{Kirrmann2005}.
+
+%%-----------------------------------------------------------------
+\subsubsection{Redundancia modular}
+%%-----------------------------------------------------------------
+\label{cap2:tolerancia:hardware:nmr}
+
+La redundancia modular consiste en replicar \textit{N} veces el bloque al que se desea aplicar la tolerancia, siendo \textit{N} un número impar, y a través de una votación de mayoría de las salidas extraer el valor correcto del módulo. Al aplicar la redundancia modular es posible corregir los fallos producidos en $\frac{N}{2}$ de los módulos redundantes. 
+
+El votador de mayoría es un componente de lógica combinacional que determina el valor más repetido en sus entradas. Actúa recibiendo tanto las salidas del bloque original como de cada una de las réplicas y determinando cual es el valor más repetido. De este modo los fallos quedan enmascarados. 
+
+Este método es conocido como \textit{"`N-Modular Redundancy (NMR)"'}, y el uso más común de esta técnica es la \textit{"`Triple Modular Redundancy (TMR)"'}, con \textit{N = 3}. 
+
+En la figura \ref{fig:Aplicando_NMR} se observa el resultado de aplicar la TMR a un bloque.
+
+\begin{figure}[htbp]
+  \centering
+  \subfloat[Módulo original]{\includegraphics[width=0.45\textwidth]{Imagenes/Tolerancia/No_NMR.eps}} \qquad
+  \subfloat[Módulo con TMR]{\includegraphics[width=0.45\textwidth]{Imagenes/Tolerancia/NMR.eps}}
+  \caption{Aplicando Triple Modular Redundancy (TMR)}
+  \label{fig:Aplicando_NMR}
+\end{figure}
+
+Esta técnica permite evitar los fallos producidos dentro de los bloques, sin embargo inserta un nuevo punto crítico. Si el votador, un circuito combinacional, se ve afectado por un SET, este puede propagarse y afectar a los siguientes bloques, generando un error en la ejecución.
+
+%%-----------------------------------------------------------------
+\subsubsection{Re-configuración}
+%%-----------------------------------------------------------------
+\label{cap2:tolerancia:hardware:reconfiguracion}
+
+La re-configuración de un sistema consiste en cambiar su implementación en el momento deseado. Por ejemplo, cuando nuestro sistema empieza a fallar debido a que parte del chip se ha dañado, en vez de eliminar el chip y sustituirlo por otro, se puede configurar el mismo circuito de manera que se eviten las zonas dañadas.
+
+En el apartado \ref{procesador:fpga} de este mismo capitulo se han introducido las FPGAs, sistemas re-programables que permiten al diseñador re-configurar su estructura para realizar diferentes tareas, o la misma con una nueva implementación u organización de los componentes.
+
+En la imagen \ref{fig:parcial_dinamica} podemos ver un ejemplo de re-configuración, concretamente de re-configuración en un caso de tolerancia dinámica parcial.
+
+Hay dos formas de aplicar la re-configuración a un sistema \cite{carlos2014}:
+\begin{itemize}
+
+	\item \textbf{Re-configuración estática}
+
+    Aquella que requiere detener el sistema completamente e iniciarlo con la nueva configuración.
+
+	\item \textbf{Re-configuración dinámica}
+
+    Aquella que en tiempo de ejecución es capaz de sustituir parcial o completamente el diseño del sistema.
+
+\end{itemize}
+
+\begin{figure}
+	\centering
+		\includegraphics[width=\textwidth]{Imagenes/Tolerancia/parcial_dinamica.eps}
+	\caption{Tolerancia dinámica parcial \cite{States2011}.}
+	\label{fig:parcial_dinamica}
+\end{figure}
+
+%%-----------------------------------------------------------------
+\section{Tolerancia en microprocesadores}
+%%-----------------------------------------------------------------
+\label{tolerancia:microprocesadores}
+
+La importancia de aplicar estas técnicas a los microprocesadores viene condicionada por la utilización final que se haga de los mismos. Inicialmente, los microprocesadores nacen sin un uso específico, es precisamente su empleo final el que determina la necesidad de emplear técnicas de tolerancia. Tal puede ser el caso en misiones espaciales o como cotroladores de sistemas vitales. 
+
+La NASA utiliza microprocesadores para sus misiones espaciales. Los incluye en sus sistemas de asistencia a la vida y sistemas de experimentación. Tradicionalmente la NASA ha utilizado técnicas de tolerancia estática, como las técnicas de NMR por su buena confiabilidad \cite{Sorin}. En estos casos se hacen más necesarias por la mayor tasa de fallos que se da fuera de la atmósfera terrestre. 
+
+Algunas técnicas aplicadas a microprocesadores, sin modificar su diseño interno, requieren de un sistema externo conectado al microprocesador, que sea capaz de comprobar los valores internos, detectar los fallos y recuperar el sistema, relanzando las instrucciones o recuperando los valores correctos. Para prevenir los casos en los que los fallos se producen en el circuito de comparación y detección, se recurre principalmente a técnicas de NMR en estos circuito, evitando tener que modificar la estructura interna del microprocesador, se replica el sistema de comprobación, que normalmente tendrá una implementación más simple que el propio microprocesador. \cite{Weaver2001}
+
+Otras técnicas utilizadas sobre microprocesadores evitan modificar o añadir sistemas auxiliares para comprobar y corregir los fallos. Se centran en la \textit{"`tolerancia en el tiempo"'} esto es, duplicando el programa y lanzando ambos en el mismo procesador de forma simultanea. Se propone esta técnica por considerar que las técnicas de \textit{"`tolerancia hardware"'} son demasiado intrusivas para el diseño, insuficientes para cubrir los fallos lógicos o demasiado costosa para la computación de proposito general\cite{Rotenberg1999}.
+
+Existen procesadores tolerantes a fallos en el mercado, tales  como el "`LEON3FT"', una implementación tolerante a fallos de la tercera versión del procesador "`LEON"', el "`IBM S/390 G5"' o el "`Intel Itanium"' \cite{Gaisler2002}.
+
+En concreto el "`LEON3FT"', fue diseñado para misiones militares y espaciales. Tiene cuatro modos de tolerancia que dependen de la tecnología utilizada y de la cantidad de bloques RAM disponibles. El modo de tolerancia se selecciona a la hora de sintetizar el diseño y estos modos pueden ser: \cite{Ieee-std-2010}
+
+\begin{itemize}
+	\item \textbf{Biestables resistentes a la radiación o TMR.}
+	
+	Se utilizan registros compuestos de biestables reforzados para resistir la influencia de la radiación o se utiliza la técnica TMR.
+	
+	\item \textbf{Paridad de 4-bits con reinicio.}
+	
+	Se utiliza un código \textit{"`checksum"'} de 1 bit por cada byte, 4 bits por palabra. Se reinicia la cola de segmentación para corregir los fallos.
+	
+	\item \textbf{Paridad de 8-bits sin reinicio.}
+	
+	Se utiliza un código \textit{"`checksum"'} de 8 bits por palabra y permite corregir 1 bit por byte, puede llegar a corregir 4 bits por palabra. La corrección se realiza sin reiniciar la cola de segmentación.
+	
+	\item \textbf{Código BCH de 7 bits con reinicio.}
+
+  Se utiliza un código \textit{"`BCH checksum"'} de 7 bits, que permite detectar fallos en 2 bits y corrige 1 bit por palabra. La cola de segmentación se reinicia al aplicar la corrección.
+
+\end{itemize}
+ 
+El procesador "`IBM S/390 G5"' duplica la cola de segmentación hasta la etapa de escritura, lanzando la misma instrucción dos veces. En la etapa de escritura se comparan los resultados , en caso de discrepancia no se escribe el resultado y se reinicia la ejecución desde la instrucción fallida. La ventaja proporcionada por este método reside en que el tiempo de propagación de las señales no se ve afectado por la inserción la lógica del votador. En caso contrario, el reiniciar la cola de segmentación puede costar miles de ciclos de reloj. \cite{Gaisler2002}
+
+Por último, la implementación de Intel en el "`Intel Itanium"' incluye una combinación de códigos de correción de errores y códigos de paridad en las memoria caché y TLB. \cite{Gaisler2002}
+
+
+
+%\cite{Bickt}
+
+%%%-----------------------------------------------------------------
+%\section*{\NotasBibliograficas}
+%%%-----------------------------------------------------------------
+%\TocNotasBibliograficas
+%
+%Citamos algo para que aparezca en la bibliografía\ldots
+%\citep{ldesc2e}
+%
+%\medskip
+%
+%Y también ponemos el acrónimo \ac{CVS} para que no cruja.
+%
+%Ten en cuenta que si no quieres acrónimos (o no quieres que te falle la compilación en ``release'' mientras no tengas ninguno) basta con que no definas la constante \verb+\acronimosEnRelease+ (en \texttt{config.tex}).
+%
+%
+%%%-----------------------------------------------------------------
+%\section*{\ProximoCapitulo}
+%%%-----------------------------------------------------------------
+%\TocProximoCapitulo
+%
+%...
+
+% Variable local para emacs, para  que encuentre el fichero maestro de
+% compilación y funcionen mejor algunas teclas rápidas de AucTeX
+%%%
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../Tesis.tex"
+%%% End:

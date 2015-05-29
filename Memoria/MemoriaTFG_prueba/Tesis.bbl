@@ -1,18 +1,28 @@
 \begin{thebibliography}{10}
 
-\bibitem{Antiguas}
-V.~{Arnau Llombart}.
-\newblock {Manual DLX}.
+\bibitem{Bickt}
+M.~Bickt.
+\newblock {ume Verification in Theorem}.
 
 \bibitem{R.B.J.BrinkgreveW.M.Swolfs2011}
 R.~Brinkgreve, W.~Swolfs, and E.~Engin.
 \newblock {\em {ARM Architecture Reference Manual Thumb-2 Supplement}}.
 \newblock 2011.
 
+\bibitem{Brown1996}
+S.~Brown and J.~Rose.
+\newblock {Architecture of FPGAs and CPLDs: A tutorial}.
+\newblock {\em IEEE Design and Test of Computers}, 13(2):42--57, 1996.
+
 \bibitem{Bustillos2012}
 C.~T. Bustillos.
 \newblock {Simulador arm en el \'{a}mbito docente}.
 \newblock 2012.
+
+\bibitem{Estadistica2014}
+I.~N. de~Estadistica.
+\newblock {Penetraci\'{o}n de ordenador en hogares}.
+\newblock 2014.
 
 \bibitem{Gaisler2002}
 J.~Gaisler.
@@ -104,11 +114,6 @@ C.~Mobile.
 \newblock {Streaming 4K Ultra HD video at home and on the go}.
 \newblock pages 0--1.
 
-\bibitem{Pascual2011}
-J.~M. Pascual.
-\newblock {\em {Simulador DLX con repertorio multimedia}}.
-\newblock PhD thesis, Universidad Complutense de Madrid, 2011.
-
 \bibitem{Rose}
 J.~Rose, A.~E. Gamal, and A.~Sangiovanni-Vincentelli.
 \newblock {Architecture of Field-Programmable Gate Arrays}.
@@ -119,10 +124,6 @@ E.~Rotenberg.
   microprocessors}.
 \newblock {\em Digest of Papers. Twenty-Ninth Annual International Symposium on
   Fault-Tolerant Computing (Cat. No.99CB36352)}, 1999.
-
-\bibitem{Sadasivan2006}
-S.~Sadasivan.
-\newblock {An introduction to the arm cortex-m3 processor}, 2006.
 
 \bibitem{Sorin}
 D.~J. Sorin and S.~Ozev.

@@ -12,13 +12,13 @@ MaxPos.y=-1
 NormalPos.left=4
 NormalPos.top=26
 NormalPos.right=1339
-NormalPos.bottom=582
+NormalPos.bottom=380
 Class=LaTeXView
 Document=Tesis.tex
 
 [Frame0_View0,0]
-TopLine=126
-Cursor=5903
+TopLine=131
+Cursor=4719
 
 [Frame1]
 Flags=0
@@ -30,13 +30,13 @@ MaxPos.y=-1
 NormalPos.left=4
 NormalPos.top=26
 NormalPos.right=1339
-NormalPos.bottom=582
+NormalPos.bottom=380
 Class=LaTeXView
 Document=config.tex
 
 [Frame1_View0,0]
-TopLine=53
-Cursor=2652
+TopLine=57
+Cursor=2595
 
 [Frame2]
 Flags=0
@@ -48,13 +48,13 @@ MaxPos.y=-1
 NormalPos.left=4
 NormalPos.top=26
 NormalPos.right=1339
-NormalPos.bottom=582
+NormalPos.bottom=380
 Class=LaTeXView
-Document=Cascaras\acronimos.tex
+Document=Capitulos\03IntroduccionFallosTolerancia.tex
 
 [Frame2_View0,0]
-TopLine=25
-Cursor=1106
+TopLine=431
+Cursor=22882
 
 [Frame3]
 Flags=0
@@ -66,13 +66,13 @@ MaxPos.y=-1
 NormalPos.left=4
 NormalPos.top=26
 NormalPos.right=1339
-NormalPos.bottom=582
+NormalPos.bottom=380
 Class=LaTeXView
-Document=WorkingOn.txt
+Document=Cascaras\acronimos.tex
 
 [Frame3_View0,0]
-TopLine=0
-Cursor=619
+TopLine=33
+Cursor=1184
 
 [Frame4]
 Flags=0
@@ -84,33 +84,15 @@ MaxPos.y=-1
 NormalPos.left=4
 NormalPos.top=26
 NormalPos.right=1339
-NormalPos.bottom=582
+NormalPos.bottom=380
 Class=LaTeXView
-Document=Capitulos\02TemaFallos.tex
+Document=Tesis.bbl
 
 [Frame4_View0,0]
-TopLine=852
-Cursor=43895
-
-[Frame5]
-Flags=0
-ShowCmd=1
-MinPos.x=-1
-MinPos.y=-1
-MaxPos.x=-1
-MaxPos.y=-1
-NormalPos.left=4
-NormalPos.top=26
-NormalPos.right=1339
-NormalPos.bottom=582
-Class=LaTeXView
-Document=TeXiS\TeXiS_pream.tex
-
-[Frame5_View0,0]
-TopLine=703
-Cursor=30189
+TopLine=135
+Cursor=4681
 
 [SessionInfo]
-FrameCount=6
+FrameCount=5
 ActiveFrame=1
 

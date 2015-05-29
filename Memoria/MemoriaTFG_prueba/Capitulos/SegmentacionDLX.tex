@@ -1,0 +1,51 @@
+%-----------------------------------------------------------------
+\subsubsection{Segmentación DLX}
+%-----------------------------------------------------------------
+\label{cap2:procesador:dlx:segmentacion}
+
+El DLX basa su rendimiento en la segmentación que se divide en 5 etapas
+
+\begin{itemize}
+	\item \textit{Búsqueda de la instrucción (IF)} 
+	
+	Esta primera etapa es la encargada de acceder a memoria y traer la siguiente instrucción.
+	
+	\item \textit{Descodificación de la instrucción (ID)}
+	
+	En la segunda etapa se descodifica la instrucción cargada en la primera etapa, obteniendo las señales de control. Extrae los operandos del banco de registro o de la propia instrucción.
+	
+	\item \textit{Ejecución y cálculo de direcciones efectivas (EX)}
+	
+	La tercera etapa se encarga de ejecutar la instrucción utilizando las unidades funcionales. Las unidades funcionales pueden estar segmentadas y/o duplicadas.
+	
+	\item \textit{Acceso a memoria (MEM)}
+	
+	En la etapa de memoria es cuando se ejecutan las operaciones de carga y almacenamiento. Las instrucciones de carga traen datos de la memoria y los almacenan en los registros, mientras que las instrucciones de almacenamiento guardan los datos en memoria.
+	
+	\item \textit{Postescritura (WB)}
+	
+	En la última etapa se almacenan los resultados de las instrucciones en los registros.
+	
+\end{itemize}
+
+Como pudimos ver en la figura \ref{tab:segmentacion}, las instrucciones se buscan en cada ciclo de reloj, a menos que surjan riesgos debido a la segmentación. Como vimos en el apartado \ref{cap2:procesador:segmentacion:riesgos}, la segmentación implica ciertos riesgos. Para solucionar o reducir estos, el DLX implementa las siguientes técnicas \cite{Hennessy2006}:
+
+\begin{enumerate}
+  \item Duplicar y/o segmentar las unidades funcionales. Con ello se reducen los ciclos de espera debidos a los \textit{riesgos estructurale}s. Se consigue un mayor número de etapas para poder cargar nuevas instrucciones.
+	
+	\item "`Adelantamiento"'(forwarding) o "`Cortocircuito"'. Técnica encaminada a resolver los \textit{riesgos de datos}. Se consigue proporcionar un acceso a los resultados de instrucciones previas que todavía no han almacenado los datos en el "`banco de registros"'. 
+		\begin{itemize}
+		
+		  \item \textsl{Lectura después de escritura (RAW)}. Debido al cortocircuito implementado, el dato es recibido de las etapas siguientes y no es necesario que se haya escrito en los registros.
+			
+			\item \textsl{Escritura después de lectura (WAR)}. No puede ocurrir debido a que todas las lecturas se realizan al comienzo de la ejecución, en la etapa de descodificación, y las escrituras al final, en la etapa de postescritura.
+			
+			\item \textsl{Escritura después de escritura (WAW)}. Solo se presenta en segmentaciones que escriben en más de una etapa, esta arquitectura no se ve afectada ya que solo escribe en la etapa de postescritura. puede ocurrir de
+			
+	  \end{itemize}
+		
+	\item \textit{Riesgos de control}. Si se ejecuta una instrucción de salto, el cambio no se ve reflejado hasta la fase de memoria, esto implica una detención de 3 ciclos. En DLX se utiliza lógica especializada para averiguar si el salto es efectivo y para la calcular la dirección destino de salto en la etapa de descodificación. 
+	
+\end{enumerate}
+
+Cuando existe un riesgo que no es posible evitar con estas técnicas se aplica un interbloqueo de la segmentación. Este recurso actúa de modo que cuando se detecta un riesgo se detiene la ejecución de la instrucción hasta que el riesgo desaparece. El bloqueo se realiza en la fase de decodificación, donde es posible determinar si existe algún riesgo.
