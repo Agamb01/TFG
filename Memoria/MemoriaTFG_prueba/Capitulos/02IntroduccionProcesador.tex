@@ -172,7 +172,7 @@ Un programa es un conjunto de instrucciones que ejecutadas en orden realizan una
 %-----------------------------------------------------------------
 \label{procesador:arm}
 
-La arquitectura ARM fue originalmente desarrollada por Acron Computer Limited, entre los años 1983 y 1985.
+La arquitectura ARM fue originalmente desarrollada por Acorn Computer Limited, entre los años 1983 y 1985.
 
 Actualmente la arquitectura ARM es el conjunto de instrucciones más ampliamente utilizado en unidades producidas. Esto se debe a su amplio uso en los sectores de telefonía móvil, sistemas de automoción, computadoras industriales y otros dispositivos. 
 
@@ -356,32 +356,32 @@ Las ventajas de este tipo de dispositivos residen en su gran versatilidad, flexi
 
 Es por ello que las FPGAs se utilizan en todo tipo de sectores desde el procesamiento de datos y las comunicaciones hasta el sector de la automoción, el sector militar y el sector aeroespacial. Ha sido el sector de comunicaciones, como vemos en la figura \ref{fig:UsoFPGA}, el que más uso hacía de esta tecnología en 2008.
 
-%%%-----------------------------------------------------------------
-%\section*{\NotasBibliograficas}
-%%%-----------------------------------------------------------------
-%\TocNotasBibliograficas
-%
-%Citamos algo para que aparezca en la bibliografía\ldots
-%\citep{ldesc2e}
-%
-%\medskip
-%
-%Y también ponemos el acrónimo \ac{CVS} para que no cruja.
-%
-%Ten en cuenta que si no quieres acrónimos (o no quieres que te falle la compilación en ``release'' mientras no tengas ninguno) basta con que no definas la constante \verb+\acronimosEnRelease+ (en \texttt{config.tex}).
-%
-%
-%%%-----------------------------------------------------------------
-%\section*{\ProximoCapitulo}
-%%%-----------------------------------------------------------------
-%\TocProximoCapitulo
-%
-%...
+%%-----------------------------------------------------------------
+\subsection{Nexys 4}
+%%-----------------------------------------------------------------
+\label{procesador:fpga:nexys}
 
-% Variable local para emacs, para  que encuentre el fichero maestro de
-% compilación y funcionen mejor algunas teclas rápidas de AucTeX
-%%%
-%%% Local Variables:
-%%% mode: latex
-%%% TeX-master: "../Tesis.tex"
-%%% End:
+Para el desarrollo de este proyecto se ha utilizado la placa de prototipado "`Nexys 4"' \cite{Flash2013}, figura \ref{fig:Nexys4-top-2000}. Ésta placa se basa en la FPGA Artix-7 de Xilinx, proporcionando a la misma acceso a memorias externas, puertos de entrada/salida (USB, ethernet, etc), y una serie de sensores y periféricos integrados (acelerómetro, sensor de temperatura, micrófono, etc).  
+
+\begin{figure}
+	\centering
+		\includegraphics[width=0.9\textwidth]{Imagenes/FPGA/Nexys4-top-2000.eps}
+	\caption{Placa de prototipado Nexys 4}
+	\label{fig:Nexys4-top-2000}
+\end{figure}
+
+La FPGA Artix-7 (XC7A100T-1CSG324C) \cite{XilinxArtix}, está optimizada para la lógica de altas prestaciones y ofrece más recursos y mejor rendimiento que sus predecesoras. Esta FPGA consta de:
+
+\begin{itemize}
+  \item 15,850 bloques lógicas (cada porción contiene 6 LUTs y 8 biestables).
+	\item 4,860 Kb de bloques RAM. 
+  \item 6 lineas de reloj.
+  \item Velocidad interna de reloj superior a 450MHz.
+	\item 240 bloques DSP.
+	\item Conversor analógico-digital integrado (XADC).
+\end{itemize}
+
+Algunos perifericos incluidos en la placa son: 16 interruptores, 16 LEDs, puerto USB-UART, lector de tarjeta microSD, salida de audio, salida VGA, acelerómetro, sensor de temperatura, 16MB de memoria CellularRAM y puerto ethernet 10/100.
+
+
+

@@ -12,20 +12,18 @@
          <ClosedNode>/IF_main - Behavioral D:|TFG|TFG|VHDL|Procesador|VHDL|0_InstructionFetch|IF_main.vhd</ClosedNode>
          <ClosedNode>/MEM_main - Behavioral D:|TFG|TFG|VHDL|Procesador|VHDL|3_Memory|MEM_main.vhd</ClosedNode>
          <ClosedNode>/Mux2 - Behavioral D:|TFG|TFG|VHDL|Procesador|VHDL|common|Mux2.vhd</ClosedNode>
-         <ClosedNode>/main - Behavioral D:|TFG|TFG|VHDL|Procesador|VHDL|main.vhd</ClosedNode>
          <ClosedNode>/main - Behavioral D:|TFG|TFG|VHDL|Procesador|VHDL|main.vhd/i_EXE - EXE_main - Behavioral</ClosedNode>
-         <ClosedNode>/main - Behavioral D:|TFG|TFG|VHDL|Procesador|VHDL|main.vhd/i_ID - ID_main - Behavioral</ClosedNode>
          <ClosedNode>/main - Behavioral D:|TFG|TFG|VHDL|Procesador|VHDL|main.vhd/i_IF - IF_main - Behavioral</ClosedNode>
          <ClosedNode>/main - Behavioral D:|TFG|TFG|VHDL|Procesador|VHDL|main.vhd/i_MEM - MEM_main - Behavioral</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>i_ExtensionSigno - ExtensioSigno - Behavioral (D:/TFG/TFG/VHDL/Procesador/VHDL/1_InstructionDecode/ExtensioSigno.vhd)</SelectedItem>
+         <SelectedItem>main - Behavioral (D:/TFG/TFG/VHDL/Procesador/VHDL/main.vhd)</SelectedItem>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000010000000000000000000000000000000002020000000100000001000000640000015e000000020000000000000000000000000200000064ffffffff0000008100000003000000020000015e0000000100000003000000000000000100000003</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000010000000000000000000000000000000002020000000100000001000000640000020b000000020000000000000000000000000200000064ffffffff0000008100000003000000020000020b0000000100000003000000000000000100000003</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
-      <CurrentItem>i_ExtensionSigno - ExtensioSigno - Behavioral (D:/TFG/TFG/VHDL/Procesador/VHDL/1_InstructionDecode/ExtensioSigno.vhd)</CurrentItem>
+      <CurrentItem>main - Behavioral (D:/TFG/TFG/VHDL/Procesador/VHDL/main.vhd)</CurrentItem>
    </ItemView>
    <ItemView engineview="SynthesisOnly" sourcetype="" guiview="Process" >
       <ClosedNodes>
@@ -48,7 +46,7 @@
       <SelectedItems/>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000000000000001000000000000000000000000000000000000030c000000040101000100000000000000000000000064ffffffff000000810000000000000004000000d10000000100000000000000240000000100000000000000660000000100000000000001b10000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000000000000001000000000000000000000000000000000000027d000000040101000100000000000000000000000064ffffffff000000810000000000000004000000d10000000100000000000000240000000100000000000000660000000100000000000001220000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
       <CurrentItem>ALU.vhd</CurrentItem>
    </ItemView>

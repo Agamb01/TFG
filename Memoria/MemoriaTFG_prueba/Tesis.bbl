@@ -20,6 +20,11 @@ I.~N. de~Estadistica.
 \newblock {Penetraci\'{o}n de ordenador en hogares}.
 \newblock 2014.
 
+\bibitem{Flash2013}
+S.~Flash.
+\newblock {Nexys4 FPGA Board Reference Manual Ethernet connector}.
+\newblock pages 1--29, 2013.
+
 \bibitem{Gaisler2002}
 J.~Gaisler.
 \newblock {A portable and fault-tolerant microprocessor based on the SPARC V8
@@ -146,5 +151,10 @@ C.~Weaver and T.~Austin.
 \newblock {A fault tolerant approach to microprocessor design}.
 \newblock {\em Proceedings of the International Conference on Dependable
   Systems and Networks}, (July):411--420, 2001.
+
+\bibitem{XilinxArtix}
+Xilinx.
+\newblock {Xilinx Artix-7 Fpgas: a New Performance Standard for Power-Limited,
+  Cost-Sensitive Markets}.
 
 \end{thebibliography}

@@ -1,0 +1,234 @@
+%---------------------------------------------------------------------
+%
+%                          Capítulo 4
+%
+%---------------------------------------------------------------------
+
+\chapter{Procesador}
+\label{trabajoprocesador}
+
+\begin{FraseCelebre}
+\begin{Frase}
+...
+\end{Frase}
+\begin{Fuente}
+...
+\end{Fuente}
+\end{FraseCelebre}
+
+\begin{resumen}
+En este capitulo se presenta el diseño del procesador implementado: su arquitectura, 
+\end{resumen}
+
+
+%-------------------------------------------------------------------
+\section{Introducción}
+%-------------------------------------------------------------------
+\label{trabajoprocesador:introducción}
+
+Se ha diseñado e implementado un procesador con arquitectura RISC basado en la arquitectura de los procesadores DLX estudiados durante el grado en ingeniería de computadores \cite{Hennessy2006}. Se trata de un procesador con un ancho de palabra de 32 bits y una segmentación en 5 etapas.
+
+La implementación ha sido adaptada para poder ejecutar instrucciones del repertorio ARM. En concreto, se permite ejecutar un subconjunto del juego de instrucciones THUMB-2. Este juego de instrucciones es utilizado principalmente por los procesadores de la gama ARM CORTEX M.
+
+Para el desarrollo de este proyecto se ha utilizado la tecnología de las FPGAs, en concreto la placa "`Nexys 4"' que hace uso de la FPGA "`Artix 7"' de Xilinx. 
+
+Para la implementación se ha utilizado el lenguaje de diseño hardware VHDL junto al software "`ISE Design Suite 14.4"' de Xilinx para la implementación y el software "`ModelSim PE Student Edition"' de Altera para las simulaciones. Con esto se ha conseguido probar el diseño y la implementación de forma rápida y realizar las correcciones necesarias.  
+
+
+% Arquitectura
+%  Estructura
+%  Repertorio de instrucciones
+%  Memoria
+%  Segmentacion
+
+%------------------------------------------------------------
+\section{Arquitectura del procesador}
+%------------------------------------------------------------
+\label{trabajoprocesador:arquitectura}
+
+El microprocesador es una implementación modificada de la arquitectura DLX para permitir ejecutar instrucciones del repertorio ARM. A continuación se describen sus características completas.
+
+%------------------------------------------------------------
+\subsection{Estructura}
+%------------------------------------------------------------
+\label{trabajoprocesador:arquitectura:estructura}
+
+El procesador se compone de los siguientes elementos (figura \ref{fig:MiProcesador}):
+
+\begin{figure}[h]
+	\centering
+		\includegraphics[width=0.50\textwidth]{Imagenes/Mi_procesador/MiProcesador.eps}
+	\caption{Estructura de procesador diseñado}
+	\label{fig:MiProcesador}
+\end{figure}
+
+
+\begin{itemize}
+
+  \item \textbf{Banco de registros:} Dispone de 16 registros (R0, R1, ..., R15) de propósito general con un tamaño de 32 bits. Estos registros se pueden utilizar tanto para guardar datos leídos de memoria como enviar los valores a memoria. Se puede trabajar con los valores que tengan almacenados ejecutando operaciones sobre ellos. El registro R15 es accesible de forma limitada puesto que el identificador de este registro se utiliza para diferenciar unas instrucciones de otras.
+		
+  \item \textbf{Contador de programa (\ac{PC}):} Este registro especial almacena la dirección de memoria de la instrucción que debe ejecutarse a continuación. Se incrementa automáticamente en 4 cada ciclo y solo se puede alterar este mecanismo por medio de instrucciones de control. 
+	
+	\item \textbf{Memoria de instrucciones:} Esta memoria almacena el código de programa, es accedido por el procesador para analizar y ejecutar las instrucciones.
+	
+	\item \textbf{Memoria de datos:} Esta memoria conserva los valores de los datos que son accesibles por el procesador mediante instrucciones de carga y almacenamiento.
+			
+	\item \textbf{Control principal:} Analiza las instrucciones para extraer la información necesaria para ejecutar las mismas adecuadamente. Esta información se propaga medante señales de control al resto de componentes.
+
+  \item \textbf{Unidad Aritmético-Lógica (\ac{ALU})}: Es el componente encargado de realizar las operaciones aritméticas o lógicas sobre los operandos. 
+	
+	\item \textbf{Registros de control:} Almacena las señales de control, y las señales internas entre las diferentes etapas de la segmentación.
+\end{itemize}
+
+
+%-----------------------------------------------------------
+\subsection{Repertorio de instrucciones}
+%-----------------------------------------------------------
+\label{trabajoprocesador:arquitectura:instrucciones}
+
+El procesador implementado es capaz de ejecutar 3 tipos de instrucciones:
+
+\begin{itemize}
+  \item Accesos a memoria
+  \item Operaciones sobre registros
+	  \renewcommand{\theenumi}{\alph{enumi})}
+    \begin{enumerate}
+      \item Operaciones con dos registros
+      \item Operaciones con un registro y un inmediato
+    \end{enumerate}
+  \item Operaciones de salto
+\end{itemize}
+
+A continuación se explican brevemente los diferentes tipos de instrucciones. Más adelante se expondrán las instrucciones con más detalle, explicando los campos de cada una.
+
+
+%-------------------------------------------------------------------
+\subsubsection{Accesos a memoria}
+%-------------------------------------------------------------------
+\label{cap8:sec:instrucciones:accesosamemoria}
+
+Las instrucciones de acceso a memoria son necesarias cuando se requiere cargar (load) un dato desde la memoria al banco de registros, o almacenar (store) el valor de un registro en la memoria.
+
+Aunque es posible acceder a las direcciones de memoria direccionadas por media palabra. En esta implementación se está obligado a cargar valores de tamaño 4 bytes (tamaño de palabra), siendo por tanto recomendable utilizar direcciones de memoria que sean múltiplos de 4.
+
+Para el cálculo de la dirección efectiva de carga o almacenamiento se ha implementado un único modo de direccionamiento. Registro base "Rn + imm12", es decir, la dirección base se obtiene del registro Rn, y se suma un inmediato de 12 bits extraído de la instrucción.
+
+
+%-------------------------------------------------------------------
+\subsubsection{Procesamiento de datos}
+%-------------------------------------------------------------------
+\label{trabajoprocesador:arquitectura:instrucciones:procesamiento}
+
+Las instrucciones de procesamiento realizan cálculos aritméticos y lógicos. Se aplican sobre dos operandos y el resultado (si existe) se almacena en un registro.
+
+Dependiendo de la instrucción los operandos pueden ser:
+
+\begin{itemize}
+  \item \textbf{Operaciones con dos registros:}
+
+Los datos con los que se trabaja se extraen de dos registros.
+
+Al utilizar el registro R15 se deben tener en cuenta ciertas restricciones. Este registro se utiliza para diferenciar ciertas operaciones de otras. Por ejemplo, si el código de operación es "0010", el registro origen Rn es R15 ("1111") entonces la operación ejecutada será la operación "MOVE". Si el registro Rn es cualquier otro, se ejecutará una "Ó lógica" (operación or).
+
+  \item \textbf{Operaciones con un registro y un inmediato:}
+
+El conjunto de operaciones con inmediato se limita a cuatro. Se permite mover un inmediato a la mitad más significativa, o a la menos significativa, de un registro. Y se permite sumar o restar un inmediato al valor de un registro.
+
+\end{itemize}
+
+
+%-------------------------------------------------------------------
+\subsubsection{Operaciones de control}
+%-------------------------------------------------------------------
+\label{trabajoprocesador:arquitectura:instrucciones:operacionesdecontrol}
+
+Las operaciones de control intervienen en la ejecución normal del programa. Se utilizan para modificar el valor del registro del contador de programa, esta operación se conoce como una instrucción de salto. 
+
+Existen dos tipos de instrucciones de salto. El primero es el salto incondicional y permite sumar un entero al valor del contador de programa y almacenar el resultado en el mismo.
+
+La segunda operación de control es el salto condicional. Previamente a un salto condicional se debe ejecutar una operación de comparación para actualizar los flags de comparación de la ALU. Los flags se comparan a la condición de salto y en caso de coincidir, se efectúa el salto. Si no se ejecuta la comparación, el estado de los flags es desconocido y el procesador se comportará de manera no controlada. 
+
+
+%-----------------------------------------------------------
+\subsection{Segmentación}
+%-----------------------------------------------------------
+\label{trabajoprocesador:arquitectura:segmentacion}
+
+Se ha segmentado el microprocesador en 5 etapas, cada una de ellas realiza una parte fundamental en la ejecución de las instrucciones. Las etapas en las que se divide el procesador son:
+
+\begin{enumerate}
+  \item \textbf{Búsqueda de instrucción (\ac{IF}):}
+	
+	La primera etapa es la encargada de cargar las instrucciones de memoria y transmitirlas a la siguiente, simultáneamente se calcula la dirección de la siguiente instrucción.
+	
+  \item \textbf{Decodificación de instrucción(\ac{ID}):}
+	
+	En la etapa de decodificación se analiza la instrucción y se obtienen los datos necesarios para realizar las operaciones correctamente.
+	
+  \item \textbf{Ejecución (\ac{EX})}
+  
+	En la etapa de ejecución se realizan los cálculos aritméticos o lógicos sobre los datos obtenidos del banco de registro y del circuito de extensión de signo. 
+	
+	\item \textbf{Acceso a Memoria (\ac{MEM})}
+  
+	En la etapa de memoria se realizan intercambios de datos con la memoria principal.
+
+	\item \textbf{Escritura en registros (\ac{WB})}
+	
+	En la etapa final del procesador se escriben los resultados calculados por la ALU, o los datos cargados de memoria en el banco de registros. 
+	
+\end{enumerate}
+
+%-----------------------------------------------------------
+\subsection{Memoria}
+%-----------------------------------------------------------
+\label{trabajoprocesador:arquitectura:memoria}
+
+La memoria de nuestro procesador se divide en dos componentes distintos: 
+
+\begin{itemize}
+  \item \textbf{Memoria de instrucciones:}
+	
+	Memoria ROM donde se almacenan todas las instrucciones del programa a ejecutar.
+	
+	\item \textbf{Memoria de datos:}
+	
+	Memoria RAM accesible en modo lectura y en modo escritura para almacenar los datos con los que trabaja el programa.
+	
+\end{itemize}
+
+
+
+% Implementacion
+%  Formato de instrucciones
+%  Módulos
+
+%-----------------------------------------------------------
+\section{Implementación}
+%-----------------------------------------------------------
+\label{trabajoprocesador:implementacion}
+
+
+
+%-----------------------------------------------------------
+\subsection{Instrucciones}
+%-----------------------------------------------------------
+\label{trabajoprocesador:implementacion:instrucciones}
+
+
+
+%-----------------------------------------------------------
+\subsection{Componentes}
+%-----------------------------------------------------------
+\label{trabajoprocesador:implementacion:componentes}
+
+
+
+
+
+
+
+%%--------------------------------------------------------
+%Y también ponemos el acrónimo \ac{CVS} para que no cruja.
+%
+%Ten en cuenta que si no quieres acrónimos (o no quieres que te falle la compilación en ``release'' mientras no tengas ninguno) basta con que no definas la constante \verb+\acronimosEnRelease+ (en \texttt{config.tex}).
