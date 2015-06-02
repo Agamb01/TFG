@@ -5,3 +5,15 @@
 \BOOKMARK [2][-]{subsection.4.2.2}{Repertorio de instrucciones}{section.4.2}% 36
 \BOOKMARK [2][-]{subsection.4.2.3}{Segmentaci\363n}{section.4.2}% 37
 \BOOKMARK [2][-]{subsection.4.2.4}{Memoria}{section.4.2}% 38
+\BOOKMARK [1][-]{section.4.3}{Implementaci\363n}{chapter.4}% 39
+\BOOKMARK [2][-]{subsection.4.3.1}{Banco de registros}{section.4.3}% 40
+\BOOKMARK [2][-]{subsection.4.3.2}{Contador de programa}{section.4.3}% 41
+\BOOKMARK [2][-]{subsection.4.3.3}{Unidad Aritm\351tico-L\363gica \(ALU\)}{section.4.3}% 42
+\BOOKMARK [2][-]{subsection.4.3.4}{Control principal}{section.4.3}% 43
+\BOOKMARK [2][-]{subsection.4.3.5}{Registros de control}{section.4.3}% 44
+\BOOKMARK [2][-]{subsection.4.3.6}{Memoria de instrucciones}{section.4.3}% 45
+\BOOKMARK [2][-]{subsection.4.3.7}{Memoria de datos}{section.4.3}% 46
+\BOOKMARK [1][-]{section.4.4}{Formato de instrucciones}{chapter.4}% 47
+\BOOKMARK [2][-]{subsection.4.4.1}{Accesos a Memoria}{section.4.4}% 48
+\BOOKMARK [2][-]{subsection.4.4.2}{Procesamiento de datos}{section.4.4}% 49
+\BOOKMARK [2][-]{subsection.4.4.3}{Operaciones de control}{section.4.4}% 50

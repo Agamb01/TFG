@@ -90,13 +90,13 @@ El procesador implementado es capaz de ejecutar 3 tipos de instrucciones:
 
 \begin{itemize}
   \item Accesos a memoria
-  \item Operaciones sobre registros
+  \item Procesamiento de datos
 	  \renewcommand{\theenumi}{\alph{enumi})}
     \begin{enumerate}
       \item Operaciones con dos registros
       \item Operaciones con un registro y un inmediato
     \end{enumerate}
-  \item Operaciones de salto
+  \item Operaciones de control
 \end{itemize}
 
 A continuación se explican brevemente los diferentes tipos de instrucciones. Más adelante se expondrán las instrucciones con más detalle, explicando los campos de cada una.
@@ -184,9 +184,10 @@ Se ha segmentado el microprocesador en 5 etapas, cada una de ellas realiza una p
 %-----------------------------------------------------------
 \label{trabajoprocesador:arquitectura:memoria}
 
-La memoria de nuestro procesador se divide en dos componentes distintos: 
+El diseño del procesador hereda el sistema de memoria de la arquitectura Harvard, es decir, tiene acceso a dos memorias diferentes: 
 
 \begin{itemize}
+
   \item \textbf{Memoria de instrucciones:}
 	
 	Memoria ROM donde se almacenan todas las instrucciones del programa a ejecutar.
@@ -199,36 +200,543 @@ La memoria de nuestro procesador se divide en dos componentes distintos:
 
 
 
-% Implementacion
-%  Formato de instrucciones
-%  Módulos
 
+
+
+
+
+
+
+
+% Implementacion
+%  Módulos
+	
 %-----------------------------------------------------------
 \section{Implementación}
 %-----------------------------------------------------------
 \label{trabajoprocesador:implementacion}
 
+\begin{figure}[ht]
+	\centering
+		\includegraphics[width=0.80\textwidth]{Imagenes/Mi_procesador/P_ControlPath.eps}
+	\caption{Diseño completo del procesador segmentado.}
+	\label{fig:P_ControlPath}
+\end{figure}
+
+La implementación del proyecto se ha realizado utilizando la herramienta "`ISE Design Suite"' de Xilinx y el lenguaje de diseño hardware "`VHDL"'. En esta sección se describen los componentes principales del procesador (figura \ref{fig:MiProcesador}).
+
+%-----------------------------------------------------------
+\subsection{Banco de registros}
+%-----------------------------------------------------------
+\label{trabajoprocesador:implementacion:banco}
+
+El banco de registros es el componente de memoria con el que opera principalmente el procesador. De este obtiene los datos con los que realiza la mayoría de las operaciones.
+
+Internamente se compone de 16 registros que almacenan valores de 32 bits. El acceso a estos se codifica en 4 bits de modo que el registro accedido con el valor "`1010"' es el registro "`R10"'.
+
+\begin{figure}[ht]
+	\centering
+		\includegraphics[width=0.60\textwidth]{Imagenes/Mi_procesador/Componentes/BancoRegistros.eps}
+	\caption{Banco de registros.}
+	\label{fig:ImplementacionBancoRegistros}
+\end{figure}
+
+Sus señales externas son (figura \ref{fig:ImplementacionBancoRegistros}):
+
+\begin{itemize}
+
+  \item \textbf{Señales de entrada}
+  \begin{itemize}
+    \item \textbf{Registro A:} Registro origen del primer operando de la instrucción.
+    \item \textbf{Registro B:} Registro origen del segundo operando de la instrucción.
+    \item \textbf{Registro W:} Registro donde se almacenará el resultado de la instrucción.
+    \item \textbf{Datos W:} El valor que se almacenará en el registro W.
+    \item \textbf{Escritura:} Habilita la escritura en el registro W.
+	\end{itemize}
+	
+  \item \textbf{Señales de salida}
+  \begin{itemize}
+    \item \textbf{Datos A:} Valor del registro A, primer operando de la instrucción.
+    \item \textbf{Datos B:} Valor del registro B, segundo operando de la instrucción. 
+	\end{itemize}
+
+\end{itemize}
+
+%-----------------------------------------------------------
+\subsection{Contador de programa}
+%-----------------------------------------------------------
+\label{trabajoprocesador:implementacion:pc}
+
+El contador de programa es un registro común de 32 bits encargado de almacenar la dirección de memoria que indica donde se encuentra la siguiente instrucción del programa. Su valor se actualiza en cada ciclo de reloj.
+
+\begin{figure}[ht]
+	\centering
+  \includegraphics[width=0.50\textwidth]{Imagenes/Mi_procesador/Componentes/PC.eps}
+	\caption{Contador de programa.}
+	\label{fig:ImplementacionPC}
+\end{figure}
+
+Sus señales externas son (figura \ref{fig:ImplementacionPC}):
+
+\begin{itemize}
+
+  \item \textbf{Señales de entrada}
+  \begin{itemize}
+    \item \textbf{Siguiente Valor:} El valor de la siguiente instrucción. Puede ser calculada de forma secuencial, o por medio de un salto efectivo.
+	\end{itemize}
+	
+  \item \textbf{Señales de salida}
+  \begin{itemize}
+    \item \textbf{Valor actual:} Dirección origen de la instrucción que debe ejecutarse.
+	\end{itemize}
+
+\end{itemize}
 
 
 %-----------------------------------------------------------
-\subsection{Instrucciones}
+\subsection{Unidad Aritmético-Lógica (ALU)}
 %-----------------------------------------------------------
-\label{trabajoprocesador:implementacion:instrucciones}
+\label{trabajoprocesador:implementacion:alu}
 
+La unidad aritmético-lógica aplica ciertas operaciones sobre los datos extraídos previamente del banco de registros y de la instrucción. Así mismo, y dependiendo del resultado, puede modificar el valor de los flags de comparación que se modifican solo si la instrucción así lo requiere.
+
+\begin{figure}[ht]
+	\centering
+		\includegraphics[width=0.80\textwidth]{Imagenes/Mi_procesador/Componentes/ALU.eps}
+	\caption{Unidad aritmético-lógica.}
+	\label{fig:ImplementacionALU}
+\end{figure}
+
+
+Las señales externas son (figura \ref{fig:ImplementacionALU}):
+
+\begin{itemize}
+
+  \item \textbf{Señales de entrada}
+  \begin{itemize}
+    \item \textbf{Operando A:} Primer operando de la operación.
+    \item \textbf{Operando B:} Segundo operando de la operación.
+	  \item \textbf{Operación:} Operación que debe aplicarse sobre los operadores.
+	\end{itemize}
+	
+  \item \textbf{Señales de salida}
+  \begin{itemize}
+    \item \textbf{flags:} Indican si el resultado de la operación cumple ciertas condiciones\footnote{Si el resultado de la operación es igual a cero se activa el flag correspondiente.}.
+    \item \textbf{Resultado:} Valor de aplicar la operación a los operandos.
+	\end{itemize}
+
+\end{itemize}
 
 
 %-----------------------------------------------------------
-\subsection{Componentes}
+\subsection{Control principal}
 %-----------------------------------------------------------
-\label{trabajoprocesador:implementacion:componentes}
+\label{trabajoprocesador:implementacion:control}
+
+El control principal del microprocesador es el encargado de analizar la instrucción y establecer las señales de control que permitirán a los módulos realizar la función adecuada.
+
+Éste es un módulo combinacional, por lo tanto analiza y establece los valores de las señales de control dentro de un único ciclo de reloj.
+
+\begin{figure}[ht]
+	\centering
+		\includegraphics[width=0.80\textwidth]{Imagenes/Mi_procesador/Componentes/ControlPrincipal.eps}
+	\caption{Control principal.}
+	\label{fig:ImplementacionControlPrincipal}
+\end{figure}
+
+La instrucción es la una única entrada para este módulo, sin embargo, las señales de control son varias y se transmiten de etapa a etapa de la segmentación hasta que son consumidas. A continuación se explican por orden en el que son utilizadas(figura \ref{fig:P_ControlPath}):
+
+\begin{enumerate}
+
+  \item \textbf{Ejecución (\ac{EX})}
+	\begin{itemize}
+	  \item \textbf{ALUsrc:} Establece el origen del segundo operando de la instrucción, este puede ser un registro o la propia instrucción.
+	  \item \textbf{ALUop:} Asigna a la ALU la operación que debe aplicar a los operandos.
+	\end{itemize}
+	
+	\item \textbf{Acceso a Memoria (\ac{MEM})}
+	\begin{itemize}
+	  \item \textbf{Branch Cond:} Junto a los flags de la ALU, establece la señal \textbf{PCSrc} encargada de efectuar un salto en el código del programa.
+	  \item \textbf{MemWrite:} Indica al módulo "`memoria de datos"' si debe acceder a memoria en modo escritura\footnote{\label{foo:memRDWR} El modo lectura y el modo escritura en memoria son incompatibles, solo debe activarse una de estas señales.}.
+	  \item \textbf{MemRead:} Indica al módulo "`memoria de datos"' si debe acceder a memoria en modo lectura\textsuperscript{\ref{foo:memRDWR}}.
+	\end{itemize}
+	
+	\item \textbf{Escritura en registros (\ac{WB})}
+	\begin{itemize}
+	  \item \textbf{MemtoReg:} Establece el origen de los datos que deben almacenarse en el banco de registros, puede ser la ALU o la memoria de datos.
+	  \item \textbf{RegWrite:} Indica al banco de registros si el resultado de la instrucción debe almacenarse en un registro.
+	\end{itemize}
+	
+\end{enumerate}
+
+%-----------------------------------------------------------
+\subsection{Registros de control}
+%-----------------------------------------------------------
+\label{trabajoprocesador:implementacion:regcontrol}
+
+Los registros de control son todos aquellos que almacenan la información entre las etapas (lineas rojas en figura \ref{fig:P_ControlPath}).
+
+Esta colección de registros son fundamentales para que exista la segmentación. Separan las etapas de forma que los cambios en una de ellas no se propaguen y no interfieran con las demás etapas.
+
+Para que esto no suceda se inserta una serie de registros entre, por ejemplo, los componentes de las etapas de decodificación y ejecución. Éstos registros se actualizan al final de cada ciclo de reloj, conservando los datos de forma estable para que se puedan utilizar correctamente en la siguiente etapa. Así se permite que ambas etapas trabajen de forma independientemente.
+
+
+\begin{figure}[ht]
+	\centering
+		\includegraphics[width=0.80\textwidth]{Imagenes/Mi_procesador/Componentes/RegistrosControl.eps}
+	\caption{Registros de control}
+	\label{fig:ImplementacionRegistrosControl}
+\end{figure}
+
+%-----------------------------------------------------------
+\subsection{Memoria de instrucciones}
+%-----------------------------------------------------------
+\label{trabajoprocesador:implementacion:meminst}
+
+La memoria de instrucciones es una memoria de solo lectura (\ac{ROM}) Este tipo de memorias, como su nombre indica, solo permite la lectura de sus datos, y no permite que se modifiquen. Este módulo permite que se consulte el valor de la dirección en un único ciclo de reloj.
+
+\begin{figure}[ht]
+	\centering
+	  \includegraphics[width=0.80\textwidth]{Imagenes/Mi_procesador/Componentes/MemoriaInstrucciones.eps}
+	\caption{Memoria de Instrucciones.}
+	\label{fig:ImplementacionMemoriaInstrucciones}
+\end{figure}
+
+Las señales externas de esta memoria son (figura \ref{fig:ImplementacionMemoriaDatos}):
+
+\begin{itemize}
+
+  \item \textbf{Señales de entrada}
+  \begin{itemize}
+    \item \textbf{Dirección:} Dirección de la instrucción a la que se accede.
+	\end{itemize}
+	
+  \item \textbf{Señales de salida}
+  \begin{itemize}
+    \item \textbf{Instrucción:} Instrucción leída de memoria.
+	\end{itemize}
+
+\end{itemize}
+
+
+%-----------------------------------------------------------
+\subsection{Memoria de datos}
+%-----------------------------------------------------------
+\label{trabajoprocesador:implementacion:memdat}
+
+La memoria de datos es el encargado de almacenar aquellos datos que no son inmediatamente necesarios para ejecutar las instrucciones. Es de un mayor tamaño que el banco de registros y, por lo general, son más lentos a la hora de transmitir la información.
+
+Este módulo se ha implementado como un banco de registros de mayor tamaño que el módulo con el mismo nombre, pero de mayor tamaño. Su acceso se completa en un mismo ciclo de reloj. 
+
+\begin{figure}[ht]
+	\centering
+		\includegraphics[width=0.80\textwidth]{Imagenes/Mi_procesador/Componentes/MemoriaDatos.eps}
+	\caption{Memoria de datos.}
+	\label{fig:ImplementacionMemoriaDatos}
+\end{figure}
+
+Las señales externas de esta memoria son (figura \ref{fig:ImplementacionMemoriaDatos}):
+
+\begin{itemize}
+
+  \item \textbf{Señales de entrada}
+  \begin{itemize}
+    \item \textbf{Dirección:} Dirección de acceso a memoria, ya sea en modo lectura o escritura.
+    \item \textbf{Datos Escritura:} Datos que deben almacenarse en la memoria. 
+	  \item \textbf{MemWrite:} Indica que los datos deben escribirse en memoria\footnote{\label{foo:memRDWR2} El modo lectura y el modo escritura en memoria son incompatibles, solo debe estar activa una de estas señales.}.
+	  \item \textbf{MemRead:} Indica que los datos deben leerse de memoria\textsuperscript{\ref{foo:memRDWR2}}.
+	\end{itemize}
+	
+  \item \textbf{Señales de salida}
+  \begin{itemize}
+    \item \textbf{Datos Lectura:} Datos que se han leído de la dirección indicada de memoria.
+	\end{itemize}
+
+\end{itemize}
 
 
 
 
+% Formato de instrucciones
+%-----------------------------------------------------------
+\section{Formato de instrucciones}
+%-----------------------------------------------------------
+\label{trabajoprocesador:formatoinstrucciones}
+
+En esta sección se exponen el formato de las instrucciones que es capaz de ejecutar el microprocesador, con todos sus campos y el significado de estos.
 
 
+%-----------------------------------------------------------
+\subsection{Accesos a Memoria}
+%-----------------------------------------------------------
+\label{trabajoprocesador:formatoinstrucciones:memoria}
 
-%%--------------------------------------------------------
-%Y también ponemos el acrónimo \ac{CVS} para que no cruja.
-%
-%Ten en cuenta que si no quieres acrónimos (o no quieres que te falle la compilación en ``release'' mientras no tengas ninguno) basta con que no definas la constante \verb+\acronimosEnRelease+ (en \texttt{config.tex}).
+Estas instrucciones permiten al microprocesador acceder a los datos almacenados en la memoria de datos así como almacenar datos en ella. Las instrucciones de carga o almacenamiento se identifican por los 7 bits más significativos de la instrucción, estos deben ser "`1111100"'.
+
+Se ha implementado un único tipo de instrucción de acceso a memoria. Éste, dependiendo del valor de sus campos, se utiliza para cargar de o almacenar datos en memoria.
+
+Esta instrucción permite realizar transferencias de datos entre el banco de registros y la memoria de datos del microprocesador. Permite aplicar un desplazamiento de hasta 4KB al valor base del registro.
+
+\begin{table}[ht]
+  \resizebox{\textwidth}{!} {
+	  \begin{tabular}{|l|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+	    \hline
+												& 31 & 30 & 29 & 28 & 27 & 26 & 25 & 24 & 23 & 22 & 21 & 20 & 19 & 18 & 17 & 16 \\ \hline
+													
+				Formato general & 1  & 1  & 1  & 1  & 1  & 0  & 0  &  \multicolumn{9}{|c|}{ } \\ \hline
+			
+				Rn + imm12      & \multicolumn{7}{|c|}{} & S & 1 & \multicolumn{2}{|c|}{Size} & L & \multicolumn{4}{|c|}{Rn}  \\ \hline
+		\end{tabular}
+	}
+	\caption{Instrucciones de acceso a memoria (bits 31..16)}
+	\label{tab:InstMemoria1}
+\end{table}
+
+\begin{table}[ht]
+  \resizebox{\textwidth}{!} {
+	  \begin{tabular}{|l|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+	    \hline
+												& 15 & 14 & 13 & 12 & 11 & 10 & 9  & 8  & 7  & 6  & 5  & 4  & 3  & 2  & 1  & 0  \\ \hline
+													
+				Formato general & \multicolumn{16}{|c|}{ } \\ \hline
+			
+				Rn + imm12      & \multicolumn{4}{|c|}{Rd} & \multicolumn{12}{|c|}{imm12} \\ \hline
+		\end{tabular}
+	}
+	\caption{Instrucciones de acceso a memoria (bits 15..0)}
+	\label{tab:InstMemoria2}
+\end{table}
+
+Los campos de la instrucción "`Rn + imm12"' son los siguientes:
+
+\begin{itemize}
+  \item \textbf{Extensión de signo (S):} Indica si se debe extender el signo del valor inmediato (S=1).
+  \item \textbf{Tamaño (Size):} Indica el tamaño del valor que debe cargar de o almacenar en memoria. No se utiliza, se carga un dato de tamaño igual al tamaño de palabra.
+  \item \textbf{Cargar/Almacenar (L):} Este bit indica si la operación debe leer un dato de memoria (L=1) o escribirlo (L=0).
+  \item \textbf{Dirección (Rn):} Indica el registro con la dirección base de acceso a memoria.
+  \item \textbf{Dato (Rt):} Indica el registro donde se debe almacenar el dato en caso de carga, o el registro donde debe extraerse el dato en caso de almacenamiento.
+  \item \textbf{Desplazamiento (imm12):} El desplazamiento que debe aplicarse a la dirección base para obtener la dirección efectiva.
+\end{itemize}
+
+
+%-----------------------------------------------------------
+\subsection{Procesamiento de datos}
+%-----------------------------------------------------------
+\label{trabajoprocesador:formatoinstrucciones:procesamiento}
+
+Las operaciones se separan según el tipo de operandos que se apliquen. El operando A siempre es obtenido de un registro. Mientras que el operando B puede ser el valor de un segundo registro o puede formar parte de la instrucción. 
+
+
+%-----------------------------------------------------------
+\subsubsection{Operaciones con dos registros}
+%-----------------------------------------------------------
+\label{trabajoprocesador:formatoinstrucciones:procesamiento:registros}
+
+Las operaciones que hacen uso de dos registros son aritméticas (sumar, restar y mover), lógicas (and, or y or exclusiva) y de comparación que activan diferentes flags (Negativo, Cero). En el caso de una comparación no se modifican los registros. Las instrucciones de operación con dos registros se identifican por los 7 bits más significativos. Éstos deben ser "`1110101"'.
+
+Se ha implementado un único tipo de instrucción de procesamiento con dos registros. Dependiendo del valor de sus campos se aplicará una operación u otra sobre los operandos.
+
+
+\begin{table}[ht]
+  \resizebox{\textwidth}{!} {
+	  \begin{tabular}{|l|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+	    \hline
+			& 31 & 30 & 29 & 28 & 27 & 26 & 25 & 24 & 23 & 22 & 21 & 20 & 19 & 18 & 17 & 16 \\ \hline
+													
+				Formato general & 1  & 1  & 1  & 0  & 1  & 0  & 1  &  \multicolumn{9}{|c|}{ } \\ \hline
+			
+				Data Processing & \multicolumn{7}{|c|}{} & \multicolumn{4}{|c|}{OP} & S & \multicolumn{4}{|c|}{Rn}  \\ \hline
+		\end{tabular}
+	}
+	\caption{Instrucciones de procesamiento de datos con dos registros (bits 31..16)}
+	\label{tab:InstDataProcRegistros1}
+\end{table}
+
+\begin{table}[ht]
+  \resizebox{\textwidth}{!} {
+	  \begin{tabular}{|l|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+	    \hline
+			& 15 & 14 & 13 & 12 & 11 & 10 & 9  & 8  & 7  & 6  & 5  & 4  & 3  & 2  & 1  & 0  \\ \hline
+													
+				Formato general & \multicolumn{16}{|c|}{ } \\ \hline
+			
+				Data Processing & SBZ & \multicolumn{3}{|c|}{imm3} & \multicolumn{4}{|c|}{Rd} & \multicolumn{2}{|c|}{imm2} & \multicolumn{2}{|c|}{type} & \multicolumn{4}{|c|}{Rm}   \\ \hline
+		\end{tabular}
+	}
+	\caption{Instrucciones de procesamiento de datos con dos registros (bits 15..0)}
+	\label{tab:InstDataProcRegistros2}
+\end{table}
+
+Los campos de la instrucción "`Data Processing"' son los siguientes:
+\begin{itemize}
+  \item \textbf{Código de operación (OP):} Indica la operación que debe aplicarse en la fase de ejecución sobre los operandos.
+  \item \textbf{Activar flags (S):} Indica si deben activarse los flags de salto al ejecutar la operación.
+  \item \textbf{Registro origen A (Rn):} Indica el registro origen del primer operando.
+  \item \textbf{Should be Zero (SBZ):} Este campo debe tener un valor de 0.
+  \item \textbf{Inmediato (imm3:imm2):} Indica el desplazamiento que debe aplicarse al segundo operando. No se utiliza.
+  \item \textbf{Registro destino (Rd):} Indica el registro destino donde se almacenará el resultado de la operación.
+  \item \textbf{Tipo de desplazamiento (type):} Indica el tipo de desplazamiento aplicado. No se utiliza.
+  \item \textbf{Registro origen B (Rm):} Indica el registro origen del segundo operando.
+\end{itemize}
+
+Las instrucciones implementadas junto con sus respectivos códigos de operaciones se muestran en la tabla \ref{tab:OperacionesRegistros}.
+
+\begin{table}[ht]
+  \begin{center}
+	  \begin{tabular}{|l|c|l|}
+	    \hline
+			Operación & Código & Restricciones \\ \hline
+			ADD & 1 0 0 0 & \\ 
+			AND & 0 0 0 0 & \\ 
+			CMP & 1 1 0 1 & (Rd=="`1111"',S==1) \\ 
+			EOR & 0 1 0 0 & \\ 
+			MOV & 0 0 1 0 & (Rn=="`1111"') \\
+			ORR & 0 0 1 0 & \\ 
+			SUB & 1 1 0 1 & \\ 
+			\hline
+		\end{tabular}
+  \end{center}
+	\caption{Operaciones con dos registros}
+	\label{tab:OperacionesRegistros}
+\end{table}
+
+
+%-----------------------------------------------------------
+\subsubsection{Operaciones con un registro y un inmediato}
+%-----------------------------------------------------------
+\label{trabajoprocesador:formatoinstrucciones:procesamiento:inmediato}
+
+Las operaciones que hacen uso de un registro y un inmediato únicamente pueden ser aritméticas (sumar, restar y mover). Estas instrucciones se dividen en dos tipos según el tamaño del inmediato utilizado. Para identificar este tipo de instrucciones se utilizan los 5 bits más significativos, que deben ser "`11110"' y el bit 15 que debe valer "`0"'.
+
+
+\begin{table}[ht]
+  \resizebox{\textwidth}{!} {
+	  \begin{tabular}{|l|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+	    \hline
+			& 31 & 30 & 29 & 28 & 27 & 26 & 25 & 24 & 23 & 22 & 21 & 20 & 19 & 18 & 17 & 16 \\ \hline
+													
+				Formato general & 1  & 1  & 1  & 1  & 0 &  \multicolumn{11}{|c|}{ } \\ \hline
+			
+				Add, Subtract, plain 12-bit immediate & \multicolumn{5}{|c|}{} & i & 1 & 0 & OP & 0 & \multicolumn{2}{|c|}{OP2} & \multicolumn{4}{|c|}{Rn}  \\ \hline
+				
+				Move, plain 16-bit immediate & \multicolumn{5}{|c|}{} & i & 1 & 0 & OP & 1 & \multicolumn{2}{|c|}{OP2} & \multicolumn{4}{|c|}{imm4}  \\ \hline
+		\end{tabular}
+	}
+	\caption{Instrucciones de procesamiento de datos con un registro y un inmediato (bits 31..16)}
+	\label{tab:InstDataProcInmediato1}
+\end{table}
+
+\begin{table}[ht]
+  \resizebox{\textwidth}{!} {
+	  \begin{tabular}{|l|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+	    \hline
+			& 15 & 14 & 13 & 12 & 11 & 10 & 9  & 8  & 7  & 6  & 5  & 4  & 3  & 2  & 1  & 0  \\ \hline
+													
+				Formato general & 0 & \multicolumn{15}{|c|}{ } \\ \hline
+			
+				Add, Subtract, plain 12-bit immediate &  & \multicolumn{3}{|c|}{imm3} & \multicolumn{4}{|c|}{Rd} & \multicolumn{8}{|c|}{imm8} \\ \hline
+				
+				Move, plain 16-bit immediate &  & \multicolumn{3}{|c|}{imm3} & \multicolumn{4}{|c|}{Rd} & \multicolumn{8}{|c|}{imm8} \\ \hline
+		\end{tabular}
+	}
+	\caption{Instrucciones de procesamiento de datos con un registro y un inmediato (bits 15..0)}
+	\label{tab:InstDataProcInmediato2}
+\end{table}
+
+Los campos de las instrucciones implementadas son:
+\begin{itemize} 
+  \item \textbf{"`Add, Subtract, plain 12-bit immediate"'}
+		\begin{itemize}
+			\item \textbf{Código de operación (OP:OP2):} Indica la operación que debe aplicarse en la fase de ejecución sobre los operandos.
+			\item \textbf{Registro origen (Rn):} Indica el registro origen del primer operando.
+			\item \textbf{Inmediato (i:imm3:imm8):} Contiene el inmediato que se utiliza como segundo operando.
+			\item \textbf{Registro destino (Rd):} Indica el registro destino donde se almacenará el resultado de la operación.
+		\end{itemize}
+
+	\item \textbf{"`Move, plain 16-bit immediate"'}
+		\begin{itemize}
+			\item \textbf{Código de operación (OP:OP2):} Indica la operación que debe aplicarse en la fase de ejecución sobre los operandos.
+		\item \textbf{Inmediato (imm4:i:imm3:imm8):} Contiene el inmediato que se utiliza como segundo operando. Utilizado en las operaciones mover.
+			\item \textbf{Registro destino (Rd):} Indica el registro destino donde se almacenará el resultado de la operación.
+		\end{itemize}
+\end{itemize}
+
+Las instrucciones implementadas junto con sus respectivos códigos de operaciones se muestran en la tabla \ref{tab:OperacionesInmediato}.
+
+\begin{table}[ht]
+  \begin{center}
+	  \begin{tabular}{|l|c|l|}
+	    \hline
+			Operación & Código \\ \hline
+			ADD  & 0 0 0 \\ 
+			SUB  & 1 1 0 \\ 
+			MOVT & 1 0 0 \\ 
+			MOV  & 0 0 0 \\ 
+			\hline
+		\end{tabular}
+  \end{center}
+	\caption{Operaciones con un registro y un inmediato}
+	\label{tab:OperacionesInmediato}
+\end{table}
+
+
+%-----------------------------------------------------------
+\subsection{Operaciones de control}
+%-----------------------------------------------------------
+\label{trabajoprocesador:formatoinstrucciones:control}
+
+También conocidas como instrucciones de salto, estas instrucciones son aquellas capaces de alterar el contador de programa. Para identificar este tipo de instrucciones se utilizan los 5 bits más significativos, que deben ser "`11110"' y el bit 15 que debe tener un valor de "`1"'.
+
+Se han implementado dos tipos de instrucciones de salto: salto incondicional, y salto incondicional. El salto incondicional se realiza siempre que esté presente la instrucción. La operación de salto condicional sólo se efectúa cuando coinciden las condiciones de la instrucción con los flags previamente calculados de la ALU.
+
+En el caso del salto incondicional permite realizar un salto de 16MB por el código. El salto condicional, debido a necesitar un campo que indique la condición, puede realizar un salto de 1MB.
+
+\begin{table}[ht]
+  \resizebox{\textwidth}{!} {
+	  \begin{tabular}{|l|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+	    \hline
+			& 31 & 30 & 29 & 28 & 27 & 26 & 25 & 24 & 23 & 22 & 21 & 20 & 19 & 18 & 17 & 16 \\ \hline
+													
+				Formato general & 1  & 1  & 1  & 1  & 0 &  \multicolumn{11}{|c|}{ } \\ \hline
+			
+				Branch & \multicolumn{5}{|c|}{} & S & \multicolumn{10}{|c|}{offset[21:12]}  \\ \hline
+				
+				Conditional Branch & \multicolumn{5}{|c|}{} & S & \multicolumn{4}{|c|}{cond} & \multicolumn{6}{|c|}{offset[17:12]}  \\ \hline
+		\end{tabular}
+	}
+	\caption{Instrucciones de control (bits 31..16)}
+	\label{tab:InstControl1}
+\end{table}
+
+\begin{table}[ht]
+  \resizebox{\textwidth}{!} {
+	  \begin{tabular}{|l|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+	    \hline
+			& 15 & 14 & 13 & 12 & 11 & 10 & 9  & 8  & 7  & 6  & 5  & 4  & 3  & 2  & 1  & 0  \\ \hline
+													
+				Formato general & 1 & \multicolumn{15}{|c|}{ } \\ \hline
+			
+				Branch & & 0 & I1 & 1 & I2 &  \multicolumn{11}{|c|}{offset[11:1]} \\ \hline
+				
+				Conditional Branch & & 0 & J1 & 0 & J2 &  \multicolumn{11}{|c|}{offset[11:1]} \\ \hline
+		\end{tabular}
+	}
+	\caption{Instrucciones de control (bits 15..0)}
+	\label{tab:InstControl2}
+\end{table}
+
+Los campos de las instrucciones de salto implementadas son:
+\begin{itemize} 
+  \item \textbf{Salto (Branch)}
+		\begin{itemize}
+			\item \textbf{Extensión de signo (S):} Indica si se debe extender el signo del desplazamiento (S=1).
+			\item \textbf{Desplazamiento (offset):} Contiene el inmediato que se suma al registro PC para calcular la direcció efectiva del salto. Los campos "`I1"' e "`I2"' son los bits 23 y 22 del desplazamiento respectivamente.
+		\end{itemize}
+
+	\item \textbf{Salto condicional (Conditional Branch)}
+		\begin{itemize}
+			\item \textbf{Extensión de signo (S):} Indica si se debe extender el signo del desplazamiento (S=1).
+			\item \textbf{Condición de salto (cond):} Indica la condición necesaria para que el salto deba realizarse.
+			\item \textbf{Desplazamiento (offset):} Contiene el inmediato que se suma al registro PC para calcular la dirección efectiva del salto. Los campos "`J1"' e "`J2"' son los bits 19 y 18 del desplazamiento respectivamente.
+		\end{itemize}
+\end{itemize}
