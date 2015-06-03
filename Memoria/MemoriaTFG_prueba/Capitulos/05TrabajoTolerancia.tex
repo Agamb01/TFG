@@ -1,0 +1,130 @@
+%---------------------------------------------------------------------
+%
+%                          Capítulo 4
+%
+%---------------------------------------------------------------------
+
+\chapter{Aplicando tolerancia a fallos}
+\label{trabajotolerancia}
+
+\begin{FraseCelebre}
+\begin{Frase}
+...
+\end{Frase}
+\begin{Fuente}
+...
+\end{Fuente}
+\end{FraseCelebre}
+
+\begin{resumen}
+En este capitulo se explica cómo se ha aplicado la tolerancia a fallos en el microprocesador. 
+\end{resumen}
+
+
+%-------------------------------------------------------------------
+\section{Introducción}
+%-------------------------------------------------------------------
+\label{trabajotolerancia:introducción}
+
+Los fallos más comunes en los sistemas electrónicos son los conocidos como fallos transitorios, estos no dañan el sistema de forma permanente pero provocan un cambio de valor en los elementos de memoria (SEU) o interferencias en las conexiones internas (SET), que si no se estabilizan a tiempo pueden llegar a propagarse hasta una celda de memoria y almacenarse provocando el mismo efecto que un SEU. Con esta información se ha implementado un método para paliar los efectos de los SEU dentro del microprocesador para reducir los efectos tanto de los SEU como de los SET. 
+
+
+%------------------------------------------------------------
+\section{Redundancia modular}
+%------------------------------------------------------------
+\label{trabajotolerancia:redundancia}
+
+La técnica utilizada para ello ha sido la redundancia modular (NMR) con un valor de $N=3$ . Se ha triplicado cada componente de memoria y se han conectado "`votadores"' a sus salidas. Los "`votadores"' permiten enmascarar una cantidad de fallos igual a $\frac{N}{2}$. En nuestro caso nos permite tolerar un fallo en cada conjunto de módulos triplicados. 
+
+Para proporcionar la tolerancia frente a los SEU al sistema, se han sustituido todos los biestables por un conjunto compuesto por tres biestables más un votador. Si en principio el sistema contenía muchos elementos como la figura \ref{fig:Biestable}, ahora estos se han sustituido por el conjunto representado en la figura \ref{fig:BiestablesVotador}.
+
+\begin{figure}[htbp]
+  \centering
+  \subfloat[Biestable original.\label{fig:Biestable}]{\includegraphics[width=0.45\textwidth]{Imagenes/Tolerancia/Biestable.eps}} \qquad
+  \subfloat[Conjunto de biestables con votador.\label{fig:BiestablesVotador}]{\includegraphics[width=0.45\textwidth]{Imagenes/Tolerancia/BiestablesVotador.eps}}
+	\caption{Sustitución de biestable.}
+\end{figure}
+
+
+%------------------------------------------------------------
+\section{El Votador}
+%------------------------------------------------------------
+\label{trabajotolerancia:votador}
+
+El votador es un circuito combinacional, y su único objetivo es filtrar los valores de entrada, dando un valor de salida igual al de la mayoría de entradas. Este es el componente principal utilizado para otorgar al sistema de la capacidad de tolerar los fallos transitorios de tipo SEU.
+
+Como se vé en la table \ref{tab:TablaVerdadVotador}, el valor de salida de un votador es igual al valor que más se repite en sus entradas. Con este método puede enmascararse un fallo en cualquiera de los módulos que alimentan sus entradas.
+
+\begin{table}[ht]
+		\centering
+			\begin{tabular}{|c|c|c|c|}
+			  \hline
+				\multicolumn{3}{|c|}{Entradas} & Salida \\ \hline
+					A & B & C & Z \\ \hline
+					0 & 0 & 0 & 0 \\ \hline
+					0 & 0 & 1 & 0 \\ \hline
+					0 & 1 & 0 & 0 \\ \hline
+					0 & 1 & 1 & 1 \\ \hline
+					1 & 0 & 0 & 0 \\ \hline
+					1 & 0 & 1 & 1 \\ \hline
+					1 & 1 & 0 & 1 \\ \hline
+					1 & 1 & 1 & 1 \\ \hline
+			\end{tabular}
+  \caption{Tabla de verdad del votador}
+  \label{tab:TablaVerdadVotador}
+\end{table}
+
+La implementación del votador puede realizarse de diferentes formas siempre que cumpla con las restricciones de la tabla \ref{tab:TablaVerdadVotador}. El votador de este proyecto se ha diseñado siguiendo la fórmula lógica \ref{eq:votador}, utilizando con 4 puertas lógicas, 3 puertas "`AND"' de dos entradas y una puerta "`OR"' de tres entradas. Como se puede observar en la figura \ref{fig:VotadorPuertas},se introduce únicamente un retardo de 2 puertas lógicas, haciendo que las puertas lógicas "`AND"' funcionen en paralelo.
+
+\begin{equation}
+  Z = (A*B) + (B*C) + (A*C)
+	\label{eq:votador}
+\end{equation}
+
+\begin{figure}[ht]
+  \centering
+	\includegraphics[width=0.50\textwidth]{Imagenes/Tolerancia/VotadorPuertas.eps}
+	\caption{Diseño de votador con puertas lógicas}
+	\label{fig:VotadorPuertas}
+\end{figure}
+
+Para exponer cómo funciona el votador se muestran las figuras \ref{fig:VotadorFalloB} y \ref{fig:VotadorFalloC}. En la figura de la izquierda observamos cómo la entrada B es diferente al resto, eso quiere decir que el módulo origen de esa señal ha sufrido un fallo. Se observa cómo se enmascara en las puertas "`AND"' por su funcionalidad ($0 * 1 = 1 * 0 =0$). En el caso de la figura derecha, el fallo ocurre en la entrada C, pero este es enmascarado por la puerta "`OR"'($0 + 0 + 1 = 1$).
+
+\begin{figure}[htbp]
+  \centering
+  \subfloat[Fallo en entrada B (0 -> 1)\label{fig:VotadorFalloB}]{\includegraphics[width=0.45\textwidth]{Imagenes/Tolerancia/FalloB.eps}} \qquad
+  \subfloat[Fallo en entrada C (1 -> 0)\label{fig:VotadorFalloC}]{\includegraphics[width=0.45\textwidth]{Imagenes/Tolerancia/FalloC.eps}}
+  \caption{Ejemplos de fallos en entradas.}
+  \label{fig:VotadorFallos}
+\end{figure}
+
+%------------------------------------------------------------
+\section{Aplicación}
+%------------------------------------------------------------
+\label{trabajotolerancia:aplicacion}
+
+La técnica de TMR se ha aplicado a cada registro del procesador con la desventaja del aumento en espacio. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -13,17 +13,18 @@
          <ClosedNode>/MEM_main - Behavioral D:|TFG|TFG|VHDL|Procesador|VHDL|3_Memory|MEM_main.vhd</ClosedNode>
          <ClosedNode>/Mux2 - Behavioral D:|TFG|TFG|VHDL|Procesador|VHDL|common|Mux2.vhd</ClosedNode>
          <ClosedNode>/main - Behavioral D:|TFG|TFG|VHDL|Procesador|VHDL|main.vhd/i_EXE - EXE_main - Behavioral</ClosedNode>
+         <ClosedNode>/main - Behavioral D:|TFG|TFG|VHDL|Procesador|VHDL|main.vhd/i_ID - ID_main - Behavioral</ClosedNode>
          <ClosedNode>/main - Behavioral D:|TFG|TFG|VHDL|Procesador|VHDL|main.vhd/i_IF - IF_main - Behavioral</ClosedNode>
          <ClosedNode>/main - Behavioral D:|TFG|TFG|VHDL|Procesador|VHDL|main.vhd/i_MEM - MEM_main - Behavioral</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>main - Behavioral (D:/TFG/TFG/VHDL/Procesador/VHDL/main.vhd)</SelectedItem>
+         <SelectedItem>i_IF - IF_main - Behavioral (D:/TFG/TFG/VHDL/Procesador/VHDL/0_InstructionFetch/IF_main.vhd)</SelectedItem>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000010000000000000000000000000000000002020000000100000001000000640000020b000000020000000000000000000000000200000064ffffffff0000008100000003000000020000020b0000000100000003000000000000000100000003</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000020200000001000000010000006400000163000000020000000000000000000000000200000064ffffffff000000810000000300000002000001630000000100000003000000000000000100000003</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
-      <CurrentItem>main - Behavioral (D:/TFG/TFG/VHDL/Procesador/VHDL/main.vhd)</CurrentItem>
+      <CurrentItem>i_IF - IF_main - Behavioral (D:/TFG/TFG/VHDL/Procesador/VHDL/0_InstructionFetch/IF_main.vhd)</CurrentItem>
    </ItemView>
    <ItemView engineview="SynthesisOnly" sourcetype="" guiview="Process" >
       <ClosedNodes>
@@ -43,12 +44,14 @@
       <ClosedNodes>
          <ClosedNodesVersion>1</ClosedNodesVersion>
       </ClosedNodes>
-      <SelectedItems/>
+      <SelectedItems>
+         <SelectedItem>Phase1_InstructionDecode.vhd</SelectedItem>
+      </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000000000000001000000000000000000000000000000000000027d000000040101000100000000000000000000000064ffffffff000000810000000000000004000000d10000000100000000000000240000000100000000000000660000000100000000000001220000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem>ALU.vhd</CurrentItem>
+      <CurrentItem>Phase1_InstructionDecode.vhd</CurrentItem>
    </ItemView>
    <ItemView guiview="Library" >
       <ClosedNodes>
