@@ -1,19 +1,56 @@
-\BOOKMARK [0][-]{chapter.4}{Procesador}{}% 32
-\BOOKMARK [1][-]{section.4.1}{Introducci\363n}{chapter.4}% 33
-\BOOKMARK [1][-]{section.4.2}{Arquitectura del procesador}{chapter.4}% 34
-\BOOKMARK [2][-]{subsection.4.2.1}{Estructura}{section.4.2}% 35
-\BOOKMARK [2][-]{subsection.4.2.2}{Repertorio de instrucciones}{section.4.2}% 36
-\BOOKMARK [2][-]{subsection.4.2.3}{Segmentaci\363n}{section.4.2}% 37
-\BOOKMARK [2][-]{subsection.4.2.4}{Memoria}{section.4.2}% 38
-\BOOKMARK [1][-]{section.4.3}{Implementaci\363n}{chapter.4}% 39
-\BOOKMARK [2][-]{subsection.4.3.1}{Banco de registros}{section.4.3}% 40
-\BOOKMARK [2][-]{subsection.4.3.2}{Contador de programa}{section.4.3}% 41
-\BOOKMARK [2][-]{subsection.4.3.3}{Unidad Aritm\351tico-L\363gica \(ALU\)}{section.4.3}% 42
-\BOOKMARK [2][-]{subsection.4.3.4}{Control principal}{section.4.3}% 43
-\BOOKMARK [2][-]{subsection.4.3.5}{Registros de control}{section.4.3}% 44
-\BOOKMARK [2][-]{subsection.4.3.6}{Memoria de instrucciones}{section.4.3}% 45
-\BOOKMARK [2][-]{subsection.4.3.7}{Memoria de datos}{section.4.3}% 46
-\BOOKMARK [1][-]{section.4.4}{Formato de instrucciones}{chapter.4}% 47
-\BOOKMARK [2][-]{subsection.4.4.1}{Accesos a Memoria}{section.4.4}% 48
-\BOOKMARK [2][-]{subsection.4.4.2}{Procesamiento de datos}{section.4.4}% 49
-\BOOKMARK [2][-]{subsection.4.4.3}{Operaciones de control}{section.4.4}% 50
+\BOOKMARK [0][-]{titulo.0}{P\341gina de T\355tulo}{}% 1
+\BOOKMARK [0][-]{chapter*.1}{Resumen}{}% 2
+\BOOKMARK [0][-]{chapter*.2}{Abstract}{}% 3
+\BOOKMARK [0][-]{indices.0}{\315ndices}{}% 4
+\BOOKMARK [1][-]{tabla de contenidos.1}{Tabla de contenidos}{indices.0}% 5
+\BOOKMARK [1][-]{indice de figuras.1}{\315ndice de figuras}{indices.0}% 6
+\BOOKMARK [1][-]{indice de tablas.1}{\315ndice de tablas}{indices.0}% 7
+\BOOKMARK [0][-]{chapter.1}{Introducci\363n}{}% 8
+\BOOKMARK [1][-]{section.1.1}{Introducci\363n}{chapter.1}% 9
+\BOOKMARK [1][-]{section.1.2}{Motivaci\363n}{chapter.1}% 10
+\BOOKMARK [1][-]{section.1.3}{Planteamiento del problema}{chapter.1}% 11
+\BOOKMARK [1][-]{section.1.4}{Objetivos}{chapter.1}% 12
+\BOOKMARK [1][-]{section.1.5}{Estructura del documento***}{chapter.1}% 13
+\BOOKMARK [0][-]{chapter.2}{Introducci\363n al procesador}{}% 14
+\BOOKMARK [1][-]{section.2.1}{Procesador}{chapter.2}% 15
+\BOOKMARK [2][-]{subsection.2.1.1}{Arquitectura}{section.2.1}% 16
+\BOOKMARK [2][-]{subsection.2.1.2}{Repertorio de instrucciones}{section.2.1}% 17
+\BOOKMARK [2][-]{subsection.2.1.3}{Memoria}{section.2.1}% 18
+\BOOKMARK [2][-]{subsection.2.1.4}{Segmentaci\363n}{section.2.1}% 19
+\BOOKMARK [1][-]{section.2.2}{ARM}{chapter.2}% 20
+\BOOKMARK [2][-]{subsection.2.2.1}{Arquitectura ARM}{section.2.2}% 21
+\BOOKMARK [2][-]{subsection.2.2.2}{Repertorio de instrucciones ARM}{section.2.2}% 22
+\BOOKMARK [2][-]{subsection.2.2.3}{Segmentaci\363n ARM}{section.2.2}% 23
+\BOOKMARK [2][-]{subsection.2.2.4}{Memoria ARM}{section.2.2}% 24
+\BOOKMARK [1][-]{section.2.3}{Field-Programmable Gate Arrays \(FPGA\)}{chapter.2}% 25
+\BOOKMARK [2][-]{subsection.2.3.1}{Nexys 4}{section.2.3}% 26
+\BOOKMARK [0][-]{chapter.3}{Instroducci\363n a los fallos y su tolerancia}{}% 27
+\BOOKMARK [1][-]{section.3.1}{Introducci\363n a los fallos}{chapter.3}% 28
+\BOOKMARK [2][-]{subsection.3.1.1}{Causas}{section.3.1}% 29
+\BOOKMARK [2][-]{subsection.3.1.2}{Tipos de fallos}{section.3.1}% 30
+\BOOKMARK [1][-]{section.3.2}{Tolerancia a Fallos}{chapter.3}% 31
+\BOOKMARK [2][-]{subsection.3.2.1}{Redundancia en la informaci\363n}{section.3.2}% 32
+\BOOKMARK [2][-]{subsection.3.2.2}{Redundancia en el tiempo}{section.3.2}% 33
+\BOOKMARK [2][-]{subsection.3.2.3}{Redundancia en el hardware}{section.3.2}% 34
+\BOOKMARK [1][-]{section.3.3}{Tolerancia en microprocesadores}{chapter.3}% 35
+\BOOKMARK [0][-]{chapter.4}{Procesador}{}% 36
+\BOOKMARK [1][-]{section.4.1}{Introducci\363n}{chapter.4}% 37
+\BOOKMARK [1][-]{section.4.2}{Arquitectura del procesador}{chapter.4}% 38
+\BOOKMARK [2][-]{subsection.4.2.1}{Estructura}{section.4.2}% 39
+\BOOKMARK [2][-]{subsection.4.2.2}{Repertorio de instrucciones}{section.4.2}% 40
+\BOOKMARK [2][-]{subsection.4.2.3}{Segmentaci\363n}{section.4.2}% 41
+\BOOKMARK [2][-]{subsection.4.2.4}{Memoria}{section.4.2}% 42
+\BOOKMARK [1][-]{section.4.3}{Implementaci\363n}{chapter.4}% 43
+\BOOKMARK [2][-]{subsection.4.3.1}{Banco de registros}{section.4.3}% 44
+\BOOKMARK [2][-]{subsection.4.3.2}{Contador de programa}{section.4.3}% 45
+\BOOKMARK [2][-]{subsection.4.3.3}{Unidad Aritm\351tico-L\363gica \(ALU\)}{section.4.3}% 46
+\BOOKMARK [2][-]{subsection.4.3.4}{Control principal}{section.4.3}% 47
+\BOOKMARK [2][-]{subsection.4.3.5}{Registros de control}{section.4.3}% 48
+\BOOKMARK [2][-]{subsection.4.3.6}{Memoria de instrucciones}{section.4.3}% 49
+\BOOKMARK [2][-]{subsection.4.3.7}{Memoria de datos}{section.4.3}% 50
+\BOOKMARK [1][-]{section.4.4}{Formato de instrucciones}{chapter.4}% 51
+\BOOKMARK [2][-]{subsection.4.4.1}{Accesos a Memoria}{section.4.4}% 52
+\BOOKMARK [2][-]{subsection.4.4.2}{Procesamiento de datos}{section.4.4}% 53
+\BOOKMARK [2][-]{subsection.4.4.3}{Operaciones de control}{section.4.4}% 54
+\BOOKMARK [0][-]{appendix*.44}{Bibliograf\355a}{}% 55
+\BOOKMARK [0][-]{fin.0}{Fin}{}% 56
