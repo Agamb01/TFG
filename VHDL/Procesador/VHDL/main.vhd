@@ -32,7 +32,8 @@ use IEEE.NUMERIC_STD.ALL;
    
 entity main is
    Port(
-      clk, rst : in STD_LOGIC
+      clk, rst : in STD_LOGIC;
+      led : out STD_LOGIC_VECTOR (15 downto 0)
    );
 end main;
 
@@ -54,9 +55,7 @@ architecture Behavioral of main is
 
 ----------------------------Instruction Fetch-----------------------------
    component IF_main is
-      Port( 
-         clk, rst       : in STD_LOGIC;
-         
+      Port(          
          -- Contador de programa actual
          in_pc          : in std_logic_vector(31 downto 0);
          -- Contador de programa siguiente
@@ -311,9 +310,6 @@ begin
    -- Modulo IF
    i_IF: IF_main 
       port map (
-         clk => clk,
-         rst => rst, 
-         
          in_pc    => IF_out_pc_reg,
          out_pc   => IF_out_pc4,
          out_inst => IF_out_inst
@@ -377,7 +373,9 @@ begin
          in_PC => ID_in_PC, 
          out_PC => ID_out_PC 
       );
-      
+ 
+led <= ID_in_inst(15 downto 0);
+ 
    --Registros (ID -> EXE) -- TODO: Sustituir por registros tolerantes a fallos
    p_ID_regs: process(clk, rst)
    begin

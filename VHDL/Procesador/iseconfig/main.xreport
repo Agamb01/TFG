@@ -1,12 +1,12 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2015-06-03T17:28:24</DateModified>
+  <DateModified>2015-06-04T22:00:22</DateModified>
   <ModuleName>main</ModuleName>
-  <SummaryTimeStamp>2015-02-12T13:49:21</SummaryTimeStamp>
+  <SummaryTimeStamp>2015-06-04T17:08:51</SummaryTimeStamp>
   <SavedFilePath>D:/TFG/TFG/VHDL/Procesador/iseconfig/main.xreport</SavedFilePath>
   <ImplementationReportsDirectory>D:/TFG/TFG/VHDL/Procesador\</ImplementationReportsDirectory>
-  <DateInitialized>2015-02-12T13:42:10</DateInitialized>
+  <DateInitialized>2015-06-04T17:01:54</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>
  <body>

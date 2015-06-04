@@ -52,8 +52,6 @@ use IEEE.NUMERIC_STD.ALL;
 --    Resultado de operacion calculado por la ALU
 --    Flags de la operacion calculada por la ALU
 
-library work;
-   use work.my_package.all;
    
 entity EXE_main is
    Port( 

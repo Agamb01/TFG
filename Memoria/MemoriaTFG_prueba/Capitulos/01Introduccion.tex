@@ -35,7 +35,7 @@ El trabajo se centra en el desarrollo e implementación de un microprocesador tol
 \label{introduccion:motivacion}
 
 %Hay ordenadores
-Hoy en día, el uso de la tecnología y la informática se extienden a nivel mundial, con aplicación a cada vez, un mayor número de campos. La tecnología está cada vez más presente en nuestras vidas, ya no se concibe un hogar o puesto de trabajo sin un ordenador sobre la mesa. El uso de los dispositivos electrónicos de carácter personal va en aumento, convirtiéndose en elementos imprescindibles en nuestros hogares. Figura \ref{fig:uso_en_hogares}. Las estadísticas publicadas por el Instituto Nacional de Estadística (INE) \cite{Estadistica2014}, muestran que en España más del 95\% de los hogares posee al menos un teléfono móvil, normalmente teléfonos inteligentes, y más del 70\% posee un ordenador personal, lo que es un indicativo de la necesidad y dependencia tecnológica existente en estos tiempos.
+Hoy en día, el uso de la tecnología y la informática se extienden a nivel mundial, con aplicación a cada vez, un mayor número de campos. La tecnología está cada vez más presente en nuestras vidas, ya no se concibe un hogar o puesto de trabajo sin un ordenador sobre la mesa. El uso de los dispositivos electrónicos de carácter personal va en aumento, convirtiéndose en elementos imprescindibles en nuestros hogares (figura \ref{fig:uso_en_hogares}). Las estadísticas publicadas por el Instituto Nacional de Estadística (INE) \cite{Estadistica2014}, muestran que en España más del 95\% de los hogares posee al menos un teléfono móvil, normalmente teléfonos inteligentes, y más del 70\% posee un ordenador personal, lo que es un indicativo de la necesidad y dependencia tecnológica existente en estos tiempos.
 
 \begin{figure}
   \centering
@@ -48,12 +48,12 @@ Hoy en día, el uso de la tecnología y la informática se extienden a nivel mundia
 Estos dispositivos, y muchos otros presentes en nuestra vida cotidiana, son sistemas con componentes micro-electrónicos. Poseen un microprocesador que es el "`cerebro"' y responsable de dirigir el sistema ejecutando los programas.
 
 %Las CPUs pueden fallar
-Los microprocesadores, como todos los sistemas, son susceptibles de sufrir fallos y producir errores a varios niveles (se explican en la sección \ref{fallos}), errores que provocan comportamientos erráticos y no deseados. 
+Los microprocesadores, como todos los sistemas, son susceptibles de sufrir fallos y producir errores a varios niveles (se explican en el capítulo \ref{fallos}), errores que provocan comportamientos erráticos y no deseados. 
 
 %Y sus causas
-Con un tamaño cada vez más pequeño, los sistemas electrónicos resultan más sensibles a los efectos de los "`ruidos de transmisión \footnote{Interferencias en la señal que tiende a enmascarar la información transmitida.}"' producidos por la radiación y los rayos cósmicos. 
+Con un tamaño cada vez más pequeño, los sistemas electrónicos resultan más sensibles a los efectos de los "`ruidos de transmisión"'\footnote{Interferencias en la señal que tiende a enmascarar la información transmitida.} producidos por la radiación y los rayos cósmicos. 
 
-Las radiaciones cósmicas puede provocar fallos en cualquier sistema electrónico, dañando el mismo permanente o temporalmente, por ello, los satélites que orbitan alrededor de la tierra o los aviones que se mueven a gran altura deben ser mucho más robustos que los sistemas que trabajan a nivel del suelo. En la figura \ref{fig:errores_vs_altitud}, se representa la variación de la radiación con respecto a la longitud y latitud terrestres. Se observa que hay un mayor flujo de radiación cuanto mayor es la distancia al ecuador. Fundamentalmente debido a la  menor protección que proporciona la atmósfera frente a la radiación y los rayos cósmicos provenientes del espacio. 
+Las radiaciones cósmicas puede provocar fallos en cualquier sistema electrónico, dañando el mismo permanente o temporalmente, por ello, los sistemas de los satélites que orbitan alrededor de la tierra o de los aviones que se desplazan a gran altura deben ser mucho más robustos que los sistemas que trabajan a nivel del suelo. En la figura \ref{fig:errores_vs_altitud}, se representa la variación de la radiación con respecto a la longitud y latitud terrestres. Se observa que hay un mayor flujo de radiación cuanto mayor es la distancia al ecuador. Fundamentalmente debido a la  menor protección que proporciona la atmósfera frente a la radiación y los rayos cósmicos provenientes del espacio. 
 
 \begin{figure}
   \centering
@@ -93,11 +93,11 @@ Si no se toman medidas de prevención y tolerancia, este \textit{cerebro} puede v
 Con este trabajo se pretende ofrecer un medio para evitar estas situaciones concediendo un grado extra de fiabilidad a los sistemas basados en micro-procesadores. Para ello se quiere diseñar e implementar un microprocesador sencillo capaz de ejecutar un conjunto reducido de instrucciones (RISC), al que posteriormente se le aplicarán las técnicas de tolerancia a fallos, aumentando así su capacidad de detectar e incluso recuperarse de los fallos.
 
 %%-------------------------------------------------------------------
-\section{Objetivos}
+\section{Objetivo}
 %%-------------------------------------------------------------------
 \label{introduccion:objetivos}
 
-Por lo comentado en el apartado anterior se ha decidido que este trabajo esté dedicado a diseñar un procesador con un grado de fiabilidad mayor que un procesador convencional. 
+Una vez planteado el problema señalado en el apartado anterior, el objetivo del presente trabajo es diseñar un procesador con un grado de fiabilidad mayor que un procesador convencional. 
 
 El proyecto se ha divido en cuatro tareas dedicadas a la implementación del microprocesador y a la aplicación de la tolerancia a fallos.
 
@@ -109,7 +109,7 @@ El proyecto se ha divido en cuatro tareas dedicadas a la implementación del micr
 	
 	\item \textbf{Ruta de control}
 	
-	Se ha rediseñado la ruta de control y parte de la ruta de datos. El nuevo juego de instrucciones usado, completamente distinto al que utiliza un DLX convencional, obliga a cambiar la ruta de control. Simulando unos pequeños programas se comprueba que el procesador es capaz de decodificar y ejecutar las nuevas instrucciones. 
+	Se ha rediseñado la ruta de control y parte de la ruta de datos. El nuevo juego de instrucciones empleado, completamente distinto al que utiliza un DLX convencional, obliga a cambiar la ruta de control. Simulando unos pequeños programas se comprueba que el procesador es capaz de decodificar y ejecutar las nuevas instrucciones. 
 	
 	\item \textbf{Diseño de tolerancia a fallos.} 
 	
@@ -148,17 +148,17 @@ El proyecto se ha divido en cuatro tareas dedicadas a la implementación del micr
 	
 	En el capitulo \ref{trabajotolerancia} se describe cómo se ha proporcionado la tolerancia a fallos y qué técnicas se han utilizado.
 	
-	\item Capitulo \ref{} \textit{Resultados}: 
+	\item Capitulo \ref{resultados} \textit{Resultados}: 
 	
-	En el capitulo \ref{} se muestran los resultados obtenidos de las simulaciones realizadas.
+	En el capitulo \ref{resultados} se muestran los resultados obtenidos de las síntesis, implementaciones y simulaciones realizadas.
 	
-	\item Capitulo \ref{} \textit{Análisis de los resultados}: 
+	\item Capitulo \ref{analisis} \textit{Análisis de los resultados}: 
 	
-	En el capitulo \ref{} se analizan los datos.
+	En el capitulo \ref{analisis} se analizan los datos expuestos en el capítulo anterior.
 	
-	\item Capitulo \ref{} \textit{Conclusiones}: 
+	\item Capitulo \ref{conclusiones} \textit{Conclusiones}: 
 	
-	En el capitulo \ref{} se describen las conclusiones tras analizar los resultados.
+	En el capitulo \ref{conclusiones} se describen las conclusiones tras analizar los resultados.
 	
 \end{description}
 

@@ -48,7 +48,7 @@ ARCHITECTURE behavior OF TB_Programa3 IS
     PORT(
          clk : IN  std_logic;
          rst : IN  std_logic;
-         fallo : IN t_Fallo
+         led : OUT led
         );
     END COMPONENT;
     
@@ -56,12 +56,7 @@ ARCHITECTURE behavior OF TB_Programa3 IS
    --Inputs
    signal clk : std_logic := '0';
    signal rst : std_logic := '0';
-   signal fallo : t_Fallo := (ID => ID_0,
-                              reg => (others=>'0'),
-                              tipo => '0',
-                              bool => (others=>'0'),
-                              dato => (others=>'0'));
-
+   
  	--Outputs
 --   signal out_test : std_logic_vector(31 downto 0);
 
@@ -83,7 +78,7 @@ BEGIN
    uut: main PORT MAP (
           clk => clk,
           rst => rst,
-          fallo => fallo
+          led => led
         );
 
    -- Spy process

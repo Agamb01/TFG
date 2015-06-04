@@ -19,7 +19,10 @@
          <ClosedNode>/control_Cpu - Behavioral D:|TFG|TFG|VHDL|Procesador_TF|control_Cpu.vhd/cpu1 - main - Behavioral/i_ID - ID_main - Behavioral</ClosedNode>
          <ClosedNode>/control_Cpu - Behavioral D:|TFG|TFG|VHDL|Procesador_TF|control_Cpu.vhd/cpu1 - main - Behavioral/i_IF - IF_main - Behavioral</ClosedNode>
          <ClosedNode>/control_Cpu - Behavioral D:|TFG|TFG|VHDL|Procesador_TF|control_Cpu.vhd/cpu1 - main - Behavioral/i_MEM - MEM_main - Behavioral</ClosedNode>
-         <ClosedNode>/cpu - Behavioral D:|TFG|TFG|VHDL|Procesador_TF|VHDL|cpu.vhd</ClosedNode>
+         <ClosedNode>/cpu - Behavioral D:|TFG|TFG|VHDL|Procesador_TF|VHDL|cpu.vhd/i_EXE - EXE_main - Behavioral</ClosedNode>
+         <ClosedNode>/cpu - Behavioral D:|TFG|TFG|VHDL|Procesador_TF|VHDL|cpu.vhd/i_ID - ID_main - Behavioral</ClosedNode>
+         <ClosedNode>/cpu - Behavioral D:|TFG|TFG|VHDL|Procesador_TF|VHDL|cpu.vhd/i_IF - IF_main - Behavioral</ClosedNode>
+         <ClosedNode>/cpu - Behavioral D:|TFG|TFG|VHDL|Procesador_TF|VHDL|cpu.vhd/i_MEM - MEM_main - Behavioral</ClosedNode>
          <ClosedNode>/cpu - Behavioral D:|TFG|TFG|VHDL|Procesador_TF|VHDL|main.vhd</ClosedNode>
          <ClosedNode>/main - Behavioral D:|TFG|TFG|VHDL|Procesador_TF|VHDL|main.vhd/i_EXE - EXE_main - Behavioral</ClosedNode>
          <ClosedNode>/main - Behavioral D:|TFG|TFG|VHDL|Procesador_TF|VHDL|main.vhd/i_ID - ID_main - Behavioral</ClosedNode>
@@ -27,13 +30,13 @@
          <ClosedNode>/main - Behavioral D:|TFG|TFG|VHDL|Procesador_TF|VHDL|main.vhd/i_MEM - MEM_main - Behavioral</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>cpu1 - cpu - Behavioral (D:/TFG/TFG/VHDL/Procesador_TF/VHDL/cpu.vhd)</SelectedItem>
+         <SelectedItem>cpu - Behavioral (D:/TFG/TFG/VHDL/Procesador_TF/VHDL/cpu.vhd)</SelectedItem>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000020200000001000000010000006400000166000000020000000000000000000000000200000064ffffffff000000810000000300000002000001660000000100000003000000000000000100000003</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000202000000010000000100000064000001cd000000020000000000000000000000000200000064ffffffff000000810000000300000002000001cd0000000100000003000000000000000100000003</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
-      <CurrentItem>cpu1 - cpu - Behavioral (D:/TFG/TFG/VHDL/Procesador_TF/VHDL/cpu.vhd)</CurrentItem>
+      <CurrentItem>cpu - Behavioral (D:/TFG/TFG/VHDL/Procesador_TF/VHDL/cpu.vhd)</CurrentItem>
    </ItemView>
    <ItemView engineview="SynthesisOnly" sourcetype="DESUT_VHDL_ARCHITECTURE" guiview="Process" >
       <ClosedNodes>
@@ -42,32 +45,33 @@
          <ClosedNode>Design Utilities</ClosedNode>
          <ClosedNode>Implement Design</ClosedNode>
          <ClosedNode>Implement Design/Map</ClosedNode>
-         <ClosedNode>Implement Design/Place &amp; Route</ClosedNode>
+         <ClosedNode>Implement Design/Place &amp; Route/Back-annotate Pin Locations</ClosedNode>
+         <ClosedNode>Implement Design/Place &amp; Route/Generate IBIS Model</ClosedNode>
+         <ClosedNode>Implement Design/Place &amp; Route/Generate Post-Place &amp; Route Static Timing</ClosedNode>
          <ClosedNode>Implement Design/Translate</ClosedNode>
-         <ClosedNode>Synthesize - XST</ClosedNode>
          <ClosedNode>User Constraints</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem></SelectedItem>
+         <SelectedItem>Synthesize - XST</SelectedItem>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000000c9000000010000000100000000000000000000000064ffffffff000000810000000000000001000000c90000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000000f9000000010000000100000000000000000000000064ffffffff000000810000000000000001000000f90000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem></CurrentItem>
+      <CurrentItem>Synthesize - XST</CurrentItem>
    </ItemView>
    <ItemView guiview="File" >
       <ClosedNodes>
          <ClosedNodesVersion>1</ClosedNodesVersion>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>MEM_main.vhd</SelectedItem>
+         <SelectedItem>Nexys4_Master.ucf</SelectedItem>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000000000000001000000000000000000000000000000000000027d000000040101000100000000000000000000000064ffffffff000000810000000000000004000000c500000001000000000000004400000001000000000000006600000001000000000000010e0000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem>MEM_main.vhd</CurrentItem>
+      <CurrentItem>Nexys4_Master.ucf</CurrentItem>
    </ItemView>
    <ItemView guiview="Library" >
       <ClosedNodes>
@@ -99,7 +103,6 @@
          <ClosedNode>/TB_Phase1_InstructionDecode - behavior D:|TFG|TFG|VHDL|Procesador_TF|VHDL|1_InstructionDecode|TB|TB_Phase1_InstructionDecode.vhd</ClosedNode>
          <ClosedNode>/TB_Phase2_Execution - behavior D:|TFG|TFG|VHDL|Procesador_TF|VHDL|2_Execution|TB|TB_Phase2_Execution.vhd</ClosedNode>
          <ClosedNode>/TB_Phase3_Memory - behavior D:|TFG|TFG|VHDL|Procesador_TF|VHDL|3_Memory|TB|TB_Phase3_Memory.vhd</ClosedNode>
-         <ClosedNode>/TB_Programa3 - behavior D:|TFG|TFG|VHDL|Procesador_TF|VHDL|TB_Programa3.vhd</ClosedNode>
          <ClosedNode>/TB_Programa3 - behavior D:|TFG|TFG|VHDL|Procesador_TF|VHDL|TB_Programa3.vhd/uut - main - Behavioral</ClosedNode>
          <ClosedNode>/TB_RegisterBank - behavior D:|TFG|TFG|VHDL|Procesador_TF|VHDL|1_InstructionDecode|TB|TB_RegisterBank.vhd</ClosedNode>
          <ClosedNode>/TB_Registro_TF - behavior D:|TFG|TFG|VHDL|Procesador_TF|VHDL|tolerancia|TB_Registro_TF.vhd</ClosedNode>
@@ -107,15 +110,16 @@
          <ClosedNode>/TB_main - behavior D:|TFG|TFG|VHDL|Procesador_TF|VHDL|TB_main.vhd</ClosedNode>
          <ClosedNode>/TB_mux2 - behavior D:|TFG|TFG|VHDL|Procesador_TF|VHDL|common|TB|TB_Mux2.vhd</ClosedNode>
          <ClosedNode>/control_Cpu - Behavioral D:|TFG|TFG|VHDL|Procesador_TF|control_Cpu.vhd</ClosedNode>
+         <ClosedNode>/cpu - Behavioral D:|TFG|TFG|VHDL|Procesador_TF|VHDL|cpu.vhd</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>TB_Programa3 - behavior (D:/TFG/TFG/VHDL/Procesador_TF/VHDL/TB_Programa3.vhd)</SelectedItem>
+         <SelectedItem>uut - main</SelectedItem>
       </SelectedItems>
-      <ScrollbarPosition orientation="vertical" >1</ScrollbarPosition>
+      <ScrollbarPosition orientation="vertical" >13</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000202000000010000000100000064000001db000000020000000000000000000000000200000064ffffffff000000810000000300000002000001db0000000100000003000000000000000100000003</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
-      <CurrentItem>TB_Programa3 - behavior (D:/TFG/TFG/VHDL/Procesador_TF/VHDL/TB_Programa3.vhd)</CurrentItem>
+      <CurrentItem>uut - main</CurrentItem>
    </ItemView>
    <ItemView engineview="BehavioralSim" sourcetype="" guiview="Process" >
       <ClosedNodes>
@@ -128,7 +132,7 @@
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000136000000010000000100000000000000000000000064ffffffff000000810000000000000001000001360000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000000f8000000010000000100000000000000000000000064ffffffff000000810000000000000001000000f80000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
       <CurrentItem/>
    </ItemView>
@@ -141,7 +145,7 @@
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000136000000010000000100000000000000000000000064ffffffff000000810000000000000001000001360000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000000f8000000010000000100000000000000000000000064ffffffff000000810000000000000001000000f80000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
       <CurrentItem/>
    </ItemView>
@@ -157,21 +161,20 @@
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000136000000010000000100000000000000000000000064ffffffff000000810000000000000001000001360000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000010000000000000000000000000000000000000000000000010a000000010000000100000000000000000000000064ffffffff0000008100000000000000010000010a0000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
       <CurrentItem/>
    </ItemView>
    <ItemView engineview="SynthesisOnly" sourcetype="DESUT_UCF" guiview="Process" >
       <ClosedNodes>
          <ClosedNodesVersion>1</ClosedNodesVersion>
-         <ClosedNode>User Constraints</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
          <SelectedItem/>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000136000000010000000100000000000000000000000064ffffffff000000810000000000000001000001360000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000010000000000000000000000000000000000000000000000010a000000010000000100000000000000000000000064ffffffff0000008100000000000000010000010a0000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
       <CurrentItem/>
    </ItemView>
@@ -223,4 +226,5 @@
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
       <CurrentItem/>
    </ItemView>
+   <CopyAdditionalFiles/>
 </Project>

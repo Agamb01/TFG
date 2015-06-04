@@ -9,7 +9,7 @@
 
 \begin{FraseCelebre}
   \begin{Frase}
-    "`La idea detrás de los computadores digitales puede explicarse diciendo que estas máquinas están destinadas a llevar a cabo cualquier operación que pueda ser realizado por un equipo humano."' 
+    "`La idea detrás de los computadores digitales puede explicarse diciendo que estas máquinas están destinadas a llevar a cabo cualquier operación que pueda ser realizada por un equipo humano."'
   \end{Frase}
   \begin{Fuente}
     Alan Turing
@@ -78,7 +78,7 @@ El repertorio de instrucciones define todas las operaciones que el procesador es
 Los procesadores tienen una serie de registros donde se almacenan temporalmente los valores con los que está trabajando.
 El conjunto de estos registros se conoce como "`banco de registros"'. Los registros de propósito general son muy limitados, por lo que el procesador necesita disponer de apoyo externo donde alojar la información, para ello tiene acceso a una memoria externa.
 
-El modo de acceso a la memoria externa divide las arquitecturas en dos tipos conocidas con los nombres de Von Neumann y Harvard. La arquitectura Von Neumann utiliza una única memoria para almacenar tanto los datos como las instrucciones. La arquitectura Harvard, sin embargo, separa la memoria de datos de la memoria de instrucciones. Figura \ref{fig:vonneumann_harvard}.
+El modo de acceso a la memoria externa divide las arquitecturas en dos tipos, conocidas con los nombres de Von Neumann y Harvard. La arquitectura Von Neumann utiliza una única memoria para almacenar tanto los datos como las instrucciones. La arquitectura Harvard, sin embargo, separa la memoria de datos de la memoria de instrucciones. Figura \ref{fig:vonneumann_harvard}.
 
 \begin{figure}[htbp]
   \centering
@@ -94,7 +94,7 @@ El modo de acceso a la memoria externa divide las arquitecturas en dos tipos con
 %-----------------------------------------------------------------
 \label{procesador:segmentacion}
 
-La segmentación consiste en dividir el procesador en etapas, de modo que en cada una de ellas se procesa una parte de una instrucción. Al dividir las instrucciones se consigue que cada etapa procese de forma independiente una parte de las mismas. 
+La segmentación consiste en dividir el procesador en etapas, de modo que en cada una de ellas se ejecute una parte de la instrucción. Al dividir las instrucciones se consigue que cada etapa procese de forma independiente una parte de las mismas. 
 
 Las instrucciones van avanzando de etapa en etapa hasta que se terminen de procesar. De este modo se pueden tener en el procesador varias instrucciones ejecutándose de forma simultanea en distintas etapas, lo que resulta en un aumento significativo del rendimiento del procesador.
 
@@ -151,7 +151,7 @@ Un programa es un conjunto de instrucciones que ejecutadas en orden realizan una
 \begin{enumerate}
   \item \textit{Riesgos estructurales}. Surgen cuando 2 o más instrucciones necesitan acceder a los mismos recursos.
 	
-	\item \textit{Riesgos de datos}. Surgen cuando una instrucción depende del resultado de una instrucción anterior, y este todavía no se ha escrito en el registro correspondiente. A su vez pueden ser:
+	\item \textit{Riesgos de datos}. Surgen cuando la ejecución de una instrucción depende del resultado de una instrucción anterior, y este todavía no se ha escrito en el registro correspondiente. A su vez pueden ser:
 	
 	  \begin{itemize}
 		  \item \textsl{Lectura después de escritura (RAW)}. Una instrucción intenta leer un dato antes de que se escriba en el registro.
@@ -174,7 +174,7 @@ Un programa es un conjunto de instrucciones que ejecutadas en orden realizan una
 
 La arquitectura ARM fue originalmente desarrollada por Acorn Computer Limited, entre los años 1983 y 1985.
 
-Actualmente la arquitectura ARM es el conjunto de instrucciones más ampliamente utilizado en unidades producidas. Esto se debe a su amplio uso en los sectores de telefonía móvil, sistemas de automoción, computadoras industriales y otros dispositivos. 
+Actualmente la arquitectura ARM es el conjunto de instrucciones más extensamente utilizado en unidades producidas. Esto se debe a su amplio uso en los sectores de telefonía móvil, sistemas de automoción, computadoras industriales y otros dispositivos. 
 
 Lo que hace que esta arquitectura sea tan popular es la simpleza de sus núcleos, utilizan un número relativamente pequeño de transistores, permitiendo añadir funcionalidades específicas en otras partes del mismo chip \cite{Bustillos2012}. Por ejemplo, uno de los procesadores de ultima generación de la empresa Qualcomm, el "`Qualcomm Snapdragon 810"' esta compuesto por una CPU con 8 núcleos ARM, una unidad de procesamiento gráfico, controladores de pantalla, conectividad y cámara entre otros, todo ello en un único chip \cite{Mobile}. Figura \ref{fig:snapdragon-processors-810}.
 

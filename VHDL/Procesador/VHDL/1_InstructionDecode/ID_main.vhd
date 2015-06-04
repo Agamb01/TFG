@@ -52,9 +52,6 @@ use IEEE.NUMERIC_STD.ALL;
 --    Señales de control para fase EXE
 --    Señales de control para fase MEM
 --    Señales de control para fase WB
-
-library work;
-   use work.my_package.all;
    
 entity ID_main is
    Port( 

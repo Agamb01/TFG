@@ -29,47 +29,41 @@ use IEEE.STD_LOGIC_1164.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-use work.IDs_regs_fallos.all;
-
 entity Registro_TF is
+   Generic (
+      size     : INTEGER := 32
+   );
    Port ( 
       clk, rst : in STD_LOGIC;
-      ID_const : in t_ID_reg;
-      fallo_in : in t_Fallo;
-      dato_in  : in STD_LOGIC_VECTOR (31 downto 0);
-      dato_out : out STD_LOGIC_VECTOR (31 downto 0)
+      dato_in  : in STD_LOGIC_VECTOR (size-1 downto 0);
+      dato_out : out STD_LOGIC_VECTOR (size-1 downto 0)
    );
 end Registro_TF;
 
 architecture Behavioral of Registro_TF is
 
+   constant N_Tolerancia : integer := 3;    
+   type array_regs is array (0 to N_Tolerancia-1) of STD_LOGIC_VECTOR (size-1 downto 0);
+
    signal regs : array_regs;
 
 begin
 
+   -- Registro triplicado
    p_regs: process (clk, rst)
    begin
       if rst='0' then
-         regs <= (others=> (others=>'0') );
+         for i in 0 to N_Tolerancia-1 loop -- Para cada registro
+            regs(i) <= (others=>'0');
+         end loop;
       elsif rising_edge(clk) then
          for i in 0 to N_Tolerancia-1 loop -- Para cada registro
-            if ID_const = fallo_in.ID and -- Si es el ID indicado
-             fallo_in.reg(i) = '1' then  -- y el registro i se ve afectado entonces
-               if fallo_in.tipo = '0' then -- Si el tipo de fallo es "forzar valor" entonces
-                  -- Mantiene los bits que no se ve afectados
-                  -- Fuerza los datos que si se ven afectados
-                  regs(i) <= (dato_in and not fallo_in.bool) or (fallo_in.bool and fallo_in.dato);
-               else -- En caso contrario (Tipo de fallo es "Invertir valores")
-                  -- Invierte el dato
-                  regs(i) <= fallo_in.bool xor dato_in;
-               end if;
-            else -- En caso contrario (No se aplica ningun fallo)
-               regs(i) <= dato_in;
-            end if;
+            regs(i) <= dato_in;
          end loop;
       end if;
    end process;
    
+   -- Votador:
    dato_out <= (regs(0) and regs(1)) or (regs(0) and regs(2)) or (regs(1) and regs(2)); 
 
 end Behavioral;

@@ -71,16 +71,7 @@
 <msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;D:/TFG/TFG/VHDL/Procesador_TF/VHDL/cpu.vhd&quot; into library work</arg>
 </msg>
 
-<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;D:/TFG/TFG/VHDL/Procesador_TF/VHDL/tolerancia/IDs_regs_fallos.vhd&quot; into library work</arg>
-</msg>
-
 <msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;D:/TFG/TFG/VHDL/Procesador_TF/VHDL/tolerancia/Registro_TF.vhd&quot; into library work</arg>
-</msg>
-
-<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;D:/TFG/TFG/VHDL/Procesador_TF/control_Cpu.vhd&quot; into library work</arg>
-</msg>
-
-<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;D:/TFG/TFG/VHDL/Procesador_TF/generador_fallos.vhd&quot; into library work</arg>
 </msg>
 
 </messages>

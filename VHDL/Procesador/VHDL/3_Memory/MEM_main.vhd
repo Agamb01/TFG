@@ -53,9 +53,6 @@ use IEEE.NUMERIC_STD.ALL;
 
 --    Bus de datos, datos obtenidos de memoria
 --    Control de salto (PC_Src)
-
-library work;
-   use work.my_package.all;
    
 entity MEM_main is
    Port (

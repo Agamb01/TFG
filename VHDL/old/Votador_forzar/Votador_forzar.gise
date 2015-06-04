@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<generated_project xmlns="http://www.xilinx.com/XMLSchema" xmlns:xil_pn="http://www.xilinx.com/XMLSchema">
+
+  <!--                                                          -->
+
+  <!--             For tool use only. Do not edit.              -->
+
+  <!--                                                          -->
+
+  <!-- ProjectNavigator created generated project file.         -->
+
+  <!-- For use in tracking generated file and other information -->
+
+  <!-- allowing preservation of process status.                 -->
+
+  <!--                                                          -->
+
+  <!-- Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved. -->
+
+  <version xmlns="http://www.xilinx.com/XMLSchema">11.1</version>
+
+  <sourceproject xmlns="http://www.xilinx.com/XMLSchema" xil_pn:fileType="FILE_XISE" xil_pn:name="Votador_forzar.xise"/>
+
+  <files xmlns="http://www.xilinx.com/XMLSchema">
+    <file xil_pn:fileType="FILE_CMD_LOG" xil_pn:name="Sistema_Tolerancia_2.cmd_log"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_LSO" xil_pn:name="Sistema_Tolerancia_2.lso"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGC" xil_pn:name="Sistema_Tolerancia_2.ngc"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGR" xil_pn:name="Sistema_Tolerancia_2.ngr"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="Sistema_Tolerancia_2.prj"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_STX" xil_pn:name="Sistema_Tolerancia_2.stx"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_REPORT" xil_pn:name="Sistema_Tolerancia_2.syr"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST" xil_pn:name="Sistema_Tolerancia_2.xst"/>
+    <file xil_pn:fileType="FILE_HTML" xil_pn:name="Sistema_Tolerancia_2_envsettings.html"/>
+    <file xil_pn:fileType="FILE_HTML" xil_pn:name="Sistema_Tolerancia_2_summary.html"/>
+    <file xil_pn:fileType="FILE_XRPT" xil_pn:name="Sistema_Tolerancia_2_xst.xrpt"/>
+    <file xil_pn:fileType="FILE_CMD_LOG" xil_pn:name="Sistema_Tolerancia_PRE.cmd_log"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_LSO" xil_pn:name="Sistema_Tolerancia_PRE.lso"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGC" xil_pn:name="Sistema_Tolerancia_PRE.ngc"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGR" xil_pn:name="Sistema_Tolerancia_PRE.ngr"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="Sistema_Tolerancia_PRE.prj"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_STX" xil_pn:name="Sistema_Tolerancia_PRE.stx"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_REPORT" xil_pn:name="Sistema_Tolerancia_PRE.syr"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST" xil_pn:name="Sistema_Tolerancia_PRE.xst"/>
+    <file xil_pn:fileType="FILE_HTML" xil_pn:name="Sistema_Tolerancia_PRE_summary.html"/>
+    <file xil_pn:fileType="FILE_XRPT" xil_pn:name="Sistema_Tolerancia_PRE_xst.xrpt"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_MODELSIM_CMD" xil_pn:name="TB_Sistema_Tolerancia_2.fdo"/>
+    <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/xst.xmsgs"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_MODELSIM_LOG" xil_pn:name="vsim.wlf"/>
+    <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="webtalk_pn.xml"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="work"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="xst"/>
+  </files>
+
+  <transforms xmlns="http://www.xilinx.com/XMLSchema">
+    <transform xil_pn:end_ts="1423671952" xil_pn:name="TRAN_copyInitialToAbstractSimulation" xil_pn:start_ts="1423671952">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1423673852" xil_pn:in_ck="878018587092819939" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1423673852">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
+      <outfile xil_pn:name="VHDL/Reg_Async.vhd"/>
+      <outfile xil_pn:name="VHDL/Reg_err.vhd"/>
+      <outfile xil_pn:name="VHDL/Sistema_Tolerancia_2.vhd"/>
+      <outfile xil_pn:name="VHDL/Sistema_Tolerancia_POST.vhd"/>
+      <outfile xil_pn:name="VHDL/Sistema_Tolerancia_PRE.vhd"/>
+      <outfile xil_pn:name="VHDL/TB/TB_Sistema_Tolerancia_2.vhd"/>
+      <outfile xil_pn:name="VHDL/TB/TB_Sistema_Tolerancia_POST.vhd"/>
+      <outfile xil_pn:name="VHDL/TB/TB_Sistema_Tolerancia_PRE.vhd"/>
+      <outfile xil_pn:name="VHDL/TB/TB_votador1bit.vhd"/>
+      <outfile xil_pn:name="VHDL/TB/TB_votadorNbits.vhd"/>
+      <outfile xil_pn:name="VHDL/comparador.vhd"/>
+      <outfile xil_pn:name="VHDL/main.vhd"/>
+      <outfile xil_pn:name="VHDL/paquetes/IDs_regs_fallos.vhd"/>
+      <outfile xil_pn:name="VHDL/paquetes/my_package.vhd"/>
+      <outfile xil_pn:name="VHDL/votador1bit.vhd"/>
+      <outfile xil_pn:name="VHDL/votadorNbits.vhd"/>
+    </transform>
+    <transform xil_pn:end_ts="1423673730" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="-7679248900020128269" xil_pn:start_ts="1423673730">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1423673730" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="672360292377577553" xil_pn:start_ts="1423673730">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1423671952" xil_pn:name="TRAN_regenerateCoresSim" xil_pn:prop_ck="-2002126405758517681" xil_pn:start_ts="1423671952">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1423673852" xil_pn:in_ck="878018587092819939" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1423673852">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
+      <outfile xil_pn:name="VHDL/Reg_Async.vhd"/>
+      <outfile xil_pn:name="VHDL/Reg_err.vhd"/>
+      <outfile xil_pn:name="VHDL/Sistema_Tolerancia_2.vhd"/>
+      <outfile xil_pn:name="VHDL/Sistema_Tolerancia_POST.vhd"/>
+      <outfile xil_pn:name="VHDL/Sistema_Tolerancia_PRE.vhd"/>
+      <outfile xil_pn:name="VHDL/TB/TB_Sistema_Tolerancia_2.vhd"/>
+      <outfile xil_pn:name="VHDL/TB/TB_Sistema_Tolerancia_POST.vhd"/>
+      <outfile xil_pn:name="VHDL/TB/TB_Sistema_Tolerancia_PRE.vhd"/>
+      <outfile xil_pn:name="VHDL/TB/TB_votador1bit.vhd"/>
+      <outfile xil_pn:name="VHDL/TB/TB_votadorNbits.vhd"/>
+      <outfile xil_pn:name="VHDL/comparador.vhd"/>
+      <outfile xil_pn:name="VHDL/main.vhd"/>
+      <outfile xil_pn:name="VHDL/paquetes/IDs_regs_fallos.vhd"/>
+      <outfile xil_pn:name="VHDL/paquetes/my_package.vhd"/>
+      <outfile xil_pn:name="VHDL/votador1bit.vhd"/>
+      <outfile xil_pn:name="VHDL/votadorNbits.vhd"/>
+    </transform>
+    <transform xil_pn:end_ts="1423673853" xil_pn:in_ck="878018587092819939" xil_pn:name="TRAN_MSimulateBehavioralModel" xil_pn:prop_ck="-357383698293900177" xil_pn:start_ts="1423673852">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
+      <outfile xil_pn:name="TB_Sistema_Tolerancia_2.fdo"/>
+      <outfile xil_pn:name="vsim.wlf"/>
+      <outfile xil_pn:name="work"/>
+    </transform>
+    <transform xil_pn:end_ts="1423585056" xil_pn:name="TRAN_copyInitialToXSTAbstractSynthesis" xil_pn:start_ts="1423585056">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+  </transforms>
+
+</generated_project>

@@ -93,7 +93,7 @@ end component;
 -------------------------------Banco de registros-----------------------------
 
 -------------------------------Extension de signo-----------------------------
-   component ExtensioSigno
+   component ExtensionSigno
       Port ( 
          in_inst     : in  STD_LOGIC_VECTOR (31 downto 0);
          out_entero  : out STD_LOGIC_VECTOR(31 downto 0)
@@ -155,7 +155,7 @@ begin
 -------------------------------Banco de registros-----------------------------
 
 -------------------------------Extension de signo-----------------------------
-   i_ExtensionSigno: ExtensioSigno port map ( 
+   i_ExtensionSigno: ExtensionSigno port map ( 
       in_inst => in_inst,
       out_entero => out_entero 
    );

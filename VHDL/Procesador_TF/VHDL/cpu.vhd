@@ -28,15 +28,11 @@ use IEEE.NUMERIC_STD.ALL;
 -- any Xilinx primitives in this code.
 --library UNISIM;
 --use UNISIM.VComponents.all;
-
-library work;
-   use work.IDs_regs_fallos.all;
    
 entity cpu is
    Port(
       clk, rst : in STD_LOGIC;
-      led : out STD_LOGIC_VECTOR (15 downto 0);
-      fallo : in t_Fallo
+      led : out STD_LOGIC_VECTOR (15 downto 0)
    );
 end cpu;
 
@@ -57,23 +53,21 @@ architecture Behavioral of cpu is
    
   -- Registro con tolerancia a fallos 
    component Registro_TF is
+      Generic (
+        size      : INTEGER := 32
+      );
       Port ( 
          clk, rst : in STD_LOGIC;
-         ID_const : in t_ID_reg;
-         fallo_in : in t_Fallo;
-         dato_in  : in STD_LOGIC_VECTOR (31 downto 0);
-         dato_out : out STD_LOGIC_VECTOR (31 downto 0)
+         dato_in  : in STD_LOGIC_VECTOR (size-1 downto 0);
+         dato_out : out STD_LOGIC_VECTOR (size-1 downto 0)
       );
    end component;
-
 --------------------------------Common--------------------------------
 
 
 ----------------------------Instruction Fetch-----------------------------
    component IF_main is
-      Port( 
---         clk, rst       : in STD_LOGIC;
-         
+      Port(          
          -- Contador de programa actual
          in_pc          : in std_logic_vector(31 downto 0);
          -- Contador de programa siguiente
@@ -94,7 +88,6 @@ architecture Behavioral of cpu is
    signal IF_out_inst_reg   : std_logic_vector(31 downto 0);
    
    signal IF_pc_next        : std_logic_vector(31 downto 0);
-
 ----------------------------Instruction Fetch-----------------------------
 
 ----------------------------Instruction Decode----------------------------
@@ -245,13 +238,11 @@ architecture Behavioral of cpu is
          in_ALUbus  : in STD_LOGIC_VECTOR (31 downto 0);
          in_busB    : in STD_LOGIC_VECTOR (31 downto 0);
          in_flags   : in STD_LOGIC_VECTOR (1 downto 0);
-         -- in_BRdir   : in STD_LOGIC_VECTOR (31 downto 0);
 
          --Salidas (MEM->WB) 
          out_MEMbus : out  STD_LOGIC_VECTOR (31 downto 0);
 
          --Salidas (MEM->Branch)
-         -- out_BRdir  : out STD_LOGIC_VECTOR (31 downto 0);
          out_BRctr  : out STD_LOGIC;
 
          --Señales de control (ID->MEM)
@@ -267,7 +258,6 @@ architecture Behavioral of cpu is
          out_ALUbus      : out STD_LOGIC_VECTOR(31 downto 0);
          out_regW        : out STD_LOGIC_VECTOR(3 downto 0);  -- Registro destino
          out_WB_control  : out STD_LOGIC_VECTOR(1 downto 0)
-
       );
    end component;
 
@@ -298,18 +288,15 @@ architecture Behavioral of cpu is
 
    -- Señales de registros
    signal MEM_out_MEMbus_reg  : STD_LOGIC_VECTOR(31 downto 0);
-
    signal MEM_out_ALUbus_reg     : STD_LOGIC_VECTOR(31 downto 0);
    signal MEM_out_regW_reg       : STD_LOGIC_VECTOR(3 downto 0);
    signal MEM_out_WB_control_reg : STD_LOGIC_VECTOR(1 downto 0);
 ----------------------------------Memory----------------------------------
 
 --------------------------------Write Back--------------------------------
-
    signal WB_out_WB_control : std_logic_vector(1 downto 0);
    signal WB_out_regW       : std_logic_vector(3 downto 0);
    signal WB_out_busW       : std_logic_vector(31 downto 0);
-
 --------------------------------Write Back--------------------------------
 
 begin
@@ -328,33 +315,15 @@ begin
    -- Modulo IF
    i_IF: IF_main 
       port map (
---         clk => clk,
---         rst => rst, 
-         
          in_pc    => IF_out_pc_reg,
          out_pc   => IF_out_pc4,
          out_inst => IF_out_inst
       );   
 
-   --Registros (IF -> ID) -- TODO: Sustituir por registros tolerantes a fallos
---   p_IF_regs: process(clk, rst)
---   begin
---      if rst='0' then
---         IF_out_pc_reg   <= (others=>'0');
---         IF_out_pc4_reg  <= (others=>'0');
---         IF_out_inst_reg <= (others=>'0');
---      elsif rising_edge(clk) then
---         IF_out_pc_reg   <= IF_pc_next;
---         IF_out_pc4_reg  <= IF_out_pc4;
---         IF_out_inst_reg <= IF_out_inst;
---      end if;
---   end process;
-   
+   -- Registros TF etapa IF -> ID
    r_IF_out_pc_reg: Registro_TF 
       port map ( 
          clk => clk, rst => rst,
-         ID_const => id_IF_out_pc_reg,
-         fallo_in => fallo,
          dato_in  => IF_pc_next,
          dato_out => IF_out_pc_reg
       );
@@ -362,8 +331,6 @@ begin
    r_IF_out_inst_reg: Registro_TF 
       port map ( 
          clk => clk, rst => rst,
-         ID_const => id_IF_out_inst_reg,
-         fallo_in => fallo,
          dato_in  => IF_out_inst,
          dato_out => IF_out_inst_reg
       );
@@ -371,8 +338,6 @@ begin
    r_IF_out_pc4_reg: Registro_TF 
       port map ( 
          clk => clk, rst => rst,
-         ID_const => id_IF_out_pc4_reg,
-         fallo_in => fallo,
          dato_in  => IF_out_pc4,
          dato_out => IF_out_pc4_reg
       );
@@ -423,35 +388,10 @@ led <= ID_in_inst(15 downto 0);
          out_PC => ID_out_PC 
       );
       
-   --Registros (ID -> EXE) -- TODO: Sustituir por registros tolerantes a fallos
-   p_ID_regs: process(clk, rst)
-   begin
-      if rst='0' then
---         ID_out_busA_reg        <= (others=>'0');
---         ID_out_busB_reg        <= (others=>'0');
-         ID_out_regW_reg        <= (others=>'0');
---         ID_out_entero_reg      <= (others=>'0');
-         ID_out_WB_control_reg  <= (others=>'0');
-         ID_out_MEM_control_reg <= (others=>'0');
-         ID_out_EXE_control_reg <= (others=>'0');
---         ID_out_pc_reg          <= (others=>'0');
-      elsif rising_edge(clk) then
---         ID_out_busA_reg        <= ID_out_busA;
---         ID_out_busB_reg        <= ID_out_busB;
-         ID_out_regW_reg        <= ID_out_regW;
---         ID_out_entero_reg      <= ID_out_entero;
-         ID_out_WB_control_reg  <= ID_out_WB_control;
-         ID_out_MEM_control_reg <= ID_out_MEM_control;
-         ID_out_EXE_control_reg <= ID_out_EXE_control;
---         ID_out_pc_reg          <= ID_out_pc;
-      end if;
-   end process;
-   
+   --Registros TF (ID -> EXE)
    r_ID_out_busA_reg: Registro_TF 
       port map ( 
          clk => clk, rst => rst,
-         ID_const => id_ID_out_busA_reg,
-         fallo_in => fallo,
          dato_in  => ID_out_busA,
          dato_out => ID_out_busA_reg
       );
@@ -459,64 +399,62 @@ led <= ID_in_inst(15 downto 0);
    r_ID_out_busB_reg: Registro_TF 
       port map ( 
          clk => clk, rst => rst,
-         ID_const => id_ID_out_busB_reg,
-         fallo_in => fallo,
          dato_in  => ID_out_busB,
          dato_out => ID_out_busB_reg
       );
 
 
---   r_ID_out_regW_reg: Registro_TF 
---      port map ( 
---         clk => clk, rst => rst,
---         ID_const => id_ID_out_regW_reg,
---         fallo_in => fallo,
---         dato_in  => ID_out_regW,
---         dato_out => ID_out_regW_reg
---      );
+   r_ID_out_regW_reg: Registro_TF 
+      generic map (
+         size => 4
+      )
+      port map ( 
+         clk => clk, rst => rst,
+         dato_in  => ID_out_regW,
+         dato_out => ID_out_regW_reg
+      );
 
    r_ID_out_entero_reg: Registro_TF 
       port map ( 
          clk => clk, rst => rst,
-         ID_const => id_ID_out_entero_reg,
-         fallo_in => fallo,
          dato_in  => ID_out_entero,
          dato_out => ID_out_entero_reg
       );
 
 
---   r_ID_out_WB_control_reg: Registro_TF 
---      port map ( 
---         clk => clk, rst => rst,
---         ID_const => id_ID_out_WB_control_reg,
---         fallo_in => fallo,
---         dato_in  => ID_out_WB_control,
---         dato_out => ID_out_WB_control_reg
---      );
+   r_ID_out_WB_control_reg: Registro_TF 
+      generic map (
+         size => 2
+      )
+      port map ( 
+         clk => clk, rst => rst,
+         dato_in  => ID_out_WB_control,
+         dato_out => ID_out_WB_control_reg
+      );
 
---   r_ID_out_MEM_control_reg: Registro_TF 
---      port map ( 
---         clk => clk, rst => rst,
---         ID_const => id_ID_out_MEM_control_reg,
---         fallo_in => fallo,
---         dato_in  => ID_out_MEM_control,
---         dato_out => ID_out_MEM_control_reg
---      );
+   r_ID_out_MEM_control_reg: Registro_TF 
+      generic map (
+         size => 6
+      )
+      port map ( 
+         clk => clk, rst => rst,
+         dato_in  => ID_out_MEM_control,
+         dato_out => ID_out_MEM_control_reg
+      );
       
---   r_ID_out_EXE_control_reg: Registro_TF 
---      port map ( 
---         clk => clk, rst => rst,
---         ID_const => id_ID_out_EXE_control_reg,
---         fallo_in => fallo,
---         dato_in  => ID_out_EXE_control,
---         dato_out => ID_out_EXE_control_reg
---      );
+   r_ID_out_EXE_control_reg: Registro_TF 
+      generic map (
+         size => 4
+      )
+      port map ( 
+         clk => clk, rst => rst,
+         dato_in  => ID_out_EXE_control,
+         dato_out => ID_out_EXE_control_reg
+      );
 
    r_ID_out_pc_reg : Registro_TF 
       port map ( 
          clk => clk, rst => rst,
-         ID_const => id_ID_out_pc_reg,
-         fallo_in => fallo,
          dato_in  => ID_out_pc,
          dato_out => ID_out_pc_reg
       );
@@ -572,35 +510,10 @@ led <= ID_in_inst(15 downto 0);
          out_MEM_control => EXE_out_MEM_control
       );
 
-   --Registros (EXE -> MEM) -- TODO: Sustituir por registros tolerantes a fallos
-   p_EXE_regs: process(clk, rst)
-   begin
-      if rst='0' then
---         EXE_out_PC_salto_reg    <= (others=>'0');
---         EXE_out_ALU_bus_reg     <= (others=>'0');
-         EXE_out_ALU_flags_reg   <= (others=>'0');
-
---         EXE_out_BusB_reg        <= (others=>'0');
-         EXE_out_regW_reg        <= (others=>'0');
-         EXE_out_WB_control_reg  <= (others=>'0');
-         EXE_out_MEM_control_reg <= (others=>'0');
-      elsif rising_edge(clk) then
---         EXE_out_PC_salto_reg    <= EXE_out_PC_salto;
---         EXE_out_ALU_bus_reg     <= EXE_out_ALU_bus;
-         EXE_out_ALU_flags_reg   <= EXE_out_ALU_flags;
-
---         EXE_out_BusB_reg        <= EXE_out_BusB;
-         EXE_out_regW_reg        <= EXE_out_regW;
-         EXE_out_WB_control_reg  <= EXE_out_WB_control;
-         EXE_out_MEM_control_reg <= EXE_out_MEM_control;
-      end if;
-   end process;
-   
+   --Registros TF (EXE -> MEM)
    r_EXE_out_PC_salto : Registro_TF 
       port map ( 
          clk => clk, rst => rst,
-         ID_const => id_EXE_out_PC_salto,
-         fallo_in => fallo,
          dato_in  => EXE_out_PC_salto,
          dato_out => EXE_out_PC_salto_reg
       );
@@ -608,56 +521,56 @@ led <= ID_in_inst(15 downto 0);
    r_EXE_out_ALU_bus : Registro_TF 
       port map ( 
          clk => clk, rst => rst,
-         ID_const => id_EXE_out_ALU_bus,
-         fallo_in => fallo,
          dato_in  => EXE_out_ALU_bus,
          dato_out => EXE_out_ALU_bus_reg
       );
 
---   r_EXE_out_ALU_flags : Registro_TF 
---      port map ( 
---         clk => clk, rst => rst,
---         ID_const => id_EXE_out_ALU_flags,
---         fallo_in => fallo,
---         dato_in  => EXE_out_ALU_flags,
---         dato_out => EXE_out_ALU_flags_reg
---      );
+   r_EXE_out_ALU_flags : Registro_TF 
+      generic map (
+         size => 2
+      )
+      port map ( 
+         clk => clk, rst => rst,
+         dato_in  => EXE_out_ALU_flags,
+         dato_out => EXE_out_ALU_flags_reg
+      );
 
    r_EXE_out_BusB : Registro_TF 
       port map ( 
          clk => clk, rst => rst,
-         ID_const => id_EXE_out_BusB,
-         fallo_in => fallo,
          dato_in  => EXE_out_BusB,
          dato_out => EXE_out_BusB_reg
       );
 
---   r_EXE_out_regW : Registro_TF 
---      port map ( 
---         clk => clk, rst => rst,
---         ID_const => id_EXE_out_regW,
---         fallo_in => fallo,
---         dato_in  => EXE_out_regW,
---         dato_out => EXE_out_regW_reg
---      );
+   r_EXE_out_regW : Registro_TF 
+      generic map (
+         size => 4
+      )
+      port map ( 
+         clk => clk, rst => rst,
+         dato_in  => EXE_out_regW,
+         dato_out => EXE_out_regW_reg
+      );
 
---   r_EXE_out_WB_control : Registro_TF 
---      port map ( 
---         clk => clk, rst => rst,
---         ID_const => id_EXE_out_WB_control,
---         fallo_in => fallo,
---         dato_in  => EXE_out_WB_control,
---         dato_out => EXE_out_WB_control_reg
---      );
+   r_EXE_out_WB_control : Registro_TF 
+      generic map (
+         size => 2
+      )
+      port map ( 
+         clk => clk, rst => rst,
+         dato_in  => EXE_out_WB_control,
+         dato_out => EXE_out_WB_control_reg
+      );
 
---   r_EXE_out_MEM_control : Registro_TF 
---      port map ( 
---         clk => clk, rst => rst,
---         ID_const => id_EXE_out_MEM_control,
---         fallo_in => fallo,
---         dato_in  => EXE_out_MEM_control,
---         dato_out => EXE_out_MEM_control_reg
---      );
+   r_EXE_out_MEM_control : Registro_TF 
+      generic map (
+         size => 6
+      )
+      port map ( 
+         clk => clk, rst => rst,
+         dato_in  => EXE_out_MEM_control,
+         dato_out => EXE_out_MEM_control_reg
+      );
 
 ---------------------------------Execution--------------------------------
 
@@ -708,27 +621,10 @@ led <= ID_in_inst(15 downto 0);
          out_WB_control  => MEM_out_WB_control 
       );
 
-   --Registros (MEM -> WB) -- TODO: Sustituir por registros tolerantes a fallos
-   p_MEM_regs: process(clk, rst)
-   begin
-      if rst='0' then
---         MEM_out_MEMbus_reg      <= (others=>'0');
---         MEM_out_ALUbus_reg      <= (others=>'0');
-         MEM_out_regW_reg        <= (others=>'0');
-         MEM_out_WB_control_reg  <= (others=>'0');
-      elsif rising_edge(clk) then
---         MEM_out_MEMbus_reg      <= MEM_out_MEMbus;
---         MEM_out_ALUbus_reg      <= MEM_out_ALUbus;
-         MEM_out_regW_reg        <= MEM_out_regW;
-         MEM_out_WB_control_reg  <= MEM_out_WB_control;
-      end if;
-   end process;
-   
+   --Registros TF (MEM -> WB)
    r_MEM_out_MEMbus : Registro_TF 
       port map ( 
          clk => clk, rst => rst,
-         ID_const => id_MEM_out_MEMbus,
-         fallo_in => fallo,
          dato_in  => MEM_out_MEMbus,
          dato_out => MEM_out_MEMbus_reg
       );
@@ -736,29 +632,29 @@ led <= ID_in_inst(15 downto 0);
    r_MEM_out_ALUbus : Registro_TF 
       port map ( 
          clk => clk, rst => rst,
-         ID_const => id_MEM_out_ALUbus,
-         fallo_in => fallo,
          dato_in  => MEM_out_ALUbus,
          dato_out => MEM_out_ALUbus_reg
       );
 
---   r_MEM_out_regW : Registro_TF 
---      port map ( 
---         clk => clk, rst => rst,
---         ID_const => id_MEM_out_regW,
---         fallo_in => fallo,
---         dato_in  => MEM_out_regW,
---         dato_out => MEM_out_regW_reg
---      );
+   r_MEM_out_regW : Registro_TF 
+      generic map (
+         size => 4
+      )
+      port map ( 
+         clk => clk, rst => rst,
+         dato_in  => MEM_out_regW,
+         dato_out => MEM_out_regW_reg
+      );
 
---   r_MEM_out_WB_control : Registro_TF 
---      port map ( 
---         clk => clk, rst => rst,
---         ID_const => id_MEM_out_WB_control,
---         fallo_in => fallo,
---         dato_in  => MEM_out_WB_control,
---         dato_out => MEM_out_WB_control_reg
---      );
+   r_MEM_out_WB_control : Registro_TF 
+      generic map (
+         size => 2
+      )
+      port map ( 
+         clk => clk, rst => rst,
+         dato_in  => MEM_out_WB_control,
+         dato_out => MEM_out_WB_control_reg
+      );
 
 ----------------------------------Memory----------------------------------
 
