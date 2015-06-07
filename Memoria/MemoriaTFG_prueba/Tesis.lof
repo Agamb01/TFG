@@ -32,7 +32,24 @@
 \contentsline {figure}{\numberline {4.3}{\ignorespaces Banco de registros.\relax }}{36}{figure.caption.27}
 \contentsline {figure}{\numberline {4.4}{\ignorespaces Contador de programa.\relax }}{37}{figure.caption.28}
 \contentsline {figure}{\numberline {4.5}{\ignorespaces Unidad aritm\'etico-l\'ogica.\relax }}{38}{figure.caption.29}
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Control principal.\relax }}{39}{figure.caption.30}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Control principal.\relax }}{38}{figure.caption.30}
 \contentsline {figure}{\numberline {4.7}{\ignorespaces Registros de control\relax }}{40}{figure.caption.31}
-\contentsline {figure}{\numberline {4.8}{\ignorespaces Memoria de Instrucciones.\relax }}{41}{figure.caption.32}
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Memoria de Instrucciones.\relax }}{40}{figure.caption.32}
 \contentsline {figure}{\numberline {4.9}{\ignorespaces Memoria de datos.\relax }}{41}{figure.caption.33}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Sustituci\'on de biestable.\relax }}{48}{figure.caption.44}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Biestable original.}}}{48}{subfigure.1.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Conjunto de biestables con votador.}}}{48}{subfigure.1.2}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Dise\~no de votador con puertas l\'ogicas\relax }}{49}{figure.caption.46}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Ejemplos de fallos en entradas.\relax }}{50}{figure.caption.47}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Fallo en entrada B (0 ->1)}}}{50}{subfigure.3.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Fallo en entrada C (1 ->0)}}}{50}{subfigure.3.2}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Procesador con TMR en los registros de control.\relax }}{51}{figure.caption.48}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {6.1}{\ignorespaces C\'odigo Thumb-2 de programa de pruebas.\relax }}{54}{figure.caption.49}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Pseudo-c\'odigo de programa de pruebas.\relax }}{55}{figure.caption.50}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
