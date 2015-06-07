@@ -1,22 +1,16 @@
 ----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
+-- Company: Universidad Complutense de Madrid
+-- Engineer: Andres Gamboa Melendez
 -- 
--- Create Date:    13:01:28 01/09/2015 
--- Design Name: 
--- Module Name:    ALU - Behavioral 
--- Project Name: 
--- Target Devices: 
--- Tool versions: 
--- Description: 
---
--- Dependencies: 
---
--- Revision: 
--- Revision 0.01 - File Created
--- Additional Comments: 
+-- Module Name: ALU - Behavioral 
+-- Project Name: ARM compatible micro-processor
+-- Target Devices: Nexys4
+-- Tool versions: Xilinx ISE Webpack 14.4
+-- Description: Ejecuta la operación seleccionada sobre los operandos de entrada, y 
+--              mantiene los flags de comparación.
 --
 ----------------------------------------------------------------------------------
+
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 

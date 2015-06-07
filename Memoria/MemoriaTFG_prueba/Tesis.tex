@@ -102,7 +102,28 @@ constantes,guionado,Cascaras/bibliografia,config%
 % Importar paquete para mostrar imagenes
 %
 \usepackage{epstopdf}
+
+
+%
+% Importar otros paquetes
+%
+\usepackage{pdfpages}
 \usepackage{listings}
+\lstdefinelanguage{THUMB2}%
+  {morekeywords=[1]{.text,.globl,.align},%
+  morekeywords=[2]{add,sub,b,beq,bge,blt,bne,cmp,ldr,str,mov,mul,pop,push,%
+    subs,vadd,vld1,vldm,vmov,vmul,vpadd,vpop,vpush,nop},%
+  morekeywords=[3]{ADD,SUB,B,BEQ,BGE,BLT,BNE,CMP,LDR,STR,MOV,MUL,POP,PUSH,%
+    SUBS,VADD,VLD1,VLDM,VMOV,VMUL,VPADD,VPOP,VPUSH,NOP},%
+   keywordsprefix=.,%
+   sensitive,%
+   morecomment=[l]//,% nonstandard
+   moredelim=*[directive]\#,%
+   moredirectives={define,elif,else,endif,error,if,ifdef,ifndef,line,%
+      include,pragma,undef,warning}%
+  }[keywords,comments,directives]
+
+
 
 
 %- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -139,8 +160,6 @@ constantes,guionado,Cascaras/bibliografia,config%
 \mainmatter
 \restauraCabecera
 
-
-
 \include{Capitulos/01Introduccion}
 \include{Capitulos/02IntroduccionProcesador}
 \include{Capitulos/03IntroduccionFallosTolerancia}
@@ -152,10 +171,9 @@ constantes,guionado,Cascaras/bibliografia,config%
 
 % Apéndices
 \appendix
-%\include{Apendices/01ApendiceA}
-%\include{...}
-%\include{...}
-%\include{...}
+\include{Apendices/01ApendiceA}
+\include{Apendices/02ApendiceB}
+\include{Apendices/03ApendiceC}
 
 \backmatter
 

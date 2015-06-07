@@ -1,24 +1,17 @@
 ----------------------------------------------------------------------------------
--- Company: 
--- Engineer: Andrés Gamboa Meléndez 
+-- Company: Universidad Complutense de Madrid
+-- Engineer: Andres Gamboa Melendez
 -- 
--- Create Date:    11:27:36 09/12/2014 
--- Design Name: 
--- Module Name:    ExtensioSigno - Behavioral 
--- Project Name: 
--- Target Devices: 
--- Tool versions: 
--- Description: Este módulo analiza la instruccion de entrada y obtiene un número entero.
+-- Module Name: ExtensioSigno - Behavioral 
+-- Project Name: ARM compatible micro-processor
+-- Target Devices: Nexys4
+-- Tool versions: Xilinx ISE Webpack 14.4
+-- Description: Analiza la instruccion de entrada y obtiene un número entero.
 --              Dependiendo del tipo de instrucción(operación, load, store o salto) utiliza
 --              utiliza diferentes bits de la instrucción.
 --
--- Dependencies: 
---
--- Revision: 
--- Revision 0.01 - File Created
--- Additional Comments: 
---
 ----------------------------------------------------------------------------------
+
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 

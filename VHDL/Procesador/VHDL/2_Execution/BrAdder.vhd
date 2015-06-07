@@ -1,21 +1,15 @@
 ----------------------------------------------------------------------------------
--- Company: 
--- Engineer: Andrés Gamboa Meléndez
+-- Company: Universidad Complutense de Madrid
+-- Engineer: Andres Gamboa Melendez
 -- 
--- Create Date: 11:13:31 10/17/2014 
--- Design Name: 1
 -- Module Name: BrAdder - Behavioral 
 -- Project Name: ARM compatible micro-processor
 -- Target Devices: Nexys4
 -- Tool versions: Xilinx ISE Webpack 14.4
 -- Description: Sumador de 32 bit, suma dos entradas
 --
--- Dependencies: 
---
--- Revision: 
--- Revision 0.01 - File Created
--- Additional Comments: 
 ----------------------------------------------------------------------------------
+
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 

@@ -2,23 +2,15 @@
 -- Company: Universidad Complutense de Madrid
 -- Engineer: Andres Gamboa Melendez
 -- 
--- Create Date: 02:05:02 10/12/2014 
--- Design Name: Modulo Busqueda de Instrucciones
 -- Module Name: Phase0_InstructionFetch - Behavioral 
 -- Project Name: ARM compatible micro-processor
 -- Target Devices: Nexys4
 -- Tool versions: Xilinx ISE Webpack 14.4
--- Description: Primera fase del microprocesador segmentado, contiene contador de programa 
+-- Description: Primera etapa del microprocesador segmentado, contiene contador de programa 
 --              y memoria de instrucciones.
 --
--- Dependencies: pcAdder (Sumador de contador de programa), MemInstruction (Memoria de instrucciones).
---                
---
--- Revision: 
--- Revision 0.01 - File Created
--- Additional Comments: 
---
 ----------------------------------------------------------------------------------
+
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 

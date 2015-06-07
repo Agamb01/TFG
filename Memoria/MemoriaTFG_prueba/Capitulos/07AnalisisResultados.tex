@@ -17,7 +17,7 @@
 \end{FraseCelebre}
 
 \begin{resumen}
-En este capitulo se exponen los resultados obtenidos al implementar el procesador e introducir el sistema de tolerancia a fallos en el mismo. 
+En este capitulo se analizan los resultados expuestos en el capítulo anterior.
 \end{resumen}
 
 
@@ -26,11 +26,183 @@ En este capitulo se exponen los resultados obtenidos al implementar el procesado
 %-------------------------------------------------------------------
 \label{analisis:introducción}
 
+El presente capítulo se inicia comparando las implementaciones de ambos procesadores, estándar y tolerante a fallos, exponiendo sus principales diferencias. Posteriormente se analizan y comparan los resultados obtenidos al ejecutar las simulaciones sobre las dos implementaciones del microprocesador.
+
+%-------------------------------------------------------------------
+\section{Comparativa de procesadores}
+%-------------------------------------------------------------------
+\label{analisis:comparativa}
+
+El procesador estándar requiere un total de 1,952 registros para ser utilizados como biestables, un lo que supone aproximadamente el 1,5 del total disponible. De los utilizados 420 se dedican a los registros de control y el resto se utilizan para el banco de registros así como para las memorias de instrucciones y de datos.
+
+En cuanto a la lógica combinacional del microprocesador se utilizan un total de 1,015 LUTs para los elementos como la ALU, el control principal y los sumadores entre otros. Requiere un 1\% de las LUTs disponibles en la FPGA.
+
+Los informes de restricción de tiempo indican que el diseño requiere un periodo mínimo de reloj de 6.435 ns, alcanzando una frecuencia máxima de 155.400 MHz.
+
+El procesador tolerante a fallos se deriva del procesador estándar aplicando la técnica TMR sobre los registros de control entre etapas. 
+
+Al incluir una mayor lógica, el procesador tolerante a fallos requiere de 2,798 registros (poco más del 2\%) de los cuales 1,260 se utilizan para los registros de control. Como se ha diseñado el procesador aplicando la técnica TMR, este es el resultado esperado.
+
+La lógica combinacional también se ve afectada ya que se insertan una gran cantidad de votadores, uno por cada 3 biestables de los registros de control. En total se utilizan 1,464 LUTs (2\%), 449 más que en el procesador estándar. Esto incluye los 420 votadores necesarios.
+
+La lógica de los votadores que se inserta a continuación de los registros tiene su incidencia pues ralentiza ligeramente el proceso. El procesador tolerante a fallos requiere un periodo mínimo de reloj de 6.819 ns alcanzando una frecuencia máxima de 146.649 MHz, lo que significa una reducción de la frecuencia máxima de funcionamiento en casi 10 MHz.
+
+%-------------------------------------------------------------------
+\section{Simulaciones}
+%-------------------------------------------------------------------
+\label{analisis:simulaciones}
+
+A continuación se analizan las gráficas generadas por las simulaciones de los apéndices \ref{apendiceA} y \ref{apendiceB}. 
+
+%-------------------------------------------------------------------
+\subsection{Procesador estándar}
+%-------------------------------------------------------------------
+\label{analisis:simulaciones:estandar}
+
+En esta sección se analizan los resultados obtenidos de la ejecución sobre la implementación estándar del microprocesador.
+
+%-------------------------------------------------------------------
+\subsubsection{Prueba de control}
+%-------------------------------------------------------------------
+\label{analisis:simulaciones:estandar:control}
+
+En la gráfica \ref{apendiceC:proc} del apéndice \ref{apendiceC} se observa paso a paso la ejecución del programa de control sobre el procesador estándar. A continuación se listan los eventos significativos por orden cronológico.
+
+Durante la ejecución de la prueba de control, resumida en la tabla \ref{tab:estandar:control}, se observa cómo se inicializan, en los ciclos 5 a 9, los valores de las variables de la operación (R1, R2), las variables del control del bucle (R4, R5) y la variable resultado (R3). A continuación se observa cómo se ejecuta el bucle acumulando las sumas en la variable resultado y el decremento en el indicador de iteración. El bucle se ejecuta 5 veces dejando un resultado final de 125 en el registro resultado. Para finalizar el resultado se almacena en memoria (M0) en el ciclo 75.
+
+\begin{table}
+  \centering
+  \begin{tabular}{|p{1.3cm}|p{1.3cm}|p{\textwidth-4cm}|}
+	  \hline
+		Ciclo& Señales & Evento \\ \hline
+		0 & - & Inicio de la ejecución \\ \hline
+		5 & R2 & Se lee de memoria el valor 5 y se almacena en el registro R2. \\ \hline
+		6 & R1 & Se carga el valor 25 en el registro R1. \\ \hline
+		7 & R3 & Se inicia el registro R3 a 0 para acumular el resultado. \\ \hline		
+		8, 9 & R4, R5 & Se inician las variables de control del bucle. R4 almacena el número de iteraciones. \\ \hline
+		18 & R3 & Se realiza la primera acumulación.\\ \hline
+		19 & R4 & Se decrementa el contador de iteraciones. \\ \hline
+		25 & PC & Se realiza un salto al inicio del bucle. \\ \hline
+		... & R3, R4, PC & Se realizan las iteraciones del bucle, acumulando el resultado en R3 hasta que R4 valga 0. \\ \hline
+		65 & PC & Se termina de ejecutar el bucle, se sigue avanzando por el código. \\ \hline
+		75 & M0 & Se almacena el resultado en la memoria de datos.\\ \hline
+  \end{tabular}
+	\caption{Simulación de control sobre el procesador estándar.}
+	\label{tab:estandar:control}
+\end{table}
+
+%-------------------------------------------------------------------
+\newpage
+\subsubsection{Prueba con fallos}
+%-------------------------------------------------------------------
+\label{analisis:simulaciones:estandar:fallos}
+
+Al volver a ejecutar el mismo código de prueba, esta vez insertando fallos (Apéndice \ref{apendiceC}, sección \ref{apendiceC:proc:fallos}), lo primero que se observa es que el resultado final de M0 no es el correcto, se ha almacenado el valor 75 en vez de el 125 correcto. A continuación analizamos por qué. 
+
+El primer fallo ocurre en el bus de memoria de una etapa interna (MEMbus\_reg), y se propaga hasta almacenarse en el registro R2, es cuando se actualiza este registro cuando vemos los efectos del fallo, en vez del 5 esperado se ha almacenado un 4. Esto reduce el número de iteraciones que se realizarán.
+
+Se continúa la ejecución del programa de forma normal hasta que ocurre el segundo fallo, esta vez se activa la señal "`MEMWrite"' encargada de indicar al módulo de memoria que almacene los datos. Esto se refleja en la señal "`M3"' que cambia de valor a 1. Este fallo no altera el funcionamiento de este programa pero la escritura en memoria podría alterar datos de otros programas si los hubiera.
+
+El tercer fallo ocurre en el operando B de la ALU en una comparación. En vez de comparar la variable con la constante 0, se ha comparado con la constante 1, finalizando el bucle de ejecución antes de tiempo.
+
+\newpage
+El resultado final es un programa mal ejecutado, que ha visto reducido las iteraciones que debería haber realizado, almacenando en memoria un dato incorrecto y además ha modificado elementos en memoria que no deberían haberse visto afectados.
+
+\begin{table}
+  \centering
+  \begin{tabular}{|p{1.3cm}|p{1.3cm}|p{\textwidth-4cm}|}
+	  \hline
+		Ciclo& Señales & Evento \\ \hline
+		0 & - & Inicio de la ejecución. \\ \hline
+		5 & R2 & Se lee de memoria el valor 5 y se almacena en el registro R2. Debido al primer fallo se almacena el valor 4. \\ \hline
+		6 & R1 & Se carga el valor 25 en el registro R1. \\ \hline
+		7 & R3 & Se inicia el registro R3 a 0 para acumular el resultado. \\ \hline		
+		8, 9 & R4, R5 & Se inician las variables de control del bucle. R4 almacena el número de iteraciones. \\ \hline
+		17 & - & Ocurre el segundo fallo. Se almacena un dato en la dirección 3 de memoria.\\ \hline
+		18 & R3 & Se realiza la primera acumulación.\\ \hline
+		19 & R4 & Se decrementa el contador de iteraciones. \\ \hline
+		25 & PC & Se realiza un salto al inicio del bucle. \\ \hline
+		... & R3, R4, PC & Se realizan las iteraciones del bucle, acumulando el resultado en R3 hasta que R4 valga 0. \\ \hline
+		38 & - & Ocurre el tercer fallo. Se termina el bucle antes de tiempo. \\ \hline
+		42 & PC & Termina de ejecutar el bucle a falta de una iteración y se sigue avanzando por el código. \\ \hline
+		53 & M0 & Se almacena el resultado incorrecto en la memoria de datos.\\ \hline
+  \end{tabular}
+	\caption{Simulación con fallos sobre el procesador estándar.}
+	\label{tab:estandar:fallos}
+\end{table}
 
 
 
+%-------------------------------------------------------------------
+\subsection{Procesador tolerante a fallos}
+%-------------------------------------------------------------------
+\label{analisis:simulaciones:tolerante}
+
+En esta sección se analizan los resultados obtenidos de la ejecución de las mismas pruebas anteriores sobre la implemetnación tolerante a fallos del microprocesador.
+
+%-------------------------------------------------------------------
+\subsubsection{Prueba de control}
+%-------------------------------------------------------------------
+\label{analisis:simulaciones:tolerante:control}
+
+En la gráfica del apéndice \ref{apendiceC} sección \ref{apendiceC:proctf} se observa la evolución del programa a lo largo de su ejecución. El proceso sigue los mismos pasos seguidos al ejecutar las pruebas en el procesador estándar obteniendo los mismos resultados (tabla \ref{tab:tolerante:control}. Por lo cual se comprueba que la funcionalidad e integridad del procesador se conservan al introducir la tolerancia a fallos.
+
+\begin{table}
+  \centering
+  \begin{tabular}{|p{1.3cm}|p{1.3cm}|p{\textwidth-4cm}|}
+	  \hline
+		Ciclo& Señales & Evento \\ \hline
+		0 & - & Inicio de la ejecución \\ \hline
+		5 & R2 & Se lee de memoria el valor 5 y se almacena en el registro R2. \\ \hline
+		6 & R1 & Se carga el valor 25 en el registro R1. \\ \hline
+		7 & R3 & Se inicia el registro R3 a 0 para acumular el resultado. \\ \hline		
+		8, 9 & R4, R5 & Se inician las variables de control del bucle. R4 almacena el número de iteraciones. \\ \hline
+		18 & R3 & Se realiza la primera acumulación.\\ \hline
+		19 & R4 & Se decrementa el contador de iteraciones. \\ \hline
+		25 & PC & Se realiza un salto al inicio del bucle. \\ \hline
+		... & R3, R4, PC & Se realizan las iteraciones del bucle, acumulando el resultado en R3 hasta que R4 valga 0. \\ \hline
+		65 & PC & Se termina de ejecutar el bucle, se sigue avanzando por el código. \\ \hline
+		75 & M0 & Se almacena el resultado en la memoria de datos.\\ \hline
+  \end{tabular}
+	\caption{Simulación de control sobre el procesador tolerante a fallos .}
+	\label{tab:tolerante:control}
+\end{table}
+
+%-------------------------------------------------------------------
+\subsubsection{Prueba con fallos}
+%-------------------------------------------------------------------
+\label{analisis:simulaciones:tolerante:fallos}
+
+Para finalizar las pruebas, se realiza la simulación con fallos sobre el procesador tolerante a fallos. Lo primero que observamos en la simulación (apéndice \ref{apendiceC} sección \ref{apendiceC:proctf:fallos}) es que esta vez sí se ha ejecutado el programa de forma correcta, el resultado almacenado en memoria es el correcto y no se han modificado otras secciones de la memoria. A continuación analizamos la gráfica de la simulación, resumida en la tabla \ref{tab:tolerante:fallos}, para ver las diferencias.
+
+El primer fallo se produce en uno de los registros del bus de memoria. El fallo es enmascarado gracias a que los otros dos registros han mantenido el valor correcto y a que el votador ha realizado su tarea, permitiendo que sea el valor más repetido el que continúe hasta el siguiente componente. El registro R2 almacena el valor 5 correctamente.
+
+En el ciclo 17 se produce el segundo fallo. Este provocaría que se modificara la memoria de datos, sin embargo el sistema de tolerancia realiza su tarea y evita que esto ocurra.
+
+El tercer fallo ocurre en el operando B durante el ciclo 38 de la ALU en una comparación. Este fallo, al haberse tolerado el primero, no habría afectado al programa ya que el valor de R4 es 2 y se compara con el valor 1, y no afecta a la ejecución ya que se realiza una comparación de igualdad. En cualquier caso, el fallo se ha enmascarado debido a la lógica del votador que siempre está activo.
 
 
-
+\begin{table}
+  \centering
+  \begin{tabular}{|p{1.3cm}|p{1.3cm}|p{\textwidth-4cm}|}
+	  \hline
+		Ciclo& Señales & Evento \\ \hline
+		0 & - & Inicio de la ejecución \\ \hline
+		5 & R2 & Se lee de memoria el valor 5 y se almacena en el registro R2. Se almacena correctamente a pesar del primer fallo. \\ \hline
+		6 & R1 & Se carga el valor 25 en el registro R1. \\ \hline
+		7 & R3 & Se inicia el registro R3 a 0 para acumular el resultado. \\ \hline		
+		8, 9 & R4, R5 & Se inician las variables de control del bucle. R4 almacena el número de iteraciones. \\ \hline
+		17 & - & Ocurre el segundo fallo. Se tolera y no se almacena ningún dato en memoria.\\ \hline
+		18 & R3 & Se realiza la primera acumulación.\\ \hline
+		19 & R4 & Se decrementa el contador de iteraciones. \\ \hline
+		25 & PC & Se realiza un salto al inicio del bucle. \\ \hline
+		... & R3, R4, PC & Se realizan las iteraciones del bucle, acumulando el resultado en R3 hasta que R4 valga 0. \\ \hline
+		38 & - & Ocurre el tercer fallo. Se enmascara el fallo y no afecta a la ejecución. \\ \hline
+		65 & PC & Se termina de ejecutar el bucle, se sigue avanzando por el código. \\ \hline
+		75 & M0 & Se almacena el resultado en la memoria de datos.\\ \hline
+  \end{tabular}
+	\caption{Simulación con fallos sobre el procesador tolerante a fallos.}
+	\label{tab:tolerante:fallos}
+\end{table}
 
 

@@ -2,22 +2,14 @@
 -- Company: Universidad Complutense de Madrid
 -- Engineer: Andres Gamboa Melendez
 -- 
--- Create Date: 12:05:02 11/12/2014 
--- Design Name: Modulo Memoria de instrucciones
 -- Module Name: MemInstruction - Behavioral 
 -- Project Name: ARM compatible micro-processor
 -- Target Devices: Nexys4
 -- Tool versions: Xilinx ISE Webpack 14.4
--- Description: Recibe una dirección y devuelve la instruccion situada en esa 
---              direccion.
---
--- Dependencies: 
---
--- Revision: 
--- Revision 0.01 - File Created
--- Additional Comments: 
+-- Description: Contiene el códgo de programa y carga la instrucción situada en la dirección recibida.
 --
 ----------------------------------------------------------------------------------
+
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
@@ -30,9 +22,6 @@ use IEEE.NUMERIC_STD.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-
-
---TODO: Completar
 
 entity MemInstruction2 is
    Port (
@@ -48,25 +37,25 @@ architecture Behavioral of MemInstruction2 is
    type mem_array is array (0 to (NUM_INST*4)-1) of std_logic_vector(7 downto 0);
 
    constant mem : mem_array := (
-         "11110010", "01000000", "00000001", "00010000", -- MOV R1, #16
-         "11110010", "01000000", "00000010", "00100000", -- MOV R2, #32
-         "00000000", "00000000", "00000000", "00000000", -- NOP
-         "00000000", "00000000", "00000000", "00000000", -- NOP
+         "11110010", "01000000", "00000001", "00010000", --  0 MOV R1, #16
+         "11110010", "01000000", "00000010", "00100000", --  4 MOV R2, #32
+         "00000000", "00000000", "00000000", "00000000", --  8 NOP
+         "00000000", "00000000", "00000000", "00000000", -- 12 NOP
 
-         "00000000", "00000000", "00000000", "00000000", -- NOP
-         "11101011", "00000001", "00000011", "00000010", -- ADD R3, R1, R2
-         "11101011", "10100001", "00000100", "00000010", -- SUB R4, R1, R2
-         "00000000", "00000000", "00000000", "00000000", -- NOP
+         "00000000", "00000000", "00000000", "00000000", -- 16 NOP
+         "11101011", "00000001", "00000011", "00000010", -- 20 ADD R3, R1, R2
+         "11101011", "10100001", "00000100", "00000010", -- 24 SUB R4, R1, R2
+         "00000000", "00000000", "00000000", "00000000", -- 28 NOP
 
-         "00000000", "00000000", "00000000", "00000000", -- NOP
-         "11101010", "01000001", "00000101", "00000011", -- ORR R5, R1, R3         
-         "00000000", "00000000", "00000000", "00000000", -- NOP
-         "00000000", "00000000", "00000000", "00000000", -- NOP
+         "00000000", "00000000", "00000000", "00000000", -- 32 NOP
+         "11101010", "01000001", "00000101", "00000011", -- 34 ORR R5, R1, R3         
+         "00000000", "00000000", "00000000", "00000000", -- 38 NOP
+         "00000000", "00000000", "00000000", "00000000", -- 42 NOP
          
-         "00000000", "00000000", "00000000", "00000000", -- NOP
-         "11101011", "10110101", "00001111", "00000011", -- CMP R5, R3
-         "11110100", "01111111", "10101111", "11110010", -- BEQ -28 - 7 instrucciones anteriores + actual
-         "00000000", "00000000", "00000000", "00000000"  -- NOP
+         "00000000", "00000000", "00000000", "00000000", -- 46 NOP
+         "11101011", "10110101", "00001111", "00000011", -- 50 CMP R5, R3
+         "11110100", "01111111", "10101111", "11110010", -- 54 BEQ -28 - 7 instrucciones anteriores + actual
+         "00000000", "00000000", "00000000", "00000000"  -- 58 NOP
       );
 
 begin

@@ -1,22 +1,16 @@
 ----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
+-- Company: Universidad Complutense de Madrid
+-- Engineer: Andres Gamboa Melendez
 -- 
--- Create Date:    12:28:11 11/14/2014 
--- Design Name: 
--- Module Name:    PhaseExecution - Behavioral 
--- Project Name: 
--- Target Devices: 
--- Tool versions: 
--- Description: 
---
--- Dependencies: 
---
--- Revision: 
--- Revision 0.01 - File Created
--- Additional Comments: 
+-- Module Name: Phase2_Execution - Behavioral 
+-- Project Name: ARM compatible micro-processor
+-- Target Devices: Nexys4
+-- Tool versions: Xilinx ISE Webpack 14.4
+-- Description: Tercera etapa del microprocesador segmentado, contiene ALU, y sumador
+--              para el calculo de la direccion de salto.
 --
 ----------------------------------------------------------------------------------
+
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 

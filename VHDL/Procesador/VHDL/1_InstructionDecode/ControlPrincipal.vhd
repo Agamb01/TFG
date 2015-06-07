@@ -1,23 +1,16 @@
 ----------------------------------------------------------------------------------
--- Company: 
+-- Company: Universidad Complutense de Madrid
 -- Engineer: Andrés Gamboa Meléndez
 -- 
--- Create Date:    17:41:47 12/01/2014 
--- Design Name: 
--- Module Name:    ControlPrincipal - Behavioral 
--- Project Name: 
--- Target Devices: 
--- Tool versions: 
+-- Module Name: ControlPrincipal - Behavioral 
+-- Project Name: ARM compatible micro-processor
+-- Target Devices: Nexys4
+-- Tool versions: Xilinx ISE Webpack 14.4
 -- Description: Analiza las instrucciones para extraer las señales de control 
 --              necesarias para procesar las mismas.
 --
--- Dependencies: 
---
--- Revision: 
--- Revision 0.01 - File Created
--- Additional Comments: 
---
 ----------------------------------------------------------------------------------
+
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 

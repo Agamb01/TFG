@@ -1,22 +1,15 @@
 ----------------------------------------------------------------------------------
--- Company: 
--- Engineer: Andrés Gamboa Meléndez
+-- Company: Universidad Complutense de Madrid
+-- Engineer: Andres Gamboa Melendez
 -- 
--- Create Date:    17:34:18 11/27/2014 
--- Design Name: 
--- Module Name:    mux - Behavioral 
--- Project Name: 
--- Target Devices: 
--- Tool versions: 
--- Description: Multiplexor de dos entradas.
---
--- Dependencies: 
---
--- Revision: 
--- Revision 0.01 - File Created
--- Additional Comments: 
+-- Module Name: Mux2 - Behavioral 
+-- Project Name: ARM compatible micro-processor
+-- Target Devices: Nexys4
+-- Tool versions: Xilinx ISE Webpack 14.4
+-- Description: Multiplexor de dos entradas
 --
 ----------------------------------------------------------------------------------
+
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 

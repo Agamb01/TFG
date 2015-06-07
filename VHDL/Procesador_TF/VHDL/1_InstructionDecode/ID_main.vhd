@@ -1,22 +1,15 @@
 ----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
+-- Company: Universidad Complutense de Madrid
+-- Engineer: Andres Gamboa Melendez
 -- 
--- Create Date:    10:25:00 01/07/2015 
--- Design Name: 
--- Module Name:    IF_main - Behavioral 
--- Project Name: 
--- Target Devices: 
--- Tool versions: 
--- Description: 
---
--- Dependencies: 
---
--- Revision: 
--- Revision 0.01 - File Created
--- Additional Comments: 
+-- Module Name: ID_main - Behavioral 
+-- Project Name: ARM compatible micro-processor
+-- Target Devices: Nexys4
+-- Tool versions: Xilinx ISE Webpack 14.4
+-- Description: Módulo principal de etapa "Instruction Decode"
 --
 ----------------------------------------------------------------------------------
+
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
@@ -52,9 +45,6 @@ use IEEE.NUMERIC_STD.ALL;
 --    Señales de control para fase EXE
 --    Señales de control para fase MEM
 --    Señales de control para fase WB
-
-
-
    
 entity ID_main is
    Port( 

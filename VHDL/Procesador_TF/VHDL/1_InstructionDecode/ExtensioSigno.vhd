@@ -1,24 +1,17 @@
 ----------------------------------------------------------------------------------
--- Company: 
--- Engineer: Andrés Gamboa Meléndez 
+-- Company: Universidad Complutense de Madrid
+-- Engineer: Andres Gamboa Melendez
 -- 
--- Create Date:    11:27:36 09/12/2014 
--- Design Name: 
--- Module Name:    ExtensioSigno - Behavioral 
--- Project Name: 
--- Target Devices: 
--- Tool versions: 
--- Description: Este módulo analiza la instruccion de entrada y obtiene un número entero.
+-- Module Name: ExtensioSigno - Behavioral 
+-- Project Name: ARM compatible micro-processor
+-- Target Devices: Nexys4
+-- Tool versions: Xilinx ISE Webpack 14.4
+-- Description: Analiza la instruccion de entrada y obtiene un número entero.
 --              Dependiendo del tipo de instrucción(operación, load, store o salto) utiliza
 --              utiliza diferentes bits de la instrucción.
 --
--- Dependencies: 
---
--- Revision: 
--- Revision 0.01 - File Created
--- Additional Comments: 
---
 ----------------------------------------------------------------------------------
+
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
@@ -31,14 +24,14 @@ use IEEE.STD_LOGIC_1164.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity ExtensionSigno is
+entity ExtensioSigno is
    Port ( 
       in_inst : in  STD_LOGIC_VECTOR (31 downto 0);
       out_entero : out STD_LOGIC_VECTOR(31 downto 0)
    );
-end ExtensionSigno;
+end ExtensioSigno;
 
-architecture Behavioral of ExtensionSigno is
+architecture Behavioral of ExtensioSigno is
 
    type type_inst is (ALU12, ALU16, ALUREG, LDST, BR, BRCond, UNDEFINED);
    signal s_intr_type : type_inst; 

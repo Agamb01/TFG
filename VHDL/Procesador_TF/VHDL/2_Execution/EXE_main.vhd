@@ -1,20 +1,12 @@
 ----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
+-- Company: Universidad Complutense de Madrid
+-- Engineer: Andres Gamboa Melendez
 -- 
--- Create Date:    10:47:54 01/22/2015 
--- Design Name: 
--- Module Name:    EXE_main - Behavioral 
--- Project Name: 
--- Target Devices: 
--- Tool versions: 
--- Description: 
---
--- Dependencies: 
---
--- Revision: 
--- Revision 0.01 - File Created
--- Additional Comments: 
+-- Module Name: EXE_main - Behavioral 
+-- Project Name: ARM compatible micro-processor
+-- Target Devices: Nexys4
+-- Tool versions: Xilinx ISE Webpack 14.4
+-- Description: Módulo principal de etapa "Execution"
 --
 ----------------------------------------------------------------------------------
 library IEEE;
@@ -51,8 +43,6 @@ use IEEE.NUMERIC_STD.ALL;
 --    Direccion de salto calculada
 --    Resultado de operacion calculado por la ALU
 --    Flags de la operacion calculada por la ALU
-
-
 
    
 entity EXE_main is

@@ -2,21 +2,15 @@
 -- Company: Universidad Complutense de Madrid
 -- Engineer: Andres Gamboa Melendez
 -- 
--- Create Date:    09:50:45 10/28/2014 
--- Design Name:    1
--- Module Name:    Decodification - Behavioral 
+-- Module Name: Phase1_InstructionDecode - Behavioral 
 -- Project Name: ARM compatible micro-processor
 -- Target Devices: Nexys4
 -- Tool versions: Xilinx ISE Webpack 14.4
--- Description: Segunda fase del microprocesador segmentado.
---
--- Dependencies: 
---
--- Revision: 
--- Revision 0.01 - File Created
--- Additional Comments: 
+-- Description: Segunda etapa del microprocesador segmentado, contiene control principal, 
+--              banco de registros y Extensión de signo.
 --
 ----------------------------------------------------------------------------------
+
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 

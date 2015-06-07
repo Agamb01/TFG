@@ -1,21 +1,15 @@
 ----------------------------------------------------------------------------------
--- Company: 
+-- Company: Universidad Complutense de Madrid
 -- Engineer: Andrés Gamboa Meléndez
 -- 
--- Create Date: 11:13:31 10/17/2014 
--- Design Name: Modulo Sumador de contador de programa
 -- Module Name: PCAdder - Behavioral 
--- Project Name: ARM Cortex-M3 compatible micro-processor
+-- Project Name: ARM compatible micro-processor
 -- Target Devices: Nexys4
 -- Tool versions: Xilinx ISE Webpack 14.4
 -- Description: Suma 4 a una señal de entrada de 32 bits
 --
--- Dependencies: 
---
--- Revision: 
--- Revision 0.01 - File Created
--- Additional Comments: 
 ----------------------------------------------------------------------------------
+
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 

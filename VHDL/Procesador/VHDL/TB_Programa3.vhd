@@ -42,11 +42,11 @@ ARCHITECTURE behavior OF TB_Programa3 IS
  
     -- Component Declaration for the Unit Under Test (UUT)
  
-    COMPONENT main
+    COMPONENT cpu
     PORT(
          clk : IN  std_logic;
-         rst : IN  std_logic
---         out_test : OUT  std_logic_vector(31 downto 0)
+         rst : IN  std_logic;
+         led : OUT  std_logic_vector(15 downto 0)
         );
     END COMPONENT;
     
@@ -56,7 +56,7 @@ ARCHITECTURE behavior OF TB_Programa3 IS
    signal rst : std_logic := '0';
 
  	--Outputs
---   signal out_test : std_logic_vector(31 downto 0);
+   signal led : std_logic_vector(15 downto 0);
 
    type register_array is array (0 to 15) of std_logic_vector(31 downto 0);
    type memory_array is array (0 to 31) of std_logic_vector(31 downto 0);
@@ -73,10 +73,10 @@ ARCHITECTURE behavior OF TB_Programa3 IS
 BEGIN
  
 	-- Instantiate the Unit Under Test (UUT)
-   uut: main PORT MAP (
+   uut: cpu PORT MAP (
           clk => clk,
-          rst => rst
---          out_test => out_test
+          rst => rst,
+          led => led
         );
 
    -- Spy process

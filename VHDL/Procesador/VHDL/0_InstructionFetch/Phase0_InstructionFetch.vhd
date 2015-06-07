@@ -2,23 +2,15 @@
 -- Company: Universidad Complutense de Madrid
 -- Engineer: Andres Gamboa Melendez
 -- 
--- Create Date: 02:05:02 10/12/2014 
--- Design Name: Modulo Busqueda de Instrucciones
 -- Module Name: Phase0_InstructionFetch - Behavioral 
 -- Project Name: ARM compatible micro-processor
 -- Target Devices: Nexys4
 -- Tool versions: Xilinx ISE Webpack 14.4
--- Description: Primera fase del microprocesador segmentado, contiene contador de programa 
+-- Description: Primera etapa del microprocesador segmentado, contiene contador de programa 
 --              y memoria de instrucciones.
 --
--- Dependencies: pcAdder (Sumador de contador de programa), MemInstruction (Memoria de instrucciones).
---                
---
--- Revision: 
--- Revision 0.01 - File Created
--- Additional Comments: 
---
 ----------------------------------------------------------------------------------
+
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
@@ -76,7 +68,7 @@ architecture Behavioral of Phase0_InstructionFetch is
              out_inst : out  STD_LOGIC_VECTOR (31 downto 0));
    end component; 
    
-   component MemInstruction3
+   component TB_ProgramaMult
       Port ( in_pc : in  STD_LOGIC_VECTOR (31 downto 0);
              out_inst : out  STD_LOGIC_VECTOR (31 downto 0));
    end component; 
@@ -99,7 +91,7 @@ begin
    -- Devuelve la instruccion situada en la direccion solicitada
    --    por el contador de programa, la instruccion devuelta la asigna
    --    a la señal (s_inst)
-   i_MemInstruction: MemInstruction3 port map( 
+   i_MemInstruction: TB_ProgramaMult port map( 
          in_pc => in_pc,
          out_inst => out_inst
    );

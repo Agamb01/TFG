@@ -1,22 +1,15 @@
 ----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
+-- Company: Universidad Complutense de Madrid
+-- Engineer: Andres Gamboa Melendez
 -- 
--- Create Date:    19:08:45 12/08/2014 
--- Design Name: 
--- Module Name:    DataMemory - Behavioral 
--- Project Name: 
--- Target Devices: 
--- Tool versions: 
--- Description: 
---
--- Dependencies: 
---
--- Revision: 
--- Revision 0.01 - File Created
--- Additional Comments: 
+-- Module Name: MemData - Behavioral 
+-- Project Name: ARM compatible micro-processor
+-- Target Devices: Nexys4
+-- Tool versions: Xilinx ISE Webpack 14.4
+-- Description: Almacena los datos.
 --
 ----------------------------------------------------------------------------------
+
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
@@ -36,7 +29,6 @@ entity MemData is
            in_memwrite  : in  STD_LOGIC;
            in_memread   : in  STD_LOGIC;
            out_rddata   : out  STD_LOGIC_VECTOR (31 downto 0)
---           out_data_rdy : out STD_LOGIC
     );
 end MemData;
 

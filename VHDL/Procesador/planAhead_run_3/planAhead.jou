@@ -1,0 +1,10 @@
+#-----------------------------------------------------------
+# PlanAhead v14.4 (64-bit)
+# Build 222254 by xbuild on Tue Dec 18 05:21:09 MST 2012
+# Start of session at: Sat Jun 06 16:39:47 2015
+# Process ID: 7356
+# Log file: D:/TFG/TFG/VHDL/Procesador/planAhead_run_3/planAhead.log
+# Journal file: D:/TFG/TFG/VHDL/Procesador/planAhead_run_3/planAhead.jou
+#-----------------------------------------------------------
+start_gui
+source D:/TFG/TFG/VHDL/Procesador/pa.fromNcd.tcl

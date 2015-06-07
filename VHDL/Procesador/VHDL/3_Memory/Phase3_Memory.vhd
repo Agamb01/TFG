@@ -1,22 +1,15 @@
 ----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
+-- Company: Universidad Complutense de Madrid
+-- Engineer: Andres Gamboa Melendez
 -- 
--- Create Date:    19:19:11 12/08/2014 
--- Design Name: 
--- Module Name:    phase3_memory - Behavioral 
--- Project Name: 
--- Target Devices: 
--- Tool versions: 
--- Description: 
---
--- Dependencies: 
---
--- Revision: 
--- Revision 0.01 - File Created
--- Additional Comments: 
+-- Module Name: Phase3_Memory - Behavioral 
+-- Project Name: ARM compatible micro-processor
+-- Target Devices: Nexys4
+-- Tool versions: Xilinx ISE Webpack 14.4
+-- Description: Cuarta etapa del microprocesador segmentado, contiene la memoria de datos.
 --
 ----------------------------------------------------------------------------------
+
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
@@ -74,8 +67,8 @@ architecture Behavioral of phase3_Memory is
 ---------------------------Salto---------------------------
 
 begin
----------------------------Salto---------------------------
 
+---------------------------Salto---------------------------
    s_BR_ctr    <= in_MEM_control(5 downto 4);
    s_BR_Cond   <= in_MEM_control(3);
    s_BR_Incond <= in_MEM_control(2);

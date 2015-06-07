@@ -4,7 +4,7 @@
 %
 %---------------------------------------------------------------------
 
-\chapter{Resultados}
+\chapter{Comprobación Funcional}
 \label{resultados}
 
 \begin{FraseCelebre}
@@ -17,7 +17,7 @@
 \end{FraseCelebre}
 
 \begin{resumen}
-En este capitulo se exponen los resultados obtenidos al implementar el procesador e introducir el sistema de tolerancia a fallos en el mismo. 
+En este capitulo se realizan la comprobación funcional del diseño y la exposición de los resultados obtenidos al implementar el procesador e introducir el sistema de tolerancia a fallos en el mismo. 
 \end{resumen}
 
 
@@ -26,76 +26,389 @@ En este capitulo se exponen los resultados obtenidos al implementar el procesado
 %-------------------------------------------------------------------
 \label{resultados:introducción}
 
-La herramienta software "`PlanAhead"' de Xilinx es capaz de sintetizar e implementar el diseño VHDL. Se utilizará esta herramienta para analizar los cambios que ocurren en el procesador al insertar los módulos de tolerancia a fallos. A continuación se analizan ambos diseños.
+La herramienta software "`PlanAhead"' de Xilinx es capaz de sintetizar e implementar el diseño VHDL. Se utilizará esta herramienta para analizar los cambios que ocurren en el procesador al insertar los módulos de tolerancia a fallos.
 
-%------------------------------------------------------------
-\section{Procesador pre-TMR}
-%------------------------------------------------------------
-\label{trabajotolerancia:preTMR}
+Para realizar las simulaciones de ejecución de programas sobre las implementaciones del procesador se utilizará el software "ModelSim PE Student Edition 10.4". A continuación se analizan ambos diseños.
 
+%-------------------------------------------------------------------
+\section{Programa de control}
+%-------------------------------------------------------------------
+\label{resultados:programa}
 
-%------------------------------------------------------------
-\subsection{Área}
-%------------------------------------------------------------
-\label{trabajotolerancia:preTMR:area}
+Para probar el funcionamiento del microprocesador se han implementado las memorias de datos e instrucciones y se han utilizado las mismas en ambos diseños del procesador:
 
+\begin{itemize}
+  \item La \textbf{memoria de datos} se ha implementado como una memoria RAM de 128 bytes capaz de almacenar 32 palabras. 
 
-%------------------------------------------------------------
-\subsection{Tiempos}
-%------------------------------------------------------------
-\label{trabajotolerancia:preTMR:tiempos}
+  \item La \textbf{memoria de instrucciones} contiene un programa sencillo de 20 líneas de código THUMB-2 en el que se realiza una multiplicación mediante un bucle de sumas. 
+\end{itemize}
 
-%------------------------------------------------------------
-\subsection{Simulaciones}
-%------------------------------------------------------------
-\label{trabajotolerancia:preTMR:sim}
-
-
-
-%------------------------------------------------------------
-\subsubsection{Simulación sin fallos}
-%------------------------------------------------------------
-\label{trabajotolerancia:preTMR:sim:sin}
-
-%------------------------------------------------------------
-\subsubsection{Simulación con fallos}
-%------------------------------------------------------------
-\label{trabajotolerancia:preTMR:sim:con}
+Las pruebas consistirán en la ejecución del programa (figura \ref{cod:codigopruebas}) un total de 4 veces:
+\begin{enumerate}
+	\item La primera ejecución se realizará sobre el procesador sin tolerancia a fallos y sin inserción de fallos. Este caso se considera de control.
+	\item La segunda ejecución será realizada sobre el procesador sin tolerancia a fallos pero insertando fallos. 
+	\item La tercera prueba se ejecutará sobre el procesador con tolerancia a fallos, sin inserción de fallos. Con esto se quiere probar que se han introducido satisfactoriamente los componentes tolerantes a fallos sin modificar la funcionalidad.
+	\item La cuarta prueba se volverá a ejecutar en el procesador tolerante a fallos, pero insertando fallos. Así probaremos que insertando los mismos fallos que en la segunda prueba, se vuelve a ejecutar el programa satisfactoriamente.
+\end{enumerate}
 
 
-%------------------------------------------------------------
-\section{Procesador post-TMR}
-%------------------------------------------------------------
-\label{trabajotolerancia:postTMR}
+\begin{figure}[htb]
+		\lstset{language=THUMB2, breaklines=true, basicstyle=\footnotesize, numbers=left}
+		\begin{lstlisting}[frame=single]
+ LDR R2, R0, #5
+ MOV R1, #25
+ MOV R3, #0
+ MOV R5, #1
+ MOV R4, R2
+ NOP
+ NOP
+ NOP
+ CMP R4, R0
+ BEQ #24
+ NOP
+ NOP
+ NOP
+ ADD R3, R3, R1
+ SUB R4, R4, R5
+ B #-32
+ NOP
+ NOP
+ NOP
+ STR R0, R3, #0
+	\end{lstlisting}
+	\caption{Código Thumb-2 de programa de pruebas.}
+	\label{cod:codigopruebas}
+\end{figure}
+
+El código de la figura \ref{cod:codigopruebas} es el cálculo de multiplicar 25 por el dato almacenado en la dirección 5 de memoria (en este caso 5) para después almacenar el resultado en la dirección 0 de memoria. En primer lugar se carga el dato de memoria a un registro, $R2 = 5$. A continuación se inicializan las variables que ayudarán a ejecutar el bucle: R1 con el valor 25, R3 se inicializa a 0 y acumulará el resultado de la ejecución, R5 conserva la constante 1, R0 vale 0 y R4 contará cuantas iteraciones quedan por ejecutar el bucle. En pseudo-código estas acciones se traducen en la figura \ref{cod:codigopseudo}.
+
+\begin{figure}[htb]
+		\lstset{language=THUMB2, breaklines=true, basicstyle=\footnotesize, numbers=left}
+		\begin{lstlisting}[frame=single]
+ R1 = 25;
+ R2 = Memoria(R0+5);
+ R3 = 0;
+ R4 = R2;
+ R5 = 1;
+ Si R4 = 0:
+	 saltar a "`instruccion 12"';
+ En otro caso:
+   R3 = R3 + R1;
+   R4 = R4 - R5;
+   saltar a "`instruccion 6"';
+ Memoria(R0+0) = R3;
+	\end{lstlisting}
+	\caption{Pseudo-código de programa de pruebas.}
+	\label{cod:codigopseudo}
+\end{figure}
+
+%-------------------------------------------------------------------
+\section{Fallos introducidos}
+%-------------------------------------------------------------------
+\label{resultados:fallos}
+
+Con la intención de probar la fiabilidad del sistema, se insertan ciertos fallos en los componentes que deseamos poner a prueba, en este caso en los registros de control que almacenan los datos entre etapas.
+
+\begin{enumerate}
+  \item \textbf{Fallo A:} Se introduce un cambio de valor del bus del dato leído de memoria de la etapa de escritura en registro. El bit 0 de este registro se invierte resultando en 0. %Este valor pasa de ser 5(0b101) a ser 4(0b100), almacenándose en el banco de registros el valor equivocado.
+  \item \textbf{Fallo B:} Se activa la señal de control "`MemWrite"' en la etapa "`Memory"'. 
+  \item \textbf{Fallo C:} Se modifica el valor del operando B en la instrucción de comparación entre los registros R4 y R0. %El nuevo valor del operando es 1 en vez de 0 en la etapa de ejecución.
+\end{enumerate}
+
+%-------------------------------------------------------------------
+\section{Procesador estándar}
+%-------------------------------------------------------------------
+\label{resultados:proc}
+
+En esta sección se exponen los recursos utilizados por el procesador estándar, sin tolerancia a fallos, después de sintetizar e implementar el diseño. Como primer paso de la prueba funcional se exponen los resultados de las simulaciones de la prueba de control y la prueba de inserción de fallos.
+
+%-------------------------------------------------------------------
+\subsection{Recursos}
+%-------------------------------------------------------------------
+\label{resultados:proc:recursos}
+
+Los informes de las herramientas de síntesis e implementación de Xilinx nos proporcionan una serie de informes entre los que se encuentran los recursos consumidos por el diseño, el mapeado realizado sobre la FPGA y las limitaciones de tiempos. A continuación se presentan los datos más relevantes:
 
 
-%------------------------------------------------------------
-\subsection{Área}
-%------------------------------------------------------------
-\label{trabajotolerancia:postTMR:area}
+\subsubsection{Map report}
+  \lstset{breaklines=true, basicstyle=\footnotesize}
+   \begin{lstlisting}[frame=single]
+Design Summary
+--------------
+Number of errors:      0
+Number of warnings:    0
+Slice Logic Utilization:
+  Number of Slice Registers:                 1,952 out of 126,800    1%
+    Number used as Flip Flops:               1,952
+    Number used as Latches:                      0
+    Number used as Latch-thrus:                  0
+    Number used as AND/OR logics:                0
+  Number of Slice LUTs:                      1,032 out of  63,400    1%
+    Number used as logic:                    1,015 out of  63,400    1%
+      Number using O6 output only:             873
+      Number using O5 output only:              28
+      Number using O5 and O6:                  114
+      Number used as ROM:                        0
+    Number used as Memory:                       0 out of  19,000    0%
+    Number used exclusively as route-thrus:     17
+      Number with same-slice register load:     16
+      Number with same-slice carry load:         1
+      Number with other load:                    0
+
+Slice Logic Distribution:
+  Number of occupied Slices:                   603 out of  15,850    3%
+  Number of LUT Flip Flop pairs used:        2,362
+    Number with an unused Flip Flop:           492 out of   2,362   20%
+    Number with an unused LUT:               1,330 out of   2,362   56%
+    Number of fully used LUT-FF pairs:         540 out of   2,362   22%
+    Number of unique control sets:              50
+    Number of slice register sites lost
+      to control set restrictions:               8 out of 126,800    1%
+ \end{lstlisting}
+
+\subsubsection{Timing report}
+  \lstset{breaklines=true, basicstyle=\footnotesize}
+   \begin{lstlisting}[frame=single]
+Timing summary:
+---------------
+
+Timing errors: 0  Score: 0  (Setup/Max: 0, Hold: 0)
+
+Constraints cover 27520 paths, 0 nets, and 8309 connections
+
+Design statistics:
+   Minimum period:   6.435ns{1}   (Maximum frequency: 155.400MHz)
+ \end{lstlisting}
 
 
-%------------------------------------------------------------
-\subsection{Tiempos}
-%------------------------------------------------------------
-\label{trabajotolerancia:postTMR:tiempos}
+%-------------------------------------------------------------------
+\subsection{Ejecución de control}
+%-------------------------------------------------------------------
+\label{resultados:proc:control}
 
-%------------------------------------------------------------
-\subsection{Simulaciones}
-%------------------------------------------------------------
-\label{trabajotolerancia:postTMR:sim}
+Se procede a realizar la primera prueba, o prueba de control, que consiste en ejecutar el programa explicado en la sección \ref{resultados:programa} sobre el procesador estándar. La simulación se ha realizado ejecutando el código adjunto en el apéndice \ref{apendiceA}.
+
+Los cálculos realizados por el procesador han sido monitorizados y comprobados. Se han controlado los registros de trabajo R0, R1, R2, R3, R4 y R5 para monitorizar que han sido actualizados en los momentos adecuados y con los valores esperados. Igualmente, se ha comprobado el resultado obtenido en la dirección 0 de la memoria de datos. En nuestro caso es 125.
+
+%-------------------------------------------------------------------
+\subsection{Inserción de fallos}
+%-------------------------------------------------------------------
+\label{resultados:proc:fallos}
+
+Realizada la prueba de control, se procede con la segunda prueba, en este caso con la inserción de fallos. Con el objetivo de comprobar si alteran el comportamiento del procesador, se han insertado 3 fallos en los registros de control entre etapas. A continuación se describen los fallos insertados y sus consecuencias. El resultado completo de la simulación se incluye en la sección \ref{apendiceC:proc} del apéndice \ref{apendiceC}.
+
+Además de las señales monitorizadas en la ejecución de control se han analizado las señales en donde se han insertado los fallos, así como los registros y direcciones de memoria donde se espera que provoquen consecuencias haciendo así efectivo un error en la ejecución del programa. 
+
+El simulador nos facilita la siguiente información alertando que los datos almacenados en los registros no son los esperados después de ejecutar las instrucciones:
+
+\lstset{breaklines=true, basicstyle=\footnotesize, numbers=left}
+ \begin{lstlisting}[frame=single]
+# ** Error: ERROR: LDR R2, R0, #5
+#    Time: 150 ns  Iteration: 0  Instance: /tb_ejecucion_fallos
+# ** Error: ERROR: MOV R4, R2
+#    Time: 190 ns  Iteration: 0  Instance: /tb_ejecucion_fallos
+# ** Error: ERROR: SUB R4, R4, R5(4)
+#    Time: 300 ns  Iteration: 0  Instance: /tb_ejecucion_fallos
+# ** Error: ERROR: SUB R4, R4, R5(3)
+#    Time: 410 ns  Iteration: 0  Instance: /tb_ejecucion_fallos
+# ** Error: ERROR: SUB R4, R4, R5(2)
+#    Time: 520 ns  Iteration: 0  Instance: /tb_ejecucion_fallos
+# ** Error: ERROR:PC 204
+#    Time: 620 ns  Iteration: 0  Instance: /tb_ejecucion_fallos
+# ** Error: ERROR: ADD R3, R3, R1(100)
+#    Time: 620 ns  Iteration: 0  Instance: /tb_ejecucion_fallos
+# ** Error: ERROR: PC 208
+#    Time: 630 ns  Iteration: 0  Instance: /tb_ejecucion_fallos
+# ** Error: ERROR: PC 248
+#    Time: 730 ns  Iteration: 0  Instance: /tb_ejecucion_fallos
+# ** Error: ERROR: ADD R3, R3, R1(125)
+#    Time: 730 ns  Iteration: 0  Instance: /tb_ejecucion_fallos
+# ** Error: ERROR: PC 252 
+#    Time: 740 ns  Iteration: 0  Instance: /tb_ejecucion_fallos
+# ** Error: ERROR: SUB R4, R4, R5(0)
+#    Time: 740 ns  Iteration: 0  Instance: /tb_ejecucion_fallos
+# ** Error: ERROR: PC 296
+#    Time: 860 ns  Iteration: 0  Instance: /tb_ejecucion_fallos
+# ** Error: ERROR: STR R3, R0, #0
+#    Time: 860 ns  Iteration: 0  Instance: /tb_ejecucion_fallos 
+\end{lstlisting}
+
+%-------------------------------------------------------------------
+\section{Procesador tolerante a fallos}
+%-------------------------------------------------------------------
+\label{resultados:proctf}
+
+Siguiendo el mismo proceso anterior, en esta sección se exponen los recursos utilizados por el procesador tolerante a fallos después de sintetizar e implementar el diseño. De igual modo se exponen los resultados obtenidos al realizar las simulaciones de la prueba de control y la prueba de inserción de fallos sobre este microprocesador.
+
+
+%-------------------------------------------------------------------
+\subsection{Recursos}
+%-------------------------------------------------------------------
+\label{resultados:proctf:recursos}
+
+Los informes de las herramientas de síntesis e implementación de Xilinx nos proporcionan una serie de informes entre los que se encuentran los recursos consumidos por el diseño, el mapeado realizado sobre la FPGA y las limitaciones de tiempos. A continuación se presentan los datos más relevantes:
+
+\subsubsection{Map report}
+  \lstset{breaklines=true, basicstyle=\footnotesize}
+   \begin{lstlisting}[frame=single]
+Design Summary
+--------------
+Number of errors:      0
+Number of warnings:    6
+Slice Logic Utilization:
+  Number of Slice Registers:                 2,798 out of 126,800    2%
+    Number used as Flip Flops:               2,798
+    Number used as Latches:                      0
+    Number used as Latch-thrus:                  0
+    Number used as AND/OR logics:                0
+  Number of Slice LUTs:                      1,539 out of  63,400    2%
+    Number used as logic:                    1,464 out of  63,400    2%
+      Number using O6 output only:           1,328
+      Number using O5 output only:              28
+      Number using O5 and O6:                  108
+      Number used as ROM:                        0
+    Number used as Memory:                       0 out of  19,000    0%
+    Number used exclusively as route-thrus:     75
+      Number with same-slice register load:     74
+      Number with same-slice carry load:         1
+      Number with other load:                    0
+
+Slice Logic Distribution:
+  Number of occupied Slices:                   858 out of  15,850    5%
+  Number of LUT Flip Flop pairs used:        3,146
+    Number with an unused Flip Flop:           844 out of   3,146   26%
+    Number with an unused LUT:               1,607 out of   3,146   51%
+    Number of fully used LUT-FF pairs:         695 out of   3,146   22%
+    Number of unique control sets:              71
+    Number of slice register sites lost
+      to control set restrictions:              42 out of 126,800    1%
+	\end{lstlisting}
+
+\subsubsection{Timing report}
+  \lstset{breaklines=true, basicstyle=\footnotesize}
+   \begin{lstlisting}[frame=single]
+Timing summary:
+---------------
+
+Timing errors: 0  Score: 0  (Setup/Max: 0, Hold: 0)
+
+Constraints cover 163797 paths, 0 nets, and 10410 connections
+
+Design statistics:
+   Minimum period:   6.819ns{1}   (Maximum frequency: 146.649MHz)
+
+	\end{lstlisting}
+
+%-------------------------------------------------------------------
+\subsection{Ejecución de control}
+%-------------------------------------------------------------------
+\label{resultados:proctf:control}
+
+Se ha ejecutado el programa de control sobre el procesador tolerante a fallos monitorizandose los registros relevantes para la ejecución del programa así como las direcciones de memoria accedidas por el mismo.
+
+Durante la ejecución se comprueba que la evolución de los registros es la esperada y al finalizar la ejecución del programa se vuelve a comprobar el valor almacenado en la dirección 0 de memoria. Los resultados de la simulación se incluyen en el apartado \ref{apendiceC:proctf} del apéndice \ref{apendiceC}.
+
+%-------------------------------------------------------------------
+\subsection{Inserción de fallos}
+%-------------------------------------------------------------------
+\label{resultados:proctf:fallos}
+
+Se ha ejecutado la simulación con inserción de fallos, esta simulación se puede consultar en la sección \ref{apendiceC:proctf:fallos} del apéndice \ref{apendiceC}. 
+
+Junto a los registros monitorizados en la prueba de control se presentan los registros donde se insertan los fallos y así como los registros y las direcciones de memoria que se espera se verán afectadas por los fallos si estos no se toleran. 
 
 
 
-%------------------------------------------------------------
-\subsubsection{Simulación sin fallos}
-%------------------------------------------------------------
-\label{trabajotolerancia:postTMR:sim:sin}
 
-%------------------------------------------------------------
-\subsubsection{Simulación con fallos}
-%------------------------------------------------------------
-\label{trabajotolerancia:postTMR:sim:con}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%%------------------------------------------------------------
+%\section{Procesador Pre-TMR}
+%%------------------------------------------------------------
+%\label{resultados:procesador}
+%
+%Se ha sintetizado el procesador antes de aplicar la tolerancia a fallos, los resultados de esta implementación se muestran a continuación.
+%
+%%------------------------------------------------------------
+%\subsubsection{Recursos}
+%%------------------------------------------------------------
+%\label{resultados:procesador:area}
+%
+%A partir de los informes 
+%Device Utilization Summary:
+%
+%Slice Logic Utilization:
+  %
+	%Number of Slice Registers:                 2,798 out of 126,800    2%
+	%
+    %Number used as Flip Flops:               2,798
+  %
+		%Number used as Latches:                      0
+    %
+		%Number used as Latch-thrus:                  0
+    %
+		%Number used as AND/OR logics:                0
+%
+  %Number of Slice LUTs:                      1,539 out of  63,400    2%
+%
+    %Number used as logic:                    1,464 out of  63,400    2%
+%
+      %Number using O6 output only:           1,328
+%
+      %Number using O5 output only:              28
+%
+      %Number using O5 and O6:                  108
+%
+      %Number used as ROM:                        0
+%
+    %Number used as Memory:                       0 out of  19,000    0%
+%
+    %Number used exclusively as route-thrus:     75
+%
+      %Number with same-slice register load:     74
+%
+      %Number with same-slice carry load:         1
+%
+      %Number with other load:                    0
+%
+%
+%
+%Slice Logic Distribution:
+%
+  %Number of occupied Slices:                   858 out of  15,850    5%
+%
+  %Number of LUT Flip Flop pairs used:        3,146
+%
+    %Number with an unused Flip Flop:           844 out of   3,146   26%
+%
+    %Number with an unused LUT:               1,607 out of   3,146   51%
+%
+    %Number of fully used LUT-FF pairs:         695 out of   3,146   22%
+%
+    %Number of slice register sites lost
+%
+      %to control set restrictions:               0 out of 126,800    0%
+
 
 
 

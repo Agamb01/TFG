@@ -1,22 +1,15 @@
 ----------------------------------------------------------------------------------
--- Company: 
+-- Company: Universidad Complutense de Madrid
 -- Engineer: Andrés Gamboa Meléndez
 -- 
--- Create Date:    13:38:22 10/29/2014 
--- Design Name: 
--- Module Name:    RegisterBank - Behavioral 
--- Project Name: 
--- Target Devices: 
--- Tool versions: 
+-- Module Name: RegisterBank - Behavioral 
+-- Project Name: ARM compatible micro-processor
+-- Target Devices: Nexys4
+-- Tool versions: Xilinx ISE Webpack 14.4
 -- Description: Módulo de lectura y escritura de los registros del procesador.
 --
--- Dependencies: 
---
--- Revision: 
--- Revision 0.01 - File Created
--- Additional Comments: 
---
 ----------------------------------------------------------------------------------
+
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IMPORTANT: This is an internal file that has been generated
+     by the Xilinx ISE software.  Any direct editing or
+     changes made to this file may result in unpredictable
+     behavior or data corruption.  It is strongly advised that
+     users do not edit the contents of this file. -->
+<messages>
+<msg type="error" file="HDLCompiler" num="104" delta="new" >"D:\TFG\TFG\VHDL\Procesador\VHDL\TB_ejecucion_normal.vhd" Line 16: Cannot find &lt;<arg fmt="%s" index="1">util</arg>&gt; in library &lt;<arg fmt="%s" index="2">modelsim_lib</arg>&gt;. Please ensure that the library was compiled, and that a library and a use clause are present in the VHDL file.
+</msg>
+
+<msg type="error" file="HDLCompiler" num="854" delta="new" >"D:\TFG\TFG\VHDL\Procesador\VHDL\TB_ejecucion_normal.vhd" Line 25: Unit &lt;<arg fmt="%s" index="1">tb_ejecucion_normal</arg>&gt; ignored due to previous errors.
+</msg>
+
+<msg type="error" file="HDLCompiler" num="374" delta="new" >"D:\TFG\TFG\VHDL\Procesador\VHDL\TB_ejecucion_normal.vhd" Line 28: Entity &lt;<arg fmt="%s" index="1">tb_ejecucion_normal</arg>&gt; is not yet compiled.
+</msg>
+
+<msg type="error" file="HDLCompiler" num="69" delta="new" >"D:\TFG\TFG\VHDL\Procesador\VHDL\TB_ejecucion_normal.vhd" Line 34: &lt;<arg fmt="%s" index="1">std_logic</arg>&gt; is not declared.
+</msg>
+
+<msg type="error" file="HDLCompiler" num="69" delta="new" >"D:\TFG\TFG\VHDL\Procesador\VHDL\TB_ejecucion_normal.vhd" Line 35: &lt;<arg fmt="%s" index="1">std_logic</arg>&gt; is not declared.
+</msg>
+
+<msg type="error" file="HDLCompiler" num="69" delta="new" >"D:\TFG\TFG\VHDL\Procesador\VHDL\TB_ejecucion_normal.vhd" Line 36: &lt;<arg fmt="%s" index="1">std_logic_vector</arg>&gt; is not declared.
+</msg>
+
+<msg type="error" file="HDLCompiler" num="69" delta="new" >"D:\TFG\TFG\VHDL\Procesador\VHDL\TB_ejecucion_normal.vhd" Line 42: &lt;<arg fmt="%s" index="1">std_logic</arg>&gt; is not declared.
+</msg>
+
+<msg type="error" file="HDLCompiler" num="69" delta="new" >"D:\TFG\TFG\VHDL\Procesador\VHDL\TB_ejecucion_normal.vhd" Line 43: &lt;<arg fmt="%s" index="1">std_logic</arg>&gt; is not declared.
+</msg>
+
+<msg type="error" file="HDLCompiler" num="69" delta="new" >"D:\TFG\TFG\VHDL\Procesador\VHDL\TB_ejecucion_normal.vhd" Line 46: &lt;<arg fmt="%s" index="1">std_logic_vector</arg>&gt; is not declared.
+</msg>
+
+<msg type="error" file="HDLCompiler" num="69" delta="new" >"D:\TFG\TFG\VHDL\Procesador\VHDL\TB_ejecucion_normal.vhd" Line 49: &lt;<arg fmt="%s" index="1">std_logic_vector</arg>&gt; is not declared.
+</msg>
+
+<msg type="error" file="HDLCompiler" num="69" delta="new" >"D:\TFG\TFG\VHDL\Procesador\VHDL\TB_ejecucion_normal.vhd" Line 50: &lt;<arg fmt="%s" index="1">std_logic_vector</arg>&gt; is not declared.
+</msg>
+
+<msg type="error" file="HDLCompiler" num="69" delta="new" >"D:\TFG\TFG\VHDL\Procesador\VHDL\TB_ejecucion_normal.vhd" Line 51: &lt;<arg fmt="%s" index="1">std_logic_vector</arg>&gt; is not declared.
+</msg>
+
+<msg type="error" file="HDLCompiler" num="69" delta="new" >"D:\TFG\TFG\VHDL\Procesador\VHDL\TB_ejecucion_normal.vhd" Line 52: &lt;<arg fmt="%s" index="1">std_logic_vector</arg>&gt; is not declared.
+</msg>
+
+<msg type="error" file="HDLCompiler" num="69" delta="new" >"D:\TFG\TFG\VHDL\Procesador\VHDL\TB_ejecucion_normal.vhd" Line 55: &lt;<arg fmt="%s" index="1">time</arg>&gt; is not declared.
+</msg>
+
+<msg type="error" file="HDLCompiler" num="69" delta="new" >"D:\TFG\TFG\VHDL\Procesador\VHDL\TB_ejecucion_normal.vhd" Line 56: &lt;<arg fmt="%s" index="1">integer</arg>&gt; is not declared.
+</msg>
+
+<msg type="error" file="HDLCompiler" num="69" delta="new" >"D:\TFG\TFG\VHDL\Procesador\VHDL\TB_ejecucion_normal.vhd" Line 62: &lt;<arg fmt="%s" index="1">clk</arg>&gt; is not declared.
+</msg>
+
+<msg type="error" file="HDLCompiler" num="69" delta="new" >"D:\TFG\TFG\VHDL\Procesador\VHDL\TB_ejecucion_normal.vhd" Line 63: &lt;<arg fmt="%s" index="1">rst</arg>&gt; is not declared.
+</msg>
+
+<msg type="error" file="HDLCompiler" num="69" delta="new" >"D:\TFG\TFG\VHDL\Procesador\VHDL\TB_ejecucion_normal.vhd" Line 64: &lt;<arg fmt="%s" index="1">led</arg>&gt; is not declared.
+</msg>
+
+<msg type="error" file="HDLCompiler" num="192" delta="new" >"D:\TFG\TFG\VHDL\Procesador\VHDL\TB_ejecucion_normal.vhd" Line 64: Actual of formal <arg fmt="%s" index="1">out</arg> port <arg fmt="%s" index="2">led</arg> cannot be an expression
+</msg>
+
+</messages>
+

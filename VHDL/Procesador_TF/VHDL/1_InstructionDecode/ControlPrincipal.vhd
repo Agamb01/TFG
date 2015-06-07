@@ -1,22 +1,15 @@
--------------------------------------------------------------------------------
--- Company: 
--- Engineer:         Andrés Gamboa Meléndez
+----------------------------------------------------------------------------------
+-- Company: Universidad Complutense de Madrid
+-- Engineer: Andrés Gamboa Meléndez
 -- 
--- Create Date:      17:41:47 12/01/2014 
--- Design Name:      Procesador_TF
--- Module Name:      ControlPrincipal - Behavioral 
--- Project Name:     Procesador tolerante a fallos transitorios
---                     compatible con ARM a nivel de instrucciones
--- Target Devices:   Digilent Nexys 4 - Artix 7 FPGA
--- Tool versions:    Xilinx ISE 14.4 (nt64)
--- Description:      Analiza las instrucciones para extraer las señales de control 
---                     necesarias para procesar las mismas.
+-- Module Name: ControlPrincipal - Behavioral 
+-- Project Name: ARM compatible micro-processor
+-- Target Devices: Nexys4
+-- Tool versions: Xilinx ISE Webpack 14.4
+-- Description: Analiza las instrucciones para extraer las señales de control 
+--              necesarias para procesar las mismas.
 --
--- Dependencies:     
---
--- Additional Comments: 
---
--------------------------------------------------------------------------------
+----------------------------------------------------------------------------------
 
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
@@ -29,20 +22,6 @@ use IEEE.STD_LOGIC_1164.ALL;
 -- any Xilinx primitives in this code.
 --library UNISIM;
 --use UNISIM.VComponents.all;
-
-
-
-
--------------------------------------------------------------------------------
---                            Control Principal                              --
--------------------------------------------------------------------------------
--- Analiza las instrucciones para extraer las señales de control 
---    necesarias para procesar las mismas.
---
-
-
-
-
 
 entity ControlPrincipal is
    Port ( 
@@ -79,9 +58,12 @@ architecture Behavioral of ControlPrincipal is
    
 begin
 
+--out_type <= s_intr_type;
+
+
+
 
 -- Identificar tipo de instrucción
---
    p_identify: process (in_inst)
    begin
    --Control de instruccion ALU12
@@ -114,18 +96,11 @@ begin
 -----------------------------Señales de control EXE-----------------------------
 --------------------------------------------------------------------------------
 --      out_EXE_control : out STD_LOGIC_VECTOR(3 downto 0)
---        [3:1] ALUop  - Operación que se debe ejecutar
---        [0]   ALUsrc - Origen del segundo operando
---
+--        -- [3:1]=ALUop, [0]=ALUsrc
+
    out_EXE_control(3 downto 1) <= s_ALU_op;
    out_EXE_control(0)          <= s_ALUsrc;
 
-
-
--- Selección de segundo operando
---   0 -> Si se trata de una operacion con dos registros
---   1 -> Si se trata de una operacion con un registro y un inmediato
---
    p_ALUsrc: process (s_intr_type)
    begin
       if s_intr_type=ALUREG then
@@ -135,25 +110,19 @@ begin
       end if;
    end process;
 
-
-
 -- Seleccion operación
---  Operacion de ALU depende de bits [24-21] si son operacion con registro
---  Operacion de ALU depende de bits [23,21,20] si son operacion con inmediato
---  
--- Las operaciones disponibles son:
---  ____________________
--- | OPERACION | CODIGO |
--- |    ADD    |  000   |
--- |    SUB    |  001   |
--- |    MOV    |  010   |
--- |    MOVT   |  011   |
--- |    AND    |  100   |
--- |    ORR    |  101   |
--- |    EOR    |  110   |
--- |    CMP    |  111   |
--- |___________|________|
---
+--  Operacion de ALU depende de bits [24-21] si operacion con registro
+--  Operacion de ALU depende de bits [23,21,20] si operacion con inmediato
+-- Tabla operaciones
+-- ADD  000
+-- SUB  001
+-- MOV  010
+-- MOVT 011
+
+-- AND  100
+-- ORR  101
+-- EOR  110
+-- CMP  111
    
    p_ALUop: process (s_intr_type, in_inst)
    begin
@@ -198,29 +167,15 @@ begin
    end process;
 
 
-
-
 --------------------------------------------------------------------------------
 -----------------------------Señales de control MEM-----------------------------
 --------------------------------------------------------------------------------
 --      out_MEM_control : out STD_LOGIC_VECTOR(5 downto 0);
---        [5:2] BRCond(Negative,Zero,Cond,Incond) - Condiciones de salto 
---        [1]   MemRead                           - Lectura de memoria
---        [0]   MemWrite                          - Escritura en memoria
---
+--        -- [5:2]=BRCond(Negative,Zero,Cond,Incond), [1]=MemRead, [0]=MemWrite
    out_MEM_control(5 downto 2) <= s_BRCond;
    out_MEM_control(1)          <= s_MemRead;
    out_MEM_control(0)          <= s_MemWr; 
 
-
-
--- Análisis de instrucción para el control de la fase Memoria
---  s_BRCond 
---    [3] - Salto si flag N (negativo) activado
---    [2] - Salto si flag Z (cero) activado
---    [1] - Salto condicional
---    [0] - Salto incondicional
---
    p_MEM_control: process (s_intr_type, in_inst)
    begin
       if s_intr_type = BR then
@@ -243,23 +198,15 @@ begin
       end if;
    end process;
 
-
-
-
 --------------------------------------------------------------------------------
 -----------------------------Señales de control WB------------------------------
 --------------------------------------------------------------------------------
 --      out_WB_control  : out STD_LOGIC_VECTOR(1 downto 0);
---        [1] MemtoReg - Memoria a registro
---        [0] RegWrite - Escritura en registro
---
+--        -- [1]=MemtoReg, [0]=RegWrite
+
    out_WB_control(1) <= s_MemtoReg;
    out_WB_control(0) <= s_RegWrite;
-
-
-
--- Análisis de instrucción para el control de la fase Write Back
---    
+   
    p_WB_control: process (s_intr_type, in_inst)
    begin
       case s_intr_type is

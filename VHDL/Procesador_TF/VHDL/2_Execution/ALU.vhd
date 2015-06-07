@@ -1,23 +1,16 @@
--------------------------------------------------------------------------------
--- Company: 
--- Engineer:         Andrés Gamboa Meléndez
+----------------------------------------------------------------------------------
+-- Company: Universidad Complutense de Madrid
+-- Engineer: Andres Gamboa Melendez
 -- 
--- Create Date:      13:01:28 01/09/2015 
--- Design Name:      Procesador_TF
--- Module Name:      ALU - Behavioral
--- Project Name:     Procesador tolerante a fallos transitorios
---                     compatible con ARM a nivel de instrucciones
--- Target Devices:   Digilent Nexys 4 - Artix 7 FPGA
--- Tool versions:    Xilinx ISE 14.4 (nt64)
--- Description:      Aplica una operación aritmetico-lógica, de las disponibles, 
---                     a dos operandos entradas. Como salida tenemos el resultado 
---                     de la operación y los flags (NZ).
+-- Module Name: ALU - Behavioral 
+-- Project Name: ARM compatible micro-processor
+-- Target Devices: Nexys4
+-- Tool versions: Xilinx ISE Webpack 14.4
+-- Description: Ejecuta la operación seleccionada sobre los operandos de entrada, y 
+--              mantiene los flags de comparación.
 --
--- Dependencies:     
---
--- Additional Comments: 
---
--------------------------------------------------------------------------------
+----------------------------------------------------------------------------------
+
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
@@ -30,52 +23,38 @@ use IEEE.NUMERIC_STD.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
--------------------------------------------------------------------------------
---                                   ALU                                     --
--------------------------------------------------------------------------------
--- Aplica una operación aritmeticológica, de las disponibles, a dos operandos
---
---
--- Las operaciones disponibles son:
---  ____________________
--- | OPERACION | CODIGO |
--- |    ADD    |  000   |
--- |    SUB    |  001   |
--- |    MOV    |  010   |
--- |    MOVT   |  011   |
--- |    AND    |  100   |
--- |    ORR    |  101   |
--- |    EOR    |  110   |
--- |    CMP    |  111   |
--- |___________|________|
---
-
-
--- Entradas: 
---   in_A   -> Operando 1
---   in_B   -> Operando 2
---   in_op  -> Operacion 
---
--- Salidas
---   out_R  -> Resultado
---   out_F  -> Flags activadas (NZ)
---     N    -> Negative
---     Z    -> Zero
---
-
 entity ALU is
    Port ( 
+      -- ENTRADAS
       in_A : in  STD_LOGIC_VECTOR (31 downto 0);
       in_B : in  STD_LOGIC_VECTOR (31 downto 0);
       in_op : in STD_LOGIC_VECTOR (2 downto 0);
+      -- SALIDAS
       out_R : out  STD_LOGIC_VECTOR (31 downto 0);
       out_f : out  STD_LOGIC_VECTOR (1 downto 0) -- Flags(N,Z)
    );
 end ALU;
 
+-- Tabla operaciones
+-- ADD  000
+-- SUB  001
+-- MOV  010
+-- MOVT 011
+
+-- AND  100
+-- ORR  101
+-- EOR  110
+-- CMP  111
+
+
 architecture Behavioral of ALU is
 
    signal s_R : std_logic_vector(31 downto 0);
+   --Flags:
+   -- N -> Negative
+   -- Z -> Zero
+   -- C -> Carry (No implementado)
+   -- V -> Overflow (No implementado)
    signal N, Z : std_logic;
 
 begin
