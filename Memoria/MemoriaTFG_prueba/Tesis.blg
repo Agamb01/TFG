@@ -16,32 +16,22 @@ A level-1 auxiliary file: Apendices/02ApendiceB.aux
 A level-1 auxiliary file: Apendices/03ApendiceC.aux
 A level-1 auxiliary file: Cascaras/bibliografia.aux
 The style file: abbrv.bst
-A level-1 auxiliary file: Cascaras/fin.aux
 Database file #1: latex.bib
 Database file #2: otros.bib
-Warning--empty publisher in R.B.J.BrinkgreveW.M.Swolfs2011
-Warning--empty journal in Bustillos2012
-Warning--empty journal in Estadistica2014
-Warning--empty journal in Flash2013
-Warning--empty school in carlos2014
-Warning--there's a number but no series in Hennessy2006
-Warning--empty publisher in Hennessy2006
-Warning--empty journal in Hu2010
-Warning--empty journal in Ieee-std-2010
-Warning--there's a number but no volume in Ieee-std-2010
-Warning--empty journal in Investigation2008
-Warning--there's a number but no volume in Investigation2008
-Warning--empty journal in Limited2000
-Warning--there's a number but no volume in Limited2000
-Warning--empty journal in Limited2007b
-Warning--empty school in Melis2014
-Warning--empty journal in Mobile
-Warning--empty year in Mobile
-Warning--empty year in Sorin
-Warning--empty journal in States2011
-Warning--empty journal in ARM-InstructionSet
+Warning--empty publisher in ARM-InstructionSet
 Warning--empty year in ARM-InstructionSet
+Warning--there's a number but no series in Limited2000
+Warning--empty publisher in Limited2000
+Warning--empty publisher in R.B.J.BrinkgreveW.M.Swolfs2011
+Warning--there's a number but no series in Ieee-std-2010
+Warning--empty publisher in Ieee-std-2010
+Warning--empty school in carlos2014
+Warning--empty publisher in Habinc2002
+Warning--empty publisher in Hennessy2006
+Warning--there's a number but no series in Investigation2008
+Warning--empty publisher in Investigation2008
+Warning--empty publisher in Kirrmann2005
+Warning--can't use both volume and number fields in Kuon2007
+Warning--empty publisher in Kuon2007
 Warning--there's a number but no volume in Weaver2001
-Warning--empty journal in XilinxArtix
-Warning--empty year in XilinxArtix
-(There were 25 warnings)
+(There were 16 warnings)

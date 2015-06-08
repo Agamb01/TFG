@@ -7,18 +7,18 @@
 \chapter{Instroducción a los fallos y su tolerancia}
 \label{fallos}
 
-\begin{FraseCelebre}
-  \begin{Frase}
-    "`La verdadera ciencia enseña, sobre todo, a dudar y a ser ignorante."' 
-  \end{Frase}
-  \begin{Fuente}
-    Ernest Rutherford 
-  \end{Fuente}
-\end{FraseCelebre}
-
-\begin{resumen}
-En este capítulo se define qué es un fallo y qué tipos de fallos pueden ocurrir en los sistemas electrónicos. Además se introducen algunas técnicas de tolerancia a fallos y ejemplos de procesadores tolerantes a fallos.
-\end{resumen}
+%\begin{FraseCelebre}
+  %\begin{Frase}
+    %"`Todo el mundo comete errores. La clave está en cometerlos cuando nadie nos ve."'
+  %\end{Frase}
+  %\begin{Fuente}
+    %Peter Alexander Ustinov
+  %\end{Fuente}
+%\end{FraseCelebre}
+%
+%\begin{resumen}
+%En este capítulo se define qué es un fallo y qué tipos de fallos pueden ocurrir en los sistemas electrónicos. Además se introducen algunas técnicas de tolerancia a fallos y ejemplos de procesadores tolerantes a fallos.
+%\end{resumen}
 
 %%-----------------------------------------------------------------
 \section{Introducción a los fallos}
@@ -173,7 +173,7 @@ En ocasiones se producen fallos que no llegan a propagarse por el sitema y no pr
 
 	\item \textbf{Enmascarado temporal}
 	
-	El fallo se propaga con suficiente energía hasta el biestable, sin embargo, ocurre fuera de la de la ventana crítica de tiempo y la señal puede estabilizarse a su valor correcto antes de almacenarse en el biestable Figura \ref{fig:Latching_masking}.
+	El fallo se propaga con suficiente energía hasta el biestable, sin embargo, ocurre fuera de la de la ventana crítica de tiempo y la señal puede estabilizarse a su valor correcto antes de almacenarse en el biestable. Figura \ref{fig:Latching_masking}.
 
 	\begin{figure}[htbp]
 		\centering
@@ -281,7 +281,7 @@ La re-configuración de un sistema consiste en cambiar su implementación en el mo
 
 En el apartado \ref{procesador:fpga} de este mismo capitulo se han introducido las FPGAs, sistemas re-programables que permiten al diseñador re-configurar su estructura para realizar diferentes tareas, o la misma con una nueva implementación u organización de los componentes.
 
-En la imagen \ref{fig:parcial_dinamica} podemos ver un ejemplo de re-configuración, concretamente de re-configuración en un caso de tolerancia dinámica parcial.
+En la figura \ref{fig:parcial_dinamica} podemos ver un ejemplo de re-configuración, concretamente de re-configuración en un caso de tolerancia dinámica parcial.
 
 Hay dos formas de aplicar la re-configuración a un sistema \cite{carlos2014}:
 \begin{itemize}

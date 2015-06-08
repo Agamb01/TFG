@@ -1,29 +1,42 @@
 \begin{thebibliography}{10}
 
+\bibitem{ARM-InstructionSet}
+ARM.
+\newblock {ARM Instruction Set}.
+\newblock In {\em ARM7TDMI-S Data Sheet}, chapter 4 ARM Inst.
+
+\bibitem{Limited2000}
+ARM.
+\newblock {\em {ARM7TDMI-S}}.
+\newblock Number Rev 3. 2000.
+
+\bibitem{Limited2007b}
+ARM.
+\newblock {ARM Architecture Reference Manual}, 2007.
+
 \bibitem{R.B.J.BrinkgreveW.M.Swolfs2011}
-R.~Brinkgreve, W.~Swolfs, and E.~Engin.
+ARM.
 \newblock {\em {ARM Architecture Reference Manual Thumb-2 Supplement}}.
 \newblock 2011.
 
 \bibitem{Brown1996}
 S.~Brown and J.~Rose.
 \newblock {Architecture of FPGAs and CPLDs: A tutorial}.
-\newblock {\em IEEE Design and Test of Computers}, 13(2):42--57, 1996.
-
-\bibitem{Bustillos2012}
-C.~T. Bustillos.
-\newblock {Simulador arm en el \'{a}mbito docente}.
-\newblock 2012.
-
-\bibitem{Estadistica2014}
-I.~N. de~Estadistica.
-\newblock {Penetraci\'{o}n de ordenador en hogares}.
-\newblock 2014.
+\newblock {\em IEEE Design and Test of Computers}, 13, 1996.
 
 \bibitem{Flash2013}
-S.~Flash.
-\newblock {Nexys4 FPGA Board Reference Manual Ethernet connector}.
-\newblock pages 1--29, 2013.
+Digilent.
+\newblock {Nexys4 FPGA Board Reference Manual}, 2013.
+
+\bibitem{States2011}
+D.~Dye.
+\newblock {Partial reconfiguration of Xilix FPGAs using ISE Design Suite},
+  2012.
+
+\bibitem{Ieee-std-2010}
+A.~Gaisler.
+\newblock {\em {LEON3 / LEON3-FT CompanionCore Data Sheet}}.
+\newblock Number March. 2010.
 
 \bibitem{Gaisler2002}
 J.~Gaisler.
@@ -39,9 +52,8 @@ J.~C. {Gonz\'{a}lez Salas}.
 
 \bibitem{Habinc2002}
 S.~Habinc.
-\newblock {Functional Triple Modular Redundancy (FTMR)}.
-\newblock {\em Design and Assessment Report, Gaisler Research}, pages 1--56,
-  2002.
+\newblock {\em {Functional Triple Modular Redundancy (FTMR)}}.
+\newblock 2002.
 
 \bibitem{Hennessy1993}
 J.~L. Hennessy and D.~A. Patterson.
@@ -52,29 +64,27 @@ J.~L. Hennessy and D.~A. Patterson.
 J.~L. Hennessy and D.~a. Patterson.
 \newblock {\em {Computer Architecture, Fourth Edition: A Quantitative
   Approach}}.
-\newblock Number~0. 2006.
+\newblock 2006.
 
 \bibitem{Hu2010}
 A.~C. Hu and S.~Zain.
-\newblock {NSEU Mitigation in Avionics Applications}.
-\newblock 1073:1--12, 2010.
+\newblock {NSEU Mitigation in Avionics Applications}, 2010.
 
-\bibitem{Ieee-std-2010}
-O.~Ieee-std.
-\newblock {LEON3 7-Stage Integer Pipeline}.
-\newblock (March), 2010.
+\bibitem{Estadistica2014}
+I.N.E.
+\newblock {Encuesta sobre equipamiento y uso de tecnolog\'{\i}as de
+  informaci\'{o}n y comunicaci\'{o}n en los hogares}, 2014.
 
 \bibitem{Investigation2008}
 A.~O. Investigation.
-\newblock {ATSB TRANSPORT SAFETY REPORT Aviation Occurrence Investigation
-  AO-2008-070 Final}.
-\newblock (October), 2008.
+\newblock {\em {ATSB TRANSPORT SAFETY REPORT Aviation Occurrence Investigation
+  AO-2008-070 Final}}.
+\newblock Number October. 2008.
 
 \bibitem{Jedec2006}
 Jedec.
 \newblock {Measurement and Reporting of Alpha Particle and Terrestrial Cosmic
-  Ray Induced Soft Error in Semiconductor Devices: JESD89A}.
-\newblock {\em JEDEC Sold State Technology Association}, pages 1--85, 2006.
+  Ray Induced Soft Error in Semiconductor Devices}, 2006.
 
 \bibitem{Kadav2013}
 A.~Kadav, M.~J. Renzelmann, and M.~M. Swift.
@@ -85,43 +95,37 @@ A.~Kadav, M.~J. Renzelmann, and M.~M. Swift.
 
 \bibitem{Kirrmann2005}
 H.~Kirrmann.
-\newblock {Fault Tolerant Computing in Industrial Automation}.
-\newblock {\em Lecture notes ABB Corporate ResearchETH}, 2005.
+\newblock {\em {Fault Tolerant Computing in Industrial Automation}}.
+\newblock 2005.
 
 \bibitem{Kuon2007}
 I.~Kuon, R.~Tessier, and J.~Rose.
-\newblock {FPGA Architecture: Survey and Challenges}.
-\newblock {\em Foundations and Trends® in Electronic Design Automation},
-  2(2):135--253, 2007.
+\newblock {\em {FPGA Architecture: Survey and Challenges}}, volume~2.
+\newblock 2007.
 
-\bibitem{Limited2000}
-A.~R.~M. Limited.
-\newblock {ARM7TDMI-S}.
-\newblock (Rev 3), 2000.
-
-\bibitem{Limited2007b}
-a.~R.~M. Limited.
-\newblock {ARM Architecture Reference Manual}.
-\newblock pages 1--1138, 2007.
+\bibitem{Bustillos2012}
+I.~M. Mart\'{\i}n, J.~E. {Celador Hern\'{a}ndez}, and C.~T. Bustillos.
+\newblock {\em {Simulador arm en el \'{a}mbito docente}}.
+\newblock PhD thesis, Universidad Complutense de Madrid, 2012.
 
 \bibitem{Melis2014}
-W.~K. Melis.
+K.~W. Melis.
 \newblock {\em {Reconstruction of High-energy Neutrino-induced Particle Showers
-  in KM3NeT .}}
-\newblock PhD thesis, 2014.
+  in KM3NeT.}}
+\newblock PhD thesis, Faculteit der Natuurwetenschappen, 2014.
 
 \bibitem{Mobile}
-C.~Mobile.
-\newblock {Streaming 4K Ultra HD video at home and on the go}.
-\newblock pages 0--1.
+Qualcomm.
+\newblock {Qualcomm Snapdragon 810 Processor}.
 
 \bibitem{Rose}
 J.~Rose, A.~E. Gamal, and A.~Sangiovanni-Vincentelli.
 \newblock {Architecture of Field-Programmable Gate Arrays}.
+\newblock {\em Proceeding of the IEEE}, 81(7):1013--1029, 1993.
 
 \bibitem{Rotenberg1999}
 E.~Rotenberg.
-\newblock {AR-SMT: a microarchitectural approach to fault tolerance in
+\newblock {AR-SMT: A microarchitectural approach to fault tolerance in
   microprocessors}.
 \newblock {\em Digest of Papers. Twenty-Ninth Annual International Symposium on
   Fault-Tolerant Computing (Cat. No.99CB36352)}, 1999.
@@ -129,22 +133,10 @@ E.~Rotenberg.
 \bibitem{Sorin}
 D.~J. Sorin and S.~Ozev.
 \newblock {Fault Tolerant Microprocessors for Space Missions}.
-\newblock {\em Memory}, pages 1--4.
-
-\bibitem{States2011}
-U.~States.
-\newblock {Reduce Cost and Board Space}.
-\newblock 374:1--8, 2011.
-
-\bibitem{ARM-InstructionSet}
-I.~S. Summary, T.~C. Field, M.~Long, S.~D. Transfer, U.~Instruction, and I.~S.
-  Examples.
-\newblock {ARM Instruction Set}.
-\newblock pages 1--60.
 
 \bibitem{Torrecillas}
 J.~M. Torrecillas.
-\newblock {RAID - Tolerancia a Fallos}.
+\newblock {Tecnolog\'{\i}a RAID - Tolerancia a Fallos}.
 
 \bibitem{Weaver2001}
 C.~Weaver and T.~Austin.
@@ -155,6 +147,6 @@ C.~Weaver and T.~Austin.
 \bibitem{XilinxArtix}
 Xilinx.
 \newblock {Xilinx Artix-7 Fpgas: a New Performance Standard for Power-Limited,
-  Cost-Sensitive Markets}.
+  Cost-Sensitive Markets}, 2015.
 
 \end{thebibliography}

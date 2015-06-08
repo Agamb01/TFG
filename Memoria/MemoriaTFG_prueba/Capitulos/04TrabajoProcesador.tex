@@ -7,18 +7,18 @@
 \chapter{Procesador}
 \label{trabajoprocesador}
 
-\begin{FraseCelebre}
-\begin{Frase}
-...
-\end{Frase}
-\begin{Fuente}
-...
-\end{Fuente}
-\end{FraseCelebre}
-
-\begin{resumen}
-En este capitulo se presenta el diseño del procesador implementado: su arquitectura, 
-\end{resumen}
+%\begin{FraseCelebre}
+%\begin{Frase}
+%...
+%\end{Frase}
+%\begin{Fuente}
+%...
+%\end{Fuente}
+%\end{FraseCelebre}
+%
+%\begin{resumen}
+%En este capitulo se presenta el diseño del procesador implementado, su estructura, su repertorio de instrucciones, así como se describen los componentes que lo forman y las operaciones que es capaz de ejecutar.  
+%\end{resumen}
 
 
 %-------------------------------------------------------------------
@@ -73,7 +73,7 @@ El procesador se compone de los siguientes elementos (figura \ref{fig:MiProcesad
 	
 	\item \textbf{Memoria de datos:} Esta memoria conserva los valores de los datos que son accesibles por el procesador mediante instrucciones de carga y almacenamiento.
 			
-	\item \textbf{Control principal:} Analiza las instrucciones para extraer la información necesaria que permita ejecutarles adecuadamente. Esta información se propaga medante señales de control al resto de componentes.
+	\item \textbf{Control principal:} Analiza las instrucciones para extraer la información necesaria que permita ejecutarles adecuadamente. Esta información se propaga mediante señales de control al resto de componentes.
 
   \item \textbf{Unidad Aritmético-Lógica (\ac{ALU})}: Es el componente encargado de realizar las operaciones aritméticas o lógicas sobre los operandos. 
 	
@@ -337,7 +337,7 @@ Las señales externas son (figura \ref{fig:ImplementacionALU}):
 %-----------------------------------------------------------
 \label{trabajoprocesador:implementacion:control}
 
-El control principal del microprocesador es el encargado de analizar la instrucción y establecer las señales de control que permitirán a los módulos realizar la función adecuada. Es un módulo combinacional, por lo tanto analiza y establece los valores de las señales de control dentro de un único ciclo de reloj.
+El control principal (figura \ref{fig:ImplementacionControlPrincipal}) del microprocesador es el encargado de analizar la instrucción y establecer las señales de control que permitirán a los módulos realizar la función adecuada. Es un módulo combinacional, por lo tanto analiza y establece los valores de las señales de control dentro de un único ciclo de reloj.
 
 \begin{figure}[ht]
 	\centering
@@ -346,7 +346,7 @@ El control principal del microprocesador es el encargado de analizar la instrucc
 	\label{fig:ImplementacionControlPrincipal}
 \end{figure}
 
-La instrucción es la una única entrada para este módulo, sin embargo, las señales de control son varias y se transmiten de etapa a etapa de la segmentación hasta que son consumidas. A continuación se explican por el orden en el que son utilizadas(figura \ref{fig:P_ControlPath}):
+La instrucción es la una única entrada para este módulo, sin embargo, las señales de control son varias y se transmiten de etapa a etapa de la segmentación hasta que son consumidas. A continuación se explican por el orden en el que son utilizadas (figura \ref{fig:P_ControlPath}):
 
 \begin{enumerate}
 
@@ -376,7 +376,7 @@ La instrucción es la una única entrada para este módulo, sin embargo, las señale
 %-----------------------------------------------------------
 \label{trabajoprocesador:implementacion:regcontrol}
 
-Los registros de control son todos aquellos que almacenan la información entre las etapas , se muestran como líneas rojas en la figura \ref{fig:P_ControlPath}.
+Los registros de control (figura \ref{fig:ImplementacionRegistrosControl}) son todos aquellos que almacenan la información entre las etapas, se muestran como líneas rojas en la figura \ref{fig:P_ControlPath}.
 
 Esta colección de registros son fundamentales para que exista la segmentación. Separan las etapas de forma que los cambios en una de ellas no se propaguen y no interfieran con las demás etapas.
 
@@ -404,7 +404,7 @@ La memoria de instrucciones es una memoria de solo lectura (\ac{ROM}) Este tipo 
 	\label{fig:ImplementacionMemoriaInstrucciones}
 \end{figure}
 
-Las señales externas de esta memoria son (figura \ref{fig:ImplementacionMemoriaDatos}):
+Las señales externas de esta memoria son (figura \ref{fig:ImplementacionMemoriaInstrucciones}):
 
 \begin{itemize}
 

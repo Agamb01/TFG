@@ -4,25 +4,49 @@
 %
 %---------------------------------------------------------------------
 
-\chapter{Conclusiones}
+\chapter{Conclusiones y futuras líneas de trabajo}
 \label{conclusiones}
 
-\begin{FraseCelebre}
-\begin{Frase}
-...
-\end{Frase}
-\begin{Fuente}
-...
-\end{Fuente}
-\end{FraseCelebre}
+%\begin{FraseCelebre}
+%\begin{Frase}
+%...
+%\end{Frase}
+%\begin{Fuente}
+%...
+%\end{Fuente}
+%\end{FraseCelebre}
 
-\begin{resumen}
-En este capitulo se 
-\end{resumen}
+\section{Conclusiones}
+
+El objetivo de este proyecto era crear una CPU segmentada compatible con ARM y dotarla de tolerancia a fallos transitorios con la intención de conseguir una ejecución correcta en sistemas donde los fallos fuesen algo común, como en sistemas internos de satélites o aeronaves. 
+
+En primera instancia se pretendía compatibilizar la CPU con un repertorio de instrucciones ampliamente usado. Se decidió utilizar el repertorio ARM ya que forma parte de una de las arquitecturas más utilizadas en todo tipo de sistemas. Para conseguir ejecutar estas instrucciones hubo que implementar una nueva unidad de control capaz de descifrar las instrucciones e integrarla en la CPU. 
+
+Una vez se tuvo el procesador con un repertorio de instrucciones capaz de ejecutar programas sencillos, se quería asegurar que este funcionaría bajo condiciones donde los fallos aparecieran con una alta probabilidad. Se decidió que los registros internos de la CPU eran los elementos que provocarían un mayor impacto, estos son muy numerosos y cada ciclo de reloj almacenan nueva información, si uno fallase se propagaría alterando la instrucción y el programa que se estuviera ejecutando.
+
+Se decidió aplicar la técnica de "`Triple Modular Redundancy"' por ser una técnica efectiva y ampliamente utilizada en sistemas que requieren un mayor grado de tolerancia frente a fallos transitorios.
+
+Una vez implementado el diseño y añadida la tolerancia a fallos realizaron simulaciones de situaciones controladas para comprobar si esta técnica realmente permitía al procesador funcionar bajo las condiciones deseadas.
+
+Se llevaron a cabo simulaciones funcionales donde se ejecutaba un programa sobre ambas CPUs, el programa se ejecutaba 
+
+Se llevaron a cabo simulaciones funcionales sobre ambas CPUs. En unas simulaciones se ejecutaba un programa sin interferencias, mientras que en otras se ejecutaba el mismo programa insertando fallos en algunos registros. Con estas simulaciones pudimos determinar que:
+
+\begin{enumerate}
+  \item Los resultados de la prueba de control eran idénticos por lo tanto ambas CPUs ejecutaban correctamente las instrucciones del programa en un entorno sin fallos.
+	\item Al insertar los mismos fallos en ambas CPUs, se observaban resultados diferentes. Comparando los resultados de la CPU estándar con la prueba anterior se comprobó que los fallos habían provocado errores graves en la ejecución del programa. Mientras que insertando los mismos fallos en la CPU tolerante a fallos daba los mismos resultados que las pruebas de control.
+\end{enumerate}
+
+Gracias a estas simulaciones se pudo demostrar que se ha diseñado una unidad de procesamiento capaz de ejecutar programas sencillos y de tolerar fallos transitorios individuales de manera satisfactoria.
 
 
+\section{Futuras líneas de trabajo}
 
+Algunas posibilidades para continuar con este trabajo podrían incluir ampliaciones en la funcionalidad del sistema o aumentar la tolerancia a fallos. 
 
+Si deseamos ampliar la funcionalidad se puede conseguir aumentando el repertorio de instrucciones ya que solo se han implementado una pocas instrucciones que permiten ejecutar programas básicos en el diseño actual. Modificar las memorias de datos e instrucciones para permitir el uso de memorias externas e insertando memorias caché. O bien se puede integrar la CPU junto a controladores de diferentes tipos.
+
+Por otro lado, si se desea aumentar la tolerancia a fallos, se puede aplicar la técnica TMR sobre otros componentes de la misma forma que se han aplicado sobre los registros de control. O se pueden aplicar nuevas técnicas para tolerar otros tipos de fallos, como podría aplicarse la re-configuración estática o dinámica para que el sistema fuese capaz de tolerar fallos permanentes además de los fallos transitorios.
 
 
 

@@ -10,7 +10,7 @@
 \BOOKMARK [1][-]{section.1.2}{Motivaci\363n}{chapter.1}% 10
 \BOOKMARK [1][-]{section.1.3}{Planteamiento del problema}{chapter.1}% 11
 \BOOKMARK [1][-]{section.1.4}{Objetivo}{chapter.1}% 12
-\BOOKMARK [1][-]{section.1.5}{Estructura del documento***}{chapter.1}% 13
+\BOOKMARK [1][-]{section.1.5}{Estructura del documento}{chapter.1}% 13
 \BOOKMARK [0][-]{chapter.2}{Introducci\363n al procesador}{}% 14
 \BOOKMARK [1][-]{section.2.1}{Procesador}{chapter.2}% 15
 \BOOKMARK [2][-]{subsection.2.1.1}{Arquitectura}{section.2.1}% 16
@@ -76,16 +76,17 @@
 \BOOKMARK [1][-]{section.7.3}{Simulaciones}{chapter.7}% 76
 \BOOKMARK [2][-]{subsection.7.3.1}{Procesador est\341ndar}{section.7.3}% 77
 \BOOKMARK [2][-]{subsection.7.3.2}{Procesador tolerante a fallos}{section.7.3}% 78
-\BOOKMARK [0][-]{chapter.8}{Conclusiones}{}% 79
-\BOOKMARK [0][-]{appendix.Alph1}{C\363digo de simulaci\363n sin fallos}{}% 80
-\BOOKMARK [1][-]{section.Alph1.1}{Testbench para ejecuci\363n de control}{appendix.Alph1}% 81
-\BOOKMARK [0][-]{appendix.Alph2}{C\363digo de simulaci\363n con fallos}{}% 82
-\BOOKMARK [1][-]{section.Alph2.1}{Testbench para ejecuci\363n con inserci\363n de fallos en CPU est\341ndar}{appendix.Alph2}% 83
-\BOOKMARK [1][-]{section.Alph2.2}{Testbench para ejecuci\363n con inserci\363n de fallos en CPU tolerante a fallos}{appendix.Alph2}% 84
-\BOOKMARK [0][-]{appendix.Alph3}{Simulaciones}{}% 85
-\BOOKMARK [1][-]{section.Alph3.1}{Procesador est\341ndar sin fallos}{appendix.Alph3}% 86
-\BOOKMARK [1][-]{section.Alph3.2}{Procesador est\341ndar con fallos}{appendix.Alph3}% 87
-\BOOKMARK [1][-]{section.Alph3.3}{Procesador tolerante a fallos sin fallos}{appendix.Alph3}% 88
-\BOOKMARK [1][-]{section.Alph3.4}{Procesador tolerante a fallos con fallos}{appendix.Alph3}% 89
-\BOOKMARK [0][-]{appendix*.59}{Bibliograf\355a}{}% 90
-\BOOKMARK [0][-]{fin.0}{Fin}{}% 91
+\BOOKMARK [0][-]{chapter.8}{Conclusiones y futuras l\355neas de trabajo}{}% 79
+\BOOKMARK [1][-]{section.8.1}{Conclusiones}{chapter.8}% 80
+\BOOKMARK [1][-]{section.8.2}{Futuras l\355neas de trabajo}{chapter.8}% 81
+\BOOKMARK [0][-]{appendix.Alph1}{C\363digo de simulaci\363n sin fallos}{}% 82
+\BOOKMARK [1][-]{section.Alph1.1}{Testbench para ejecuci\363n de control}{appendix.Alph1}% 83
+\BOOKMARK [0][-]{appendix.Alph2}{C\363digo de simulaci\363n con fallos}{}% 84
+\BOOKMARK [1][-]{section.Alph2.1}{Testbench para ejecuci\363n con inserci\363n de fallos en CPU est\341ndar}{appendix.Alph2}% 85
+\BOOKMARK [1][-]{section.Alph2.2}{Testbench para ejecuci\363n con inserci\363n de fallos en CPU tolerante a fallos}{appendix.Alph2}% 86
+\BOOKMARK [0][-]{appendix.Alph3}{Simulaciones}{}% 87
+\BOOKMARK [1][-]{section.Alph3.1}{Procesador est\341ndar sin fallos}{appendix.Alph3}% 88
+\BOOKMARK [1][-]{section.Alph3.2}{Procesador est\341ndar con fallos}{appendix.Alph3}% 89
+\BOOKMARK [1][-]{section.Alph3.3}{Procesador tolerante a fallos sin fallos}{appendix.Alph3}% 90
+\BOOKMARK [1][-]{section.Alph3.4}{Procesador tolerante a fallos con fallos}{appendix.Alph3}% 91
+\BOOKMARK [0][-]{appendix*.59}{Bibliograf\355a}{}% 92
