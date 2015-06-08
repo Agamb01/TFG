@@ -3,17 +3,17 @@
 # ** Warning: (vlib-34) Library already exists at "work".
 # 
 # Model Technology ModelSim PE Student Edition vcom 10.4 Compiler 2014.12 Dec  3 2014
-# Start time: 22:36:47 on Jun 07,2015
+# Start time: 22:46:40 on Jun 08,2015
 # vcom -reportprogress 300 -explicit -93 VHDL/common/Mux2.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity Mux2
 # -- Compiling architecture Behavioral of Mux2
-# End time: 22:36:48 on Jun 07,2015, Elapsed time: 0:00:01
+# End time: 22:46:41 on Jun 08,2015, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim PE Student Edition vcom 10.4 Compiler 2014.12 Dec  3 2014
-# Start time: 22:36:48 on Jun 07,2015
+# Start time: 22:46:41 on Jun 08,2015
 # vcom -reportprogress 300 -explicit -93 VHDL/3_Memory/MemData.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -21,10 +21,10 @@
 # -- Loading package NUMERIC_STD
 # -- Compiling entity MemData
 # -- Compiling architecture Behavioral of MemData
-# End time: 22:36:48 on Jun 07,2015, Elapsed time: 0:00:00
+# End time: 22:46:41 on Jun 08,2015, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim PE Student Edition vcom 10.4 Compiler 2014.12 Dec  3 2014
-# Start time: 22:36:48 on Jun 07,2015
+# Start time: 22:46:41 on Jun 08,2015
 # vcom -reportprogress 300 -explicit -93 VHDL/2_Execution/BrAdder.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -32,10 +32,10 @@
 # -- Loading package NUMERIC_STD
 # -- Compiling entity BrAdder
 # -- Compiling architecture Behavioral of BrAdder
-# End time: 22:36:49 on Jun 07,2015, Elapsed time: 0:00:01
+# End time: 22:46:42 on Jun 08,2015, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim PE Student Edition vcom 10.4 Compiler 2014.12 Dec  3 2014
-# Start time: 22:36:49 on Jun 07,2015
+# Start time: 22:46:42 on Jun 08,2015
 # vcom -reportprogress 300 -explicit -93 VHDL/2_Execution/ALU.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -43,10 +43,10 @@
 # -- Loading package NUMERIC_STD
 # -- Compiling entity ALU
 # -- Compiling architecture Behavioral of ALU
-# End time: 22:36:49 on Jun 07,2015, Elapsed time: 0:00:00
+# End time: 22:46:42 on Jun 08,2015, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim PE Student Edition vcom 10.4 Compiler 2014.12 Dec  3 2014
-# Start time: 22:36:49 on Jun 07,2015
+# Start time: 22:46:42 on Jun 08,2015
 # vcom -reportprogress 300 -explicit -93 VHDL/1_InstructionDecode/RegisterBank.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -54,20 +54,20 @@
 # -- Loading package NUMERIC_STD
 # -- Compiling entity RegisterBank
 # -- Compiling architecture Behavioral of RegisterBank
-# End time: 22:36:50 on Jun 07,2015, Elapsed time: 0:00:01
+# End time: 22:46:43 on Jun 08,2015, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim PE Student Edition vcom 10.4 Compiler 2014.12 Dec  3 2014
-# Start time: 22:36:50 on Jun 07,2015
+# Start time: 22:46:43 on Jun 08,2015
 # vcom -reportprogress 300 -explicit -93 VHDL/1_InstructionDecode/ExtensioSigno.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity ExtensioSigno
 # -- Compiling architecture Behavioral of ExtensioSigno
-# End time: 22:36:51 on Jun 07,2015, Elapsed time: 0:00:01
+# End time: 22:46:44 on Jun 08,2015, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim PE Student Edition vcom 10.4 Compiler 2014.12 Dec  3 2014
-# Start time: 22:36:51 on Jun 07,2015
+# Start time: 22:46:44 on Jun 08,2015
 # vcom -reportprogress 300 -explicit -93 VHDL/1_InstructionDecode/ControlPrincipal.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -76,10 +76,10 @@
 # -- Compiling architecture Behavioral of ControlPrincipal
 # ** Warning: VHDL/1_InstructionDecode/ControlPrincipal.vhd(130): (vcom-1186) Array type case expression must be of a locally static subtype.
 # 
-# End time: 22:36:51 on Jun 07,2015, Elapsed time: 0:00:00
+# End time: 22:46:44 on Jun 08,2015, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 1
 # Model Technology ModelSim PE Student Edition vcom 10.4 Compiler 2014.12 Dec  3 2014
-# Start time: 22:36:51 on Jun 07,2015
+# Start time: 22:46:44 on Jun 08,2015
 # vcom -reportprogress 300 -explicit -93 VHDL/0_InstructionFetch/PCAdder.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -87,10 +87,10 @@
 # -- Loading package NUMERIC_STD
 # -- Compiling entity PCAdder
 # -- Compiling architecture Behavioral of PCAdder
-# End time: 22:36:52 on Jun 07,2015, Elapsed time: 0:00:01
+# End time: 22:46:45 on Jun 08,2015, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim PE Student Edition vcom 10.4 Compiler 2014.12 Dec  3 2014
-# Start time: 22:36:52 on Jun 07,2015
+# Start time: 22:46:45 on Jun 08,2015
 # vcom -reportprogress 300 -explicit -93 VHDL/0_InstructionFetch/MemInstruction3.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -98,50 +98,50 @@
 # -- Loading package NUMERIC_STD
 # -- Compiling entity TB_ProgramaMult
 # -- Compiling architecture Behavioral of TB_ProgramaMult
-# End time: 22:36:52 on Jun 07,2015, Elapsed time: 0:00:00
+# End time: 22:46:45 on Jun 08,2015, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim PE Student Edition vcom 10.4 Compiler 2014.12 Dec  3 2014
-# Start time: 22:36:52 on Jun 07,2015
+# Start time: 22:46:45 on Jun 08,2015
 # vcom -reportprogress 300 -explicit -93 VHDL/3_Memory/Phase3_Memory.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity Phase3_Memory
 # -- Compiling architecture Behavioral of phase3_Memory
-# End time: 22:36:53 on Jun 07,2015, Elapsed time: 0:00:01
+# End time: 22:46:46 on Jun 08,2015, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim PE Student Edition vcom 10.4 Compiler 2014.12 Dec  3 2014
-# Start time: 22:36:53 on Jun 07,2015
+# Start time: 22:46:46 on Jun 08,2015
 # vcom -reportprogress 300 -explicit -93 VHDL/2_Execution/Phase2_Execution.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity Phase2_Execution
 # -- Compiling architecture Behavioral of Phase2_Execution
-# End time: 22:36:53 on Jun 07,2015, Elapsed time: 0:00:00
+# End time: 22:46:46 on Jun 08,2015, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim PE Student Edition vcom 10.4 Compiler 2014.12 Dec  3 2014
-# Start time: 22:36:53 on Jun 07,2015
+# Start time: 22:46:46 on Jun 08,2015
 # vcom -reportprogress 300 -explicit -93 VHDL/1_InstructionDecode/Phase1_InstructionDecode.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity Phase1_InstructionDecode
 # -- Compiling architecture Behavioral of Phase1_InstructionDecode
-# End time: 22:36:54 on Jun 07,2015, Elapsed time: 0:00:01
+# End time: 22:46:47 on Jun 08,2015, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim PE Student Edition vcom 10.4 Compiler 2014.12 Dec  3 2014
-# Start time: 22:36:54 on Jun 07,2015
+# Start time: 22:46:47 on Jun 08,2015
 # vcom -reportprogress 300 -explicit -93 VHDL/0_InstructionFetch/Phase0_InstructionFetch.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity Phase0_InstructionFetch
 # -- Compiling architecture Behavioral of Phase0_InstructionFetch
-# End time: 22:36:54 on Jun 07,2015, Elapsed time: 0:00:00
+# End time: 22:46:48 on Jun 08,2015, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim PE Student Edition vcom 10.4 Compiler 2014.12 Dec  3 2014
-# Start time: 22:36:55 on Jun 07,2015
+# Start time: 22:46:48 on Jun 08,2015
 # vcom -reportprogress 300 -explicit -93 VHDL/3_Memory/MEM_main.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -149,10 +149,10 @@
 # -- Loading package NUMERIC_STD
 # -- Compiling entity MEM_main
 # -- Compiling architecture Behavioral of MEM_main
-# End time: 22:36:55 on Jun 07,2015, Elapsed time: 0:00:00
+# End time: 22:46:48 on Jun 08,2015, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim PE Student Edition vcom 10.4 Compiler 2014.12 Dec  3 2014
-# Start time: 22:36:55 on Jun 07,2015
+# Start time: 22:46:48 on Jun 08,2015
 # vcom -reportprogress 300 -explicit -93 VHDL/2_Execution/EXE_main.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -160,10 +160,10 @@
 # -- Loading package NUMERIC_STD
 # -- Compiling entity EXE_main
 # -- Compiling architecture Behavioral of EXE_main
-# End time: 22:36:56 on Jun 07,2015, Elapsed time: 0:00:01
+# End time: 22:46:49 on Jun 08,2015, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim PE Student Edition vcom 10.4 Compiler 2014.12 Dec  3 2014
-# Start time: 22:36:56 on Jun 07,2015
+# Start time: 22:46:49 on Jun 08,2015
 # vcom -reportprogress 300 -explicit -93 VHDL/1_InstructionDecode/ID_main.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -171,10 +171,10 @@
 # -- Loading package NUMERIC_STD
 # -- Compiling entity ID_main
 # -- Compiling architecture Behavioral of ID_main
-# End time: 22:36:56 on Jun 07,2015, Elapsed time: 0:00:00
+# End time: 22:46:49 on Jun 08,2015, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim PE Student Edition vcom 10.4 Compiler 2014.12 Dec  3 2014
-# Start time: 22:36:56 on Jun 07,2015
+# Start time: 22:46:49 on Jun 08,2015
 # vcom -reportprogress 300 -explicit -93 VHDL/0_InstructionFetch/IF_main.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -182,10 +182,10 @@
 # -- Loading package NUMERIC_STD
 # -- Compiling entity IF_main
 # -- Compiling architecture Behavioral of IF_main
-# End time: 22:36:57 on Jun 07,2015, Elapsed time: 0:00:01
+# End time: 22:46:50 on Jun 08,2015, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim PE Student Edition vcom 10.4 Compiler 2014.12 Dec  3 2014
-# Start time: 22:36:57 on Jun 07,2015
+# Start time: 22:46:50 on Jun 08,2015
 # vcom -reportprogress 300 -explicit -93 VHDL/cpu.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -193,10 +193,10 @@
 # -- Loading package NUMERIC_STD
 # -- Compiling entity cpu
 # -- Compiling architecture Behavioral of cpu
-# End time: 22:36:57 on Jun 07,2015, Elapsed time: 0:00:00
+# End time: 22:46:50 on Jun 08,2015, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim PE Student Edition vcom 10.4 Compiler 2014.12 Dec  3 2014
-# Start time: 22:36:57 on Jun 07,2015
+# Start time: 22:46:51 on Jun 08,2015
 # vcom -reportprogress 300 -explicit -93 VHDL/TB_ejecucion_fallos.vhd 
 # -- Loading package STANDARD
 # -- Loading package util
@@ -205,7 +205,7 @@
 # -- Loading package NUMERIC_STD
 # -- Compiling entity TB_ejecucion_fallos
 # -- Compiling architecture behavior of TB_ejecucion_fallos
-# End time: 22:36:58 on Jun 07,2015, Elapsed time: 0:00:01
+# End time: 22:46:51 on Jun 08,2015, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # //  ModelSim PE Student Edition 10.4 Dec  3 2014 
 # //
@@ -226,7 +226,7 @@
 # // FOR HIGHER EDUCATION PURPOSES ONLY
 # //
 # vsim -gui -do "do {TB_ejecucion_fallos.fdo}" 
-# Start time: 22:36:59 on Jun 07,2015
+# Start time: 22:46:52 on Jun 08,2015
 # Loading std.standard
 # Loading modelsim_lib.util(body)
 # Loading std.textio(body)
@@ -257,10 +257,10 @@
 # 
 #           File in use by: Andy  Hostname: ANDY-PC  ProcessID: 5888
 # 
-#           Attempting to use alternate WLF file "./wlftn0ysyh".
+#           Attempting to use alternate WLF file "./wlft9e1g67".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
 # 
-#           Using alternate file: ./wlftn0ysyh
+#           Using alternate file: ./wlft9e1g67
 # 
 # .main_pane.wave.interior.cs.body.pw.wf
 # .main_pane.structure.interior.cs.body.struct
@@ -343,3 +343,5 @@
 #    Time: 860 ns  Iteration: 0  Instance: /tb_ejecucion_fallos
 # ** Error: ERROR: STR R3, R0, #0
 #    Time: 860 ns  Iteration: 0  Instance: /tb_ejecucion_fallos
+# End time: 22:52:09 on Jun 08,2015, Elapsed time: 0:05:17
+# Errors: 14, Warnings: 11

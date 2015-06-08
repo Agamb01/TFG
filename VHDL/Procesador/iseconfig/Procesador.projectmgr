@@ -33,7 +33,7 @@
       <SelectedItems>
          <SelectedItem>cpu - Behavioral (D:/TFG/TFG/VHDL/Procesador/VHDL/cpu.vhd)</SelectedItem>
       </SelectedItems>
-      <ScrollbarPosition orientation="vertical" >3</ScrollbarPosition>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000020200000001000000010000006400000163000000020000000000000000000000000200000064ffffffff000000810000000300000002000001630000000100000003000000000000000100000003</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
@@ -45,13 +45,13 @@
          <ClosedNode>Design Utilities</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem></SelectedItem>
+         <SelectedItem/>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000010000000000000000000000000000000000000000000000010a000000010000000100000000000000000000000064ffffffff0000008100000000000000010000010a0000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem></CurrentItem>
+      <CurrentItem/>
    </ItemView>
    <ItemView guiview="File" >
       <ClosedNodes>
@@ -83,19 +83,21 @@
          <ClosedNodesVersion>1</ClosedNodesVersion>
          <ClosedNode>Configure Target Device</ClosedNode>
          <ClosedNode>Design Utilities</ClosedNode>
+         <ClosedNode>Implement Design</ClosedNode>
          <ClosedNode>Implement Design/Map</ClosedNode>
          <ClosedNode>Implement Design/Place &amp; Route</ClosedNode>
          <ClosedNode>Implement Design/Translate</ClosedNode>
+         <ClosedNode>Synthesize - XST</ClosedNode>
          <ClosedNode>User Constraints</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem></SelectedItem>
+         <SelectedItem>Implement Design</SelectedItem>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000000f9000000010000000100000000000000000000000064ffffffff000000810000000000000001000000f90000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000010000000000000000000000000000000000000000000000010a000000010000000100000000000000000000000064ffffffff0000008100000000000000010000010a0000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem></CurrentItem>
+      <CurrentItem>Implement Design</CurrentItem>
    </ItemView>
    <ItemView engineview="BehavioralSim" guiview="Source" compilemode="AutoCompile" >
       <ClosedNodes>
@@ -116,6 +118,7 @@
          <ClosedNode>/TB_Phase1_InstructionDecode - behavior D:|TFG|TFG|VHDL|Procesador|VHDL|1_InstructionDecode|TB|TB_Phase1_InstructionDecode.vhd</ClosedNode>
          <ClosedNode>/TB_Phase2_Execution - behavior D:|TFG|TFG|VHDL|Procesador|VHDL|2_Execution|TB|TB_Phase2_Execution.vhd</ClosedNode>
          <ClosedNode>/TB_Phase3_Memory - behavior D:|TFG|TFG|VHDL|Procesador|VHDL|3_Memory|TB|TB_Phase3_Memory.vhd</ClosedNode>
+         <ClosedNode>/TB_Programa3 - behavior D:|TFG|TFG|VHDL|Procesador|VHDL|TB_Programa3.vhd</ClosedNode>
          <ClosedNode>/TB_Programa3 - behavior D:|TFG|TFG|VHDL|Procesador|VHDL|TB_Programa3.vhd/uut - cpu - Behavioral/i_EXE - EXE_main - Behavioral</ClosedNode>
          <ClosedNode>/TB_Programa3 - behavior D:|TFG|TFG|VHDL|Procesador|VHDL|TB_Programa3.vhd/uut - cpu - Behavioral/i_ID - ID_main - Behavioral</ClosedNode>
          <ClosedNode>/TB_Programa3 - behavior D:|TFG|TFG|VHDL|Procesador|VHDL|TB_Programa3.vhd/uut - cpu - Behavioral/i_MEM - MEM_main - Behavioral</ClosedNode>
@@ -132,13 +135,13 @@
          <ClosedNode>/TB_mux2 - behavior D:|TFG|TFG|VHDL|Procesador|VHDL|common|TB|TB_Mux2.vhd</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>i_MemInstruction - TB_ProgramaMult - Behavioral (D:/TFG/TFG/VHDL/Procesador/VHDL/0_InstructionFetch/MemInstruction3.vhd)</SelectedItem>
+         <SelectedItem>TB_ejecucion_fallos - behavior (D:/TFG/TFG/VHDL/Procesador/VHDL/TB_ejecucion_fallos.vhd)</SelectedItem>
       </SelectedItems>
-      <ScrollbarPosition orientation="vertical" >21</ScrollbarPosition>
+      <ScrollbarPosition orientation="vertical" >15</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000010000000000000000000000000000000002020000000100000001000000640000021b000000020000000000000000000000000200000064ffffffff0000008100000003000000020000021b0000000100000003000000000000000100000003</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000202000000010000000100000064000001db000000020000000000000000000000000200000064ffffffff000000810000000300000002000001db0000000100000003000000000000000100000003</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
-      <CurrentItem>i_MemInstruction - TB_ProgramaMult - Behavioral (D:/TFG/TFG/VHDL/Procesador/VHDL/0_InstructionFetch/MemInstruction3.vhd)</CurrentItem>
+      <CurrentItem>TB_ejecucion_fallos - behavior (D:/TFG/TFG/VHDL/Procesador/VHDL/TB_ejecucion_fallos.vhd)</CurrentItem>
    </ItemView>
    <ItemView engineview="BehavioralSim" sourcetype="" guiview="Process" >
       <ClosedNodes>

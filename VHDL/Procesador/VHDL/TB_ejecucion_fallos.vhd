@@ -85,9 +85,9 @@ BEGIN
     -- Cycle process definitions
    cycle_process: process
    begin
+ 		wait for 100 ns;
 		wait for clk_period/2;
       clk_cycle <= clk_cycle + 1;
- 		wait for 100 ns;
       loop
          wait for clk_period*2;
          clk_cycle <= clk_cycle + 2;

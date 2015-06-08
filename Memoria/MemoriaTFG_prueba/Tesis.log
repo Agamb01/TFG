@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.5.31)  8 JUN 2015 21:48
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.5.31)  8 JUN 2015 23:50
 entering extended mode
 **Tesis.tex
 (Tesis.tex
@@ -4341,17 +4341,17 @@ Package babel Info: Redefining spanish shorthand "?
 
 ]
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 43.
+(babel)             in language  on input line 44.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 43.
+(babel)             in language  on input line 44.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 43.
+(babel)             in language  on input line 44.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 43.
+(babel)             in language  on input line 44.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 43.
+(babel)             in language  on input line 44.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 43.
+(babel)             in language  on input line 44.
 )
 LaTeX Info: Redefining \. on input line 164.
 LaTeX Info: Redefining \% on input line 164.
@@ -5161,64 +5161,36 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 36.
 
-<PDFs/Procesador_B.pdf, id=2458, 794.97pt x 614.295pt>
-File: PDFs/Procesador_B.pdf Graphic file (type pdf)
- <use PDFs/Procesador_B.pdf>
-Package pdftex.def Info: PDFs/Procesador_B.pdf used on input line 41.
-(pdftex.def)             Requested size: 794.96806pt x 614.29349pt.
-File: PDFs/Procesador_B.pdf Graphic file (type pdf)
- <use PDFs/Procesador_B.pdf>
-Package pdftex.def Info: PDFs/Procesador_B.pdf used on input line 41.
-(pdftex.def)             Requested size: 794.96806pt x 614.29349pt.
+<PDFs/Procesador_B-eps-converted-to.pdf, id=2458, 784.9325pt x 587.19376pt>
+File: PDFs/Procesador_B-eps-converted-to.pdf Graphic file (type pdf)
 
-<PDFs/Procesador_B.pdf, id=2461, page=1, 794.97pt x 614.295pt>
-File: PDFs/Procesador_B.pdf Graphic file (type pdf)
- <use PDFs/Procesador_B.pdf, page 1>
-Package pdftex.def Info: PDFs/Procesador_B.pdf, page1 used on input line 41.
-(pdftex.def)             Requested size: 794.96806pt x 614.29349pt.
-File: PDFs/Procesador_B.pdf Graphic file (type pdf)
+<use PDFs/Procesador_B-eps-converted-to.pdf>
+Package pdftex.def Info: PDFs/Procesador_B-eps-converted-to.pdf used on input line 43.
+(pdftex.def)             Requested size: 784.93057pt x 587.19232pt.
+File: PDFs/Procesador_B-eps-converted-to.pdf Graphic file (type pdf)
+ <use PDFs/Procesador_B-eps-converted-to.pdf>
+Package pdftex.def Info: PDFs/Procesador_B-eps-converted-to.pdf used on input line 43.
+(pdftex.def)             Requested size: 784.93057pt x 587.19232pt.
 
-<use PDFs/Procesador_B.pdf, page 1>
-Package pdftex.def Info: PDFs/Procesador_B.pdf, page1 used on input line 41.
-(pdftex.def)             Requested size: 572.37798pt x 442.29205pt.
-File: PDFs/Procesador_B.pdf Graphic file (type pdf)
- <use PDFs/Procesador_B.pdf, page 1>
-Package pdftex.def Info: PDFs/Procesador_B.pdf, page1 used on input line 41.
-(pdftex.def)             Requested size: 572.37798pt x 442.29205pt.
-File: PDFs/Procesador_B.pdf Graphic file (type pdf)
- <use PDFs/Procesador_B.pdf, page 1>
-Package pdftex.def Info: PDFs/Procesador_B.pdf, page1 used on input line 41.
-(pdftex.def)             Requested size: 572.37798pt x 442.29205pt.
-Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 48.
-Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 48.
-Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 48.
-Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 48.
-Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 48.
-Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 48.
-Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 48.
-Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 48.
-Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 48.
-Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 48.
-Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 48.
-Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 48.
-File: PDFs/Procesador_B.pdf Graphic file (type pdf)
+<PDFs/Procesador_B-eps-converted-to.pdf, id=2461, page=1, 784.9325pt x 587.19376pt>
+File: PDFs/Procesador_B-eps-converted-to.pdf Graphic file (type pdf)
 
-<use PDFs/Procesador_B.pdf, page 1>
-Package pdftex.def Info: PDFs/Procesador_B.pdf, page1 used on input line 48.
-(pdftex.def)             Requested size: 572.37798pt x 442.29205pt.
- [91 <./PDFs/Procesador_B.pdf, page is rotated 90 degrees>]
+<use PDFs/Procesador_B-eps-converted-to.pdf, page 1>
+Package pdftex.def Info: PDFs/Procesador_B-eps-converted-to.pdf, page1 used on input line 43.
+(pdftex.def)             Requested size: 784.93057pt x 587.19232pt.
+File: PDFs/Procesador_B-eps-converted-to.pdf Graphic file (type pdf)
+ <use PDFs/Procesador_B-eps-converted-to.pdf, page 1>
+Package pdftex.def Info: PDFs/Procesador_B-eps-converted-to.pdf, page1 used on input line 43.
+(pdftex.def)             Requested size: 565.15096pt x 422.77917pt.
+File: PDFs/Procesador_B-eps-converted-to.pdf Graphic file (type pdf)
+
+<use PDFs/Procesador_B-eps-converted-to.pdf, page 1>
+Package pdftex.def Info: PDFs/Procesador_B-eps-converted-to.pdf, page1 used on input line 43.
+(pdftex.def)             Requested size: 565.15096pt x 422.77917pt.
+File: PDFs/Procesador_B-eps-converted-to.pdf Graphic file (type pdf)
+ <use PDFs/Procesador_B-eps-converted-to.pdf, page 1>
+Package pdftex.def Info: PDFs/Procesador_B-eps-converted-to.pdf, page1 used on input line 43.
+(pdftex.def)             Requested size: 565.15096pt x 422.77917pt.
 Package babel Info: Redefining spanish shorthand <<
 (babel)             in language  on input line 50.
 Package babel Info: Redefining spanish shorthand >>
@@ -5231,108 +5203,140 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 50.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 50.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 50.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 50.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 50.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 50.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 50.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 50.
+File: PDFs/Procesador_B-eps-converted-to.pdf Graphic file (type pdf)
 
-<PDFs/ProcesadorTF_A.pdf, id=2473, 794.97pt x 614.295pt>
+<use PDFs/Procesador_B-eps-converted-to.pdf, page 1>
+Package pdftex.def Info: PDFs/Procesador_B-eps-converted-to.pdf, page1 used on input line 50.
+(pdftex.def)             Requested size: 565.15096pt x 422.77917pt.
+ [91 <./PDFs/Procesador_B-eps-converted-to.pdf>]
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 52.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 52.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 52.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 52.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 52.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 52.
+
+<PDFs/ProcesadorTF_A.pdf, id=2482, 794.97pt x 614.295pt>
 File: PDFs/ProcesadorTF_A.pdf Graphic file (type pdf)
  <use PDFs/ProcesadorTF_A.pdf>
-Package pdftex.def Info: PDFs/ProcesadorTF_A.pdf used on input line 55.
+Package pdftex.def Info: PDFs/ProcesadorTF_A.pdf used on input line 57.
 (pdftex.def)             Requested size: 794.96806pt x 614.29349pt.
 File: PDFs/ProcesadorTF_A.pdf Graphic file (type pdf)
  <use PDFs/ProcesadorTF_A.pdf>
-Package pdftex.def Info: PDFs/ProcesadorTF_A.pdf used on input line 55.
+Package pdftex.def Info: PDFs/ProcesadorTF_A.pdf used on input line 57.
 (pdftex.def)             Requested size: 794.96806pt x 614.29349pt.
 
-<PDFs/ProcesadorTF_A.pdf, id=2476, page=1, 794.97pt x 614.295pt>
+<PDFs/ProcesadorTF_A.pdf, id=2485, page=1, 794.97pt x 614.295pt>
 File: PDFs/ProcesadorTF_A.pdf Graphic file (type pdf)
  <use PDFs/ProcesadorTF_A.pdf, page 1>
-Package pdftex.def Info: PDFs/ProcesadorTF_A.pdf, page1 used on input line 55.
+Package pdftex.def Info: PDFs/ProcesadorTF_A.pdf, page1 used on input line 57.
 (pdftex.def)             Requested size: 794.96806pt x 614.29349pt.
 File: PDFs/ProcesadorTF_A.pdf Graphic file (type pdf)
 
 <use PDFs/ProcesadorTF_A.pdf, page 1>
-Package pdftex.def Info: PDFs/ProcesadorTF_A.pdf, page1 used on input line 55.
+Package pdftex.def Info: PDFs/ProcesadorTF_A.pdf, page1 used on input line 57.
 (pdftex.def)             Requested size: 572.37798pt x 442.29205pt.
 File: PDFs/ProcesadorTF_A.pdf Graphic file (type pdf)
  <use PDFs/ProcesadorTF_A.pdf, page 1>
-Package pdftex.def Info: PDFs/ProcesadorTF_A.pdf, page1 used on input line 55.
+Package pdftex.def Info: PDFs/ProcesadorTF_A.pdf, page1 used on input line 57.
 (pdftex.def)             Requested size: 572.37798pt x 442.29205pt.
 File: PDFs/ProcesadorTF_A.pdf Graphic file (type pdf)
  <use PDFs/ProcesadorTF_A.pdf, page 1>
-Package pdftex.def Info: PDFs/ProcesadorTF_A.pdf, page1 used on input line 55.
+Package pdftex.def Info: PDFs/ProcesadorTF_A.pdf, page1 used on input line 57.
 (pdftex.def)             Requested size: 572.37798pt x 442.29205pt.
-LaTeX Info: Redefining \. on input line 62.
-LaTeX Info: Redefining \% on input line 62.
+LaTeX Info: Redefining \. on input line 64.
+LaTeX Info: Redefining \% on input line 64.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 62.
+(babel)             in language  on input line 64.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 62.
+(babel)             in language  on input line 64.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 62.
+(babel)             in language  on input line 64.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 62.
+(babel)             in language  on input line 64.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 62.
+(babel)             in language  on input line 64.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 62.
+(babel)             in language  on input line 64.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 62.
+(babel)             in language  on input line 64.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 62.
+(babel)             in language  on input line 64.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 62.
+(babel)             in language  on input line 64.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 62.
+(babel)             in language  on input line 64.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 62.
+(babel)             in language  on input line 64.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 62.
+(babel)             in language  on input line 64.
 File: PDFs/ProcesadorTF_A.pdf Graphic file (type pdf)
 
 <use PDFs/ProcesadorTF_A.pdf, page 1>
-Package pdftex.def Info: PDFs/ProcesadorTF_A.pdf, page1 used on input line 62.
+Package pdftex.def Info: PDFs/ProcesadorTF_A.pdf, page1 used on input line 64.
 (pdftex.def)             Requested size: 572.37798pt x 442.29205pt.
  [92 <./PDFs/ProcesadorTF_A.pdf, page is rotated 90 degrees>]
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 64.
+(babel)             in language  on input line 66.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 64.
+(babel)             in language  on input line 66.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 64.
+(babel)             in language  on input line 66.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 64.
+(babel)             in language  on input line 66.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 64.
+(babel)             in language  on input line 66.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 64.
+(babel)             in language  on input line 66.
 
-<PDFs/ProcesadorTF_B.pdf, id=2488, 794.97pt x 614.295pt>
-File: PDFs/ProcesadorTF_B.pdf Graphic file (type pdf)
- <use PDFs/ProcesadorTF_B.pdf>
-Package pdftex.def Info: PDFs/ProcesadorTF_B.pdf used on input line 69.
-(pdftex.def)             Requested size: 794.96806pt x 614.29349pt.
-File: PDFs/ProcesadorTF_B.pdf Graphic file (type pdf)
- <use PDFs/ProcesadorTF_B.pdf>
-Package pdftex.def Info: PDFs/ProcesadorTF_B.pdf used on input line 69.
-(pdftex.def)             Requested size: 794.96806pt x 614.29349pt.
+<PDFs/ProcesadorTF_B-eps-converted-to.pdf, id=2497, 785.93625pt x 587.19376pt>
+File: PDFs/ProcesadorTF_B-eps-converted-to.pdf Graphic file (type pdf)
 
-<PDFs/ProcesadorTF_B.pdf, id=2491, page=1, 794.97pt x 614.295pt>
-File: PDFs/ProcesadorTF_B.pdf Graphic file (type pdf)
- <use PDFs/ProcesadorTF_B.pdf, page 1>
-Package pdftex.def Info: PDFs/ProcesadorTF_B.pdf, page1 used on input line 69.
-(pdftex.def)             Requested size: 794.96806pt x 614.29349pt.
-File: PDFs/ProcesadorTF_B.pdf Graphic file (type pdf)
+<use PDFs/ProcesadorTF_B-eps-converted-to.pdf>
+Package pdftex.def Info: PDFs/ProcesadorTF_B-eps-converted-to.pdf used on input line 73.
+(pdftex.def)             Requested size: 785.93433pt x 587.19232pt.
+File: PDFs/ProcesadorTF_B-eps-converted-to.pdf Graphic file (type pdf)
+ <use PDFs/ProcesadorTF_B-eps-converted-to.pdf>
+Package pdftex.def Info: PDFs/ProcesadorTF_B-eps-converted-to.pdf used on input line 73.
+(pdftex.def)             Requested size: 785.93433pt x 587.19232pt.
 
-<use PDFs/ProcesadorTF_B.pdf, page 1>
-Package pdftex.def Info: PDFs/ProcesadorTF_B.pdf, page1 used on input line 69.
-(pdftex.def)             Requested size: 572.37798pt x 442.29205pt.
-File: PDFs/ProcesadorTF_B.pdf Graphic file (type pdf)
- <use PDFs/ProcesadorTF_B.pdf, page 1>
-Package pdftex.def Info: PDFs/ProcesadorTF_B.pdf, page1 used on input line 69.
-(pdftex.def)             Requested size: 572.37798pt x 442.29205pt.
-File: PDFs/ProcesadorTF_B.pdf Graphic file (type pdf)
- <use PDFs/ProcesadorTF_B.pdf, page 1>
-Package pdftex.def Info: PDFs/ProcesadorTF_B.pdf, page1 used on input line 69.
-(pdftex.def)             Requested size: 572.37798pt x 442.29205pt.
+<PDFs/ProcesadorTF_B-eps-converted-to.pdf, id=2500, page=1, 785.93625pt x 587.19376pt>
+File: PDFs/ProcesadorTF_B-eps-converted-to.pdf Graphic file (type pdf)
+
+<use PDFs/ProcesadorTF_B-eps-converted-to.pdf, page 1>
+Package pdftex.def Info: PDFs/ProcesadorTF_B-eps-converted-to.pdf, page1 used on input line 73.
+(pdftex.def)             Requested size: 785.93433pt x 587.19232pt.
+File: PDFs/ProcesadorTF_B-eps-converted-to.pdf Graphic file (type pdf)
+ <use PDFs/ProcesadorTF_B-eps-converted-to.pdf, page 1>
+Package pdftex.def Info: PDFs/ProcesadorTF_B-eps-converted-to.pdf, page1 used on input line 73.
+(pdftex.def)             Requested size: 565.87367pt x 422.77917pt.
+File: PDFs/ProcesadorTF_B-eps-converted-to.pdf Graphic file (type pdf)
+
+<use PDFs/ProcesadorTF_B-eps-converted-to.pdf, page 1>
+Package pdftex.def Info: PDFs/ProcesadorTF_B-eps-converted-to.pdf, page1 used on input line 73.
+(pdftex.def)             Requested size: 565.87367pt x 422.77917pt.
+File: PDFs/ProcesadorTF_B-eps-converted-to.pdf Graphic file (type pdf)
+ <use PDFs/ProcesadorTF_B-eps-converted-to.pdf, page 1>
+Package pdftex.def Info: PDFs/ProcesadorTF_B-eps-converted-to.pdf, page1 used on input line 73.
+(pdftex.def)             Requested size: 565.87367pt x 422.77917pt.
 )
 Package babel Info: Redefining spanish shorthand <<
 (babel)             in language  on input line 170.
@@ -5358,12 +5362,12 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 170.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 170.
-File: PDFs/ProcesadorTF_B.pdf Graphic file (type pdf)
+File: PDFs/ProcesadorTF_B-eps-converted-to.pdf Graphic file (type pdf)
 
-<use PDFs/ProcesadorTF_B.pdf, page 1>
-Package pdftex.def Info: PDFs/ProcesadorTF_B.pdf, page1 used on input line 170.
-(pdftex.def)             Requested size: 572.37798pt x 442.29205pt.
- [93 <./PDFs/ProcesadorTF_B.pdf, page is rotated 90 degrees>]
+<use PDFs/ProcesadorTF_B-eps-converted-to.pdf, page 1>
+Package pdftex.def Info: PDFs/ProcesadorTF_B-eps-converted-to.pdf, page1 used on input line 170.
+(pdftex.def)             Requested size: 565.87367pt x 422.77917pt.
+ [93 <./PDFs/ProcesadorTF_B-eps-converted-to.pdf>]
 Package babel Info: Redefining spanish shorthand <<
 (babel)             in language  on input line 172.
 Package babel Info: Redefining spanish shorthand >>
@@ -5467,12 +5471,7 @@ LaTeX Info: Redefining \% on input line 25.
 (Cascaras/abstract.aux) (TeXiS/TeXiS_toc.aux) (Capitulos/01Introduccion.aux) (Capitulos/02IntroduccionProcesador.aux)
 (Capitulos/03IntroduccionFallosTolerancia.aux) (Capitulos/04TrabajoProcesador.aux) (Capitulos/05TrabajoTolerancia.aux)
 (Capitulos/06Resultados.aux) (Capitulos/07AnalisisResultados.aux) (Capitulos/08Conclusiones.aux)
-(Apendices/01ApendiceA.aux) (Apendices/02ApendiceB.aux) (Apendices/03ApendiceC.aux) (Cascaras/bibliografia.aux
-
-Package natbib Warning: Citation(s) may have changed.
-(natbib)                Rerun to get citations correct.
-
-))
+(Apendices/01ApendiceA.aux) (Apendices/02ApendiceB.aux) (Apendices/03ApendiceC.aux) (Cascaras/bibliografia.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 215.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 215.
 Package rerunfilecheck Info: File `Tesis.out' has not changed.
@@ -5481,7 +5480,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 215.
  ) 
 Here is how much of TeX's memory you used:
  13944 strings out of 493671
- 208469 string characters out of 3143865
+ 208775 string characters out of 3143865
  508006 words of memory out of 3000000
  15463 multiletter control sequences out of 15000+200000
  23780 words of font info for 48 fonts, out of 3000000 for 9000
@@ -5505,9 +5504,9 @@ ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Fil
 s/cm/cmmi8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/
 type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Fil
 es/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy9.pfb>
-Output written on Tesis.pdf (112 pages, 3564635 bytes).
+Output written on Tesis.pdf (112 pages, 5041346 bytes).
 PDF statistics:
- 3581 PDF objects out of 4296 (max. 8388607)
+ 3594 PDF objects out of 4296 (max. 8388607)
  1236 named destinations out of 1440 (max. 500000)
  997 words of extra memory for PDF output out of 10000 (max. 10000000)
 

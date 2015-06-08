@@ -67,6 +67,7 @@ ARCHITECTURE behavior OF TB_ejecucion_fallos IS
 
    -- Clock period definitions
    constant clk_period : time := 10 ns;
+   signal clk_cycle : integer := 0;
  
 BEGIN
  
@@ -86,6 +87,18 @@ BEGIN
 		wait for clk_period/2;
    end process;
  
+   -- Cycle process definitions
+   cycle_process: process
+   begin
+ 		wait for 100 ns;
+		wait for clk_period/2;
+      clk_cycle <= clk_cycle + 1;
+      loop
+         wait for clk_period*2;
+         clk_cycle <= clk_cycle + 2;
+      end loop;
+	end process;
+   
     -- Configurar señales espías
    spy_init : process
    begin

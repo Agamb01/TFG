@@ -84,13 +84,9 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1433678337" xil_pn:in_ck="1681673484326928828" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1433678337">
+    <transform xil_pn:end_ts="1433797278" xil_pn:in_ck="1681673484326928828" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1433797278">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="InputChanged"/>
-      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="VHDL/0_InstructionFetch/IF_main.vhd"/>
       <outfile xil_pn:name="VHDL/0_InstructionFetch/MemInstruction0.vhd"/>
       <outfile xil_pn:name="VHDL/0_InstructionFetch/MemInstruction1.vhd"/>
@@ -137,11 +133,11 @@
       <outfile xil_pn:name="VHDL/tolerancia/Registro_TF.vhd"/>
       <outfile xil_pn:name="VHDL/tolerancia/TB_Registro_TF.vhd"/>
     </transform>
-    <transform xil_pn:end_ts="1433678165" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="2711219354528694112" xil_pn:start_ts="1433678165">
+    <transform xil_pn:end_ts="1433797278" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="2711219354528694112" xil_pn:start_ts="1433797278">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1433678165" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="4748228026933042494" xil_pn:start_ts="1433678165">
+    <transform xil_pn:end_ts="1433797278" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="4748228026933042494" xil_pn:start_ts="1433797278">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
@@ -149,14 +145,9 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1433678337" xil_pn:in_ck="1681673484326928828" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1433678337">
+    <transform xil_pn:end_ts="1433797278" xil_pn:in_ck="1681673484326928828" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1433797278">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="InputChanged"/>
-      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="VHDL/0_InstructionFetch/IF_main.vhd"/>
       <outfile xil_pn:name="VHDL/0_InstructionFetch/MemInstruction0.vhd"/>
       <outfile xil_pn:name="VHDL/0_InstructionFetch/MemInstruction1.vhd"/>
@@ -203,13 +194,10 @@
       <outfile xil_pn:name="VHDL/tolerancia/Registro_TF.vhd"/>
       <outfile xil_pn:name="VHDL/tolerancia/TB_Registro_TF.vhd"/>
     </transform>
-    <transform xil_pn:end_ts="1433678393" xil_pn:in_ck="1681673484326928828" xil_pn:name="TRAN_MSimulateBehavioralModel" xil_pn:prop_ck="3528714304817791337" xil_pn:start_ts="1433678391">
+    <transform xil_pn:end_ts="1433797311" xil_pn:in_ck="1681673484326928828" xil_pn:name="TRAN_MSimulateBehavioralModel" xil_pn:prop_ck="3528714304817791337" xil_pn:start_ts="1433797309">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="InputChanged"/>
       <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="TB_ejecucion_fallos.fdo"/>
       <outfile xil_pn:name="vsim.wlf"/>

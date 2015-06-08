@@ -22,9 +22,9 @@ VjHQ^ZTj9G2YReJ:L;]TgY2
 !s100 [O[_dddO5k=fc_YeeMgj10
 Z7 OP;C;10.4;61
 31
-Z8 !s110 1433709409
+Z8 !s110 1433796402
 !i10b 1
-Z9 !s108 1433709409.359000
+Z9 !s108 1433796402.374000
 Z10 !s90 -reportprogress|300|-explicit|-93|VHDL/2_Execution/ALU.vhd|
 Z11 !s107 VHDL/2_Execution/ALU.vhd|
 !i113 1
@@ -63,9 +63,9 @@ V<V^TEPR_4LzRW5f5IoMSC3
 !s100 8K5kDRW8dX:VzCb2TSaYe1
 R7
 31
-Z17 !s110 1433709408
+Z17 !s110 1433796401
 !i10b 1
-Z18 !s108 1433709408.779000
+Z18 !s108 1433796401.783000
 Z19 !s90 -reportprogress|300|-explicit|-93|VHDL/2_Execution/BrAdder.vhd|
 Z20 !s107 VHDL/2_Execution/BrAdder.vhd|
 !i113 1
@@ -103,9 +103,9 @@ VnRm78gIij8E@`2jGT=b;m1
 !s100 lE73LXX6:F;AO`fHelj?>1
 R7
 31
-Z24 !s110 1433709411
+Z24 !s110 1433796404
 !i10b 1
-Z25 !s108 1433709411.070000
+Z25 !s108 1433796404.121000
 Z26 !s90 -reportprogress|300|-explicit|-93|VHDL/1_InstructionDecode/ControlPrincipal.vhd|
 Z27 !s107 VHDL/1_InstructionDecode/ControlPrincipal.vhd|
 !i113 1
@@ -143,9 +143,9 @@ VBenhR=h`DDZT]?[743e7@1
 !s100 MZY>l1@E>^A>G12=N4;g21
 R7
 31
-Z31 !s110 1433709417
+Z31 !s110 1433796410
 !i10b 1
-Z32 !s108 1433709417.321000
+Z32 !s108 1433796410.434000
 Z33 !s90 -reportprogress|300|-explicit|-93|VHDL/cpu.vhd|
 Z34 !s107 VHDL/cpu.vhd|
 !i113 1
@@ -184,9 +184,9 @@ Vh2CKG3h`YSz`M:S]ON=IY3
 !s100 @njieXK=W>6gAc;?SeC9L1
 R7
 31
-Z38 !s110 1433709415
+Z38 !s110 1433796408
 !i10b 1
-Z39 !s108 1433709415.601000
+Z39 !s108 1433796408.691000
 Z40 !s90 -reportprogress|300|-explicit|-93|VHDL/2_Execution/EXE_main.vhd|
 Z41 !s107 VHDL/2_Execution/EXE_main.vhd|
 !i113 1
@@ -224,9 +224,9 @@ V87?4oE0;TEgk=0aTGI3Pk1
 !s100 cL_6KnMQRI;Z2Y=F3f``40
 R7
 31
-Z45 !s110 1433709410
+Z45 !s110 1433796403
 !i10b 1
-Z46 !s108 1433709410.520000
+Z46 !s108 1433796403.553000
 Z47 !s90 -reportprogress|300|-explicit|-93|VHDL/1_InstructionDecode/ExtensioSigno.vhd|
 Z48 !s107 VHDL/1_InstructionDecode/ExtensioSigno.vhd|
 !i113 1
@@ -264,9 +264,9 @@ VS7VmKi1YBkKI>]el_fM_P1
 !s100 2hBGLA2bNDoelLidjz8U52
 R7
 31
-Z52 !s110 1433709416
+Z52 !s110 1433796409
 !i10b 1
-Z53 !s108 1433709416.171000
+Z53 !s108 1433796409.281000
 Z54 !s90 -reportprogress|300|-explicit|-93|VHDL/1_InstructionDecode/ID_main.vhd|
 Z55 !s107 VHDL/1_InstructionDecode/ID_main.vhd|
 !i113 1
@@ -307,7 +307,7 @@ R7
 31
 R52
 !i10b 1
-Z59 !s108 1433709416.741000
+Z59 !s108 1433796409.864000
 Z60 !s90 -reportprogress|300|-explicit|-93|VHDL/0_InstructionFetch/IF_main.vhd|
 Z61 !s107 VHDL/0_InstructionFetch/IF_main.vhd|
 !i113 1
@@ -391,7 +391,7 @@ R7
 31
 R38
 !i10b 1
-Z73 !s108 1433709415.041000
+Z73 !s108 1433796408.114000
 Z74 !s90 -reportprogress|300|-explicit|-93|VHDL/3_Memory/MEM_main.vhd|
 Z75 !s107 VHDL/3_Memory/MEM_main.vhd|
 !i113 1
@@ -432,7 +432,7 @@ R7
 31
 R17
 !i10b 1
-Z79 !s108 1433709408.199000
+Z79 !s108 1433796401.176000
 Z80 !s90 -reportprogress|300|-explicit|-93|VHDL/3_Memory/MemData.vhd|
 Z81 !s107 VHDL/3_Memory/MemData.vhd|
 !i113 1
@@ -511,9 +511,9 @@ VWmLgoFf7Z@^oF8iH[>N6@3
 !s100 n0=:YW;TVcRVT_7`m5Wna1
 R7
 31
-Z92 !s110 1433709407
+Z92 !s110 1433796400
 !i10b 1
-Z93 !s108 1433709407.649000
+Z93 !s108 1433796400.600000
 Z94 !s90 -reportprogress|300|-explicit|-93|VHDL/common/Mux2.vhd|
 Z95 !s107 VHDL/common/Mux2.vhd|
 !i113 1
@@ -593,7 +593,7 @@ R7
 31
 R24
 !i10b 1
-Z106 !s108 1433709411.640000
+Z106 !s108 1433796404.686000
 Z107 !s90 -reportprogress|300|-explicit|-93|VHDL/0_InstructionFetch/PCAdder.vhd|
 Z108 !s107 VHDL/0_InstructionFetch/PCAdder.vhd|
 !i113 1
@@ -631,9 +631,9 @@ V1e<hNb[NENY=TzKRoaHcc1
 !s100 A2FBY;K6gG2;cAUHHllPO2
 R7
 31
-Z112 !s110 1433709414
+Z112 !s110 1433796407
 !i10b 1
-Z113 !s108 1433709414.491000
+Z113 !s108 1433796407.548000
 Z114 !s90 -reportprogress|300|-explicit|-93|VHDL/0_InstructionFetch/Phase0_InstructionFetch.vhd|
 Z115 !s107 VHDL/0_InstructionFetch/Phase0_InstructionFetch.vhd|
 !i113 1
@@ -670,11 +670,11 @@ V8Qj:622lZHnHGzN`VA`Ta2
 !s100 ezD4N94Sh:T6F1XJjlodQ0
 R7
 31
-Z119 !s110 1433709413
+R112
 !i10b 1
-Z120 !s108 1433709413.921000
-Z121 !s90 -reportprogress|300|-explicit|-93|VHDL/1_InstructionDecode/Phase1_InstructionDecode.vhd|
-Z122 !s107 VHDL/1_InstructionDecode/Phase1_InstructionDecode.vhd|
+Z119 !s108 1433796406.977000
+Z120 !s90 -reportprogress|300|-explicit|-93|VHDL/1_InstructionDecode/Phase1_InstructionDecode.vhd|
+Z121 !s107 VHDL/1_InstructionDecode/Phase1_InstructionDecode.vhd|
 !i113 1
 R12
 R13
@@ -688,30 +688,30 @@ VK[Ul75f]Hi7CEFD:k`h3Z3
 !s100 R3QRhbJOobcVOgITi<RcC1
 R7
 31
-R119
+R112
 !i10b 1
+R119
 R120
 R121
-R122
 !i113 1
 R12
 R13
 Ephase2_execution
-Z123 w1433581983
+Z122 w1433581983
 R3
 R4
 R0
-Z124 8VHDL/2_Execution/Phase2_Execution.vhd
-Z125 FVHDL/2_Execution/Phase2_Execution.vhd
+Z123 8VHDL/2_Execution/Phase2_Execution.vhd
+Z124 FVHDL/2_Execution/Phase2_Execution.vhd
 l0
 L26
 V<T[7a?HU8R7ec?MnjhE092
 !s100 LV5`Y6Dd?il1m5;6;En@G3
 R7
 31
-R119
+Z125 !s110 1433796406
 !i10b 1
-Z126 !s108 1433709413.360000
+Z126 !s108 1433796406.419000
 Z127 !s90 -reportprogress|300|-explicit|-93|VHDL/2_Execution/Phase2_Execution.vhd|
 Z128 !s107 VHDL/2_Execution/Phase2_Execution.vhd|
 !i113 1
@@ -727,7 +727,7 @@ VbIblC:kFai@Dc5L@U9aE60
 !s100 eFgR;S5>^IE<0ehXePT?A2
 R7
 31
-R119
+R125
 !i10b 1
 R126
 R127
@@ -748,9 +748,9 @@ VZI6CzYP:A=072geRDeD_j1
 !s100 T64FQNb9RmG<ScI44PGd[2
 R7
 31
-Z132 !s110 1433709412
+Z132 !s110 1433796405
 !i10b 1
-Z133 !s108 1433709412.800000
+Z133 !s108 1433796405.860000
 Z134 !s90 -reportprogress|300|-explicit|-93|VHDL/3_Memory/Phase3_Memory.vhd|
 Z135 !s107 VHDL/3_Memory/Phase3_Memory.vhd|
 !i113 1
@@ -788,9 +788,9 @@ VCM[Y6k1X;4^:H7AiGMLTR0
 !s100 Km5[ikD]`8PZTLUz_UTbB2
 R7
 31
-R8
+R45
 !i10b 1
-Z139 !s108 1433709409.940000
+Z139 !s108 1433796402.962000
 Z140 !s90 -reportprogress|300|-explicit|-93|VHDL/1_InstructionDecode/RegisterBank.vhd|
 Z141 !s107 VHDL/1_InstructionDecode/RegisterBank.vhd|
 !i113 1
@@ -807,7 +807,7 @@ V@mB=PHd25RMN?22Sc_3@^3
 !s100 29;3WSLGd9YGEgK_zVPE82
 R7
 31
-R8
+R45
 !i10b 1
 R139
 R140
@@ -816,7 +816,7 @@ R141
 R12
 R13
 Etb_ejecucion_fallos
-Z142 w1433708945
+Z142 w1433796392
 R2
 R3
 R4
@@ -830,9 +830,9 @@ Vj8OAUC3ml3M05GIV8I85_0
 !s100 V^bba]D]LImLGN6fX:f=41
 R7
 31
-Z146 !s110 1433709418
+Z146 !s110 1433796411
 !i10b 1
-Z147 !s108 1433709418.011000
+Z147 !s108 1433796411.125000
 Z148 !s90 -reportprogress|300|-explicit|-93|VHDL/TB_ejecucion_fallos.vhd|
 Z149 !s107 VHDL/TB_ejecucion_fallos.vhd|
 !i113 1
@@ -846,8 +846,8 @@ R143
 Z150 DEx4 work 19 tb_ejecucion_fallos 0 22 j8OAUC3ml3M05GIV8I85_0
 l67
 L28
-VL3JSB6kefZ3AnfYNb0ZNL1
-!s100 g60<M7aG[kYcA65m<fPIi2
+V=AbAZa^2_HPQNIQeH>[n11
+!s100 7`3>`K1mYiLOO2gjdYWWn3
 R7
 31
 R146
@@ -859,7 +859,7 @@ R149
 R12
 R13
 Etb_ejecucion_normal
-Z151 w1433705720
+Z151 w1433795834
 R2
 R3
 R4
@@ -873,9 +873,9 @@ V?VKM03Pa15dTKP7[EO]Q<1
 !s100 k0aYYI82cmA?`flHm`mi@1
 R7
 31
-Z154 !s110 1433705744
+Z154 !s110 1433795859
 !i10b 1
-Z155 !s108 1433705744.514000
+Z155 !s108 1433795859.459000
 Z156 !s90 -reportprogress|300|-explicit|-93|VHDL/TB_ejecucion_normal.vhd|
 Z157 !s107 VHDL/TB_ejecucion_normal.vhd|
 !i113 1
@@ -889,8 +889,8 @@ R143
 DEx4 work 19 tb_ejecucion_normal 0 22 ?VKM03Pa15dTKP7[EO]Q<1
 l58
 L28
-VeFm3PYVCOFzc7=adLnmhJ0
-!s100 1UMGTPNN9L?Z;0AoHQ`dL1
+V8fAH>1il8HmVZ4JgmB^:01
+!s100 jI2g4XLnUz^h33Y@;E6eK0
 R7
 31
 R154
@@ -960,7 +960,7 @@ R7
 31
 R132
 !i10b 1
-Z166 !s108 1433709412.220000
+Z166 !s108 1433796405.271000
 R87
 R88
 !i113 1

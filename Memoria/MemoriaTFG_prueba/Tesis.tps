@@ -14,11 +14,11 @@ NormalPos.top=26
 NormalPos.right=1339
 NormalPos.bottom=380
 Class=LaTeXView
-Document=TeXiS\TeXiS_acron.tex
+Document=Apendices\03ApendiceC.tex
 
 [Frame0_View0,0]
-TopLine=56
-Cursor=2367
+TopLine=61
+Cursor=2004
 
 [SessionInfo]
 FrameCount=1
