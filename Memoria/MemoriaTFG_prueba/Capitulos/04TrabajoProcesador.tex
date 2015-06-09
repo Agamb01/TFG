@@ -55,13 +55,14 @@ El microprocesador es una implementación modificada de la arquitectura DLX para 
 
 El procesador se compone de los siguientes elementos (figura \ref{fig:MiProcesador}):
 
-\begin{figure}[h]
+\begin{figure}[ht]
 	\centering
 		\includegraphics[width=0.50\textwidth]{Imagenes/Mi_procesador/MiProcesador.eps}
 	\caption{Estructura del procesador diseñado}
 	\label{fig:MiProcesador}
 \end{figure}
 
+\newpage
 
 \begin{itemize}
 
@@ -216,18 +217,20 @@ El diseño del procesador hereda el sistema de memoria de la arquitectura Harvard
 %-----------------------------------------------------------
 \label{trabajoprocesador:implementacion}
 
+\begin{figure}[h]
+	\centering
+		\includegraphics[width=\textwidth]{Imagenes/Mi_procesador/P_ControlPath.eps}
+	\caption{Diseño completo del procesador segmentado.}
+	\label{fig:P_ControlPath}
+\end{figure}
+
 La implementación del proyecto se ha realizado utilizando la herramienta "`ISE Design Suite"' de Xilinx y el lenguaje de diseño hardware "`VHDL"'. 
 
 En la figura \ref{fig:P_ControlPath} se muestra el diseño completo del microprocesador segmentado. En color negro se muestra la ruta de datos y los componentes. En color azul se destaca la ruta de control y el módulo de control principal. Y en color rojo aparecen los registros de control. 
 
 En esta sección se describen los componentes principales del procesador descritos en la figura \ref{fig:MiProcesador}.
 
-\begin{figure}[ht]
-	\centering
-		\includegraphics[width=\textwidth]{Imagenes/Mi_procesador/P_ControlPath.eps}
-	\caption{Diseño completo del procesador segmentado.}
-	\label{fig:P_ControlPath}
-\end{figure}
+
 
 %-----------------------------------------------------------
 \subsection{Banco de registros}
@@ -378,24 +381,24 @@ La instrucción es la una única entrada para este módulo, sin embargo, las señale
 
 Los registros de control (figura \ref{fig:ImplementacionRegistrosControl}) son todos aquellos que almacenan la información entre las etapas, se muestran como líneas rojas en la figura \ref{fig:P_ControlPath}.
 
+\begin{figure}[h]
+	\centering
+		\includegraphics[width=0.45\textwidth]{Imagenes/Mi_procesador/Componentes/RegistrosControl.eps}
+	\caption{Registros de control}
+	\label{fig:ImplementacionRegistrosControl}
+\end{figure}
+
 Esta colección de registros son fundamentales para que exista la segmentación. Separan las etapas de forma que los cambios en una de ellas no se propaguen y no interfieran con las demás etapas.
 
 Para que esto no suceda se inserta una serie de registros entre, por ejemplo, los componentes de las etapas de decodificación y ejecución. Éstos registros se actualizan al final de cada ciclo de reloj, conservando los datos de forma estable para que se puedan utilizar correctamente en la siguiente etapa. Así se permite que ambas etapas trabajen de forma independientemente.
 
-
-\begin{figure}[ht]
-	\centering
-		\includegraphics[width=0.60\textwidth]{Imagenes/Mi_procesador/Componentes/RegistrosControl.eps}
-	\caption{Registros de control}
-	\label{fig:ImplementacionRegistrosControl}
-\end{figure}
 
 %-----------------------------------------------------------
 \subsection{Memoria de instrucciones}
 %-----------------------------------------------------------
 \label{trabajoprocesador:implementacion:meminst}
 
-La memoria de instrucciones es una memoria de solo lectura (\ac{ROM}) Este tipo de memorias, como su nombre indica, solo permite la lectura de sus datos, y no permite que se modifiquen. Este módulo permite que se consulte el valor de la dirección en un único ciclo de reloj.
+La memoria de instrucciones es una memoria de solo lectura (ROM) Este tipo de memorias, como su nombre indica, solo permite la lectura de sus datos, y no permite que se modifiquen. Este módulo permite que se consulte el valor de la dirección en un único ciclo de reloj.
 
 \begin{figure}[ht]
 	\centering
@@ -428,14 +431,14 @@ Las señales externas de esta memoria son (figura \ref{fig:ImplementacionMemoriaI
 
 El módulo de la memoria de datos es el encargado de almacenar aquellos datos que no son inmediatamente necesarios para ejecutar las instrucciones. Son de un mayor tamaño que el banco de registros y, por lo general, más lentos a la hora de transmitir la información.
 
-Este módulo se ha implementado como un banco de registros de mayor tamaño que el módulo con el mismo nombre. Su acceso se completa en un mismo ciclo de reloj. 
-
-\begin{figure}[ht]
+\begin{figure}[h]
 	\centering
 		\includegraphics[width=0.60\textwidth]{Imagenes/Mi_procesador/Componentes/MemoriaDatos.eps}
 	\caption{Memoria de datos.}
 	\label{fig:ImplementacionMemoriaDatos}
 \end{figure}
+
+Este módulo se ha implementado como un banco de registros de mayor tamaño que el módulo con el mismo nombre. Su acceso se completa en un mismo ciclo de reloj. 
 
 Las señales externas de esta memoria son (figura \ref{fig:ImplementacionMemoriaDatos}):
 
@@ -587,23 +590,28 @@ Las operaciones implementadas junto con su respectiva codificación se muestran e
 
 \begin{table}[ht]
   \begin{center}
-	  \begin{tabular}{|l|c|l|}
-	    \hline
-			Operación & Código & Restricciones \\ \hline
-			ADD & 1 0 0 0 & \\ 
-			AND & 0 0 0 0 & \\ 
-			CMP & 1 1 0 1 & (Rd=="`1111"',S==1) \\ 
-			EOR & 0 1 0 0 & \\ 
-			MOV & 0 0 1 0 & (Rn=="`1111"') \\
-			ORR & 0 0 1 0 & \\ 
-			SUB & 1 1 0 1 & \\ 
-			\hline
-		\end{tabular}
+	  \resizebox{.5\textwidth}{!}{
+			\begin{tabular}{|l|c|l|}
+				\hline
+				Operación & Código & Restricciones \\ \hline
+				ADD & 1 0 0 0 & \\ 
+				AND & 0 0 0 0 & \\ 
+				CMP & 1 1 0 1 & (Rd=="`1111"',S==1) \\ 
+				EOR & 0 1 0 0 & \\ 
+				MOV & 0 0 1 0 & (Rn=="`1111"') \\
+				ORR & 0 0 1 0 & \\ 
+				SUB & 1 1 0 1 & \\ 
+				\hline
+			\end{tabular}
+		}
   \end{center}
 	\caption{Operaciones con dos registros}
 	\label{tab:OperacionesRegistros}
 \end{table}
 
+
+
+\newpage
 
 %-----------------------------------------------------------
 \subsubsection{Operaciones con un registro y un inmediato}

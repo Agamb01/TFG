@@ -11,11 +11,11 @@
 \contentsline {figure}{\numberline {2.4}{\ignorespaces Procesador Qualcomm Snapdragon 810\relax }}{12}{figure.caption.12}
 \contentsline {figure}{\numberline {2.5}{\ignorespaces Segmentaci\'on ARM\relax }}{15}{figure.caption.13}
 \contentsline {figure}{\numberline {2.6}{\ignorespaces Arquitectura de una FPGA \cite {Brown1996}.\relax }}{16}{figure.caption.14}
-\contentsline {figure}{\numberline {2.7}{\ignorespaces Distribuci\'on del uso de FPGAs en el a\~no 2008.\relax }}{17}{figure.caption.15}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Distribuci\'on del uso de FPGAs en el a\~no 2008.\relax }}{16}{figure.caption.15}
 \contentsline {figure}{\numberline {2.8}{\ignorespaces Placa de prototipado Nexys 4\relax }}{17}{figure.caption.16}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Single Event Upset en una FPGA \cite {Hu2010}.\relax }}{20}{figure.caption.17}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Flujo de neutrones a 40.000 pies de altitud \cite {Hu2010}.\relax }}{21}{figure.caption.18}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Flujo de neutrones a 40.000 pies de altitud \cite {Hu2010}.\relax }}{20}{figure.caption.18}
 \contentsline {figure}{\numberline {3.3}{\ignorespaces Fallos Transitorios\relax }}{22}{figure.caption.19}
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Single-Event Upset (SEU)}}}{22}{subfigure.3.1}
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Single-Event Transient (SET)}}}{22}{subfigure.3.2}
@@ -28,14 +28,14 @@
 \contentsline {figure}{\numberline {3.8}{\ignorespaces Tolerancia din\'amica parcial \cite {States2011}.\relax }}{27}{figure.caption.24}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {4.1}{\ignorespaces Estructura del procesador dise\~nado\relax }}{32}{figure.caption.25}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Dise\~no completo del procesador segmentado.\relax }}{36}{figure.caption.26}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Dise\~no completo del procesador segmentado.\relax }}{35}{figure.caption.26}
 \contentsline {figure}{\numberline {4.3}{\ignorespaces Banco de registros.\relax }}{36}{figure.caption.27}
 \contentsline {figure}{\numberline {4.4}{\ignorespaces Contador de programa.\relax }}{37}{figure.caption.28}
 \contentsline {figure}{\numberline {4.5}{\ignorespaces Unidad aritm\'etico-l\'ogica.\relax }}{37}{figure.caption.29}
 \contentsline {figure}{\numberline {4.6}{\ignorespaces Control principal.\relax }}{38}{figure.caption.30}
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Registros de control\relax }}{40}{figure.caption.31}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Registros de control\relax }}{39}{figure.caption.31}
 \contentsline {figure}{\numberline {4.8}{\ignorespaces Memoria de Instrucciones.\relax }}{40}{figure.caption.32}
-\contentsline {figure}{\numberline {4.9}{\ignorespaces Memoria de datos.\relax }}{41}{figure.caption.33}
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Memoria de datos.\relax }}{40}{figure.caption.33}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {5.1}{\ignorespaces Sustituci\'on de biestable.\relax }}{48}{figure.caption.44}
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Biestable original.}}}{48}{subfigure.1.1}
@@ -48,6 +48,7 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {6.1}{\ignorespaces C\'odigo Thumb-2 de programa de pruebas.\relax }}{54}{figure.caption.49}
 \contentsline {figure}{\numberline {6.2}{\ignorespaces Pseudo-c\'odigo de programa de pruebas.\relax }}{55}{figure.caption.50}
+\addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

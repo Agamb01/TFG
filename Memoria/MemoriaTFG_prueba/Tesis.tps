@@ -14,11 +14,11 @@ NormalPos.top=26
 NormalPos.right=1339
 NormalPos.bottom=380
 Class=LaTeXView
-Document=Apendices\03ApendiceC.tex
+Document=config.tex
 
 [Frame0_View0,0]
-TopLine=61
-Cursor=2004
+TopLine=46
+Cursor=2950
 
 [SessionInfo]
 FrameCount=1

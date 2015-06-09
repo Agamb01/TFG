@@ -21,13 +21,13 @@
 \contentsline {subsection}{\numberline {2.2.3}Segmentaci\'on ARM}{14}{subsection.2.2.3}
 \contentsline {subsection}{\numberline {2.2.4}Memoria ARM}{15}{subsection.2.2.4}
 \contentsline {section}{\numberline {2.3}Field-Programmable Gate Arrays (FPGA)}{15}{section.2.3}
-\contentsline {subsection}{\numberline {2.3.1}Nexys 4}{16}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.1}Nexys 4}{17}{subsection.2.3.1}
 \contentsline {chapter}{\numberline {3}Instroducci\'on a los fallos y su tolerancia}{19}{chapter.3}
 \contentsline {section}{\numberline {3.1}Introducci\'on a los fallos}{19}{section.3.1}
 \contentsline {subsection}{\numberline {3.1.1}Causas}{19}{subsection.3.1.1}
-\contentsline {subsection}{\numberline {3.1.2}Tipos de fallos}{20}{subsection.3.1.2}
-\contentsline {subsubsection}{\numberline {3.1.2.1}Fallos Transitorios}{20}{subsubsection.3.1.2.1}
-\contentsline {subsubsection}{\numberline {3.1.2.2}Fallos Permanentes}{21}{subsubsection.3.1.2.2}
+\contentsline {subsection}{\numberline {3.1.2}Tipos de fallos}{21}{subsection.3.1.2}
+\contentsline {subsubsection}{\numberline {3.1.2.1}Fallos Transitorios}{21}{subsubsection.3.1.2.1}
+\contentsline {subsubsection}{\numberline {3.1.2.2}Fallos Permanentes}{22}{subsubsection.3.1.2.2}
 \contentsline {section}{\numberline {3.2}Tolerancia a Fallos}{23}{section.3.2}
 \contentsline {subsection}{\numberline {3.2.1}Redundancia en la informaci\'on}{24}{subsection.3.2.1}
 \contentsline {subsection}{\numberline {3.2.2}Redundancia en el tiempo}{25}{subsection.3.2.2}
@@ -46,18 +46,18 @@
 \contentsline {subsection}{\numberline {4.2.3}Segmentaci\'on}{34}{subsection.4.2.3}
 \contentsline {subsection}{\numberline {4.2.4}Memoria}{35}{subsection.4.2.4}
 \contentsline {section}{\numberline {4.3}Implementaci\'on}{35}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1}Banco de registros}{35}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.1}Banco de registros}{36}{subsection.4.3.1}
 \contentsline {subsection}{\numberline {4.3.2}Contador de programa}{37}{subsection.4.3.2}
 \contentsline {subsection}{\numberline {4.3.3}Unidad Aritm\'etico-L\'ogica (ALU)}{37}{subsection.4.3.3}
 \contentsline {subsection}{\numberline {4.3.4}Control principal}{38}{subsection.4.3.4}
 \contentsline {subsection}{\numberline {4.3.5}Registros de control}{39}{subsection.4.3.5}
-\contentsline {subsection}{\numberline {4.3.6}Memoria de instrucciones}{39}{subsection.4.3.6}
+\contentsline {subsection}{\numberline {4.3.6}Memoria de instrucciones}{40}{subsection.4.3.6}
 \contentsline {subsection}{\numberline {4.3.7}Memoria de datos}{40}{subsection.4.3.7}
 \contentsline {section}{\numberline {4.4}Formato de instrucciones}{41}{section.4.4}
 \contentsline {subsection}{\numberline {4.4.1}Accesos a Memoria}{41}{subsection.4.4.1}
 \contentsline {subsection}{\numberline {4.4.2}Procesamiento de datos}{42}{subsection.4.4.2}
 \contentsline {subsubsection}{\numberline {4.4.2.1}Operaciones con dos registros}{42}{subsubsection.4.4.2.1}
-\contentsline {subsubsection}{\numberline {4.4.2.2}Operaciones con un registro y un inmediato}{43}{subsubsection.4.4.2.2}
+\contentsline {subsubsection}{\numberline {4.4.2.2}Operaciones con un registro y un inmediato}{44}{subsubsection.4.4.2.2}
 \contentsline {subsection}{\numberline {4.4.3}Operaciones de control}{45}{subsection.4.4.3}
 \contentsline {chapter}{\numberline {5}Aplicando tolerancia a fallos}{47}{chapter.5}
 \contentsline {section}{\numberline {5.1}Introducci\'on}{47}{section.5.1}
@@ -71,16 +71,16 @@
 \contentsline {section}{\numberline {6.3}Fallos introducidos}{54}{section.6.3}
 \contentsline {section}{\numberline {6.4}Procesador est\'andar}{55}{section.6.4}
 \contentsline {subsection}{\numberline {6.4.1}Recursos}{55}{subsection.6.4.1}
-\contentsline {subsubsection}{\numberline {6.4.1.1}Map report}{55}{subsubsection.6.4.1.1}
-\contentsline {subsubsection}{\numberline {6.4.1.2}Timing report}{56}{subsubsection.6.4.1.2}
+\contentsline {subsubsection}{\numberline {6.4.1.1}Map report}{56}{subsubsection.6.4.1.1}
+\contentsline {subsubsection}{\numberline {6.4.1.2}Timing report}{57}{subsubsection.6.4.1.2}
 \contentsline {subsection}{\numberline {6.4.2}Ejecuci\'on de control}{57}{subsection.6.4.2}
 \contentsline {subsection}{\numberline {6.4.3}Inserci\'on de fallos}{57}{subsection.6.4.3}
 \contentsline {section}{\numberline {6.5}Procesador tolerante a fallos}{58}{section.6.5}
 \contentsline {subsection}{\numberline {6.5.1}Recursos}{58}{subsection.6.5.1}
-\contentsline {subsubsection}{\numberline {6.5.1.1}Map report}{58}{subsubsection.6.5.1.1}
-\contentsline {subsubsection}{\numberline {6.5.1.2}Timing report}{59}{subsubsection.6.5.1.2}
-\contentsline {subsection}{\numberline {6.5.2}Ejecuci\'on de control}{59}{subsection.6.5.2}
-\contentsline {subsection}{\numberline {6.5.3}Inserci\'on de fallos}{59}{subsection.6.5.3}
+\contentsline {subsubsection}{\numberline {6.5.1.1}Map report}{59}{subsubsection.6.5.1.1}
+\contentsline {subsubsection}{\numberline {6.5.1.2}Timing report}{60}{subsubsection.6.5.1.2}
+\contentsline {subsection}{\numberline {6.5.2}Ejecuci\'on de control}{60}{subsection.6.5.2}
+\contentsline {subsection}{\numberline {6.5.3}Inserci\'on de fallos}{60}{subsection.6.5.3}
 \contentsline {chapter}{\numberline {7}An\'alisis de los resultados}{61}{chapter.7}
 \contentsline {section}{\numberline {7.1}Introducci\'on}{61}{section.7.1}
 \contentsline {section}{\numberline {7.2}Comparativa de procesadores}{61}{section.7.2}
@@ -94,14 +94,16 @@
 \contentsline {chapter}{\numberline {8}Conclusiones y futuras l\IeC {\'\i }neas de trabajo}{67}{chapter.8}
 \contentsline {section}{\numberline {8.1}Conclusiones}{67}{section.8.1}
 \contentsline {section}{\numberline {8.2}Futuras l\IeC {\'\i }neas de trabajo}{68}{section.8.2}
-\contentsline {chapter}{\numberline {A}C\'odigo de simulaci\'on sin fallos}{69}{appendix.Alph1}
-\contentsline {section}{\numberline {A.1}Testbench para ejecuci\'on de control}{69}{section.Alph1.1}
-\contentsline {chapter}{\numberline {B}C\'odigo de simulaci\'on con fallos}{75}{appendix.Alph2}
-\contentsline {section}{\numberline {B.1}Testbench para ejecuci\'on con inserci\'on de fallos en CPU est\'andar}{75}{section.Alph2.1}
-\contentsline {section}{\numberline {B.2}Testbench para ejecuci\'on con inserci\'on de fallos en CPU tolerante a fallos}{82}{section.Alph2.2}
-\contentsline {chapter}{\numberline {C}Simulaciones}{89}{appendix.Alph3}
-\contentsline {section}{\numberline {C.1}Procesador est\'andar sin fallos}{90}{section.Alph3.1}
-\contentsline {section}{\numberline {C.2}Procesador est\'andar con fallos}{91}{section.Alph3.2}
-\contentsline {section}{\numberline {C.3}Procesador tolerante a fallos sin fallos}{92}{section.Alph3.3}
-\contentsline {section}{\numberline {C.4}Procesador tolerante a fallos con fallos}{93}{section.Alph3.4}
-\contentsline {chapter}{Bibliograf\IeC {\'\i }a}{95}{appendix*.59}
+\contentsline {chapter}{\numberline {9}Conclusions}{69}{chapter.9}
+\contentsline {section}{\numberline {9.1}Conclusions}{69}{section.9.1}
+\contentsline {chapter}{\numberline {A}C\'odigo de simulaci\'on sin fallos}{71}{appendix.Alph1}
+\contentsline {section}{\numberline {A.1}Testbench para ejecuci\'on de control}{72}{section.Alph1.1}
+\contentsline {chapter}{\numberline {B}C\'odigo de simulaci\'on con fallos}{79}{appendix.Alph2}
+\contentsline {section}{\numberline {B.1}Testbench para ejecuci\'on con inserci\'on de fallos en CPU est\'andar}{80}{section.Alph2.1}
+\contentsline {section}{\numberline {B.2}Testbench para ejecuci\'on con inserci\'on de fallos en CPU tolerante a fallos}{87}{section.Alph2.2}
+\contentsline {chapter}{\numberline {C}Simulaciones}{95}{appendix.Alph3}
+\contentsline {section}{\numberline {C.1}Procesador est\'andar sin fallos}{96}{section.Alph3.1}
+\contentsline {section}{\numberline {C.2}Procesador est\'andar con fallos}{97}{section.Alph3.2}
+\contentsline {section}{\numberline {C.3}Procesador tolerante a fallos sin fallos}{98}{section.Alph3.3}
+\contentsline {section}{\numberline {C.4}Procesador tolerante a fallos con fallos}{99}{section.Alph3.4}
+\contentsline {chapter}{Bibliograf\IeC {\'\i }a}{101}{appendix*.59}

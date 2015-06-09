@@ -129,6 +129,7 @@ En esta sección se exponen los recursos utilizados por el procesador estándar, s
 
 Los informes de las herramientas de síntesis e implementación de Xilinx nos proporcionan una serie de informes entre los que se encuentran los recursos consumidos por el diseño, el mapeado realizado sobre la FPGA y las limitaciones de tiempos. A continuación se presentan los datos más relevantes:
 
+\newpage
 
 \subsubsection{Map report}
   \lstset{breaklines=true, basicstyle=\footnotesize}
@@ -166,6 +167,8 @@ Slice Logic Distribution:
       to control set restrictions:               8 out of 126,800    1%
  \end{lstlisting}
 
+\newpage
+
 \subsubsection{Timing report}
   \lstset{breaklines=true, basicstyle=\footnotesize}
    \begin{lstlisting}[frame=single]
@@ -198,6 +201,8 @@ Los cálculos realizados por el procesador han sido monitorizados y comprobados. 
 Realizada la prueba de control, se procede con la segunda prueba, en este caso con la inserción de fallos. Con el objetivo de comprobar si alteran el comportamiento del procesador, se han insertado 3 fallos en los registros de control entre etapas. A continuación se describen los fallos insertados y sus consecuencias. El resultado completo de la simulación se incluye en la sección \ref{apendiceC:proc} del apéndice \ref{apendiceC}.
 
 Además de las señales monitorizadas en la ejecución de control se han analizado las señales en donde se han insertado los fallos, así como los registros y direcciones de memoria donde se espera que provoquen consecuencias haciendo así efectivo un error en la ejecución del programa. 
+
+\newpage
 
 El simulador nos facilita la siguiente información alertando que los datos almacenados en los registros no son los esperados después de ejecutar las instrucciones:
 
@@ -233,6 +238,7 @@ El simulador nos facilita la siguiente información alertando que los datos almac
 #    Time: 860 ns  Iteration: 0  Instance: /tb_ejecucion_fallos 
 \end{lstlisting}
 
+
 %-------------------------------------------------------------------
 \section{Procesador tolerante a fallos}
 %-------------------------------------------------------------------
@@ -247,6 +253,8 @@ Siguiendo el mismo proceso anterior, en esta sección se exponen los recursos uti
 \label{resultados:proctf:recursos}
 
 Los informes de las herramientas de síntesis e implementación de Xilinx nos proporcionan una serie de informes entre los que se encuentran los recursos consumidos por el diseño, el mapeado realizado sobre la FPGA y las limitaciones de tiempos. A continuación se presentan los datos más relevantes:
+
+\newpage
 
 \subsubsection{Map report}
   \lstset{breaklines=true, basicstyle=\footnotesize}
@@ -283,6 +291,8 @@ Slice Logic Distribution:
     Number of slice register sites lost
       to control set restrictions:              42 out of 126,800    1%
 	\end{lstlisting}
+
+\newpage
 
 \subsubsection{Timing report}
   \lstset{breaklines=true, basicstyle=\footnotesize}

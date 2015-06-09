@@ -58,14 +58,15 @@ Las partículas de energía pueden ser:
 
 Los rayos cósmicos y las partículas solares reaccionan con la atmósfera provocando un efecto de lluvia de partículas. La atmósfera actúa a modo de filtro contra estas partículas. Este efecto se distribuye de manera diferente alrededor de la tierra debido a la densidad de la atmósfera, variando la proporción de partículas que llegan a nivel de suelo y las que quedan bloqueadas.
 
-Como ya se adelantó en la introducción, los efectos varían según la latitud, la longitud y la altitud. Figura \ref{fig:errores_vs_altitud2}. Al entrar en contacto con la atmósfera las partículas colisionan contra estas y pierden energía. Cuanto menor sea la densidad, mayor será el número de partículas que llega al nivel del suelo manteniendo su energía, mayor será el numero de partículas que puedan colisionar contra un chip y en consecuencia mayor la probabilidad que se produzca un fallo. Para más información sobre lluvias de partículas véase el trabajo de W.K. Melis\cite{Melis2014}.
-
-\begin{figure}[htbp]
+\begin{figure}[h]
   \centering
   \includegraphics[width=0.75\textwidth]{Imagenes/Estadisticas/Neutrones1.eps}
 	\caption{Flujo de neutrones a 40.000 pies de altitud \cite{Hu2010}.} 
 	\label{fig:errores_vs_altitud2}
 \end{figure}
+
+Como ya se adelantó en la introducción, los efectos varían según la latitud, la longitud y la altitud. Figura \ref{fig:errores_vs_altitud2}. Al entrar en contacto con la atmósfera las partículas colisionan contra estas y pierden energía. Cuanto menor sea la densidad, mayor será el número de partículas que llega al nivel del suelo manteniendo su energía, mayor será el numero de partículas que puedan colisionar contra un chip y en consecuencia mayor la probabilidad que se produzca un fallo. Para más información sobre lluvias de partículas véase el trabajo de W.K. Melis\cite{Melis2014}.
+
 
 
 %-----------------------------------------------------------------
@@ -110,6 +111,8 @@ Los principales tipos de fallos transitorios son \cite{Jedec2006}:
 
 El sistema sufre las consecuencias como un cambio de valor en un bit. Si se produce un fallo de este tipo en una celda de memoria o en un registro de un microprocesador se corromperá el dato almacenado. Si afecta a un biestable en cualquier etapa de la segmentación, puede alterar el comportamiento de la instrucción, siendo más o menos grave según el lugar donde se produzca el fallo.
 
+
+\newpage
 
 %-----------------------------------------------------------------
 \subsubsection{Fallos Permanentes}
@@ -284,6 +287,9 @@ En el apartado \ref{procesador:fpga} de este mismo capitulo se han introducido l
 En la figura \ref{fig:parcial_dinamica} podemos ver un ejemplo de re-configuración, concretamente de re-configuración en un caso de tolerancia dinámica parcial.
 
 Hay dos formas de aplicar la re-configuración a un sistema \cite{carlos2014}:
+
+\newpage
+
 \begin{itemize}
 
 	\item \textbf{Re-configuración estática}
