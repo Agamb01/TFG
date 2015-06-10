@@ -108,6 +108,9 @@ constantes,guionado,Cascaras/bibliografia,config%
 % Importar otros paquetes
 %
 \usepackage{pdfpages}
+
+\renewcommand{\lstlistingname}{Report}% Listing -> Algorithm
+
 \usepackage{listings}
 \lstdefinelanguage{THUMB2}%
   {morekeywords=[1]{.text,.globl,.align},%
@@ -122,7 +125,6 @@ constantes,guionado,Cascaras/bibliografia,config%
    moredirectives={define,elif,else,endif,error,if,ifdef,ifndef,line,%
       include,pragma,undef,warning}%
   }[keywords,comments,directives]
-
 
 
 %- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -

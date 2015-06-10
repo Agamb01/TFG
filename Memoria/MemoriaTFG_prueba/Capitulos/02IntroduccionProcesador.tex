@@ -4,7 +4,7 @@
 %
 %---------------------------------------------------------------------
 
-\chapter{Introducción al procesador}
+\chapter{Arquitectura de un procesador}
 \label{procesador}
 
 %\begin{FraseCelebre}
@@ -40,7 +40,8 @@ La CPU es el circuito integrado encargado de acceder a las instrucciones de los 
   \item Acceder a las instrucciones almacenadas en memoria.
   \item Analizar las instrucciones y establecer las señales de control internas.
   \item Ejecutar operaciones sobre datos.
-  \item Almacenar los resultados en memoria.
+  \item Realizar accesos a memoria.
+  \item Almacenar los resultados en el banco de registros.
 \end{enumerate}
 
 A continuación se definen los elementos fundamentales para constituir un procesador.
@@ -52,7 +53,7 @@ A continuación se definen los elementos fundamentales para constituir un procesa
 
 Un procesador está formado por una serie de módulos conectados entre sí, siendo la arquitectura del mismo la que define el diseño de los módulos que lo componen y de qué manera se conectan entre ellos.
 
-La arquitectura del procesador diseñada por Von Neumann separa los componentes del procesador en módulos básicos. La CPU es el verdadero núcleo de los computadores, donde se realizan las funciones de computación y control. En la CPU se concentran todos los componentes, la memoria y los elementos de entrada/salida \cite{Hennessy1993}. % Arquitectura de Computadores: Un enfoque cuantitativo
+La arquitectura del procesador diseñada por Von Neumann separa los componentes del procesador en módulos básicos. La CPU es el verdadero núcleo de los computadores, donde se realizan las funciones de computación y control. En la CPU se concentran todos los componentes necesarios para realizar operaciones aritméticas y lógicas. % Arquitectura de Computadores: Un enfoque cuantitativo
 
 Según el juego de instrucciones que sea capaz de ejecutar un procesador, su arquitectura puede clasificarse como:
 
@@ -68,7 +69,6 @@ Según el juego de instrucciones que sea capaz de ejecutar un procesador, su arqu
 \label{procesador:instrucciones}
 
 El repertorio de instrucciones define todas las operaciones que el procesador es capaz de entender y ejecutar. Este juego de instrucciones incluye las operaciones aritmético-lógicas que pueden aplicarse a los datos, las operaciones de control sobre el flujo del programa, las instrucciones de lectura y escritura en memoria, así como todas las instrucciones propias que se hayan diseñado para el procesador.
-
 
 %-----------------------------------------------------------------
 \subsection{Memoria}
@@ -134,12 +134,12 @@ A modo de ejemplo, veamos que sucede al ejecutar un programa de 3 instrucciones 
 
 \begin{figure}[htpb]
 	\centering
-		\includegraphics[width=0.60\textwidth]{Imagenes/Procesador/SecuencialVSSegmentado.eps}
+		\includegraphics[width=\textwidth]{Imagenes/Procesador/SecuencialVSSegmentado.eps}
 	\caption{Ejecución secuencial comparada con ejecución segmentada}
 	\label{fig:SecuencialVSSegmentada}
 \end{figure}
 
-Como podemos ver en la figura \ref{fig:SecuencialVSSegmentada}, el procesador no segmentado tarda 15 ciclos en ejecutar las 3 instrucciones y aplicando la formula anterior se obtiene que el valor de CPI es 5. Al ejecutar el mismo programa en el procesador segmentado, este tarda 5 ciclos en ocupar las 5 etapas del procesador. A partir de ese momento con cada ciclo de reloj se completa una instrucción, completándose la ejecución del programa en 7 ciclos de reloj. El nuevo valor de CPI es de 2,33. Así pues, la segmentación ha reducido el número de ciclos por instrucción de este programa a menos de la mitad.
+Como podemos ver en la figura \ref{fig:SecuencialVSSegmentada}, el procesador no segmentado tarda 15 ciclos en ejecutar las 3 instrucciones y aplicando la formula anterior se obtiene que el valor de CPI es 5. Al ejecutar el mismo programa en el procesador segmentado, este tarda 5 ciclos en ocupar las 5 etapas del procesador. A partir de ese momento con cada ciclo de reloj se completa una instrucción, completándose la ejecución del programa en 7 ciclos de reloj. El nuevo valor de CPI para la ejecución de estas tres instrucciones es de 2,33. Así pues, la segmentación ha reducido el número de ciclos por instrucción de este programa a menos de la mitad.
 
 %-----------------------------------------------------------------
 \subsubsection{Inconvenientes de la segmentación}
@@ -160,7 +160,7 @@ Un programa es un conjunto de instrucciones que ejecutadas en orden realizan una
 			
 			\item \textsl{Escritura después de escritura (WAW)}. Ocurre cuando las escrituras se realizan en orden incorrecto. Por ejemplo, cuando en un mismo registro, la \textit{instrucción i+1} escribe su resultado antes de que lo haga la \textit{instrucción i}.
 			
-			\item \textsl{Lectura después de lectura (RAR)}. Realmente no es un riesgo como tal, ya que no se modifica ningún dato.
+			\item \textsl{Lectura después de lectura (RAR)}. \textbf{No} es un riesgo ya que no se modifican datos.
 	  \end{itemize}
 		
 	\item \textit{Riesgos de control}. Surgen a consecuencia de las instrucciones que afectan al registro del contador de programa (PC). 
@@ -168,7 +168,7 @@ Un programa es un conjunto de instrucciones que ejecutadas en orden realizan una
 
 
 %-----------------------------------------------------------------
-\section{ARM}
+\section{Procesador ARM}
 %-----------------------------------------------------------------
 \label{procesador:arm}
 
@@ -185,7 +185,7 @@ Lo que hace que esta arquitectura sea tan popular es la simpleza de sus núcleos,
 	\label{fig:snapdragon-processors-810}
 \end{figure}
 
-Además de requerir poco espacio, los dispositivos ARM están diseñados con el objetivo de minimizar el consumo de energía, haciéndolo apropiado para sistemas móviles empotrados\footnote{Sistema de computación diseñado para realizar una o pocas funciones dedicadas.} que dependen de una batería. 
+Además de requerir poco espacio, los diseños de la arquitectura ARM consiguen minimizar el consumo de energía, haciéndolo apropiado para sistemas móviles empotrados\footnote{Sistema de computación diseñado para realizar una o pocas funciones dedicadas.} que dependen de una batería. 
 
 Por último, la arquitectura ARM es altamente modular, es decir, sus componentes como pueden ser la memoria caché o los controladores, se construyen como módulos independientes y opcionales..
 
@@ -216,7 +216,7 @@ La arquitectura ARM añade algunas características adicionales para proporcionar 
 	\item Instrucciones de carga y almacenamiento múltiple.
 \end{itemize}
 
-La arquitectura ARM contiene un banco de registros con 31 registros de propósito general. De estos sólo son visibles 16, a los cuales puede acceder cualquier instrucción. Los otros registros se utilizan para acelerar el procesado. Tres de los 31 registros tienen un uso especial y son el "`puntero de pila (SP)"', el "`registro de enlace (LR)"' y el "`contador de programa (PC)"'.
+La arquitectura ARM contiene un banco de registros con 31 registros de propósito general entre otros de uso específico como son los registros de coma flotante. De estos registros de uso general sólo son visibles 16, a los cuales puede acceder cualquier instrucción. Los otros registros se utilizan para acelerar el procesado. Tres de los 31 registros tienen un uso especial y son el "`puntero de pila (SP)"', el "`registro de enlace (LR)"' y el "`contador de programa (PC)"'.
 
 %-----------------------------------------------------------------
 \subsection{Repertorio de instrucciones ARM}
@@ -233,7 +233,7 @@ El repertorio de instrucciones se divide en seis categorías:
 	
   Otra instrucción de salto permite almacenar el valor del contador de programa en un registro para poder volver al mismo punto al finalizar el desvío. Esto es útil cuando se quiere llamar a una subrutina.
 	
-	También es posible lanzar instrucciones de salto que realizan un cambio de juego de instrucciones, en caso de necesitar lanzar subrutinas en alguno de los otros juegos de instrucciones compatibles con la arquitectura, tal es el caso de Thumb o Jazelle.
+	También es posible lanzar instrucciones de salto que realizan un cambio de juego de instrucciones, en caso de necesitar lanzar subrutinas en alguno de los otros juegos de instrucciones compatibles con la arquitectura, tal es el caso de Thumb\footnote{Conjunto de instrucciones de 16 bits utilizado para reducir el tamaño del código.} o Jazelle\footnote{Repertorio de instrucciones de tipo "`bytecode Java"'.}.
 	
   \item \textbf{Procesamiento de datos}
 	
@@ -267,7 +267,7 @@ El repertorio de instrucciones se divide en seis categorías:
 	
 \end{itemize}
 
-Los procesadores ARM son capaces de procesar instrucciones de tres repertorios diferentes. El repertorio ARM \cite{ARM-InstructionSet}, el set Thumb/ Thumb-2 \cite{R.B.J.BrinkgreveW.M.Swolfs2011} y las instrucciones Jazelle \cite{ARM-InstructionSet}.
+Los procesadores ARM son capaces de procesar instrucciones de tres repertorios diferentes. El repertorio ARM \cite{ARM-InstructionSet}, el set Thumb/Thumb-2\footnote{Extensión de Thumb con instrucciones de 32 bits.} \cite{R.B.J.BrinkgreveW.M.Swolfs2011} y las instrucciones Jazelle \cite{ARM-InstructionSet}.
 
 %-----------------------------------------------------------------
 \subsection{Segmentación ARM}
@@ -277,6 +277,13 @@ Los procesadores ARM son capaces de procesar instrucciones de tres repertorios d
 La evolución de los ARM ha significado un aumento en la cantidad de etapas en las que se divide el procesador. La familia "`ARM7TDMI"' consta de 3 etapas, mientras que la familia "`ARM9TDMI"' se divide en 5 etapas, y la familia "`Cortex"' se compone de 13 etapas.
 
 La arquitectura del "`ARM7TDMI"', como se ha comentado, está segmentada en 3 etapas para aumentar la velocidad de flujo de entrada de las instrucciones en el procesador. Permite realizar varias operaciones al mismo tiempo y operar de forma continua. \cite{Limited2000}
+
+\begin{figure}[h]
+	\centering
+		\includegraphics[width=0.80\textwidth]{Imagenes/ARM/ARM-Pipeline.eps}
+	\caption{Segmentación ARM}
+	\label{fig:ARM-Pipeline}
+\end{figure}
 
 Las tres etapas en las que se divide la segmentación del "`ARM7TDMI"' son: (Figura \ref{fig:ARM-Pipeline})
 
@@ -294,13 +301,6 @@ Las tres etapas en las que se divide la segmentación del "`ARM7TDMI"' son: (Figu
   Los valores de los registros se extraen del banco de registros, se realizan las operaciones, y se almacenan los resultados en el banco de registros.
 
 \end{enumerate}
-
-\begin{figure}
-	\centering
-		\includegraphics[width=0.80\textwidth]{Imagenes/ARM/ARM-Pipeline.eps}
-	\caption{Segmentación ARM}
-	\label{fig:ARM-Pipeline}
-\end{figure}
 
 Mientras se ejecuta una instrucción, la siguiente es decodificada y una tercera es traída de memoria. 
 
@@ -320,35 +320,29 @@ El único tipo de instrucciones con acceso a memoria son las instrucciones de car
 
 Las FPGAs, del inglés Field-Programmable Gate Arrays, consisten en bloques lógicos con conexiones programables para realizar diferentes diseños \cite{Rose}. Figura \ref{fig:ArquitecturaFPGA}.
 
-Los bloques pueden ser tan simples como un transistor o tan complejos como un microprocesador. Las FPGAs comerciales suelen tener bloques basados en:
-
-\begin{itemize}
-
-	\item Parejas de transistores.
-	
-	\item Puertas lógicas simples.
-	
-	\item Multiplexores.
-	
-	\item Look-up tables (LUT).
-	
-	\item Estructuras de puertas AND-OR.
-	
-\end{itemize}
-
-\begin{figure}
+\begin{figure}[h]
 	\centering
 		\includegraphics[width=0.75\textwidth]{Imagenes/FPGA/ArquitecturaFPGA.eps}
 	\caption{Arquitectura de una FPGA \cite{Brown1996}.}
 	\label{fig:ArquitecturaFPGA}
 \end{figure}
 
-Debido a su naturaleza re-configurable, las FPGAs conllevan un mayor coste en área, retardos y consumo de energía: requieren un área 20 veces mayor, consume 10 veces más energía y trabaja 3 veces más lenta \cite {Kuon2007}. Estas desventajas son minimizadas por la ventaja de permitir que el sistema funcione de forma casi inmediata.
+Los bloques pueden ser tan simples como un transistor o tan complejos como un microprocesador. Las FPGAs comerciales suelen tener bloques basados en:
 
-\begin{figure}[h]
+\begin{itemize}
+	\item Parejas de transistores.	
+	\item Puertas lógicas simples.
+	\item Multiplexores.
+	\item Look-up tables (LUT).
+	\item Estructuras de puertas AND-OR.
+\end{itemize}
+
+Debido a su naturaleza re-configurable, las FPGAs conllevan un mayor coste en área, retardos y consumo de energía: requieren un área 20 veces mayor, consume 10 veces más energía y trabaja 3 veces más lenta \cite {Kuon2007}. 
+
+\begin{figure}
 	\centering
 		\includegraphics[width=0.65\textwidth]{Imagenes/FPGA/UsoFPGA.png}
-	\caption{Distribución del uso de FPGAs en el año 2008.}
+	\caption{"`Distribución de las aplicaciones de las FPGAs en el año 2008."' \cite{Tecnologias}}
 	\label{fig:UsoFPGA}
 \end{figure}
 
@@ -357,22 +351,20 @@ Las ventajas de este tipo de dispositivos residen en su gran versatilidad, flexi
 Es por ello que las FPGAs se utilizan en todo tipo de sectores desde el procesamiento de datos y las comunicaciones hasta el sector de la automoción, el sector militar y el sector aeroespacial. Ha sido el sector de comunicaciones, como vemos en la figura \ref{fig:UsoFPGA}, el que más uso hacía de esta tecnología en 2008.
 
 %%-----------------------------------------------------------------
-\subsection{Nexys 4}
+\subsection{Placa de desarrollo}
 %%-----------------------------------------------------------------
 \label{procesador:fpga:nexys}
 
 Para el desarrollo de este proyecto se ha utilizado la placa de prototipado "`Nexys 4"' \cite{Flash2013}, figura \ref{fig:Nexys4-top-2000}. Ésta placa se basa en la FPGA Artix-7 de Xilinx, proporcionando a la misma acceso a memorias externas, puertos de entrada/salida (USB, ethernet, etc), y una serie de sensores y periféricos integrados (acelerómetro, sensor de temperatura, micrófono, etc).  
 
-\begin{figure}[h]
+\begin{figure}
 	\centering
-		\includegraphics[width=0.9\textwidth]{Imagenes/FPGA/Nexys4-top-2000.eps}
+		\includegraphics[width=\textwidth]{Imagenes/FPGA/Nexys4-top-2000.eps}
 	\caption{Placa de prototipado Nexys 4}
 	\label{fig:Nexys4-top-2000}
 \end{figure}
 
 La FPGA Artix-7 (XC7A100T-1CSG324C) \cite{XilinxArtix}, está optimizada para la lógica de altas prestaciones y ofrece más recursos y mejor rendimiento que sus predecesoras. Esta FPGA consta de:
-
-\newpage 
 
 \begin{itemize}
   \item 15,850 bloques lógicas (cada porción contiene 6 LUTs y 8 biestables).
@@ -383,4 +375,5 @@ La FPGA Artix-7 (XC7A100T-1CSG324C) \cite{XilinxArtix}, está optimizada para la 
 	\item Conversor analógico-digital integrado (XADC).
 \end{itemize}
 
-Algunos perifericos incluidos en la placa son: 16 interruptores, 16 LEDs, puerto USB-UART, lector de tarjeta microSD, salida de audio, salida VGA, acelerómetro, sensor de temperatura, 16MB de memoria CellularRAM y puerto ethernet 10/100.
+
+

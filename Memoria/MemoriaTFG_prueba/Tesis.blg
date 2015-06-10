@@ -11,6 +11,7 @@ A level-1 auxiliary file: Capitulos/05TrabajoTolerancia.aux
 A level-1 auxiliary file: Capitulos/06Resultados.aux
 A level-1 auxiliary file: Capitulos/07AnalisisResultados.aux
 A level-1 auxiliary file: Capitulos/08Conclusiones.aux
+A level-1 auxiliary file: Capitulos/08Conclusions.aux
 A level-1 auxiliary file: Apendices/01ApendiceA.aux
 A level-1 auxiliary file: Apendices/02ApendiceB.aux
 A level-1 auxiliary file: Apendices/03ApendiceC.aux
@@ -18,6 +19,7 @@ A level-1 auxiliary file: Cascaras/bibliografia.aux
 The style file: abbrv.bst
 Database file #1: latex.bib
 Database file #2: otros.bib
+Database file #3: web.bib
 Warning--empty publisher in ARM-InstructionSet
 Warning--empty year in ARM-InstructionSet
 Warning--there's a number but no series in Limited2000

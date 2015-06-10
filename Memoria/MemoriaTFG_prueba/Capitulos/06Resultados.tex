@@ -4,7 +4,7 @@
 %
 %---------------------------------------------------------------------
 
-\chapter{Comprobación Funcional}
+\chapter{Resultados}
 \label{resultados}
 
 %\begin{FraseCelebre}
@@ -21,14 +21,16 @@
 %\end{resumen}
 
 
-%-------------------------------------------------------------------
-\section{Introducción}
-%-------------------------------------------------------------------
-\label{resultados:introducción}
+%%-------------------------------------------------------------------
+%\section{Introducción}
+%%-------------------------------------------------------------------
+%\label{resultados:introducción}
 
-La herramienta software "`PlanAhead"' de Xilinx es capaz de sintetizar e implementar el diseño VHDL. Se utilizará esta herramienta para analizar los cambios que ocurren en el procesador al insertar los módulos de tolerancia a fallos.
+La herramienta software "`ISE Design Suite 14.4"' de Xilinx es capaz de sintetizar e implementar el diseño VHDL. Se utilizará esta herramienta para obtener información sobre los recursos utilizados por ambas implementaciones del microprocesador. 
 
-Para realizar las simulaciones de ejecución de programas sobre las implementaciones del procesador se utilizará el software "ModelSim PE Student Edition 10.4". A continuación se analizan ambos diseños.
+Se utilizará esta herramienta para comprobar qué recursos son necesarios que ocurren en el procesador al insertar los módulos de tolerancia a fallos.
+
+Para realizar las simulaciones de ejecución de programas sobre las implementaciones del procesador se utilizará el software "ModelSim PE Student Edition 10.4".
 
 %-------------------------------------------------------------------
 \section{Programa de control}
@@ -132,8 +134,9 @@ Los informes de las herramientas de síntesis e implementación de Xilinx nos prop
 \newpage
 
 \subsubsection{Map report}
-  \lstset{breaklines=true, basicstyle=\footnotesize}
-   \begin{lstlisting}[frame=single]
+
+		\lstset{captionpos=b,breaklines=true, basicstyle=\footnotesize}
+  \begin{lstlisting}[frame=single,caption={Recursos utilizados por el procesador estándar},label=lis:mapproc]
 Design Summary
 --------------
 Number of errors:      0
@@ -167,11 +170,16 @@ Slice Logic Distribution:
       to control set restrictions:               8 out of 126,800    1%
  \end{lstlisting}
 
+	%\caption{Informe de recursos utilizados por el procesador estándar.}
+	%\label{inf:recursosproc}
+%\end{figure}
+
 \newpage
 
 \subsubsection{Timing report}
+
   \lstset{breaklines=true, basicstyle=\footnotesize}
-   \begin{lstlisting}[frame=single]
+  \begin{lstlisting}[frame=single,caption={Restricciones de tiempo del procesador estándar},label=lis:timingproc]
 Timing summary:
 ---------------
 
@@ -202,12 +210,12 @@ Realizada la prueba de control, se procede con la segunda prueba, en este caso c
 
 Además de las señales monitorizadas en la ejecución de control se han analizado las señales en donde se han insertado los fallos, así como los registros y direcciones de memoria donde se espera que provoquen consecuencias haciendo así efectivo un error en la ejecución del programa. 
 
-\newpage
-
 El simulador nos facilita la siguiente información alertando que los datos almacenados en los registros no son los esperados después de ejecutar las instrucciones:
 
+\newpage
+
 \lstset{breaklines=true, basicstyle=\footnotesize, numbers=left}
- \begin{lstlisting}[frame=single]
+  \begin{lstlisting}[frame=single,caption={Errores detectados tras la inserción de fallos.},label=lis:errorproc]
 # ** Error: ERROR: LDR R2, R0, #5
 #    Time: 150 ns  Iteration: 0  Instance: /tb_ejecucion_fallos
 # ** Error: ERROR: MOV R4, R2
@@ -258,7 +266,7 @@ Los informes de las herramientas de síntesis e implementación de Xilinx nos prop
 
 \subsubsection{Map report}
   \lstset{breaklines=true, basicstyle=\footnotesize}
-   \begin{lstlisting}[frame=single]
+  \begin{lstlisting}[frame=single,caption={Recursos utilizados por el procesador tolerante a fallos},label=lis:mapproctf]
 Design Summary
 --------------
 Number of errors:      0
@@ -296,7 +304,7 @@ Slice Logic Distribution:
 
 \subsubsection{Timing report}
   \lstset{breaklines=true, basicstyle=\footnotesize}
-   \begin{lstlisting}[frame=single]
+  \begin{lstlisting}[frame=single,caption={Restricciones de tiempo del procesador tolerante a fallos},label=lis:timingproctf]
 Timing summary:
 ---------------
 
@@ -328,96 +336,6 @@ Se ha ejecutado la simulación con inserción de fallos, esta simulación se puede 
 Junto a los registros monitorizados en la prueba de control se presentan los registros donde se insertan los fallos y así como los registros y las direcciones de memoria que se espera se verán afectadas por los fallos si estos no se toleran. 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-%%------------------------------------------------------------
-%\section{Procesador Pre-TMR}
-%%------------------------------------------------------------
-%\label{resultados:procesador}
-%
-%Se ha sintetizado el procesador antes de aplicar la tolerancia a fallos, los resultados de esta implementación se muestran a continuación.
-%
-%%------------------------------------------------------------
-%\subsubsection{Recursos}
-%%------------------------------------------------------------
-%\label{resultados:procesador:area}
-%
-%A partir de los informes 
-%Device Utilization Summary:
-%
-%Slice Logic Utilization:
-  %
-	%Number of Slice Registers:                 2,798 out of 126,800    2%
-	%
-    %Number used as Flip Flops:               2,798
-  %
-		%Number used as Latches:                      0
-    %
-		%Number used as Latch-thrus:                  0
-    %
-		%Number used as AND/OR logics:                0
-%
-  %Number of Slice LUTs:                      1,539 out of  63,400    2%
-%
-    %Number used as logic:                    1,464 out of  63,400    2%
-%
-      %Number using O6 output only:           1,328
-%
-      %Number using O5 output only:              28
-%
-      %Number using O5 and O6:                  108
-%
-      %Number used as ROM:                        0
-%
-    %Number used as Memory:                       0 out of  19,000    0%
-%
-    %Number used exclusively as route-thrus:     75
-%
-      %Number with same-slice register load:     74
-%
-      %Number with same-slice carry load:         1
-%
-      %Number with other load:                    0
-%
-%
-%
-%Slice Logic Distribution:
-%
-  %Number of occupied Slices:                   858 out of  15,850    5%
-%
-  %Number of LUT Flip Flop pairs used:        3,146
-%
-    %Number with an unused Flip Flop:           844 out of   3,146   26%
-%
-    %Number with an unused LUT:               1,607 out of   3,146   51%
-%
-    %Number of fully used LUT-FF pairs:         695 out of   3,146   22%
-%
-    %Number of slice register sites lost
-%
-      %to control set restrictions:               0 out of 126,800    0%
 
 
 

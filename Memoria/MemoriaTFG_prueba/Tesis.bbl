@@ -45,6 +45,10 @@ J.~Gaisler.
 \newblock {\em Proceedings of the 2002 International Conference on Dependable
   Systems and Networks}, pages 409--415, 2002.
 
+\bibitem{Tecnologias}
+GENERA.
+\newblock http://www.generatecnologias.es/aplicaciones\_fpga.html.
+
 \bibitem{carlos2014}
 J.~C. {Gonz\'{a}lez Salas}.
 \newblock {\em {Filtro adaptativo tolerante a fallos}}.
@@ -81,6 +85,10 @@ A.~O. Investigation.
   AO-2008-070 Final}}.
 \newblock Number October. 2008.
 
+\bibitem{IROC2013}
+IROC.
+\newblock {Do I Really Need to Worry About Soft Errors?}, 2013.
+
 \bibitem{Jedec2006}
 Jedec.
 \newblock {Measurement and Reporting of Alpha Particle and Terrestrial Cosmic
@@ -92,6 +100,10 @@ A.~Kadav, M.~J. Renzelmann, and M.~M. Swift.
 \newblock {\em Proceedings of the eighteenth international conference on
   Architectural support for programming languages and operating systems -
   ASPLOS '13}, page 473, 2013.
+
+\bibitem{Kastensmidt}
+F.~L. Kastensmidt.
+\newblock http://www.inf.ufrgs.br/\~{}fglima/res.htm.
 
 \bibitem{Kirrmann2005}
 H.~Kirrmann.

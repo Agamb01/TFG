@@ -33,19 +33,18 @@ El presente capítulo se inicia comparando las implementaciones de ambos procesad
 %-------------------------------------------------------------------
 \label{analisis:comparativa}
 
-El procesador estándar requiere un total de 1,952 registros para ser utilizados como biestables, un lo que supone aproximadamente el 1,5 del total disponible. De los utilizados 420 se dedican a los registros de control y el resto se utilizan para el banco de registros así como para las memorias de instrucciones y de datos.
+El procesador estándar requiere un total de 1,952 registros para ser utilizados como biestables, lo que supone aproximadamente el 1,5\% del total disponible (informe \ref{lis:mapproc}). De los registros utilizados 420 se dedican a los registros de control y el resto se utilizan para el banco de registros así como para las memorias de instrucciones y de datos.
 
-En cuanto a la lógica combinacional del microprocesador se utilizan un total de 1,015 LUTs para los elementos como la ALU, el control principal y los sumadores entre otros. Requiere un 1\% de las LUTs disponibles en la FPGA.
+En cuanto a la lógica combinacional del microprocesador se utilizan un total de 1,015 LUTs para los elementos como la ALU, el control principal y los sumadores entre otros. Requiere un 1\% de las LUTs disponibles en la FPGA (informe \ref{lis:mapproc}).
 
-Los informes de restricción de tiempo indican que el diseño requiere un periodo mínimo de reloj de 6.435 ns, alcanzando una frecuencia máxima de 155.400 MHz.
+Los informes de restricción de tiempo indican que el diseño requiere un periodo mínimo de reloj de 6.435 ns, alcanzando una frecuencia máxima de 155.400 MHz (informe \ref{lis:timingproc}).
 
-El procesador tolerante a fallos se deriva del procesador estándar aplicando la técnica TMR sobre los registros de control entre etapas. 
+El procesador tolerante a fallos se deriva del procesador estándar aplicando la técnica TMR sobre los registros de control entre etapas.
+Al incluir lógica adicional, el procesador tolerante a fallos requiere de 2,798 registros (poco más del 2\%) de los cuales 1,260 se utilizan para los registros de control (informe \ref{lis:mapproctf}). Como se ha diseñado el procesador aplicando la técnica TMR, este es el resultado esperado.
 
-Al incluir una mayor lógica, el procesador tolerante a fallos requiere de 2,798 registros (poco más del 2\%) de los cuales 1,260 se utilizan para los registros de control. Como se ha diseñado el procesador aplicando la técnica TMR, este es el resultado esperado.
+La lógica combinacional también se ve afectada ya que se insertan una gran cantidad de votadores, uno por cada 3 biestables de los registros de control. En total se utilizan 1,464 LUTs (2\%), 449 más que en el procesador estándar (informe \ref{lis:mapproctf}). Esto incluye los 420 votadores necesarios.
 
-La lógica combinacional también se ve afectada ya que se insertan una gran cantidad de votadores, uno por cada 3 biestables de los registros de control. En total se utilizan 1,464 LUTs (2\%), 449 más que en el procesador estándar. Esto incluye los 420 votadores necesarios.
-
-La lógica de los votadores que se inserta a continuación de los registros tiene su incidencia pues ralentiza ligeramente el proceso. El procesador tolerante a fallos requiere un periodo mínimo de reloj de 6.819 ns alcanzando una frecuencia máxima de 146.649 MHz, lo que significa una reducción de la frecuencia máxima de funcionamiento en casi 10 MHz.
+La lógica de los votadores que se inserta a continuación de los registros tiene su incidencia pues ralentiza ligeramente el proceso. El procesador tolerante a fallos requiere un periodo mínimo de reloj de 6.819 ns alcanzando una frecuencia máxima de 146.649 MHz (informe \ref{lis:timingproctf}), lo que significa una reducción de la frecuencia máxima de funcionamiento en casi 10 MHz.
 
 %-------------------------------------------------------------------
 \section{Simulaciones}
@@ -97,7 +96,7 @@ Durante la ejecución de la prueba de control, resumida en la tabla \ref{tab:esta
 %-------------------------------------------------------------------
 \label{analisis:simulaciones:estandar:fallos}
 
-Al volver a ejecutar el mismo código de prueba, esta vez insertando fallos (Apéndice \ref{apendiceC}, sección \ref{apendiceC:proc:fallos}), lo primero que se observa es que el resultado final de M0 no es el correcto, se ha almacenado el valor 75 en vez de el 125 correcto. A continuación analizamos por qué. 
+Al volver a ejecutar el mismo código de prueba, esta vez insertando fallos (Apéndice \ref{apendiceC}, sección \ref{apendiceC:proc:fallos}). Por texto (informe \ref{lis:errorproc}) se informa que los errores comenzaron al ejecutar la instrucción "`$LDR \, \, R2, R0, \#5$"' y se han propagado hasta el final de la ejecución del programa. En la gráfica lo primero que se observa es que el resultado final de M0 no es el correcto, se ha almacenado el valor 75 en vez de el 125 correcto. A continuación analizamos por qué. 
 
 El primer fallo ocurre en el bus de memoria de una etapa interna (MEMbus\_reg), y se propaga hasta almacenarse en el registro R2, es cuando se actualiza este registro cuando vemos los efectos del fallo, en vez del 5 esperado se ha almacenado un 4. Esto reduce el número de iteraciones que se realizarán.
 
@@ -145,7 +144,7 @@ En esta sección se analizan los resultados obtenidos de la ejecución de las mism
 %-------------------------------------------------------------------
 \label{analisis:simulaciones:tolerante:control}
 
-En la gráfica del apéndice \ref{apendiceC} sección \ref{apendiceC:proctf} se observa la evolución del programa a lo largo de su ejecución. El proceso sigue los mismos pasos seguidos al ejecutar las pruebas en el procesador estándar obteniendo los mismos resultados (tabla \ref{tab:tolerante:control}. Por lo cual se comprueba que la funcionalidad e integridad del procesador se conservan al introducir la tolerancia a fallos.
+En la gráfica del apéndice \ref{apendiceC} sección \ref{apendiceC:proctf} se observa la evolución del programa a lo largo de su ejecución. El proceso sigue los mismos pasos seguidos al ejecutar las pruebas en el procesador estándar obteniendo los mismos resultados (tabla \ref{tab:tolerante:control}). Por lo cual se comprueba que la funcionalidad e integridad del procesador se conservan al introducir la tolerancia a fallos.
 
 \begin{table}
   \centering

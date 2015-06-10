@@ -21,19 +21,16 @@
 %\end{resumen}
 
 
-%-------------------------------------------------------------------
-\section{Introducción}
-%-------------------------------------------------------------------
-\label{trabajoprocesador:introducción}
+%%-------------------------------------------------------------------
+%\section{Introducción}
+%%-------------------------------------------------------------------
+%\label{trabajoprocesador:introducción}
 
-Basado en la arquitectura de los procesadores DLX estudiados durante el grado en ingeniería de computadores \cite{Hennessy2006}, se ha diseñado e implementado un procesador con arquitectura RISC. Se trata de un procesador con un ancho de palabra de 32 bits y una segmentación en 5 etapas.
-
-La implementación ha sido adaptada para poder ejecutar instrucciones del repertorio ARM. En concreto, se permite ejecutar un subconjunto del juego de instrucciones THUMB-2 que es utilizado principalmente por los procesadores de la gama ARM CORTEX M.
+Se ha diseñado e implementado un procesador con arquitectura RISC. Se trata de un procesador con un ancho de palabra de 32 bits y una segmentación en 5 etapas. La implementación ha sido realizada para ejecutar instrucciones del repertorio ARM. En concreto, se permite ejecutar un subconjunto del juego de instrucciones THUMB-2 que es utilizado principalmente por los procesadores de la gama ARM CORTEX M.
 
 Para el desarrollo de este proyecto se ha utilizado la tecnología de las FPGAs, en concreto la placa "`Nexys 4"' que hace uso de la FPGA "`Artix 7"' de Xilinx. 
 
-Para la implementación se ha utilizado el lenguaje de diseño hardware VHDL junto al software "`ISE Design Suite 14.4"' de Xilinx y el software "`ModelSim PE Student Edition"' de Altera para las simulaciones. Con ello se ha conseguido probar el diseño y la implementación de forma rápida y realizar las correcciones necesarias.  
-
+Para la implementación se ha utilizado el lenguaje de diseño hardware VHDL junto al software "`ISE Design Suite 14.4"' de Xilinx y el software "`ModelSim PE Student Edition"' de Mentor Graphics para las simulaciones. Con ello se ha conseguido probar el diseño y la implementación de forma rápida y realizar las correcciones necesarias.  
 
 % Arquitectura
 %  Estructura
@@ -58,22 +55,16 @@ El procesador se compone de los siguientes elementos (figura \ref{fig:MiProcesad
 \begin{figure}[ht]
 	\centering
 		\includegraphics[width=0.50\textwidth]{Imagenes/Mi_procesador/MiProcesador.eps}
-	\caption{Estructura del procesador diseñado}
+	\caption{Estructura del sistema diseñado (CPU + Memorias).}
 	\label{fig:MiProcesador}
 \end{figure}
-
-\newpage
 
 \begin{itemize}
 
   \item \textbf{Banco de registros:} Dispone de 16 registros (R0, R1, ..., R15) de propósito general con un tamaño de 32 bits. Estos registros se pueden utilizar tanto para guardar datos leídos de memoria como enviar los valores a memoria. Igualmente se puede trabajar con los valores que tengan almacenados ejecutando operaciones sobre ellos. El registro R15 es accesible de forma limitada puesto que el identificador de este registro se utiliza para diferenciar unas instrucciones de otras.
 		
   \item \textbf{Contador de programa (\ac{PC}):} Este registro especial almacena la dirección de memoria de la instrucción que debe ejecutarse a continuación. Se incrementa automáticamente en 4 cada ciclo y solo se puede alterar este mecanismo por medio de instrucciones de control. 
-	
-	\item \textbf{Memoria de instrucciones:} Memoria que almacena el código de programa, al cual accede el procesador para analizar y ejecutar las instrucciones.
-	
-	\item \textbf{Memoria de datos:} Esta memoria conserva los valores de los datos que son accesibles por el procesador mediante instrucciones de carga y almacenamiento.
-			
+
 	\item \textbf{Control principal:} Analiza las instrucciones para extraer la información necesaria que permita ejecutarles adecuadamente. Esta información se propaga mediante señales de control al resto de componentes.
 
   \item \textbf{Unidad Aritmético-Lógica (\ac{ALU})}: Es el componente encargado de realizar las operaciones aritméticas o lógicas sobre los operandos. 
@@ -81,6 +72,14 @@ El procesador se compone de los siguientes elementos (figura \ref{fig:MiProcesad
 	\item \textbf{Registros de control:} Almacena las señales de control, y las señales internas entre las diferentes etapas de la segmentación.
 \end{itemize}
 
+Al sistema se le han incorporado dos memorias junto al procesador para el almacenamiento de instrucciones y datos:
+	
+\begin{itemize}
+	\item \textbf{Memoria de instrucciones:} Memoria que almacena el código de programa, al cual accede el procesador para analizar y ejecutar las instrucciones.
+	
+	\item \textbf{Memoria de datos:} Esta memoria conserva los valores de los datos que son accesibles por el procesador mediante instrucciones de carga y almacenamiento.
+\end{itemize}
+			
 
 %-----------------------------------------------------------
 \subsection{Repertorio de instrucciones}
@@ -155,7 +154,7 @@ La segunda operación de control es el salto condicional. Previamente a un salto 
 %-----------------------------------------------------------
 \label{trabajoprocesador:arquitectura:segmentacion}
 
-El microprocesador ha segmentado en 5 etapas, en cada una de las cuales realiza una parte fundamental en la ejecución de las instrucciones. Las etapas en las que se divide el procesador son:
+El microprocesador se ha segmentado en 5 etapas, en cada una de las cuales realiza una parte fundamental en la ejecución de las instrucciones. Las etapas en las que se divide el procesador son:
 
 \begin{enumerate}
   \item \textbf{Búsqueda de instrucción (\ac{IF}):}
@@ -185,7 +184,7 @@ El microprocesador ha segmentado en 5 etapas, en cada una de las cuales realiza 
 %-----------------------------------------------------------
 \label{trabajoprocesador:arquitectura:memoria}
 
-El diseño del procesador hereda el sistema de memoria de la arquitectura Harvard, es decir, tiene acceso a dos memorias diferentes: 
+El diseño del procesador hereda el sistema de acceso a memoria de la arquitectura Harvard, es decir, tiene dos accesos a memorias distintos: 
 
 \begin{itemize}
 
@@ -226,11 +225,9 @@ El diseño del procesador hereda el sistema de memoria de la arquitectura Harvard
 
 La implementación del proyecto se ha realizado utilizando la herramienta "`ISE Design Suite"' de Xilinx y el lenguaje de diseño hardware "`VHDL"'. 
 
-En la figura \ref{fig:P_ControlPath} se muestra el diseño completo del microprocesador segmentado. En color negro se muestra la ruta de datos y los componentes. En color azul se destaca la ruta de control y el módulo de control principal. Y en color rojo aparecen los registros de control. 
+En la figura \ref{fig:P_ControlPath} se muestra el diseño completo del microprocesador segmentado. En lineas continuas se muestra la ruta de datos y los componentes. En lineas discontinuas se destacan las señales de control generadas en el módulo de control principal. Las líneas verticales representan los registros de control y las divisiones entre etapas. 
 
-En esta sección se describen los componentes principales del procesador descritos en la figura \ref{fig:MiProcesador}.
-
-
+En esta sección se describen los componentes principales del procesador que aparecen en la figura \ref{fig:MiProcesador}.
 
 %-----------------------------------------------------------
 \subsection{Banco de registros}
@@ -379,7 +376,7 @@ La instrucción es la una única entrada para este módulo, sin embargo, las señale
 %-----------------------------------------------------------
 \label{trabajoprocesador:implementacion:regcontrol}
 
-Los registros de control (figura \ref{fig:ImplementacionRegistrosControl}) son todos aquellos que almacenan la información entre las etapas, se muestran como líneas rojas en la figura \ref{fig:P_ControlPath}.
+Los registros de control (figura \ref{fig:ImplementacionRegistrosControl}) son todos aquellos que almacenan la información entre las etapas, se representan como líneas verticales, que dividen el procesador en sus etapas, en la figura \ref{fig:P_ControlPath}.
 
 \begin{figure}[h]
 	\centering

@@ -4,7 +4,7 @@
 %
 %---------------------------------------------------------------------
 
-\chapter{Instroducción a los fallos y su tolerancia}
+\chapter{Fallos y tolerancia}
 \label{fallos}
 
 %\begin{FraseCelebre}
@@ -21,7 +21,7 @@
 %\end{resumen}
 
 %%-----------------------------------------------------------------
-\section{Introducción a los fallos}
+\section{Fallos}
 %%-----------------------------------------------------------------
 \label{fallos:introduccion}
 
@@ -36,8 +36,7 @@ En esta sección no se contemplan los fallos que se producen a partir de una mala
 %-----------------------------------------------------------------
 \label{cap2:fallos:causas}
 
-
-En general, estos fallos se conocen como \textit{"`Single-Event Effects (SEEs)"'}. Se deben al choque de una partícula de energía contra un elemento del circuito integrado. Figura	\ref{fig:SEU_FPGA}. 
+Entre otros casos podemos destacar el choque de una partícula de energía contra un elemento del circuito integrado. Figura	\ref{fig:SEU_FPGA}. En general, los fallos se conocen como \textit{"`Single-Event Effects (SEEs)"'}. 
 
 \begin{figure}[htbp]
 	\centering
@@ -103,8 +102,8 @@ Los principales tipos de fallos transitorios son \cite{Jedec2006}:
 
 \begin{figure}[htbp]
   \centering
-  \subfloat[Single-Event Upset (SEU)\label{fig:Soft_SEU}]{\includegraphics[width=0.45\textwidth]{Imagenes/SEU/SEU.eps}} \qquad
-  \subfloat[Single-Event Transient (SET)\label{fig:Soft_SET}]{\includegraphics[width=0.45\textwidth]{Imagenes/SEU/SET.eps}}
+  \subfloat[Single-Event Upset (SEU) \cite{IROC2013} \label{fig:Soft_SEU}]{\includegraphics[width=0.45\textwidth]{Imagenes/SEU/SEU.eps}} \qquad
+  \subfloat[Single-Event Transient (SET) \cite{IROC2013} \label{fig:Soft_SET}]{\includegraphics[width=0.45\textwidth]{Imagenes/SEU/SET.eps}}
   \caption{Fallos Transitorios}
   \label{fig:Soft_SEE}
 \end{figure}
@@ -138,8 +137,7 @@ Los principales tipos de fallos permanentes son:
 
 Existen otros tipos de fallos permanentes, \textit{Single-Event Burnout (SEB)} y \textit{Single-Event Gate Rupture (SEGR)}, que destruyen el transistor a nivel físico.	
   
-Los fallos permanentes, una vez detectados, únicamente pueden solucionarse sustituyendo el chip o modificando la configuración interna del propio chip. Véase el apartado \ref{cap2:tolerancia:hardware:reconfiguracion}.
-
+Los fallos permanentes, una vez detectados, únicamente pueden solucionarse sustituyendo el chip o modificando la configuración interna del propio chip.
 
 %%-----------------------------------------------------------------
 \section{Tolerancia a Fallos}
@@ -159,7 +157,7 @@ En ocasiones se producen fallos que no llegan a propagarse por el sitema y no pr
 	\begin{figure}[htbp]
 		\centering
 			\includegraphics[width=0.75\textwidth]{Imagenes/SEU/Logical_masking.jpg}
-		\caption{Fallo enmascarado por una puerta lógica.}
+		\caption{Fallo enmascarado por una puerta lógica\cite{Kastensmidt}.}
 		\label{fig:Logical_masking}
 	\end{figure}
 
@@ -170,7 +168,7 @@ En ocasiones se producen fallos que no llegan a propagarse por el sitema y no pr
 	\begin{figure}[htbp]
 		\centering
 			\includegraphics[width=0.75\textwidth]{Imagenes/SEU/Electrical_masking.jpg}
-		\caption{Fallo enmascarado eléctricamente.}
+		\caption{Fallo enmascarado eléctricamente\cite{Kastensmidt}.}
 		\label{fig:Electrical_masking}
 	\end{figure}
 
@@ -181,7 +179,7 @@ En ocasiones se producen fallos que no llegan a propagarse por el sitema y no pr
 	\begin{figure}[htbp]
 		\centering
 			\includegraphics[width=0.75\textwidth]{Imagenes/SEU/Latching_masking.jpg}
-		\caption{Fallo enmascarado por ventana de tiempo.}
+		\caption{Fallo enmascarado por ventana de tiempo\cite{Kastensmidt}.}
 		\label{fig:Latching_masking}
 	\end{figure}
 
@@ -274,40 +272,6 @@ En la figura \ref{fig:Aplicando_NMR} se observa el resultado de aplicar la TMR a
 \end{figure}
 
 Esta técnica permite evitar los fallos producidos dentro de los bloques, sin embargo inserta un nuevo punto crítico. Si el votador, un circuito combinacional, se ve afectado por un SET, este puede propagarse y afectar a los siguientes bloques, generando un error en la ejecución.
-
-%%-----------------------------------------------------------------
-\subsubsection{Re-configuración}
-%%-----------------------------------------------------------------
-\label{cap2:tolerancia:hardware:reconfiguracion}
-
-La re-configuración de un sistema consiste en cambiar su implementación en el momento deseado. Por ejemplo, cuando nuestro sistema empieza a fallar debido a que parte del chip se ha dañado, en vez de eliminar el chip y sustituirlo por otro, se puede configurar el mismo circuito de manera que se eviten las zonas dañadas.
-
-En el apartado \ref{procesador:fpga} de este mismo capitulo se han introducido las FPGAs, sistemas re-programables que permiten al diseñador re-configurar su estructura para realizar diferentes tareas, o la misma con una nueva implementación u organización de los componentes.
-
-En la figura \ref{fig:parcial_dinamica} podemos ver un ejemplo de re-configuración, concretamente de re-configuración en un caso de tolerancia dinámica parcial.
-
-Hay dos formas de aplicar la re-configuración a un sistema \cite{carlos2014}:
-
-\newpage
-
-\begin{itemize}
-
-	\item \textbf{Re-configuración estática}
-
-    Aquella que requiere detener el sistema completamente e iniciarlo con la nueva configuración.
-
-	\item \textbf{Re-configuración dinámica}
-
-    Aquella que en tiempo de ejecución es capaz de sustituir parcial o completamente el diseño del sistema.
-
-\end{itemize}
-
-\begin{figure}
-	\centering
-		\includegraphics[width=\textwidth]{Imagenes/Tolerancia/parcial_dinamica.eps}
-	\caption{Tolerancia dinámica parcial \cite{States2011}.}
-	\label{fig:parcial_dinamica}
-\end{figure}
 
 %%-----------------------------------------------------------------
 \section{Tolerancia en microprocesadores}
