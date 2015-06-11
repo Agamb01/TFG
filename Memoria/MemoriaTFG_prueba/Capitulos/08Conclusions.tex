@@ -19,27 +19,7 @@
 \section{Conclusions}
 \label{conclusions:conclusions}
 
-This proyect's main objective is to implement pipelined CPU compatible with ARM instruction set. Then apply fault tolerance techniques to assure correct executions of the software running, this is needed on systems working on high energy particle density environments like onboard satellite systems or aeroships. 
-
-The first main task is to design and implement the CPU and make it compatible with a commonly used instruction set. The instruction set chosen was ARM instruction set because it is one of the most used architectures. To make the CPU comptaible with the instruction set, a new control unit capable of decoding this instructions was implemented and integrated into the CPU.
-
-Once the microprocessor was implemented we needed to make sure it would work correctly on high fault environments. The pipeline registers were decided to be the most critical part of the CPU, if any of these suffer from a bit-flip it will cause major consecuences to the program execution, in no way predictible.
-
-The fault tolerance technique decided to use is "`Triple Modular Redundancy (TMR)"' because it is an efective and commonly used method of giving a higher realibility and protection against soft errors to any system.
-
-Once the design is implemented and the fault tolerance is applied is time to run the proper simulations under controlled and predictible circumstances to be able to check the proper functionality of the CPU, how faults alter the execution and how the TMR is properly enmascarating the faults produced. 
-
-The simulations consist in running a program under normal circumstances, without faults, and then run it a second time inserting bit-flips to some registers. We have been able to determine:
-
-\newpage
-
-\begin{enumerate}
-	\item Both CPUs, with and without fault tolerance, execute a computer program correctly with an identical output in a free fault environment.
-	\item In the fault simulation, same for both CPUs, the ouputs were not the same. The the results taken from the standard CPU simulations it is observed that the faults produce errors, making changes in its internal variables and in the data memory. Otherwise comparing the fault tolerance CPU simulations, the results are exactly the same, the program executed as expected.
-\end{enumerate}
-	
-Analysing these simulations we were able to prove that the Central Processing Unit is capable of execute programs and tolerate single faults satisfactorily.
-
+...
 
 %\section{Futuras líneas de trabajo}
 %\label{conclusions:futuras}

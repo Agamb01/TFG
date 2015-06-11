@@ -21,12 +21,12 @@
 %\end{resumen}
 
 
-%-------------------------------------------------------------------
-\section{Introducción}
-%-------------------------------------------------------------------
-\label{analisis:introducción}
-
-El presente capítulo se inicia comparando las implementaciones de ambos procesadores, estándar y tolerante a fallos, exponiendo sus principales diferencias. Posteriormente se analizan y comparan los resultados obtenidos al ejecutar las simulaciones sobre las dos implementaciones del microprocesador.
+%%-------------------------------------------------------------------
+%\section{Introducción}
+%%-------------------------------------------------------------------
+%\label{analisis:introducción}
+%
+%El presente capítulo se inicia comparando las implementaciones de ambos procesadores, estándar y tolerante a fallos, exponiendo sus principales diferencias. Posteriormente se analizan y comparan los resultados obtenidos al ejecutar las simulaciones sobre las dos implementaciones del microprocesador.
 
 %-------------------------------------------------------------------
 \section{Comparativa de procesadores}
@@ -67,9 +67,7 @@ En esta sección se analizan los resultados obtenidos de la ejecución sobre la im
 
 En la gráfica \ref{apendiceC:proc} del apéndice \ref{apendiceC} se observa paso a paso la ejecución del programa de control sobre el procesador estándar. A continuación se listan los eventos significativos por orden cronológico.
 
-Durante la ejecución de la prueba de control, resumida en la tabla \ref{tab:estandar:control}, se observa cómo se inicializan, en los ciclos 5 a 9, los valores de las variables de la operación (R1, R2), las variables del control del bucle (R4, R5) y la variable resultado (R3). A continuación se observa cómo se ejecuta el bucle acumulando las sumas en la variable resultado y el decremento en el indicador de iteración. El bucle se ejecuta 5 veces dejando un resultado final de 125 en el registro resultado. Para finalizar el resultado se almacena en memoria (M0) en el ciclo 75.
-
-\begin{table}
+\begin{table}[h]
   \centering
   \begin{tabular}{|p{1.3cm}|p{1.3cm}|p{\textwidth-4cm}|}
 	  \hline
@@ -90,8 +88,11 @@ Durante la ejecución de la prueba de control, resumida en la tabla \ref{tab:esta
 	\label{tab:estandar:control}
 \end{table}
 
+Durante la ejecución de la prueba de control, resumida en la tabla \ref{tab:estandar:control}, se observa cómo se inicializan, en los ciclos 5 a 9, los valores de las variables de la operación (R1, R2), las variables del control del bucle (R4, R5) y la variable resultado (R3). A continuación se observa cómo se ejecuta el bucle acumulando las sumas en la variable resultado y el decremento en el indicador de iteración. El bucle se ejecuta 5 veces dejando un resultado final de 125 en el registro resultado. Para finalizar el resultado se almacena en memoria (M0) en el ciclo 75.
+
+
 %-------------------------------------------------------------------
-\newpage
+%%\newpage
 \subsubsection{Prueba con fallos}
 %-------------------------------------------------------------------
 \label{analisis:simulaciones:estandar:fallos}
@@ -100,14 +101,7 @@ Al volver a ejecutar el mismo código de prueba, esta vez insertando fallos (Apén
 
 El primer fallo ocurre en el bus de memoria de una etapa interna (MEMbus\_reg), y se propaga hasta almacenarse en el registro R2, es cuando se actualiza este registro cuando vemos los efectos del fallo, en vez del 5 esperado se ha almacenado un 4. Esto reduce el número de iteraciones que se realizarán.
 
-Se continúa la ejecución del programa de forma normal hasta que ocurre el segundo fallo, esta vez se activa la señal "`MEMWrite"' encargada de indicar al módulo de memoria que almacene los datos. Esto se refleja en la señal "`M3"' que cambia de valor a 1. Este fallo no altera el funcionamiento de este programa pero la escritura en memoria podría alterar datos de otros programas si los hubiera.
-
-El tercer fallo ocurre en el operando B de la ALU en una comparación. En vez de comparar la variable con la constante 0, se ha comparado con la constante 1, finalizando el bucle de ejecución antes de tiempo.
-
-\newpage
-El resultado final es un programa mal ejecutado, que ha visto reducido las iteraciones que debería haber realizado, almacenando en memoria un dato incorrecto y además ha modificado elementos en memoria que no deberían haberse visto afectados.
-
-\begin{table}
+\begin{table}[h]
   \centering
   \begin{tabular}{|p{1.3cm}|p{1.3cm}|p{\textwidth-4cm}|}
 	  \hline
@@ -130,6 +124,13 @@ El resultado final es un programa mal ejecutado, que ha visto reducido las itera
 	\label{tab:estandar:fallos}
 \end{table}
 
+Continúa la ejecución del programa de forma normal hasta que ocurre el segundo fallo, esta vez se activa la señal "`MEMWrite"' encargada de indicar al módulo de memoria que almacene los datos. Esto se refleja en la señal "`M3"' que cambia de valor a 1. Este fallo no altera el funcionamiento de este programa pero la escritura en memoria podría alterar datos de otros programas si los hubiera.
+
+El tercer fallo ocurre en el operando B de la ALU en una comparación. En vez de comparar la variable con la constante 0, se ha comparado con la constante 1, finalizando el bucle de ejecución antes de tiempo.
+
+%\newpage
+El resultado final es un programa mal ejecutado, que ha visto reducido las iteraciones que debería haber realizado, almacenando en memoria un dato incorrecto y además ha modificado elementos en memoria que no deberían haberse visto afectados.
+
 
 
 %-------------------------------------------------------------------
@@ -146,7 +147,7 @@ En esta sección se analizan los resultados obtenidos de la ejecución de las mism
 
 En la gráfica del apéndice \ref{apendiceC} sección \ref{apendiceC:proctf} se observa la evolución del programa a lo largo de su ejecución. El proceso sigue los mismos pasos seguidos al ejecutar las pruebas en el procesador estándar obteniendo los mismos resultados (tabla \ref{tab:tolerante:control}). Por lo cual se comprueba que la funcionalidad e integridad del procesador se conservan al introducir la tolerancia a fallos.
 
-\begin{table}
+\begin{table}[h]
   \centering
   \begin{tabular}{|p{1.3cm}|p{1.3cm}|p{\textwidth-4cm}|}
 	  \hline
@@ -174,14 +175,7 @@ En la gráfica del apéndice \ref{apendiceC} sección \ref{apendiceC:proctf} se obs
 
 Para finalizar las pruebas, se realiza la simulación con fallos sobre el procesador tolerante a fallos. Lo primero que observamos en la simulación (apéndice \ref{apendiceC} sección \ref{apendiceC:proctf:fallos}) es que esta vez sí se ha ejecutado el programa de forma correcta, el resultado almacenado en memoria es el correcto y no se han modificado otras secciones de la memoria. A continuación analizamos la gráfica de la simulación, resumida en la tabla \ref{tab:tolerante:fallos}, para ver las diferencias.
 
-El primer fallo se produce en uno de los registros del bus de memoria. El fallo es enmascarado gracias a que los otros dos registros han mantenido el valor correcto y a que el votador ha realizado su tarea, permitiendo que sea el valor más repetido el que continúe hasta el siguiente componente. El registro R2 almacena el valor 5 correctamente.
-
-En el ciclo 17 se produce el segundo fallo. Este provocaría que se modificara la memoria de datos, sin embargo el sistema de tolerancia realiza su tarea y evita que esto ocurra.
-
-El tercer fallo ocurre en el operando B durante el ciclo 38 de la ALU en una comparación. Este fallo, al haberse tolerado el primero, no habría afectado al programa ya que el valor de R4 es 2 y se compara con el valor 1, y no afecta a la ejecución ya que se realiza una comparación de igualdad. En cualquier caso, el fallo se ha enmascarado debido a la lógica del votador que siempre está activo.
-
-
-\begin{table}
+\begin{table}[h]
   \centering
   \begin{tabular}{|p{1.3cm}|p{1.3cm}|p{\textwidth-4cm}|}
 	  \hline
@@ -205,3 +199,8 @@ El tercer fallo ocurre en el operando B durante el ciclo 38 de la ALU en una com
 \end{table}
 
 
+El primer fallo se produce en uno de los registros del bus de memoria. El fallo es enmascarado gracias a que los otros dos registros han mantenido el valor correcto y a que el votador ha realizado su tarea, permitiendo que sea el valor más repetido el que continúe hasta el siguiente componente. El registro R2 almacena el valor 5 correctamente.
+
+En el ciclo 17 se produce el segundo fallo. Este provocaría que se modificara la memoria de datos, sin embargo el sistema de tolerancia realiza su tarea y evita que esto ocurra.
+
+El tercer fallo ocurre en el operando B durante el ciclo 38 de la ALU en una comparación. Este fallo, al haberse tolerado el primero, no habría afectado al programa ya que el valor de R4 es 2 y se compara con el valor 1, y no afecta a la ejecución ya que se realiza una comparación de igualdad. En cualquier caso, el fallo se ha enmascarado debido a la lógica del votador que siempre está activo.

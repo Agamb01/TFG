@@ -64,41 +64,39 @@
 \contentsline {chapter}{\numberline {6}Resultados}{51}{chapter.6}
 \contentsline {section}{\numberline {6.1}Programa de control}{51}{section.6.1}
 \contentsline {section}{\numberline {6.2}Fallos introducidos}{52}{section.6.2}
-\contentsline {section}{\numberline {6.3}Procesador est\'andar}{53}{section.6.3}
-\contentsline {subsection}{\numberline {6.3.1}Recursos}{53}{subsection.6.3.1}
+\contentsline {section}{\numberline {6.3}Validaci\'on del procesador est\'andar}{53}{section.6.3}
+\contentsline {subsection}{\numberline {6.3.1}Recursos empleados}{53}{subsection.6.3.1}
 \contentsline {subsubsection}{\numberline {6.3.1.1}Map report}{54}{subsubsection.6.3.1.1}
 \contentsline {subsubsection}{\numberline {6.3.1.2}Timing report}{55}{subsubsection.6.3.1.2}
 \contentsline {subsection}{\numberline {6.3.2}Ejecuci\'on de control}{55}{subsection.6.3.2}
 \contentsline {subsection}{\numberline {6.3.3}Inserci\'on de fallos}{55}{subsection.6.3.3}
-\contentsline {section}{\numberline {6.4}Procesador tolerante a fallos}{56}{section.6.4}
-\contentsline {subsection}{\numberline {6.4.1}Recursos}{56}{subsection.6.4.1}
+\contentsline {section}{\numberline {6.4}Validaci\'on del procesador tolerante a fallos}{56}{section.6.4}
+\contentsline {subsection}{\numberline {6.4.1}Recursos empleados}{56}{subsection.6.4.1}
 \contentsline {subsubsection}{\numberline {6.4.1.1}Map report}{57}{subsubsection.6.4.1.1}
 \contentsline {subsubsection}{\numberline {6.4.1.2}Timing report}{58}{subsubsection.6.4.1.2}
 \contentsline {subsection}{\numberline {6.4.2}Ejecuci\'on de control}{58}{subsection.6.4.2}
 \contentsline {subsection}{\numberline {6.4.3}Inserci\'on de fallos}{58}{subsection.6.4.3}
 \contentsline {chapter}{\numberline {7}An\'alisis de los resultados}{59}{chapter.7}
-\contentsline {section}{\numberline {7.1}Introducci\'on}{59}{section.7.1}
-\contentsline {section}{\numberline {7.2}Comparativa de procesadores}{59}{section.7.2}
-\contentsline {section}{\numberline {7.3}Simulaciones}{60}{section.7.3}
-\contentsline {subsection}{\numberline {7.3.1}Procesador est\'andar}{60}{subsection.7.3.1}
-\contentsline {subsubsection}{\numberline {7.3.1.1}Prueba de control}{60}{subsubsection.7.3.1.1}
-\contentsline {subsubsection}{\numberline {7.3.1.2}Prueba con fallos}{61}{subsubsection.7.3.1.2}
-\contentsline {subsection}{\numberline {7.3.2}Procesador tolerante a fallos}{62}{subsection.7.3.2}
-\contentsline {subsubsection}{\numberline {7.3.2.1}Prueba de control}{62}{subsubsection.7.3.2.1}
-\contentsline {subsubsection}{\numberline {7.3.2.2}Prueba con fallos}{63}{subsubsection.7.3.2.2}
-\contentsline {chapter}{\numberline {8}Conclusiones y futuras l\IeC {\'\i }neas de trabajo}{65}{chapter.8}
+\contentsline {section}{\numberline {7.1}Comparativa de procesadores}{59}{section.7.1}
+\contentsline {section}{\numberline {7.2}Simulaciones}{60}{section.7.2}
+\contentsline {subsection}{\numberline {7.2.1}Procesador est\'andar}{60}{subsection.7.2.1}
+\contentsline {subsubsection}{\numberline {7.2.1.1}Prueba de control}{60}{subsubsection.7.2.1.1}
+\contentsline {subsubsection}{\numberline {7.2.1.2}Prueba con fallos}{61}{subsubsection.7.2.1.2}
+\contentsline {subsection}{\numberline {7.2.2}Procesador tolerante a fallos}{62}{subsection.7.2.2}
+\contentsline {subsubsection}{\numberline {7.2.2.1}Prueba de control}{62}{subsubsection.7.2.2.1}
+\contentsline {subsubsection}{\numberline {7.2.2.2}Prueba con fallos}{63}{subsubsection.7.2.2.2}
+\contentsline {chapter}{\numberline {8}Conclusiones}{65}{chapter.8}
 \contentsline {section}{\numberline {8.1}Conclusiones}{65}{section.8.1}
-\contentsline {section}{\numberline {8.2}Futuras l\IeC {\'\i }neas de trabajo}{66}{section.8.2}
 \contentsline {chapter}{\numberline {9}Conclusions}{67}{chapter.9}
 \contentsline {section}{\numberline {9.1}Conclusions}{67}{section.9.1}
 \contentsline {chapter}{\numberline {A}C\'odigo de simulaci\'on sin fallos}{69}{appendix.Alph1}
 \contentsline {section}{\numberline {A.1}Testbench para ejecuci\'on de control}{70}{section.Alph1.1}
-\contentsline {chapter}{\numberline {B}C\'odigo de simulaci\'on con fallos}{77}{appendix.Alph2}
-\contentsline {section}{\numberline {B.1}Testbench para ejecuci\'on con inserci\'on de fallos en CPU est\'andar}{78}{section.Alph2.1}
-\contentsline {section}{\numberline {B.2}Testbench para ejecuci\'on con inserci\'on de fallos en CPU tolerante a fallos}{85}{section.Alph2.2}
-\contentsline {chapter}{\numberline {C}Simulaciones}{93}{appendix.Alph3}
-\contentsline {section}{\numberline {C.1}Procesador est\'andar sin fallos}{94}{section.Alph3.1}
-\contentsline {section}{\numberline {C.2}Procesador est\'andar con fallos}{95}{section.Alph3.2}
-\contentsline {section}{\numberline {C.3}Procesador tolerante a fallos sin fallos}{96}{section.Alph3.3}
-\contentsline {section}{\numberline {C.4}Procesador tolerante a fallos con fallos}{97}{section.Alph3.4}
-\contentsline {chapter}{Bibliograf\IeC {\'\i }a}{99}{appendix*.58}
+\contentsline {chapter}{\numberline {B}C\'odigo de simulaci\'on con fallos}{71}{appendix.Alph2}
+\contentsline {section}{\numberline {B.1}Testbench para ejecuci\'on con inserci\'on de fallos en CPU est\'andar}{72}{section.Alph2.1}
+\contentsline {section}{\numberline {B.2}Testbench para ejecuci\'on con inserci\'on de fallos en CPU tolerante a fallos}{74}{section.Alph2.2}
+\contentsline {chapter}{\numberline {C}Simulaciones}{77}{appendix.Alph3}
+\contentsline {section}{\numberline {C.1}Procesador est\'andar sin fallos}{78}{section.Alph3.1}
+\contentsline {section}{\numberline {C.2}Procesador est\'andar con fallos}{79}{section.Alph3.2}
+\contentsline {section}{\numberline {C.3}Procesador tolerante a fallos sin fallos}{80}{section.Alph3.3}
+\contentsline {section}{\numberline {C.4}Procesador tolerante a fallos con fallos}{81}{section.Alph3.4}
+\contentsline {chapter}{Bibliograf\IeC {\'\i }a}{83}{appendix*.58}
