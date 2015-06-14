@@ -1,6 +1,6 @@
 %---------------------------------------------------------------------
 %
-%                          Capítulo 7
+%                          Capítulo 8
 %
 %---------------------------------------------------------------------
 
@@ -20,7 +20,7 @@
 
 Se ha diseñado una Unidad Central de Proceso (CPU) segmentada en 5 etapas, capaz de ejecutar un conjunto reducido de instrucciones conocido como THUMB-2, concretamente es un subconjunto de la arquitectura ARM. Esta CPU ejecuta correctamente instrucciones aritmético-lógicas, instrucciones de acceso a memoria e instrucciones de bifurcación o salto.
 
-Una vez obtenido el procesador con un repertorio de instrucciones capaz de ejecutar programas sencillos, se ha aumentado el grado de fiabilidad de la CPU diseñada aplicando la técnica de tolerancia a fallos "`Triple Modular Redundancy"'. Se han triplicado los registros que almacenan información entre las etapas de la CPU segmentada e insertado votadores de mayoría para obtener el valor correcto.
+Una vez obtenido el procesador con un repertorio de instrucciones capaz de ejecutar programas sencillos, se ha aumentado el grado de fiabilidad de la CPU diseñada aplicando la técnica de tolerancia a fallos "`Triple Modular Redundancy"' (TMR). Se han triplicado los registros que almacenan información entre las etapas de la CPU segmentada e insertado votadores de mayoría para obtener los valores correctos.
 
 Para finalizar se ha demostrado, a base de simulaciones sobre el procesador diseñado en este proyecto, que al aplicar técnicas como la TMR en la CPU se han conseguido tolerar fallos que habrían alterado el funcionamiento del programa. El mecanismo de tolerancia aplicado ha permitido tolerar un fallo en cada elemento triplicado.
 

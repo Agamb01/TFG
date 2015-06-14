@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.5.31)  11 JUN 2015 19:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.5.31)  14 JUN 2015 10:04
 entering extended mode
 **Tesis.tex
 (Tesis.tex
@@ -1105,7 +1105,7 @@ Package epstopdf Info: Source file: <Imagenes/Estadisticas/Uso_hogares.eps>
 disticas/Uso_hogares.eps>
 (epstopdf)             \includegraphics on input line 33.
 Package epstopdf Info: Output file is already uptodate.
-<Imagenes/Estadisticas/Uso_hogares-eps-converted-to.pdf, id=641, 786.94pt x 475.7775pt>
+<Imagenes/Estadisticas/Uso_hogares-eps-converted-to.pdf, id=645, 786.94pt x 475.7775pt>
 File: Imagenes/Estadisticas/Uso_hogares-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Imagenes/Estadisticas/Uso_hogares-eps-converted-to.pdf>
@@ -1153,7 +1153,7 @@ Package epstopdf Info: Source file: <Imagenes/Estadisticas/Neutrones1.eps>
 isticas/Neutrones1.eps>
 (epstopdf)             \includegraphics on input line 54.
 Package epstopdf Info: Output file is already uptodate.
- <Imagenes/Estadisticas/Neutrones1-eps-converted-to.pdf, id=656, 932.48375pt x 607.26875pt>
+ <Imagenes/Estadisticas/Neutrones1-eps-converted-to.pdf, id=662, 932.48375pt x 607.26875pt>
 File: Imagenes/Estadisticas/Neutrones1-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Imagenes/Estadisticas/Neutrones1-eps-converted-to.pdf>
@@ -1367,7 +1367,7 @@ Package epstopdf Info: Source file: <Imagenes/Procesador/CPU.eps>
 .eps>
 (epstopdf)             \includegraphics on input line 32.
 Package epstopdf Info: Output file is already uptodate.
-<Imagenes/Procesador/CPU-eps-converted-to.pdf, id=712, 1027.84pt x 1027.84pt>
+<Imagenes/Procesador/CPU-eps-converted-to.pdf, id=717, 1027.84pt x 1027.84pt>
 File: Imagenes/Procesador/CPU-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Imagenes/Procesador/CPU-eps-converted-to.pdf>
@@ -1472,7 +1472,7 @@ dor/VonNeumann.eps>
 (epstopdf)             \includegraphics on input line 85.
 Package epstopdf Info: Output file is already uptodate.
 
-<Imagenes/Procesador/VonNeumann-eps-converted-to.pdf, id=736, 1421.31pt x 1027.84pt>
+<Imagenes/Procesador/VonNeumann-eps-converted-to.pdf, id=741, 1421.31pt x 1027.84pt>
 File: Imagenes/Procesador/VonNeumann-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Imagenes/Procesador/VonNeumann-eps-converted-to.pdf>
@@ -1489,7 +1489,7 @@ Package epstopdf Info: Source file: <Imagenes/Procesador/Harvard.eps>
 (epstopdf)             \includegraphics on input line 87.
 Package epstopdf Info: Output file is already uptodate.
 
-<Imagenes/Procesador/Harvard-eps-converted-to.pdf, id=737, 1421.31pt x 1027.84pt>
+<Imagenes/Procesador/Harvard-eps-converted-to.pdf, id=742, 1421.31pt x 1027.84pt>
 File: Imagenes/Procesador/Harvard-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Imagenes/Procesador/Harvard-eps-converted-to.pdf>
@@ -1545,7 +1545,7 @@ enes/Procesador/SecuencialVSSegmentado.eps>
 (epstopdf)             \includegraphics on input line 137.
 Package epstopdf Info: Output file is already uptodate.
 
-<Imagenes/Procesador/SecuencialVSSegmentado-eps-converted-to.pdf, id=768, 1469.49pt x 1027.84pt>
+<Imagenes/Procesador/SecuencialVSSegmentado-eps-converted-to.pdf, id=773, 1469.49pt x 1027.84pt>
 File: Imagenes/Procesador/SecuencialVSSegmentado-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Imagenes/Procesador/SecuencialVSSegmentado-eps-converted-to.pdf>
@@ -1616,7 +1616,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 180.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 180.
- [11] <Imagenes/ARM/snapdragon-processors-810.png, id=800, 481.8pt x 481.8pt>
+ [11] <Imagenes/ARM/snapdragon-processors-810.png, id=805, 481.8pt x 481.8pt>
 File: Imagenes/ARM/snapdragon-processors-810.png Graphic file (type png)
 
 <use Imagenes/ARM/snapdragon-processors-810.png>
@@ -1750,7 +1750,7 @@ line.eps>
 (epstopdf)             \includegraphics on input line 283.
 Package epstopdf Info: Output file is already uptodate.
 
-<Imagenes/ARM/ARM-Pipeline-eps-converted-to.pdf, id=832, 658.46pt x 96.36pt>
+<Imagenes/ARM/ARM-Pipeline-eps-converted-to.pdf, id=838, 658.46pt x 96.36pt>
 File: Imagenes/ARM/ARM-Pipeline-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Imagenes/ARM/ARM-Pipeline-eps-converted-to.pdf>
@@ -1818,14 +1818,14 @@ quitecturaFPGA.eps>
 (epstopdf)             \includegraphics on input line 325.
 Package epstopdf Info: Output file is already uptodate.
 
-<Imagenes/FPGA/ArquitecturaFPGA-eps-converted-to.pdf, id=854, 881.2925pt x 788.9475pt>
+<Imagenes/FPGA/ArquitecturaFPGA-eps-converted-to.pdf, id=860, 881.2925pt x 788.9475pt>
 File: Imagenes/FPGA/ArquitecturaFPGA-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Imagenes/FPGA/ArquitecturaFPGA-eps-converted-to.pdf>
 Package pdftex.def Info: Imagenes/FPGA/ArquitecturaFPGA-eps-converted-to.pdf used on input line 325.
 (pdftex.def)             Requested size: 270.0pt x 241.70605pt.
 
-<Imagenes/FPGA/UsoFPGA.png, id=858, 235.63031pt x 153.57375pt>
+<Imagenes/FPGA/UsoFPGA.png, id=864, 235.63031pt x 153.57375pt>
 File: Imagenes/FPGA/UsoFPGA.png Graphic file (type png)
  <use Imagenes/FPGA/UsoFPGA.png>
 Package pdftex.def Info: Imagenes/FPGA/UsoFPGA.png used on input line 344.
@@ -1879,7 +1879,7 @@ Package epstopdf Info: Source file: <Imagenes/FPGA/Nexys4-top-2000.eps>
 ys4-top-2000.eps>
 (epstopdf)             \includegraphics on input line 362.
 Package epstopdf Info: Output file is already uptodate.
- <Imagenes/FPGA/Nexys4-top-2000-eps-converted-to.pdf, id=876, 602.25pt x 552.0625pt>
+ <Imagenes/FPGA/Nexys4-top-2000-eps-converted-to.pdf, id=882, 602.25pt x 552.0625pt>
 File: Imagenes/FPGA/Nexys4-top-2000-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Imagenes/FPGA/Nexys4-top-2000-eps-converted-to.pdf>
@@ -1977,7 +1977,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 35.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 35.
-<Imagenes/SEU/SEU_FPGA.jpg, id=894, 643.6547pt x 268.00125pt>
+<Imagenes/SEU/SEU_FPGA.jpg, id=900, 643.6547pt x 268.00125pt>
 File: Imagenes/SEU/SEU_FPGA.jpg Graphic file (type jpg)
  <use Imagenes/SEU/SEU_FPGA.jpg>
 Package pdftex.def Info: Imagenes/SEU/SEU_FPGA.jpg used on input line 43.
@@ -2075,7 +2075,7 @@ Package epstopdf Info: Source file: <Imagenes/SEU/SEU.eps>
 (epstopdf)             \includegraphics on input line 105.
 Package epstopdf Info: Output file is already uptodate.
 
-<Imagenes/SEU/SEU-eps-converted-to.pdf, id=912, 182.6825pt x 261.97874pt>
+<Imagenes/SEU/SEU-eps-converted-to.pdf, id=918, 182.6825pt x 261.97874pt>
 File: Imagenes/SEU/SEU-eps-converted-to.pdf Graphic file (type pdf)
  <use Imagenes/SEU/SEU-eps-converted-to.pdf>
 Package pdftex.def Info: Imagenes/SEU/SEU-eps-converted-to.pdf used on input line 105.
@@ -2090,7 +2090,7 @@ Package epstopdf Info: Source file: <Imagenes/SEU/SET.eps>
 (epstopdf)             \includegraphics on input line 106.
 Package epstopdf Info: Output file is already uptodate.
 
-<Imagenes/SEU/SET-eps-converted-to.pdf, id=915, 182.6825pt x 261.97874pt>
+<Imagenes/SEU/SET-eps-converted-to.pdf, id=921, 182.6825pt x 261.97874pt>
 File: Imagenes/SEU/SET-eps-converted-to.pdf Graphic file (type pdf)
  <use Imagenes/SEU/SET-eps-converted-to.pdf>
 Package pdftex.def Info: Imagenes/SEU/SET-eps-converted-to.pdf used on input line 106.
@@ -2162,19 +2162,19 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 148.
  [22 <./Imagenes/SEU/SEU-eps-converted-to.pdf> <./Imagenes/SEU/SET-eps-converted-to.pdf>]
-<Imagenes/SEU/Logical_masking.jpg, id=944, 271.76532pt x 85.06781pt>
+<Imagenes/SEU/Logical_masking.jpg, id=950, 271.76532pt x 85.06781pt>
 File: Imagenes/SEU/Logical_masking.jpg Graphic file (type jpg)
  <use Imagenes/SEU/Logical_masking.jpg>
 Package pdftex.def Info: Imagenes/SEU/Logical_masking.jpg used on input line 159.
 (pdftex.def)             Requested size: 270.0pt x 84.51852pt.
 
-<Imagenes/SEU/Electrical_masking.jpg, id=948, 264.99pt x 85.82062pt>
+<Imagenes/SEU/Electrical_masking.jpg, id=954, 264.99pt x 85.82062pt>
 File: Imagenes/SEU/Electrical_masking.jpg Graphic file (type jpg)
  <use Imagenes/SEU/Electrical_masking.jpg>
 Package pdftex.def Info: Imagenes/SEU/Electrical_masking.jpg used on input line 170.
 (pdftex.def)             Requested size: 270.0pt x 87.44942pt.
 
-<Imagenes/SEU/Latching_masking.jpg, id=952, 284.56313pt x 113.67468pt>
+<Imagenes/SEU/Latching_masking.jpg, id=958, 284.56313pt x 113.67468pt>
 File: Imagenes/SEU/Latching_masking.jpg Graphic file (type jpg)
  <use Imagenes/SEU/Latching_masking.jpg>
 Package pdftex.def Info: Imagenes/SEU/Latching_masking.jpg used on input line 181.
@@ -2307,7 +2307,7 @@ Package epstopdf Info: Source file: <Imagenes/Tolerancia/No_NMR.eps>
 No_NMR.eps>
 (epstopdf)             \includegraphics on input line 268.
 Package epstopdf Info: Output file is already uptodate.
- <Imagenes/Tolerancia/No_NMR-eps-converted-to.pdf, id=975, 542.025pt x 253.94875pt>
+ <Imagenes/Tolerancia/No_NMR-eps-converted-to.pdf, id=981, 542.025pt x 253.94875pt>
 File: Imagenes/Tolerancia/No_NMR-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Imagenes/Tolerancia/No_NMR-eps-converted-to.pdf>
@@ -2324,7 +2324,7 @@ Package epstopdf Info: Source file: <Imagenes/Tolerancia/NMR.eps>
 (epstopdf)             \includegraphics on input line 269.
 Package epstopdf Info: Output file is already uptodate.
 
-<Imagenes/Tolerancia/NMR-eps-converted-to.pdf, id=976, 916.42375pt x 554.07pt>
+<Imagenes/Tolerancia/NMR-eps-converted-to.pdf, id=982, 916.42375pt x 554.07pt>
 File: Imagenes/Tolerancia/NMR-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Imagenes/Tolerancia/NMR-eps-converted-to.pdf>
@@ -2470,7 +2470,7 @@ Package epstopdf Info: Source file: <Imagenes/Mi_procesador/MiProcesador.eps>
 _procesador/MiProcesador.eps>
 (epstopdf)             \includegraphics on input line 57.
 Package epstopdf Info: Output file is already uptodate.
-<Imagenes/Mi_procesador/MiProcesador-eps-converted-to.pdf, id=1022, 1027.84pt x 1027.84pt>
+<Imagenes/Mi_procesador/MiProcesador-eps-converted-to.pdf, id=1028, 1027.84pt x 1027.84pt>
 File: Imagenes/Mi_procesador/MiProcesador-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Imagenes/Mi_procesador/MiProcesador-eps-converted-to.pdf>
@@ -2645,7 +2645,7 @@ i_procesador/P_ControlPath.eps>
 (epstopdf)             \includegraphics on input line 221.
 Package epstopdf Info: Output file is already uptodate.
 
-<Imagenes/Mi_procesador/P_ControlPath-eps-converted-to.pdf, id=1066, 1195.46625pt x 711.65875pt>
+<Imagenes/Mi_procesador/P_ControlPath-eps-converted-to.pdf, id=1072, 1195.46625pt x 711.65875pt>
 File: Imagenes/Mi_procesador/P_ControlPath-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Imagenes/Mi_procesador/P_ControlPath-eps-converted-to.pdf>
@@ -2700,7 +2700,7 @@ Package epstopdf Info: Source file: <Imagenes/Mi_procesador/Componentes/BancoReg
 df Imagenes/Mi_procesador/Componentes/BancoRegistros.eps>
 (epstopdf)             \includegraphics on input line 243.
 Package epstopdf Info: Output file is already uptodate.
- <Imagenes/Mi_procesador/Componentes/BancoRegistros-eps-converted-to.pdf, id=1088, 407.5225pt x 194.7275pt>
+ <Imagenes/Mi_procesador/Componentes/BancoRegistros-eps-converted-to.pdf, id=1094, 407.5225pt x 194.7275pt>
 File: Imagenes/Mi_procesador/Componentes/BancoRegistros-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Imagenes/Mi_procesador/Componentes/BancoRegistros-eps-converted-to.pdf>
@@ -2756,7 +2756,7 @@ Mi_procesador/Componentes/PC.eps>
 (epstopdf)             \includegraphics on input line 278.
 Package epstopdf Info: Output file is already uptodate.
 
-<Imagenes/Mi_procesador/Componentes/PC-eps-converted-to.pdf, id=1101, 301.125pt x 118.4425pt>
+<Imagenes/Mi_procesador/Componentes/PC-eps-converted-to.pdf, id=1107, 301.125pt x 118.4425pt>
 File: Imagenes/Mi_procesador/Componentes/PC-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Imagenes/Mi_procesador/Componentes/PC-eps-converted-to.pdf>
@@ -2785,7 +2785,7 @@ Package epstopdf Info: Source file: <Imagenes/Mi_procesador/Componentes/ALU.eps>
 (epstopdf)             \includegraphics on input line 309.
 Package epstopdf Info: Output file is already uptodate.
 
-<Imagenes/Mi_procesador/Componentes/ALU-eps-converted-to.pdf, id=1103, 319.1925pt x 173.64874pt>
+<Imagenes/Mi_procesador/Componentes/ALU-eps-converted-to.pdf, id=1109, 319.1925pt x 173.64874pt>
 File: Imagenes/Mi_procesador/Componentes/ALU-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Imagenes/Mi_procesador/Componentes/ALU-eps-converted-to.pdf>
@@ -2842,7 +2842,7 @@ Package epstopdf Info: Source file: <Imagenes/Mi_procesador/Componentes/ControlP
 (epstopdf)             \includegraphics on input line 344.
 Package epstopdf Info: Output file is already uptodate.
 
-<Imagenes/Mi_procesador/Componentes/ControlPrincipal-eps-converted-to.pdf, id=1124, 330.23375pt x 136.51pt>
+<Imagenes/Mi_procesador/Componentes/ControlPrincipal-eps-converted-to.pdf, id=1130, 330.23375pt x 136.51pt>
 File: Imagenes/Mi_procesador/Componentes/ControlPrincipal-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Imagenes/Mi_procesador/Componentes/ControlPrincipal-eps-converted-to.pdf>
@@ -2899,7 +2899,7 @@ Package epstopdf Info: Source file: <Imagenes/Mi_procesador/Componentes/Registro
 (epstopdf)             \includegraphics on input line 383.
 Package epstopdf Info: Output file is already uptodate.
 
-<Imagenes/Mi_procesador/Componentes/RegistrosControl-eps-converted-to.pdf, id=1146, 291.0875pt x 184.69pt>
+<Imagenes/Mi_procesador/Componentes/RegistrosControl-eps-converted-to.pdf, id=1152, 291.0875pt x 184.69pt>
 File: Imagenes/Mi_procesador/Componentes/RegistrosControl-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Imagenes/Mi_procesador/Componentes/RegistrosControl-eps-converted-to.pdf>
@@ -2956,7 +2956,7 @@ d-to.pdf Imagenes/Mi_procesador/Componentes/MemoriaInstrucciones.eps>
 (epstopdf)             \includegraphics on input line 402.
 Package epstopdf Info: Output file is already uptodate.
 
-<Imagenes/Mi_procesador/Componentes/MemoriaInstrucciones-eps-converted-to.pdf, id=1159, 366.36874pt x 148.555pt>
+<Imagenes/Mi_procesador/Componentes/MemoriaInstrucciones-eps-converted-to.pdf, id=1165, 366.36874pt x 148.555pt>
 File: Imagenes/Mi_procesador/Componentes/MemoriaInstrucciones-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Imagenes/Mi_procesador/Componentes/MemoriaInstrucciones-eps-converted-to.pdf>
@@ -2986,7 +2986,7 @@ Package epstopdf Info: Source file: <Imagenes/Mi_procesador/Componentes/MemoriaD
 (epstopdf)             \includegraphics on input line 433.
 Package epstopdf Info: Output file is already uptodate.
 
-<Imagenes/Mi_procesador/Componentes/MemoriaDatos-eps-converted-to.pdf, id=1161, 355.3275pt x 191.71625pt>
+<Imagenes/Mi_procesador/Componentes/MemoriaDatos-eps-converted-to.pdf, id=1167, 355.3275pt x 191.71625pt>
 File: Imagenes/Mi_procesador/Componentes/MemoriaDatos-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Imagenes/Mi_procesador/Componentes/MemoriaDatos-eps-converted-to.pdf>
@@ -3266,7 +3266,7 @@ Package epstopdf Info: Source file: <Imagenes/Tolerancia/Biestable.eps>
 ia/Biestable.eps>
 (epstopdf)             \includegraphics on input line 43.
 Package epstopdf Info: Output file is already uptodate.
-<Imagenes/Tolerancia/Biestable-eps-converted-to.pdf, id=1229, 232.87pt x 232.87pt>
+<Imagenes/Tolerancia/Biestable-eps-converted-to.pdf, id=1235, 232.87pt x 232.87pt>
 File: Imagenes/Tolerancia/Biestable-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Imagenes/Tolerancia/Biestable-eps-converted-to.pdf>
@@ -3283,7 +3283,7 @@ Tolerancia/BiestablesVotador.eps>
 (epstopdf)             \includegraphics on input line 44.
 Package epstopdf Info: Output file is already uptodate.
 
-<Imagenes/Tolerancia/BiestablesVotador-eps-converted-to.pdf, id=1230, 430.60875pt x 322.20375pt>
+<Imagenes/Tolerancia/BiestablesVotador-eps-converted-to.pdf, id=1236, 430.60875pt x 322.20375pt>
 File: Imagenes/Tolerancia/BiestablesVotador-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Imagenes/Tolerancia/BiestablesVotador-eps-converted-to.pdf>
@@ -3341,7 +3341,7 @@ erancia/VotadorPuertas.eps>
 (epstopdf)             \includegraphics on input line 86.
 Package epstopdf Info: Output file is already uptodate.
 
-<Imagenes/Tolerancia/VotadorPuertas-eps-converted-to.pdf, id=1243, 493.845pt x 385.44pt>
+<Imagenes/Tolerancia/VotadorPuertas-eps-converted-to.pdf, id=1249, 493.845pt x 385.44pt>
 File: Imagenes/Tolerancia/VotadorPuertas-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Imagenes/Tolerancia/VotadorPuertas-eps-converted-to.pdf>
@@ -3386,7 +3386,7 @@ FalloB.eps>
 (epstopdf)             \includegraphics on input line 95.
 Package epstopdf Info: Output file is already uptodate.
 
-<Imagenes/Tolerancia/FalloB-eps-converted-to.pdf, id=1275, 493.845pt x 385.44pt>
+<Imagenes/Tolerancia/FalloB-eps-converted-to.pdf, id=1281, 493.845pt x 385.44pt>
 File: Imagenes/Tolerancia/FalloB-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Imagenes/Tolerancia/FalloB-eps-converted-to.pdf>
@@ -3403,7 +3403,7 @@ FalloC.eps>
 (epstopdf)             \includegraphics on input line 96.
 Package epstopdf Info: Output file is already uptodate.
 
-<Imagenes/Tolerancia/FalloC-eps-converted-to.pdf, id=1276, 493.845pt x 385.44pt>
+<Imagenes/Tolerancia/FalloC-eps-converted-to.pdf, id=1282, 493.845pt x 385.44pt>
 File: Imagenes/Tolerancia/FalloC-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Imagenes/Tolerancia/FalloC-eps-converted-to.pdf>
@@ -3502,7 +3502,7 @@ Package epstopdf Info: Source file: <Imagenes/Mi_procesador/MiProcesadorTF1.eps>
 (epstopdf)             \includegraphics on input line 163.
 Package epstopdf Info: Output file is already uptodate.
 
-<Imagenes/Mi_procesador/MiProcesadorTF1-eps-converted-to.pdf, id=1345, 1240.635pt x 1027.84pt>
+<Imagenes/Mi_procesador/MiProcesadorTF1-eps-converted-to.pdf, id=1351, 1240.635pt x 1027.84pt>
 File: Imagenes/Mi_procesador/MiProcesadorTF1-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Imagenes/Mi_procesador/MiProcesadorTF1-eps-converted-to.pdf>
@@ -4647,7 +4647,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 23.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 23.
- <PDFs/Procesador_A.pdf, id=1835, 794.97pt x 614.295pt>
+ <PDFs/Procesador_A.pdf, id=1841, 794.97pt x 614.295pt>
 File: PDFs/Procesador_A.pdf Graphic file (type pdf)
  <use PDFs/Procesador_A.pdf>
 Package pdftex.def Info: PDFs/Procesador_A.pdf used on input line 27.
@@ -4657,7 +4657,7 @@ File: PDFs/Procesador_A.pdf Graphic file (type pdf)
 Package pdftex.def Info: PDFs/Procesador_A.pdf used on input line 27.
 (pdftex.def)             Requested size: 794.96806pt x 614.29349pt.
 
-<PDFs/Procesador_A.pdf, id=1838, page=1, 794.97pt x 614.295pt>
+<PDFs/Procesador_A.pdf, id=1844, page=1, 794.97pt x 614.295pt>
 File: PDFs/Procesador_A.pdf Graphic file (type pdf)
  <use PDFs/Procesador_A.pdf, page 1>
 Package pdftex.def Info: PDFs/Procesador_A.pdf, page1 used on input line 27.
@@ -4720,7 +4720,7 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 36.
 
-<PDFs/Procesador_B-eps-converted-to.pdf, id=1850, 784.9325pt x 587.19376pt>
+<PDFs/Procesador_B-eps-converted-to.pdf, id=1856, 784.9325pt x 587.19376pt>
 File: PDFs/Procesador_B-eps-converted-to.pdf Graphic file (type pdf)
 
 <use PDFs/Procesador_B-eps-converted-to.pdf>
@@ -4731,7 +4731,7 @@ File: PDFs/Procesador_B-eps-converted-to.pdf Graphic file (type pdf)
 Package pdftex.def Info: PDFs/Procesador_B-eps-converted-to.pdf used on input line 43.
 (pdftex.def)             Requested size: 784.93057pt x 587.19232pt.
 
-<PDFs/Procesador_B-eps-converted-to.pdf, id=1853, page=1, 784.9325pt x 587.19376pt>
+<PDFs/Procesador_B-eps-converted-to.pdf, id=1859, page=1, 784.9325pt x 587.19376pt>
 File: PDFs/Procesador_B-eps-converted-to.pdf Graphic file (type pdf)
 
 <use PDFs/Procesador_B-eps-converted-to.pdf, page 1>
@@ -4793,7 +4793,7 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 52.
 
-<PDFs/ProcesadorTF_A.pdf, id=1874, 794.97pt x 614.295pt>
+<PDFs/ProcesadorTF_A.pdf, id=1880, 794.97pt x 614.295pt>
 File: PDFs/ProcesadorTF_A.pdf Graphic file (type pdf)
  <use PDFs/ProcesadorTF_A.pdf>
 Package pdftex.def Info: PDFs/ProcesadorTF_A.pdf used on input line 57.
@@ -4803,7 +4803,7 @@ File: PDFs/ProcesadorTF_A.pdf Graphic file (type pdf)
 Package pdftex.def Info: PDFs/ProcesadorTF_A.pdf used on input line 57.
 (pdftex.def)             Requested size: 794.96806pt x 614.29349pt.
 
-<PDFs/ProcesadorTF_A.pdf, id=1877, page=1, 794.97pt x 614.295pt>
+<PDFs/ProcesadorTF_A.pdf, id=1883, page=1, 794.97pt x 614.295pt>
 File: PDFs/ProcesadorTF_A.pdf Graphic file (type pdf)
  <use PDFs/ProcesadorTF_A.pdf, page 1>
 Package pdftex.def Info: PDFs/ProcesadorTF_A.pdf, page1 used on input line 57.
@@ -4866,7 +4866,7 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 66.
 
-<PDFs/ProcesadorTF_B-eps-converted-to.pdf, id=1889, 785.93625pt x 587.19376pt>
+<PDFs/ProcesadorTF_B-eps-converted-to.pdf, id=1895, 785.93625pt x 587.19376pt>
 File: PDFs/ProcesadorTF_B-eps-converted-to.pdf Graphic file (type pdf)
 
 <use PDFs/ProcesadorTF_B-eps-converted-to.pdf>
@@ -4877,7 +4877,7 @@ File: PDFs/ProcesadorTF_B-eps-converted-to.pdf Graphic file (type pdf)
 Package pdftex.def Info: PDFs/ProcesadorTF_B-eps-converted-to.pdf used on input line 73.
 (pdftex.def)             Requested size: 785.93433pt x 587.19232pt.
 
-<PDFs/ProcesadorTF_B-eps-converted-to.pdf, id=1892, page=1, 785.93625pt x 587.19376pt>
+<PDFs/ProcesadorTF_B-eps-converted-to.pdf, id=1898, page=1, 785.93625pt x 587.19376pt>
 File: PDFs/ProcesadorTF_B-eps-converted-to.pdf Graphic file (type pdf)
 
 <use PDFs/ProcesadorTF_B-eps-converted-to.pdf, page 1>
@@ -5064,10 +5064,10 @@ Package rerunfilecheck Info: File `Tesis.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 217.
  ) 
 Here is how much of TeX's memory you used:
- 13316 strings out of 493671
- 198442 string characters out of 3143865
- 480746 words of memory out of 3000000
- 15391 multiletter control sequences out of 15000+200000
+ 13317 strings out of 493671
+ 198457 string characters out of 3143865
+ 480741 words of memory out of 3000000
+ 15392 multiletter control sequences out of 15000+200000
  23780 words of font info for 48 fonts, out of 3000000 for 9000
  1263 hyphenation exceptions out of 8191
  55i,21n,56p,766b,1349s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -5089,9 +5089,9 @@ ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Fil
 s/cm/cmmi8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/
 type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Fil
 es/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy9.pfb>
-Output written on Tesis.pdf (101 pages, 4855937 bytes).
+Output written on Tesis.pdf (101 pages, 4858496 bytes).
 PDF statistics:
- 2860 PDF objects out of 2984 (max. 8388607)
+ 2867 PDF objects out of 2984 (max. 8388607)
  674 named destinations out of 1000 (max. 500000)
  960 words of extra memory for PDF output out of 10000 (max. 10000000)
 
