@@ -1,0 +1,102 @@
+\select@language {spanish}
+\contentsline {chapter}{Resumen}{\es@scroman {v}}{chapter*.1}
+\contentsline {chapter}{Abstract}{\es@scroman {vii}}{chapter*.2}
+\contentsline {chapter}{\numberline {1}Introducci\'on}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}Motivaci\'on}{1}{section.1.1}
+\contentsline {section}{\numberline {1.2}Planteamiento del problema}{3}{section.1.2}
+\contentsline {section}{\numberline {1.3}Objetivo}{3}{section.1.3}
+\contentsline {section}{\numberline {1.4}Estructura del documento}{4}{section.1.4}
+\contentsline {chapter}{\numberline {2}Arquitectura de un procesador}{7}{chapter.2}
+\contentsline {section}{\numberline {2.1}Procesador}{7}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}Arquitectura}{8}{subsection.2.1.1}
+\contentsline {subsection}{\numberline {2.1.2}Repertorio de instrucciones}{8}{subsection.2.1.2}
+\contentsline {subsection}{\numberline {2.1.3}Memoria}{8}{subsection.2.1.3}
+\contentsline {subsection}{\numberline {2.1.4}Segmentaci\'on}{9}{subsection.2.1.4}
+\contentsline {subsubsection}{\numberline {2.1.4.1}Reducci\'on de ciclos por segmentaci\'on}{10}{subsubsection.2.1.4.1}
+\contentsline {subsubsection}{\numberline {2.1.4.2}Inconvenientes de la segmentaci\'on}{11}{subsubsection.2.1.4.2}
+\contentsline {section}{\numberline {2.2}Procesador ARM}{11}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Arquitectura ARM}{12}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}Repertorio de instrucciones ARM}{13}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.3}Segmentaci\'on ARM}{15}{subsection.2.2.3}
+\contentsline {subsection}{\numberline {2.2.4}Memoria ARM}{15}{subsection.2.2.4}
+\contentsline {section}{\numberline {2.3}Field-Programmable Gate Arrays (FPGA)}{16}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}Placa de desarrollo}{17}{subsection.2.3.1}
+\contentsline {chapter}{\numberline {3}Fallos y tolerancia}{19}{chapter.3}
+\contentsline {section}{\numberline {3.1}Fallos}{19}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Causas}{19}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}Tipos de fallos}{21}{subsection.3.1.2}
+\contentsline {subsubsection}{\numberline {3.1.2.1}Fallos Transitorios}{21}{subsubsection.3.1.2.1}
+\contentsline {subsubsection}{\numberline {3.1.2.2}Fallos Permanentes}{22}{subsubsection.3.1.2.2}
+\contentsline {section}{\numberline {3.2}Tolerancia a Fallos}{23}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Redundancia en la informaci\'on}{24}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Redundancia en el tiempo}{25}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3}Redundancia en el hardware}{25}{subsection.3.2.3}
+\contentsline {subsubsection}{\numberline {3.2.3.1}Redundancia modular}{25}{subsubsection.3.2.3.1}
+\contentsline {section}{\numberline {3.3}Tolerancia en microprocesadores}{26}{section.3.3}
+\contentsline {chapter}{\numberline {4}Trabajo realizado}{29}{chapter.4}
+\contentsline {section}{\numberline {4.1}Arquitectura del procesador}{29}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Estructura}{29}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}Repertorio de instrucciones}{31}{subsection.4.1.2}
+\contentsline {subsubsection}{\numberline {4.1.2.1}Accesos a memoria}{31}{subsubsection.4.1.2.1}
+\contentsline {subsubsection}{\numberline {4.1.2.2}Procesamiento de datos}{31}{subsubsection.4.1.2.2}
+\contentsline {subsubsection}{\numberline {4.1.2.3}Operaciones de control}{32}{subsubsection.4.1.2.3}
+\contentsline {subsection}{\numberline {4.1.3}Segmentaci\'on}{32}{subsection.4.1.3}
+\contentsline {subsection}{\numberline {4.1.4}Memoria}{33}{subsection.4.1.4}
+\contentsline {section}{\numberline {4.2}Implementaci\'on}{33}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Banco de registros}{34}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}Contador de programa}{35}{subsection.4.2.2}
+\contentsline {subsection}{\numberline {4.2.3}Unidad Aritm\'etico-L\'ogica (ALU)}{35}{subsection.4.2.3}
+\contentsline {subsection}{\numberline {4.2.4}Control principal}{36}{subsection.4.2.4}
+\contentsline {subsection}{\numberline {4.2.5}Registros de control}{37}{subsection.4.2.5}
+\contentsline {subsection}{\numberline {4.2.6}Memoria de instrucciones}{38}{subsection.4.2.6}
+\contentsline {subsection}{\numberline {4.2.7}Memoria de datos}{38}{subsection.4.2.7}
+\contentsline {section}{\numberline {4.3}Formato de instrucciones}{39}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Accesos a Memoria}{39}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}Procesamiento de datos}{40}{subsection.4.3.2}
+\contentsline {subsubsection}{\numberline {4.3.2.1}Operaciones con dos registros}{40}{subsubsection.4.3.2.1}
+\contentsline {subsubsection}{\numberline {4.3.2.2}Operaciones con un registro y un inmediato}{42}{subsubsection.4.3.2.2}
+\contentsline {subsection}{\numberline {4.3.3}Operaciones de control}{43}{subsection.4.3.3}
+\contentsline {chapter}{\numberline {5}Aplicando tolerancia a fallos}{45}{chapter.5}
+\contentsline {section}{\numberline {5.1}Redundancia modular}{45}{section.5.1}
+\contentsline {section}{\numberline {5.2}El Votador}{45}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Implementaci\'on}{47}{subsection.5.2.1}
+\contentsline {section}{\numberline {5.3}Aplicaci\'on}{48}{section.5.3}
+\contentsline {chapter}{\numberline {6}Resultados}{51}{chapter.6}
+\contentsline {section}{\numberline {6.1}Programa de control}{51}{section.6.1}
+\contentsline {section}{\numberline {6.2}Fallos introducidos}{52}{section.6.2}
+\contentsline {section}{\numberline {6.3}Validaci\'on del procesador est\'andar}{53}{section.6.3}
+\contentsline {subsection}{\numberline {6.3.1}Recursos empleados}{53}{subsection.6.3.1}
+\contentsline {subsubsection}{\numberline {6.3.1.1}Map report}{54}{subsubsection.6.3.1.1}
+\contentsline {subsubsection}{\numberline {6.3.1.2}Timing report}{55}{subsubsection.6.3.1.2}
+\contentsline {subsection}{\numberline {6.3.2}Ejecuci\'on de control}{55}{subsection.6.3.2}
+\contentsline {subsection}{\numberline {6.3.3}Inserci\'on de fallos}{55}{subsection.6.3.3}
+\contentsline {section}{\numberline {6.4}Validaci\'on del procesador tolerante a fallos}{56}{section.6.4}
+\contentsline {subsection}{\numberline {6.4.1}Recursos empleados}{56}{subsection.6.4.1}
+\contentsline {subsubsection}{\numberline {6.4.1.1}Map report}{57}{subsubsection.6.4.1.1}
+\contentsline {subsubsection}{\numberline {6.4.1.2}Timing report}{58}{subsubsection.6.4.1.2}
+\contentsline {subsection}{\numberline {6.4.2}Ejecuci\'on de control}{58}{subsection.6.4.2}
+\contentsline {subsection}{\numberline {6.4.3}Inserci\'on de fallos}{58}{subsection.6.4.3}
+\contentsline {chapter}{\numberline {7}An\'alisis de los resultados}{59}{chapter.7}
+\contentsline {section}{\numberline {7.1}Comparativa de procesadores}{59}{section.7.1}
+\contentsline {section}{\numberline {7.2}Simulaciones}{60}{section.7.2}
+\contentsline {subsection}{\numberline {7.2.1}Procesador est\'andar}{60}{subsection.7.2.1}
+\contentsline {subsubsection}{\numberline {7.2.1.1}Prueba de control}{60}{subsubsection.7.2.1.1}
+\contentsline {subsubsection}{\numberline {7.2.1.2}Prueba con fallos}{61}{subsubsection.7.2.1.2}
+\contentsline {subsection}{\numberline {7.2.2}Procesador tolerante a fallos}{62}{subsection.7.2.2}
+\contentsline {subsubsection}{\numberline {7.2.2.1}Prueba de control}{62}{subsubsection.7.2.2.1}
+\contentsline {subsubsection}{\numberline {7.2.2.2}Prueba con fallos}{63}{subsubsection.7.2.2.2}
+\contentsline {chapter}{\numberline {8}Conclusiones}{65}{chapter.8}
+\contentsline {section}{\numberline {8.1}Conclusiones}{65}{section.8.1}
+\contentsline {chapter}{\numberline {9}Conclusions}{67}{chapter.9}
+\contentsline {section}{\numberline {9.1}Conclusions}{67}{section.9.1}
+\contentsline {chapter}{\numberline {A}C\'odigo de simulaci\'on sin fallos}{69}{appendix.Alph1}
+\contentsline {section}{\numberline {A.1}Testbench para ejecuci\'on de control}{70}{section.Alph1.1}
+\contentsline {chapter}{\numberline {B}C\'odigo de simulaci\'on con fallos}{71}{appendix.Alph2}
+\contentsline {section}{\numberline {B.1}Testbench para ejecuci\'on con inserci\'on de fallos en CPU est\'andar}{72}{section.Alph2.1}
+\contentsline {section}{\numberline {B.2}Testbench para ejecuci\'on con inserci\'on de fallos en CPU tolerante a fallos}{74}{section.Alph2.2}
+\contentsline {chapter}{\numberline {C}Simulaciones}{77}{appendix.Alph3}
+\contentsline {section}{\numberline {C.1}Procesador est\'andar sin fallos}{78}{section.Alph3.1}
+\contentsline {section}{\numberline {C.2}Procesador est\'andar con fallos}{79}{section.Alph3.2}
+\contentsline {section}{\numberline {C.3}Procesador tolerante a fallos sin fallos}{80}{section.Alph3.3}
+\contentsline {section}{\numberline {C.4}Procesador tolerante a fallos con fallos}{81}{section.Alph3.4}
+\contentsline {chapter}{Bibliograf\IeC {\'\i }a}{83}{appendix*.58}

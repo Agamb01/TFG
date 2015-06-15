@@ -1,0 +1,148 @@
+\begin{thebibliography}{10}
+
+\bibitem{ARM-InstructionSet}
+ARM.
+\newblock {ARM Instruction Set}.
+\newblock In {\em ARM7TDMI-S Data Sheet}, chapter 4 ARM Inst.
+
+\bibitem{Limited2000}
+ARM.
+\newblock {\em {ARM7TDMI-S}}.
+\newblock Number Rev 3. 2000.
+
+\bibitem{Limited2007b}
+ARM.
+\newblock {ARM Architecture Reference Manual}, 2007.
+
+\bibitem{R.B.J.BrinkgreveW.M.Swolfs2011}
+ARM.
+\newblock {\em {ARM Architecture Reference Manual Thumb-2 Supplement}}.
+\newblock 2011.
+
+\bibitem{Brown1996}
+S.~Brown and J.~Rose.
+\newblock {Architecture of FPGAs and CPLDs: A tutorial}.
+\newblock {\em IEEE Design and Test of Computers}, 13, 1996.
+
+\bibitem{Flash2013}
+Digilent.
+\newblock {Nexys4 FPGA Board Reference Manual}, 2013.
+
+\bibitem{Ieee-std-2010}
+A.~Gaisler.
+\newblock {\em {LEON3 / LEON3-FT CompanionCore Data Sheet}}.
+\newblock Number March. 2010.
+
+\bibitem{Gaisler2002}
+J.~Gaisler.
+\newblock {A portable and fault-tolerant microprocessor based on the SPARC V8
+  architecture}.
+\newblock {\em Proceedings of the 2002 International Conference on Dependable
+  Systems and Networks}, pages 409--415, 2002.
+
+\bibitem{Tecnologias}
+GENERA.
+\newblock http://www.generatecnologias.es/aplicaciones\_fpga.html.
+
+\bibitem{Habinc2002}
+S.~Habinc.
+\newblock {\em {Functional Triple Modular Redundancy (FTMR)}}.
+\newblock 2002.
+
+\bibitem{Hennessy1993}
+J.~L. Hennessy and D.~A. Patterson.
+\newblock {\em {Arquitectura de Computadores: Un enfoque cuantitativo}}.
+\newblock Mcgraw Hill Editorial, 1993.
+
+\bibitem{Hu2010}
+A.~C. Hu and S.~Zain.
+\newblock {NSEU Mitigation in Avionics Applications}, 2010.
+
+\bibitem{Estadistica2014}
+I.N.E.
+\newblock {Encuesta sobre equipamiento y uso de tecnolog\'{\i}as de
+  informaci\'{o}n y comunicaci\'{o}n en los hogares}, 2014.
+
+\bibitem{Investigation2008}
+A.~O. Investigation.
+\newblock {\em {ATSB TRANSPORT SAFETY REPORT Aviation Occurrence Investigation
+  AO-2008-070 Final}}.
+\newblock Number October. 2008.
+
+\bibitem{IROC2013}
+IROC.
+\newblock {Do I Really Need to Worry About Soft Errors?}, 2013.
+
+\bibitem{Jedec2006}
+Jedec.
+\newblock {Measurement and Reporting of Alpha Particle and Terrestrial Cosmic
+  Ray Induced Soft Error in Semiconductor Devices}, 2006.
+
+\bibitem{Kadav2013}
+A.~Kadav, M.~J. Renzelmann, and M.~M. Swift.
+\newblock {Fine-grained fault tolerance using device checkpoints}.
+\newblock {\em Proceedings of the eighteenth international conference on
+  Architectural support for programming languages and operating systems -
+  ASPLOS '13}, page 473, 2013.
+
+\bibitem{Kastensmidt}
+F.~L. Kastensmidt.
+\newblock http://www.inf.ufrgs.br/\~{}fglima/res.htm.
+
+\bibitem{Kirrmann2005}
+H.~Kirrmann.
+\newblock {\em {Fault Tolerant Computing in Industrial Automation}}.
+\newblock 2005.
+
+\bibitem{Kuon2007}
+I.~Kuon, R.~Tessier, and J.~Rose.
+\newblock {\em {FPGA Architecture: Survey and Challenges}}, volume~2.
+\newblock 2007.
+
+\bibitem{Bustillos2012}
+I.~M. Mart\'{\i}n, J.~E. {Celador Hern\'{a}ndez}, and C.~T. Bustillos.
+\newblock {\em {Simulador arm en el \'{a}mbito docente}}.
+\newblock PhD thesis, Universidad Complutense de Madrid, 2012.
+
+\bibitem{Melis2014}
+K.~W. Melis.
+\newblock {\em {Reconstruction of High-energy Neutrino-induced Particle Showers
+  in KM3NeT.}}
+\newblock PhD thesis, Faculteit der Natuurwetenschappen, 2014.
+
+\bibitem{Mobile}
+Qualcomm.
+\newblock {Qualcomm Snapdragon 810 Processor}.
+
+\bibitem{Rose}
+J.~Rose, A.~E. Gamal, and A.~Sangiovanni-Vincentelli.
+\newblock {Architecture of Field-Programmable Gate Arrays}.
+\newblock {\em Proceeding of the IEEE}, 81(7):1013--1029, 1993.
+
+\bibitem{Rotenberg1999}
+E.~Rotenberg.
+\newblock {AR-SMT: A microarchitectural approach to fault tolerance in
+  microprocessors}.
+\newblock {\em Digest of Papers. Twenty-Ninth Annual International Symposium on
+  Fault-Tolerant Computing (Cat. No.99CB36352)}, 1999.
+
+\bibitem{Sorin}
+D.~J. Sorin and S.~Ozev.
+\newblock {Fault Tolerant Microprocessors for Space Missions}.
+
+\bibitem{Torrecillas}
+J.~M. Torrecillas.
+\newblock {Tecnolog\'{\i}a RAID - Tolerancia a Fallos}.
+
+\bibitem{Weaver2001}
+C.~Weaver and T.~Austin.
+\newblock {A fault tolerant approach to microprocessor design}.
+\newblock {\em Proceedings of the International Conference on Dependable
+  Systems and Networks}, (July):411--420, 2001.
+
+\bibitem{XilinxArtix}
+Xilinx.
+\newblock {Xilinx Artix-7 Fpgas: a New Performance Standard for Power-Limited,
+  Cost-Sensitive Markets}, 2015.
+
+\end{thebibliography}

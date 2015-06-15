@@ -1,0 +1,31 @@
+\select@language {spanish}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {2.1}{\ignorespaces Segmentacion simple de 5 etapas\relax }}{9}{table.caption.10}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {4.1}{\ignorespaces Instrucciones de acceso a memoria (bits 31..16)\relax }}{39}{table.caption.33}
+\contentsline {table}{\numberline {4.2}{\ignorespaces Instrucciones de acceso a memoria (bits 15..0)\relax }}{40}{table.caption.34}
+\contentsline {table}{\numberline {4.3}{\ignorespaces Instrucciones de procesamiento de datos con dos registros (bits 31..16)\relax }}{41}{table.caption.35}
+\contentsline {table}{\numberline {4.4}{\ignorespaces Instrucciones de procesamiento de datos con dos registros (bits 15..0)\relax }}{41}{table.caption.36}
+\contentsline {table}{\numberline {4.5}{\ignorespaces Operaciones con dos registros\relax }}{42}{table.caption.37}
+\contentsline {table}{\numberline {4.6}{\ignorespaces Instrucciones de procesamiento de datos con un registro y un inmediato (bits 31..16)\relax }}{42}{table.caption.38}
+\contentsline {table}{\numberline {4.7}{\ignorespaces Instrucciones de procesamiento de datos con un registro y un inmediato (bits 15..0)\relax }}{42}{table.caption.39}
+\contentsline {table}{\numberline {4.8}{\ignorespaces Operaciones con un registro y un inmediato\relax }}{43}{table.caption.40}
+\contentsline {table}{\numberline {4.9}{\ignorespaces Instrucciones de control (bits 31..16)\relax }}{43}{table.caption.41}
+\contentsline {table}{\numberline {4.10}{\ignorespaces Instrucciones de control (bits 15..0)\relax }}{44}{table.caption.42}
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {5.1}{\ignorespaces Tabla de verdad del votador\relax }}{46}{table.caption.44}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {7.1}{\ignorespaces Simulaci\'on de control sobre el procesador est\'andar.\relax }}{60}{table.caption.50}
+\contentsline {table}{\numberline {7.2}{\ignorespaces Simulaci\'on con fallos sobre el procesador est\'andar.\relax }}{61}{table.caption.51}
+\contentsline {table}{\numberline {7.3}{\ignorespaces Simulaci\'on de control sobre el procesador tolerante a fallos .\relax }}{62}{table.caption.52}
+\contentsline {table}{\numberline {7.4}{\ignorespaces Simulaci\'on con fallos sobre el procesador tolerante a fallos.\relax }}{63}{table.caption.53}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
