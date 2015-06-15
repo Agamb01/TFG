@@ -18,11 +18,22 @@
 
 \section{Conclusiones}
 
-Se ha diseñado una Unidad Central de Proceso (CPU) segmentada en 5 etapas, capaz de ejecutar un conjunto reducido de instrucciones conocido como THUMB-2, concretamente es un subconjunto de la arquitectura ARM. Esta CPU ejecuta correctamente instrucciones aritmético-lógicas, instrucciones de acceso a memoria e instrucciones de bifurcación o salto.
+Se ha diseñado una Unidad Central de Proceso (CPU) segmentada en 5 etapas, capaz de ejecutar un conjunto reducido de instrucciones conocido como THUMB-2, concretamente es un subconjunto de la arquitectura ARM Cortex. La CPU desarrollada ejecuta instrucciones aritmético-lógicas, instrucciones de acceso a memoria e instrucciones de bifurcación o salto.
 
-Una vez obtenido el procesador con un repertorio de instrucciones capaz de ejecutar programas sencillos, se ha aumentado el grado de fiabilidad de la CPU diseñada aplicando la técnica de tolerancia a fallos "`Triple Modular Redundancy"' (TMR). Se han triplicado los registros que almacenan información entre las etapas de la CPU segmentada e insertado votadores de mayoría para obtener los valores correctos.
+En una segunda implementación, se ha aumentado el grado de fiabilidad de la CPU diseñada aplicando la técnica de tolerancia a fallos "`Triple Modular Redundancy"' (TMR). Se han triplicado los registros que almacenan información entre las etapas de la CPU segmentada e insertado votadores de mayoría para obtener los valores correctos.
 
 Para finalizar se ha demostrado, a base de simulaciones sobre el procesador diseñado en este proyecto, que al aplicar técnicas como la TMR en la CPU se han conseguido tolerar fallos que habrían alterado el funcionamiento del programa. El mecanismo de tolerancia aplicado ha permitido tolerar un fallo en cada elemento triplicado.
+
+Estas tareas que acaban de comentarse, son los objetivos del proyecto. Todos ellos se han llevado a cabo satisfactoriamente.
+
+Gracias a que la CPU es capaz de ejecutar instrucciones THUMB-2, con algunas restricciones podría ejecutar código compilado por compiladores ARM ya existente. Por su simpleza se puede integrar en sistemas empotrados que requieran minimizar los recursos utilizados. Y gracias a la TMR aplicada es una opción para aplicaciones en las que puedan sufrir fallos.
+
+Como trabajo futuro se plantea añadir tolerancia a otros tipos de fallos no considerados en este proyecto para obtener una CPU más robusta, y realizar un sistema multi-core utilizando esta CPU como base para aumentar el rendimiento del sistema.
+
+
+
+
+
 
 
 
