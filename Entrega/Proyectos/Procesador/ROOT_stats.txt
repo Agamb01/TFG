@@ -1,0 +1,101 @@
+   Build: PlanAhead v14.4 by xbuild
+          on Tue Dec 18 05:21:09 MST 2012
+  Report: by Andy on host Andy-PC, pid 4264
+          on Sat Jun 06 10:51:05 2015
+
+Report for pblock: ROOT
+
+
+Physical Resource Estimates
+===========================
+
+Site Type       Available  Required  % Util  
+-------------------------------------------
+LUT             63400      1128      2       
+FD_LD           126800     1952      2       
+SLICEL          11100      209       2       
+SLICEM          4750       90        2       
+BSCAN           4          0         0       
+BUFGCTRL        32         1         4       
+BUFHCE          96         0         0       
+BUFIO           24         0         0       
+BUFMRCE         12         0         0       
+BUFR            24         0         0       
+CAPTURE         1          0         0       
+CFG_IO_ACCESS   1          0         0       
+DCIRESET        1          0         0       
+DNA_PORT        1          0         0       
+DSP48E1         240        0         0       
+EFUSE_USR       1          0         0       
+FIFO18E1        135        0         0       
+FRAME_ECC       1          0         0       
+GCLK_TEST_BUF   392        0         0       
+IBUFDS_GTE2     4          0         0       
+ICAP            2          0         0       
+IDELAYCTRL      6          0         0       
+IDELAYE2        300        0         0       
+ILOGICE3        210        0         0       
+IN_FIFO         24         0         0       
+IOB33           8          0         0       
+IOB33M          100        6         6       
+IOB33S          102        6         6       
+MMCME2_ADV      6          0         0       
+MTBF2           1          0         0       
+OLOGICE3        210        0         0       
+OUT_FIFO        24         0         0       
+PCIE_2_1        1          0         0       
+PHASER_IN_PHY   24         0         0       
+PHASER_OUT_PHY  24         0         0       
+PHASER_REF      6          0         0       
+PHY_CONTROL     6          0         0       
+PLLE2_ADV       6          0         0       
+PMV             1          0         0       
+PMV2            1          0         0       
+PMV2_SVT        1          0         0       
+PMVBRAM         14         0         0       
+PMVIOB          2          0         0       
+RAMB18E1        135        0         0       
+RAMBFIFO36E1    135        0         0       
+STARTUP         1          0         0       
+USR_ACCESS      1          0         0       
+XADC            1          0         0       
+
+
+Carry Statistics
+================
+
+Number of carry chains  Longest chain                          Carry height utilization  
+---------------------------------------------------------------------------------------
+6                       i_EXE/i_pEXE/i_ALU/Mmux_s_R1_rs_cy<0>  4.000% (8 CLBs)           
+
+
+Clock Report
+============
+
+Domain (Module)   Resource  Instances  
+-------------------------------------
+clk_BUFGP( cpu )  Global    1953       
+
+
+IO Statistics
+=============
+
+IO Ports  Bonded IOs  Utilization  
+---------------------------------
+18        210           8.6 %      
+
+
+Primitive Statistics
+====================
+
+Primitive type  Count  
+---------------------
+FLOP_LATCH      1952   
+LUT             1130   
+MUXFX           224    
+CARRY           219    
+IO              17     
+CLK             1      
+OTHERS          3      
+
+

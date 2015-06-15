@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=D:\TFG\TFG\VHDL\Procesador_TF\control_Cpu.ncd
+OUTFILE=D:\TFG\TFG\VHDL\Procesador_TF\control_Cpu.bit
+FAMILY=Artix7
+PART=xc7a100t-1csg324
+WORKINGDIR=D:\TFG\TFG\VHDL\Procesador_TF
+LICENSE=WebPack
+USER_INFO=__0_0_0

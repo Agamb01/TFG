@@ -1,0 +1,64 @@
+%---------------------------------------------------------------------
+%
+%                          Apéndice 1
+%
+%---------------------------------------------------------------------
+
+\chapter{Código de simulación sin fallos}
+\label{apendiceA}
+
+Este código se compone de 3 partes:
+
+\begin{itemize}
+	\item \textbf{Declaración de componentes y señales:} Se declaran los componentes y las señales necesarias para controlar la simulación. Esto incluye las señales de entrada y salida del procesador, junto a las señales espía\footnote{Estas señales solo se pueden utilizar con el software "`ModelSim"' de Altera.} que mostrarán los valores de señales internas del sistema.
+	\item \textbf{Proceso de conexión:} Se establece la conexión entre las señales espía y las señales internas del sistema.
+	\item \textbf{Proceso de control:} Se realizan las comprobaciones para asegurar el correcto funcionamiento del procesador.
+\end{itemize}
+
+\newpage 
+
+%-------------------------------------------------------------------
+\section{Testbench para ejecución de control}
+%-------------------------------------------------------------------
+\label{apendiceA:tbcontrol}
+
+\lstset{language=VHDL, breaklines=true, basicstyle=\footnotesize, numbers=left}
+\begin{lstlisting}[frame=single]
+[...]
+	
+	-- Test de funcionamiento
+	spy_proc: process
+	begin		
+
+[...]
+
+		assert spy_PC = std_logic_vector(to_unsigned(0, 32)) report "ERROR: Inicio" severity ERROR;      
+	wait for clk_period*5; -- Espera para que tengan efecto los cambios (Procesador de cinco ciclos)
+--LDR R2, R0, #5
+		assert spy_PC = std_logic_vector(to_unsigned(20, 32)) report "ERROR: PC 20" severity ERROR;
+		assert spy_R2 = std_logic_vector(to_unsigned(5, 32)) report "ERROR: LDR R2, R0, #5" severity ERROR;
+	wait for clk_period;
+--MOV R1, #25
+		assert spy_PC = std_logic_vector(to_unsigned(24, 32)) report "ERROR: PC 24" severity ERROR;
+		assert spy_R1 = std_logic_vector(to_unsigned(25, 32)) report "ERROR: MOV R1, #25" severity ERROR;
+	wait for clk_period;
+--MOV R3, #0
+		assert spy_PC = std_logic_vector(to_unsigned(28, 32)) report "ERROR: PC 28" severity ERROR;
+		assert spy_R3 = std_logic_vector(to_unsigned(0, 32)) report "ERROR: MOV R3, #0" severity ERROR;
+	wait for clk_period;
+--MOV R5, #1
+		assert spy_PC = std_logic_vector(to_unsigned(32, 32)) report "ERROR: PC 32" severity ERROR;
+		assert spy_R5 = std_logic_vector(to_unsigned(1, 32)) report "ERROR: MOV R5, #1" severity ERROR;
+	wait for clk_period;
+
+[...]
+
+--STR R3, R0, #0
+	wait for clk_period*12;
+		assert spy_PC = std_logic_vector(to_unsigned(96, 32)) report "ERROR: PC 296" severity ERROR;
+		assert spy_M0 = std_logic_vector(to_unsigned(125, 32)) report "ERROR: STR R3, R0, #0" severity ERROR;
+	wait;
+	end process;
+
+END;
+\end{lstlisting}

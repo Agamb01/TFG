@@ -1,0 +1,168 @@
+%---------------------------------------------------------------------
+%
+%                          Capítulo 5
+%
+%---------------------------------------------------------------------
+
+\chapter{Aplicando tolerancia a fallos}
+\label{trabajotolerancia}
+
+%\begin{FraseCelebre}
+%\begin{Frase}
+%...
+%\end{Frase}
+%\begin{Fuente}
+%...
+%\end{Fuente}
+%\end{FraseCelebre}
+%
+%\begin{resumen}
+%En este capitulo se explica cómo se implementan las técnicas de tolerancia a fallos sobre el microprocesador explicado en el capitulo anterior. 
+%\end{resumen}
+
+
+%%-------------------------------------------------------------------
+%\section{Introducción}
+%%-------------------------------------------------------------------
+%\label{trabajotolerancia:introducción}
+
+Los fallos más comunes en los sistemas electrónicos son los conocidos como fallos transitorios, estos no dañan el sistema de forma permanente pero provocan un cambio de valor en los elementos de memoria (SEU) o interferencias en las conexiones internas (SET), que si no se estabilizan a tiempo pueden llegar a propagarse hasta una celda de memoria y almacenarse provocando el mismo efecto que un SEU. Con esta información se ha implementado un método para paliar y reducir los efectos tanto de los SEU como de los SET. 
+
+
+%------------------------------------------------------------
+\section{Redundancia modular}
+%------------------------------------------------------------
+\label{trabajotolerancia:redundancia}
+
+La técnica utilizada para paliar los fallos transitorios ha sido la redundancia modular (NMR) con un valor de $N=3$, conocida como redundancia modular triple (TMR). Consiste en triplicar cada componente de memoria y conectar "`votadores"' a sus salidas. Los "`votadores"' permiten enmascarar una cantidad de fallos igual a $\frac{N}{2}$. En nuestro caso significa que el sistema podrá tolerar un fallo en cada conjunto de módulos triplicados. 
+
+Para proporcionar al sistema tolerancia frente a los SEU al sistema, se han sustituido todos los biestables por un conjunto compuesto por tres biestables más un votador. Si el componente inicial era el representado en la figura \ref{fig:Biestable}, aplicando lo anterior obtendremos el conjunto representado en la figura \ref{fig:BiestablesVotador}.
+
+\begin{figure}[htbp]
+  \centering
+  \subfloat[Biestable original.\label{fig:Biestable}]{\includegraphics[width=0.45\textwidth]{Imagenes/Capitulo5/Biestable.eps}} \qquad
+  \subfloat[Conjunto de biestables con votador.\label{fig:BiestablesVotador}]{\includegraphics[width=0.45\textwidth]{Imagenes/Capitulo5/BiestablesVotador.eps}}
+	\caption{Sustitución de biestable.}
+\end{figure}
+
+
+%------------------------------------------------------------
+\section{El Votador}
+%------------------------------------------------------------
+\label{trabajotolerancia:votador}
+
+El votador es un circuito combinacional, y su único objetivo es filtrar los valores de entrada, para dar un valor de salida igual al de la mayoría de sus entradas. Esta propiedad hace del votador el componente principal utilizado para otorgar la capacidad de tolerar los fallos transitorios de tipo SEU al sistema.
+
+Como se vé en la tabla \ref{tab:TablaVerdadVotador}, el valor de salida de un votador es igual al valor que más se repite en sus entradas. Con este método puede enmascararse un fallo en cualquiera de los módulos que alimentan sus entradas.
+
+\begin{table}[ht]
+		\centering
+			\begin{tabular}{|c|c|c|c|}
+			  \hline
+				\multicolumn{3}{|c|}{Entradas} & Salida \\ \hline
+					A & B & C & Z \\ \hline
+					0 & 0 & 0 & 0 \\ \hline
+					0 & 0 & 1 & 0 \\ \hline
+					0 & 1 & 0 & 0 \\ \hline
+					0 & 1 & 1 & 1 \\ \hline
+					1 & 0 & 0 & 0 \\ \hline
+					1 & 0 & 1 & 1 \\ \hline
+					1 & 1 & 0 & 1 \\ \hline
+					1 & 1 & 1 & 1 \\ \hline
+			\end{tabular}
+  \caption{Tabla de verdad del votador}
+  \label{tab:TablaVerdadVotador}
+\end{table}
+
+La implementación del votador puede realizarse de diferentes formas siempre que cumpla con las restricciones de la tabla \ref{tab:TablaVerdadVotador}. El votador de este proyecto se ha diseñado siguiendo la fórmula lógica \ref{eq:votador}, utilizando 4 puertas lógicas: 3 puertas "`AND"' de dos entradas y 1 puerta "`OR"' de tres entradas. Como se puede observar en la figura \ref{fig:VotadorPuertas}, se introduce únicamente un retardo de 2 puertas lógicas, haciendo que las puertas lógicas "`AND"' funcionen en paralelo.
+
+\begin{equation}
+  Z = (A*B) + (B*C) + (A*C)
+	\label{eq:votador}
+\end{equation}
+
+\begin{figure}[ht]
+  \centering
+	\includegraphics[width=0.50\textwidth]{Imagenes/Capitulo5/VotadorPuertas.eps}
+	\caption{Diseño de votador con puertas lógicas}
+	\label{fig:VotadorPuertas}
+\end{figure}
+
+Para exponer cómo funciona el votador se muestran las figuras \ref{fig:VotadorFalloB} y \ref{fig:VotadorFalloC}. En la figura de la izquierda observamos cómo la entrada B es diferente al resto, eso quiere decir que el módulo origen de esa señal ha sufrido un fallo. Se observa cómo tal fallo queda enmascarado por las puertas "`AND"' por su funcionalidad ($0 * 1 = 1 * 0 =0$). En el caso de la figura derecha, el fallo ocurre en la entrada C, en este caso queda enmascarado por la puerta "`OR"'($0 + 0 + 1 = 1$).
+
+\begin{figure}[htbp]
+  \centering
+  \subfloat[Fallo en entrada B (0 -> 1)\label{fig:VotadorFalloB}]{\includegraphics[width=0.45\textwidth]{Imagenes/Capitulo5/FalloB.eps}} \qquad
+  \subfloat[Fallo en entrada C (1 -> 0)\label{fig:VotadorFalloC}]{\includegraphics[width=0.45\textwidth]{Imagenes/Capitulo5/FalloC.eps}}
+  \caption{Ejemplos de fallos en entradas.}
+  \label{fig:VotadorFallos}
+\end{figure}
+
+%------------------------------------------------------------
+\subsection{Implementación}
+%------------------------------------------------------------
+\label{trabajotolerancia:votador:implementacion}
+
+La implementación de este módulo se divide en dos secciones:
+
+\begin{itemize}
+  \item \textbf{Registros triplicados}
+
+		Al aplicar la la redundancia tipo TMR a los registros, estos deben triplicarse. Para ello se define una constante "`N\_Tolerancia"' para establecer el número de replicas que se desea implementar, en nuestro caso este número es 3. Después se declara un conjunto de tres registros de un tamaño variable determinado por una variable. Esto facilita utilizar el componente para datos tanto de tamaño 32 como de tamaño 1.	A continuación se declara un proceso por el cual se actualizan los tres registros al mismo tiempo y con los mismos datos.
+	  
+	\lstset{language=VHDL, breaklines=true, basicstyle=\footnotesize}
+	\begin{lstlisting}[frame=single]
+	constant N_Tolerancia : integer := 3;    
+	type tipo_conjunto_registros is array (0 to N_Tolerancia-1) of STD_LOGIC_VECTOR (tamaño-1 downto 0);
+	signal registros : tipo_conjunto_registros;
+
+	[...]
+
+	p_regs: process (clk, rst)
+	begin
+		if rst='0' then
+		 for i in 0 to N_Tolerancia-1 loop
+					registros(i) <= (others=>'0');
+			 end loop;
+		elsif rising_edge(clk) then
+			 for i in 0 to N_Tolerancia-1 loop
+					registros(i) <= dato_entrada;
+			 end loop;
+		end if;
+	end process;
+	\end{lstlisting}
+
+  \item \textbf{Votador}
+	
+		Aplicando la fórmula \ref{eq:votador} a los registros triplicados, el votador obtiene el valor con un mayor número de repeticiones.
+		
+	\lstset{language=VHDL, breaklines=true, basicstyle=\footnotesize}
+	\begin{lstlisting}[frame=single]
+	dato_salida <= (registros(0) and registros(1)) or 
+					(registros(0) and registros(2)) or 
+					(registros(1) and registros(2)); 
+	\end{lstlisting}
+
+\end{itemize}
+
+%------------------------------------------------------------
+\section{Aplicación}
+%------------------------------------------------------------
+\label{trabajotolerancia:aplicacion}
+
+La segmentación del procesador requiere una cantidad importante de biestables para almacenar todos los datos que deben transmitirse de una etapa a la siguiente. Debido al enorme aumento del número de lugares críticos donde puede ocurrir un SEU, se ha visto necesario aplicar la técnica TMR especialmente en esta parte del microprocesador. 
+
+Esta técnica se ha aplicado a todos los registros de control %al banco de registros y a la memoria.
+para evitar que un fallo no controlado produzca un error en medio de la ejecución de una instrucción en cualquiera de sus etapas. Por ejemplo: cambiando la dirección de un salto, cambiando el dato que debe almacenarse en memoria o habilitando la escritura en registro cuando no debería almacenarse el resultado de la instrucción. 
+
+Sin incluir las memorias de datos e instrucciones
+que normalmente son externas, el componente "`registros de control"' es el mayor elemento de memoria dentro del microprocesador. Un fallo en este componente altera de forma imprevisible la ejecución de las instrucciones que estén en ejecución dentro del procesador en ese momento, evitar este problema es el objetivo de este trabajo y por ello nos centraremos en modificar este componente para ofrecer un mayor grado de confiabilidad. En su caso, también se podría aplicar este método a otros componentes como el banco de registros y el registro "`contador de programa"'.
+
+\begin{figure}[ht]
+	\centering
+		\includegraphics[width=0.75\textwidth]{Imagenes/Capitulo5/MiProcesadorTF1.eps}
+	\caption{Sistema con TMR en los registros de control.}
+	\label{fig:MiProcesadorTF}
+\end{figure}
+
+El resultado de aplicar este método sobre los registros de control se puede observar en la figura \ref{fig:MiProcesadorTF}. Obtenemos un componente de mayor tamaño, pero que proporciona una mayor fiabilidad en que las instrucciones se ejecutarán correctamente.

@@ -1,0 +1,169 @@
+%---------------------------------------------------------------------
+%
+%                          Apéndice B
+%
+%---------------------------------------------------------------------
+
+\chapter{Código de simulación con fallos}
+\label{apendiceB}
+
+Este código se compone de 4 partes:
+
+\begin{itemize}
+	\item \textbf{Declaración de componentes y señales:} Se declaran los componentes y las señales necesarias para controlar la simulación. Esto incluye las señales de entrada y salida del procesador, junto a las señales espía\footnote{Estas señales solo se pueden utilizar con el software "`ModelSim"' de Altera.} que mostrarán los valores de señales internas del sistema.
+	\item \textbf{Proceso de conexión:} Se establece la conexión entre las señales espía y las señales internas del sistema.
+	\item \textbf{Proceso de control:} Se realizan las comprobaciones para asegurar el correcto funcionamiento del procesador.
+	\item \textbf{Introducción de fallos:} Se fuerzan señales internas del procesador a valores incorrectos.
+\end{itemize}
+
+\newpage
+
+%-------------------------------------------------------------------
+\section{Testbench para ejecución con inserción de fallos en CPU estándar}
+%-------------------------------------------------------------------
+\label{apendiceB:tbcontrol}
+
+\lstset{language=VHDL, breaklines=true, basicstyle=\footnotesize, numbers=left}
+\begin{lstlisting}[frame=single]
+[...]
+	
+	-- Test de funcionamiento
+	spy_proc: process
+	begin		
+	
+[...]
+
+		assert spy_PC = std_logic_vector(to_unsigned(0, 32)) report "ERROR: Inicio" severity ERROR;      
+	wait for clk_period*5; -- Espera para que tengan efecto los cambios (Procesador de cinco ciclos)
+--LDR R2, R0, #5
+		assert spy_PC = std_logic_vector(to_unsigned(20, 32)) report "ERROR: PC 20" severity ERROR;
+		assert spy_R2 = std_logic_vector(to_unsigned(5, 32)) report "ERROR: LDR R2, R0, #5" severity ERROR;
+	wait for clk_period;
+--MOV R1, #25
+		assert spy_PC = std_logic_vector(to_unsigned(24, 32)) report "ERROR: PC 24" severity ERROR;
+		assert spy_R1 = std_logic_vector(to_unsigned(25, 32)) report "ERROR: MOV R1, #25" severity ERROR;
+	wait for clk_period;
+--MOV R3, #0
+		assert spy_PC = std_logic_vector(to_unsigned(28, 32)) report "ERROR: PC 28" severity ERROR;
+		assert spy_R3 = std_logic_vector(to_unsigned(0, 32)) report "ERROR: MOV R3, #0" severity ERROR;
+	wait for clk_period;
+--MOV R5, #1
+		assert spy_PC = std_logic_vector(to_unsigned(32, 32)) report "ERROR: PC 32" severity ERROR;
+		assert spy_R5 = std_logic_vector(to_unsigned(1, 32)) report "ERROR: MOV R5, #1" severity ERROR;
+	wait for clk_period;
+
+[...]
+
+--STR R3, R0, #0
+	wait for clk_period*12;
+		assert spy_PC = std_logic_vector(to_unsigned(96, 32)) report "ERROR: PC 296" severity ERROR;
+		assert spy_M0 = std_logic_vector(to_unsigned(125, 32)) report "ERROR: STR R3, R0, #0" severity ERROR;
+	wait;
+	end process;
+[...]
+\end{lstlisting}
+
+\newpage 
+
+\lstset{language=VHDL, breaklines=true, basicstyle=\footnotesize, numbers=left, firstnumber=last}
+\begin{lstlisting}[frame=single]
+[...]
+
+   -- Inserción de fallos
+   fault_proc: process
+   begin		
+      -- Fallo 1: Forzar Data read de memoria (bit 0) a 0 (Data read != 5 => Data read = 4)
+      signal_force("/TB_ejecucion_fallos/uut/MEM_out_MEMbus_reg(0)", "0", 140 ns, freeze, 145 ns, 1); -- f_MEMbus
+
+      -- Fallo 2: Forzar Data read de memoria (bit 0) a 0 (Data read != 5 => Data read = 4)
+      signal_force("/TB_ejecucion_fallos/uut/EXE_out_MEM_control_reg(0)", "1", 270 ns, freeze, 275 ns, 1);
+
+      -- Fallo 3: Forzar Data read de memoria (bit 0) a 0 (Data read != 5 => Data read = 4)
+      signal_force("/TB_ejecucion_fallos/uut/ID_out_busB_reg(0)", "1",  530 ns, freeze, 535 ns, 1);
+      
+    wait;
+   end process;
+   
+END;
+\end{lstlisting}
+
+
+
+
+\newpage
+
+%-------------------------------------------------------------------
+\section{Testbench para ejecución con inserción de fallos en CPU tolerante a fallos}
+%-------------------------------------------------------------------
+\label{apendiceB:tbfallos}
+
+
+\lstset{language=VHDL, breaklines=true, basicstyle=\footnotesize, numbers=left}
+\begin{lstlisting}[frame=single]
+[...]
+	
+	-- Test de funcionamiento
+	spy_proc: process
+	begin		
+	
+[...]
+
+		assert spy_PC = std_logic_vector(to_unsigned(0, 32)) report "ERROR: Inicio" severity ERROR;      
+	wait for clk_period*5; -- Espera para que tengan efecto los cambios (Procesador de cinco ciclos)
+--LDR R2, R0, #5
+		assert spy_PC = std_logic_vector(to_unsigned(20, 32)) report "ERROR: PC 20" severity ERROR;
+		assert spy_R2 = std_logic_vector(to_unsigned(5, 32)) report "ERROR: LDR R2, R0, #5" severity ERROR;
+	wait for clk_period;
+--MOV R1, #25
+		assert spy_PC = std_logic_vector(to_unsigned(24, 32)) report "ERROR: PC 24" severity ERROR;
+		assert spy_R1 = std_logic_vector(to_unsigned(25, 32)) report "ERROR: MOV R1, #25" severity ERROR;
+	wait for clk_period;
+--MOV R3, #0
+		assert spy_PC = std_logic_vector(to_unsigned(28, 32)) report "ERROR: PC 28" severity ERROR;
+		assert spy_R3 = std_logic_vector(to_unsigned(0, 32)) report "ERROR: MOV R3, #0" severity ERROR;
+	wait for clk_period;
+--MOV R5, #1
+		assert spy_PC = std_logic_vector(to_unsigned(32, 32)) report "ERROR: PC 32" severity ERROR;
+		assert spy_R5 = std_logic_vector(to_unsigned(1, 32)) report "ERROR: MOV R5, #1" severity ERROR;
+	wait for clk_period;
+
+[...]
+
+--STR R3, R0, #0
+	wait for clk_period*12;
+		assert spy_PC = std_logic_vector(to_unsigned(96, 32)) report "ERROR: PC 296" severity ERROR;
+		assert spy_M0 = std_logic_vector(to_unsigned(125, 32)) report "ERROR: STR R3, R0, #0" severity ERROR;
+	wait;
+	end process;
+[...]
+\end{lstlisting}
+
+\newpage 
+
+
+\vspace{15mm}
+
+\lstset{language=VHDL, breaklines=true, basicstyle=\footnotesize, numbers=left, firstnumber=last}
+\begin{lstlisting}[frame=single]
+[...]
+
+	-- Inserción de fallos
+	fault_proc: process
+	begin		
+		-- Fallo 1: Forzar Data read de memoria (bit 0) a 0 (Data read != 5 => Data read = 4)
+		signal_force("/TB_ejecucion_fallos/uut/r_MEM_out_MEMbus/regs(0)(0)", "0", 140 ns, freeze, 145 ns, 1); -- f_MEMbus
+
+		-- Fallo 2: Forzar Data read de memoria (bit 0) a 0 (Data read != 5 => Data read = 4)
+		signal_force("/TB_ejecucion_fallos/uut/r_EXE_out_MEM_control/regs(0)(0)", "1", 270 ns, freeze, 275 ns, 1);
+
+		-- Fallo 3: Forzar Data read de memoria (bit 0) a 0 (Data read != 5 => Data read = 4)
+		signal_force("/TB_ejecucion_fallos/uut/r_ID_out_busB_reg/regs(0)(0)", "1",  530 ns, freeze, 535 ns, 1);   
+	wait;
+	end process;
+   
+END;
+\end{lstlisting}
+
+
+
+
